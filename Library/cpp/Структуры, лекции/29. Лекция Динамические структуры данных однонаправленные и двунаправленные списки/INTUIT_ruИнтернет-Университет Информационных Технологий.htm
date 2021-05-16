@@ -1,0 +1,959 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>29. Лекция: Динамические структуры данных: 
+            однонаправленные и двунаправленные списки: версия для печати и 
+            PDA</SPAN> <BR><SPAN class=rtxt>В лекции рассматриваются определения 
+            и виды списков, структура, способы объявления однонаправленных и 
+            двунаправленных списков, основные операции над элементами списков, 
+            приводятся примеры решения задач с использованием однонаправленных и 
+            двунаправленных списков. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятия, классификацию и 
+            объявления списков, особенности доступа к данным и работу с памятью 
+            при использовании однонаправленных и двунаправленных списков, 
+            научиться решать задачи с использованием списков на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Понятие списка хорошо известно из жизненных примеров: 
+            список студентов учебной группы, список призёров олимпиады, список 
+            (перечень) документов для представления в приёмную комиссию, список 
+            почтовой рассылки, список литературы для самостоятельного чтения и 
+            т.п.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><B>Списком</B> называется упорядоченное множество, 
+            состоящее из переменного числа элементов, к которым применимы 
+            операции включения, исключения. Список, отражающий отношения 
+            соседства между элементами, называется <SPAN 
+            class=xml_em_italic>линейным</SPAN>.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4><SPAN class=xml_em_italic>Длина списка</SPAN> равна числу 
+            элементов, содержащихся в списке, список нулевой длины называется 
+            <SPAN class=xml_em_italic>пустым списком</SPAN>. Списки представляют 
+            собой способ организации структуры данных, при которой элементы 
+            некоторого типа образуют цепочку. Для связывания элементов в списке 
+            используют систему указателей. В минимальном случае, любой элемент 
+            линейного списка имеет один указатель, который указывает на 
+            следующий элемент в списке или является пустым указателем, что 
+            интерпретируется как конец списка.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Структура, элементами которой служат записи с одним и тем 
+            же форматом, связанные друг с другом с помощью указателей, 
+            хранящихся в самих элементах, называют <SPAN 
+            class=xml_em_italic>связанным списком</SPAN>. В связанном списке 
+            элементы линейно упорядочены, но порядок определяется не номерами, 
+            как в массиве, а указателями, входящими в состав элементов списка. 
+            Каждый список имеет особый элемент, называемый <SPAN 
+            class=xml_em_italic>указателем начала списка (головой 
+            списка)</SPAN>, который обычно по содержанию отличен от остальных 
+            элементов. В поле указателя последнего элемента списка находится 
+            специальный признак <SPAN class=texample>NULL</SPAN>, 
+            свидетельствующий о конце списка.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_7>Линейные связные списки являются простейшими 
+            динамическими структурами данных. Из всего многообразия связанных 
+            списков можно выделить следующие основные:</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <UL id=id_8>
+              <LI>однонаправленные (односвязные) списки;
+              <LI>двунаправленные (двусвязные) списки;
+              <LI>циклические (кольцевые) списки.</LI></UL>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_12>В основном они отличаются видом взаимосвязи элементов 
+            и/или допустимыми операциями.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Однонаправленные (односвязные) списки</H3>
+            <P id=id_13>Наиболее простой динамической структурой является 
+            однонаправленный список, элементами которого служат объекты 
+            структурного типа.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14><B>Однонаправленный (односвязный) список</B> – это 
+            структура данных, представляющая собой последовательность элементов, 
+            в каждом из которых хранится значение и указатель на следующий 
+            элемент списка (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.1">рис. 
+            29.1</A>). В последнем элементе указатель на следующий элемент равен 
+            <SPAN class=texample>NULL</SPAN>.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_16 align=left><A name=image.29.1></A>
+            <DIV><IMG alt="Линейный однонаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_01.png" 
+            width=554 height=126></DIV><BR><B>Рис. 29.1.</B>&nbsp; Линейный 
+            однонаправленный список
+            <P></P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Описание простейшего элемента такого списка выглядит 
+            следующим образом:</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <DIV class=example><PRE>
+</PRE></DIV>
+            <P id=id_19>struct имя_типа { информационное поле; адресное поле; }; 
+            </P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>где <SPAN class=texample>информационное поле</SPAN> – 
+            это поле любого, ранее объявленного или стандартного, типа;</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_22><SPAN class=texample>адресное поле</SPAN> – это 
+            указатель на объект того же типа, что и определяемая структура, в 
+            него записывается адрес следующего элемента списка.</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_24>Например:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct Node {
+             int key;//информационное поле
+             Node*next;//адресное поле
+            };
+</PRE></DIV>
+            <P id=id_26>Информационных полей может быть несколько.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>Например:</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct point {
+              char*name;//информационное поле
+              int age;//информационное поле
+              point*next;//адресное поле
+             };
+</PRE></DIV>
+            <P id=id_29>Каждый элемент списка содержит ключ, который 
+            идентифицирует этот элемент. Ключ обычно бывает либо целым числом, 
+            либо строкой.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Основными операциями, осуществляемыми с 
+            однонаправленными списками, являются:</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <UL id=id_31>
+              <LI>создание списка;
+              <LI>печать (просмотр) списка;
+              <LI>вставка элемента в список;
+              <LI>удаление элемента из списка;
+              <LI>поиск элемента в списке
+              <LI>проверка пустоты списка;
+              <LI>удаление списка. </LI></UL>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_39>Особое внимание следует обратить на то, что при 
+            выполнении любых операций с линейным однонаправленным списком 
+            необходимо обеспечивать позиционирование какого-либо указателя на 
+            первый элемент. В противном случае часть или весь список будет 
+            недоступен.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40>Рассмотрим подробнее каждую из приведенных операций.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Для описания алгоритмов этих основных операций 
+            используется следующее объявления:</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct Single_List {//структура данных
+                    int Data; //информационное поле
+                    Single_List *Next; //адресное поле
+                   };
+. . . . . . . . . . 
+Single_List *Head; //указатель на первый элемент списка
+. . . . . . . . . . 
+Single_List *Current; 
+//указатель на текущий элемент списка (при необходимости)
+</PRE></DIV><A name=sect3></A>
+            <H3>Создание однонаправленного списка</H3>
+            <P id=id_43>Для того, чтобы создать список, нужно создать сначала 
+            первый элемент списка, а затем при помощи функции добавить к нему 
+            остальные элементы. При относительно небольших размерах списка 
+            наиболее изящно и красиво использование рекурсивной функции. 
+            Добавление может выполняться как в начало, так и в конец списка.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//создание однонаправленного списка (добавления в конец)
+void Make_Single_List(int n,Single_List** Head){
+  if (n &gt; 0) {
+    (*Head) = new Single_List();
+    //выделяем память под новый элемент
+    cout &lt;&lt; "Введите значение ";
+    cin &gt;&gt; (*Head)-&gt;Data;
+    //вводим значение информационного поля
+    (*Head)-&gt;Next=NULL;//обнуление адресного поля
+     Make_Single_List(n-1,&amp;((*Head)-&gt;Next));
+  }
+}
+</PRE></DIV><A name=sect4></A>
+            <H3>Печать (просмотр) однонаправленного списка</H3>
+            <P id=id_45>Операция печати списка заключается в последовательном 
+            просмотре всех элементов списка и выводе их значений на экран. Для 
+            обработки списка организуется функция, в которой нужно переставлять 
+            указатель на следующий элемент списка до тех пор, пока указатель не 
+            станет, равен <SPAN class=texample>NULL</SPAN>, то есть будет 
+            достигнут конец списка. Реализуем данную функцию рекурсивно.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//печать однонаправленного списка
+void Print_Single_List(Single_List* Head) {
+  if (Head != NULL) {
+    cout &lt;&lt; Head-&gt;Data &lt;&lt; "\t";
+    Print_Single_List(Head-&gt;Next);
+    //переход к следующему элементу
+  }
+  else cout &lt;&lt; "\n";
+}
+</PRE></DIV><A name=sect5></A>
+            <H3>Вставка элемента в однонаправленный список</H3>
+            <P id=id_48>В динамические структуры легко добавлять элементы, так 
+            как для этого достаточно изменить значения адресных полей. Вставка 
+            первого и последующих элементов списка отличаются друг от друга. 
+            Поэтому в функции, реализующей данную операцию, сначала 
+            осуществляется проверка, на какое место вставляется элемент. Далее 
+            реализуется соответствующий алгоритм добавления (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.2">рис. 
+            29.2</A>).</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49 align=left><A name=image.29.2></A>
+            <DIV><IMG alt="Вставка элемента в однонаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_02.png" 
+            width=540 height=226></DIV><BR><B>Рис. 29.2.</B>&nbsp; Вставка 
+            элемента в однонаправленный список
+            <P></P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*вставка элемента с заданным номером в однонаправленный список*/
+Single_List* Insert_Item_Single_List(Single_List* Head, 
+      int Number, int DataItem){ 
+  Number--;
+  Single_List *NewItem=new(Single_List);
+  NewItem-&gt;Data=DataItem; 
+  NewItem-&gt;Next = NULL;
+  if (Head == NULL) {//список пуст
+    Head = NewItem;//создаем первый элемент списка
+  }
+  else {//список не пуст
+    Single_List *Current=Head;
+    for(int i=1; i &lt; Number &amp;&amp; Current-&gt;Next!=NULL; i++)
+    Current=Current-&gt;Next;
+    if (Number == 0){
+    //вставляем новый элемент на первое место
+      NewItem-&gt;Next = Head;
+      Head = NewItem;
+    }
+    else {//вставляем новый элемент на непервое место
+      if (Current-&gt;Next != NULL) 
+      	NewItem-&gt;Next = Current-&gt;Next;
+      Current-&gt;Next = NewItem;
+    }
+  }
+  return Head; 
+}
+</PRE></DIV><A name=sect6></A>
+            <H3>Удаление элемента из однонаправленного списка</H3>
+            <P id=id_51>Из динамических структур можно удалять элементы, так как 
+            для этого достаточно изменить значения адресных полей. Операция 
+            удаления элемента однонаправленного списка осуществляет удаление 
+            элемента, на который установлен указатель текущего элемента. После 
+            удаления указатель текущего элемента устанавливается на 
+            предшествующий элемент списка или на новое начало списка, если 
+            удаляется первый.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52>Алгоритмы удаления первого и последующих элементов 
+            списка отличаются друг от друга. Поэтому в функции, реализующей 
+            данную операцию, осуществляется проверка, какой элемент удаляется. 
+            Далее реализуется соответствующий алгоритм удаления (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.3">рис. 
+            29.3</A>).</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53 align=left><A name=image.29.3></A>
+            <DIV><IMG alt="Удаление элемента из однонаправленного списка" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_03.png" 
+            width=636 height=183></DIV><BR><B>Рис. 29.3.</B>&nbsp; Удаление 
+            элемента из однонаправленного списка
+            <P></P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*удаление элемента с заданным номером из однонаправленного списка*/
+Single_List* Delete_Item_Single_List(Single_List* Head, 
+      int Number){
+  Single_List *ptr;//вспомогательный указатель
+  Single_List *Current = Head;
+  for (int i = 1; i &lt; Number &amp;&amp; Current != NULL; i++)
+    Current = Current-&gt;Next;
+  if (Current != NULL){//проверка на корректность
+    if (Current == Head){//удаляем первый элемент
+      Head = Head-&gt;Next;
+      delete(Current);
+      Current = Head;
+    }
+    else {//удаляем непервый элемент
+      ptr = Head;
+      while (ptr-&gt;Next != Current)
+        ptr = ptr-&gt;Next; 
+      ptr-&gt;Next = Current-&gt;Next;
+      delete(Current);
+      Current=ptr;
+    }
+  }
+  return Head;
+}
+</PRE></DIV><A name=sect7></A>
+            <H3>Поиск элемента в однонаправленном списке</H3>
+            <P id=id_55>Операция поиска элемента в списке заключается в 
+            последовательном просмотре всех элементов списка до тех пор, пока 
+            текущий элемент не будет содержать заданное значение или пока не 
+            будет достигнут конец списка. В последнем случае фиксируется 
+            отсутствие искомого элемента в списке (функция принимает значение 
+            <SPAN class=texample>false</SPAN>).</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//поиск элемента в однонаправленном списке
+bool Find_Item_Single_List(Single_List* Head, int DataItem){
+  Single_List *ptr; //вспомогательным указатель
+  ptr = Head;
+  while (ptr != NULL){//пока не конец списка
+    if (DataItem == ptr-&gt;Data) return true; 
+    else ptr = ptr-&gt;Next;
+  }
+  return false;
+}
+</PRE></DIV><A name=sect8></A>
+            <H3>Удаление однонаправленного списка</H3>
+            <P id=id_58>Операция удаления списка заключается в освобождении 
+            динамической памяти. Для данной операции организуется функция, в 
+            которой нужно переставлять указатель на следующий элемент списка до 
+            тех пор, пока указатель не станет, равен <SPAN 
+            class=texample>NULL</SPAN>, то есть не будет достигнут конец списка. 
+            Реализуем рекурсивную функцию.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*освобождение памяти, выделенной под однонаправленный список*/
+void Delete_Single_List(Single_List* Head){
+  if (Head != NULL){
+    Delete_Single_List(Head-&gt;Next);
+    delete Head;
+  }
+}
+</PRE></DIV>
+            <P id=id_61>Таким образом, однонаправленный список имеет только один 
+            указатель в каждом элементе. Это позволяет минимизировать расход 
+            памяти на организацию такого списка. Одновременно это позволяет 
+            осуществлять переходы между элементами только в одном направлении, 
+            что зачастую увеличивает время, затрачиваемое на обработку списка. 
+            Например, для перехода к предыдущему элементу необходимо осуществить 
+            просмотр списка с начала до элемента, указатель которого установлен 
+            на текущий элемент.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Двунаправленные (двусвязные) списки</H3>
+            <P id=id_62>Для ускорения многих операций целесообразно применять 
+            переходы между элементами списка в обоих направлениях. Это 
+            реализуется с помощью двунаправленных списков, которые являются 
+            сложной динамической структурой.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_63><B>Двунаправленный (двусвязный) список</B> – это 
+            структура данных, состоящая из последовательности элементов, каждый 
+            из которых содержит информационную часть и два указателя на соседние 
+            элементы (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.4">рис. 
+            29.4</A>). При этом два соседних элемента должны содержать взаимные 
+            ссылки друг на друга.</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64>В таком списке каждый элемент (кроме первого и 
+            последнего) связан с предыдущим и следующим за ним элементами. 
+            Каждый элемент двунаправленного списка имеет два поля с указателями: 
+            одно поле содержит ссылку на следующий элемент, другое поле – ссылку 
+            на предыдущий элемент и третье поле – информационное. Наличие ссылок 
+            на следующее звено и на предыдущее позволяет двигаться по списку от 
+            каждого звена в любом направлении: от звена к концу списка или от 
+            звена к началу списка, поэтому такой список называют 
+            двунаправленным.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_65 align=left><A name=image.29.4></A>
+            <DIV><IMG alt="Двунаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_04.png" 
+            width=526 height=126></DIV><BR><B>Рис. 29.4.</B>&nbsp; 
+            Двунаправленный список
+            <P></P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_66>Описание простейшего элемента такого списка выглядит 
+            следующим образом:</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct имя_типа {
+                 информационное поле;
+                 адресное поле 1;
+                 адресное поле 2;
+                };
+</PRE></DIV>
+            <P id=id_68>где <SPAN class=texample>информационное поле</SPAN> – 
+            это поле любого, ранее объявленного или стандартного, типа;</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_70><SPAN class=texample>адресное поле 1</SPAN> – это 
+            указатель на объект того же типа, что и определяемая структура, в 
+            него записывается адрес <SPAN class=xml_em_italic>следующего 
+            элемента списка</SPAN>;</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_72><SPAN class=texample>адресное поле 2</SPAN> – это 
+            указатель на объект того же типа, что и определяемая структура, в 
+            него записывается адрес <SPAN class=xml_em_italic>предыдущего 
+            элемента списка</SPAN>.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_74>Например:</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct list { 
+              type elem ;
+              list *next, *pred ;
+             }
+list *headlist ;
+</PRE></DIV>
+            <P id=id_76>где <SPAN class=texample>type</SPAN> – тип 
+            информационного поля элемента списка;</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_78><SPAN class=texample>*next, *pred</SPAN> – указатели на 
+            следующий и предыдущий элементы этой структуры соответственно.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_80>Переменная-указатель <SPAN 
+            class=texample>headlist</SPAN> задает список как единый программный 
+            объект, ее значение – указатель на первый (или заглавный) элемент 
+            списка.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_82>Основные операции, выполняемые над двунаправленным 
+            списком, те же, что и для однонаправленного списка. Так как 
+            двунаправленный список более гибкий, чем однонаправленный, то при 
+            включении элемента в список, нужно использовать указатель как на 
+            элемент, за которым происходит включение, так и указатель на 
+            элемент, перед которым происходит включение. При исключении элемента 
+            из списка нужно использовать как указатель на сам исключаемый 
+            элемент, так и указатели на предшествующий или следующий за 
+            исключаемым элементы. Но так как элемент двунаправленного списка 
+            имеет два указателя, то при выполнении операций включения/исключения 
+            элемента надо изменять больше связей, чем в однонаправленном 
+            списке.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_83>Рассмотрим основные операции, осуществляемыми с 
+            двунаправленными списками, такие как:</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <UL id=id_84>
+              <LI>создание списка;
+              <LI>печать (просмотр) списка;
+              <LI>вставка элемента в список;
+              <LI>удаление элемента из списка;
+              <LI>поиск элемента в списке;
+              <LI>проверка пустоты списка;
+              <LI>удаление списка.</LI></UL>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_92>Особое внимание следует обратить на то, что в отличие от 
+            однонаправленного списка здесь нет необходимости обеспечивать 
+            позиционирование какого-либо указателя именно на первый элемент 
+            списка, так как благодаря двум указателям в элементах можно получить 
+            доступ к любому элементу списка из любого другого элемента, 
+            осуществляя переходы в прямом или обратном направлении. Однако по 
+            правилам хорошего тона программирования указатель желательно ставить 
+            на заголовок списка.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_93>Для описания алгоритмов этих основных операций 
+            используется следующее объявления:</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct Double_List {//структура данных
+                    int Data; //информационное поле
+                    Double_List *Next, //адресное поле
+                                *Prior; //адресное поле
+                   };
+. . . . . . . . . . 
+Double_List *Head; //указатель на первый элемент списка
+. . . . . . . . . . 
+Double_List *Current; 
+//указатель на текущий элемент списка (при необходимости)
+</PRE></DIV><A name=sect10></A>
+            <H3>Создание двунаправленного списка</H3>
+            <P id=id_95>Для того, чтобы создать список, нужно создать сначала 
+            первый элемент списка, а затем при помощи функции добавить к нему 
+            остальные элементы. Добавление может выполняться как в начало, так и 
+            в конец списка. Реализуем рекурсивную функцию.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//создание двунаправленного списка (добавления в конец)
+void Make_Double_List(int n,Double_List** Head,
+         Double_List* Prior){
+  if (n &gt; 0) {
+    (*Head) = new Double_List();
+     //выделяем память под новый элемент
+    cout &lt;&lt; "Введите значение ";
+    cin &gt;&gt; (*Head)-&gt;Data;
+    //вводим значение информационного поля
+    (*Head)-&gt;Prior = Prior;
+    (*Head)-&gt;Next=NULL;//обнуление адресного поля
+    Make_Double_List(n-1,&amp;((*Head)-&gt;Next),(*Head));
+  }
+  else (*Head) = NULL;
+}
+</PRE></DIV><A name=sect11></A>
+            <H3>Печать (просмотр) двунаправленного списка</H3>
+            <P id=id_97>Операция печати списка для двунаправленного списка 
+            реализуется абсолютно аналогично соответствующей функции для 
+            однонаправленного списка. Просматривать двунаправленный список можно 
+            в обоих направлениях.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//печать двунаправленного списка
+void Print_Double_List(Double_List* Head) {
+  if (Head != NULL) {
+    cout &lt;&lt; Head-&gt;Data &lt;&lt; "\t";
+    Print_Double_List(Head-&gt;Next);
+    //переход к следующему элементу
+  }
+  else cout &lt;&lt; "\n";
+}
+</PRE></DIV><A name=sect12></A>
+            <H3>Вставка элемента в двунаправленный список</H3>
+            <P id=id_99>В динамические структуры легко добавлять элементы, так 
+            как для этого достаточно изменить значения адресных полей. Операция 
+            вставки реализовывается аналогично функции вставки для 
+            однонаправленного списка, только с учетом особенностей 
+            двунаправленного списка (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.5">рис. 
+            29.5</A>).</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100 align=left><A name=image.29.5></A>
+            <DIV><IMG alt="Добавление элемента в двунаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_05.png" 
+            width=526 height=220></DIV><BR><B>Рис. 29.5.</B>&nbsp; Добавление 
+            элемента в двунаправленный список
+            <P></P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//вставка элемента с заданным номером в двунаправленный список
+Double_List* Insert_Item_Double_List(Double_List* Head, 
+      int Number, int DataItem){ 
+  Number--;
+  Double_List *NewItem=new(Double_List);
+  NewItem-&gt;Data=DataItem; 
+  NewItem-&gt;Prior=NULL;
+  NewItem-&gt;Next = NULL;
+  if (Head == NULL) {//список пуст
+    Head = NewItem;
+  }
+  else {//список не пуст
+    Double_List *Current=Head;
+    for(int i=1; i &lt; Number &amp;&amp; Current-&gt;Next!=NULL; i++)
+    Current=Current-&gt;Next;
+    if (Number == 0){
+    //вставляем новый элемент на первое место
+      NewItem-&gt;Next = Head;
+      Head-&gt;Prior = NewItem;
+      Head = NewItem;
+    }
+    else {//вставляем новый элемент на непервое место
+      if (Current-&gt;Next != NULL) Current-&gt;Next-&gt;Prior = NewItem;
+      NewItem-&gt;Next = Current-&gt;Next;
+      Current-&gt;Next = NewItem;
+      	NewItem-&gt;Prior = Current;
+      Current = NewItem;
+    }
+  }
+  return Head; 
+}
+</PRE></DIV><A name=sect13></A>
+            <H3>Удаление элемента из двунаправленного списка</H3>
+            <P id=id_102>Из динамических структур можно удалять элементы, так 
+            как для этого достаточно изменить значения адресных полей. Операция 
+            удаления элемента из двунаправленного списка осуществляется во 
+            многом аналогично удалению из однонаправленного списка (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/29/staldata_29.html#image.29.6">рис. 
+            29.6</A>).</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_103 align=left><A name=image.29.6></A>
+            <DIV><IMG alt="Удаление элемента из двунаправленного списка" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/29_06.png" 
+            width=625 height=184></DIV><BR><B>Рис. 29.6.</B>&nbsp; Удаление 
+            элемента из двунаправленного списка
+            <P></P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*удаление элемента с заданным номером из двунаправленного списка*/
+Double_List* Delete_Item_Double_List(Double_List* Head, 
+      int Number){
+  Double_List *ptr;//вспомогательный указатель
+  Double_List *Current = Head;
+  for (int i = 1; i &lt; Number &amp;&amp; Current != NULL; i++)
+    Current = Current-&gt;Next;
+  if (Current != NULL){//проверка на корректность
+    if (Current-&gt;Prior == NULL){//удаляем первый элемент
+      Head = Head-&gt;Next;
+      delete(Current);
+      Head-&gt;Prior = NULL;
+      Current = Head;
+    }
+    else {//удаляем непервый элемент
+      if (Current-&gt;Next == NULL) {
+      //удаляем последний элемент
+        Current-&gt;Prior-&gt;Next = NULL;
+        delete(Current);
+        Current = Head;
+      }
+      else {//удаляем непервый и непоследний элемент
+        ptr = Current-&gt;Next;
+        Current-&gt;Prior-&gt;Next =Current-&gt;Next;
+        Current-&gt;Next-&gt;Prior =Current-&gt;Prior;
+        delete(Current);
+        Current = ptr;
+      }
+    }
+  }
+  return Head;
+}
+</PRE></DIV><A name=sect14></A>
+            <H3>Поиск элемента в двунаправленном списке</H3>
+            <P id=id_105>Операция поиска элемента в двунаправленном списке 
+            реализуется абсолютно аналогично соответствующей функции для 
+            однонаправленного списка. Поиск элемента в двунаправленном списке 
+            можно вести:</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106>а) просматривая элементы от начала к концу списка;</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107>б) просматривая элементы от конца списка к началу;</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>в) просматривая список в обоих направлениях 
+            одновременно: от начала к середине списка и от конца к середине 
+            (учитывая, что элементов в списке может быть четное или нечетное 
+            количество).</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//поиск элемента в двунаправленном списке
+bool Find_Item_Double_List(Double_List* Head, 
+    int DataItem){
+  Double_List *ptr; //вспомогательный указатель
+  ptr = Head;
+  while (ptr != NULL){//пока не конец списка
+    if (DataItem == ptr-&gt;Data) return true; 
+    else ptr = ptr-&gt;Next;
+    }
+  return false;
+}     
+</PRE></DIV><A name=sect15></A>
+            <H3>Проверка пустоты двунаправленного списка</H3>
+            <P id=id_110>Операция проверки двунаправленного списка на пустоту 
+            осуществляется аналогично проверки однонаправленного списка.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//проверка пустоты двунаправленого списка
+bool Empty_Double_List(Double_List* Head){
+  if (Head!=NULL)  return false;
+  else  return true;  
+}
+</PRE></DIV><A name=sect16></A>
+            <H3>Удаление двунаправленного списка</H3>
+            <P id=id_112>Операция удаления двунаправленного списка реализуется 
+            аналогично удалению однонаправленного списка.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//освобождение памяти. выделенной под двунаправленный список
+void Delete_Double_List(Double_List* Head){
+  if (Head != NULL){
+    Delete_Double_List(Head-&gt;Next);
+    delete Head;
+  } 
+}
+</PRE></DIV>
+            <P id=id_114><SPAN class=xml_em_italic>Пример 1</SPAN>. <SPAN 
+            class=texample>N</SPAN>-натуральных чисел являются элементами 
+            двунаправленного списка <SPAN class=texample>L</SPAN>, вычислить: 
+            <SPAN 
+            class=texample>X<SUB>1</SUB>*X<SUB>n</SUB>+X<SUB>2</SUB>*X<SUB>n-1</SUB>+...+X<SUB>n</SUB>*X<SUB>1</SUB></SPAN>. 
+            Вывести на экран каждое произведение и итоговую сумму.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_118>Алгоритм:</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <OL id=id_119>
+              <LI>Создаём структуру.
+              <LI>Формируем список целых чисел.
+              <LI>Продвигаемся по списку: от начала к концу и от конца к началу 
+              в одном цикле, перемножаем данные, содержащиеся в соответствующих 
+              элементах списка.
+              <LI>Суммируем полученные результаты.
+              <LI>Выводим на печать</LI></OL>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_125>Создание структуры, формирование списка и вывод на 
+            печать рассмотрены ранее. Приведем функции для реализации 
+            продвижения по списку в обоих направлениях и нахождения итоговой 
+            суммы.</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//поиск последнего элемента списка
+Double_List* Find_End_Item_Double_List(Double_List* Head){
+  Double_List *ptr; //дополнительный указатель
+  ptr = Head;
+  while (ptr-&gt;Next != NULL){
+    ptr = ptr-&gt;Next;
+  }
+  return ptr;
+}
+
+//итоговая сумма произведений
+void Total_Sum(Double_List* Head) {
+  Double_List* lel = Head;
+  Double_List* mel = Find_End_Item_Double_List(Head);
+  int mltp,sum=0;
+  while(lel != NULL) {
+    mltp = (lel-&gt;Data)*(mel-&gt;Data);//умножение элементов 
+    printf("\n\n%d * %d = %d",lel-&gt;Data,mel-&gt;Data,mltp);
+    sum = sum + mltp;//суммирование произведений 
+    lel = lel-&gt;Next; 
+    //идем по списку из первого элемента в последний
+    mel = mel-&gt;Prior; 
+    //идем по списку из последнего элемента в первый
+  }
+  printf("\n\n Итоговая сумма равна %d",sum);
+}
+</PRE></DIV><A name=sect17></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_127><B>Двунаправленный (двусвязный) список</B> – это 
+            структура данных, состоящая из последовательности элементов, каждый 
+            из которых содержит информационную часть и два указателя на соседние 
+            элементы.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_128><B>Длина списка</B> – это величина, равная числу 
+            элементов в списке.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129><B>Линейный список</B> – это список, отражающий 
+            отношения соседства между элементами.</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <P id=id_130><B>Однонаправленный (односвязный) список</B> – это 
+            структура данных, представляющая собой последовательность элементов, 
+            в каждом из которых хранится значение и указатель на следующий 
+            элемент списка.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131><B>Пустой список</B> – это список нулевой длины.</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132><B>Связанный список</B> – это структура, элементами 
+            которой служат записи одного формата, связанные друг с другом с 
+            помощью указателей, хранящихся в самих элементах.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133><B>Список</B> – это упорядоченное множество, состоящее 
+            из переменного числа элементов, к которым применимы операции 
+            включения, исключения. </P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134><B>Указатель начала списка (голова списка)</B> – это 
+            указатель на первый элемент списка.</P>
+            <DIV id=mark_134 class=lecture_mark></DIV><A name=sect18></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_135>
+              <LI>Список является динамической структурой, для элементов 
+              которого определены операции включения, исключения, 
+              <LI>В связанном списке элементы линейно упорядочены указателями, 
+              входящими в состав элементов списка.
+              <LI>Линейные связные списки являются простейшими динамическими 
+              структурами данных и в зависимости от организации связей делятся 
+              на однонаправленные и двунаправленные.
+              <LI>В однонаправленном (односвязном) списке каждый из элементов 
+              содержит информационную часть и указатель на следующий элемент 
+              списка. Адресное поле последнего элемента имеет значение NULL.
+              <LI>Каждый элемент списка содержит ключ, который идентифицирует 
+              этот элемент.
+              <LI>Основными операциями с однонаправленными списками, являются: 
+              создание списка; печать (просмотр) списка; вставка элемента в 
+              список; удаление элемента из списка; поиск элемента в списке; 
+              проверка пустоты списка; удаление списка. 
+              <LI>В двунаправленном (двусвязном) списке каждый из элементов 
+              содержит информационную часть и два указателя на соседние 
+элементы.
+              <LI>Основные операции, выполняемые над двунаправленным списком, те 
+              же, что и для однонаправленного списка.</LI></OL>
+            <DIV id=mark_135 class=lecture_mark></DIV><A name=sect19></A>
+            <H3>Лабораторная работа 29. Динамические структуры данных: 
+            однонаправленные и двунаправленные списки</H3>
+            <P id=id_144><B>Цель работы:</B> изучить понятия, классификацию и 
+            объявления списков, особенности доступа к данным и работу с памятью 
+            при использовании однонаправленных и двунаправленных списков, 
+            научиться решать задачи с использованием списков на языке C++.</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_145>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, в которой выполнено 
+            формирование однонаправленного или двунаправленного списка в 
+            соответствии с постановкой задачи, ввод данных элементов списка с 
+            учетом типа информационного поля, их обработка и вывод на экран в 
+            указанном формате. Для хранения данных списков следует использовать 
+            ресурсы динамической памяти. Ввод данных осуществляется с клавиатуры 
+            с учетом требований к входным данным, содержащихся в постановке 
+            задачи. Ограничениями на входные данные являются максимальный размер 
+            строковых данных, диапазоны числовых типов полей структуры и 
+            допустимый размер области динамической памяти в языке С++.</P>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <P id=id_146><B>Теоретические сведения.</B></P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_147>Ознакомьтесь с материалом лекции 29.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <OL id=id_150>
+              <LI>Сформируйте однонаправленный список с вещественным 
+              информационным полем. Добавьте в список заданный элемент после 
+              первого элемента с аналогичным информационным полем. Выполните 
+              печать списка до и после изменений. Найти среднее арифметическое 
+              элементов списка.
+              <LI>Сформируйте однонаправленный список с информационным полем 
+              типа <SPAN class=texample>char*</SPAN>. Добавьте в этот список 
+              элементы с нечетными номерами. Решите задачу, выполняя следующие 
+              требования: 
+              <OL id=id_154>
+                <LI>Сформировать однонаправленный список, тип информационного 
+                поля указан в варианте.
+                <LI>Распечатать полученный список.
+                <LI>Выполнить обработку списка в соответствии с заданием.
+                <LI>Распечатать полученный список.
+                <LI>Удалить список из памяти. </LI></OL>
+              <DIV id=mark_154 class=lecture_mark></DIV>
+              <LI>Для решения задачи сформируйте двунаправленный список с 
+              символьным информационным полем. Дана последовательность латинских 
+              букв, оканчивающаяся точкой. Среди букв есть специальный символ 
+              <SPAN class=texample>Ch</SPAN>, появление которого означает отмену 
+              предыдущего символа. Учитывая вхождение этого символа, 
+              преобразуйте последовательность.
+              <LI>Для решения задачи сформируйте двунаправленный список. Даны 
+              действительные числа <SPAN class=texample>a<SUB>1</SUB>, 
+              a<SUB>2</SUB>, ..., a<SUB>2n</SUB> (n&gt;= 2</SPAN>, заранее 
+              неизвестно и вводится с клавиатуры). Вычислите: <SPAN 
+              class=texample>max(min(a<SUB>1</SUB>, a<SUB>2n</SUB>), 
+              min(a<SUB>3</SUB>, a<SUB>2n-2</SUB>), ... , min (a<SUB>2n-1</SUB>, 
+              a<SUB>2</SUB>))</SPAN>.</LI></OL>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_165><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_166>Каждое задание необходимо решить в соответствии с 
+            изученными методами формирования, вывода и обработки данных 
+            однонаправленных или двунаправленных списков в языке С++. Обработку 
+            списков следует выполнить на основе базовых алгоритмов: поиск по 
+            списку, вставка элемента в список, удаление элемента из списка, 
+            удаление всего списка. При объявлении списков выполните 
+            комментирование используемых полей. Программу для решения каждого 
+            задания необходимо разработать методом процедурной абстракции, 
+            оформив комментарии к коду.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_167>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <UL id=id_168>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_177>Требования к отчету.</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <UL id=id_179>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_188>Контрольные вопросы</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <OL id=id_189>
+              <LI>Любой ли список является связным? Обоснуйте ответ.
+              <LI>В чем отличие первого элемента однонаправленного 
+              (двунаправленного) списка от остальных элементов этого же списка?
+              <LI>В чем отличие последнего элемента однонаправленного 
+              (двунаправленного) списка от остальных элементов этого же списка? 
+              <LI>Почему при работе с однонаправленным списком необходимо 
+              позиционирование на первый элемент списка? 
+              <LI>Почему при работе с двунаправленным списком не обязательно 
+              позиционирование на первый элемент списка? 
+              <LI>В чем принципиальные отличия выполнения добавления (удаления) 
+              элемента на первую и любую другую позиции в однонаправленном 
+              списке?
+              <LI>В чем принципиальные отличия выполнения основных операций в 
+              однонаправленных и двунаправленных списках?
+              <LI>С какой целью в программах выполняется проверка на пустоту 
+              однонаправленного (двунаправленного) списка?
+              <LI>С какой целью в программах выполняется удаление 
+              однонаправленного (двунаправленного) списка по окончании работы с 
+              ним? Как изменится работа программы, если операцию удаления списка 
+              не выполнять?</LI></OL>
+            <DIV id=mark_189 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.intuit.ru/department/algorithms/staldata/8/staldata_8.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>8. Лекция: Функции для работы со строками: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются библиотечные функции, предназначенные для работы со 
+            строками, и особенности их выполнения, приведены примеры 
+            использования таких функций при решении задач. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить синтаксис и семантику 
+            стандартных функций по работе со строками, научиться использовать в 
+            программах функции для работы со строками в языке C++</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Для работы со строками используются библиотечные функции, 
+            прототипы которых находятся в заголовочных файлах <SPAN 
+            class=texample>stdlib.h</SPAN> и <SPAN 
+            class=texample>string.h</SPAN>.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_5>В программах, в зависимости от типа, вызовы функций для 
+            работы со строками задаются в виде:</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяФ(СписокАргументов);
+</PRE></DIV>
+            <P id=id_7>или</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяПерем=ИмяФ(СписокАргументов);
+</PRE></DIV>
+            <P id=id_9>где <SPAN class=texample>ИмяФ</SPAN> – имя функции; <SPAN 
+            class=texample>СписокАргументов</SPAN> – список аргументов, 
+            передаваемых в тело функции; <SPAN class=texample>ИмяПерем</SPAN> – 
+            идентификатор соответствующего типа.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_13>Например:</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <DIV class=example><PRE>y=strlen(st); 
+  /*переменной y присвоить значение длины строки st*/
+</PRE></DIV>
+            <P id=id_15>При использовании библиотечных функций следует учитывать 
+            некоторые особенности их выполнения и представления символьных 
+            данных в памяти.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <UL id=id_16>
+              <LI>Функции, работающие с регистрами, распространяются только на 
+              латиницу.
+              <LI>В С++ некоторые параметры функций обработки символов 
+              принадлежат типу <SPAN class=texample>int (unsigned)</SPAN>, 
+              поэтому, если число станет больше 128 (255), функция будет 
+              работать некорректно.
+              <LI>Перед первым обращением к строке она должна быть объявлена и 
+              проинициализирована. Во многих случаях в качестве начального 
+              значения строки необходимо бывает задать <SPAN 
+              class=xml_em_italic>пустую строку</SPAN>. Такую инициализацию 
+              можно выполнить с помощью вызова функции <SPAN 
+              class=texample>strcpy(s, "");</SPAN>, но более эффективным будет 
+              присваивание <SPAN class=texample>*s=0;</SPAN>. Кроме того пустую 
+              строку можно инициализировать <SPAN class=texample>char 
+              s[10]="";</SPAN> или char <SPAN class=texample>s[10]="\0";</SPAN>, 
+              но при этом размер строки должен быть задан.
+              <LI>Функции копирования (кроме <SPAN 
+              class=texample>strncpy</SPAN>) не проверяют длину строки. Размер 
+              строки-приемника должен быть больше, чем размер источника на 1 
+              символ (для символа <SPAN class=texample>'\0'</SPAN>).</LI></UL>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_28>При вызове функции <SPAN class=texample>strncpy</SPAN> 
+            следует помнить, что, если длина копируемой строки превосходит 
+            параметр kol, то строка-получатель не будет завершена символом <SPAN 
+            class=texample>'\0'</SPAN>. В этом случае такой символ надо 
+            дописывать в конец строки вручную.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <DIV id=id_31 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Функции для работы со строками – файл stdlib.h</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Функция</TH>
+                <TH bgColor=#d8d8d8>Прототип</TH>
+                <TH bgColor=#d8d8d8>Краткое описание действий</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>atof</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>double 
+                  atof (const char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует строку <SPAN 
+                  class=texample>str</SPAN> в вещественное число типа <SPAN 
+                  class=texample>double</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>atoi</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int atoi 
+                  (const char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует строку <SPAN 
+                  class=texample>str</SPAN> в целое число типа <SPAN 
+                  class=texample>int</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>atol</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long atol 
+                  (const char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует строку <SPAN 
+                  class=texample>str</SPAN> в целое число типа <SPAN 
+                  class=texample>long</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>itoa</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char *itoa 
+                  (int v, char *str, int baz);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует целое <SPAN 
+                  class=texample>v</SPAN> в строку <SPAN 
+                  class=texample>str</SPAN>. При изображении числа используется 
+                  основание <SPAN class=texample>baz (2<IMG 
+                  style="POSITION: relative; TOP: 2px" border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>baz<IMG style="POSITION: relative; TOP: 2px" 
+                  border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>36)</SPAN>. Для отрицательного числа и <SPAN 
+                  class=texample>baz</SPAN>=10 первый символ "минус" (–).</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>ltoa</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char *ltoa 
+                  (long v, char *str, int baz);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует длинное целое <SPAN 
+                  class=texample>v</SPAN> в строку <SPAN 
+                  class=texample>str</SPAN>. При изображе-нии числа используется 
+                  основание <SPAN class=texample>baz (2<IMG 
+                  style="POSITION: relative; TOP: 2px" border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>baz<IMG style="POSITION: relative; TOP: 2px" 
+                  border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>36)</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ultoa</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *ultoa (unsigned long v, char *str, int baz);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует беззнаковое длинное 
+                  целое <SPAN class=texample>v</SPAN> в строку <SPAN 
+                  class=texample>str</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV id=id_59 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Функции для работы со строками – файл string.h</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Функция</TH>
+                <TH bgColor=#d8d8d8>Прототип</TH>
+                <TH bgColor=#d8d8d8>Краткое описание действий</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strcat</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strcat (char *sp, const char *si);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>приписывает строку <SPAN 
+                  class=texample>si</SPAN> к строке <SPAN 
+                  class=texample>sp</SPAN> (конкатенация строк)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strchr</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strchr (const char *str, int c);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>ищет в строке <SPAN 
+                  class=texample>str</SPAN> первое вхождение символа <SPAN 
+                  class=texample>с</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strcmp</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int strcmp 
+                  (const char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>сравнивает строки <SPAN 
+                  class=texample>str1</SPAN> и <SPAN class=texample>str2</SPAN>. 
+                  Результат отрицателен, если <SPAN 
+                  class=texample>str1&lt;str2</SPAN>; равен нулю, если <SPAN 
+                  class=texample>str1==str2</SPAN>, и положителен, если <SPAN 
+                  class=texample>str1&gt;str2</SPAN> (сравнение 
+              беззнаковое)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strcpy</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strcpy (char *sp, const char *si);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>копирует байты строки <SPAN 
+                  class=texample>si</SPAN> в строку <SPAN 
+                  class=texample>sp</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strcspn</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  strcspn (const char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>определяет длину первого 
+                  сегмента строки <SPAN class=texample>str1</SPAN>, содержащего 
+                  символы, не входящие во множество символов строки <SPAN 
+                  class=texample>str2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strdup</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strdup (const char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>выделяет память и переносит в 
+                  нее копию строки <SPAN class=texample>str</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strlen</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>unsigned 
+                  strlen (const char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>вычисляет длину строки <SPAN 
+                  class=texample>str</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strlwr</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strlwr (char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует буквы верхнего 
+                  регистра в строке в соответствующие буквы нижнего 
+              регистра</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strncat</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strncat (char *sp, const char *si, int kol);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>приписывает <SPAN 
+                  class=texample>kol</SPAN> символов строки <SPAN 
+                  class=texample>si</SPAN> к строке <SPAN 
+                  class=texample>sp</SPAN> (конкатенация)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strncmp</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  strncmp (const char *str1, const char *str2, int 
+                kol);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>сравнивает части строк <SPAN 
+                  class=texample>str1</SPAN> и <SPAN class=texample>str2</SPAN>, 
+                  причем рассматриваются первые <SPAN class=texample>kol</SPAN> 
+                  символов. Результат отрицателен, если <SPAN 
+                  class=texample>str1&lt;str2</SPAN>; равен нулю, если <SPAN 
+                  class=texample>str1==str2</SPAN>, и положителен, если <SPAN 
+                  class=texample>str1&gt;str2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strncpy</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strncpy (char *sp, const char *si, int kol);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>копирует <SPAN 
+                  class=texample>kol</SPAN> символов строки <SPAN 
+                  class=texample>si</SPAN> в строку <SPAN 
+                  class=texample>sp</SPAN> ("хвост" отбрасывается или 
+                  дополняется пробелами)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strnicmp</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  strnicmp (char *str1, const char *str2, int kol);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>сравнивает не более <SPAN 
+                  class=texample>kol</SPAN> символов строки <SPAN 
+                  class=texample>str1</SPAN> и строки <SPAN 
+                  class=texample>str2</SPAN>, не делая различия регистров (см. 
+                  функцию <SPAN class=texample>strncmp</SPAN>)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strnset</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strnset (char *str, int c, int kol);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>аменяет первые <SPAN 
+                  class=texample>kol</SPAN> символов строки <SPAN 
+                  class=texample>str</SPAN> символом <SPAN 
+                  class=texample>c</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strpbrk</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strpbrk (const char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>ищет в строке <SPAN 
+                  class=texample>str1</SPAN> первое появление любого из 
+                  множества символов, входящих в строку <SPAN 
+                  class=texample>str2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strrchr</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strrchr (const char *str, int c);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>ищет в строке <SPAN 
+                  class=texample>str </SPAN>последнее вхождение символа <SPAN 
+                  class=texample>с</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strset</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strset (char *str, int c);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>заполняет строку <SPAN 
+                  class=texample>str</SPAN> заданным символом <SPAN 
+                  class=texample>c</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strspn</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int strspn 
+                  (const char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>определяет длину первого 
+                  сегмента строки <SPAN class=texample>str1</SPAN>, содержащего 
+                  только символы, из множества символов строки <SPAN 
+                  class=texample>str2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strstr</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strstr (const char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>ищет в строке <SPAN 
+                  class=texample>str1</SPAN> подстроку <SPAN 
+                  class=texample>str2</SPAN>. Возвращает указатель на тот 
+                  элемент в строке <SPAN class=texample>str1</SPAN>, с которого 
+                  начинается подстрока <SPAN class=texample>str2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strtod</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>double 
+                  strtor (const char *str, char **endptr);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует символьную 
+                  константу <SPAN class=texample>str</SPAN> в число двойной 
+                  точности. Если <SPAN class=texample>endptr</SPAN> не равен 
+                  <SPAN class=texample>NULL</SPAN>, то <SPAN 
+                  class=texample>*endptr</SPAN> возвращается как указатель на 
+                  символ, при достижении которого прекращено чтение строки <SPAN 
+                  class=texample>str</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strtok</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strtok (char *str1, const char *str2);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>ищет в строке <SPAN 
+                  class=texample>str1</SPAN> лексемы, выделенные символами из 
+                  второй строки</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strtol</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  strtol (const char *str, char **endptr, int baz);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует символьную 
+                  константу <SPAN class=texample>str</SPAN> к значению "длинное 
+                  число" с основанием <SPAN class=texample>baz (2<IMG 
+                  style="POSITION: relative; TOP: 2px" border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>baz<IMG style="POSITION: relative; TOP: 2px" 
+                  border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+                  width=8 height=18>36)</SPAN>. Если <SPAN 
+                  class=texample>endptr</SPAN> не равен <SPAN 
+                  class=texample>NULL</SPAN>, то <SPAN 
+                  class=texample>*endptr</SPAN> возвращается как указатель на 
+                  символ, при достижении которого прекращено чтение строки <SPAN 
+                  class=texample>str</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>strupr</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  *strupr (char *str);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>преобразует буквы нижнего 
+                  регистра в строке <SPAN class=texample>str</SPAN> в буквы 
+                  верхнего регистра</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_163>Сравнение строк с помощью функции <SPAN 
+            class=texample>strcmp</SPAN> осуществляется побайтово в <SPAN 
+            class=xml_em_italic>лексикографическом порядке</SPAN>, то есть в 
+            порядке следования соответствующих байтов строк в таблице кодировки. 
+            Именно поэтому значения элементов в строках зависят от регистра.</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_165>При использовании библиотечных функций следует иметь в 
+            виду, что указатель на строку и имя массива символов указывают на 
+            адрес размещения строки в памяти. Это означает, что изменения 
+            значений элементов строки сохраняются после завершения работы 
+            функции. Чтобы не допустить изменений в строке используется 
+            указатель на константу, который не позволит модифицировать данные, 
+            хранящиеся по адресуемой области памяти.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_166><SPAN class=xml_em_italic>Пример 1.</SPAN></P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Программа демонстрирует работу функций из файла stdlib.h 
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char sv[]="23.547",
+       si[]="1234",
+       sl[]="-112424",
+       st1[15],st2[25],st3[15];
+  double v;
+  int i;   
+  long l,t=457821;
+      
+  v=atof(sv); 
+  printf("Преобразование строки в вещественное число = %f\n",v);
+  i=atoi(si); 
+  printf("Преобразование строки в целое число = %d\n",i);
+  l=atol(sl); 
+  printf("Преобразование строки в длинное целое число = %ld\n",l);
+  printf("Преобразование длинного целого числа в строку = %s\n",
+         ultoa(t,st1,10));
+  printf("Преобразование длинного целого числа в строку = %s\n",
+         ultoa(t,st2,2));
+  printf("Преобразование длинного целого числа в строку = %s\n",
+          ultoa(t,st3,16));
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_168><SPAN class=xml_em_italic>Пример 2.</SPAN></P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Программа демонстрирует работу функций из файла string.h 
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[50],sp[100],str[]="", 
+       si[]="qwerty",
+       sl[]="qwerty",
+       sw[]="qwertyu";
+  int len=0, sravn1, sravn2, sravn3, kol=5;    
+  printf("Введите строку: ");
+  gets(st);
+  len=strlen(st); printf("Длина строки = %d\n",len);
+  printf("Конкатенация строк: %s\n",strcat(st,"12cdb")); 
+  sravn1=strcmp(si,sl);
+  printf("Сравнение строк: %s==%s результат %d\n", 
+          si,sl,sravn1);
+  sravn2=strcmp(si,sw);
+  printf("Сравнение строк: %s&lt;%s результат %d\n", 
+          si,sw,sravn2);
+  sravn3=strcmp(sw,si);
+  printf("Сравнение строк: %s&gt;%s результат %d\n", 
+          sw,si,sravn3);
+  printf("Копирование байтов: %s\n",strcpy(sp,st));
+  printf("Преобразование букв нижнего регистра в верхний: %s\n", 
+strupr(st));
+  printf("Преобразование букв верхнего регистра в нижний: %s\n", 
+         strlwr(st));
+  printf("Копирование %d символов в другую строку: %s\n",  
+          kol,strncpy(str,st,kol)); 
+  printf("Поиск в строке первого появления символа из другой строки:  
+         %s\n",strpbrk(st,si));
+  printf("Поиск в строке последнее вхождение заданного 
+          символа: %s\n",strrchr(st,'t')); 
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_170><SPAN class=xml_em_italic>Пример 3.</SPAN></P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Поиск множества неповторяющихся символов строки
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[80];
+  int i,j,flag,len;
+  printf("Введите строку: ");
+  gets(st);
+  len=strlen(st); //длина строки
+  printf("Неповторяющиеся символы строки образуют множество: ");
+  for (i=0;i&lt;len;i++){
+    flag=0; //флаг проверки на совпадение
+    for (j=0;j&lt;i;j++) //сравнение символа с предыдущими
+      if (st[i]==st[j]) flag=1;
+    if (flag==0)printf("%c",st[i]);
+  }
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_172><SPAN class=xml_em_italic>Пример 4.</SPAN></P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Удаление лишних левых и внутренних пробелов в строке при выводе*/
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[80];
+  int i=0,len;
+  printf("Введите строку: ");
+  gets(st);
+  len=strlen(st);//длина строки 
+  printf("Преобразованная строка: ");
+  //Удалены лишние пробелы слева 
+  while (st[i++]==' '); 
+  //Удалены лишние пробелы внутри строки  
+  for (--i;i&lt;len;i++)
+    if ((st[i]!=' ')||(st[i+1]!=' ')) 
+      printf("%c",st[i]); //если рядом два пробела
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect2></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_174><B>Конкатенация строк</B> – это результат 
+            последовательного соединения строк.</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175><B>Лексикографический порядок</B> – правило сравнения 
+            символов, основанное на величине кода внутреннего представления 
+            каждого символа.</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176><B>Пустая строка</B> – это строка единичной длины, 
+            содержащая только символ конца строки.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_177><B>Сравнение строк</B> – это результат проверки 
+            выполнения отношения "больше", "меньше" или "равно" над 
+строками.</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178><B>Стандартные функции по работе со строками</B> – это 
+            функции обработки строк, прототипы которых входят в стандартные 
+            библиотеки С++.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_179>
+              <LI>Для работы со строками в языке С++ предусмотрены стандартные 
+              функции, прототипы которых включены в стандартные библиотеки <SPAN 
+              class=texample>stdlib.h</SPAN> и <SPAN 
+              class=texample>string.h</SPAN>.
+              <LI>При обращении к функциям для работы со строками следует 
+              учитывать, что изменение значений элементов строк сохраняются 
+              после завершения работы функции.
+              <LI>Перед использованием строки в программном коде ее необходимо 
+              проинициализировать. Неинициализированные строки могут привести к 
+              некорректной работе программы.
+              <LI>В некоторых стандартных функциях по работе со строками следует 
+              проводить контроль длин параметров. 
+              <LI>Результат работы некоторых функций требует принудительного 
+              добавления к строке символа конца строки.
+              <LI>Значения элементов строк зависят от регистра.
+              <LI>Изменение регистра символов кириллицы в программе может 
+              выполняться некорректно.</LI></OL>
+            <DIV id=mark_179 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Лабораторная работа 8. Функции для работы со строками</H3>
+            <P id=id_189><B>Цель работы:</B> изучить синтаксис и семантику 
+            стандартных функций по работе со строками, научиться использовать в 
+            программах функции для работы со строками в языке C++.</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_190>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            одну или несколько строк символов (в зависимости от постановки 
+            задачи), выполняет обработку строк в соответствии с требованиями 
+            задания и выводит результат на экран. Ввод данных осуществляется с 
+            клавиатуры с учетом требований к входным данным, содержащихся в 
+            постановке задачи. Ограничениями на входные данные является 
+            максимальный размер строковых данных в языке С++.</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191><B>Теоретические сведения.</B></P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_192>Ознакомьтесь с материалом лекции 8.</P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <P id=id_193><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_194>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <OL id=id_195>
+              <LI>Дана строка, в которой слова разделены одним пробелом. 
+              Замените первые буквы всех слов на заглавные (если слово 
+              начинается с заглавной буквы, оставьте без изменения).
+              <LI>Дана строка, в которой слова разделены одним пробелом. 
+              Подсчитайте, сколько букв <SPAN class=texample>'w'</SPAN> 
+              встречается в каждом слове.
+              <LI>Дана строка, в которой слова разделены одним пробелом. 
+              Подсчитайте, сколько в каждом слове букв, совпадающих с его первой 
+              буквой.
+              <LI>Дана строка. Преобразуйте ее так, чтобы сначала следовали 
+              цифровые символы, а затем все остальные. Порядок следования 
+              символов между собой не изменять.</LI></OL>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_201><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки строковых и символьных данных, 
+            используя библиотечные функции обработки строковых данных в языке 
+            С++.</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <UL id=id_204>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <P id=id_213><B>Требования к отчету.</B></P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <P id=id_214>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <UL id=id_215>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_215 class=lecture_mark></DIV>
+            <P id=id_224>Контрольные вопросы</P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <OL id=id_225>
+              <LI>Что будет являться результатом работы функции побайтового 
+              копирования строк, если длина строки-источника превосходит 
+              допустимый размер строки-приемника?
+              <LI>Что будет являться результатом работы функции побайтового 
+              копирования строк, если длина строки-источника меньше размера 
+              строки-приемника?
+              <LI>Почему при сравнении строк важен регистр символов?
+              <LI>Как сравниваются строки разной длины?
+              <LI>Какие возможны последствия при обращении к 
+              неинициализированной строке?
+              <LI>Почему функция изменения регистра символов строки может 
+              некорректно работать с кириллицей?</LI></OL>
+            <DIV id=mark_225 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

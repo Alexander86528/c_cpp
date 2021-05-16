@@ -1,0 +1,2081 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+
+
+<link href="http://popup.osp.ru/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://popup.osp.ru/tooltip_js_cfg/tooltip-core.js"></script>
+<script type="text/javascript" src="http://popup.osp.ru/tooltip_js_cfg/tooltip-dynamic.js"></script>
+<script type="text/javascript">document.write('<script type="text/javascript" src="http://popup.osp.ru/tooltip_cfg/tooltip-cfg-16.js?rnd=' + Math.round(Math.random() * 100000) + '"><\/script>')</script>
+
+
+<title>INTUIT.ru: Учебный курс - Структуры и алгоритмы компьютерной обработки данных</title>
+
+<meta name="description" content="INTUIT.ru: учебный курс Структуры и алгоритмы компьютерной обработки данных"/>
+
+<meta name="keywords" content="учебный курс Структуры и алгоритмы компьютерной обработки данных INTUIT"/>
+
+<script type="text/javascript" src="/ssi/menu.js?2009-06-04"></script>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta name="Pragma" content="no-cache" />
+<meta name="Cache-Control" content="no-cache" />
+<link href="/ssi/course.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/ssi/course.js"></script>
+<script type="text/javascript" src="/ssi/auth.js"></script>
+<script type="text/javascript" src="info.js"></script>
+<script type="text/javascript" src="/ssi/last_qa.js"></script>
+<link href="/ssi/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body bgcolor="white">
+<!---->
+<!--header-->
+<!---->
+<div class="topbanner">
+<div style="text-align: center;">
+
+
+
+
+
+<script type="text/javascript">
+// <!--
+var osp_login = "intuit_top_60x100percent";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="100%" height="60" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="100%" height="60" border="0" ismap="ismap"></a></iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://mb.osp.ru/cgi-bin/iframe/intuit_top_60x100percent?options=T" width="100%" height="60" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/intuit_top_60x100percent" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/intuit_top_60x100percent?options=T" alt="MadBanner" width="100%" height="60" border="0" ismap="ismap"></a></iframe>
+</noscript>
+
+
+
+
+<script type="text/javascript">
+// <!--
+	var body = document.getElementById('body');
+	if(body) {
+		body.topmargin = 0;
+		body.marginheight = 0;
+		body.style.topmargin='0';
+		body.style.marginTop = 0;
+	}
+// -->
+</script>
+
+
+<!---->
+</div></div>
+
+
+<!-- topbox -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="white">
+<tr>
+<td class="border">
+
+<!-- header:logo, menu -->
+<table border="0" cellpadding="6" cellspacing="0" width="100%">
+<tr valign="top">
+<td rowspan="3" align="left"><a href="/"><img src="/img/logo.gif" border="0" width="285" height="52" alt="Интернет Университет информационных технологий"></a></td>
+<td valign=top align=right class="epigraph">Твой путь к знаниям</a></td>
+</tr>
+<tr valign=bottom align=right>
+<td class="topnavi""> 
+<a href="/user/login/">регистрация</a> || 
+<a href="/user/speciality/">зачетка</a> | 
+<a href="/user/diploms/">дипломы</a> 
+</td>
+</tr>
+</table>
+<!-- //header:logo, menu -->
+<!-- menu -->
+<table border="0" cellpadding="" cellspacing="0" width="100%" bgcolor="#ff9900" background="/img/bgtopmenu2.gif">
+<tr>
+<td align="left" height="24" class="topmenu"><form action="/search" name="ya_search">
+<input name="text" type="text" value="" style="margin-left:3px; margin-top:3px;">&nbsp;&nbsp;<a href=# onClick="document.ya_search.submit();">Искать!</a></td>
+</form></td>
+<td align="right" height="24" class="topmenu">
+<a 
+	id="menu_courses"
+	onMouseOver="return menu_mov('courses');" 
+	onMouseOut="return menu_mot('courses');" 
+	href="/courses.html">Курсы</a> 
+|
+<a 
+	id="menu_education"
+	onMouseOver="return menu_mov('education');" 
+	onMouseOut="return menu_mot('education');" 
+	href="/speciality/">Обучение</a> 
+|
+<a 
+	id="menu_school"
+	onMouseOver="return menu_mov('school');" 
+	onMouseOut="return menu_mot('school');" 
+	href="/catalog/school/">Школа</a> 
+|
+<a 
+	id="menu_shop"
+	onMouseOver="return menu_mov('shop');" 
+	onMouseOut="return menu_mot('shop');" 
+	href="/shop/">Магазин</a> 
+|
+<a 
+	id="menu_communication"
+	onMouseOver="return menu_mov('communication');" 
+	onMouseOut="return menu_mot('communication');" 
+	href="http://forum.intuit.ru/">Общение</a> 
+|
+
+
+<a 
+	id="menu_news"
+	onMouseOver="return menu_mov('news');" 
+	onMouseOut="return menu_mot('news');" 
+	href="/news/">Новости</a>  
+
+|
+<a 
+	id="menu_help"
+	onMouseOver="return menu_mov('help');" 
+	onMouseOut="return menu_mot('help');" 
+	href="/help/">Помощь</a> 
+
+
+</td></tr>
+<tr>
+<td align="right" colspan="2" 
+	onMouseOver="return menu2_mov();" 
+	onMouseOut="return menu2_mot();" 
+	class="menu2">
+<div 
+	class="menu_collections"
+	id="cmenu_courses">
+<div class="menu_polosa">
+<a href="/courses.html">все</a>
+| 
+<a href="/video/">видеокурсы</a>
+| 
+<a href="/rating_courses/?sort=start">новые</a>
+| 
+<a href="/rating_courses/?sort=mstudents">популярные</a>
+| 
+<a href="/video/tree/video/speech/">доклады</a>
+<div class="delim">||</div>
+<a href="/underway_courses.html">курсы в разработке</a>
+| 
+<a href="/author_list.html">авторы</a>
+</div>
+</div>
+
+<div 
+	class="menu_collections"
+	id="cmenu_shop">
+<div class="menu_polosa">
+<a href="/shop/books/">книги</a>
+| 
+<a href="/shop/soft/">курсы на CD</a>
+| 
+<a href="/shop/video/">видеокурcы на DVD</a>
+| 
+<a href="/shop/books/sale/">распродажа</a>
+| 
+<a href="/shop/books/novelty/">новинки</a>
+<div class="delim">||</div>
+<a href="/user/cart/">корзина</a>
+| 
+<a href="/user/account/">личный счет</a> 
+|
+<a href="/shop/order/history.xhtml">заказы</a>
+| 
+<a href="/user.html">настройка</a>
+</div>
+</div>
+
+
+<div 
+	class="menu_collections"
+	id="cmenu_education">
+<div class="menu_polosa">
+
+<a href="/groups/catalog/">учебные группы</a>
+| 
+<a href="/speciality/">учебные программы</a>
+<div class="delim">||</div> 
+<a href="http://hpcu.ru" target="_blank">HPCU.ru: Суперкомпьютерные технологии</a>
+|
+<a href="/speciality/hsbi/">ВШБИ</a>
+|
+<a target="_blank" href="http://www.diofant.ru/" target="_blank">Diofant.ru</a>
+</div>
+</div>
+
+<div 
+	class="menu_collections"
+	id="cmenu_school">
+<div class="menu_polosa">
+<a href="/catalog/school/">курсы</a>
+| 
+<a href="/catalog/school/school/">видеокурсы</a>
+| 
+<a href="/shop/video/school/">видеокурсы на DVD</a>
+</div>
+</div>
+
+
+<div 
+	class="menu_collections"
+	id="cmenu_communication">
+<div class="menu_polosa">
+<a href="http://forum.intuit.ru/">форум</a>
+| 
+<a href="http://ask.intuit.ru/">вопросы и ответы</a>
+| 
+<a href="/help/askform.xhtml">задать вопрос</a>
+<div class="delim">||</div>
+<a href="/rating_students/">рейтинг студентов</a>
+</div>
+</div>
+
+
+<div 
+	class="menu_collections"
+	id="cmenu_help">
+<div class="menu_polosa">
+<a href="/help/about.html">о проекте</a>
+| 
+<a href="/help/learning.html">об учебе</a>
+| 
+<a href="/help/how.html">как учиться</a>
+| 
+<a href="/help/pay.html">платное обучение</a>
+| 
+<a href="/help/user.html">настройки</a>
+| 
+<a href="/help/orders.html">магазин</a>
+| 
+<a href="/help/groups.html">группы</a>
+</div>
+</div>
+
+<div
+	class="menu_collections"
+	id="cmenu_news">
+<div class="menu_polosa">
+<a href="/news/">лента новостей</a>
+|
+<a 
+	title="RSS" href="/news.rss" 
+	target="_blank"><img class="rss" border="0" width="12" height="12" src="/img/rss.gif">RSS</a>
+| 
+<a href="/job/">работа</a>
+| 
+<a href="http://www.intuit.ru/user/subscribe/">подписка</a>
+<div class="delim">||</div>
+<a target="_blank" href="http://www.osp.ru/">OSP.ru</a>
+| 
+<a target="_blank" href="http://tv.osp.ru/">видеоновости</a>
+</div>
+</div>
+
+
+<div 
+	class="menu_collections"
+	id="cmenu_default">
+<div class="menu_polosa">
+&nbsp;
+</div>
+</div>
+
+</td>
+</tr>
+</table>
+<script>
+	menu_reset();
+</script>
+<!-- //menu -->
+</td>
+</tr>
+</table>
+<!-- //topbox -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="center" class="menu">
+<table border=0 cellpadding=1 cellspacing=0 width=100% class="orang_border"><tr><td>
+<table border=0 cellpadding=4 cellspacing=0 width=100% bgcolor="#ccffcc">
+<tr align=center>
+<td width="100%" class="rtxt">
+<a href="http://www.intuit.ru/konkurs/"><b><font color="#ff0000">ПРИГЛАШАЕМ ЛЕКТОРОВ НА СЪЕМКУ КУРСОВ</font></b></a> 
+||
+<a href="/shop/product-2493596.html"><font color="#990000">ВСЕ ВИДЕОКУРСЫ</font> на переносном диске (320 Гб)</a> 
+ и <a href="/shop/product-2493478.html"><font color="#990000">370 КУРСОВ</font> на DVD</a>
+<!--
+<a href="/shop/video/"><font color="#006600">видеокурсы на DVD</font></a>
+-->
+</td>
+</tr></table>
+</td></tr></table>
+</td>
+</tr>
+</table>
+
+<br>
+
+<!--/header-->
+<!---->
+<!--/menu-->
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="73">
+<tr valign="top">
+<td width="6"><img src="/img/empty.gif" width="6"></td>
+<td>
+<div class="_ga1_on_">
+
+<div class="course_content">
+
+
+<span 
+	title="Спонсорская поддержка проекта"
+	class="course_title_right">
+<a 
+	class="course_title_right" 
+	href="/user/account/sponsor.xhtml"><img 
+		width="15"
+		height="17"
+	src="/img/rubm.gif"></a>
+<a 
+	class="course_title_right" 
+	href="/user/account/sponsor.xhtml">поддержка курса</a></span>
+
+<span class="course_title">Структуры и алгоритмы компьютерной обработки данных</span>
+
+<br>
+
+
+Авторы:
+
+<a class="course_author"  
+	title="Сундукова Татьяна Олеговна"
+	href="/lector/606.html">Т.О. Сундукова</a>,
+<a class="course_author"  
+	title="Ваныкина Галина Владиславовна"
+	href="/lector/607.html">Г.В. Ваныкина</a>
+
+
+
+
+<br>
+
+
+
+
+<div 
+	id="course_stat" 
+	
+>
+<hr class="course_hr">
+<table border="0" cellpadding="2" cellspacing="2" width="100%" ><tr>
+
+<td valign="BOTTOM">
+<a 
+	class="course_stat"
+	onClick="window.open(this.href,'', 'toolbars=no,status=no,location=no,resizable=yes,scrollbars=no');return false;"
+	href="/help/popup/course_info.html">?</a>
+</td>
+<td valign="top" class="course_stat">
+Уровень: <span id="course_level" class="course_stat_data">для начинающих</span>
+||
+Статус: <span id="course_status" class="course_stat_data">бесплатный</span>
+||
+Опубликован: <span id="course_pub_time" class="course_stat_data">02.02.2011</span>
+
+<br>
+<span title="оценка курса выпускниками">Рейтинг: <span id="course_rating" class="course_stat_data">0.00</span></span>
+||
+<span title="количество студентов за последний месяц">Популярность: <span id="course_pop" class="course_stat_data">24</span></span>
+||
+Студентов: <span class="course_stat_data" id="course_stud1" title="всего студентов">24</span>/<span class="course_stat_data" id="course_stud2"  title="всего выпускников">0</span>
+
+</td>
+
+</tr></table>
+</div>
+
+
+<hr class="course_hr">
+
+<div class="course_menu">
+
+Студентам: 
+
+<span class="course_offline">
+<a 
+	title="Автономная система для изучения курса без подключения к интернету, включает тексты лекций и все тесты."
+	href="/shop/courses/?media=download&expand_selected=1&courses=909">версия для локальной работы</a>
+</span>
+
+
+
+
+
+
+
+|
+<a href="/department/algorithms/staldata/lit.html" class="course_menu_item">литература</a>
+
+
+
+|
+<a href="/shop/books/departments/algorithms/staldata/" class="course_menu_item">учебники</a>
+
+
+|
+<a href="/department/algorithms/staldata/forum/" class="course_menu_item">форум</a>
+
+|
+<a href="/department/algorithms/staldata/class/opinions/" class="course_menu_item">мнения</a>
+|
+<a href="/department/algorithms/staldata/class/classmates/" class="course_menu_item">однокурсники</a>
+|
+<a href="/department/algorithms/staldata/class/rating/" class="course_menu_item">рейтинг</a>
+
+</div>
+<hr class="course_hr">
+
+
+
+
+
+
+<div class="course_info_item">
+<span class="course_info_title">Поддержка</span><br>
+<div>
+
+
+<a target="_blank" href="http://www.microsoft.ru/"><img hspace="5" vspace="5" align="right" width="144" height="24" alt="Microsoft" border="0" src="/img/assist/25/logo.jpg"></a>
+
+
+Курс создан при финансовой поддержке компании<br>
+
+<a target="_blank" class="rtitle" href="http://www.microsoft.ru/">Microsoft</a>
+
+</div>
+</div>
+<p>
+
+
+
+
+
+
+
+<div class="course_info_item">
+<!---->
+<div id="lecture_banner" class="bannere240x400">
+<div class="banner240x90">
+<script type="text/javascript">
+// <!--
+var osp_login = "intuit-240x90";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="240" height="90" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="240" height="90" border="0" ismap="ismap"></a></iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://mb.osp.ru/cgi-bin/iframe/intuit-240x90?options=T" width="240" height="90" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/intuit-240x90" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/intuit-240x90?options=T" alt="MadBanner" width="240" height="90" border="0" ismap="ismap"></a></iframe>
+</noscript>
+
+</div>
+
+<script type="text/javascript">
+// <!--
+var osp_login = "intuit-240x400";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="240" height="400" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="240" height="400" border="0" ismap="ismap"></a></iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://mb.osp.ru/cgi-bin/iframe/intuit-240x400?options=T" width="240" height="400" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/intuit-240x400" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/intuit-240x400?options=T" alt="MadBanner" width="240" height="400" border="0" ismap="ismap"></a></iframe>
+</noscript>
+
+
+</div>
+<!---->
+
+<span class="course_info_title">Информация о курсе</span><br>
+<b>Комплекс лекций с упражнениями для обучения моделированию задач на базе основных структур данных, алгоритмизации и программированию в среде MS Visual Studio 2010. Каждая тема содержит лекционный материал, примеры программных кодов, задания для аудиторной и самостоятельной работы. 
+</b><br>
+Комплекс лекций с упражнениями для обучения программированию на языке С++, ориентированный на работу в среде MS Visual Studio 2010. Каждая тема имеет следующую структуру: название темы, цель, ключевые слова, теоретическая часть (необходимый для выполнения работы теоретический материал, который отражает основные положения лекции по соответствующей теме), примеры программных кодов в среде MS Visual Studio 2010, комплекс задач для аудиторной и самостоятельной работы (задачи представлены в порядке возрастания сложности). 
+<br><br>
+</div>
+
+
+
+<div class="course_info_item"><span class="course_info_title">
+Цель</span><br>
+Формирование алгоритмической и информационной культуры студентов при обучении программированию на языке С++ в среде MS Visual Studio 2010.
+<br><br>
+</div>
+
+
+
+<div class="course_info_item">
+<span class="course_info_title">Предварительные знания</span><br>
+Освоение обязательного минимума содержания предметной области Информатика и ИКТ для средней школы; алгоритмических основ языка программирования С++; курсов математического анализа и аналитической геометрии для высшей школы.
+<br><br>
+</div>
+
+
+
+<div class="course_info_item">
+<span class="course_info_title">Предварительные курсы</span><br>
+<UL class="course_list">
+
+<LI>
+<a href="/department/pl/cpp2/" class="course_course">Язык программирования C++ для профессионалов</a>
+
+
+</LI>
+
+<LI>
+<a href="/department/pl/cpp/" class="course_course">Язык программирования C++</a>
+
+
+</LI>
+
+<LI>
+<a href="/department/pl/hlprogcpp/" class="course_course">Программирование на языке C++</a>
+
+
+</LI>
+
+</UL>
+</div>
+
+
+
+
+<div class="course_info_item">
+<span class="course_info_title">Дополнительные курсы</span><br>
+<UL class="course_list">
+
+<LI>
+<a href="/department/pl/ccpp/" class="course_course">Введение в языки программирования C и C++</a>
+
+
+</LI>
+
+<LI>
+<a href="/department/se/pwinviscpp2005/" class="course_course">Программирование под Windows в среде Visual C++ 2005</a>
+
+
+</LI>
+
+<LI>
+<a href="/department/se/prmfcv/" class="course_course">Практикум прикладного программирования на MFC и C++ в среде VS.NET</a>
+
+
+</LI>
+
+</UL>
+</div>
+
+
+
+
+<div class="course_info_item">
+<div id="diplomas" class="course_info_title">Диплом</div>
+<div class="diplamas2">
+<table>
+<tr>
+
+<td><div class="cell">
+
+
+<div title="Серитфикат Интернет-Университета Информационных Технологий" class="diplama_course" style="width=107px;">
+<div class="head">Бесплатное обучение</div>
+
+
+<table class="image-blok"><tr>
+<td class="image">
+<a 
+	target="_blank" 
+	onClick="return popup_a(this);"
+	href="/speciality/intuit/staldata/diplom/ru/"><img width="72" height="106" border="0" src="/img/vuz_diploma/sm_6.jpg"></a>
+
+</td>
+</tr>
+<tr>
+<td class="text">
+<div class="name"%style_div_name%>сертификат 
+<div class="vuz">(ИНТУИТ)</div>
+</td>
+</tr></table>
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="button_subscribe" id="program_intuit_subscribe">
+<form class="course_form" method="post" action="/speciality/intuit/staldata/subscribe/">
+<input type="hidden" name="ss_class_id" value="1455">
+<input type="hidden" name="OK" value="1">
+
+
+<input type="hidden" name="requiring_payment" value="0">
+<input type="hidden" name="send_mail" value="1">
+
+
+<input type="hidden" name="send_mail_class" value="0">
+
+<input type="hidden" name="ss_class_id" value="1455">
+
+<input type="submit" name="GO" value="записаться" class="course_submit">
+</form>
+</div>
+
+<div class="button_subscribe"  style="display: none;" id="program_intuit_edit">
+
+
+<form class="course_form" method="post" action="/speciality/intuit/staldata/edit/">
+<input type="hidden" name="ss_class_id" value="1455">
+
+Вы записаны на этот курс.
+
+
+<br>
+
+<input type="submit" name="GO" value="изменить условия обучения" class="course_submit">
+</form>
+</div>
+
+<script>
+set_subscribe_program_intuit(909);
+</script>
+
+
+
+
+
+</div></td>
+
+<td><div class="cell">
+
+
+<div title="удостоверение о повышении квалификации ИНТУИТ" class="diplama_course" style="width=189px;">
+<div class="head">Платное обучение</div>
+
+
+<table><tr>
+<td>
+
+
+
+<table class="image-blok"><tr>
+<td class="image">
+<a 
+	target="_blank" 
+	onClick="return popup_a(this);"
+	href="/speciality/intuit/staldata/diplom/ru/"><img width="72" height="106" border="0" src="/img/vuz_diploma/sm_6.jpg"></a>
+
+</td>
+</tr>
+<tr>
+<td class="text">
+<div class="name"%style_div_name%>сертификат 
+<div class="vuz">(ИНТУИТ)</div>
+</td>
+</tr></table>
+
+
+
+
+</td>
+<td class="plus">+</td>
+<td><table class="image-blok"><tr>
+<td class="image">
+<a 
+	target="_blank" 
+	onClick="return popup_a(this);"
+	href="/img/vuz_diploma/ru_15.jpg"><img width="154" height="105" border="0" src="/img/vuz_diploma/sm_15.jpg"></a>
+
+</td>
+</tr>
+<tr>
+<td class="text">
+<div class="name"%style_div_name%>удостоверение о повышении квалификации 
+<div class="vuz">(ИДО "ИНТУИТ")</div>
+</td>
+</tr></table>
+
+</td>
+</tr></table>
+
+
+
+
+
+</div>
+
+
+
+<div class="button_subscribe"  id="program_1451_subscribe">
+
+<form class="course_form" method="get" action="/speciality/intuitdpo/staldata/">
+<input type="submit" name="GO" onClick="window.location.href='/speciality/intuitdpo/staldata/'; return false;"  value="записаться" class="course_submit">
+</form>
+</div>
+
+<div class="button_subscribe"  style="display: none;" id="program_1451_edit">
+
+
+<form class="course_form" method="post" action="/speciality/intuitdpo/staldata/">
+
+Вы записаны на программу.
+
+<br>
+
+<input type="submit" name="GO" onClick="window.location.href='/speciality/intuitdpo/staldata/'; return false;" value="изменить условия обучения" class="course_submit">
+</form>
+</div>
+
+<script>
+set_subscribe_program(1451);
+</script>
+
+
+
+
+
+</div></td>
+
+</tr>
+</table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="course_info_item">
+<div class="course_info_title_lectures_block">
+
+
+
+<span class="course_info_title2">
+
+<a 
+	class="course_info_title2" 
+	href="/department/algorithms/staldata/class/examination/">экзамен</a>
+
+|
+<a 
+	class="course_info_title2" 
+	href="/department/algorithms/staldata/class/examination_extern/">экстернат</a>
+
+
+|
+<a 
+	class="course_info_title2" 
+	title="образец диплома"
+	onClick="return popup_diploma(this)" 
+	target="_blank" 
+	href="/department/algorithms/staldata/diplom/ru/">диплом</a>
+</span>
+
+
+
+
+<span class="course_info_title_lectures">Лекции</span>
+</div>
+<div class="course_lectures">
+
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">0.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="0/">Предисловие</a></div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">1.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="1/">Типы данных в языке С++</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие типов данных в языках программирования, приводится классификация типов данных в С++, излагаются особенности представления базовых типов и операций над ними, рекомендации и правила выполнения операции преобразования базовых типов в С++.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">2.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="2/">Подставляемые (встраиваемые) функции. Перегрузка функций</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятия, объявление и использование в программах подставляемых и перегруженных функций в С++, механизмы выполнения подстановки и перегрузки функций, рекомендации по повышению эффективности программ за счет перегрузки или подстановки функций.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">3.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="3/">Рекурсивные функции</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие, определения и виды рекурсии, рекурсивные функции, этапы решения задач рекурсивными способами через разработку рекурсивной триады, приводятся примеры решения задач рекурсивными способами.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">4.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="4/">Производные типы. Тип указатель: указатели на объекты</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и виды указателей, способы объявления, инициализация указателей на объекты, методы доступа к данным через указатели, размещение указателей и адресуемых ими объектов в памяти, операции над указателями.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">5.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="5/">Тип указатель: указатели на функции</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение указателя на функцию, способы объявления, адресуемость и обращение к функции через указатель, передачу фактических параметров указателю на функцию, использование указателя на функцию в качестве параметра функции.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">6.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="6/">Решение задач с использованием указателей</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение, реализация одиночного и многочисленного перенаправления с помощью указателей, определение, способы объявления, разработка и вызов функций с переменным числом параметров, дается обзор типичных ошибок, связанных с некорректным использованием указателей.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">7.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="7/">Символьные данные и строки</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятия и определения символьных данных и строк, сходство и отличия их внутреннего представления, способы объявления, инициализация строк, методы доступа к элементам строк, определение размера строк, различные способы организации ввода/вывода символьных данных и строк.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">8.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="8/">Функции для работы со строками</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются библиотечные функции, предназначенные для работы со строками, и особенности их выполнения, приведены примеры использования таких функций при решении задач.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">9.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="9/">Решение задач на обработку строк</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие, способы объявления, инициализация указателей на строки, применение функций обработки строк при решении типовых задач, особенности выполнения стандартных функций в контексте представления строк и указателей на строки.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">10.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="10/">Массивы: одномерные массивы</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие и виды массивов в языках программирования, определение, объявление, инициализация, способы генерации и вывод одномерных массивов, расположение в памяти элементов массивов, связь между указателями и массивами.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">11.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="11/">Одномерные массивы: задачи поиска, замены и перестановок элементов массива</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматривается классификация типовых задач на обработку одномерных массивов, приводятся примеры алгоритмизации задач поиска, замены и перестановок в одномерных массивах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">12.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="12/">Одномерные массивы: задачи сортировок элементов массива</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие и виды сортировок массивов, критерии оценки трудоемкости выполнения алгоритмов сортировок одномерных массивов, приводятся примеры реализации простых сортировок.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">13.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="13/">Двумерные массивы: задачи поиска, замены и суммирования элементов двумерного массива</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие, определение, объявление, инициализация, генерация и вывод двумерных массивов, расположение в памяти элементов массивов, связь между указателями и двумерными массивами, типовые алгоритмы поиска, замены и суммирования в двумерных массивах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">14.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="14/">Двумерные массивы: задачи сортировок и перестановок в двумерных массивах</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются типовые задачи на обработку двумерных массивов, приводятся примеры алгоритмизации задач сортировок и перестановок в двумерных массивах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">15.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="15/">Структуры</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, способы объявления, инициализация структур, методы доступа к данным структуры, размещение структур и определение их размера в памяти, массивы структур.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">16.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="16/">Структуры и указатели</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, способы объявления, инициализация указателей на структуры, ограничения на использование указателей как типов элементов структур, методы доступа к данным структуры через указатели, использование указателей на структуры как параметров и значений функций.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">17.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="17/">Объединения</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, способы объявления, объединений как частного случая структур, методы доступа к данным объединения, размещение объединений и определение их размера в памяти, использование объединений при объявлении переменных с изменяемой структурой.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">18.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="18/">Битовые поля</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение, объявление и размещение в памяти битовых полей, методы доступа к битовым полям, приемы использования битовых полей для побитового анализа данных.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">19.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="19/">Стандартные файлы и функции по работе с ними</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятия и определения файлов и потоков, классификация файлов, стандартные функции по работе с файлами, основные алгоритмы работы с файлами, приводятся примеры решения задач на организацию ввода-вывода и обработку данных в файлах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">20.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="20/">Обработка файлов в потоковом режиме</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие потокового режима при работе с файлами, потоки как типы данных, библиотечные функции ввода-вывода в потоковом режиме, примеры решения задач на обработку данных из файлов.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">21.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="21/">Прямой доступ к данным файла</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие, особенности, способы организации и функции ввода-вывода в файлы на нижнем уровне, отличия низкоуровневого и потокового ввода-вывода в файлы, примеры, иллюстрирующие низкоуровневый обмен данными в файлах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">22.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="22/">Работа с элементами файлов</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются особенности организации файлового ввода-вывода в С++ в потоковом и стандартном режимах, основные типы задач редактирования элементов файлов, способы алгоритмизации задач исключения, вставки и замены в файлах, приводятся примеры решения типовых задач.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">23.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="23/">Решение задач на обработку файлов</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются функции библиотеки классов потокового ввода-вывода, примеры реализации алгоритмов решения задач на обработку файлов.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">24.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="24/">Распределение памяти. Динамическое выделение памяти</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, распределение, способы выделения и освобождения динамической памяти, взаимодействие указателей и участков динамической памяти.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">25.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="25/">Одномерные динамические массивы</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение, объявления, инициализация одномерных динамических массивов, способы выделения и освобождения динамической памяти под одномерный массив, доступ к элементам одномерного динамического массива.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">26.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="26/">Двумерные динамические массивы</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение, объявления, инициализация двумерных динамических массивов, способы и этапы выделения и освобождения динамической памяти под двумерный массив, доступ к элементам двумерного динамического массива.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">27.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="27/">Решение задач на динамические массивы</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются преимущества и недостатки управления динамической памятью, типичные ошибки при работе с динамической памятью, организация проверки выделения памяти, многомерные динамические массивы, приемы представления, чтения и записи динамических массивов.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">28.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="28/">Динамические структуры данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение, способы объявления, инициализация динамических структур, методы доступа к данным динамических структур, размещение их в памяти, преимущества и недостатки использования динамических структур в программах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">29.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="29/">Динамические структуры данных: однонаправленные и двунаправленные списки</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения и виды списков, структура, способы объявления однонаправленных и двунаправленных списков, основные операции над элементами списков, приводятся примеры решения задач с использованием однонаправленных и двунаправленных списков.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">30.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="30/">Динамические структуры данных: очередь и стек</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения стека и очереди как частных случаев линейных списков, структура, способы объявления стеков и очередей, основные операции над их элементами, приводятся примеры решения задач с использованием стеков и очередей.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">31.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="31/">Динамические структуры данных: бинарные деревья</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, свойства и виды деревьев, элементы, характеристики и способы объявления деревьев в программах, основные операции над элементами деревьев, понятие и виды обходов деревьев, приводятся примеры реализации основных операций над бинарными деревьями в виде рекурсивных функций.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">32.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="32/">Решение задач на динамические структуры данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определения, способы объявления, инициализация и особенности использования при решении задач циклических списков, деков, красно-черных деревьев, приводятся примеры решения задач на обработку кольцевых списков, деков, красно-черных деревьев.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">33.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="33/">Алгоритмы обработки данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются понятие ресурсной эффективности алгоритмов посредством анализа асимптотических функций временной и емкостной сложности, приводится классификация алгоритмов на основе функции временной сложности, рассматриваются общие методы оценки трудоемкости алгоритмов.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">34.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="34/">Рекурсия и рекурсивные алгоритмы</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются основные понятия рекурсии в контексте разработки алгоритмов с помощью рекурсивной триады, дается представление о ресурсной эффективности и о методе оценки рекурсивных алгоритмов через подсчет вершин рекурсивного дерева.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">35.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="35/">Решение задач на использование рекурсивных алгоритмов</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются опорные схемы решения задач рекурсивными способами, приводятся примеры разработки рекурсивных функций с помощью опорных схем.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">36.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="36/">Алгоритм перебора с возвратом</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматривается общее и частное решения переборных задач, организация возвратной рекурсии, трудоемкость алгоритмов возвратной рекурсии, приводится пример решения задачи о расстановке ферзей на шахматной доске методом рекурсии с возвратом.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">37.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="37/">Алгоритмы поиска в линейных структурах</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и классификация алгоритмов поиска в линейных структурах данных, описания и примеры реализаций алгоритмов последовательного поиска, поиска с барьером, бинарного поиска, приводится оценка трудоемкости алгоритмов поиска в линейных структурах.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">38.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="38/">Алгоритмы хеширования данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и виды хеширования, методы разрешения коллизий в хеш-таблицах, основные алгоритмы хеширования, приводятся примеры программной реализации открытого и закрытого хеширования.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">39.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="39/">Алгоритмы поиска в тексте</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются основные понятия и алгоритмы, используемые в задачах поиска в тексте и приводятся примеры реализации основных алгоритмов поиска в тексте.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">40.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="40/">Алгоритмы поиска на основе деревьев</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и виды деревьев поиска, приемы снижения трудоемкости поиска в древовидных структурах, приводятся описания алгоритмов поиска в двоичных упорядоченных, случайных и сбалансированных в высоту (АВЛ) деревьях, приводятся примеры программной реализации бинарного дерева поиска и АВЛ-дерева.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">41.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="41/">Алгоритмы сжатия данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются основные понятия и алгоритмы сжатия данных, приводятся примеры программной реализации алгоритма Хаффмана через префиксные коды и на основе кодовых деревьев.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">42.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="42/">Алгоритмы сортировки массивов. Внутренняя сортировка</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и классификация алгоритмов сортировок массивов, в частности, быстрых сортировок, изучаются параметры, характеризующие трудоемкость алгоритмов сортировок, рассматриваются описания и примеры программных кодов следующих алгоритмов быстрых сортировок: бинарная пирамидальная сортировка, сортировка слиянием, сортировка Шелла и сортировка Хоара.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">43.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="43/">Алгоритмы сортировки массивов. Внешняя сортировка</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются определение и классификация алгоритмов внешних сортировок, понятия фаз и путей в алгоритмах внешних сортировок, приводятся описания и реализации алгоритмов внешней сортировки слиянием и естественной сортировки.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">44.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="44/">Алгоритмы на графах. Алгоритмы обхода графа</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются основные понятия из теории графов, модели представления графов, на основе которых приводятся описания и реализации алгоритмов поиска в глубину и в ширину.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">45.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="45/">Алгоритмы на графах. Алгоритмы нахождения кратчайшего пути</a></div>
+<div class="course_lectures_annotation">
+
+В лекции рассматриваются постановка задачи и описание алгоритмов нахождения кратчайшего пути в графах, приводятся программные реализации алгоритмов Дейкстры, Флойда и переборного алгоритма.
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_num">46.</div>
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="46/">Решение задач на использование алгоритмов обработки данных</a></div>
+<div class="course_lectures_annotation">
+
+В лекции даются общие рекомендации по решению задач повышенной сложности, рассматривается примеры программной реализации задач обработки данных, которые решаются с помощью алгоритмов сортировок, обходов графа и сжатия данных.
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="course_adds_title">
+Дополнительные материалы
+</div>
+
+
+
+
+<div class="course_lectures_lecture">
+
+
+<div class="course_lectures_title">
+<a class="course_lectures_title" href="47/">Задания</a></div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+</td>
+
+<td width="6"><img src="/img/empty.gif" width="6"></td>
+<td width="1" class="gray"><img src="/img/empty.gif"></td>
+<td width="6"><img src="/img/empty.gif" width="6"></td>
+<td width="160">
+<table border="0" cellpadding="0" cellspacing="0" background="" width="100%">
+<tr><td>
+<div id="last_qa" style="display: none"><div class="last_qa">
+<h1><a onClick="return open_last_qa(this);" href="http://ask.intuit.ru/">Вопросы и Ответы</a></h1>
+
+Помогите ответить на вопрос: <script type="text/javascript">write_lastq()</script>
+
+<div>
+<a onClick="return open_last_qa(this);" href="http://ask.intuit.ru/">Задайте свой вопрос &raquo;</a>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	if(lastq_exists) {
+		var t = document.getElementById('last_qa');
+		if(t) t.style.display = 'block';
+	}
+</script>
+<div id="intuit_banner_01" style="display: none"></div>
+</td></tr>
+
+<tr><td align="center">
+<script type="text/javascript">
+// <!--
+var osp_login = "intuit-160x600-r";
+var osp_options = "options=NT";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random +'&'+osp_options+'" width="160" height="600" marginwidth=0 marginheight=0 scrolling=no frameborder=0><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target=_blank><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="160" height="600" border=0 ismap></a></iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://mb.osp.ru/cgi-bin/iframe/intuit-160x600-r?options=NT" width="160" height="600" marginwidth=0 marginheight=0 scrolling=no frameborder=0><a href="http://mb.osp.ru/cgi-bin/href/intuit-160x600-r" target=_blank><img src="http://mb.osp.ru/cgi-bin/banner/intuit-160x600-r?options=NT" alt="MadBanner" width="160" height="600" border=0 ismap></a></iframe>
+</noscript>
+
+<div class="google160x600">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3936612370991951";
+/* test1 - 160x600, ёючфрэю 28.08.08 */
+google_ad_slot = "1014502036";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+
+</td></tr>
+</table>
+</td>
+
+
+<td width="6"><img src="/img/empty.gif" width="6"></td>
+</tr>
+</table>
+
+
+<!-- /bottom -->
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="white">
+<!---->
+<!---->
+<tr>
+<td align="center" class="border">
+    <table border="0" cellpadding="0" cellspacing="8" bgcolor="white" width="100%">
+    <tr>
+    <td width="1"><iframe id="errorHandling" src="/content-operation/error.xhtml" width="1" height="1" frameborder="0" scrolling="no"></iframe></td>
+    <td align="center" width="100%" class="rtxt">
+    Внимание! Если Вы увидите ошибку на нашем сайте, выделите её и нажмите Ctrl+Enter.
+    </td>
+    </tr>
+    </table>
+</td>
+</tr>
+<!---->
+
+<tr>
+<td align="center" class="border">
+<script type="text/javascript">
+//<![CDATA[
+yandex_partner_id = 14351;
+yandex_site_bg_color = 'FFFFFF';
+yandex_site_charset = 'windows-1251';
+yandex_ad_format = 'direct';
+yandex_font_size = 1;
+yandex_direct_type = 'horizontal';
+yandex_direct_border_type = 'ad';
+yandex_direct_limit = 4;
+yandex_direct_header_bg_color = 'FEEAC7'; yandex_direct_bg_color = 'FFF9F0'; yandex_direct_border_color = 'FF9900'; yandex_direct_title_color = '0000CC'; yandex_direct_url_color = '006600'; yandex_direct_all_color = '0000CC'; yandex_direct_text_color = '000000'; yandex_direct_hover_color = '0066FF'; yandex_direct_favicon = true; document.write('<sc'+'ript type="text/javascript" src="http://an.yandex.ru/system/context.js"></sc'+'ript>');
+//]]>
+</script>
+
+</td>
+</tr>
+
+
+
+
+<tr>
+<td align="center" class="border">
+    <table border="0" cellpadding="0" cellspacing="8" bgcolor="white" width="100%">
+    <tr>
+    <td>
+<b>Нужна помощь?</b><br>
+&#149; Забыли пароль? <a href="/user/remind/">Вам сюда...</a><br>
+&#149; Есть вопрос? <a href="/help/askform.xhtml">Спрашивайте!</a>
+    </td>
+    <td>
+<b>Вы можете:</b><br>
+&#149; Изменить персональные <a href="/user/edit/">данные</a><br>
+&#149; Изменить параметры <a href="/user/subscribe/">подписки</a>
+    </td>
+    <td>
+<b>Интернет-магазин:</b><br>
+&#149; Ваши заказы <a href="/shop/order/history.xhtml">здесь</a><br>
+&#149; Ваш личный <a href="/user/account/">счет</a>
+    </td>
+    </tr>
+    </table>
+</td>
+</tr>
+<!---->
+<tr>
+<td align="center" class="copy" bgcolor="#ff9900">
+    <a href="/courses.html" class="bot">Курсы</a> |
+    <a href="/speciality/" class="bot">Учебные программы</a> |
+    <a href="/shop/" class="bot">Учебники</a> | 
+    <a href="http://ask.intuit.ru/" class="bot" target="_new">Вопросы и Ответы</a> | 
+    <a href="/forum/" class="bot">Форум</a> |
+    <a href="/news/" class="bot">Новости</a> | 
+    <a href="/help/" class="bot">Помощь</a>
+    <br><br>
+    Телефон: +7 (499) 253-9312, 253-9313, факс: +7 (499) 253-9310, email: <a href="mailto:info@intuit.ru" class="bot">info@intuit.ru</a><br>
+    &copy; <a href="http://www.intuit.ru/" class="bot">INTUIT.ru::Интернет-Университет Информационных Технологий - дистанционное образование, 2003-2010</a>
+</td>
+</tr>
+</table>
+<!-- /bottom -->
+
+
+<center>
+<table width=100% border=0 cellpadding=4>
+<tr valign=top>
+<td class="topnavi" align="left">
+Проект <b><a href="http://www.osp.ru/" target="_blank">Издательства "Открытые Системы"</a></b>.<br>
+Партнеры: <a href="http://www.rmt.ru/" target="_blank">РМ Телеком</a>, <a href="http://www.kraftway.ru/" target="_blank">KRAFTWAY COMPUTERS</a>.
+</td>
+<td align=right>
+<!--begin of Rambler's Top100 code -->
+<img src="http://counter.rambler.ru/top100.cnt?435517" alt="" width=1 height=1 border=0><a href="http://top100.rambler.ru/top100/"><img src="/img/rambler.gif" alt="Rambler's Top100" width=88 height=31 border=0></a>
+<!--end of Top100 code-->
+&nbsp;
+
+<!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=496301"'+
+' target=_top><img src="http://d2.c9.b7.a0.top.list.ru/counter'+
+'?id=496301;t=75;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=38/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><a
+target=_top href="http://top.mail.ru/jump?from=496301"><img
+src="http://d2.c9.b7.a0.top.list.ru/counter?js=na;id=496301;t=75"
+border=0 height=31 width=38
+alt="Рейтинг@Mail.ru"/></a></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER-->
+
+&nbsp;
+
+<!-- SpyLOG -->
+<script src="http://tools.spylog.ru/counter2.2.js" type="text/javascript" id="spylog_code" counter="459372" ></script>
+<noscript>
+<a href="http://u4593.72.spylog.com/cnt?cid=459372&f=3&p=0" target="_blank">
+<img src="http://u4593.72.spylog.com/cnt?cid=459372&p=0&f=4" alt='SpyLOG' border='0' width=88 height=31 ></a> 
+</noscript>
+<!--/ SpyLOG -->
+&nbsp;
+<!--
+<script language="javascript">
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+        return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+if (cookieEndIndex == -1)
+        cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+if (getCookie('adskip') == null && (getCookie('adcnt') == null || getCookie('adcnt') < 6)) {  window.open('/popup/1/','adpopup','width=300,height=320,location=no,scrollbars=no,resizable=yes,status=no,history=no,toolbar=no'); }
+</script>
+-->
+&nbsp;
+
+<!--LiveInternet counter--><script language="JavaScript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t44.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';'+Math.random()+
+'" border=0 width=31 height=31 alt="liveinternet.ru"></a>')//--></script><!--/LiveInternet-->
+
+&nbsp;
+
+<!-- bigmir)net TOP 100 --><a href="http://www.bigmir.net/" target=_blank onClick='img = new Image();img.src="http://www.bigmir.net/?cl=143122";' ><script language="javascript"><!--
+bmQ='<img src=http://c.bigmir.net/?s143122&t8'
+bmD=document
+bmD.cookie="b=b"
+if(bmD.cookie)bmQ+='&c1'
+//--></script><script language="javascript1.2"><!-- 
+bmS=screen;bmQ+='&d'+(bmS.colorDepth?bmS.colorDepth:bmS.pixelDepth)+"&r"+bmS.width;
+//--></script><script language="javascript"><!--
+bmF = bmD.referrer.slice(7);
+((bmI=bmF.indexOf('/'))!=-1)?(bmF=bmF.substring(0,bmI)):(bmI=bmF.length);
+if(bmF!=window.location.href.substring(7,7+bmI))bmQ+='&f'+escape(bmD.referrer);
+bmD.write(bmQ+" border=0 width=88 height=31 alt='bigmir TOP100'>");
+//--></script></a>
+
+
+</td>
+</tr></table>
+
+</center>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17929409-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- GoodADVERT (SMART VIDEO in text) for http://www.intuit.ru -->
+<script type="text/javascript"><!--
+var _ga1_channel='199';
+// -->
+</script>
+<script type="text/javascript" src="http://files.goodadvert.ru/ga_1.js" charset="utf-8"></script>
+<!-- GoodADVERT -->
+
+<!--BEGIN RichBanner http://www.intuit.ru (Video)-->
+<script language="JavaScript">
+<!--
+var _rbn={};
+_rbn.v={};
+_rbn.v.inline_color = "#009900";
+_rbn.v.inline_count_max=5;
+_rbn.v.is_use_marked=0;
+_rbn.v.autostart_video = 1;
+_rbn.v.ad=[];
+document.write('<scr' + 'ipt language="JavaScript" src="http://drive.richbanner.ru/code?pid=22632&gid=19&oin=1&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
+// -->
+</script>
+<script language="JavaScript" src="http://folder.richbanner.ru/rbn.js" charset="utf-8" type="text/JavaScript"></script>
+<!--END RichBanner -->
+
+<script type="text/javascript" src="/ssi/banner/intuit_is_bottom.js"></script>
+
+
+
+</body>
+</html>

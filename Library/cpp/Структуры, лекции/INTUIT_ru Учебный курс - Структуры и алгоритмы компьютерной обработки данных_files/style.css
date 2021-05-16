@@ -1,0 +1,9 @@
+.tooltip2 {
+	text-align: left; color: rgb(68, 170, 221); font-family: Arial; font-weight: bold;
+}
+.tipDiv {
+	border: 1px solid rgb(51, 51, 102); left: 0px; top: 0px; color: rgb(0, 0, 0); line-height: 1.2; font-size: 11px; visibility: hidden; position: absolute; z-index: 10000; background-color: rgb(222, 231, 247);
+}
+.advert_block_gold td.center {
+	padding: 0px;
+}

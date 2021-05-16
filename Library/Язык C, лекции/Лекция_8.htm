@@ -1,0 +1,1071 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_8_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_8_files/mhtEC3E(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_8_files/mhtEC3E(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>8. Лекция: Указатели и массивы в языке С: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются вопросы взаимосвязи указателей и массивов, как 
+            числовых, так и символьных. Рассматриваются допустимые операции с 
+            указателями и массивами, массивы указателей и указатели на 
+            указатели. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_8_files/mhtEC3E(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Одной из наиболее распространенных конструкций с 
+            использованием указателей являются массивы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>8.1</A>]. Результатом использования указателей для 
+            массивов является меньшее количество используемой памяти и высокая 
+            производительность [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>8.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>По краткому определению, <SPAN 
+            class=xml_em_italic>указатель</SPAN> – это переменная, содержащая 
+            адрес другой переменной [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>8.2</A>]. Так как указатель содержит адрес переменной 
+            (объекта), то это дает возможность "косвенного" доступа к этой 
+            переменной (объекту) через указатель. В качестве объектов в данной 
+            лабораторной работе будут рассмотрены числовые и символьные 
+            массивы.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>В языке <B>С</B> массивы – это упорядоченные данные 
+            (элементы) одного типа. Компилятор языка <B>С</B> рассматривает имя 
+            массива как адрес его первого элемента (в языке <B>С</B> нумерация 
+            элементов массива начинается с нуля). Например, если имя массива 
+            <SPAN class=texample>Arr</SPAN> с десятью элементами, то <SPAN 
+            class=xml_em_italic>i</SPAN> -й элемент (0 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=\le 
+            src="Лекция_8_files/mhtEC6F(1).tmp" width=20 height=18> i &lt; 10) 
+            компилятор преобразует его по правилам работы с указателями с 
+            операцией разыменования: <SPAN class=texample>*(Arr + i)</SPAN>. 
+            Здесь <SPAN class=texample>Arr</SPAN> как бы указатель, а <SPAN 
+            class=texample>i</SPAN> – целочисленная переменная. Сумма <SPAN 
+            class=texample>(Arr + i)</SPAN> указывает на <SPAN 
+            class=xml_em_italic>i</SPAN> -й элемент массива, а операция 
+            разыменования (оператор раскрытия ссылки <SPAN 
+            class=texample>*</SPAN> ) дает значение самого элемента.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_11><SPAN class=xml_em_italic>Имя массива без индекса 
+            образует указатель на начало этого массива</SPAN>.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Следует помнить следующее: отличие имени массива от 
+            указателя состоит в том, что <SPAN class=xml_em_italic>имя массива 
+            не может быть изменено</SPAN>. Имя массива всегда указывает на одно 
+            и то же место в памяти – на нулевой элемент.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13>Пусть, например, массив <SPAN class=texample>Arr</SPAN> 
+            содержит 10 целочисленных переменных:</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int Arr[10];</PRE></DIV>
+            <P id=id_16>Тогда можно объявить указатель <SPAN 
+            class=texample>ptr</SPAN>, который будет указывать на элементы 
+            массива <SPAN class=texample>Arr</SPAN>:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int *ptr;</PRE></DIV>
+            <P id=id_20>Тип указателя (в примере это <SPAN 
+            class=texample>int</SPAN> ) должен соответствовать типу объявленного 
+            массива.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_22>Для того, чтобы указатель <SPAN 
+            class=texample>ptr</SPAN> ссылался на первый элемент (с нулевым 
+            индексом) массива <SPAN class=texample>Arr</SPAN>, можно 
+            использовать утверждение:</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = Arr;</PRE></DIV>
+            <P id=id_26>В то&nbsp;же время можно использовать прямую 
+            адресацию:</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = &amp;Arr[0];</PRE></DIV>
+            <P id=id_28>Обе формы записи эквивалентны.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29>Аналогичные утверждения будут справедливы для других 
+            типов массивов: <SPAN class=texample>char, float, double</SPAN> и 
+            пр.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_31>Если указатель <B>ptr</B> указывал на первый элемент (с 
+            нулевым индексом) массива <SPAN class=texample>Arr</SPAN>, то для 
+            обращения к следующему элементу массива допустимы следующие формы 
+            утверждений:</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = &amp;Arr[1];
+ptr += 1;</PRE></DIV>
+            <P id=id_34>Соответственно, выражение <SPAN 
+            class=texample>*(ptr+1)</SPAN> будет ссылаться на значение, 
+            содержащееся в элементе <SPAN class=texample>Arr[1]</SPAN>.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_37>Утверждение</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr += n;</PRE></DIV>
+            <P id=id_39>заставит указатель <SPAN class=texample>*ptr</SPAN> 
+            ссылаться на элемент массива, находящийся на расстоянии n от того, 
+            на который ранее ссылался указатель, независимо от типа элементов, 
+            содержащихся в массиве [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>8.1</A>]. Разумеется, значение <B>n</B> должно быть в 
+            допустимых пределах для данного объема массива.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_41>При работе с указателями и массивами особенно удобны 
+            операторы инкремента <SPAN class=texample>"++"</SPAN> и декремента 
+            <SPAN class=texample>"––"</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>8.1</A>]. Использование оператора инкремента с 
+            указателем аналогично операции суммирования с единицей, а операция 
+            декремента имеет тот же эффект, что и вычитание единицы из 
+            указателя.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_44>В языке программирования <B>С</B> вполне корректной 
+            операцией является сравнение указателей. К указателям применяются 
+            операции сравнения <SPAN class=texample>"&gt;"</SPAN>, <SPAN 
+            class=texample>"&gt;="</SPAN>, <SPAN class=texample>"!="</SPAN>, 
+            <SPAN class=texample>"=="</SPAN>, <SPAN 
+            class=texample>"&lt;="</SPAN>, <SPAN class=texample>"&lt;"</SPAN> 
+            [3]. Сравнивать указатели допустимо только с другими указателями 
+            того же типа или с константой <SPAN class=texample>NULL</SPAN>, 
+            обозначающей значение условного нулевого адреса. Константа <SPAN 
+            class=texample>NULL</SPAN> – это особое значение 
+            переменной-указателя, присваиваемое ей в том случае, когда она не 
+            должна иметь никакого значения. Его можно присвоить 
+            переменной-указателю любого типа. Оно представляет собой целое число 
+            нуль.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_53>Особое значение имеет сравнение двух указателей, которые 
+            связаны с одним и тем же массивом данных.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_54>Рассмотрим инициализацию указателей типа <SPAN 
+            class=texample>char</SPAN>:</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char  *ptr = "hello, world";</PRE></DIV>
+            <P id=id_57>Переменная <B>*ptr</B> является указателем, а не 
+            массивом. Поэтому строковая константа <SPAN class=texample>"hello, 
+            world"</SPAN> не может храниться в указателе <B>*ptr</B>. Тогда 
+            возникает вопрос, где хранится строковая константа. Для этого 
+            следует знать, что происходит, когда компилятор встречает строковую 
+            константу. Компилятор создает так называемую <SPAN 
+            class=xml_em_italic>таблицу строк</SPAN>. В ней он сохраняет 
+            строковые константы, которые встречаются ему по ходу чтения текста 
+            программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>8.4</A>]. Следовательно, когда встречается объявление 
+            с инициализацией, то компилятор сохраняет <SPAN 
+            class=texample>"hello, world"</SPAN> в таблице строк, а указатель 
+            <SPAN class=texample>*ptr</SPAN> записывает ее адрес.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_61>Поскольку указатели сами по себе являются переменными, 
+            их можно хранить в массивах, как и переменные других типов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>8.2</A>]. Получается массив указателей.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62>Массив указателей фиксированных размеров вводится одним 
+            из следующих определений [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>8.4</A>]:</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  *имя_массива [размер];
+тип  *имя_массива [ ] = инициализатор;
+тип  *имя_массива [размер] = инициализатор;</PRE></DIV>
+            <P id=id_64>В данной инструкции <B>тип</B> может быть как одним из 
+            базовых типов, так и производным типом;</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_65><B>имя_массива</B> – идентификатор, определяемый 
+            пользователем по правилам языка <B>С</B> ;</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_66><B>размер</B> – константное выражение, вычисляемое в 
+            процессе трансляции программы;</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67><B>инициализатор</B> – список в фигурных скобках 
+            значений элементов заданного типа (т.е. <B>тип</B> ).</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_68>Рассмотрим примеры [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>8.4</A>]:</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  data[7]; // обычный массив
+int  *pd[7]; // массив указателей
+int  *pi[ ] = { &amp;data[0], &amp;data[4], &amp;data[2] };</PRE></DIV>
+            <P id=id_70>В приведенных примерах каждый элемент массивов <SPAN 
+            class=texample>pd</SPAN> и <SPAN class=texample>pi</SPAN> является 
+            указателем на объекты типа <SPAN class=texample>int</SPAN>.</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_74>Значением каждого элемента <SPAN 
+            class=texample>pd[j]</SPAN> и <SPAN class=texample>pi[k]</SPAN> 
+            может быть адрес объекта типа <SPAN class=texample>int</SPAN>. Все 6 
+            элементов массива pd указателей не инициализированы.В массиве <SPAN 
+            class=texample>pi</SPAN> три элемента, и они инициализированы 
+            адресами конкретных элементов массива <SPAN 
+            class=texample>data</SPAN>.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_80>В случае обработки строк текста они, как правило, имеют 
+            различную длину, и их нельзя сравнить или переместить одной 
+            элементарной операцией в отличие от целых чисел. В этом случае 
+            эффективным средством является массив указателей. Например, если 
+            сортируемые строки располагаются в одном длинном символьном массиве 
+            вплотную — начало одной к концу другой, то к каждой строке можно 
+            обращаться по указателю на ее первый символ [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>8.2</A>]. Сами же указатели можно поместить в массив, 
+            т.е. создать массив указателей. Две строки можно сравнить, 
+            рассмотрев указатели на них.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81>Массивы указателей часто используются при работе со 
+            строками. Можно привести пример массива строк о студенте, задаваемый 
+            с помощью массива указателей.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char  *ptr[ ] = {
+"Surname",  //Фамилия
+"Name",    // Имя
+"group",   // группа
+"ACOUY"    // специальность
+};</PRE></DIV>
+            <P id=id_83>С помощью массива указателей можно инициализировать 
+            строки различной длины. Каждый из указателей массива указателей 
+            указывает на одномерный массив символов (строку) независимо от 
+            других указателей.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84>В языке программирования <B>С</B> предусматриваются 
+            ситуации, когда указатели указывают на указатели. Такие ситуации 
+            называются многоуровневой адресацией. Пример объявления указателя на 
+            указатель:</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  **ptr2;</PRE></DIV>
+            <P id=id_86>В приведенном объявлении <SPAN 
+            class=texample>**ptr2</SPAN> – это указатель на указатель на число 
+            типа <SPAN class=texample>int</SPAN>. При этом наличие двух 
+            звездочек свидетельствует о том, что имеется двухуровневая 
+            адресация. Для получения значения конкретного числа следует 
+            выполнить следующие действия:</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  x = 88, *ptr,  **ptr2;
+ptr = &amp;x;
+ptr2 = &amp;ptr;
+printf("%d", **ptr2);</PRE></DIV>
+            <P id=id_90>В результате в выходной поток (на дисплей пользователя) 
+            будет выведено число 88. В приведенном фрагменте переменная <SPAN 
+            class=texample>*ptr</SPAN> объявлена как указатель на целое число, а 
+            <SPAN class=texample>**ptr2</SPAN> – как указатель на указатель на 
+            целое. Значение, выводимое в выходной поток (число 88), 
+            осуществляется операцией разыменования указателя <SPAN 
+            class=texample>**ptr2</SPAN>.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_94>Для многомерных массивов указатели указывают на адреса 
+            элементов массива построчно. Рассмотрим пример двухмерного 
+            целочисленного массива <SPAN class=xml_em_italic>М</SPAN> размера 3 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> 
+            5, т.е. состоящего из 3 строк и 5 столбцов, и определим 
+            указатель:</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int M[3][5]= {{1,2,3,4,5},{–6,–7,–8,–9,–10},{11,12,13,14,15}};
+int  *ptr;</PRE></DIV>
+            <P id=id_97>Элементы массива (по индексам) располагаются в ячейках 
+            памяти по строкам в следующем порядке:</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <DIV class=example><PRE>M[0][0], M[0][1], M[0][2], M[0][3], M[0][4], M[1][0], M[1][1], M[1][2], M[1][3], M[1][4], 
+   M[2][0], M[2][1], M[2][2], M[2][3], M[2][4].</PRE></DIV>
+            <P id=id_99>Сначала запоминается первая строка, затем вторая, затем 
+            третья. В данном случае двухмерный массив – это массив трех 
+            одномерных массивов, состоящих из 5 элементов.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Указатель указывает на адреса элементов в порядке 
+            расположения их в памяти. Поэтому тождественны равенства:</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr == &amp;M[0][0];  //?1-я строка, 1-й столбец
+ptr + 1 == &amp;M[0][1];  // 1-я строка, 2-й столбец
+ptr + 2 == &amp;M[0][2];  // 1-я строка, 3-й столбец
+ptr + 3 == &amp;M[0][3];  // 1-я строка, 4-й столбец
+ptr + 4 == &amp;M[0][4];  // 1-я строка, 5-й столбец
+ptr + 5 == &amp;M[1][0];  // 2-я строка, 1-й столбец
+ptr + 6 == &amp;M[1][1];  // 2-я строка, 2-й столбец
+ptr + 7 == &amp;M[1][2];  // 2-я строка, 3-й столбец
+ptr + 8 == &amp;M[1][3];  // 2-я строка, 4-й столбец
+ptr + 9 == &amp;M[1][4];  // 2-я строка, 5-й столбец
+ptr + 10 == &amp;M[2][0]; // 3-я строка, 1-й столбец
+ptr + 11 == &amp;M[2][1]; // 3-я строка, 2-й столбец
+ptr + 12 == &amp;M[2][2]; // 3-я строка, 3-й столбец
+ptr + 13 == &amp;M[2][3]; // 3-я строка, 4-й столбец
+ptr + 14 == &amp;M[2][4]; // 3-я строка, 5-й столбец</PRE></DIV>
+            <P id=id_102>Практически следует произвести инициализацию указателя, 
+            например, взяв адрес первого элемента матрицы, а затем – обращение к 
+            элементам матрицы, можно производить через указатель:</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = &amp;M[0][0];
+*(ptr + i*n + j);</PRE></DIV>
+            <P id=id_104>где <B>i</B> – номер строки заданной матрицы, <B>j</B> 
+            – номер столбца, <B>n</B> – число столбцов в матрице.</P>
+            <DIV id=mark_104 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_105><B>Пример 1</B>. Напишите программу считывания строк 
+            разной длины с использованием арифметики указателей.</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106>Программный код решения примера:</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void)
+{
+	int i, n;
+	char *ptr[ ] = {"one", "two", "three", "four", "five",\
+		"six", "seven", "eight", "nine", "ten"};
+	
+    n = sizeof(ptr)/sizeof(ptr[0]);
+	
+    printf("\n\t Strings of various length:\n");
+	for (i = 0; i &lt; n; ++i)
+		printf("\n%12d) %s", i+1, ptr[i]);
+	
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_108>В программе использован одномерный массив указателей. 
+            Функция <SPAN class=texample>printf()</SPAN> и спецификатор 
+            преобразования <SPAN class=texample>%s</SPAN> допускают 
+            использование в качестве параметра указатель на строку. При этом на 
+            дисплей выводится не значение указателя, а содержимое адресуемой им 
+            строки. Обратный слэш <SPAN class=texample>"\"</SPAN> служит для 
+            переноса содержимого операторной строки на новую строку (для 
+            удобства восприятия). Оператор <SPAN class=texample>sizeof()</SPAN> 
+            вычисляется во время компиляции программы. Во время компиляции он 
+            обычно превращается в целую константу, значение которой равно 
+            размеру типа или объекта [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>8.4</A>], в данном случае соответствует размеру 
+            массива указателей.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_113>Следует обратить внимание на инициализацию массива 
+            указателей. Содержимое, заключенное в фигурные скобки, представляют 
+            собой строки, для каждой из которой служит указатель, входящий в 
+            массив указателей.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.1">рис. 
+            8.1</A>.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_115 align=left><A name=image.8.1></A></P>
+            <DIV><IMG alt="Пример  считывания строк различной длины" 
+            src="Лекция_8_files/mhtEC95(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 8.1.</B>&nbsp; Пример считывания строк 
+            различной длины
+            <P></P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_116><B>Задание 1</B></P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <OL id=id_117>
+              <LI>Вывод заданных строк осуществите на экран дисплея в одной 
+              строке.
+              <LI>Вывод результата выполните на основе разыменования массива 
+              указателей.
+              <LI>Инициализируйте массив указателей своей фамилией, именем, 
+              номером группы, специальности, факультета и номером компьютера, за 
+              которым выполняется лабораторная работа.
+              <LI>В программу введите дополнительный массив указателей, с 
+              помощью которого выполните вывод заданных строк.
+              <LI>В программе вместо оператора цикла <SPAN 
+              class=texample>for</SPAN> применить оператор <SPAN 
+              class=texample>while</SPAN>.</LI></OL>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_125><B>Пример 2</B>. Напишите программу сортировки 
+            одномерного массива, состоящего из 10 равномерно распределенных 
+            случайных чисел из интервала [–8; 8], с помощью указателей.</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_126>Программный код решения примера:</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+#define N 10
+
+int main (void)
+  {
+	double a = -8.0, b = 8.0;
+	double arr[N], *pmin[N], *temp;
+	int i, j;
+	long int T;
+
+T = (long)time(NULL); // использование системного времени
+srand((unsigned int) T);                        
+	
+// Заполнение массива случайными числами
+	for(i = 0; i &lt; N; ++i)
+		arr[i] = a + (b - a)*(double)rand()/RAND_MAX;
+
+printf("\n\t The initial array of [%1.4f, %1.4f]:\n", a, b);
+	for (i = 0; i &lt; N; ++i)
+		printf("\n\t%2d)  %8.4f", i+1, arr[i]);
+	
+// Взятие адресов элементов исходного массива
+//в предположении, что они образуют отсортированный массив
+	for (i = 0; i &lt; N; ++i)
+		pmin[i] = &amp;arr[i];
+
+//Сортировка массива по убыванию
+for (i = 0; i &lt; N-1; ++i)
+   for (j = i+1; j &lt; N; ++j) {
+      if (*pmin[i] &lt; *pmin[j])
+    {
+temp = pmin[i];
+pmin[i] = pmin[j]; 
+pmin[j] = temp;
+    }
+}
+
+//Вывод отсортированного массива по убыванию
+printf("\n\n\t Assorted array of descending:\n");
+for (i = 0; i &lt; N; ++i)
+printf("\n\t%2d)  %8.4f", i+1, *pmin[i]);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+  }</PRE></DIV>
+            <P id=id_128>В программе следует обратить внимание на то, что при 
+            сортировке производятся операции с адресами элементов массива, т.е. 
+            с указателями, а в самом исходном массиве элементы не 
+            сортируются.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.2">рис. 
+            8.2</A>.</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <P id=id_130 align=left><A name=image.8.2></A></P>
+            <DIV><IMG alt="Сортировка массива по убыванию" 
+            src="Лекция_8_files/mhtECA7(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 8.2.</B>&nbsp; Сортировка массива по 
+            убыванию
+            <P></P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131><B>Задание 2</B></P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <OL id=id_132>
+              <LI>Выполните вывод отсортированного массива и исходного массива в 
+              два параллельных столбца.
+              <LI>Напишите программу сортировки массива по возрастанию. Границы 
+              интервала равномерно распределенных случайных чисел: [–8; 2*X], 
+              где Х – номер компьютера, за которым выполняется лабораторная 
+              работа.
+              <LI>Сгенерировать массив целых чисел размера <SPAN 
+              class=xml_em_italic>N</SPAN> из интервала кодов строчных букв 
+              латинского алфавита, где <SPAN class=xml_em_italic>N</SPAN> – 
+              число букв вашей фамилии. Из сформированного массива выведите коды 
+              полученных букв и сами буквы. Отсортируйте полученные буквы по 
+              возрастанию кодов составляющих букв с помощью указателей.</LI></OL>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_136><B>Пример 3</B>. Напишите программу заполнения матрицы 
+            по спирали натуральными числами с помощью массива указателей.</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <P id=id_137>Программный код решения примера:</P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define n 15
+
+int main(void) {
+int i = 1, 
+I, j, k, 
+p = n/2;
+	int M[n][n], *ptr[n*n];
+
+// Обнуление матрицы и инициализация указателя
+for (I = 0; I &lt; n; ++I)
+for (j = 0; j &lt; n; ++j)
+{ M[I][j] = 0; ptr[I*n + j] = &amp;M[I][j];}
+
+for (k = 1; k &lt;= p; k++)  // Число спиралей
+{
+// Верхний горизонтальный столбец
+for (j = (k-1); j &lt; (n-k+1); j++)
+*ptr[(k-1)*n + j] = i++;
+
+// Правый верхний столбец
+for (j = k; j &lt; (n-k+1); j++) 
+*ptr[j*n + (n-k)] = i++;
+
+// Нижний горизонтальный столбец
+for (j = (n-k-1); j &gt;= (k-1); --j) 
+*ptr[(n-k)*n + j] = i++;
+
+// Левый верхний столбец
+for (j = (n-k-1); j &gt;= k; j--) 
+*ptr[j*n + (k-1)] = i++; }
+if ( n % 2 ) *ptr[p*n + p] = n*n;
+printf("\n\t Spiral matrix of dimention (%d x %d):\n\n",n,n);
+
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; n; ++j)
+{	if (n*n &lt; 20*20){
+	printf("%4d", *ptr[i*n + j]);
+	if (j == (n-1)) printf("\n");}
+	
+else if (n*n &gt;= 20*20)
+		goto mes;
+}
+
+mes: if (n &gt; 19)
+printf("\n\t It is a large matrix. Can not to see on display.\n");
+
+    printf("\n Press any key: ");
+    _getch();
+    return 0; 
+}</PRE></DIV>
+            <P id=id_139>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.3">рис. 
+            8.3</A>.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140 align=left><A name=image.8.3></A></P>
+            <DIV><IMG alt="Заполнение матрицы по спирали" 
+            src="Лекция_8_files/mhtECBA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 8.3.</B>&nbsp; Заполнение матрицы по 
+            спирали
+            <P></P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_141>В программе использован оператор безусловного перехода 
+            <SPAN class=texample>goto</SPAN>, чтобы выйти из вложенных циклов, 
+            когда размерность матрицы велика и не может быть размещена на экране 
+            дисплея.</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_143><B>Задание 3</B></P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <OL id=id_144>
+              <LI>Проверьте программу при размерности матрицы от 3 до 19 и 
+более.
+              <LI>Выведите на дисплей матрицу <SPAN 
+              class=texample>M[n][n]</SPAN>. Объясните результат.
+              <LI>Дополните программу: создайте матрицу и заполните ее по 
+              спирали натуральными числами с помощью массива указателей, который 
+              использовался для взятия адресов элементов исходной матрицы <SPAN 
+              class=texample>М[n][n]</SPAN>. Объявите матрицу с начальной буквой 
+              вашей фамилии (с латинским написанием). Выведите на дисплей 
+              матрицу.
+              <LI>Напишите программу заполнения матрицы по спирали и против 
+              часовой стрелки натуральными числами с помощью массива указателей.
+              <LI>Дополните программу расчетом количества четных элементов выше 
+              главной диагонали матрицы и количества нечетных элементов ниже 
+              главной диагонали, не включая саму диагональ, с помощью 
+указателей.
+              <LI>Дополните программу подсчетом суммы элементов каждого столбца 
+              матрицы. Осуществите вывод результата на дисплей.
+              <LI>Дополните программу подсчетом суммы элементов каждой строки 
+              матрицы. Осуществите вывод результата на дисплей.
+              <LI>Дополните программу подсчетом суммы элементов диагонали 
+              матрицы. Осуществите вывод результата на дисплей.</LI></OL>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_155><B>Примечание</B>. Сумма диагональных элементов 
+            квадратной матрицы называется следом (шпуром) матрицы.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156><B>Пример 4</B>. Напишите программу заполнения 
+            целочисленной прямоугольной матрицы размером не более 15 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> 14 из 
+            интервала [–12; 12] с помощью операции разыменования.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_158>Программный код решения примера:</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+#define N 15
+#define M 14
+const int Left = -12;
+const int Right = 12;
+
+int main(void) {
+int i, j, n, m;
+int matr[N][M];
+time_t t; //переменная системного времени
+
+srand((unsigned)time(&amp;t));
+
+printf("\n Enter the number of lines of the matrix is not more than %d: ", N);
+scanf_s("%d", &amp;n);
+printf(" Enter the number of columns of the matrix is not more than %d: ", M);
+scanf_s("%d", &amp;m);
+
+// Контроль ввода допустимой размерности
+if (n &gt; N || m &gt; M || n &lt; 1 || m &lt; 1)
+{ printf("\n\t Data error! Repeat please.\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; m; ++j)
+*(*(matr + i) + j) = 0;
+
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; m; ++j)
+*(*(matr + i) + j) = (rand() % (2*Right+1)) + Left;
+
+printf("\n The matrix of random whole numbers from the entire [%d, %d]:\n", Left, Right);
+
+for (i = 0; i &lt; n; ++i) {
+printf("\n ");
+   for (j = 0; j &lt; m; ++j)
+printf("%5d", *(*(matr + i) + j));
+}
+  printf("\n\n Press any key: ");
+     _getch();
+     return 0; 
+}</PRE></DIV>
+            <P id=id_160>В программе использованы спецификаторы <B>const</B> для 
+            объявления неизменяемых переменных. Функция <SPAN 
+            class=texample>srand()</SPAN> устанавливает начальное значение 
+            программного генератора псевдослучайных чисел, т.е. осуществляет 
+            рандомизацию последовательности псевдослучайных чисел. С этой целью 
+            определена системная переменная <SPAN 
+            class=texample>time(&amp;t)</SPAN>, которая практически всегда 
+            различна.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_163>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.4">рис. 
+            8.4</A>.</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_164 align=left><A name=image.8.4></A></P>
+            <DIV><IMG alt="Матрица случайных целых чисел" 
+            src="Лекция_8_files/mhtECDC(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 8.4.</B>&nbsp; Матрица случайных целых 
+            чисел
+            <P></P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_165>Задание 4</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <OL id=id_166>
+              <LI>Проверьте режим ошибочного ввода размерности матрицы.
+              <LI>Осуществите перевод значений сформированной матрицы <B>n <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> m</B> на 
+              новую строку на основе оператора условия <B></B>?.
+              <LI>Подсчитайте количество отрицательных и положительных чисел. 
+              Учтите также подсчет количества нулей.
+              <LI>Предусмотрите изменение интервала последовательности случайных 
+              чисел, генерируемой функцией <SPAN class=texample>rand()</SPAN>, 
+              для чего предусмотрите ввод границ интервала с клавиатуры.
+              <LI>В сформированной матрице найдите минимальные и максимальные 
+              числа с определением их индексов расположения в матрице.</LI></OL>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_174><B>Пример 5</B>. Напишите программу умножения 
+            целочисленных матриц с использованием указателей [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>8.5</A>].</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175>Условием перемножения двух матриц <SPAN 
+            class=xml_em_bold_italic>А</SPAN> и <SPAN 
+            class=xml_em_bold_italic>В</SPAN> является равенство числа столбцов 
+            матрицы <SPAN class=xml_em_bold_italic>А</SPAN> и числа строк 
+            матрицы <SPAN class=xml_em_bold_italic>В</SPAN>. Если первая матрица 
+            <SPAN class=xml_em_bold_italic>А</SPAN> имеет размер <SPAN 
+            class=xml_em_bold_italic>n <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> k</SPAN>, то 
+            вторая матрица <SPAN class=xml_em_bold_italic>В</SPAN> должна иметь 
+            размер <SPAN class=xml_em_bold_italic>k <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> m</SPAN>. В 
+            результате перемножения получим матрицу <SPAN 
+            class=xml_em_bold_italic>С</SPAN> размера <SPAN 
+            class=xml_em_bold_italic>n <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> m</SPAN>. 
+            Приведем следующую схему по размерностям:</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_179 align=left><A></A></P>
+            <DIV><IMG alt="" src="Лекция_8_files/mhtECFE(1).tmp"></DIV><BR>
+            <P></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>Поэлементное перемножение двух матриц в стандартной 
+            математической форме:</P>
+            <DIV id=mark_180 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="C_{i j}=\sum^{n}_{k=1}a_{jk}*b_{kj},  i=1,2\cdots,n, j =1,2,\cdots,m" 
+            src="Лекция_8_files/mhtED20(1).tmp" width=408 height=23>.
+            <P id=id_182>С учетом синтаксиса формирования массивов в языке 
+            <B>С</B> индексация должна начинаться с нуля, поэтому формулу 
+            перепишем в следующем виде:</P>
+            <DIV id=mark_182 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt="C_{i j}=\sum^{n-1}_{k=0}a_{jk}*b_{kj},  i=0,1,2\cdots,n-1, j =0,1,2,\cdots,m-1" 
+            src="Лекция_8_files/mhtED33(1).tmp" width=502 height=27>.
+            <P id=id_184>Программный код решения примера:</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#define n 7
+#define k 12
+#define m 4
+
+int main(void) {
+int i, j, p;
+int A[n*k], B[k*m];
+long int *C[n*m];
+
+//Обнуление матриц
+for (i = 0; i &lt; n; ++i)
+for(j = 0; j &lt; m; ++j)
+C[i*m + j] = 0;
+
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; k; ++j)
+A[i*k + j] = 0; 
+
+for (i = 0; i &lt; k; ++i)
+for (j = 0; j &lt; m; ++j)
+B[i*m + j] = 0; 
+
+// Заполнение матриц целыми числами
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; k; ++j)
+A[i*k + j] = i + j - 6;
+
+for (i = 0; i &lt; k; ++i)
+for (j = 0; j &lt; m; ++j)
+B[i*m + j] =  i + j - 11;
+
+// Циклы перемножения с накоплением суммы
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; m; ++j) { C[i*m + j] = 0;
+for (p = 0; p &lt; k; ++p)
+C[i*m + j] += (A[i*k + p] * B[p*m + j]);
+}
+printf("\n\t The result of multiplying the two matrices:\n\t\t C = A*B (%dx%d = %dx%d * %dx%d)\n", n, m, n, k, k, m);
+for (i = 0; i &lt; n; ++i) {
+printf("\n\t");
+for (j = 0; j &lt; m; ++j)
+printf("%6ld", C[i*m + j]); } 
+     printf("\n\n Press any key: ");
+     _getch();
+     return 0; }</PRE></DIV>
+            <P id=id_186>Обнуление матриц и массива указателей позволяет заранее 
+            выделить память. Для вывода результата перемножения предусмотрен 
+            спецификатор <B>ld</B>.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_187>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.5">рис. 
+            8.5</A>.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188 align=left><A name=image.8.5></A></P>
+            <DIV><IMG alt="Матрица случайных целых чисел" 
+            src="Лекция_8_files/mhtED46(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 8.5.</B>&nbsp; Матрица случайных целых 
+            чисел
+            <P></P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_189><B>Задание 5</B></P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <OL id=id_190>
+              <LI>Промежуточный размер <B>k</B> примите за 5*Х, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа. 
+              Предусмотрите корректный вывод результата перемножения двух 
+матриц.
+              <LI>Вывод результата перемножения выполните на основе операции 
+              разыменования.
+              <LI>Напишите программу умножения матриц с обычной индексацией 
+              элементов массивов, т.е. без использования указателей.
+              <LI>Включите нумерацию строк и столбцов (слева от матрицы и вверху 
+              над ней).
+              <LI>Проверьте работу программы без предварительного 
+            обнуления.</LI></OL>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_196><B>Пример 6</B>. Напишите программу формирования трех 
+            массивов, состоящих из матриц размерностей 4 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> 8, и 
+            заполненных натуральными числами. Заполнение матриц выполнить по 
+            строкам последовательно для каждого из массивов. Предусмотрите вывод 
+            всех трех массивов на консоль и вывод одного из массивов, номер 
+            которого задается пользователем с клавиатуры.</P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <P id=id_198>Для решения примера сформируем трехмерный массив 
+            размером 3 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> 4 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_8_files/mhtEC82(1).tmp" width=20 height=16> 8 с помощью 
+            указателя, в котором левый размер будет равен 3, центральный размер 
+            равен 4, а крайний правый размер равен 8, например *PTR[3*4*8].</P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_201>Программный код решения примера:</P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#define p 3 // Количество "подшитых" матриц
+#define n 4 // Число строк матрицы
+#define m 8 // Число столбцов матрицы
+
+int main (void){
+	int i, j, k, r;
+	int *PTR[p*n*m], *M2[n*m];
+	
+	// Заполнение одномерного массива
+	for (i = 0; i &lt; p*n*m; ++i)
+PTR[i] = (int*)(i + 1); 
+
+printf("\n An array of dimension %dx%dx%d:\n", p, n, m);
+puts("===========================================");
+// Разбивка массива
+for (k = 0; k &lt; p; ++k){ printf("\n"); 
+for (i = 0; i &lt; n; ++i) { printf(" ");
+	for (j = 0; j &lt; m; ++j){ 
+		printf(" %3d ",PTR[k*n*m + i*m + j]);
+		} 
+	printf("\n"); 
+} 
+} 
+puts("===========================================");
+printf("\n Select the number of arrays of a series of numbers (%d...%d): ",1, p);
+	scanf_s("%d", &amp;r);
+printf("\n Matrix number %d from three-dimensional array:\n", r);
+// Выбор матрицы из 3-мерного массива
+for (k = 0; k &lt; p; ++k)
+	for (i = 0; i &lt; n; ++i)  
+	for (j = 0; j &lt; m; ++j) 
+		if ( k == (r-1)) 
+{M2[i*m + j] = PTR[k*n*m + i*m + j];}
+				
+for (i = 0; i &lt; n; ++i) { printf("\n ");
+	for (j = 0; j &lt; m; ++j)
+printf(" %3d ", M2[i*m + j]); 
+}
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; 
+ }</PRE></DIV>
+            <P id=id_203>Трехмерный массив можно рассматривать как книгу с 
+            заданным количеством страниц (размер <B>p = 3</B> ), размер которых 
+            определяется как матрица с заданным числом строк (размер <B>n = 
+            4</B> ) и с заданным количеством столбцов (размер <B>m = 8</B> ). 
+            Страницы (матрицы) "сшиваются". С помощью указателя <B>*PTR</B> 
+            сначала формируется одномерный массив, а затем он разбивается на 
+            заданное количество матриц. В функциях <SPAN 
+            class=texample>puts()</SPAN> допускается перевод на новую строку с 
+            помощью символа форматирования <B>\n</B>.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_205>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.6">рис. 
+            8.6</A>.</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_206 align=left><A name=image.8.6></A></P>
+            <DIV><IMG alt="Пример вывода данных трехмерного массива" 
+            src="Лекция_8_files/mhtED68(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 8.6.</B>&nbsp; Пример вывода данных 
+            трехмерного массива
+            <P></P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_207><B>Задание 6</B></P>
+            <DIV id=mark_207 class=lecture_mark></DIV>
+            <OL id=id_208>
+              <LI>В программу включите проверку вводимого номера матрицы, т.е. 
+              чтобы число <B>r <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\in 
+              src="Лекция_8_files/mhtED8A(1).tmp" width=18 height=14> [1;3]</B>.
+              <LI>В программу введите указатели с многоуровневой адресацией, 
+              например <B>***ptr3</B>, <B>**ptr2</B>. Проверьте работу 
+программы.
+              <LI>Количество строк матрицы примите n = 2*Х, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>Трехмерный массив заполните вещественными числами, равномерно 
+              распределенными в интервале [–3*X; 3*X], где Х – номер компьютера, 
+              за которым выполняется лабораторная работа.
+              <LI>С учетом предыдущего пункта определите минимальный и 
+              максимальный элементы трехмерного массива. Определите также 
+              индексы (k,i,j) этих элементов. Результаты выведите на 
+              консоль.</LI></OL>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_215><B>Пример 7</B>.Напишите программу поиска подстроки в 
+            строке, сформированной по случайному закону из 15 букв латинского 
+            алфавита, с помощью функции <SPAN class=texample>strstr()</SPAN>. В 
+            качестве подстроки принять первые три буквы своей фамилии.</P>
+            <DIV id=mark_215 class=lecture_mark></DIV>
+            <P id=id_217>Для работы с функцией <SPAN 
+            class=texample>strstr()</SPAN> требуется подключение заголовочного 
+            файла <B>string.h</B>.</P>
+            <DIV id=mark_217 class=lecture_mark></DIV>
+            <P id=id_219>Программный код решения примера:</P>
+            <DIV id=mark_219 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main (void) {
+	int i,  
+	    k = 0,
+	    n, in;
+	int numSTR;
+	int N = 1000;
+	int numA, numZ;
+	char str[16];
+	char sub[4];
+	char *ptr;
+
+	srand((unsigned)time(NULL));
+     numA = (int)'a';
+     numZ = (int)'z';
+
+	printf("\n Enter the three letters: ");
+	in = scanf_s("%s", sub, sizeof(sub));
+	if (in == 0) 
+	{
+		printf("\n Error input. Press any key: ");
+		_getch();
+		exit(1);
+	}
+
+	printf("\n\t substring is \"%s\"\n", sub);
+
+	for (n = 0; n &lt; N; n++) {
+for (i = 0; i &lt; 15; i++)
+str[i] = numA + rand() % (numZ - numA) + 1;
+
+str[i] = '\0';
+
+ptr = strstr(str, sub);
+if (ptr != NULL) 
+{ 
+ numSTR = (int)(ptr - str +1); 
+ k++;	
+ 
+break; 
+     }
+}
+	if (k == 0)
+		printf("\n\t Substring \"%s\" not found", sub);
+	else
+ printf("\n\t Substring \"%s\" found at positions %d, %d, %d", \
+ sub, numSTR, numSTR+1, numSTR+2);
+
+	puts("\n");
+	for (i = 0; i &lt; 15; i++)
+		printf(" %3d)", i+1);
+	puts("");
+	for (i = 0; i &lt; 15; i++)
+		printf(" %3c ", str[i]);
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_221>Подобный пример рассматривался в предыдущей работе. 
+            Видно, что применение указателя и функции <SPAN 
+            class=texample>strstr()</SPAN> существенно привело к уменьшению 
+            программного кода.</P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_223>Возможный положительный результат работы программы 
+            показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\8. Лекция Указатели и массивы в языке С.mht#image.8.7">рис. 
+            8.7</A>.</P>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <P id=id_224 align=left><A name=image.8.7></A></P>
+            <DIV><IMG alt="Результат поиска подстроки в строке" 
+            src="Лекция_8_files/mhtED9D(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 8.7.</B>&nbsp; Результат поиска 
+            подстроки в строке
+            <P></P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <P id=id_225><B>Задание&nbsp;7</B></P>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <OL id=id_226>
+              <LI>Объясните процесс вычисления правой части выражения с 
+              переменной <SPAN class=texample>numSTR</SPAN>.
+              <LI>Примените вместо операторов цикла <SPAN 
+              class=texample>for</SPAN> операторы цикла <SPAN 
+              class=texample>while</SPAN>.
+              <LI>Подсчитайте количество итераций формирования строки (из 15 
+              символов), когда в ней будет найдена задаваемая подстрока 
+              (например, три латинские буквы вашей фамилии).
+              <LI>Включите допустимо возможное для вашего компилятора количество 
+              итераций поиска подстроки в строке.
+              <LI>Напишите программу имитации взлома пароля, состоящего из трех 
+              букв латинского алфавита. Если при трехкратном ручном вводе 
+              пароля, он не будет разгадан, то включите автоматический 
+              поиск.</LI></OL>
+            <DIV id=mark_226 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_235>
+              <LI>Как рассматривает имя массива компилятор языка <B>С</B>?
+              <LI>На какое место в памяти компьютера указывает имя массива?
+              <LI>Какая связь между указателями и массивами в языке <B>С</B>?
+              <LI>Как формируется массив указателей в языке <B>С</B>?
+              <LI>Как следует организовать посимвольное формирование строки 
+              символов с помощью указателя?
+              <LI>Как с помощью одного указателя произвести инициализацию и 
+              вывод результата на консоль двухмерного (трехмерного) числового 
+              массива?
+              <LI>Как изменяется значение типизированного указателя при 
+              применении к нему операции адресного сложения?
+              <LI>Как производится вычитание указателей?</LI></OL>
+            <DIV id=mark_235 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_8_files/mhtEC3E(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

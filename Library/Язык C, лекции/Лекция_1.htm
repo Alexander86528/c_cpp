@@ -1,0 +1,678 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content=IE=5.0000 http-equiv=X-UA-Compatible>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_1_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginheight="6" marginwidth="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_1_files/mht8A97(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_1_files/mht8A97(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_1_files/mht8A97(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>1. Лекция: Знакомство со средой Microsoft 
+            Visual Studio 2010 и настройка компилятора языка С. Стандартный 
+            ввод-вывод: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматривается инструментальная среда разработки приложений 
+            Microsoft Visual Studio 2010 в режиме компилятора языка <B 
+            xmlns="http://www.w3.org/TR/xhtml1/strict">С</B>. Приводится 
+            простейшая программа на языке <B 
+            xmlns="http://www.w3.org/TR/xhtml1/strict">С</B>, которая 
+            иллюстрирует использование средств элементарного текстового вывода 
+            на консоль. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_1_files/mht8A97(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Язык <B>С</B> (читается как Си) в основе своей был создан 
+            в 1972 г. как язык для операционной системы UNIX [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>1.2</A>]. Автором этого языка считается Денис М. Ритчи 
+            (DENNIS M. RITCHIE).</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Популярность языка <B>С</B> обусловлена, прежде всего 
+            тем, что большинство операционных систем были написаны на языке С. 
+            Его начальное распространение было задержано из-за того, что не было 
+            удачных компиляторов.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Несколько лет не было единой политики в стандартизации 
+            языка <B>С</B>. В начале 1980-х г. в Американском национальном 
+            институте стандартов (ANSI) началась работа по стандартизации языка 
+            <B>С</B>. В 1989 г. работа комитета по языку С была ратифицирована, 
+            и в 1990 г. был издан первый официальный документ по стандарту языка 
+            <B>С</B>. Появился стандарт 1989, т.е. <B>С89</B> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>1.3</A>].</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>К разработке стандарта по языку <B>С</B> была также 
+            привлечена Международная организация по стандартизации (ISO). 
+            Появился стандарт ISO/IEC 9899:1990, или ANSI C99 языка <B>С</B> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>1.3</A>].</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>В данном пособии за основу принимается стандарт языка 
+            <B>С</B> от 1989 г. и написание программ будет выполняться в среде 
+            разработки Visual Studio 2010.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6>Язык <B>С</B> является прежде всего языком высокого 
+            уровня, но в нем заложены возможности, которые позволяют 
+            программисту (пользователю) работать непосредственно с аппаратными 
+            средствами компьютера и общаться с ним на достаточно низком уровне 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>1.3</A>]. Многие операции, выполняемые на языке 
+            <B>С</B>, сродни языку Ассемблера. Поэтому язык С часто называют 
+            языком среднего уровня.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7>Для написания программ в практических разделах данного 
+            учебного пособия будет использоваться компилятор языка <B>С++</B>, а 
+            программирование будет вестись в среде <B>Microsoft Visual Studio 
+            2010</B>. Предполагается, что на компьютере установлена эта 
+            интегрированная среда.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8><B>Microsoft Visual Studio 2010</B> доступна в следующих 
+            вариантах:</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <UL id=id_9>
+              <LI><B>Express</B> – бесплатная среда разработки, включающая 
+              только базовый набор возможностей и библиотек. 
+              <LI><B>Professional</B> – поставка, ориентированная на 
+              профессиональное создание программного обеспечения, и командную 
+              разработку, при которой созданием программы одновременно 
+              занимаются несколько человек. 
+              <LI><B>Premium</B> – издание, включающее дополнительные 
+              инструменты для работы и исходным кодом программ и создания баз 
+              данных. 
+              <LI><B>Ultimate</B> – наиболее полное издание Visual Studio, 
+              включающие все доступные инструменты для написания, тестирования, 
+              отладки и анализа программ, а также дополнительные инструменты для 
+              работы с базами данных и проектирования архитектуры ПО.</LI></UL>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_14>Отличительной особенностью среды <B>Microsoft Visual 
+            Studio 2010</B> является то, что она поддерживает работу с 
+            несколькими языками программирования и программными платформами. 
+            Поэтому, перед тем, как начать создание программы на языке С, 
+            необходимо выполнить несколько подготовительных шагов по созданию 
+            проекта и выбора и настройки компилятора языка С для трансляции 
+            исходного кода</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>После запуска <B>Microsoft Visual Studio 2010</B> 
+            появляется следующая стартовая страница, которая показана на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.1">рис. 
+            1.1</A>.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16 align=left><A name=image.1.1></A></P>
+            <DIV><IMG alt="Стартовая страница Visual Studio 2010" 
+            src="Лекция_1_files/mht8AE8(1).tmp" width=620 
+            height=449></DIV><BR><B>Рис. 1.1.</B>&nbsp; Стартовая страница 
+            Visual Studio 2010 
+            <P></P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Следующим шагом является создание нового проекта. Для 
+            этого в меню <B>File</B> необходимо выбрать 
+            <B>New&nbsp;–&nbsp;Project</B> (или комбинацию клавиш 
+            <B>Ctrl&nbsp;+&nbsp;Shift&nbsp;+&nbsp;N</B> ). Результат выбора 
+            пунктов меню для создания нового проекта показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.2">рис. 
+            1.2</A>.</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_18 align=left><A name=image.1.2></A></P>
+            <DIV><IMG alt="Окно с выбором нового проекта" 
+            src="Лекция_1_files/mht8B0B(1).tmp" width=620 
+            height=465></DIV><BR><B>Рис. 1.2.</B>&nbsp; Окно с выбором нового 
+            проекта 
+            <P></P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Среда Visual Studio отобразит окно <B>New Project</B>, в 
+            котором необходимо выбрать тип создаваемого проекта. <SPAN 
+            class=xml_em_italic>Проект</SPAN> (project) используется в Visual 
+            Studio для логической группировки нескольких файлов, содержащих 
+            исходный код, на одном из поддерживаемых языков программирования, а 
+            также любых вспомогательных файлов. Обычно после сборки проекта 
+            (которая включает компиляцию всех входящих в проект файлов исходного 
+            кода) создается один исполняемый модуль.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>В окне <B>New Project</B> следует развернуть узел Visual 
+            С++, обратиться к пункту Win32 и на центральной панели выбрать Win32 
+            Console Application. Выбор этой опции показан на рис. <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.3">рис. 
+            1.3</A>.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21 align=left><A name=image.1.3></A></P>
+            <DIV><IMG alt="Выбор типа проекта" 
+            src="Лекция_1_files/mht8B2D(1).tmp" width=620 
+            height=446></DIV><BR><B>Рис. 1.3.</B>&nbsp; Выбор типа проекта 
+            <P></P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_22>Затем в поле редактора <B>Name</B> (где по умолчанию 
+            имеется &lt;Enter_name&gt;) следует ввести имя проекта, например, 
+            <B>hello</B>. В поле <B>Location</B> можно указать путь размещения 
+            проекта, или выбрать путь размещения проекта с помощью клавиши 
+            (кнопки) Browse. По умолчанию проект сохраняется в специальной папке 
+            Projects. Пример выбора имени проекта показано на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.4">рис. 
+            1.4</A>.</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_23>Одновременно с созданием проекта Visual Studio создает 
+            решение. <SPAN class=xml_em_italic>Решение</SPAN> (solution) – это 
+            способ объединения нескольких проектов для организации более удобной 
+            работы с ними.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>После нажатия кнопки <B>OK</B> откроется окно <B>Win32 
+            Application Wizard</B> (мастер создания приложений для операционных 
+            систем Windows), показанное на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.5">рис. 
+            1.5</A>.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25 align=left><A name=image.1.4></A></P>
+            <DIV><IMG alt="Пример задания имени проекта" 
+            src="Лекция_1_files/mht8B4F(1).tmp" width=620 
+            height=446></DIV><BR><B>Рис. 1.4.</B>&nbsp; Пример задания имени 
+            проекта 
+            <P></P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>Выбор имени проекта может быть достаточно произвольным: 
+            допустимо использовать числовое значение, допустимо имя задавать 
+            через буквы русского алфавита.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>В дальнейшем будем использовать имя, набранное с помощью 
+            букв латинского алфавита и, может быть, с добавлением цифр.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28 align=left><A name=image.1.5></A></P>
+            <DIV><IMG alt="Мастер создания приложения" 
+            src="Лекция_1_files/mht8B71(1).tmp" width=615 
+            height=524></DIV><BR><B>Рис. 1.5.</B>&nbsp; Мастер создания 
+            приложения 
+            <P></P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29>На первой странице представлена информация о создаваемом 
+            проекте, на второй можно сделать первичные настройки проекта. После 
+            обращения к странице <B>Application Settings</B>, или после нажатия 
+            кнопки <B>Next</B> получим окно, показанное на рис. <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.6">рис. 
+            1.6</A>.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30 align=left><A name=image.1.6></A></P>
+            <DIV><IMG alt="Страница мастера  настройки  проекта по умолчанию" 
+            src="Лекция_1_files/mht8B84(1).tmp" width=615 
+            height=524></DIV><BR><B>Рис. 1.6.</B>&nbsp; Страница мастера 
+            настройки проекта по умолчанию 
+            <P></P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31>В дополнительных опциях ( <B>Additional options</B> ) 
+            следует поставить галочку в поле <B>Empty project</B> (пустой 
+            проект) и снять (убрать) галочку в поле <B>Precompiled header</B>. 
+            Получим экранную форму, показанную на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.7">рис. 
+            1.7</A>.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32 align=left><A name=image.1.7></A></P>
+            <DIV><IMG alt="Выполненная настройка мастера приложений" 
+            src="Лекция_1_files/mht8BA6(1).tmp" width=615 
+            height=524></DIV><BR><B>Рис. 1.7.</B>&nbsp; Выполненная настройка 
+            мастера приложений 
+            <P></P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>Здесь и далее будут создавать проекты по приведенной 
+            схеме, т.е. проекты в консольном приложении, которые должны 
+            создаваться целиком программистом (за счет выбора <B>Empty 
+            project</B> ). После нажатия кнопки <B>Finish</B>, получим экранную 
+            форму, показанную на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.8">рис. 
+            1.8</A>, где приведена последовательность действий добавления файла 
+            для создания исходного кода к проекту. Стандартный путь для этого: 
+            подвести курсор мыши к папке <B>Source Files</B> из узла 
+            <B>hello</B> в левой части открытого проекта приложения, выбрать 
+            <B>Add</B> и <B>New Item</B> (новый элемент).</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34 align=left><A name=image.1.8></A></P>
+            <DIV><IMG alt="Меню добавления нового элемента к проекту" 
+            src="Лекция_1_files/mht8BC8(1).tmp" width=620 
+            height=448></DIV><BR><B>Рис. 1.8.</B>&nbsp; Меню добавления нового 
+            элемента к проекту 
+            <P></P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_35>После выбора (нажатия) <B>New Item</B> получим окно, 
+            показанное на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.9">рис. 
+            1.9</A>, где через пункт меню <B>Code</B> узла <B>Visual C++</B> 
+            выполнено обращение к центральной части панели, в которой 
+            осуществляется выбор типа файлов. В данном случае требуется 
+            обратиться к закладке <B>C++ File</B> (.cpp).</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_36 align=left><A name=image.1.9></A></P>
+            <DIV><IMG alt="Окно выбора типа файла для подключения к проекту" 
+            src="Лекция_1_files/mht8BDB(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 1.9.</B>&nbsp; Окно выбора типа файла 
+            для подключения к проекту 
+            <P></P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_37>Теперь в поле редактора <B>Name</B> (в нижней части 
+            окна) следует задать имя нового файла и указать расширение 
+            <B>".с"</B>. Например, <B>main.c</B>. Имя файла может быть 
+            достаточно произвольным, но имеется негласное соглашение, что имя 
+            файла должно отражать его назначение и логически описывать исходный 
+            код, который в нем содержится. В проекте, состоящем из нескольких 
+            файлов, имеет смысл выделить файл, содержащий главную функцию 
+            программы, с которой она начнет выполняться. В данном пособии такому 
+            файлу мы будем задавать имя <B>main.c</B>, где расширение <B>.с</B> 
+            указывает на то, что этот файл содержит исходный код на языке 
+            <B>С</B>, и он будет транслироваться соответствующим компилятором. 
+            Программам на языке <B>С</B> принято давать расширение <B>.с</B>. 
+            После задания имени файла в поле редактора <B>Name</B>, получим 
+            форму, показанную на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.10">рис. 
+            1.10</A>.</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38 align=left><A name=image.1.10></A></P>
+            <DIV><IMG alt="Задание имени файла, подключаемому к проекту" 
+            src="Лекция_1_files/mht8BFD(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 1.10.</B>&nbsp; Задание имени файла, 
+            подключаемому к проекту 
+            <P></P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39>Затем следует нажать кнопку <B>Add</B>. Вид среды Visual 
+            Studio после добавления первого файла к проекту показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.11">рис. 
+            1.11</A>. Добавленный файл отображается в дереве <B>Solution 
+            Explorer</B> под узлом Source Files (файлы с исходным кодом), и для 
+            него автоматически открывается редактор.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40 align=left><A name=image.1.11></A></P>
+            <DIV><IMG alt="Подключение файла проекта" 
+            src="Лекция_1_files/mht8C1F(1).tmp" width=620 
+            height=449></DIV><BR><B>Рис. 1.11.</B>&nbsp; Подключение файла 
+            проекта 
+            <P></P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.11">рис. 
+            1.11</A> в левой панели в папке <B>Solution Explorer</B> 
+            отображаются файлы, включенные в проект в папках. Приведем 
+            описание.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_42>Папка <B>Source Files</B> предназначена для файлов с 
+            исходным кодом. В этой папке отображаются файлы с расширением 
+            <B>.с</B>.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43>Папка <B>Header Files</B> содержит заголовочные файлы с 
+            расширением <B>.h</B>.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44>Папка <B>Resource Files</B> содержит файлы ресурсов, 
+            например изображения и т.&nbsp;д.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>Папка <B>External Dependencies</B> отображает файлы, не 
+            добавленные явно в проект, но использующиеся в файлах исходного 
+            кода, например включенные при помощи директивы <SPAN 
+            class=texample>#include</SPAN>. Обычно в папке <B>External 
+            Dependencies</B> присутствуют заголовочные файлы стандартной 
+            библиотеки, использующиеся в проекте.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_47>Следующий шаг состоит в настройке проекта. Для этого в 
+            меню <B>Project</B> главного меню следует выбрать <B>hello 
+            Properties</B> (или с помощью последовательного нажатия клавиш 
+            Alt+F7). Пример обращения к этому пункту меню показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.12">рис. 
+            1.12</A>.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_48 align=left><A name=image.1.12></A></P>
+            <DIV><IMG alt="Обращение к странице свойств проекта" 
+            src="Лекция_1_files/mht8C41(1).tmp" width=620 
+            height=465></DIV><BR><B>Рис. 1.12.</B>&nbsp; Обращение к странице 
+            свойств проекта 
+            <P></P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49>После того как произойдет открытие окна свойств проекта, 
+            следует обратиться (с левой стороны) к <B>Configuration 
+            Properties</B>. Появится ниспадающий список, который показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.13">рис. 
+            1.13</A>. Выполнить обращение к узлу General, и через него в правой 
+            панели выбрать <B>Character Set</B>, где установить свойство <B>Use 
+            Multi-byte Character Set</B>. Настройка <B>Character Set</B> (набор 
+            символов) позволяет выбрать, какая кодировка символов – ANSI или 
+            UNICODE – будет использована при компиляции программы. Для 
+            совместимости со стандартом C89 мы выбираем <B>Use Multi-Byte 
+            Character Set</B>. Это позволяет использовать многие привычные 
+            функции, например, функции по выводу информации на консоль.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50 align=left><A name=image.1.13></A></P>
+            <DIV><IMG alt="Меню списка свойств проекта" 
+            src="Лекция_1_files/mht8C64(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 1.13.</B>&nbsp; Меню списка свойств 
+            проекта 
+            <P></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51>После сделанного выбора, показанного на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.13">рис. 
+            1.13</A>, следует нажать кнопку Применить. Затем следует выбрать 
+            узел <B>С/С++</B> и в ниспадающем меню выбрать пункт <B>Code 
+            Generation</B>, через который следует обратиться в правой части 
+            панели к закладке <B>Enable C++ Exceptions</B>, для которой 
+            установить <B>No</B> (запрещение исключений С++). Результат 
+            установки выбранного свойства показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.14">рис. 
+            1.14</A>. После произведенного выбора нажать кнопку 
+            <B>Применить</B>.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52 align=left><A name=image.1.14></A></P>
+            <DIV><IMG alt="Страница свойств для запрещения исключений С++" 
+            src="Лекция_1_files/mht8C86(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 1.14.</B>&nbsp; Страница свойств для 
+            запрещения исключений С++ 
+            <P></P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>Далее в ниспадающем меню узла <B>С/С++</B> необходимо 
+            выбрать пункт <B>Language</B> и через него обратиться в правую часть 
+            панели, где установить следующие свойства: свойство <B>Disable 
+            Language Extensions</B> (дополнительные языковые расширения фирмы 
+            Microsoft) в <B>Yes&nbsp;(/Za)</B>, свойство <B>Treat wchar_t as 
+            Built-in Type</B> (рассматривать тип <SPAN 
+            class=texample>wchar_t</SPAN> как встроенный тип) установить в 
+            <B>No&nbsp;(/Zc:wchar_t–)</B>, свойство <B>Force Conformance in For 
+            Loop Scope</B> (соответствие стандарту определения локальных 
+            переменных в операторе цикла <SPAN class=texample>for</SPAN> ) 
+            установить в <SPAN class=texample>Yes(/Zc:forScope)</SPAN>, свойство 
+            <B>Enable Run-Time Type Info</B> (разрешить информацию о типах во 
+            время выполнения) установить в <B>No&nbsp;(/GR–)</B>, свойство 
+            <B>Open MP Support</B> (разрешить расширение Open MP – используется 
+            при написании программ для многопроцессорных систем) установить в 
+            <B>No(/openmp–)</B>.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_56>Результат выполнения этих действий показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.15">рис. 
+            1.15</A>.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_57 align=left><A name=image.1.15></A></P>
+            <DIV><IMG alt="Страница свойств закладки Language" 
+            src="Лекция_1_files/mht8CA8(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 1.15.</B>&nbsp; Страница свойств 
+            закладки Language 
+            <P></P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_58>После выполнения указанных действий следует нажать 
+            клавишу <B>Применить</B>. Далее в ниспадающем списке узла 
+            <B>С/С++</B> следует выбрать пункт <B>Advanced</B> и в правой панели 
+            изменить свойство <B>Compile As</B> в свойство компиляции языка 
+            <B>С</B>, т.е. <B>Compile as C Code (/TC)</B>. Результат установки 
+            компилятора языка <B>С</B> показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.16">рис. 
+            1.16</A>.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59 align=left><A name=image.1.16></A></P>
+            <DIV><IMG alt="Результат выбора режима компиляции языка С" 
+            src="Лекция_1_files/mht8CDA(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 1.16.</B>&nbsp; Результат выбора режима 
+            компиляции языка С 
+            <P></P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>После нажатия клавиш <B>Применить</B> и <B>ОК</B> 
+            сначала откроется подготовленный проект с пустым полем редактора 
+            кода, в котором можно начать писать программы. В этом редакторе 
+            наберем программу, выводящую традиционное приветствие "Hello World". 
+            Для компиляции созданной программы можно обратиться в меню 
+            <B>Build</B>, или, например, набрать клавиши Ctr+F7. В случае 
+            успешной компиляции получим следующую экранную форму, показанную на 
+            <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.17">рис. 
+            1.17</A>.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_61 align=left><A name=image.1.17></A></P>
+            <DIV><IMG 
+            alt="Успешно откомпилированная первая программа на языке С" 
+            src="Лекция_1_files/mht8CFC(1).tmp" width=620 
+            height=449></DIV><BR><B>Рис. 1.17.</B>&nbsp; Успешно 
+            откомпилированная первая программа на языке С 
+            <P></P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62>Для приведенного кода программы запуск на ее исполнение 
+            из окна редактора в Visual Studio 2010 можно нажать клавишу 
+            <B>F5</B>. <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.18">рис. 
+            1.18</A> показан результат исполнения первой программы.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_63 align=left><A name=image.1.18></A></P>
+            <DIV><IMG alt="Консольный вывод первой программы на языке С" 
+            src="Лекция_1_files/mht8D1E(1).tmp" width=620 
+            height=291></DIV><BR><B>Рис. 1.18.</B>&nbsp; Консольный вывод первой 
+            программы на языке С 
+            <P></P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64>Произведем разбор первой программы. Во-первых, надо 
+            отметить, что в языке <B>С</B> нет стандартных инструкций 
+            (операторов) для вывода сообщений на консоль (окно пользователя). В 
+            языке <B>С</B> предусматриваются специальные библиотечные файлы, в 
+            которых имеются функции для этих целей. В приведенной программе 
+            используется заголовочный файл с именем <SPAN 
+            class=texample>stdio.h</SPAN> (стандартный ввод–вывод), который 
+            должен быть включен в начало программы. Для вывода сообщения на 
+            консоль используется функция <SPAN class=texample>printf()</SPAN>. 
+            Для работы с консолью включен также заголовочный файл <SPAN 
+            class=texample>conio.h</SPAN>., который поддерживает функцию <SPAN 
+            class=texample>_getch()</SPAN>, которая извлекает символ из потока 
+            ввода, т.&nbsp;е. она предназначенная для приема сообщения о нажатии 
+            какой-либо (почти любой) клавиши на клавиатуре. С другими 
+            компиляторами, возможно, потребуется <SPAN 
+            class=texample>getch()</SPAN>, т.е. без префиксного нижнего 
+            подчеркивания. Строка программы</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int main (void)</PRE></DIV>
+            <P id=id_71>сообщает системе, что именем программы является <SPAN 
+            class=texample>main()</SPAN> – главная функция, и что она возвращает 
+            целое число, о чем указывает аббревиатура <B>"int"</B>. Имя <SPAN 
+            class=texample>main()</SPAN> – это специальное имя, которое 
+            указывает, где программа должна начать выполнение [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>1.1</A>]. Наличие круглых скобок после слова <SPAN 
+            class=texample>main()</SPAN> свидетельствует о том, что это имя 
+            функции. Если содержимое круглых скобок отсутствует или в них 
+            содержится служебное слово <B>void</B>, то это означает, что в 
+            функцию <SPAN class=texample>main()</SPAN> не передается никаких 
+            аргументов. Тело функции <SPAN class=texample>main()</SPAN> 
+            ограничено парой фигурных скобок. Все утверждения программы, 
+            заключенные в фигурные скобки, будут относиться к функции <SPAN 
+            class=texample>main()</SPAN>.</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_78>В теле функции <SPAN class=texample>main()</SPAN> 
+            имеются еще три функции. Во-первых, функции <SPAN 
+            class=texample>printf()</SPAN> находятся в библиотеке компилятора 
+            языка <B>С</B>, и они печатают или отображают те аргументы, которые 
+            были подставлены вместо параметров. Символ <SPAN 
+            class=texample>"\n"</SPAN> составляет единый символ newline (новая 
+            строка), т.е. с помощью этого символа осуществляется перевод на 
+            новую строку. Символ <SPAN class=texample>"\t"</SPAN> осуществляет 
+            табуляцию, т.е. начало вывода результатов программы с отступом 
+            вправо.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_83>Функция без параметров <SPAN 
+            class=texample>_getch()</SPAN> извлекает символ из потока ввода 
+            (т.е. ожидает нажатия почти любой клавиши). С другими компиляторами, 
+            возможно, потребуется <SPAN class=texample>getch()</SPAN>, т.е. без 
+            префиксного нижнего подчеркивания.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_86>Последнее утверждение в первой программе</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>return 0;</PRE></DIV>
+            <P id=id_88>указывает на то, что выполнение функции <SPAN 
+            class=texample>main()</SPAN> закончено и что в систему возвращается 
+            значение 0 (целое число). Нуль используется в соответствии с 
+            соглашением об индикации успешного завершения программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>1.3</A>].</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_90>В завершение следует отметить, что все действия в 
+            программе завершаются символом точки с запятой.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_91>Все файлы проекта сохраняются в той папке, которая 
+            сформировалась после указания в поле Location имени проекта (hello). 
+            На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.19">рис. 
+            1.19</A> показаны папки и файлы проекта Visual Studio 2010..</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_92 align=left><A name=image.1.19></A></P>
+            <DIV><IMG alt="Файлы и папки созданного проекта" 
+            src="Лекция_1_files/mht8D40(1).tmp" width=620 
+            height=374></DIV><BR><B>Рис. 1.19.</B>&nbsp; Файлы и папки 
+            созданного проекта 
+            <P></P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_93>На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.19">рис. 
+            1.19</A> файлы с полученными расширениями означают:</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_94><B>hello.sln</B> – файл решения для созданной программы. 
+            Он содержит информацию о том, какие проекты входят в данное решение. 
+            Обычно, эти проекты расположены в отдельных подкаталогах. Например, 
+            наш проект находится в подкаталоге hello;</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_95><B>hello.suo</B> – файл настроек среды Visual Studio при 
+            работе с решением, включает информацию об открытых окнах, их 
+            расположении и прочих пользовательских параметрах.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96><B>hello.sdf</B> – файл содержащий вспомогательную 
+            информацию о проекте, который используется инструментами анализа 
+            кода Visual Studio, такими как IntelliSense для отображения 
+            подсказок об именах и т.д.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_97>Файлы папки <B>Debug</B> показаны на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.20">рис. 
+            1.20</A>.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98 align=left><A name=image.1.20></A></P>
+            <DIV><IMG alt="Файлы папки Debug" 
+            src="Лекция_1_files/mht8D63(1).tmp" width=620 
+            height=377></DIV><BR><B>Рис. 1.20.</B>&nbsp; Файлы папки Debug 
+            <P></P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99>Рассмотрим файлы в соответствии с <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.20">рис. 
+            1.20</A>.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100><B>hello.exe</B> – исполняемый файл проекта;</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_101><B>hello.ilk</B> – файл "incremental linker", 
+            используемый компоновщиком для ускорения процесса компоновки;</P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_102><B>hello.pdb</B> – отладочная информация/информация об 
+            именах в исполняемых файлах, используемая отладчиком.</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_103>Файлы папки <B>hello</B> показаны на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C\1. Лекция.mht#image.1.21">рис. 
+            1.21</A>.</P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <P id=id_104 align=left><A name=image.1.21></A></P>
+            <DIV><IMG alt="Содержимое папки hello" 
+            src="Лекция_1_files/mht8D94(1).tmp" width=620 
+            height=377></DIV><BR><B>Рис. 1.21.</B>&nbsp; Содержимое папки hello 
+            <P></P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_105>Характеристика содержимого папки <B>hello</B>:</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106><B>main.c</B> – файл исходного программного кода,</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107><B>hello.vcxproj</B> – файл проекта,</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108><B>hello.vcxproj.user</B> – файл пользовательских 
+            настроек, связанных с проектом,</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109><B>hello.vcxproj.filters</B> – файл с описанием 
+            фильтров, используемых Visual Studio Solution Explorer для 
+            организации и отображения файлов с исходным кодом.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_110>В практической части выполните следующие задания на 
+            основе рассмотренной программы <B>hello</B>:</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <OL id=id_111>
+              <LI>Напишите программу, которая выводила бы на консоль название 
+              факультета, где учитесь, номер группы, свою фамилию, имя и 
+              отчество в разных строках дисплея (консоли) с помощью одной 
+              функции <SPAN class=texample>printf()</SPAN>. 
+              <LI>Вывод выполните с помощью нескольких функций <SPAN 
+              class=texample>printf()</SPAN> (количество функций должно 
+              соответствовать каждой порции информации). 
+              <LI>Для задания пункта 2 вывод информации выполните в различных 
+              строках подряд, т.е. без межстрочного пропуска. 
+              <LI>Проверьте программу без ключевого слова void для функции <SPAN 
+              class=texample>main()</SPAN>.</LI></OL>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_119><B>Примечание</B>. Вывод требуемой информации 
+            осуществляется с помощью букв латинского алфавита. Комментарии в 
+            программе могут быть сделаны после символа "//" или внутри 
+            комбинации символов "/* */".</P>
+            <DIV id=mark_119 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_120>
+              <LI>Какие компиляторы языка <B>С</B> вам известны? 
+              <LI>Какое имя имеет исполняемый файл созданного проекта? 
+              <LI>Объясните назначение заголовочных файлов <SPAN 
+              class=texample>stdio.h, conio.h</SPAN>. 
+              <LI>Как будет работать программа без заголовочного файла <SPAN 
+              class=texample>conio.h</SPAN>? 
+              <LI>В каком месте программы находится точка ее входа? 
+              <LI>Как осуществляется табуляция строки на консоли и на сколько 
+              позиций выполняется отступ от левого края? 
+              <LI>Какое значение имеет главная функция проекта <SPAN 
+              class=texample>main()</SPAN> в программах на языке 
+            <B>С</B>?</LI></OL>
+            <DIV id=mark_120 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_1_files/mht8A97(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_1_files/mht8A97(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

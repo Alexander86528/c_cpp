@@ -1,0 +1,785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_9_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_9_files/mhtD942(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_9_files/mhtD942(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_9_files/mhtD942(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>9. Лекция: Динамическое распределение памяти 
+            в языке С: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются вопросы динамического распределения памяти, 
+            Изучаются функции динамического распределения памяти и их применение 
+            для числовых и символьных массивов, для хранения данных. 
+        </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_9_files/mhtD942(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1><SPAN class=xml_em_italic>Динамическая память</SPAN> – 
+            это оперативная память компьютера, предоставляемая программе при ее 
+            работе. Динамическое размещение данных означает использование 
+            динамической памяти при работе программы. В отличие от этого 
+            статическое размещение (например, явное определение массива данных 
+            заданного типа) осуществляется компилятором в процессе компиляции 
+            (запуска) программы.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Указатели используются для динамического выделения памяти 
+            компьютера для хранения данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>]. <SPAN class=xml_em_italic>Динамическое 
+            распределение</SPAN> означает, что программа выделяет память для 
+            данных во время выполнения.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Память, выделяемая в <B>С</B> функциями динамического 
+            распределения данных, находится в так называемой <SPAN 
+            class=xml_em_italic>динамически распределяемой области памяти</SPAN> 
+            <SPAN class=xml_em_italic>(heap</SPAN> – куча) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>]. Динамически распределяемая область памяти – 
+            это свободная область памяти, не используемая программой, 
+            операционной системой или другими программами. Размер этой области 
+            памяти заранее неизвестен, но, как правило, в ней достаточно памяти 
+            для размещения данных программы. Хотя размер динамически 
+            распределяемой области памяти очень большой, все же она конечна и 
+            может быть исчерпана.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Основу системы динамического распределения памяти в 
+            <B>С</B> составляют библиотечные функции <SPAN 
+            class=texample>calloc()</SPAN>, <SPAN 
+            class=texample>malloc()</SPAN>, <SPAN 
+            class=texample>realloc()</SPAN> и <SPAN class=texample>free()</SPAN> 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>].</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_9>Рассмотрим прототипы этих функций.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10>1. Функция <SPAN class=texample>calloc()</SPAN></P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdlib.h&gt;
+void *calloc(size_t num, size_t size);</PRE></DIV>
+            <P id=id_13>Функция <SPAN class=texample>calloc()</SPAN> выделяет 
+            память, размер которой равен значению выражения <SPAN 
+            class=texample>num * size</SPAN>, т.е. память, достаточную для 
+            размещения массива, содержащего <B>num</B> объектов размером 
+            <B>size</B> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>]. Выделенная область памяти <SPAN 
+            class=xml_em_italic>обнуляется</SPAN>. Функция <SPAN 
+            class=texample>calloc()</SPAN> возвращает указатель на первый байт 
+            выделенной области памяти для массива <SPAN 
+            class=texample>num</SPAN> объектов, каждый из которых имеет размер 
+            <B>size</B> или <SPAN class=texample>NULL</SPAN>, если запрос на 
+            память выполнить нельзя [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>9.2</A>]. Если для удовлетворения запроса нет 
+            достаточного объема памяти, возвращается нулевой указатель. Перед 
+            попыткой использовать распределенную память важно проверить, что 
+            возвращаемое значение не равно нулю. Тип <SPAN 
+            class=texample>void</SPAN> может быть переопределен для требуемого 
+            типа, т.е. для <SPAN class=texample>char, int, float, 
+            double</SPAN>.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_21>Пример фрагмента программного кода динамического 
+            распределения памяти для массивов заданного размера (например, 
+            вводится с клавиатуры):</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <DIV class=example><PRE>double  *ptr;
+ptr = (double *) (calloc(10, sizeof(double)));
+if (!ptr) // условие логического отрицания
+{printf("Out of memory\n"); exit(1);}</PRE></DIV>
+            <P id=id_23>В приведенном примере число 10 – это размер одномерного 
+            массива с вещественными данными (типа <SPAN 
+            class=texample>double</SPAN> ). В случае выделения памяти для 
+            двухмерного массива размера <SPAN class=texample>N*M</SPAN> строчка 
+            с функцией <SPAN class=texample>calloc()</SPAN> перепишется так:</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = (double *) (calloc(N*M, sizeof(double)));</PRE></DIV>
+            <P id=id_28>При этом двухмерный массив рассматривается как аналог 
+            одномерного массива размера <SPAN class=texample>N*M</SPAN>.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_30>Использование явного приведения типов ( <SPAN 
+            class=texample>double</SPAN> ) сделано для того, чтобы обеспечить 
+            переносимость программы, в первую очередь для обеспечения 
+            совместимости с языком программирования <B>С++</B>.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_32>2. Функция <SPAN class=texample>malloc()</SPAN></P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdlib.h&gt;
+void *malloc(size_t size);</PRE></DIV>
+            <P id=id_35>Функция <SPAN class=texample>malloc()</SPAN> возвращает 
+            указатель на первый байт области памяти размера <B>size</B>, которая 
+            была выделена из динамически распределяемой области памяти [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#10" 
+            target=_blank>9.3</A>]. Если для удовлетворения запроса в 
+            динамически распределяемой области памяти нет достаточного объема 
+            памяти, возвращается нулевой указатель <B>NULL</B>. При этом следует 
+            иметь в виду, что попытка использовать нулевой указатель обычно 
+            приводит к полному отказу системы. Выделенная область памяти не 
+            инициализируется [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>9.2</A>].</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_37>Приведем фрагмент программного кода динамического 
+            распределения памяти для массивов заданного размера:</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <DIV class=example><PRE>double  *ptr;
+ptr = (double *) (malloc(10*sizeof(double)));
+if (!ptr) // условие логического отрицания
+{ // выход за пределы памяти
+printf("Out of memory. Press any key: "); 
+_getch();
+exit(1);
+}</PRE></DIV>
+            <P id=id_39>3. Функция <SPAN class=texample>realloc()</SPAN></P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdlib.h&gt;
+void *realloc(void *ptr, size_t size);</PRE></DIV>
+            <P id=id_42>В стандарте С89 функция <SPAN 
+            class=texample>realloc()</SPAN> изменяет размер блока ранее 
+            выделенной памяти, адресуемой указателем <SPAN 
+            class=texample>*ptr</SPAN> в соответствии с заданным размером 
+            <B>size</B> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>]. Значение параметра <B>size</B> может быть 
+            больше или меньше, чем перераспределяемая область. Функция <SPAN 
+            class=texample>realloc()</SPAN> возвращает указатель на блок памяти, 
+            поскольку не исключена необходимость перемещения этого блока. В этом 
+            случае содержимое старого блока (до <B>size</B> байтов) копируется в 
+            новый блок. Если новый размер памяти больше старого, дополнительное 
+            пространство не инициализируется [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>9.2</A>]. Если запрос невыполним, то функция 
+            распределения памяти <SPAN class=texample>realloc()</SPAN> 
+            возвращает нулевой указатель <SPAN class=texample>NULL</SPAN>. 
+            Функция <SPAN class=texample>realloc()</SPAN> позволяет 
+            перераспределить ранее выделенную память. При этом новый размер 
+            массива может быть как меньше предыдущего, так и больше его. Если 
+            система выделит память в новом месте, то все предыдущие значения, к 
+            которым программа обращалась по указателю <SPAN 
+            class=texample>*ptr</SPAN>, будут переписаны на новое место 
+            автоматически.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_50>4. Функция <SPAN class=texample>free()</SPAN></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdlib.h&gt;
+void free(void *ptr);</PRE></DIV>
+            <P id=id_53>Функция <SPAN class=texample>free()</SPAN> возвращает в 
+            динамически распределяемую область памяти блок памяти, адресуемый 
+            указателем <SPAN class=texample>*ptr</SPAN>, после чего эта память 
+            становится доступной для выделения в будущем [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>].</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_56>Вызов функции <SPAN class=texample>free()</SPAN> должен 
+            вызываться только с указателем, который был ранее получен в 
+            результате вызова одной из функций динамического распределения 
+            памяти. Использование недопустимого указателя при вызове, скорее 
+            всего, приведет к разрушению механизма управления памятью и, 
+            возможно, вызовет крах системы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>].</P>
+            <DIV id=mark_56 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_58><B>Пример 1</B>. Напишите программу считывания строк 
+            разной длины с использованием массива указателей, когда строки 
+            вводятся с клавиатуры, и вывода считанных строк на дисплей.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59>Программный код решения примера:</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#define N 79
+
+int main (void) { 
+int i, m = 3;
+char *str[N+1];
+char *str2[] = {"st", "nd", "rd"};
+
+for (i = 0; i &lt; m; ++i)  
+str[i] = (char *) calloc((N+1), sizeof(char));
+
+printf("\n Dynamic reading strings of different lengths\n\n");
+for (i = 0; i &lt; m; ++i) {
+	if (str[i] == NULL) {
+printf("\n\t Error memory allocation.\n");
+printf("\n Press any key: ");
+_getch(); 
+exit(1); }
+
+printf("\t Enter %d%s string: ", i+1, str2[i]);
+gets_s(str[i], sizeof(str)/sizeof(char));
+}
+     printf("\n\t The strings are:\n");
+     for (i = 0; i &lt; m; ++i)
+     printf("\t %s\n",str[i]); 
+
+   printf("\n\n Press any key: ");
+   _getch();
+   return 0; }</PRE></DIV>
+            <P id=id_61>Динамическое распределение памяти при каждом вводе новой 
+            строки осуществляется с помощью функции <SPAN 
+            class=texample>calloc()</SPAN>. Предусматривается проверка 
+            возвращаемого значения функции <SPAN class=texample>calloc()</SPAN>, 
+            которое не должно быть нулевым указателем, т.е. <SPAN 
+            class=texample>NULL</SPAN>. В функции <SPAN 
+            class=texample>gets_s()</SPAN> используется универсальное средство ( 
+            <SPAN class=texample>sizeof(str)/sizeof(char)</SPAN> ) определения 
+            размерности массива.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_67>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\9. Лекция  Динамическое распределение памяти в языке С.mht#image.9.1">рис. 
+            9.1</A>.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_68 align=left><A name=image.9.1></A></P>
+            <DIV><IMG 
+            alt="Пример  динамического считывания строк различной длины" 
+            src="Лекция_9_files/mhtD993(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 9.1.</B>&nbsp; Пример динамического 
+            считывания строк различной длины
+            <P></P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69><B>Задание 1</B></P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <OL id=id_70>
+              <LI>Вывод символьного массива осуществите на основе его 
+              разыменования.
+              <LI>Вместо функции <SPAN class=texample>calloc()</SPAN> примените 
+              функцию <SPAN class=texample>malloc()</SPAN> и введите (а потом 
+              выведите) свои фамилию, имя, номер группы, специальность (буквами 
+              латинского алфавита).
+              <LI>Количество вводимых строк определите случайным образом из 
+              интервала целых чисел [3;7].
+              <LI>Видоизмените программу для ввода одной строки с несколькими 
+              словами различной длины (с различным количеством символов), а 
+              затем сформируйте массив строк из заданных слов. Предусмотрите 
+              вывод строк сформированного символьного массива.
+              <LI>Отсортируйте символьный массив по убыванию длин введенных 
+              слов, считая, что прописные буквы имеют приоритет над строчными 
+              буквами. Сделайте вывод отсортированного массива на 
+            дисплей.</LI></OL>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_78><B>Пример 2</B>. Напишите программу для представления 
+            нижней треугольной матрицы, размер которой задается пользователем с 
+            клавиатуры и заполняется случайными равномерно распределенными 
+            числами из интервала [0; 12].</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_79>Квадратная матрица [ <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=a_{ik} 
+            src="Лекция_9_files/mhtD9D5(1).tmp" width=27 height=13> ] называется 
+            нижней треугольной, если из условия <SPAN class=xml_em_bold_italic>i 
+            &lt; k</SPAN> следует, что <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="a_{ik} = 0" src="Лекция_9_files/mhtD9F7(1).tmp" width=60 
+            height=18>, где <SPAN class=xml_em_bold_italic>i</SPAN> – номер 
+            строки, <SPAN class=xml_em_bold_italic>k</SPAN> – номер столбца 
+            квадратной матрицы размера <SPAN 
+            class=xml_em_bold_italic>n</SPAN>.</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <P id=id_82>В случае прямоугольной матрицы размером <SPAN 
+            class=xml_em_bold_italic>n</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_9_files/mhtDA0A(1).tmp" width=20 height=16> <SPAN 
+            class=xml_em_bold_italic>m</SPAN> переменные <SPAN 
+            class=xml_em_bold_italic>i</SPAN> и <SPAN 
+            class=xml_em_bold_italic>k</SPAN> изменяются в пределах: <B>1</B> 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=\leqslant src="Лекция_9_files/mhtDA1C(1).tmp" width=18 
+            height=18> <SPAN class=xml_em_bold_italic>i</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=\leqslant 
+            src="Лекция_9_files/mhtDA1C(1).tmp" width=18 height=18> <SPAN 
+            class=xml_em_bold_italic>n</SPAN>, <B>1</B> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=\leqslant 
+            src="Лекция_9_files/mhtDA1C(1).tmp" width=18 height=18> <SPAN 
+            class=xml_em_bold_italic>k</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=\leqslant 
+            src="Лекция_9_files/mhtDA1C(1).tmp" width=18 height=18> <SPAN 
+            class=xml_em_bold_italic>m</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_88>Программная реализация решения примера основывается на 
+            программе из [8].</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_89>Программный код решения примера:</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+// Макрос
+#define READIn(VARIABLE) \
+{printf("\n\t Enter the dimention of a square matrix (not exceeding 12):\n\t ");\
+printf(#VARIABLE" = "); scanf_s("%d",&amp;VARIABLE);}
+
+int main(void) { 
+int i, j, nMatr, jRow;
+ double **triMatr;
+ time_t t;
+ srand((unsigned int) time(&amp;t));
+
+ READIn(nMatr);
+ triMatr = (double **)calloc(nMatr,sizeof(double *));
+ for(i = 0; i &lt; nMatr; i++)
+   { jRow = (i &lt; nMatr ? i+1 : nMatr);
+     triMatr[i]=(double *)calloc(jRow,sizeof(double));
+     
+for (j = 0; j &lt; jRow; j++)
+triMatr[i][j] = (12*(double)rand()/RAND_MAX);
+   }
+ printf("\n  Result (triangular matrix): ");
+ for(i = 0; i &lt; nMatr; i++) { printf("\n ");
+     jRow = (i &lt; nMatr ? i+1 : nMatr);
+ for (j = 0; j &lt; jRow; j++)
+    printf(" %5.2f",triMatr[i][j]);
+free (triMatr[i]); }
+free (triMatr);
+
+	printf("\n\n Press any key: ");
+	_getch(); 
+     return 0; }</PRE></DIV>
+            <P id=id_91>В программе применена препроцессорная директива <SPAN 
+            class=texample>#define..</SPAN>. – макрос для ввода размерности 
+            матрицы. Применение макросов требует к себе внимания и 
+            осторожности.</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_93>В программе применен указатель <SPAN 
+            class=texample>double **triMatr</SPAN> на массив указателей. В связи 
+            с этим определено двойное обращение к функции <SPAN 
+            class=texample>calloc()</SPAN>, с помощью которой выполняется 
+            динамическое распределение памяти. Следует обратить внимание также 
+            на то, что в программе дважды используется функция <SPAN 
+            class=texample>free()</SPAN> для освобождения выделенной памяти.</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_97>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\9. Лекция  Динамическое распределение памяти в языке С.mht#image.9.2">рис. 
+            9.2</A>.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98 align=left><A name=image.9.2></A></P>
+            <DIV><IMG alt="Динамическое формирование нижней треугольной матрицы" 
+            src="Лекция_9_files/mhtDA4E(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 9.2.</B>&nbsp; Динамическое 
+            формирование нижней треугольной матрицы
+            <P></P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99><B>Задание 2</B></P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <OL id=id_100>
+              <LI>Строки нижней треугольной матрицы заполните числами, равными 
+              номерам строк, т.е. число 1 – в первой строке, число 2 – во второй 
+              строке, число 3 – в третьей строке и т.д.
+              <LI>Оператор условия <SPAN class=texample></SPAN>? замените на 
+              другой оператор.
+              <LI>Заполнение матрицы сделайте целыми случайными числами, 
+              равномерно распределенными из интервала [–2*Х; 2*Х], где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>Напишите программу с динамическим формированием треугольной 
+              матрицы из данной прямоугольной матрицы.
+              <LI>Напишите программу динамического формирования верхней 
+              треугольной матрицы.
+              <LI>В приведенной программе предусмотрите вывод матрицы, в которой 
+              ниже главной диагонали (и сама диагональ) расположены случайные 
+              числа, а выше главной диагонали будут располагаться нули.</LI></OL>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_108><B>Пример 3</B>. Напишите программу заполнения 
+            одномерного массива случайными числами, распределенными по 
+            стандартному нормальному закону. Размерность массива вводится с 
+            клавиатуры пользователем.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109>Для решения примера выберем метод Марсальи–Брея [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#10" 
+            target=_blank>9.3</A>]. Его этапы:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <OL id=id_110>
+              <LI>Генерируются два равномерно распределенных случайных числа 
+              <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=R1 
+              src="Лекция_9_files/mhtDA8F(1).tmp" width=25 height=16>, <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=R2 
+              src="Лекция_9_files/mhtDAA2(1).tmp" width=25 height=16> из 
+              интервала [0;1].
+              <LI>Формируются два соотношения: <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+              alt="V1 = –1 + 2*R1,  V2 = –1 + 2*R2" 
+              src="Лекция_9_files/mhtDAC4(1).tmp" width=285 height=20>.
+              <LI>Составляется сумма: <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+              alt="S = V1^2 + V2^2" src="Лекция_9_files/mhtDAD7(1).tmp" 
+              width=123 height=20>.
+              <LI>Если <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+              alt="S \geqslant 1" src="Лекция_9_files/mhtDAF9(1).tmp" width=49 
+              height=18>, то пункты 1–3 повторяются.
+              <LI>Если S &lt; 1, то вычисляется первая пара случайных чисел <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=z1 
+              src="Лекция_9_files/mhtDB0C(1).tmp" width=22 height=16>, <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=z2 
+              src="Лекция_9_files/mhtDB2E(1).tmp" width=22 height=16>:
+              <LI><IMG style="POSITION: relative; DISPLAY: inline; TOP: 10px" 
+              alt=z1=V1\sqrt\frac{-2lnS}{S} src="Лекция_9_files/mhtDB40(1).tmp" 
+              width=134 height=36>, <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 10px" 
+              alt=z2=V2\sqrt\frac{-2lnS}{S} src="Лекция_9_files/mhtDB63(1).tmp" 
+              width=134 height=36>.</LI></OL>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_126><B>Примечание</B>. Нормальный закон характеризуется 
+            двумя параметрами: математическим ожиданием и среднеквадратическим 
+            отклонением (плюс корень квадратный из дисперсии), которые 
+            соответственно равны 0 и 1.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_127>Для оценки математического ожидания используется 
+            среднее значение данного объема n выборки случайных чисел. Для 
+            оценки дисперсии <SPAN class=xml_em_italic>D</SPAN> могут быть 
+            использованы следующие формулы:</P>
+            <DIV id=mark_127 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt=D=\frac{1}{n-1}\sum^{n}_{i=1}(z_i-m)^2 
+            src="Лекция_9_files/mhtDB85(1).tmp" width=193 height=27>, <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt=m=\frac{1}{n}\sum^{n}_{i=1}z_i 
+            src="Лекция_9_files/mhtDB97(1).tmp" width=121 height=25>,
+            <P id=id_130>где <SPAN class=xml_em_italic>m</SPAN> – среднее 
+            значение заданного массива.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131>Программный код решения примера:</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;math.h&gt;
+
+int main(void)
+{
+double *Norm, *Norm2;
+double R1, R2, z1, z2, V1, V2, S;
+ int i, j, n;
+ time_t t;
+ srand((unsigned) time(&amp;t));
+ printf("\n\t Enter the size of the array: ");
+ scanf_s("%d", &amp;n);
+ // Выделение памяти для заданного массива данных
+  Norm = (double *)malloc(n*sizeof(double));
+  Norm2 = (double *)malloc(n*sizeof(double));
+  // Реализация алгоритма метода Марсальи-Брея
+  S = 1.0;
+  for (i = j = 0; i &lt; n; ++i, ++j){
+     while (S &gt;= 1.0) {
+  
+  R1 = (double) rand()/RAND_MAX;
+  R2 = (double) rand()/RAND_MAX;
+  V1 = 2.0*R1 - 1.0;
+  V2 = 2.0*R2 - 1.0;
+  S = (V1*V1 + V2*V2);
+  }
+z1 = V1 * sqrt(-2.0*log(S)/S);
+z2 = V2 * sqrt(-2.0*log(S)/S);
+Norm[i] = z1;
+Norm2[j] = z2;
+S = 1.0; 
+}
+  // Вывод нормально распределенных случайных чисел
+ printf("\n\t Normally distributed random numbers:\n");
+ for(i = j = 0; i &lt; n; i++, j++)
+ {printf("\n\t %8.4f",Norm[i]);printf("\n\t %8.4f",Norm2[j]);}
+ 
+// Освобождение памяти
+ free (Norm);
+ free (Norm2);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_133>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\9. Лекция  Динамическое распределение памяти в языке С.mht#image.9.3">рис. 
+            9.3</A>.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134 align=left><A name=image.9.3></A></P>
+            <DIV><IMG alt="Динамическое формирование нижней треугольной матрицы" 
+            src="Лекция_9_files/mhtDBBA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 9.3.</B>&nbsp; Динамическое 
+            формирование нижней треугольной матрицы
+            <P></P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135><B>Задание 3</B></P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <OL id=id_136>
+              <LI>Рассчитайте минимальные и максимальные значения сформированных 
+              случайных чисел.
+              <LI>Размерность массива случайных чисел примите за 100*Х, где Х – 
+              номер компьютера, за которым выполняется лабораторная работа. 
+              Вывод на экран дисплея не производите.
+              <LI>С учетом пункта 2 рассчитайте среднее значение сформированного 
+              массива. Сравните с теоретическим значением.
+              <LI>Напишите программу расчета массива нормально распределенных 
+              случайных чисел, для которых среднее значение отличается от 
+              теоретического математического ожидания на заданную величину 
+              (вводимую с клавиатуры). Первый вариант – за счет увеличения 
+              размерности массива, второй вариант – за счет увеличения числа 
+              прогона программы с заданной величиной размерности 
+массива.</LI></OL>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <P id=id_141><B>Пример 4</B>. Напишите программу заполнения 
+            одномерного символьного массива заданным числом (вводимого с 
+            клавиатуры) символов с добавлением символа восклицательного знака 
+            <SPAN class=texample>"!"</SPAN> в конце массива символов.</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_143>Для решения примера используем функции динамического 
+            распределения памяти <SPAN class=texample>malloc()</SPAN> и <SPAN 
+            class=texample>realloc()</SPAN>.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_146>Программная реализация примера базируется на программе 
+            из [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>9.1</A>].</P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_147>Программный код решения примера:</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+int main(void) {
+	int n, m;
+    char *ptr;
+ 
+ // Размерность символьного массива
+ printf("\n Enter a dimention of character array: ");
+ scanf_s("%d", &amp;n);
+ _flushall();
+// Выделение памяти для заданного объема символов
+  ptr = (char *)malloc((n+1)*sizeof(char));
+  if (!ptr) {
+printf("\n\t 1st Error! ");
+printf("\n\n Press any key: ");
+	_getch(); return -1; }
+
+  // Ввод строки символов
+printf(" Enter a character array of no more than %d characters: ", n);
+gets_s(ptr, n+1);
+
+// Число символов в строке
+m = strlen(ptr);
+printf("\n Start line:\n");
+printf(" %s\n", ptr);
+
+// Перераспределение памяти
+ptr = (char *)realloc(ptr, (m+2)*sizeof(char));
+if (!ptr) {
+printf("\n\t 2nd Error! ");
+printf("\n\n Press any key: ");
+	_getch(); return -1; }
+
+// Присоединение к массиву символов еще одного символа
+strcat_s(ptr, m+2,  "!");
+printf("\n Start line and character \"%c\":\n", '!');
+printf(" %s\n", ptr);
+// Освобождение памяти
+free (ptr);
+
+ 	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_149>В функции <SPAN class=texample>malloc()</SPAN> размер 
+            требуемой памяти делается с запасом на символ окончания строки, т.е. 
+            <SPAN class=texample>'\0'</SPAN>. Аналогично сделан запас количества 
+            символов для функции <SPAN class=texample>realloc()</SPAN>, так как 
+            функция <SPAN class=texample>strlen()</SPAN> возвращает количество 
+            символов в строке без нулевого символа. Функции <SPAN 
+            class=texample>gets_s()</SPAN> и <SPAN 
+            class=texample>strcat_s()</SPAN> определены в MS Visual Studio. В 
+            них предусматривается включение размерности символьных массивов, 
+            чего нет в стандартных функциях <SPAN class=texample>gets()</SPAN>, 
+            <SPAN class=texample>strcat()</SPAN> языка <B>С</B>.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_158>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\9. Лекция  Динамическое распределение памяти в языке С.mht#image.9.4">рис. 
+            9.4</A>.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_159 align=left><A name=image.9.4></A></P>
+            <DIV><IMG alt="Пример определения динамического массива символов" 
+            src="Лекция_9_files/mhtDBEB(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 9.4.</B>&nbsp; Пример определения 
+            динамического массива символов
+            <P></P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_160>Размерность выделяемой памяти превышает число вводимых 
+            символов. Поэтому функция <SPAN class=texample>realloc()</SPAN> 
+            уменьшает размерность выделяемой памяти.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_162><B>Задание 4</B></P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <OL id=id_163>
+              <LI>Проверьте размерность итогового массива символов.
+              <LI>Выведите сформированный массив символов в обратном порядке.
+              <LI>Введите свою фамилию и свое имя через пробел. Подсчитайте 
+              количество вводимых символов и введите это число.
+              <LI>Осуществите вывод массива символов с дополнительным случайным 
+              символом без применения функции <SPAN 
+              class=texample>strcat()</SPAN>.</LI></OL>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_169><B>Пример 5</B>. Напишите программу транспонирования 
+            матрицы, размерности которой (количество строк и количество 
+            столбцов) вводятся с клавиатуры, а элементы – вещественные случайные 
+            числа, распределенные по равномерному закону из интервала 
+[0;15].</P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170>По определению транспонированная матрица – это матрица 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=A^T 
+            src="Лекция_9_files/mhtDC0E(1).tmp" width=27 height=20>, полученная 
+            из исходной матрицы <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=A 
+            src="Лекция_9_files/mhtDC30(1).tmp" width=20 height=16> заменой 
+            строк на столбцы.</P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_173>Программный код решения примера:</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;locale.h&gt;
+
+int main (void) {
+	int i, j, n, m;
+	double *A_ptr, *B_buf;
+	
+// Для рандомизации псевдослучайных чисел
+srand((unsigned)time(NULL));
+setlocale(LC_ALL, "Russian");
+printf("\n Введите размерность матрицы - \n число строк и число столбцов через пробел: ");
+	scanf_s("%d%d", &amp;n, &amp;m);
+	 
+A_ptr = (double *) calloc((n*m),sizeof(double));
+B_buf = (double *) calloc((n*m),sizeof(double));
+for (i = 0; i &lt; n*m; ++i)
+A_ptr[i] = 15.0*rand()/RAND_MAX;
+
+setlocale(LC_NUMERIC, "English");
+printf("\n Исходная матрица:\n");
+for (i = 0; i &lt; n; ++i) { printf("\n");
+for(j = 0; j &lt; m; ++j)
+printf(" %8.4f", A_ptr[i*m+j]); }
+// Основной фрагмент транспонирования
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; m; ++j)
+B_buf[j*n+i] = A_ptr[i*m+j];
+
+printf("\n\n Транспонированная матрица:\n");
+for (j = 0; j &lt; m; ++j) { 
+	printf("\n");
+for(i = 0; i &lt; n; ++i)
+printf(" %8.4f", B_buf[j*n+i]); }
+// Освобождение выделенной памяти
+free(A_ptr); free(B_buf);
+
+     printf("\n\n Press any key: ");
+	_getch(); return 0; }</PRE></DIV>
+            <P id=id_175>В программе использованы библиотечные функции для 
+            установки русских шрифтов <SPAN class=texample>setlocale(LC_ALL, 
+            "Russian")</SPAN> и вывода элементов матрицы с плавающей точкой: 
+            <SPAN class=texample>setlocale(LC_NUMERIC, "English")</SPAN>. Для 
+            этих функций подключен заголовочный файл <B>locale.h</B>.</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_178>Возможный результат работы программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\9. Лекция  Динамическое распределение памяти в языке С.mht#image.9.5">рис. 
+            9.5</A>.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179 align=left><A name=image.9.5></A></P>
+            <DIV><IMG alt="Пример транспонирования матрицы" 
+            src="Лекция_9_files/mhtDC52(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 9.5.</B>&nbsp; Пример транспонирования 
+            матрицы
+            <P></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180><B>Задание 5</B></P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <OL id=id_181>
+              <LI>Подсчитайте число итераций циклов, необходимых для 
+              транспонирования.
+              <LI>Выполните двойное транспонирование исходной матрицы. Выведите 
+              результат на консоль первого и &nbsp;второго транспонирования.
+              <LI>Выполните решение примера с применением указателей на 
+              указатели.
+              <LI>Заполните исходную матрицу натуральными числами начиная с 
+              номера компьютера, за которым выполняется лабораторная 
+            работа.</LI></OL>
+            <DIV id=mark_181 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_186>
+              <LI>Что такое динамическая память?
+              <LI>Какие средства языка <B>С</B> используются для хранения данных 
+              с динамическим выделением памяти компьютера?
+              <LI>Какие основные библиотечные функции языка <B>С</B> 
+              используются для динамического распределения памяти?
+              <LI>Какое различие в действии функций <SPAN 
+              class=texample>malloc()</SPAN> и <SPAN 
+              class=texample>calloc()</SPAN>?
+              <LI>Как осуществляется перераспределение динамической памяти?
+              <LI>Для каких типов данных возможно динамическое распределение 
+              памяти?</LI></OL>
+            <DIV id=mark_186 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_9_files/mhtD942(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_9_files/mhtD942(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

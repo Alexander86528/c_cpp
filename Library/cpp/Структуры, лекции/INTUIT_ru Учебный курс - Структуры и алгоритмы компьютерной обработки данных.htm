@@ -1,0 +1,1070 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0052)http://www.intuit.ru/department/algorithms/staldata/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<META content="text/html; charset=windows-1251" http-equiv="Content-Type"><LINK 
+rel="stylesheet" type="text/css" href="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/style.css">
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/tooltip-core.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/tooltip-dynamic.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">document.write('<script type="text/javascript" src="http://popup.osp.ru/tooltip_cfg/tooltip-cfg-16.js?rnd=' + Math.round(Math.random() * 100000) + '"><\/script>')</SCRIPT>
+<TITLE>INTUIT.ru: Учебный курс - Структуры и алгоритмы компьютерной обработки 
+данных</TITLE>
+<META name="description" content="INTUIT.ru: учебный курс Структуры и алгоритмы компьютерной обработки данных">
+<META name="keywords" content="учебный курс Структуры и алгоритмы компьютерной обработки данных INTUIT">
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/menu.js"></SCRIPT>
+<LINK rel="shortcut icon" href="/favicon.ico">
+<META content="no-cache" http-equiv="Pragma">
+<META content="no-cache, must-revalidate" http-equiv="Cache-Control">
+<META name="Pragma" content="no-cache">
+<META name="Cache-Control" content="no-cache"><LINK rel="stylesheet" type="text/css" 
+href="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/course.css">
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/course.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/auth.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/info.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/last_qa.js"></SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/style(1).css">
+<META name="GENERATOR" content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY bgColor="white"><!----><!--header--><!---->
+<DIV class="topbanner">
+<DIV style="text-align: center;">
+<SCRIPT type="text/javascript">
+// <!--
+var osp_login = "intuit_top_60x100percent";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="100%" height="60" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="100%" height="60" border="0" ismap="ismap"></a></iframe>');
+// -->
+</SCRIPT>
+<NOSCRIPT>&lt;iframe 
+src="http://mb.osp.ru/cgi-bin/iframe/intuit_top_60x100percent?options=T" 
+width="100%" height="60" marginwidth="0" marginheight="0" scrolling="no" 
+frameborder="0"&gt;&lt;a 
+href="http://mb.osp.ru/cgi-bin/href/intuit_top_60x100percent" 
+target="_top"&gt;&lt;img 
+src="http://mb.osp.ru/cgi-bin/banner/intuit_top_60x100percent?options=T" 
+alt="MadBanner" width="100%" height="60" border="0" 
+ismap="ismap"&gt;&lt;/a&gt;&lt;/iframe&gt;</NOSCRIPT>
+<SCRIPT type="text/javascript">
+// <!--
+	var body = document.getElementById('body');
+	if(body) {
+		body.topmargin = 0;
+		body.marginheight = 0;
+		body.style.topmargin='0';
+		body.style.marginTop = 0;
+	}
+// -->
+</SCRIPT>
+<!----></DIV></DIV><!-- topbox -->
+<TABLE border="0" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" 
+align="center">
+  <TBODY>
+  <TR>
+    <TD class="border"><!-- header:logo, menu -->
+      <TABLE border="0" cellSpacing="0" cellPadding="6" width="100%">
+        <TBODY>
+        <TR vAlign="top">
+          <TD rowSpan="3" align="left"><A href="http://www.intuit.ru/"><IMG 
+            border="0" alt="Интернет Университет информационных технологий" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/logo.gif" 
+            width="285" height="52"></A></TD>
+          <TD class="epigraph" vAlign="top" align="right">Твой путь к 
+          знаниям</TD></TR>
+        <TR vAlign="bottom" align="right">
+          <TD class="topnavi" ?=""><A 
+            href="http://www.intuit.ru/user/login/">регистрация</A> || <A href="http://www.intuit.ru/user/speciality/">зачетка</A> 
+            | <A href="http://www.intuit.ru/user/diploms/">дипломы</A></TD></TR>
+        </TBODY></TABLE><!-- //header:logo, menu --><!-- menu -->
+      <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%" background="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/bgtopmenu2.gif" 
+      bgColor="#ff9900">
+        <TBODY>
+        <TR>
+          <TD class="topmenu" height="24" align="left">
+            <FORM name="ya_search" action="/search"><INPUT style="margin-top: 3px; margin-left: 3px;" 
+            name="text" type="text">&nbsp;&nbsp;<A onclick="document.ya_search.submit();" 
+            href="http://www.intuit.ru/department/algorithms/staldata/#">Искать!</A></FORM></TD>
+          <TD class="topmenu" height="24" align="right"><A id="menu_courses" 
+            onmouseover="return menu_mov('courses');" onmouseout="return menu_mot('courses');" 
+            href="http://www.intuit.ru/courses.html">Курсы</A>|<A id="menu_education" 
+            onmouseover="return menu_mov('education');" onmouseout="return menu_mot('education');" 
+            href="http://www.intuit.ru/speciality/">Обучение</A>|<A id="menu_school" 
+            onmouseover="return menu_mov('school');" onmouseout="return menu_mot('school');" 
+            href="http://www.intuit.ru/catalog/school/">Школа</A>|<A id="menu_shop" 
+            onmouseover="return menu_mov('shop');" onmouseout="return menu_mot('shop');" 
+            href="http://www.intuit.ru/shop/">Магазин</A>|<A id="menu_communication" 
+            onmouseover="return menu_mov('communication');" onmouseout="return menu_mot('communication');" 
+            href="http://forum.intuit.ru/">Общение</A>|<A id="menu_news" 
+            onmouseover="return menu_mov('news');" onmouseout="return menu_mot('news');" 
+            href="http://www.intuit.ru/news/">Новости</A>|<A id="menu_help" 
+            onmouseover="return menu_mov('help');" onmouseout="return menu_mot('help');" 
+            href="http://www.intuit.ru/help/">Помощь</A></TD></TR>
+        <TR>
+          <TD class="menu2" onmouseover="return menu2_mov();" onmouseout="return menu2_mot();" 
+          colSpan="2" align="right">
+            <DIV id="cmenu_courses" class="menu_collections">
+            <DIV class="menu_polosa"><A 
+            href="http://www.intuit.ru/courses.html">все</A>| <A href="http://www.intuit.ru/video/">видеокурсы</A>
+            | <A 
+            href="http://www.intuit.ru/rating_courses/?sort=start">новые</A>| <A 
+            href="http://www.intuit.ru/rating_courses/?sort=mstudents">популярные</A>
+            | <A 
+            href="http://www.intuit.ru/video/tree/video/speech/">доклады</A>
+            <DIV class="delim">||</DIV><A href="http://www.intuit.ru/underway_courses.html">курсы 
+            в разработке</A>| <A 
+            href="http://www.intuit.ru/author_list.html">авторы</A></DIV></DIV>
+            <DIV id="cmenu_shop" class="menu_collections">
+            <DIV class="menu_polosa"><A 
+            href="http://www.intuit.ru/shop/books/">книги</A>| <A href="http://www.intuit.ru/shop/soft/">курсы 
+            на CD</A>| <A href="http://www.intuit.ru/shop/video/">видеокурcы на 
+            DVD</A>| <A 
+            href="http://www.intuit.ru/shop/books/sale/">распродажа</A>| <A 
+            href="http://www.intuit.ru/shop/books/novelty/">новинки</A>
+            <DIV class="delim">||</DIV><A 
+            href="http://www.intuit.ru/user/cart/">корзина</A>| <A href="http://www.intuit.ru/user/account/">личный 
+            счет</A>|<A 
+            href="http://www.intuit.ru/shop/order/history.xhtml">заказы</A>| <A 
+            href="http://www.intuit.ru/user.html">настройка</A></DIV></DIV>
+            <DIV id="cmenu_education" class="menu_collections">
+            <DIV class="menu_polosa"><A href="http://www.intuit.ru/groups/catalog/">учебные 
+            группы</A>| <A href="http://www.intuit.ru/speciality/">учебные 
+            программы</A>
+            <DIV class="delim">||</DIV><A href="http://hpcu.ru/" 
+            target="_blank">HPCU.ru: Суперкомпьютерные технологии</A>|<A href="http://www.intuit.ru/speciality/hsbi/">ВШБИ</A>
+            |<A href="http://www.diofant.ru/" target="_blank">Diofant.ru</A>
+            </DIV></DIV>
+            <DIV id="cmenu_school" class="menu_collections">
+            <DIV class="menu_polosa"><A href="http://www.intuit.ru/catalog/school/">курсы</A>
+            | <A 
+            href="http://www.intuit.ru/catalog/school/school/">видеокурсы</A>| 
+            <A href="http://www.intuit.ru/shop/video/school/">видеокурсы на 
+            DVD</A></DIV></DIV>
+            <DIV id="cmenu_communication" class="menu_collections">
+            <DIV class="menu_polosa"><A href="http://forum.intuit.ru/">форум</A>
+            | <A href="http://ask.intuit.ru/">вопросы и ответы</A>| <A href="http://www.intuit.ru/help/askform.xhtml">задать 
+            вопрос</A>
+            <DIV class="delim">||</DIV><A href="http://www.intuit.ru/rating_students/">рейтинг 
+            студентов</A></DIV></DIV>
+            <DIV id="cmenu_help" class="menu_collections">
+            <DIV class="menu_polosa"><A href="http://www.intuit.ru/help/about.html">о 
+            проекте</A>| <A href="http://www.intuit.ru/help/learning.html">об 
+            учебе</A>| <A href="http://www.intuit.ru/help/how.html">как 
+            учиться</A>| <A href="http://www.intuit.ru/help/pay.html">платное 
+            обучение</A>| <A 
+            href="http://www.intuit.ru/help/user.html">настройки</A>| <A href="http://www.intuit.ru/help/orders.html">магазин</A>
+            | <A href="http://www.intuit.ru/help/groups.html">группы</A></DIV>
+            </DIV>
+            <DIV id="cmenu_news" class="menu_collections">
+            <DIV class="menu_polosa"><A href="http://www.intuit.ru/news/">лента 
+            новостей</A>|<A title="RSS" href="http://www.intuit.ru/news.rss" 
+            target="_blank"><IMG class="rss" border="0" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/rss.gif" 
+            width="12" height="12">RSS</A>| <A 
+            href="http://www.intuit.ru/job/">работа</A>| <A href="http://www.intuit.ru/user/subscribe/">подписка</A>
+            <DIV class="delim">||</DIV><A href="http://www.osp.ru/" target="_blank">OSP.ru</A>
+            | <A href="http://tv.osp.ru/" target="_blank">видеоновости</A></DIV>
+            </DIV>
+            <DIV id="cmenu_default" class="menu_collections">
+            <DIV class="menu_polosa">&nbsp;</DIV></DIV></TD></TR></TBODY></TABLE>
+<SCRIPT>
+	menu_reset();
+</SCRIPT>
+      <!-- //menu --></TD></TR></TBODY></TABLE><!-- //topbox -->
+<TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD class="menu" align="center">
+      <TABLE class="orang_border" border="0" cellSpacing="0" cellPadding="1" 
+      width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE border="0" cellSpacing="0" cellPadding="4" width="100%" 
+            bgColor="#ccffcc">
+              <TBODY>
+              <TR align="center">
+                <TD class="rtxt" width="100%"><A href="http://www.intuit.ru/konkurs/"><B><FONT 
+                  color="#ff0000">ПРИГЛАШАЕМ ЛЕКТОРОВ НА СЪЕМКУ 
+                  КУРСОВ</FONT></B></A>||<A href="http://www.intuit.ru/shop/product-2493596.html"><FONT 
+                  color="#990000">ВСЕ ВИДЕОКУРСЫ</FONT> на переносном диске (320 
+                  Гб)</A>и <A href="http://www.intuit.ru/shop/product-2493478.html"><FONT 
+                  color="#990000">370 КУРСОВ</FONT> на DVD</A><!--
+<a href="/shop/video/"><font color="#006600">видеокурсы на DVD</font></a>
+-->
+                </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+</TBODY></TABLE><BR><!--/header--><!----><!--/menu-->
+<TABLE border="0" cellSpacing="0" cellPadding="0" width="100%" height="73">
+  <TBODY>
+  <TR vAlign="top">
+    <TD width="6"><IMG src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/empty.gif" 
+      width="6"></TD>
+    <TD>
+      <DIV class="_ga1_on_">
+      <DIV class="course_content"><SPAN class="course_title_right" title="Спонсорская поддержка проекта">
+      <A class="course_title_right" href="http://www.intuit.ru/user/account/sponsor.xhtml"><IMG 
+      src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/rubm.gif" 
+      width="15" height="17"></A><A class="course_title_right" href="http://www.intuit.ru/user/account/sponsor.xhtml">поддержка 
+      курса</A></SPAN><SPAN class="course_title">Структуры и алгоритмы 
+      компьютерной обработки данных</SPAN><BR>Авторы:<A class="course_author" 
+      title="Сундукова Татьяна Олеговна" href="http://www.intuit.ru/lector/606.html">Т.О. 
+      Сундукова</A>,<A class="course_author" title="Ваныкина Галина Владиславовна" 
+      href="http://www.intuit.ru/lector/607.html">Г.В. Ваныкина</A><BR>
+      <DIV id="course_stat">
+      <HR class="course_hr">
+      
+      <TABLE border="0" cellSpacing="2" cellPadding="2" width="100%">
+        <TBODY>
+        <TR>
+          <TD vAlign="BOTTOM"><A class="course_stat" onclick="window.open(this.href,'', 'toolbars=no,status=no,location=no,resizable=yes,scrollbars=no');return false;" 
+            href="http://www.intuit.ru/help/popup/course_info.html">?</A></TD>
+          <TD class="course_stat" vAlign="top">Уровень: <SPAN id="course_level" 
+            class="course_stat_data">для начинающих</SPAN>||Статус: <SPAN id="course_status" 
+            class="course_stat_data">бесплатный</SPAN>||Опубликован: <SPAN id="course_pub_time" 
+            class="course_stat_data">02.02.2011</SPAN><BR><SPAN title="оценка курса выпускниками">Рейтинг: 
+            <SPAN id="course_rating" class="course_stat_data">0.00</SPAN></SPAN>
+            ||<SPAN 
+            title="количество студентов за последний месяц">Популярность: <SPAN 
+            id="course_pop" class="course_stat_data">24</SPAN></SPAN>||
+            Студентов: <SPAN id="course_stud1" class="course_stat_data" title="всего студентов">24</SPAN>/<SPAN 
+            id="course_stud2" class="course_stat_data" 
+            title="всего выпускников">0</SPAN></TD></TR></TBODY></TABLE></DIV>
+      <HR class="course_hr">
+
+      <DIV class="course_menu">Студентам: <SPAN class="course_offline"><A title="Автономная система для изучения курса без подключения к интернету, включает тексты лекций и все тесты." 
+      href="http://www.intuit.ru/shop/courses/?media=download&amp;expand_selected=1&amp;courses=909">версия 
+      для локальной работы</A></SPAN>|<A class="course_menu_item" href="http://www.intuit.ru/department/algorithms/staldata/lit.html">литература</A>|
+      <A class="course_menu_item" href="http://www.intuit.ru/shop/books/departments/algorithms/staldata/">учебники</A>|
+      <A class="course_menu_item" href="http://www.intuit.ru/department/algorithms/staldata/forum/">форум</A>|
+      <A class="course_menu_item" href="http://www.intuit.ru/department/algorithms/staldata/class/opinions/">мнения</A>
+      |<A class="course_menu_item" href="http://www.intuit.ru/department/algorithms/staldata/class/classmates/">однокурсники</A>
+      |<A class="course_menu_item" href="http://www.intuit.ru/department/algorithms/staldata/class/rating/">рейтинг</A></DIV>
+      <HR class="course_hr">
+
+      <DIV class="course_info_item"><SPAN 
+      class="course_info_title">Поддержка</SPAN><BR>
+      <DIV><A href="http://www.microsoft.ru/" target="_blank"><IMG border="0" 
+      hspace="5" alt="Microsoft" vspace="5" align="right" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/logo(1).gif" 
+      width="144" height="24"></A>Курс создан при финансовой поддержке 
+      компании<BR><A class="rtitle" href="http://www.microsoft.ru/" target="_blank">Microsoft</A></DIV>
+      </DIV>
+      <P>
+      <DIV class="course_info_item"><!---->
+      <DIV id="lecture_banner" class="bannere240x400">
+      <DIV class="banner240x90">
+<SCRIPT type="text/javascript">
+// <!--
+var osp_login = "intuit-240x90";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="240" height="90" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="240" height="90" border="0" ismap="ismap"></a></iframe>');
+// -->
+</SCRIPT>
+      <NOSCRIPT>&lt;iframe 
+      src="http://mb.osp.ru/cgi-bin/iframe/intuit-240x90?options=T" width="240" 
+      height="90" marginwidth="0" marginheight="0" scrolling="no" 
+      frameborder="0"&gt;&lt;a 
+      href="http://mb.osp.ru/cgi-bin/href/intuit-240x90" 
+      target="_top"&gt;&lt;img 
+      src="http://mb.osp.ru/cgi-bin/banner/intuit-240x90?options=T" 
+      alt="MadBanner" width="240" height="90" border="0" 
+      ismap="ismap"&gt;&lt;/a&gt;&lt;/iframe&gt;</NOSCRIPT></DIV>
+<SCRIPT type="text/javascript">
+// <!--
+var osp_login = "intuit-240x400";
+var osp_options = "options=T";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random+'&'+osp_options+'" width="240" height="400" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target="_top"><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="240" height="400" border="0" ismap="ismap"></a></iframe>');
+// -->
+</SCRIPT>
+      <NOSCRIPT>&lt;iframe 
+      src="http://mb.osp.ru/cgi-bin/iframe/intuit-240x400?options=T" width="240" 
+      height="400" marginwidth="0" marginheight="0" scrolling="no" 
+      frameborder="0"&gt;&lt;a 
+      href="http://mb.osp.ru/cgi-bin/href/intuit-240x400" 
+      target="_top"&gt;&lt;img 
+      src="http://mb.osp.ru/cgi-bin/banner/intuit-240x400?options=T" 
+      alt="MadBanner" width="240" height="400" border="0" 
+      ismap="ismap"&gt;&lt;/a&gt;&lt;/iframe&gt;</NOSCRIPT></DIV><!----><SPAN 
+      class="course_info_title">Информация о курсе</SPAN><BR><B>Комплекс лекций 
+      с упражнениями для обучения моделированию задач на базе основных структур 
+      данных, алгоритмизации и программированию в среде MS Visual Studio 2010. 
+      Каждая тема содержит лекционный материал, примеры программных кодов, 
+      задания для аудиторной и самостоятельной работы. </B><BR>Комплекс лекций с 
+      упражнениями для обучения программированию на языке С++, ориентированный 
+      на работу в среде MS Visual Studio 2010. Каждая тема имеет следующую 
+      структуру: название темы, цель, ключевые слова, теоретическая часть 
+      (необходимый для выполнения работы теоретический материал, который 
+      отражает основные положения лекции по соответствующей теме), примеры 
+      программных кодов в среде MS Visual Studio 2010, комплекс задач для 
+      аудиторной и самостоятельной работы (задачи представлены в порядке 
+      возрастания сложности). <BR><BR></DIV>
+      <DIV class="course_info_item"><SPAN class="course_info_title">
+      Цель</SPAN><BR>Формирование алгоритмической и информационной культуры 
+      студентов при обучении программированию на языке С++ в среде MS Visual 
+      Studio 2010.<BR><BR></DIV>
+      <DIV class="course_info_item"><SPAN 
+      class="course_info_title">Предварительные знания</SPAN><BR>Освоение 
+      обязательного минимума содержания предметной области Информатика и ИКТ для 
+      средней школы; алгоритмических основ языка программирования С++; курсов 
+      математического анализа и аналитической геометрии для высшей школы.
+      <BR><BR></DIV>
+      <DIV class="course_info_item"><SPAN 
+      class="course_info_title">Предварительные курсы</SPAN><BR>
+      <UL class="course_list">
+        <LI><A class="course_course" href="http://www.intuit.ru/department/pl/cpp2/">Язык 
+        программирования C++ для профессионалов</A></LI>
+        <LI><A class="course_course" href="http://www.intuit.ru/department/pl/cpp/">Язык 
+        программирования C++</A></LI>
+        <LI><A class="course_course" href="http://www.intuit.ru/department/pl/hlprogcpp/">Программирование 
+        на языке C++</A></LI></UL></DIV>
+      <DIV class="course_info_item"><SPAN 
+      class="course_info_title">Дополнительные курсы</SPAN><BR>
+      <UL class="course_list">
+        <LI><A class="course_course" href="http://www.intuit.ru/department/pl/ccpp/">Введение 
+        в языки программирования C и C++</A></LI>
+        <LI><A class="course_course" href="http://www.intuit.ru/department/se/pwinviscpp2005/">Программирование 
+        под Windows в среде Visual C++ 2005</A></LI>
+        <LI><A class="course_course" href="http://www.intuit.ru/department/se/prmfcv/">Практикум 
+        прикладного программирования на MFC и C++ в среде VS.NET</A></LI></UL>
+      </DIV>
+      <DIV class="course_info_item">
+      <DIV id="diplomas" class="course_info_title">Диплом</DIV>
+      <DIV class="diplamas2">
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV class="cell">
+            <DIV class="diplama_course" title="Серитфикат Интернет-Университета Информационных Технологий">
+            <DIV class="head">Бесплатное обучение</DIV>
+            <TABLE class="image-blok">
+              <TBODY>
+              <TR>
+                <TD class="image"><A onclick="return popup_a(this);" href="http://www.intuit.ru/speciality/intuit/staldata/diplom/ru/" 
+                  target="_blank"><IMG border="0" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/sm_6.jpg" 
+                  width="72" height="106"></A></TD></TR>
+              <TR>
+                <TD class="text">
+                  <DIV class="name" %style_div_name%="">сертификат 
+                  <DIV class="vuz">(ИНТУИТ)</DIV></DIV></TD>
+</TR></TBODY></TABLE></DIV>
+            <DIV id="program_intuit_subscribe" class="button_subscribe">
+            <FORM class="course_form" method="post" action="/speciality/intuit/staldata/subscribe/">
+            <INPUT name="ss_class_id" value="1455" type="hidden"><INPUT name="OK" 
+            value="1" type="hidden"><INPUT name="requiring_payment" value="0" 
+            type="hidden"><INPUT name="send_mail" value="1" type="hidden"><INPUT 
+            name="send_mail_class" value="0" type="hidden"><INPUT name="ss_class_id" 
+            value="1455" type="hidden"><INPUT class="course_submit" name="GO" value="записаться" type="submit">
+            </FORM></DIV>
+            <DIV style="display: none;" id="program_intuit_edit" class="button_subscribe">
+            <FORM class="course_form" method="post" action="/speciality/intuit/staldata/edit/">
+            <INPUT name="ss_class_id" value="1455" type="hidden">Вы записаны на 
+            этот курс.<BR><INPUT class="course_submit" name="GO" value="изменить условия обучения" type="submit">
+            </FORM></DIV>
+<SCRIPT>
+set_subscribe_program_intuit(909);
+</SCRIPT>
+            </DIV></TD>
+          <TD>
+            <DIV class="cell">
+            <DIV class="diplama_course" title="удостоверение о повышении квалификации ИНТУИТ">
+            <DIV class="head">Платное обучение</DIV>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE class="image-blok">
+                    <TBODY>
+                    <TR>
+                      <TD class="image"><A onclick="return popup_a(this);" 
+                        href="http://www.intuit.ru/speciality/intuit/staldata/diplom/ru/" 
+                        target="_blank"><IMG border="0" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/sm_6.jpg" 
+                        width="72" height="106"></A></TD></TR>
+                    <TR>
+                      <TD class="text">
+                        <DIV class="name" %style_div_name%="">сертификат 
+                        <DIV class="vuz">(ИНТУИТ)</DIV></DIV></TD>
+                </TR></TBODY></TABLE></TD>
+                <TD class="plus">+</TD>
+                <TD>
+                  <TABLE class="image-blok">
+                    <TBODY>
+                    <TR>
+                      <TD class="image"><A onclick="return popup_a(this);" 
+                        href="http://www.intuit.ru/img/vuz_diploma/ru_15.jpg" 
+                        target="_blank"><IMG border="0" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/sm_15.jpg" 
+                        width="154" height="105"></A></TD></TR>
+                    <TR>
+                      <TD class="text">
+                        <DIV class="name" %style_div_name%="">удостоверение о 
+                        повышении квалификации 
+                        <DIV class="vuz">(ИДО "ИНТУИТ")</DIV></DIV></TD>
+                  </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+            <DIV id="program_1451_subscribe" class="button_subscribe">
+            <FORM class="course_form" method="get" action="/speciality/intuitdpo/staldata/"><INPUT class="course_submit" onclick="window.location.href='/speciality/intuitdpo/staldata/'; return false;" name="GO" value="записаться" type="submit">
+            </FORM></DIV>
+            <DIV style="display: none;" id="program_1451_edit" class="button_subscribe">
+            <FORM class="course_form" method="post" action="/speciality/intuitdpo/staldata/">Вы 
+            записаны на программу.<BR><INPUT class="course_submit" onclick="window.location.href='/speciality/intuitdpo/staldata/'; return false;" name="GO" value="изменить условия обучения" type="submit">
+            </FORM></DIV>
+<SCRIPT>
+set_subscribe_program(1451);
+</SCRIPT>
+            </DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+      <DIV class="course_info_item">
+      <DIV class="course_info_title_lectures_block"><SPAN class="course_info_title2"><A 
+      class="course_info_title2" href="http://www.intuit.ru/department/algorithms/staldata/class/examination/">экзамен</A>|
+      <A class="course_info_title2" href="http://www.intuit.ru/department/algorithms/staldata/class/examination_extern/">экстернат</A>|
+      <A class="course_info_title2" title="образец диплома" onclick="return popup_diploma(this)" 
+      href="http://www.intuit.ru/department/algorithms/staldata/diplom/ru/" 
+      target="_blank">диплом</A></SPAN><SPAN 
+      class="course_info_title_lectures">Лекции</SPAN></DIV>
+      <DIV class="course_lectures">
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">0.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/0/">Предисловие</A></DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">1.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/1/">Типы 
+      данных в языке С++</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие 
+      типов данных в языках программирования, приводится классификация типов 
+      данных в С++, излагаются особенности представления базовых типов и 
+      операций над ними, рекомендации и правила выполнения операции 
+      преобразования базовых типов в С++.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">2.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/2/">Подставляемые 
+      (встраиваемые) функции. Перегрузка функций</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятия, 
+      объявление и использование в программах подставляемых и перегруженных 
+      функций в С++, механизмы выполнения подстановки и перегрузки функций, 
+      рекомендации по повышению эффективности программ за счет перегрузки или 
+      подстановки функций.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">3.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/3/">Рекурсивные 
+      функции</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие, 
+      определения и виды рекурсии, рекурсивные функции, этапы решения задач 
+      рекурсивными способами через разработку рекурсивной триады, приводятся 
+      примеры решения задач рекурсивными способами.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">4.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/4/">Производные 
+      типы. Тип указатель: указатели на объекты</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и виды указателей, способы объявления, инициализация 
+      указателей на объекты, методы доступа к данным через указатели, размещение 
+      указателей и адресуемых ими объектов в памяти, операции над указателями.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">5.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/5/">Тип 
+      указатель: указатели на функции</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение указателя на функцию, способы объявления, адресуемость и 
+      обращение к функции через указатель, передачу фактических параметров 
+      указателю на функцию, использование указателя на функцию в качестве 
+      параметра функции.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">6.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/6/">Решение 
+      задач с использованием указателей</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение, реализация одиночного и многочисленного перенаправления с 
+      помощью указателей, определение, способы объявления, разработка и вызов 
+      функций с переменным числом параметров, дается обзор типичных ошибок, 
+      связанных с некорректным использованием указателей.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">7.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/7/">Символьные 
+      данные и строки</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятия и 
+      определения символьных данных и строк, сходство и отличия их внутреннего 
+      представления, способы объявления, инициализация строк, методы доступа к 
+      элементам строк, определение размера строк, различные способы организации 
+      ввода/вывода символьных данных и строк.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">8.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/8/">Функции 
+      для работы со строками</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      библиотечные функции, предназначенные для работы со строками, и 
+      особенности их выполнения, приведены примеры использования таких функций 
+      при решении задач.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">9.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/9/">Решение 
+      задач на обработку строк</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие, 
+      способы объявления, инициализация указателей на строки, применение функций 
+      обработки строк при решении типовых задач, особенности выполнения 
+      стандартных функций в контексте представления строк и указателей на 
+      строки.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">10.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/10/">Массивы: 
+      одномерные массивы</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие и 
+      виды массивов в языках программирования, определение, объявление, 
+      инициализация, способы генерации и вывод одномерных массивов, расположение 
+      в памяти элементов массивов, связь между указателями и массивами.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">11.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/11/">Одномерные 
+      массивы: задачи поиска, замены и перестановок элементов массива</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматривается 
+      классификация типовых задач на обработку одномерных массивов, приводятся 
+      примеры алгоритмизации задач поиска, замены и перестановок в одномерных 
+      массивах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">12.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/12/">Одномерные 
+      массивы: задачи сортировок элементов массива</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие и 
+      виды сортировок массивов, критерии оценки трудоемкости выполнения 
+      алгоритмов сортировок одномерных массивов, приводятся примеры реализации 
+      простых сортировок.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">13.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/13/">Двумерные 
+      массивы: задачи поиска, замены и суммирования элементов двумерного 
+      массива</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие, 
+      определение, объявление, инициализация, генерация и вывод двумерных 
+      массивов, расположение в памяти элементов массивов, связь между 
+      указателями и двумерными массивами, типовые алгоритмы поиска, замены и 
+      суммирования в двумерных массивах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">14.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/14/">Двумерные 
+      массивы: задачи сортировок и перестановок в двумерных массивах</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются типовые 
+      задачи на обработку двумерных массивов, приводятся примеры алгоритмизации 
+      задач сортировок и перестановок в двумерных массивах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">15.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/15/">Структуры</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, способы объявления, инициализация структур, методы доступа к 
+      данным структуры, размещение структур и определение их размера в памяти, 
+      массивы структур.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">16.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/16/">Структуры 
+      и указатели</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, способы объявления, инициализация указателей на структуры, 
+      ограничения на использование указателей как типов элементов структур, 
+      методы доступа к данным структуры через указатели, использование 
+      указателей на структуры как параметров и значений функций.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">17.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/17/">Объединения</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, способы объявления, объединений как частного случая структур, 
+      методы доступа к данным объединения, размещение объединений и определение 
+      их размера в памяти, использование объединений при объявлении переменных с 
+      изменяемой структурой.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">18.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/18/">Битовые 
+      поля</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение, объявление и размещение в памяти битовых полей, методы 
+      доступа к битовым полям, приемы использования битовых полей для побитового 
+      анализа данных.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">19.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/19/">Стандартные 
+      файлы и функции по работе с ними</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятия и 
+      определения файлов и потоков, классификация файлов, стандартные функции по 
+      работе с файлами, основные алгоритмы работы с файлами, приводятся примеры 
+      решения задач на организацию ввода-вывода и обработку данных в файлах.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">20.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/20/">Обработка 
+      файлов в потоковом режиме</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие 
+      потокового режима при работе с файлами, потоки как типы данных, 
+      библиотечные функции ввода-вывода в потоковом режиме, примеры решения 
+      задач на обработку данных из файлов.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">21.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/21/">Прямой 
+      доступ к данным файла</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие, 
+      особенности, способы организации и функции ввода-вывода в файлы на нижнем 
+      уровне, отличия низкоуровневого и потокового ввода-вывода в файлы, 
+      примеры, иллюстрирующие низкоуровневый обмен данными в файлах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">22.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/22/">Работа 
+      с элементами файлов</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      особенности организации файлового ввода-вывода в С++ в потоковом и 
+      стандартном режимах, основные типы задач редактирования элементов файлов, 
+      способы алгоритмизации задач исключения, вставки и замены в файлах, 
+      приводятся примеры решения типовых задач.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">23.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/23/">Решение 
+      задач на обработку файлов</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются функции 
+      библиотеки классов потокового ввода-вывода, примеры реализации алгоритмов 
+      решения задач на обработку файлов.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">24.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/24/">Распределение 
+      памяти. Динамическое выделение памяти</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, распределение, способы выделения и освобождения динамической 
+      памяти, взаимодействие указателей и участков динамической памяти.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">25.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/25/">Одномерные 
+      динамические массивы</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение, объявления, инициализация одномерных динамических массивов, 
+      способы выделения и освобождения динамической памяти под одномерный 
+      массив, доступ к элементам одномерного динамического массива.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">26.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/26/">Двумерные 
+      динамические массивы</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение, объявления, инициализация двумерных динамических массивов, 
+      способы и этапы выделения и освобождения динамической памяти под двумерный 
+      массив, доступ к элементам двумерного динамического массива.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">27.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/27/">Решение 
+      задач на динамические массивы</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      преимущества и недостатки управления динамической памятью, типичные ошибки 
+      при работе с динамической памятью, организация проверки выделения памяти, 
+      многомерные динамические массивы, приемы представления, чтения и записи 
+      динамических массивов.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">28.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/28/">Динамические 
+      структуры данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение, способы объявления, инициализация динамических структур, 
+      методы доступа к данным динамических структур, размещение их в памяти, 
+      преимущества и недостатки использования динамических структур в 
+      программах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">29.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/29/">Динамические 
+      структуры данных: однонаправленные и двунаправленные списки</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения и виды списков, структура, способы объявления однонаправленных 
+      и двунаправленных списков, основные операции над элементами списков, 
+      приводятся примеры решения задач с использованием однонаправленных и 
+      двунаправленных списков.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">30.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/30/">Динамические 
+      структуры данных: очередь и стек</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения стека и очереди как частных случаев линейных списков, 
+      структура, способы объявления стеков и очередей, основные операции над их 
+      элементами, приводятся примеры решения задач с использованием стеков и 
+      очередей.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">31.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/31/">Динамические 
+      структуры данных: бинарные деревья</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, свойства и виды деревьев, элементы, характеристики и способы 
+      объявления деревьев в программах, основные операции над элементами 
+      деревьев, понятие и виды обходов деревьев, приводятся примеры реализации 
+      основных операций над бинарными деревьями в виде рекурсивных функций.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">32.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/32/">Решение 
+      задач на динамические структуры данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определения, способы объявления, инициализация и особенности использования 
+      при решении задач циклических списков, деков, красно-черных деревьев, 
+      приводятся примеры решения задач на обработку кольцевых списков, деков, 
+      красно-черных деревьев.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">33.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/33/">Алгоритмы 
+      обработки данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются понятие 
+      ресурсной эффективности алгоритмов посредством анализа асимптотических 
+      функций временной и емкостной сложности, приводится классификация 
+      алгоритмов на основе функции временной сложности, рассматриваются общие 
+      методы оценки трудоемкости алгоритмов.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">34.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/34/">Рекурсия 
+      и рекурсивные алгоритмы</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются основные 
+      понятия рекурсии в контексте разработки алгоритмов с помощью рекурсивной 
+      триады, дается представление о ресурсной эффективности и о методе оценки 
+      рекурсивных алгоритмов через подсчет вершин рекурсивного дерева.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">35.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/35/">Решение 
+      задач на использование рекурсивных алгоритмов</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются опорные 
+      схемы решения задач рекурсивными способами, приводятся примеры разработки 
+      рекурсивных функций с помощью опорных схем.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">36.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/36/">Алгоритм 
+      перебора с возвратом</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматривается общее и 
+      частное решения переборных задач, организация возвратной рекурсии, 
+      трудоемкость алгоритмов возвратной рекурсии, приводится пример решения 
+      задачи о расстановке ферзей на шахматной доске методом рекурсии с 
+      возвратом.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">37.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/37/">Алгоритмы 
+      поиска в линейных структурах</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и классификация алгоритмов поиска в линейных структурах 
+      данных, описания и примеры реализаций алгоритмов последовательного поиска, 
+      поиска с барьером, бинарного поиска, приводится оценка трудоемкости 
+      алгоритмов поиска в линейных структурах.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">38.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/38/">Алгоритмы 
+      хеширования данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и виды хеширования, методы разрешения коллизий в хеш-таблицах, 
+      основные алгоритмы хеширования, приводятся примеры программной реализации 
+      открытого и закрытого хеширования.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">39.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/39/">Алгоритмы 
+      поиска в тексте</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются основные 
+      понятия и алгоритмы, используемые в задачах поиска в тексте и приводятся 
+      примеры реализации основных алгоритмов поиска в тексте.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">40.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/40/">Алгоритмы 
+      поиска на основе деревьев</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и виды деревьев поиска, приемы снижения трудоемкости поиска в 
+      древовидных структурах, приводятся описания алгоритмов поиска в двоичных 
+      упорядоченных, случайных и сбалансированных в высоту (АВЛ) деревьях, 
+      приводятся примеры программной реализации бинарного дерева поиска и 
+      АВЛ-дерева.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">41.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/41/">Алгоритмы 
+      сжатия данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются основные 
+      понятия и алгоритмы сжатия данных, приводятся примеры программной 
+      реализации алгоритма Хаффмана через префиксные коды и на основе кодовых 
+      деревьев.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">42.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/42/">Алгоритмы 
+      сортировки массивов. Внутренняя сортировка</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и классификация алгоритмов сортировок массивов, в частности, 
+      быстрых сортировок, изучаются параметры, характеризующие трудоемкость 
+      алгоритмов сортировок, рассматриваются описания и примеры программных 
+      кодов следующих алгоритмов быстрых сортировок: бинарная пирамидальная 
+      сортировка, сортировка слиянием, сортировка Шелла и сортировка Хоара.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">43.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/43/">Алгоритмы 
+      сортировки массивов. Внешняя сортировка</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      определение и классификация алгоритмов внешних сортировок, понятия фаз и 
+      путей в алгоритмах внешних сортировок, приводятся описания и реализации 
+      алгоритмов внешней сортировки слиянием и естественной сортировки.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">44.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/44/">Алгоритмы 
+      на графах. Алгоритмы обхода графа</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются основные 
+      понятия из теории графов, модели представления графов, на основе которых 
+      приводятся описания и реализации алгоритмов поиска в глубину и в ширину.
+      </DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">45.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/45/">Алгоритмы 
+      на графах. Алгоритмы нахождения кратчайшего пути</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции рассматриваются 
+      постановка задачи и описание алгоритмов нахождения кратчайшего пути в 
+      графах, приводятся программные реализации алгоритмов Дейкстры, Флойда и 
+      переборного алгоритма.</DIV></DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_num">46.</DIV>
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/46/">Решение 
+      задач на использование алгоритмов обработки данных</A></DIV>
+      <DIV class="course_lectures_annotation">В лекции даются общие рекомендации 
+      по решению задач повышенной сложности, рассматривается примеры программной 
+      реализации задач обработки данных, которые решаются с помощью алгоритмов 
+      сортировок, обходов графа и сжатия данных.</DIV></DIV>
+      <DIV class="course_adds_title">Дополнительные материалы</DIV>
+      <DIV class="course_lectures_lecture">
+      <DIV class="course_lectures_title"><A class="course_lectures_title" href="http://www.intuit.ru/department/algorithms/staldata/47/">Задания</A></DIV></DIV></DIV></DIV></DIV></DIV>
+    </TD>
+    <TD width="6"><IMG src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/empty.gif" 
+      width="6"></TD>
+    <TD class="gray" width="1"><IMG src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/empty.gif"></TD>
+    <TD width="6"><IMG src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/empty.gif" 
+      width="6"></TD>
+    <TD width="160">
+      <TABLE border="0" cellSpacing="0" cellPadding="0" width="100%" background="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/staldata.htm">
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV style="display: none;" id="last_qa">
+            <DIV class="last_qa">
+            <H1><A onclick="return open_last_qa(this);" href="http://ask.intuit.ru/">Вопросы 
+            и Ответы</A></H1>Помогите ответить на вопрос: 
+<SCRIPT type="text/javascript">write_lastq()</SCRIPT>
+
+            <DIV><A onclick="return open_last_qa(this);" href="http://ask.intuit.ru/">Задайте 
+            свой вопрос »</A></DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+	if(lastq_exists) {
+		var t = document.getElementById('last_qa');
+		if(t) t.style.display = 'block';
+	}
+</SCRIPT>
+            
+            <DIV style="display: none;" id="intuit_banner_01"></DIV></TD></TR>
+        <TR>
+          <TD align="center">
+<SCRIPT type="text/javascript">
+// <!--
+var osp_login = "intuit-160x600-r";
+var osp_options = "options=NT";
+var osp_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://mb.osp.ru/cgi-bin/iframe/'+osp_login+'?'+osp_random +'&'+osp_options+'" width="160" height="600" marginwidth=0 marginheight=0 scrolling=no frameborder=0><a href="http://mb.osp.ru/cgi-bin/href/'+osp_login+'?'+osp_random +'" target=_blank><img src="http://mb.osp.ru/cgi-bin/banner/'+osp_login+'?'+osp_random +'&'+osp_options+'" alt="MadBanner" width="160" height="600" border=0 ismap></a></iframe>');
+// -->
+</SCRIPT>
+            <NOSCRIPT>&lt;iframe 
+            src="http://mb.osp.ru/cgi-bin/iframe/intuit-160x600-r?options=NT" 
+            width="160" height="600" marginwidth=0 marginheight=0 scrolling=no 
+            frameborder=0&gt;&lt;a 
+            href="http://mb.osp.ru/cgi-bin/href/intuit-160x600-r" 
+            target=_blank&gt;&lt;img 
+            src="http://mb.osp.ru/cgi-bin/banner/intuit-160x600-r?options=NT" 
+            alt="MadBanner" width="160" height="600" border=0 
+            ismap&gt;&lt;/a&gt;&lt;/iframe&gt;</NOSCRIPT>
+            <DIV class="google160x600">
+<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-3936612370991951";
+/* test1 - 160x600, ёючфрэю 28.08.08 */
+google_ad_slot = "1014502036";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</SCRIPT>
+            
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/show_ads.js">
+</SCRIPT>
+            </DIV></TD></TR></TBODY></TABLE></TD>
+    <TD width="6"><IMG src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/empty.gif" 
+      width="6"></TD></TR></TBODY></TABLE><!-- /bottom --><BR>
+<TABLE border="0" cellSpacing="0" cellPadding="0" width="100%" bgColor="white" 
+align="center"><!----><!---->
+  <TBODY>
+  <TR>
+    <TD class="border" align="center">
+      <TABLE border="0" cellSpacing="8" cellPadding="0" width="100%" bgColor="white">
+        <TBODY>
+        <TR>
+          <TD width="1"><IFRAME id="errorHandling" height="1" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/intuit_top_60x100percent.htm" 
+            frameBorder="0" width="1" scrolling="no"></IFRAME></TD>
+          <TD class="rtxt" width="100%" align="center">Внимание! Если Вы 
+            увидите ошибку на нашем сайте, выделите её и нажмите Ctrl+Enter.    
+          </TD></TR></TBODY></TABLE></TD></TR><!---->
+  <TR>
+    <TD class="border" align="center">
+<SCRIPT type="text/javascript">
+//<![CDATA[
+yandex_partner_id = 14351;
+yandex_site_bg_color = 'FFFFFF';
+yandex_site_charset = 'windows-1251';
+yandex_ad_format = 'direct';
+yandex_font_size = 1;
+yandex_direct_type = 'horizontal';
+yandex_direct_border_type = 'ad';
+yandex_direct_limit = 4;
+yandex_direct_header_bg_color = 'FEEAC7'; yandex_direct_bg_color = 'FFF9F0'; yandex_direct_border_color = 'FF9900'; yandex_direct_title_color = '0000CC'; yandex_direct_url_color = '006600'; yandex_direct_all_color = '0000CC'; yandex_direct_text_color = '000000'; yandex_direct_hover_color = '0066FF'; yandex_direct_favicon = true; document.write('<sc'+'ript type="text/javascript" src="http://an.yandex.ru/system/context.js"></sc'+'ript>');
+//]]>
+</SCRIPT>
+    </TD></TR>
+  <TR>
+    <TD class="border" align="center">
+      <TABLE border="0" cellSpacing="8" cellPadding="0" width="100%" bgColor="white">
+        <TBODY>
+        <TR>
+          <TD><B>Нужна помощь?</B><BR>• Забыли пароль? <A href="http://www.intuit.ru/user/remind/">Вам 
+            сюда...</A><BR>• Есть вопрос? <A href="http://www.intuit.ru/help/askform.xhtml">Спрашивайте!</A></TD>
+          <TD><B>Вы можете:</B><BR>• Изменить персональные <A href="http://www.intuit.ru/user/edit/">данные</A><BR>
+            • Изменить параметры <A 
+            href="http://www.intuit.ru/user/subscribe/">подписки</A></TD>
+          <TD><B>Интернет-магазин:</B><BR>• Ваши заказы <A href="http://www.intuit.ru/shop/order/history.xhtml">здесь</A><BR>
+            • Ваш личный <A 
+        href="http://www.intuit.ru/user/account/">счет</A></TD></TR></TBODY></TABLE>
+    </TD></TR><!---->
+  <TR>
+    <TD class="copy" bgColor="#ff9900" align="center"><A class="bot" href="http://www.intuit.ru/courses.html">Курсы</A> 
+      |    <A class="bot" href="http://www.intuit.ru/speciality/">Учебные 
+      программы</A> |    <A class="bot" 
+      href="http://www.intuit.ru/shop/">Учебники</A> |     <A class="bot" href="http://ask.intuit.ru/" 
+      target="_new">Вопросы и Ответы</A> |     <A class="bot" href="http://www.intuit.ru/forum/">Форум</A> 
+      |    <A class="bot" href="http://www.intuit.ru/news/">Новости</A> |     <A 
+      class="bot" href="http://www.intuit.ru/help/">Помощь</A><BR><BR>    
+      Телефон: +7 (499) 253-9312, 253-9313, факс: +7 (499) 253-9310, email: <A 
+      class="bot" href="mailto:info@intuit.ru">info@intuit.ru</A><BR>© <A class="bot" 
+      href="http://www.intuit.ru/">INTUIT.ru::Интернет-Университет 
+      Информационных Технологий - дистанционное образование, 2003-2010</A></TD></TR>
+  </TBODY></TABLE><!-- /bottom -->
+<CENTER>
+<TABLE border="0" cellPadding="4" width="100%">
+  <TBODY>
+  <TR vAlign="top">
+    <TD class="topnavi" align="left">Проект <B><A href="http://www.osp.ru/" 
+      target="_blank">Издательства "Открытые Системы"</A></B>.<BR>Партнеры: <A 
+      href="http://www.rmt.ru/" target="_blank">РМ Телеком</A>, <A href="http://www.kraftway.ru/" 
+      target="_blank">KRAFTWAY COMPUTERS</A>.</TD>
+    <TD align="right"><!--begin of Rambler's Top100 code --><IMG border="0" 
+      alt="" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/top100.gif" 
+      width="1" height="1"><A href="http://top100.rambler.ru/top100/"><IMG 
+      border="0" alt="Rambler's Top100" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/rambler.gif" 
+      width="88" height="31"></A><!--end of Top100 code-->&nbsp;<!--Rating@Mail.ru COUNTEr-->
+<SCRIPT language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></SCRIPT>
+
+<SCRIPT language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></SCRIPT>
+
+<SCRIPT language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></SCRIPT>
+
+<SCRIPT language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></SCRIPT>
+
+<SCRIPT language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=496301"'+
+' target=_top><img src="http://d2.c9.b7.a0.top.list.ru/counter'+
+'?id=496301;t=75;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=38/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></SCRIPT>
+      <NOSCRIPT>&lt;atarget=_top 
+      href="http://top.mail.ru/jump?from=496301"&gt;&lt;img
+      src="http://d2.c9.b7.a0.top.list.ru/counter?js=na;id=496301;t=75"border=0 
+      height=31 width=38alt="Рейтинг@Mail.ru"/&gt;&lt;/a&gt;</NOSCRIPT>
+<SCRIPT language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></SCRIPT>
+<!--/COUNTER-->&nbsp;<!-- SpyLOG -->
+<SCRIPT id="spylog_code" type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/counter2.2.js" counter="459372"></SCRIPT>
+      <NOSCRIPT>&lt;a 
+      href="http://u4593.72.spylog.com/cnt?cid=459372&amp;f=3&amp;p=0" 
+      target="_blank"&gt;&lt;img 
+      src="http://u4593.72.spylog.com/cnt?cid=459372&amp;p=0&amp;f=4" 
+      alt='SpyLOG' border='0' width=88 height=31 &gt;&lt;/a&gt; </NOSCRIPT><!--/ SpyLOG -->
+      &nbsp;<!--
+<script language="javascript">
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+        return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+if (cookieEndIndex == -1)
+        cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+if (getCookie('adskip') == null && (getCookie('adcnt') == null || getCookie('adcnt') < 6)) {  window.open('/popup/1/','adpopup','width=300,height=320,location=no,scrollbars=no,resizable=yes,status=no,history=no,toolbar=no'); }
+</script>
+-->
+      &nbsp;<!--LiveInternet counter-->
+<SCRIPT language="JavaScript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t44.6;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';'+Math.random()+
+'" border=0 width=31 height=31 alt="liveinternet.ru"></a>')//--></SCRIPT>
+<!--/LiveInternet-->&nbsp;<!-- bigmir)net TOP 100 --><A onclick='img = new Image();img.src="http://www.bigmir.net/?cl=143122";' 
+      href="http://www.bigmir.net/" target="_blank">
+<SCRIPT language="javascript"><!--
+bmQ='<img src=http://c.bigmir.net/?s143122&t8'
+bmD=document
+bmD.cookie="b=b"
+if(bmD.cookie)bmQ+='&c1'
+//--></SCRIPT>
+
+<SCRIPT language="javascript1.2"><!-- 
+bmS=screen;bmQ+='&d'+(bmS.colorDepth?bmS.colorDepth:bmS.pixelDepth)+"&r"+bmS.width;
+//--></SCRIPT>
+
+<SCRIPT language="javascript"><!--
+bmF = bmD.referrer.slice(7);
+((bmI=bmF.indexOf('/'))!=-1)?(bmF=bmF.substring(0,bmI)):(bmI=bmF.length);
+if(bmF!=window.location.href.substring(7,7+bmI))bmQ+='&f'+escape(bmD.referrer);
+bmD.write(bmQ+" border=0 width=88 height=31 alt='bigmir TOP100'>");
+//--></SCRIPT>
+      </A></TD></TR></TBODY></TABLE></CENTER>
+<SCRIPT type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17929409-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</SCRIPT>
+<!-- GoodADVERT (SMART VIDEO in text) for http://www.intuit.ru -->
+<SCRIPT type="text/javascript"><!--
+var _ga1_channel='199';
+// -->
+</SCRIPT>
+
+<SCRIPT type="text/javascript" charset="utf-8" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/ga_1.js"></SCRIPT>
+<!-- GoodADVERT --><!--BEGIN RichBanner http://www.intuit.ru (Video)-->
+<SCRIPT language="JavaScript">
+<!--
+var _rbn={};
+_rbn.v={};
+_rbn.v.inline_color = "#009900";
+_rbn.v.inline_count_max=5;
+_rbn.v.is_use_marked=0;
+_rbn.v.autostart_video = 1;
+_rbn.v.ad=[];
+document.write('<scr' + 'ipt language="JavaScript" src="http://drive.richbanner.ru/code?pid=22632&gid=19&oin=1&rid=' + (Math.floor(Math.random() * 1000000000)) +'" charset="utf-8" type="text/JavaScript"></scr' + 'ipt>');
+// -->
+</SCRIPT>
+
+<SCRIPT language="JavaScript" type="text/JavaScript" charset="utf-8" src=""></SCRIPT>
+<!--END RichBanner -->
+<SCRIPT type="text/javascript" src="INTUIT_ru%20Учебный%20курс%20-%20Структуры%20и%20алгоритмы%20компьютерной%20обработки%20данных_files/intuit_is_bottom.js"></SCRIPT>
+</BODY></HTML>

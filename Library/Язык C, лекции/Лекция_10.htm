@@ -1,0 +1,1224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_10_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_10_files/mhtF9F4(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_10_files/mhtF9F4(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>10. Лекция: Общие сведения о функциях языка 
+            С: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются особенности объявления и определений функций, 
+            способов задания формальных параметров и типов возвращаемых данных, 
+            вызов функций, передача аргументов по значению и по ссылке. 
+          </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_10_files/mhtF9F4(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Принципы программирования на языке <B>С</B> основаны на 
+            понятии функции. Например, к системным функциям относятся <SPAN 
+            class=texample>printf()</SPAN>, <SPAN class=texample>scanf()</SPAN>, 
+            <SPAN class=texample>gets()</SPAN>, <SPAN 
+            class=texample>putchar()</SPAN> и др. <SPAN 
+            class=xml_em_italic>Функции</SPAN> – это строительные элементы языка 
+            <B>С</B> и то место, в котором выполняется вся работа программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_6>Большие программы обычно состоят из нескольких 
+            пользовательских функций и ряда системных функций. <SPAN 
+            class=xml_em_italic>Функция</SPAN> – самостоятельная единица 
+            программы. Функции повышают уровень модульности программы, облегчают 
+            ее чтение, внесение изменений и коррекцию ошибок.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7>В основе всех программ на языке программирования <B>С</B> 
+            лежат одни и те же фундаментальные элементы – функции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>10.2</A>]. В частности, функция <SPAN 
+            class=texample>main()</SPAN> является обязательной для любой 
+            программы. Во всех программах <B>С</B> определяется единая внешняя 
+            функция с именем <SPAN class=texample>main()</SPAN>, служащая точкой 
+            входа в программу, то есть первой функцией, выполняемой после 
+            запуска программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#11" 
+            target=_blank>10.3</A>].</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_10>Ни одна программа в языке <B>С</B> не может обойтись без 
+            функций.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>Функция в языке <B>С</B> играет ту же роль, что и 
+            подпрограммы или процедуры в других языках [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>]. Каждая функция языка <B>С</B> имеет имя и 
+            список аргументов. По соглашению, принятому в языке <B>С</B>, при 
+            записи имени функции после него ставятся круглые скобки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>]. Это соглашение позволяет легко отличить 
+            имена переменных от имен функций.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Рассмотрим модельный пример программы, в которой, кроме 
+            функции <SPAN class=texample>main()</SPAN>, содержатся еще три 
+            функции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>].</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+
+int main(void)  /* Главная функция */
+{  /* Начало тела функции */
+function1(); /* вызов первой функции */
+function2(); /* вызов второй функции */
+function3(); /* вызов третьей функции */
+} /* Конец тела функции main() */
+
+/* Начало определения первой функции */
+function1() { /* Начало тела первой функции */
+/* Операторы первой функции */
+/* Конец тела первой функции */
+}
+ 
+/* Начало определения второй функции */
+function2()
+{ /* Начало тела второй функции*/
+/* Операторы второй функции */
+/* Конец тела второй функции*/
+}
+
+/* Начало определения третьей функции */
+function3()
+{ /* Начало тела третьей функции*/
+/* Операторы третьей функции */
+/* Конец тела третьей функции*/
+}</PRE></DIV>
+            <P id=id_15>В условной (модельной) программе имеются четыре функции: 
+            <SPAN class=texample>main()</SPAN>, <SPAN 
+            class=texample>function1()</SPAN>, <SPAN 
+            class=texample>function2()</SPAN>, <SPAN 
+            class=texample>function3()</SPAN>. Эти функции не имеют аргументов. 
+            Позднее рассмотрим функции, которые имеют аргументы. Аргументы 
+            функции – это величины, которые передаются функции во время ее 
+            вызова. Аргумент, стоящий в операторе вызова функции, называется 
+            <SPAN class=xml_em_italic>фактическим параметром</SPAN>. Аргументы, 
+            стоящие в заголовке функции, называются <SPAN 
+            class=xml_em_italic>формальными параметрами</SPAN>. В языке <B>С</B> 
+            функция может возвращать значение в вызывающую программу посредством 
+            оператора <SPAN class=texample>return</SPAN>. Оператор возврата из 
+            функции в точку вызова имеет две формы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#7" 
+            target=_blank>10.5</A>]:</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <DIV class=example><PRE>return;
+return выражение;</PRE></DIV>
+            <P id=id_22>В общем виде функция выглядит следующим образом [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]:</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <DIV class=example><PRE>возвр-тип  имя-функции(список параметров)
+{
+Тело_функции
+}</PRE></DIV>
+            <P id=id_24><B>Тело_функции</B> – это часть определения функции, 
+            ограниченная фигурными скобками и непосредственно размещенная вслед 
+            за заголовком функции. Тело функции может быть либо составным 
+            оператором, либо блоком [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]. В языке С определения функций не могут быть 
+            вложенными, т.е. внутри одной функции нельзя объявить и расписать 
+            тело другой функции.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25>Возвращаемый тип <B>возвр-тип</B> функции определяет тип 
+            данного, возвращаемого функцией. Например, это могут быть <SPAN 
+            class=texample>int</SPAN>, <SPAN class=texample>float</SPAN>, <SPAN 
+            class=texample>double</SPAN> и т.д. В случае, когда функция ничего 
+            не возвращает, ей присваивается тип <SPAN 
+            class=texample>void</SPAN>.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_30>Функция может возвращать любой тип данных, за 
+            исключением массивов. Список параметров – это список, элементы 
+            которого отделяются друг от друга запятыми [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]. При вызове функции параметры принимают 
+            значения аргументов. Если функция без параметров, то такой пустой 
+            список можно указать в явном виде, поместив для этого внутри скобок 
+            ключевое слово <SPAN class=texample>void</SPAN>. Все параметры 
+            функции (входящие в список параметров) должны объявляться отдельно, 
+            причем для каждого из них надо указывать и тип, и имя. В общем виде 
+            список объявлений параметров должен выглядеть следующим образом [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]:</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fun(тип имя_перем1, тип имя_перем2,..., тип имя_перем N)</PRE></DIV>
+            <P id=id_33>Например:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fun(int i, int j, float k, char str1, char str2)</PRE></DIV>
+            <P id=id_35>Рассмотрим пример программы с выводом сообщения не в 
+            главной функции <SPAN class=texample>main()</SPAN>, а в другой:</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void printMessage (void)
+{
+printf("\n\t hello, world\n");
+return;
+printf("\n\t 123\n");
+}
+
+int main(void)
+{
+printMessage();
+
+printf("\n Press any key: ");
+_getch();
+return 0;
+}</PRE></DIV>
+            <P id=id_38>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.1">рис. 
+            10.1</A>.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39 align=left><A name=image.10.1></A></P>
+            <DIV><IMG alt="Вывод сообщения с помощью двух функций" 
+            src="Лекция_10_files/mhtFA35(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 10.1.</B>&nbsp; Вывод сообщения с 
+            помощью двух функций
+            <P></P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40>Программа состоит из двух функций: <SPAN 
+            class=texample>printMessage()</SPAN> и <SPAN 
+            class=texample>main()</SPAN>. Выполнение программы всегда начинается 
+            с функции <SPAN class=texample>main()</SPAN>, которую называют еще 
+            главной. Внутри функции <SPAN class=texample>main()</SPAN> 
+            происходит вызов функции <SPAN class=texample>printMessage()</SPAN> 
+            без параметров. Когда происходит вызов функции, выполнение программы 
+            передается непосредственно вызванной функции. Внутри функции <SPAN 
+            class=texample>printMessage()</SPAN> выполняется только 
+            утверждение</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <DIV class=example><PRE>printf("\n\t hello, world\n");</PRE></DIV>
+            <P id=id_48>Несмотря на то, что в функции <SPAN 
+            class=texample>printMessage()</SPAN> есть еще одно утверждение <SPAN 
+            class=texample>printf("\n\t 123\n")</SPAN>, которое не выполняется, 
+            поскольку используется утверждение возврата ( <SPAN 
+            class=texample>return</SPAN> ) из функции.</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_52>В языке <B>С</B> функция введена как один из производных 
+            типов.</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>Формальные параметры в определениях функций могут 
+            объявляться в форме прототипа [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#11" 
+            target=_blank>10.3</A>]. Прототипы дают компилятору возможность 
+            тщательнее выполнять проверку типов аргументов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]. Если используются прототипы, то компилятор 
+            может обнаружить любые сомнительные преобразования типов аргументов, 
+            необходимые при вызове функции, если тип ее параметров отличается от 
+            типов аргументов. Компилятор также обнаружит различия в количестве 
+            аргументов, использованных при вызове функции, и в количестве 
+            параметров функции.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_54>В общем случае прототип функции должен выглядеть таким 
+            образом [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>10.1</A>]:</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип имя_функции(тип имя_парам1, тип имя_парам2,..., тип им_парамN);</PRE></DIV>
+            <P id=id_56>В приведенной выше программе прототип функции <SPAN 
+            class=texample>printMessage()</SPAN> не использовался, так как сама 
+            функция была объявлена до главной функции <SPAN 
+            class=texample>main()</SPAN>. Для переносимости <B>С</B> -кода в 
+            <B>С</B> ++ использование прототипа функции обязательно. Поэтому к 
+            хорошему стилю программирования относится использование прототипов 
+            функций, поскольку большие программы обычно состоят из нескольких 
+            функциях, часто расположенных в различных файлах.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_59>Вышеприведенная программа с использованием прототипа 
+            функции <SPAN class=texample>printMessage()</SPAN> будет выглядеть 
+            следующим образом:</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+//void printMessage (void);//Прототип функции
+
+int main(void) { 
+void printMessage (void); //Прототип функции	
+printMessage(); // Вызов функции 
+printf("\n Press any key: ");
+_getch();
+return 0;
+ }
+
+// Определение функции
+void printMessage (void)
+{
+printf("\n\t hello, world\n");
+return;
+printf("\n\t 123\n");
+ }</PRE></DIV>
+            <P id=id_62>В листинге программы показаны две возможности 
+            использования прототипа функции <SPAN 
+            class=texample>printMessage()</SPAN>. При этом, сама функция <SPAN 
+            class=texample>printMessage()</SPAN> объявлена после функции <SPAN 
+            class=texample>main()</SPAN>.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_66><SPAN class=xml_em_italic>Формальные параметры</SPAN> 
+            функции определены в прототипе функции. При обращении к функции 
+            используются <SPAN class=xml_em_italic>фактические параметры</SPAN>, 
+            называемые <SPAN class=xml_em_italic>аргументами функции</SPAN>.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67>Список фактических параметров – это список выражений, 
+            количество которых равно количеству формальных параметров функции 
+            (исключение составляют функции с переменным числом параметров). 
+            Соответствие между формальными и фактическими параметрами 
+            устанавливается по их взаимному расположению в списках. Между 
+            формальными и фактическими параметрами должно быть соответствие по 
+            типам.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_68>Синтаксис языка <B>С</B> предусматривает только один 
+            способ передачи параметров – передачу по значениям. Это означает, 
+            что формальные параметры функции локализованы в ней, т.е. недоступны 
+            вне определения функции и никакие операции над формальными 
+            параметрами в теле функции не изменяют значений фактических 
+            параметров [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>].</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69>Передача параметров по значению предусматривает 
+            следующие шаги [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>]:</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <OL id=id_70>
+              <LI>При компиляции функции выделяются участки памяти для 
+              формальных параметров, т.е. формальные параметры оказываются 
+              внутренними объектами функции. При этом для параметров типа <SPAN 
+              class=texample>float</SPAN> формируются объекты типа <SPAN 
+              class=texample>double</SPAN>, а для параметров типов <SPAN 
+              class=texample>char</SPAN> и <SPAN class=texample>short int</SPAN> 
+              создаются объекты типа <B>int</B>. Если параметром является 
+              массив, то формируется указатель на начало этого массива, и он 
+              служит представлением массива-параметра в теле функции.
+              <LI>Вычисляются значения выражений, использованных в качестве 
+              фактических параметров при вызове функции.
+              <LI>Значения выражений – фактических параметров заносятся в 
+              участки памяти, выделенные для формальных параметров функции.
+              <LI>В теле функции выполняется обработка с использованием значений 
+              внутренних объектов-параметров, и результат передается в точку 
+              вызова функции как возвращаемое ею значение.
+              <LI>Никакого влияния на фактические параметры (на их значения) 
+              функция не оказывает.
+              <LI>После выхода из функции освобождается память, выделенная для 
+              ее формальных параметров.</LI></OL>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_81>Важным является момент, что объект вызывающей программы, 
+            использованный в качестве фактического параметра, не может быть 
+            изменен из тела функции. Для подобного изменения существует <SPAN 
+            class=xml_em_italic>косвенная возможность</SPAN> изменять значения 
+            объектов вызывающей программы действиями в вызванной функции. Это 
+            становится возможным с помощью указателя (указателей), когда в 
+            вызываемую функцию передается адрес любого объекта из вызывающей 
+            программы. С помощью выполняемого в тексте функции разыменования 
+            указателя осуществляется доступ к адресуемому указателем объекту из 
+            вызывающей программы. Тем самым, не изменяя самого параметра 
+            (указатель-параметр постоянно содержит только адрес одного и того 
+            объекта), можно изменять объект вызывающей программы.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_82>Массивы и строки также могут быть параметрами функции. В 
+            этом случае внутрь функции передается только адрес начала массива. 
+            Тогда можно в качесстве параметра использовать указатель. Приведем 
+            два равноправных прототипа функций:</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float fun(int n, float A[ ], float B[ ]);
+float fun(int n, float *a, float *b);</PRE></DIV>
+            <P id=id_84>Поскольку массив передается в функцию как указатель, 
+            внутри функции можно изменять значения элементов 
+            массива–фактического параметра, определенного в вызывающей 
+            программе. Это возможно и при использовании индексирования, и при 
+            разыменовании указателей на элементы массива.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_216>В языке С существует возможность создавать функции, 
+            число аргументов которых не определено – функции с переменным числом 
+            аргументов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>1</A>]. При этом следует указать только количество 
+            аргументов. Пример прототипа функции с переменным числом 
+            аргументов:</P>
+            <DIV id=mark_216 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fun(int n, ј);</PRE></DIV>
+            <P id=id_218>Многоточие <SPAN class=texample>(ј)</SPAN> в прототипе 
+            функции означает, что функция получает переменное число аргументов 
+            любого типа. Многоточие должно всегда находиться в конце списка 
+            параметров [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>1</A>].</P>
+            <DIV id=mark_218 class=lecture_mark></DIV>
+            <P id=id_220>Макросы и определения заголовочного файла переменных 
+            аргументов <SPAN class=texample>stdarg.h</SPAN> (<A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#table.10.1">табл. 
+            10.1</A>) предоставляют программисту средства, необходимые для 
+            построения функций со списком аргументов переменной длины [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>1</A>].</P>
+            <DIV id=mark_220 class=lecture_mark></DIV>
+            <DIV id=id_222 class=xml_table_env><A name=table.10.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 10.1. Макросы заголовочного файла 
+              stdarg.h</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Идентификатор</TH>
+                <TH bgColor=#d8d8d8>Объяснение</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>va_list</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Тип, предназначающийся для 
+                  хранения информации, необходимой макросам <SPAN 
+                  class=texample>v_start</SPAN>, <SPAN 
+                  class=texample>va_arg</SPAN> и <SPAN 
+                  class=texample>va_end</SPAN>. Чтобы получить доступ к 
+                  аргументам в списке переменной длины, необходимо объявить 
+                  объект типа <SPAN class=texample>va_list</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>va_start</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Макрос, который вызывается 
+                  перед обращением к аргументам списка переменной длины. Он 
+                  инициализирует объект, объявленный с помощью <SPAN 
+                  class=texample>va_list</SPAN>, для использования макросами 
+                  <SPAN class=texample>va_arg</SPAN> и <SPAN 
+                  class=texample>va_end</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>va_arg</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Макрос, расширяющийся до 
+                  выражения со значением и типом следующего аргументов списке 
+                  переменной длины. Каждый вызов его изменяет объект, 
+                  объявленный с помощью <SPAN class=texample>va_list</SPAN> так, 
+                  что объект указывает на следующий аргумент списка</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>va_end</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Макрос обеспечивает нормальный 
+                  возврат из функции, на список аргументов которой ссылается 
+                  макрос <SPAN 
+            class=texample>va_start</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <P id=id_236>Примеры обращений к функции с фактическими 
+            аргументами:</P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <DIV class=example><PRE>double k;
+double v1 = 1.5,      
+       v2 = 2.5,       
+       v3 = 3.5;
+       // Первый вариант, где 3 – количество аргументов
+       k = fun(3,v1, v2, v3);
+  // Второй вариант, где 0.0 – завершающий нуль списка аргументов
+  k = fun(v1, v2, v3, 0.0);</PRE></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_85><B>Пример 1</B>. Напишите программу сортировки по 
+            возрастанию заданного массива случайных чисел, равномерно 
+            распределенных в интервале [–6;6], с помощью вспомогательной 
+            функции.</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <P id=id_86>Программный код решения примера:</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#define MAX 10
+
+// Прототип функции с формальными параметрами
+void sort(double arr[], int n);
+
+int main (void) {
+	double M[MAX];
+	int i, size = MAX;
+	long int L;
+	unsigned int some;
+	L = (long) time(NULL);
+	srand((unsigned)L);
+
+	for (i = 0; i &lt; MAX; ++i)
+		M[i] = 12.0*rand()/RAND_MAX - 6.0;
+	
+	printf("\n\t The original array:\n");
+	for (i = 0; i &lt; MAX; ++i)
+		printf("\t%8.4f\n", M[i]);
+
+// Обращение к функции с фактическими параметрами
+	sort(M, size);
+// Распечатка отсортированного массива
+	printf("\n\t After sorting: \n");
+for (i = 0; i &lt; MAX; ++i) printf("\t%8.4f\n", M[i]);
+	printf("\n Press any key: ");
+     _getch();
+    return 0; }
+// Вспомогательная функция сортировки 
+void sort(double Array[], int m) {
+int i, j;
+double tmp;
+for (i = 0; i &lt; m-1; ++i)
+   for (j = 0; j &lt; m-i-1; ++j)
+if (Array[j+1] &lt; Array[j]) {
+tmp = Array[j];
+Array[j] = Array[j+1];
+Array[j+1] = tmp;
+}
+}</PRE></DIV>
+            <P id=id_88>Следует обратить внимание на имена формальных параметров 
+            в самой функции <SPAN class=texample>sort()</SPAN> и в ее прототипе: 
+            они имеют разные имена, но одинаковые типы. Фактические параметры 
+            или аргументы функции <SPAN class=texample>sort()</SPAN> в 
+            вызывающей программе (в теле функции <SPAN 
+            class=texample>main()</SPAN> ) имеют свои имена, не связанные с 
+            именами формальных параметров.</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_92>Заполнение массива случайными числами производится с 
+            помощью библиотечной функции <SPAN class=texample>rand()</SPAN> и 
+            макроопределения <SPAN class=texample>RAND_MAX</SPAN>. Для 
+            рандомизации массива случайных чисел при каждом новом запуске 
+            программы используется библиотечная функция <SPAN 
+            class=texample>srand()</SPAN>, аргументом которой является системное 
+            время, формируемое библиотечной функцией <SPAN 
+            class=texample>time()</SPAN>.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_97>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.2">рис. 
+            10.2</A>.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98 align=left><A name=image.10.2></A></P>
+            <DIV><IMG alt="Пример  сортировки числового массива" 
+            src="Лекция_10_files/mhtFA48(1).tmp" width=555 
+            height=619></DIV><BR><B>Рис. 10.2.</B>&nbsp; Пример сортировки 
+            числового массива
+            <P></P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99><B>Задание 1</B></P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <OL id=id_100>
+              <LI>Используйте программу без прототипа функции <SPAN 
+              class=texample>sort()</SPAN>.
+              <LI>С помощью вспомогательной функции произведите сортировку 
+              массива по убыванию.
+              <LI>С помощью вспомогательной функции произведите сортировку целых 
+              чисел из заданного интервала [X; 10*X], где Х – номер компьютера, 
+              за которым выполняется лабораторная работа.
+              <LI>Выполните операцию умножения исходного массива как 
+              матрицы-столбца на отсортированный массив как матрицы-строки. 
+              Выведите на консоль результат перемножения. Для операции 
+              перемножения создайте специальную функцию.
+              <LI>Выполните операцию умножения исходного массива как 
+              матрицы-строки на отсортированный массив как матрицы-столбца. 
+              Выведите на консоль результат перемножения. Для операции 
+              перемножения создайте специальную функцию.</LI></OL>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_107><B>Пример 2</B>. Напишите программу вычисления 
+            квадратного корня числа по методу Ньютона–Рафсона с использованием 
+            функции расчета квадратного корня числа и функции расчета 
+            абсолютного значения числа.</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>При вычислении квадратного корня из числа следует 
+            помнить, что подкоренное выражение не должно быть отрицательным.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109>Алгоритм метода Ньютона–Рафсона для вычисления 
+            квадратного корня числа:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110><SPAN class=xml_em_italic>Шаг</SPAN> 1. Выбрать 
+            приблизительное значение 1.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_111><SPAN class=xml_em_italic>Шаг</SPAN> 2. Если |guess^2 – 
+            x| &lt; e, перейти к шагу 4.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112><SPAN class=xml_em_italic>Шаг</SPAN> 3. Установить 
+            приблизительное значение, равное (x/guess + guess)/2, и перейти к 
+            шагу 2.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113><SPAN class=xml_em_italic>Шаг</SPAN> 4. Считать 
+            приблизительное значение квадратным корнем числа [7].</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Программный код решения примера:</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Функция абсолютного значения числа 
+double absValue(double x)
+{ 
+	if (x &lt; 0) x = -x;
+	return (x);
+}
+
+// Функция расчета квадратного корня из числа
+double squareRoot (double x) {
+const double epsilon = 0.000001;
+double guess = 1.0; //Начальное приближение
+
+while (absValue(guess*guess - x) &gt;= epsilon)
+guess = (x/guess + guess)/2.0;
+
+return (guess);
+}
+
+int main (void)
+ {
+	double result, X;
+
+	printf("\n\t Enter a number: ");
+	scanf_s("%lf", &amp;X);
+		
+// Обращение к функции с фактическим параметром	
+	result = squareRoot(X);
+printf("\n\t Square root of \"%1.4f\" is: %1.8f\n", X, result);
+	
+   printf("\n Press any key: ");
+   _getch();
+   return 0; 
+
+}</PRE></DIV>
+            <P id=id_116>В программе используются три функции: <SPAN 
+            class=texample>main()</SPAN>, <SPAN 
+            class=texample>absValue()</SPAN>, <SPAN 
+            class=texample>squareRoot()</SPAN>.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_120>Вспомогательные функции расположены в определенном 
+            порядке: сначала функция <SPAN class=texample>absValue()</SPAN>, а 
+            потом функция <SPAN class=texample>squareRoot()</SPAN>. В функцию 
+            <SPAN class=texample>absValue()</SPAN> передается значение 
+            <B>guess</B>, которое вычисляется в функции <SPAN 
+            class=texample>squareRoot()</SPAN>, находящейся в условии оператора 
+            цикла <SPAN class=texample>while</SPAN>. Когда условие для оператора 
+            цикла будет ложным, т.е. когда значение корня будет меньше заданного 
+            числа <SPAN class=texample>epsilon</SPAN>, то полученное значение 
+            возвращается в вызывающую функцию <SPAN 
+            class=texample>main()</SPAN>.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_128>В программе использована переменная <B>epsilon</B>, 
+            определенная с помощью спецификатора <B>const</B>, что делает 
+            переменную неизменной. При таком объявлении компилятор определяет ее 
+            как константное значение. Таким переменным нельзя присваивать 
+            значения в программе, нельзя их инкрементировать или 
+            декрементировать [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>10.2</A>].</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.3">рис. 
+            10.3</A>.</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <P id=id_130 align=left><A name=image.10.3></A></P>
+            <DIV><IMG 
+            alt="Результат итерационного извлечения квадратного корня из двух" 
+            src="Лекция_10_files/mhtFA6A(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 10.3.</B>&nbsp; Результат итерационного 
+            извлечения квадратного корня из двух
+            <P></P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131><B>Задание 2</B></P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <OL id=id_132>
+              <LI>В качестве формальных параметров функций возьмите начальные 
+              буквы своей фамилии, имени из двух букв. В качестве возвращаемого 
+              значения из функции <SPAN class=texample>squareRoot()</SPAN> – 
+              месяц своего рождения.
+              <LI>В функции <SPAN class=texample>absValue()</SPAN> примените 
+              оператор условия <B></B>? вместо оператора <B>if</B> без 
+              определения дополнительной переменной.
+              <LI>В главной функции <SPAN class=texample>main()</SPAN> введите 
+              проверку ввода неотрицательного числа.
+              <LI>В программу введите прототипы функций.
+              <LI>Зафиксируйте результат вычисления квадратного корня от числа 
+              Х, где Х – номер компьютера, за которым выполняется лабораторная 
+              работа.
+              <LI>В качестве начального приближения возьмите 1.5*Х, где Х – 
+              номер компьютера, за которым выполняется лабораторная работа.
+              <LI>В программе примените тип <B>float</B> вместо типа 
+              <B>double</B>.</LI></OL>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_143><B>Пример 3</B>. Напишите программу поиска 
+            максимального элемента среди минимальных элементов строк двухмерного 
+            целочисленного массива.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_144>Условие примера соответствует поиску <SPAN 
+            class=xml_em_italic>максимина</SPAN> в двухмерном массиве, т.е.</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <DIV id=id_145><IMG alt=q_{ki}=\max_i\min_ja_{ij}, 
+            src="Лекция_10_files/mhtFA8C(1).tmp" width=146 height=29></DIV>
+            <P id=id_146>где <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" alt=A_{ij} 
+            src="Лекция_10_files/mhtFA9F(1).tmp" width=31 height=22> – элементы 
+            матрицы <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=А src="Лекция_10_files/mhtFAB1(1).tmp" width=16 height=16>.</P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_149>Алгоритм поиска максмина заключается в следующем [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>10.6</A>]. Сначала предполагаем, что максимальным 
+            элементом является начальный элемент первой строки <SPAN 
+            class=xml_em_italic>A[0][0]</SPAN>, затем заменяем его минимальным 
+            элементом этой же строки, т.е. теперь минимальный элемент первой 
+            строки принимается за искомый максимум. Последовательно просматривая 
+            остальные строки, находим в каждой из них минимальный элемент. Если 
+            окажется, что минимальный элемент текущей строки больше текущего 
+            максимума, то он принимается за максимальный. Результатом поиска 
+            являются значение максимального элемента и его индексы (номер строки 
+            и номер столбца).</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150>Программный код решения примера:</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+#define n 6
+#define m 7
+const int N = 100;
+
+int main (void)
+ {
+//Прототип функции
+int MaxMin(int A[][m], int nn, int mm, int *imax, int *jmax);
+	
+	int i, j, A[n][m], max, imax, jmax;
+   	long int L;
+	
+	L = (long) time(NULL);
+	srand((unsigned)L);
+
+//Заполнение матрицы целыми случайными числами
+	for (i = 0; i &lt; n; ++i)
+		for (j = 0; j &lt; m; ++j)
+	A[i][j] = 2*N*rand()/RAND_MAX - N;
+
+	//	Распечатка матрицы
+printf("\n\t The original matrix A(%d*%d):\n\n", n, m);
+	for (i = 0; i &lt; n; ++i){
+		printf("\t");
+		for (j = 0; j &lt; m; ++j)
+	printf("%4d", A[i][j]);
+printf("\n");
+	}
+	max = MaxMin(A, n, m, &amp;imax, &amp;jmax);
+	printf("\n\t Result: MaxMin = A[%d][%d] = %d\n", imax+1, jmax+1, max);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Функция поиска максмина
+int MaxMin(int A[][m], int nn, int mm, int *imax, int *jmax)
+{
+	int i, j, min, max, imin, jmin;
+	max = A[0][0];
+	*imax = 0; *jmax = 0;
+
+	for (j = 1; j &lt; mm; ++j)
+		if (A[0][j] &lt; max)
+		{max = A[0][j]; *imax = 0; *jmax = j;}
+
+		for (i = 1; i &lt; nn; ++i) {
+		min = A[i][0]; imin = i; jmin = 0;
+		for (j = 1; j &lt; mm; ++j)
+			if (A[i][j] &lt; min)
+			{min = A[i][j]; imin = i; jmin = j;}
+			if (max &lt; min)
+			{max = min; *imax = imin; *jmax = jmin;}
+		}
+	return max;
+}</PRE></DIV>
+            <P id=id_152>В программе поиск максмина выполняется на основе 
+            обычной индексации двухмерного массива. В объявлении функции <SPAN 
+            class=texample>MaxMin()</SPAN> для матрицы явно указывается только 
+            второй размер – количество столбцов. Указатели <B>*imax, *jmax</B> 
+            используются для передачи в вызывающую функцию индексов найденного 
+            максимина. Возвращение самого максимина осуществляется по значению с 
+            помощью оператора <SPAN class=texample>return</SPAN>, т.е. <SPAN 
+            class=texample>return max</SPAN>. Вывод значений индексов <SPAN 
+            class=xml_em_italic>максмина</SPAN> сделан традиционно в 
+            соответствии с принятой обычной математической индексацией.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_156>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.4">рис. 
+            10.4</A>.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_157 align=left><A name=image.10.4></A></P>
+            <DIV><IMG alt="Максмин двухмерного массива" 
+            src="Лекция_10_files/mhtFAD3(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 10.4.</B>&nbsp; Максмин двухмерного 
+            массива
+            <P></P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <P id=id_158>Задание 3</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <OL id=id_159>
+              <LI>Подсчитайте число итераций, используемых при поиске максмина.
+              <LI>В объявлении матрицы <SPAN class=texample>MaxMin()</SPAN> (и 
+              ее прототипа) примените указатель на одномерный массив, например, 
+              <B>int *a</B> вместо <B>int A[ ][m]</B>.
+              <LI>Число строк матрицы задайте как 3*Х, где Х – номер компьютера, 
+              за которым выполняется лабораторная работа.
+              <LI>Размерность анализируемого массива (матрицы) задайте с 
+              клавиатуры. С клавиатуры задайте также интервал генерирования 
+              случайных чисел функцией <B>rand()</B> в виде [–2*Х; 2*Х], где Х – 
+              номер компьютера, за которым выполняется лабораторная работа.
+              <LI>Напишите функцию определения субмаксмина, т.е. максимального 
+              числа среди минимальных чисел строк двухмерного массива после 
+              найденного максимина.
+              <LI>Определите абсолютные значения максимума и минимума 
+              сформированной матрицы, для которой находится максимин.</LI></OL>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_167><B>Пример 4</B>. Напишите программу поиска одного 
+            элемента в линейной неупорядоченной таблице по совпадению ключа на 
+            основе заграждающего элемента. Таблицу опишите в виде одномерного 
+            массива целых чисел [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>10.6</A>].</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_168>В линейной таблице элементы располагаются друг за 
+            другом, т.е. для каждого элемента таблицы существуют отношения 
+            порядка [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>10.6</A>]. Линейные таблицы в оперативной памяти 
+            компьютера отображаются в массивы или линейные связанные списки.</P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_169>Поиск одного элемента в неупорядоченной таблице по 
+            заданному условию осуществляется последовательным просмотром 
+            элементов или до нахождения искомого элемента, т.е. до выполнения 
+            условия поиска, или до конца таблицы, если искомый элемент не 
+            найден. Возвращаемыми значениями являются адрес (индекс) элемента, 
+            или значение элемента, либо признак отсутствия элемента [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>10.6</A>].</P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170>В случае применения <SPAN 
+            class=xml_em_italic>заграждающего элемента</SPAN> последняя запись 
+            таблицы запоминается, а после завершения поиска восстанавливается в 
+            таблице. В последний элемент массива (когда таблица представляется в 
+            виде одномерного массива данных) заносится ключ поиска, и образуется 
+            так называемый <SPAN class=xml_em_italic>заграждающий 
+            элемент</SPAN>. Теперь на каждом шаге поиска осуществляется только 
+            одно сравнение, а сам поиск продолжается до нахождения элемента с 
+            заданным ключом. Если искомого элемента в исходной таблице не было, 
+            то поиск закончится на заграждающем элементе. Использование 
+            заграждающего элемента в случае числовых ключей существенно 
+            сокращает количество сравнений.</P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_171>Программный код решения примера:</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define size 10
+
+// Таблица числовых элементов
+int A[size] = {1,-7,3,4,8,-5,-2,6,0,9};
+
+int main (void) { 
+int i, ind, key;
+	int search(int A[], int n, int key);
+	
+	printf("\n\t The original array:\n\t");
+		for (i = 0; i &lt; size; ++i)
+		printf("%3d", A[i]);
+
+	// Поиск ключа соответствия
+	printf("\n\n\t Search for key matches.\n");
+	// Ввод ключа поиска
+	printf("\t Key in your search: ");
+	scanf_s("%i", &amp;key);;
+	ind = search(A, size, key);
+	
+	if (ind == -1)
+	printf("\n\t Element \"%d\" could not be found\n", key);
+	else
+	printf("\n\t Element \"%d\" index is %d\n", key, ind+1);
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+int search(int A[], int n, int key) {
+int i = 0, r;
+r = A[n-1];
+A[n-1] = key;// Заграждающий элемент
+while (A[i] != key)
+i++;
+A[n-1] = r; //Восстановление последнего элемента
+
+if ((i == n-1) &amp;&amp; (r != key))
+return -1; // Отсутствие элемента
+elseF
+return i; // Успешный поиск
+}</PRE></DIV>
+            <P id=id_173>В программе использовано внешнее объявление одномерного 
+            массива с инициализацией. Термин "внешний" здесь используется, чтобы 
+            подчеркнуть расположение объявление вне функций; напрямую с ключевым 
+            словом <B>extern</B> он не связан [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>].</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_174>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.5">рис. 
+            10.5</A>.</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175 align=left><A name=image.10.5></A></P>
+            <DIV><IMG alt="Пример поиска элемента в массиве по заданному ключу" 
+            src="Лекция_10_files/mhtFAE6(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 10.5.</B>&nbsp; Пример поиска элемента 
+            в массиве по заданному ключу
+            <P></P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176><B>Задание 4</B></P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <OL id=id_177>
+              <LI>Подсчитайте число итераций при поиске элемента по заданному 
+              ключу.
+              <LI>Напишите программу без заграждающего элемента. Подсчитайте 
+              число итераций при поиске элемента по заданному ключу. Сравните с 
+              числом итераций при поиске с заграждающим элементом.
+              <LI>Сформируйте динамический одномерный массив размерностью 12*Х, 
+              и заполните его целыми случайными числами, распределенными 
+              равномерно из интервала [0; 20*X], где Х – номер компьютера, за 
+              которым выполняется лабораторная работа. Ввод ключа для поиска 
+              выполните с клавиатуры. Поиск выполните с заграждающим элементом.
+              <LI>С учетом предыдущего пункта задания ввод ключа задайте 
+              случайным образом. Если по этому ключу элемент не найден, то 
+              программным путем организовать повторный поиск с заданием нового 
+              случайного ключа. В случае, если при 5*Х-кратном поиске элемент не 
+              найден, вывести сообщение об отсутствии искомого элемента по всем 
+              заданным ключам. Поиск выполнить с заграждающим элементом.</LI></OL>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_182><B>Пример 5</B>. Напишите программу выделения слов из 
+            символьной строки, когда слова в ней разделены пробелами, и 
+            поместите каждое слово в отдельной строке свободного 
+            (вспомогательного массива) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#12" 
+            target=_blank>10.4</A>].</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_183>Программный код решения примера:</P>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+#define N 123
+#define M 40
+
+int wordstr(char *c, char **FA)  {
+int Ln, n = 0, i = 0;
+char *wr;
+char *tempstr;
+
+Ln = strlen(c);
+tempstr = (char *)calloc(Ln + 1, sizeof(char));
+strcpy(tempstr, c);
+wr = strtok(tempstr, " ");
+Ln = strlen(wr);
+FA[i] = (char *)calloc(Ln + 1, sizeof(char));
+strcpy(FA[i++], wr);
+n++;
+
+while (wr = strtok(NULL, " ")) {
+Ln = strlen(wr);
+FA[i] = (char *) calloc(Ln + 1, sizeof(char));
+
+strcpy(FA[i++], wr);
+n++;
+}
+free(tempstr);
+return n;
+}
+
+int main (void)
+  {
+	int i, n;
+	char *Farr[M];
+	char str[N];
+
+	printf("\n\t  Enter the string of characters:\n &gt;&gt; ");
+	gets_s(str, N-1);
+	printf("\n\t The original string of characters:\n");
+	printf(" %s\n", str);
+	//Обращение к функции обработки строки
+	n = wordstr(str, Farr);
+	
+	//Распечатка слов, помещенных в свободный массив
+	printf("\n\t The characters in a free array:");
+	for (i = 0; i &lt; n; ++i)
+		printf("\n\t %s", Farr[i]);
+	//Освобождение памяти, занятую выделенными словами
+	for (i = 0; i &lt; n; ++i)
+	{free(Farr[i]); Farr[i] = NULL;}
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_185>В программе использована библиотечная функция <SPAN 
+            class=texample>strtok()</SPAN>, которая выделяет слова из строки. 
+            При этом для каждого выделенного слова получаем динамическую память 
+            с помощью функции <SPAN class=texample>calloc()</SPAN>. Адрес 
+            выделенной памяти помещаем в соответствующий указатель массива 
+            свободных строк <B>FA[]</B>.</P>
+            <DIV id=mark_185 class=lecture_mark></DIV>
+            <P id=id_188>Обратите внимание, что в функции <SPAN 
+            class=texample>calloc()</SPAN> вводится число на единицу больше, чем 
+            длина строки. Это сделано для учета символа завершения строки (или 
+            одного слова), т.е. для символа <B>"\0"</B></P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_190>Для исключения предупреждений о безопасной работе с 
+            функциями <SPAN class=texample>strcpy()</SPAN>, <SPAN 
+            class=texample>strtok()</SPAN> в MS Visual Studio в программе 
+            используется директива <SPAN class=texample>#define 
+            _CRT_SECURE_NO_WARNINGS</SPAN>.</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_194>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.6">рис. 
+            10.6</A>.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <P id=id_195 align=left><A name=image.10.6></A></P>
+            <DIV><IMG alt="Пример выделения слов из строки" 
+            src="Лекция_10_files/mhtFB08(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 10.6.</B>&nbsp; Пример выделения слов 
+            из строки
+            <P></P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_196><B>Задание 5</B></P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <OL id=id_197>
+              <LI>В программу включите обработку символов запятая <B>","</B>, 
+              точки с запятой <SPAN class=texample>";"</SPAN> и точки <SPAN 
+              class=texample>"."</SPAN> в качестве разделителей слов.
+              <LI>Введите в строку свою фамилию, имя, год рождения, место 
+              рождения, специальность, на которой вы обучаетесь, номер группы и 
+              курс обучения. Выполните вывод на консоль.
+              <LI>С учетом предыдущего пункта выполните выделение фамилии и курс 
+              обучения.
+              <LI>В программу включите прототип функции <SPAN 
+              class=texample>wordstr()</SPAN>.</LI></OL>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_238><B>Пример 6</B>. Написать программу расчета суммы и 
+            среднего арифметического произвольного количества данных. В качестве 
+            ключевых слов для выбора варианта расчета принять mean (среднее) и 
+            sum (сумма).</P>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_239>В данном примере необходимо использовать функцию с 
+            переменным числом аргументов. Формула расчета среднего 
+            арифметического (m):</P>
+            <DIV id=mark_239 class=lecture_mark></DIV>
+            <DIV id=id_240><IMG alt=m=\frac{1}{n}\sum^n_{i=1}x_i, 
+            src="Лекция_10_files/mhtFB2A(1).tmp" width=112 height=52></DIV>
+            <P id=id_241>где <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=n 
+            src="Лекция_10_files/mhtFB3D(1).tmp" width=16 height=11> – 
+            количество числовых данных, <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=x_i 
+            src="Лекция_10_files/mhtFB5F(1).tmp" width=22 height=13> – текущее 
+            число.</P>
+            <DIV id=mark_241 class=lecture_mark></DIV>
+            <P id=id_244>Программный код решения примера</P>
+            <DIV id=mark_244 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdarg.h&gt;
+#include &lt;float.h&gt;
+
+/* Прототип функции с переменным числом аргументов*/
+double varfun(char str[], double v1, ...); 
+int main(void)
+{
+  double v1 = 10.0,
+    v2 = 2.5,
+    control;
+  char str[121];
+
+  printf("\n Enter one of the key words 'mean' or 'sum': ");
+  gets_s(str, 120);
+
+  control = varfun(str, v1, v2, 7.5, 0.0);
+  if (control &lt; DBL_MAX)
+    printf("\n Result: %lf\n", control);
+
+  else
+    printf("\n Invalid input keyword.\n");
+
+
+  printf("\n\n ... Press any key: ");
+  _getch();
+  return 0;
+}
+
+/* Определение функции с переменным числом аргументов */
+double varfun( char str[], double v1, ...) {
+/* Указатель на переменные списка аргументов */
+  va_list parg; 
+
+  double sum = v1;
+  double value = 0.0; /* значение аргумента */
+  int count = 1;  /* начальное количество аргументов */
+  int k, p;
+  char *ch = "mean";
+  char *ch2 = "sum";
+
+  // Лексиграфическое сравнение строк
+  k = strcmp(str, ch);
+  if ( !k ) // k == 0
+    p = 1;
+
+  else if ( k ) // k != 0
+  {
+    k = strcmp(str, ch2);
+    if ( !k )
+        p = 2;
+    
+    else
+        p = 0;
+  }
+
+  if ( p == 1 )
+  {
+    va_start(parg,v1); /* инициализация указателя parg */
+    /* Просмотр списка аргументов*/
+    while( (value = va_arg(parg, double)) != 0.0)
+    {
+    // Суммирование числовых аргументов функции varfun()
+      sum += value;
+      count++;
+    }
+
+        /* Завершение процесса счтывания аргументов */
+    va_end(parg); 
+    return sum/count;
+  }
+
+  if ( p == 2 )
+  {
+    va_start(parg,v1);
+ 
+    while( (value = va_arg(parg, double)) != 0.0)
+    {
+      sum += value;
+      count++;
+    }
+
+    va_end(parg); 
+
+    return sum;
+  }
+
+  return DBL_MAX;
+}</PRE></DIV>
+            <P id=id_246>Возможный вариант выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\10. Лекция Общие сведения о функциях языка С.mht#image.10.7">рис. 
+            10.7</A>.</P>
+            <DIV id=mark_246 class=lecture_mark></DIV>
+            <P id=id_247 align=left><A name=image.10.7></A></P>
+            <DIV><IMG alt="Пример выполнения программы" 
+            src="Лекция_10_files/mhtFB72(1).tmp" width=620 
+            height=103></DIV><BR><B>Рис. 10.7.</B>&nbsp; Пример выполнения 
+            программы
+            <P></P>
+            <DIV id=mark_247 class=lecture_mark></DIV>
+            <P id=id_248><B>Задание 6</B></P>
+            <DIV id=mark_248 class=lecture_mark></DIV>
+            <OL id=id_249>
+              <LI>Напишите функцию с явным указанием количества аргументов.
+              <LI>Включите в программу расчет исправленной выборочной дисперсии 
+              (D), которая рассчитывается по формуле.
+              <DIV id=id_252><IMG alt=D=\frac{1}{n-1}\sum^n_{i=1}(x_i,-m)^2, 
+              src="Лекция_10_files/mhtFB94(1).tmp" width=199 height=52></DIV>где 
+              <IMG style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=m 
+              src="Лекция_10_files/mhtFBB6(1).tmp" width=22 height=11> – среднее 
+              арифметическое заданных чисел.</LI></OL>
+            <DIV id=mark_249 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_205>
+              <LI>Что лежит в основе всех программ, созданных на языке <B>С</B>?
+              <LI>Какие типы данных может возвращать функция? И что не может 
+              возвращать?
+              <LI>Что такое прототип функции? Какие элементы объявления функции 
+              входят в ее прототип?
+              <LI>В чем разница между фактическими и формальными параметрами 
+              функции?
+              <LI>Какой способ передачи параметров в функциях предусматривает 
+              синтаксис языка <B>С</B>?
+              <LI>Как можно изменить значение аргумента функции в теле самой 
+              функции?
+              <LI>Какая область видимости переменных, определенных в теле 
+              функции?
+              <LI>Можно ли использовать функцию без параметров и без служебного 
+              слова <SPAN class=texample>void</SPAN>? К каким последствиям это 
+              может привести?
+              <LI>Как следует Напишите программу, состоящую из нескольких 
+              пользовательских функций, без прототипов созданных 
+функций?</LI></OL>
+            <DIV id=mark_205 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_10_files/mhtF9F4(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

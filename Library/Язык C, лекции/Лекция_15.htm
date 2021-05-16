@@ -1,0 +1,1130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_15_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_15_files/mht8D8E(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_15_files/mht8D8E(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>15. Лекция: Структуры и функции языка С: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются способы передачи структур в функции, научиться 
+            создавать функции, которые возвращают структуры и указатели на 
+            структуры. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_15_files/mht8D8E(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Разрешенными операциями над структурами являются 
+            копирование или присваивание структуры как целого, взятие ее адреса 
+            операцией <SPAN class=texample>&amp;</SPAN>, а также обращение к ее 
+            элементам [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>15.1</A>]. Копирование и присваивание включает в себя 
+            также передачу аргументов в функции и возвращение значений из 
+            функций.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_3>Возможна передача членов структур функциям и передача 
+            целых структур функциям. При передаче функции члена структуры 
+            передается его значение, притом не играет роли то, что значение 
+            берется из члена структуры. Например [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>15.2</A>], пусть задана структура следующего вида:</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct fred 
+{
+char x;
+int y;
+float z;
+char str[10]; // с учетом символа окончания строки
+} mike;</PRE></DIV>
+            <P id=id_5>Тогда каждый член этой структуры можно передать функции, 
+            например,</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <DIV class=example><PRE>func(mike.x); // передается символьное значение х
+func2(mike.y);// передается целое значение y
+func3(mike.z);// передается значение с плавающей точкой z
+func4(mike.str);// передается адрес строки str[10] 
+func(mike.str[2]);// передается символьное значение str[2]</PRE></DIV>
+            <P id=id_7>Если же нужно передать адрес отдельного члена структуры, 
+            то перед именем структуры должен находиться оператор <SPAN 
+            class=texample>&amp;</SPAN>. Для рассмотренных примеров будем 
+            иметь</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <DIV class=example><PRE>func(&amp;mike.x); // передается адрес символа х
+func2(&amp;mike.y);// передается адрес целого y
+func3(&amp;mike.z);// передается адрес члена z с плавающей точкой
+func4(mike.str);// передается адрес строки str 
+func(&amp;mike.str[2]);// передается адрес символа в str[2]</PRE></DIV>
+            <P id=id_10>Когда в качестве аргумента функции используется 
+            структура, для передачи целой структуры используется обычный способ 
+            вызова по значению [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>15.2</A>]. Это означает, что любые изменения в 
+            содержимом параметра внутри функции не отразятся на той структуре, 
+            которая передана в качестве аргумента.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>При использовании структуры в качестве параметра надо 
+            помнить, что тип аргумента должен соответствовать типу параметра. В 
+            качестве примера рассмотрим следующий программный код [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>15.2</A>]:</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Определение глобального типа структуры
+struct struct_type {
+int a, b;
+char ch;
+};
+
+// Прототип функции
+void fun(struct struct_type parm);
+
+int main (void) {
+struct struct_type arg;
+
+arg.a = 1000;
+fun(arg);
+
+printf("\n Press any key: ");
+_getch();
+return 0;
+}
+
+// Определение функции
+void fun(struct struct_type parm)
+{
+printf("\n %d\n", parm.a);
+}</PRE></DIV>
+            <P id=id_13>Назначение этой программы состоит в печати заданных 
+            полей структуры, которая объявлена как глобальная, чтобы структурный 
+            тип был виден во всей программе.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Когда используется указатель на структуру, вместо 
+            оператора точки используется оператор "стрелка". Видоизменим 
+            рассмотренную программу, введем в нее указатель на структуру:</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Определение глобального типа структуры
+struct struct_type { int a, b; char ch; };
+
+// Прототип функции
+void fun(struct struct_type *parm);
+int main (void)
+ {
+struct struct_type arg,*PTR;
+PTR = &amp;arg;
+
+PTR-&gt;a = 999;
+fun(PTR);
+printf("\n Press any key: ");
+_getch();
+return 0;
+}
+
+// Определение функции
+void fun(struct struct_type *parm)
+{
+printf("\n %d\n", parm-&gt;a);
+}</PRE></DIV>
+            <P id=id_16>Современные компиляторы языка <B>С</B> позволяют 
+            передавать структуры в качестве аргументов функций. Изменим 
+            вышеприведенную программу так, чтобы она давала возможность печатать 
+            сумму двух целых чисел и заданный символ:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Определение глобального типа структуры
+struct struct_type {int a, b; char ch; };
+
+// Прототип функции
+void fun(struct struct_type STRUCT3);
+
+int main (void) 
+{
+	struct struct_type struct2 = 	{2,	3,	'Z'	};
+	
+fun(struct2);
+
+printf("\n Press any key: ");
+_getch();
+return 0; }
+// Определение функции
+void fun(struct struct_type STRUCT3)
+ {
+	printf("\n %c: %d + %d = %d\n", \
+	STRUCT3.ch, STRUCT3.a, STRUCT3.b, STRUCT3.a + STRUCT3.b);
+}</PRE></DIV>
+            <P id=id_18>В современных версиях языка <B>С</B>, в том числе и 
+            <B>ANSI C</B>, структуры не только можно передавать функции в 
+            качестве аргументов, но и возвращать в качестве возвращаемого 
+            значения [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>15.3</A>]. Использование структур в качестве 
+            аргументов функции позволяет передавать функции информацию о 
+            структуре. Использование функций для возврата структур позволяет 
+            передавать информацию из вызываемой функции в вызывающую функцию. 
+            Указатели на структуры допускают также двусторонний обмен 
+            данными.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_19><B>Пример 1</B>. Напишите программу передачи частей 
+            структуры в качестве аргументов функции.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Рассмотрим пример подсчета суммы двух вещественных 
+            чисел, которые вводятся с клавиатуры для двух пользователей, которые 
+            задаются своими именами.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21>Программный код решения примера:</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define MAX 20
+
+// Шаблон структуры
+struct test {char A[MAX+1]; double ax; char B[MAX+1];
+double by;
+};
+
+//Прототип вспомогательной функции
+double sum(double, double);
+
+// Главная функция
+int main (void) {
+// Создание структурной переменной	
+	struct test AB;
+
+	//Заполнение полей структуры 
+	printf("\n\t Type 1 st name: ");
+	gets_s(AB.A, MAX);
+	printf("\t Enter the first real number: ");
+	scanf_s("%lf", &amp;AB.ax);
+	_flushall();
+	printf("\n\t Enter 2 nd name: ");
+	gets_s(AB.B, MAX);
+	printf("\t Enter the second real number: ");
+	scanf_s("%lf", &amp;AB.by);
+
+printf("\n\t The sum of two numbers \
+%1.2f and %1.2f, %s and %s: %1.2f\n",
+AB.ax, AB.by, AB.A, AB.B, sum(AB.ax, AB.by)); 
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0; }
+
+// Функция суммирования двух чисел
+double sum(double x, double y) {
+return (x + y);
+}</PRE></DIV>
+            <P id=id_23>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.1">рис. 
+            15.1</A>.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24 align=left><A name=image.15.1></A></P>
+            <DIV><IMG 
+            alt="Сумма двух чисел, переданных в качестве аргументов функции" 
+            src="Лекция_15_files/mht8DD0(1).tmp" width=620 
+            height=149></DIV><BR><B>Рис. 15.1.</B>&nbsp; Сумма двух чисел, 
+            переданных в качестве аргументов функции
+            <P></P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25><B>Задание 1</B></P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <OL id=id_26>
+              <LI>Одним из вводимого имени примите свое имя (имя пользователя).
+              <LI>Предусмотрите предварительный подсчет суммы двух чисел по 
+              возвращаемому значению функции <SPAN class=texample>sum()</SPAN>.
+              <LI>Произведите инициализацию структуры в программе и передайте ее 
+              вещественные данные в функцию для подсчета их суммы.
+              <LI>Напишите функцию, аргументом которой будет вычисленная сумма 
+              двух чисел – полей структуры, чтобы эта функция выполняла вывод на 
+              консоль полученной суммы.
+              <LI>В программе операцию "точка" замените на операцию 
+              "стрелка".</LI></OL>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_33><B>Пример 2</B>. Напишите программу выполнения 
+            арифметических действий с комплексными числами на основе 
+            структурного типа данных и печати результатов выполненных действий с 
+            помощью вспомогательной функции.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>Для решения данного примера следует указать на действия 
+            с комплексными числами, заданными в алгебраической форме [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#16" 
+            target=_blank>15.4</A>].</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_35><SPAN class=xml_em_bold_italic>Суммой</SPAN> двух 
+            комплексных чисел <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z_1 = x_1 + y_1i" src="Лекция_15_files/mht8E02(1).tmp" 
+            width=110 height=20> и <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z_2 = x_2 + y_2i" src="Лекция_15_files/mht8E14(1).tmp" 
+            width=110 height=20> называется число <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z = x + yi" src="Лекция_15_files/mht8E27(1).tmp" width=87 
+            height=20> такое, что справедливы равенства <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt="х=х_1 + х_2" src="Лекция_15_files/mht8E49(1).tmp" width=94 
+            height=16>, <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="у = у_1 + у_2" src="Лекция_15_files/mht8E5C(1).tmp" width=94 
+            height=18>, т.е.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="z = (x_1 + x_2) + (y_1 + y_2)i, где\  i – мнимая\ единица (i=\sqrt-1)" 
+            src="Лекция_15_files/mht8E6E(1).tmp" width=480 height=22>.
+            <P id=id_42><SPAN class=xml_em_bold_italic>Правило сложения</SPAN>. 
+            При сложении комплексных чисел складываются действительные и мнимые 
+            части соответственно.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43><SPAN class=xml_em_bold_italic>Разностью</SPAN> чисел 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=z_1 
+            src="Лекция_15_files/mht8E81(1).tmp" width=18 height=13> и <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=z_2 
+            src="Лекция_15_files/mht8EA3(1).tmp" width=18 height=13> называется 
+            число <IMG style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt=z src="Лекция_15_files/mht8EB6(1).tmp" width=14 height=11> 
+            такое, что <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt="z_1 = z – z_2" src="Лекция_15_files/mht8EC8(1).tmp" width=78 
+            height=13>.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_48><SPAN class=xml_em_bold_italic>Правило вычитания</SPAN>. 
+            При нахождении разности <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt="z_1 – z_2" src="Лекция_15_files/mht8EEA(1).tmp" width=45 
+            height=13> из действительной и мнимой частей уменьшаемого <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=z_1 
+            src="Лекция_15_files/mht8E81(1).tmp" width=18 height=13> вычитаются 
+            соответственно действительная и мнимая части вычитаемого:</P>
+            <DIV id=mark_48 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="z = (x_1 – x_2) + (y_1 – y_2)i" 
+            src="Лекция_15_files/mht8F0D(1).tmp" width=186 height=22>.
+            <P id=id_52><SPAN class=xml_em_bold_italic>Произведением</SPAN> двух 
+            комплексных чисел <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z_1 = x_1 + y_1i" src="Лекция_15_files/mht8E02(1).tmp" 
+            width=110 height=20> и <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z_2 = x_2 + y_2i" src="Лекция_15_files/mht8E14(1).tmp" 
+            width=110 height=20> называется число <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="z = x + yi" src="Лекция_15_files/mht8E27(1).tmp" width=87 
+            height=20> такое, что выполняются равенства:</P>
+            <DIV id=mark_52 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt="х = х_1х_2 – у_1у_2" src="Лекция_15_files/mht8F3E(1).tmp" 
+            width=116 height=14>, <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="у = х_1у_2 + х_2у_1" src="Лекция_15_files/mht8F51(1).tmp" 
+            width=128 height=18>.
+            <P id=id_58><SPAN class=xml_em_bold_italic>Правило умножения</SPAN>. 
+            Комплексные числа перемножаются как двучлены, при этом учитывается: 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="i^2 = –1" src="Лекция_15_files/mht8F73(1).tmp" width=60 
+            height=18>.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_60><SPAN class=xml_em_bold_italic>Частным</SPAN> от деления 
+            числа <IMG style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt=z_1 src="Лекция_15_files/mht8E81(1).tmp" width=18 height=13> на 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="z_2 (z_2 \neq 0)" src="Лекция_15_files/mht8F95(1).tmp" width=83 
+            height=22> называется число <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=z 
+            src="Лекция_15_files/mht8EB6(1).tmp" width=14 height=11>, такое, что 
+            справедливо равенство <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt="z\cdot z_2 = z_1" src="Лекция_15_files/mht8FA8(1).tmp" width=81 
+            height=14>.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_65><SPAN class=xml_em_bold_italic>Правило деления</SPAN>. 
+            Чтобы разделить число <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=z_1 
+            src="Лекция_15_files/mht8E81(1).tmp" width=18 height=13> на <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="z_2 (z_2 \neq 0)" src="Лекция_15_files/mht8F95(1).tmp" width=83 
+            height=22>, следует числитель и знаменатель дроби <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" alt=z_1/z_2 
+            src="Лекция_15_files/mht8FDA(1).tmp" width=45 height=22> умножить на 
+            число, сопряженное знаменателю.</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_69>Комплексные числа называются <SPAN 
+            class=xml_em_italic>сопряженными</SPAN>, если у них равны 
+            действительные части, а мнимые противоположны по знаку.</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70>Программный код решения примера:</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+
+// Шаблон структуры
+struct comp {
+ long double Re;
+ long double Im; 
+};	
+
+// Прототип функции с аргументами: 
+// структура и симольная переменная
+void complex (struct comp ri[2], char op);
+
+int main (void) {
+	long double x, y;
+	char op;
+// Определение структурной переменной
+struct comp ri[2];
+
+setlocale(LC_ALL, ".1251"); // для русских шрифтов
+//Для определения чисел с десятичной точкой
+setlocale(LC_NUMERIC, "English");
+
+printf("\n\t ДЕЙСТВИЯ С КОМПЛЕКСНЫМИ ЧИСЛАМИ\n");
+printf("\n Введите действительную часть 1-го комплексного числа: ");
+scanf_s("%lf", &amp;x); _flushall();
+	ri[0].Re = x;
+printf(" Введите мнимую часть 1-го комплексного числа: ");
+	scanf_s("%lf", &amp;y); _flushall();
+	ri[0].Im = y;
+
+printf("\n Введите действительную часть 2-го сомплексного числа: ");
+	scanf_s("%lf", &amp;x); _flushall();
+	ri[1].Re = x;
+printf(" Введите мнимую часть 2-го комплексного числа: ");
+	scanf_s("%lf", &amp;y); _flushall();
+	ri[1].Im = y;
+
+	printf("\n Введите арифметический оператор: ");
+	scanf_s("%c", &amp;op); _flushall();
+
+	//Вызов функции расчета комплексных чисел
+printf("\n Результат действия (\"%c\") над двумя комплексными числами\n (результат с десятичной запятой):", op);
+// для русских шрифтов с числами с десятичной запятой
+	setlocale(LC_ALL, ".1251"); 
+	complex (ri, op);
+
+	//Для определения числа с десятичной точкой
+setlocale(LC_NUMERIC, "English");
+	//Вызов функции расчета комплексных чисел
+	printf("\n Результат действия (\"%c\") над двумя комплексными числами\n (результат с десятичной точкой):", op);
+	complex (ri, op);
+
+	printf("\n Нажмите любую клавишу (Press any key): ");
+	_getch();
+	return 0;
+}
+   // Вспомогательная функция
+	void complex (struct comp ri[2], char z) {
+   // Вспомогательные переменные
+	double num1, num2, den;
+	
+// Выбор арифметического действия
+	switch (z) {
+	case '+' :
+		if ((ri[0].Im + ri[1].Im) &gt;= 0)
+printf("\n\t %1.4f + %1.4fi\n", ri[0].Re + ri[1].Re, ri[0].Im + ri[1].Im);
+		if ((ri[0].Im + ri[1].Im) &lt; 0)
+printf("\n\t %1.4f - %1.4fi\n", ri[0].Re + ri[1].Re, -(ri[0].Im + ri[1].Im));
+break;
+	case '-' :
+		if ((ri[0].Im - ri[1].Im) &gt;= 0)
+printf("\n\t %1.4f + %1.4fi\n", ri[0].Re - ri[1].Re, ri[0].Im - ri[1].Im);
+		if ((ri[0].Im - ri[1].Im) &lt; 0)
+printf("\n\t %1.4f - %1.4fi\n", ri[0].Re - ri[1].Re, -(ri[0].Im - ri[1].Im));
+break;
+     case '*' :
+		if ((ri[0].Re*ri[1].Im + ri[1].Re*ri[0].Im) &gt;= 0)
+printf("\n\t %1.4f + %1.4fi\n",\
+ri[0].Re * ri[1].Re - ri[0].Im*ri[1].Im, ri[0].Re*ri[1].Im + ri[1].Re*ri[0].Im);
+		if ((ri[0].Re*ri[1].Im + ri[1].Re*ri[0].Im) &lt; 0)
+printf("\n\t %1.4f - %1.4fi\n",\
+ri[0].Re * ri[1].Re - ri[0].Im*ri[1].Im, -(ri[0].Re*ri[1].Im + ri[1].Re*ri[0].Im));
+break;
+
+      case '/' :
+if (ri[1].Re != 0 &amp;&amp; ri[1].Im != 0) {
+den = ri[1].Re*ri[1].Re + ri[1].Im*ri[1].Im;
+num1 = (ri[0].Re*ri[1].Re - ri[0].Im*(-ri[1].Im))/den;
+num2 = (ri[0].Re*(-ri[1].Im) + ri[1].Re*ri[0].Im)/den;
+if (num2 &gt;= 0)
+printf("\n\t %1.4f + %1.4fi\n",num1, num2);
+if (num2 &lt; 0)
+printf("\n\t %1.4f - %1.4fi\n",num1, -num2);
+}
+else
+printf("\n\t Ошибка! Деление на нуль.\n");
+	break;
+default : printf("\n\t Ошибка! Неизвестный оператор.\n");
+	break;
+	}
+}</PRE></DIV>
+            <P id=id_72>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.2">рис. 
+            15.2</A>.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_73 align=left><A name=image.15.2></A></P>
+            <DIV><IMG alt="Результат действия над двумя комплексными числами" 
+            src="Лекция_15_files/mht8FFC(1).tmp" width=620 
+            height=253></DIV><BR><B>Рис. 15.2.</B>&nbsp; Результат действия над 
+            двумя комплексными числами
+            <P></P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74><B>Задание 2</B></P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <OL id=id_75>
+              <LI>Дополните программу вычислением модуля комплексного числа, 
+              полученного в результате произведенного арифметического действия.
+              <LI>Консольный вывод запишите в текстовый файл с именем compX.txt, 
+              где Х – номер компьютера, за которым выполняется лабораторная 
+              работа.
+              <LI>Напишите программу ввода комплексных чисел в виде одной 
+              строки, например, (4+5.5i) – первое вводимое число как строка, 
+              (2–3.3i) – второе вводимое число как строка. Предусмотрите также 
+              арифметические действия над комплексными числами.
+              <LI>Напишите программу возведения комплексного числа в степень 
+              (см. формулу бинома Ньютона).</LI></OL>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_80><B>Пример 3</B>. Напишите программу имитатора случайного 
+            таймера с помощью указателей на структуру [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>15.2</A>].</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81>Программный код решения примера:</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Глобальный шаблон структуры
+struct mtime 
+{
+int hours;
+int minutes;
+int seconds;
+};
+
+// Прототипы вспомогательных функций
+void update (struct mtime *t);
+void display (struct mtime *t);
+
+// Главная функция
+int main (void)
+ {
+	int i;
+	
+//Создание переменной структурного типа
+struct mtime systime;
+
+// Для изменения псевдослучайной последовательности
+srand((unsigned) (long)time(NULL));
+
+// Начальная инициализация структурной переменной
+systime.hours = 0;
+systime.minutes = 0;
+systime.seconds = 0;
+
+// Цикл вывода расчетного времени
+for (i = 0; i &lt; 10; ++i)
+ {
+update(&amp;systime);
+display(&amp;systime);
+ }
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// 1-я вспомогательная функция
+void update (struct mtime *t) {
+// Заполнение полей структуры	 случайными числами
+t -&gt; hours = (int)(24*rand()/RAND_MAX);
+t -&gt; minutes = (int)(60*rand()/RAND_MAX);
+t -&gt; seconds = (int)(60*rand()/RAND_MAX);
+
+// Условия расчетного времени
+t -&gt; seconds += 1;
+if (t -&gt; seconds == 60)
+ { t -&gt; seconds = 0; t -&gt; minutes++; }
+if (t -&gt; minutes == 60) 
+{ t -&gt; minutes = 0; t -&gt; hours++; }
+
+if (t -&gt; hours == 24)
+t -&gt; hours = 0;
+}
+
+// 2-я вспомогательная функция
+void display (struct mtime *t) {
+	printf("\n System time: ");
+	printf("%02d:", t -&gt; hours);
+	printf("%02d:", t -&gt; minutes);
+	printf("%02d\n", t -&gt; seconds); 
+}</PRE></DIV>
+            <P id=id_83>В программе аргументами функций <SPAN 
+            class=texample>update()</SPAN> и <SPAN 
+            class=texample>display()</SPAN> являются указатели на структуру с 
+            дескриптором (этикеткой) <SPAN class=texample>mtime</SPAN>. При этом 
+            в главной функции <SPAN class=texample>main()</SPAN> создается 
+            структурная переменная <SPAN class=texample>systime</SPAN> по 
+            шаблону <SPAN class=texample>struct mtime</SPAN> и она передается в 
+            функции <SPAN class=texample>update()</SPAN> и <SPAN 
+            class=texample>display()</SPAN> через свой адрес, т.е. <SPAN 
+            class=texample>&amp;systime</SPAN>. Так происходит 10 раз (в 
+            цикле).</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_93><B>Примечание</B>. В прототипе функций указатели на 
+            структуру могут быть записаны в обезличенной форме, например:</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <DIV class=example><PRE>void update (struct mtime *); 
+void display (struct mtime *);</PRE></DIV>
+            <P id=id_95>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.3">рис. 
+            15.3</A></P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96 align=left><A name=image.15.3></A></P>
+            <DIV><IMG alt="Пример вывода полей структуры на консоль" 
+            src="Лекция_15_files/mht901E(1).tmp" width=620 
+            height=289></DIV><BR><B>Рис. 15.3.</B>&nbsp; Пример вывода полей 
+            структуры на консоль
+            <P></P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_97><B>Задание 3</B></P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <OL id=id_98>
+              <LI>Проверьте работу программы без начальной инициализации полей 
+              структурной переменной <SPAN class=texample>systime</SPAN>.
+              <LI>Результат выполнения программы запишите в текстовый файл с 
+              именем compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа.
+              <LI>В программу добавьте нумерацию итераций цикла, т.е. 1), 2), 
+              ..., 10).
+              <LI>Напишите программу по вводу своей фамилии, имени и подсчета в 
+              них количества букв. При этом создать шаблон структуры с полями 
+              для имени, фамилии и количества букв. Ввод имени и фамилии должна 
+              выполнять одна функция, подсчет количества букв должна выполнять 
+              вторая функция, печать результата должна выполнять третья функция. 
+              Для связи между функциями примените указатели на 
+структуру.</LI></OL>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_104><B>Пример 4</B>. Напишите программу, в которой 
+            используются функции, имеющие на входе структуру и возвращающие 
+            структуру.</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_105>Напишем программу расчета средней успеваемости студента 
+            за последнюю экзаменационную сессию (или другим экзаменам) с 
+            использованием структурного типа данных.</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106>Программный код решения примера:</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define MAX 79
+
+// Шаблон структуры
+struct table {
+char name[MAX+1];
+char surname[MAX+1];
+char subject_1[MAX+1];
+char subject_2[MAX+1];
+char subject_3[MAX+1];
+char subject_4[MAX+1];
+int mark[4];
+float mean;
+} student = { // Инициализация структурной переменной
+	"Peter",
+	"Bobrov",
+	"Mathematics", 
+	"Informatics", 
+	"Programming",
+	"Physics",
+	{0,0,0,0},
+	0.0f }; 
+
+// Прототип вспомогательной функции
+struct table infor(struct table student);
+
+// Главная функция
+int main (void)
+ {
+// Объявление и инициализация структурной переменной
+struct table infor2 = {" "," "," "," "," "," ", {0,0,0,0},0.0f};
+// Присвоение структуры от функции
+infor2 = infor(student);
+
+printf("\n The level of knowledge a student of %s %s is: \
+%1.2f\n", infor2.name, infor2.surname, infor2.mean);
+	
+printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Вспомогательная функция с аргументом структурного типа
+// и возвращающая структуру
+struct table infor(struct table student) {
+	float x = 0.0f;
+	int i;
+	printf("\n\t Enter a name: ");
+	gets_s(student.name, MAX);
+	printf("\t Enter a surname: ");
+	gets_s(student.surname, MAX);
+	printf("\t Enter 1-st academic subject: ");
+	gets_s(student.subject_1, MAX);
+	printf("\t Enter a mark in the first subject: ");
+	scanf_s("%d",&amp;student.mark[0]);
+	_flushall();
+	printf("\t Enter 2-nd academic subject: ");
+	gets_s(student.subject_2, MAX);
+	printf("\t Enter a mark in the second subject: ");
+	scanf_s("%d",&amp;student.mark[1]);
+	_flushall();
+	printf("\t Enter 3-rd academic subject: ");
+	gets_s(student.subject_3, MAX);
+	printf("\t Enter a mark in the third subject: ");
+	scanf_s("%d",&amp;student.mark[2]);
+	_flushall();
+	printf("\t Enter 4-th academic subject: ");
+	gets_s(student.subject_4, MAX);
+	printf("\t Enter a mark in the fourth subject: ");
+	scanf_s("%d",&amp;student.mark[3]);
+
+// Расчет средней оценки по 4 предметам
+	for (i = 0; i &lt; 4; ++i) {
+x += student.mark[i];
+student.mean = x/4;
+}
+	
+// Возвращение структурной переменной
+	return (student); 
+}</PRE></DIV>
+            <P id=id_108>В программе приведена инициализация структурной 
+            переменной <SPAN class=texample>student</SPAN> для наглядности.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_110>Инициализация переменной типа <SPAN 
+            class=texample>float</SPAN> выполнена с суффиксом <SPAN 
+            class=texample>f</SPAN>.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_113>Присвоение одной структурной переменной другой может 
+            быть только в случае, когда они принадлежат одному и тому же шаблону 
+            структур.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Функции <SPAN class=texample>_flushall()</SPAN> введены 
+            для того, чтобы устранить пустую строку перед использованием функции 
+            <SPAN class=texample>gets_s()</SPAN> (или <SPAN 
+            class=texample>gets()</SPAN> ) после ввода с помощью функции <SPAN 
+            class=texample>scanf_s</SPAN> (или <SPAN 
+            class=texample>scanf()</SPAN> ).</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_120>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.4">рис. 
+            15.4</A>.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121 align=left><A name=image.15.4></A></P>
+            <DIV><IMG alt="Пример расчета средней успеваемости студента" 
+            src="Лекция_15_files/mht9040(1).tmp" width=620 
+            height=211></DIV><BR><B>Рис. 15.4.</B>&nbsp; Пример расчета средней 
+            успеваемости студента
+            <P></P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <OL id=id_122>
+              <LI>Проверьте содержимое структурной переменной <SPAN 
+              class=texample>student</SPAN>.
+              <LI>Вместо структурной переменной <SPAN 
+              class=texample>student</SPAN> в аргументе вспомогательной функции 
+              используйте собственную фамилию.
+              <LI>Введите свою фамилию, свое имя и результаты последней 
+              экзаменационной сессии.
+              <LI>В программу добавьте вывод в главной функции <SPAN 
+              class=texample>main()</SPAN> всех полей структуры.
+              <LI>Запишите результаты заполнения полей структуры в текстовый 
+              файл с именем compX.txt, где Х – номер компьютера, за которым 
+              выполняется лабораторная работа.
+              <LI>Проверьте работу программы без начальной инициализации 
+              структурной переменной.
+              <LI>Примените оператор <SPAN class=texample>typedef</SPAN> при 
+              создании шаблона структуры.</LI></OL>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_134><B>Пример 5</B>. Напишите программу, в которой функция 
+            возвращает указатель на структуру при поиске служебных слов языка 
+            <B>С</B>, вводимых с клавиатуры пользователем [3;8].</P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135>Программный код решения примера:</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 1000
+
+// Функция ввода строки с клавиатуры
+void getLine(char str[], int m) {
+int c, i;
+
+for (i = 0; i &lt; m-1 &amp;&amp; (c = getchar())!= EOF &amp;&amp; c != '\n'; i++)
+str[i] = c;
+// После цикла
+str[i] = '\0'; // символ окончания строки
+}
+
+// Создание структуры глобального типа
+struct key 
+{
+char *keyword;
+//int keycount;
+} tab[] = {
+	"for",
+	"while", 
+	"do", 
+	"if", 
+	"else",
+	"switch",
+	"case",
+	"break",
+	"default"
+}, *bam;// указатель на структуру
+
+
+// Вспомогательная функция 
+// с указателем на структуру key
+
+struct key *PTR_ANALYSE(char *word, struct key tab[], int n)
+{
+int i;
+struct key *PTR;
+for (i = 0; i &lt; n; ++i)
+if (strcmp(tab[i].keyword, word) == 0) {
+	PTR = &amp;tab[i];
+// возвращение указателя на структуру типа key
+	return (PTR); }
+return NULL; // служебное слово не найдено
+
+} 
+
+
+// Главная функция
+int main (void)
+ {
+	int c;
+	char str[MAX];
+
+printf("\n The analysis of input of syntactic words\n of the programming language C\n\n");	
+
+printf("\n The end of the session: press Ctrl+Z after pressing  Enter\n\n");
+	
+do {
+	printf("\t Enter a new line: ");
+	getLine(str, MAX);
+	printf(" ");
+	bam = PTR_ANALYSE(str, tab, 9); // 9 - число слов 
+
+		if (bam != NULL) 
+printf("\t String found: %s\n press Enter to continue or Ctrl+Z to quit: ", bam-&gt;keyword);
+		
+		else 
+printf("\t STRING NOT FOUND:\n press Enter to continue or Ctrl+Z to quit: ");
+
+	} while ((c = getchar()) != EOF);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_137>В программе ввод слов осуществляется посимвольно с 
+            помощью специальной функции <SPAN 
+            class=texample>getLine()</SPAN>.</P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <P id=id_139>Шаблон структуры – это <SPAN class=texample>struct 
+            key</SPAN>, для которого определяется переменная <SPAN 
+            class=texample>tab[]</SPAN> как массив структур. Одновременно 
+            определяется указатель на эту структуру, т.е. <SPAN 
+            class=texample>*bam</SPAN>.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_143>Функция <SPAN class=texample>struct key</SPAN> <SPAN 
+            class=texample>*PTR_ANALYSE()</SPAN> возвращает указатель на 
+            структуру. Параметрами этой функции являются указатель на тип <SPAN 
+            class=texample>char</SPAN>, массив структур и целая переменная. Цикл 
+            <SPAN class=texample>do – while</SPAN> применен для того, чтобы тело 
+            цикла выполнялось хотя бы один раз. Массив структур с именем <SPAN 
+            class=texample>tab[]</SPAN> инициализирован служебными словами – 
+            операторами управления. Результат выполнения функции <SPAN 
+            class=texample>struct key</SPAN> <SPAN 
+            class=texample>*PTR_ANALYSE()</SPAN> присваивается указателю <SPAN 
+            class=texample>*bam</SPAN>, который определен по шаблону глобальной 
+            структуры.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_152>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.5">рис. 
+            15.5</A>.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_153 align=left><A name=image.15.5></A></P>
+            <DIV><IMG alt="Пример интерактивного поиска служебных слов" 
+            src="Лекция_15_files/mht9063(1).tmp" width=620 
+            height=333></DIV><BR><B>Рис. 15.5.</B>&nbsp; Пример интерактивного 
+            поиска служебных слов
+            <P></P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154><B>Задание 5</B></P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <OL id=id_155>
+              <LI>В программе используйте прототипы вспомогательных функций.
+              <LI>В качестве служебных слов задайте основные типы данных и их 
+              производных языка программирования <B>С</B>.
+              <LI>Дополните программу подсчетом количества символов служебных 
+              слов с выводом на консоль как самого слова, так и его длины.
+              <LI>Функцию анализа вводимых слов с клавиатуры напишите без 
+              дополнительного указателя на структуру типа <SPAN 
+              class=texample>key</SPAN>.
+              <LI>В программе предусмотрите копирование консольного содержания в 
+              текстовый файл с именем compX.txt, где Х – номер компьютера, за 
+              которым выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_162><B>Пример 6</B>. Напишите программу сравнения 
+            введенного целого числа с имеющимися целыми случайными числами 
+            одномерного массива на основе структурного типа данных и двоичного 
+            поиска (метода половинного деления) для упорядоченного массива.</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_163>Программный код решения примера:</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;locale.h&gt;
+#define MAX 1000
+
+// Функция ввода числа как строки с клавиатуры
+void getLine(int num[], int m) {
+
+int i, j, k;
+time_t tic;
+srand((unsigned) time(&amp;tic));
+
+for (i = 0; i &lt; m; ++i)
+num[i] = (int)m*rand()/RAND_MAX;
+
+printf("\n\t The initial array of numeric data:\n");
+for (i = 0; i &lt; m; ++i)
+printf(" %3d", num[i]);
+puts(" ");
+// Сортировка массива по возрастанию
+for (i = 1; i &lt; m; ++i) {
+	for (j = 0; j &lt; m-1; ++j) {
+		if (num[j] &gt; num[j+1]) {
+			k = num[j];
+			num[j] = num[j+1];
+			num[j+1] = k;
+		} 
+	}
+}
+printf("\t Assorted array of numerical data:\n");
+printf(" ");
+for (i = 0; i &lt; m; ++i)
+printf(" %3d", num[i]);
+puts(" ");
+} 
+
+// Создание структуры глобального типа
+struct numb {
+	int index;
+	int numbers;
+} tab, *bam;// указатель на структуру
+
+// Вспомогательная функция 
+// с указателем на структуру numb
+struct numb *PTR_ANALYSE(int x, int mass[], int n) {
+	int min = 0;
+	int max = n - 1;
+	int mid;
+struct numb *PTR = &amp;tab;
+
+// Бинарный поиск
+while (min &lt;= max) { 
+mid = (max + min)/2; // переход в середину массива
+if (x == mass[mid]) {
+PTR-&gt;numbers = mass[mid];
+PTR-&gt;index = mid;
+return (PTR); // возвращение указателя на структуру
+}
+	else if (x &lt; mass[mid])
+max = mid - 1;  
+	else 
+min = mid + 1;  
+} // End while
+
+return NULL; // число не найдено
+} // End function
+
+// Главная функция
+int main (void) {
+	int c, x;
+	int N, arr[MAX];
+	
+	// Русские шрифты
+setlocale(LC_ALL, ".1251");
+	printf("\n УГАДЫВАНИЕ ЧИСЛА В ЧИСЛОВОМ ОТСОРТИРОВАННОМ МАССИВЕ\n");
+	// Английские шрифты
+setlocale(LC_ALL, "English");
+
+	printf("\n The end of the session: press Ctrl+Z after pressing  Enter\n");
+	printf("\n\t Enter the dimension of the array of more than 3: ");
+scanf_s("%d", &amp;N);
+_flushall();
+
+getLine(arr, N);
+
+puts(" ");
+	do 	{
+	printf("\t Enter an integer: ");
+	scanf_s("%d", &amp;x);
+	_flushall();
+	printf(" ");
+	bam = PTR_ANALYSE(x, arr, N); 
+
+	if (bam != NULL) {
+printf("\t The number is found: %d\n ", bam-&gt;numbers);
+printf("\t The index number of assorted array: %d\n", bam-&gt;index+1);
+printf("\n\t Press Enter to continue or Ctrl+Z to quit: ");
+	}
+		else
+printf("\t The number is not found.\n Press Enter to continue or Ctrl+Z to quit: ");
+
+	} while ((c = getchar()) != EOF);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_165>При двоичном алгоритме поиска после каждого сравнения 
+            исключается половина элементов массива, в котором производится поиск 
+            <A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>15.5</A>. Алгоритм находит средний элемент массива и 
+            сравнивает его с ключом поиска (в программе переменная <SPAN 
+            class=texample>х</SPAN> ). Если они равны, ключ поиска считается 
+            найденным и возвращается индекс этого элемента. Если они не равны, 
+            задача упрощается до поиска в одной половине массива.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_167>Если ключ поиска меньше среднего элемента массива, 
+            поиск производится в первой половине массива. В противном случае 
+            поиск производится во второй половине. Если ключ поиска в указанном 
+            подмассиве не найден, алгоритм повторяется для четверти массива. 
+            Поиск продолжается до тех пор, пока ключ не окажется равен среднему 
+            элементу подмассива или пока подмассив не будет состоять из одного 
+            элемента, не равного ключу (это означает, что ключ поиска не 
+            найден).</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_168>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\15. Лекция Структуры и функции языка С.mht#image.15.6">рис. 
+            15.6</A>.</P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_169 align=left><A name=image.15.6></A></P>
+            <DIV><IMG alt="Результат двоичного поиска по совпадению ключей" 
+            src="Лекция_15_files/mht9085(1).tmp" width=620 
+            height=289></DIV><BR><B>Рис. 15.6.</B>&nbsp; Результат двоичного 
+            поиска по совпадению ключей
+            <P></P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170><B>Задание 6</B></P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <OL id=id_171>
+              <LI>Перед началом бинарного поиска по заданному ключу отсортируйте 
+              массив случайных чисел по убыванию.
+              <LI>Сформируйте случайный массив из 5*Х целых чисел. Интервал 
+              формирования случайных чисел примите от Х до 5*Х, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа. Выведите 
+              отсортированный массив на консоль. Введите число (ключ поиска), 
+              соответствующее последнему элементу массива. Подсчитайте 
+              количество итераций (количество сравнений в двоичном поиске), 
+              которое потребуется для поиска заданного ключа.
+              <LI>Заданную программу дополните поиском по заданному ключу 
+              последовательным перебором. Определите количество сравнений, 
+              которое потребуется при бинарном поиске и с помощью 
+              последовательного перебора.</LI></OL>
+            <DIV id=mark_171 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_175>
+              <LI>Какие операции над структурами разрешены в языке <B>С</B>?
+              <LI>Как осуществляется передача частей структуры в качестве 
+              аргументов функции?
+              <LI>Как осуществляется возврат частей структуры из функции?
+              <LI>Как реализуется возвращение измененной структуры из функции?
+              <LI>Как осуществляется обращение к полям структуры, переданной 
+              функции в виде аргумента?
+              <LI>Допустимо ли объявление переменных глобальной структуры и 
+              переменных структуры функции одними и теми же идентификаторами?
+              <LI>Как распределить структуру в динамической памяти?
+              <LI>Как осуществляется возврат данных структурного типа из 
+              пользовательской функции?</LI></OL>
+            <DIV id=mark_175 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_15_files/mht8D8E(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,676 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.intuit.ru/department/algorithms/staldata/7/staldata_7.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>7. Лекция: Символьные данные и строки: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятия и определения символьных данных и строк, 
+            сходство и отличия их внутреннего представления, способы объявления, 
+            инициализация строк, методы доступа к элементам строк, определение 
+            размера строк, различные способы организации ввода/вывода символьных 
+            данных и строк. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить особенности внутреннего 
+            представления символьных данных и строк, научиться выполнять 
+            ввод/вывод, просмотр и замену в строках при решении задач на языке 
+            C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Для представления текстовой информации в языке С++ 
+            используются символы (константы), символьные переменные и строки 
+            (строковые константы), для которых в языке С++ не введено отдельного 
+            типа в отличие от некоторых других языков программирования.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Для символьных данных в С++ введен тип <SPAN 
+            class=texample>char</SPAN>. Описание символьных переменных:</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char список_имен_переменных;
+</PRE></DIV>
+            <P id=id_6>Например:</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>const char c='c'; 
+  //символ – занимает один байт, его значение не меняется
+char a,b; 
+  /*символьные переменные, занимают по одному байту, 
+    значения меняются*/
+const char *s="Пример строки\n"; 
+  //текстовая константа
+
+</PRE></DIV>
+            <P id=id_8><SPAN class=xml_em_italic>Строка</SPAN> – это 
+            последовательность символов, заключенная в двойные кавычки (" "). 
+            </P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>Размещая строку в памяти, транслятор автоматически 
+            добавляет в ее конце символ <SPAN class=texample>'\0'</SPAN> 
+            (нулевой символ или нулевой байт, который является признаком конца 
+            строки). В записи строки может быть и один символ: <SPAN 
+            class=texample>"А"</SPAN> (заключен в двойные кавычки), однако, в 
+            отличие от символьной константы <SPAN class=texample>'А'</SPAN> 
+            (используются апострофы), длина строки <SPAN 
+            class=texample>"А"</SPAN> равна 2 байтам. </P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_14>В языке С++ строка – это пронумерованная 
+            последовательность символов (массив символов), она всегда имеет тип 
+            <SPAN class=texample>char[]</SPAN>. Все символы строки нумеруются, 
+            начиная с нуля. Символ конца строки также нумеруется – ему 
+            соответствует наибольший из номеров. Таким образом, строка 
+            считывается значением типа "массив символов". Количество элементов в 
+            таком массиве на 1 больше, чем изображение соответствующей строки, 
+            так как в конец строки добавлен нулевой символ <SPAN 
+            class=texample>'\0'</SPAN> (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/7/staldata_7.html#image.7.1">рис. 
+            7.1</A>).</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_17 align=left><A name=image.7.1></A>
+            <DIV><IMG alt="Представление строки и символа" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/07_01.png" 
+            width=354 height=94></DIV><BR><B>Рис. 7.1.</B>&nbsp; Представление 
+            строки и символа
+            <P></P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_18>Символьная строка в программном коде может располагаться 
+            на нескольких строках. Для переноса используется символ <SPAN 
+            class=texample>'\'</SPAN> с последующим нажатием клавиши ввод. 
+            Символ <SPAN class=texample>'\'</SPAN> игнорируется компилятором, и 
+            следующая строка считается продолжением предыдущей.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_21>Присвоить значение строке с помощью оператора 
+            присваивания нельзя, так как для массивов не определена операция 
+            прямого присваивания. Поместить строку в символьный массив можно 
+            либо при вводе, либо с помощью инициализации:</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char s1[] = "ABCDEF"; //инициализация строки
+char s2[]={'A','B','C','D','E','F','\0'};//инициализация строки
+</PRE></DIV>
+            <P id=id_23>Операция вычисления размера (в байтах) <SPAN 
+            class=texample>sizeof</SPAN> действует для объектов символьного типа 
+            и строк.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_25>Пример 1.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Определение размера строк
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]) {
+  char s1[10]="string1";
+  int k=sizeof(s1);
+  cout&lt;&lt;s1&lt;&lt;"\t"&lt;&lt;k&lt;&lt;"\n";
+  char s2[]="string2";
+  k=sizeof(s2);
+  cout&lt;&lt;s2&lt;&lt;"\t"&lt;&lt;k&lt;&lt;"\n";
+  char s3[]={'s','t','r','i','n','g','3','\0'};
+  /*окончание строки '\0' следует соблюдать, формируя 
+    в программах строки из отдельных символов*/
+  k=sizeof(s3);
+  cout&lt;&lt;s3&lt;&lt;"\t"&lt;&lt;k&lt;&lt;"\n";
+  char *s4="string4";
+  //указатель на строку, ее нельзя изменить
+  k=sizeof(s4);
+  cout&lt;&lt;s4&lt;&lt;"\t"&lt;&lt;k&lt;&lt;"\n";
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_27>Результат выполнения программы:</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28><SPAN class=texample>string1 10</SPAN> – выделено 10 
+            байтов, в том числе под <SPAN class=texample>'\0'</SPAN></P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_31><SPAN class=texample>string2 8</SPAN> – выделено 8 
+            байтов (7 + 1 байт под <SPAN class=texample>'\0'</SPAN>)</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_34><SPAN class=texample>string3 8</SPAN> – выделено 8 
+            байтов (7 + 1 байт под <SPAN class=texample>'\0'</SPAN>)</P>
+            <DIV id=mark_34 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Ввод-вывод символьных данных и строк</H3>
+            <P id=id_37><SPAN class=xml_em_italic>1) Ввод-вывод одиночного 
+            символа</SPAN></P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38><SPAN class=texample>getchar()</SPAN> – функция (без 
+            параметров) используется для ввода одиночного символа из входного 
+            потока. Она возвращает 1 байт информации (символ) в виде значения 
+            типа <SPAN class=texample>int</SPAN>. Это сделано для распознавания 
+            ситуации, когда при чтении будет достигнут конец файла.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_41><SPAN class=texample>putchar(ch)</SPAN> – функция 
+            используется для вывода одиночного символа, то есть помещает в 
+            стандартный выходной поток символ <SPAN class=texample>ch</SPAN>. 
+            Аргументом функции вывода может быть одиночный символ (включая 
+            знаки, представляемые управляющими последовательностями), переменная 
+            или функция, значением которой является одиночный символ. </P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_44>Например:</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Программа считывает из входного потока один символ, а затем выводит его на экран*/
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char ch;
+  ch=getchar();
+  putchar(ch);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_46><SPAN class=xml_em_italic>Пример 2</SPAN>. Введите 
+            предложение, в конце которого стоит точка, и подсчитайте общее 
+            количество символов, отличных от пробела (не считая точки).</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char z; //z - вводимый символ
+  int k; //k - количество значащих символов
+  printf("Напишите предложение с точкой в конце:\n");
+  for (k=0; (z=getchar())!='.';)
+  /*выражение z=getchar() заключено в скобки, так как 
+    операция присваивания имеет более низкий ранг, 
+    чем операция сравнения*/
+    if (z!=' ') 
+      k++;
+  printf("\nКоличество символов=%d",k);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_48>Результат выполнения программы:</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Напишите предложение с точкой в конце:
+1 2 3 4 5 6 7 8 9 0.
+Количество символов=10
+</PRE></DIV>
+            <P id=id_50><SPAN class=xml_em_italic>2) Ввод-вывод стандартного 
+            текстового (символьного) потока</SPAN></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51><SPAN class=texample>gets(s)</SPAN> – функция, которая 
+            считывает строку s из стандартного потока до появления символа <SPAN 
+            class=texample>'\n'</SPAN>, сам символ <SPAN 
+            class=texample>'\n'</SPAN> в строку не заносится.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_55><SPAN class=texample>puts(s)</SPAN> – функция, которая 
+            записывает строку в стандартный поток, добавляя в конец строки 
+            символ <SPAN class=texample>'\n'</SPAN>, в случае удачного 
+            завершения возвращает значение больше или равное <SPAN 
+            class=texample>0</SPAN> и отрицательное значение (<SPAN 
+            class=texample>EOF = -1</SPAN>) в случае ошибки. </P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_60>Например:</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char s[20];
+  gets(s);
+  puts(s);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_62>Результат выполнения программы: при вводе строки <SPAN 
+            class=texample>"123 456 789"</SPAN> чтение данных осуществляется 
+            побайтно до символа <SPAN class=texample>'\n'</SPAN>, то есть в s 
+            занесется строка <SPAN class=texample>"123 456 789\0"</SPAN> 
+            (управляющая последовательность '\0' на экран не выводится, а 
+            является признаком конца строки). При выводе строки функция puts 
+            возвращает в конце строки дополнительно один символ '\n', 
+            следовательно, будет выведена строка <SPAN class=texample>"123 456 
+            789\n"</SPAN> (управляющая последовательность <SPAN 
+            class=texample>'\n'</SPAN> на экран не выводится, а осуществляет 
+            перевод курсора на новую строку).</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_68><SPAN class=xml_em_italic>Пример 3</SPAN>. Вычислите 
+            длину введенной строки.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[100];
+  int i=0;
+  puts("Введите строку:");
+  gets(st);
+  while(st[i++]);
+  printf("Длина введенной строки = %i\n",i-1);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_70><SPAN class=xml_em_italic>3) Стандартные потоки 
+            ввода-вывода символьных данных и строк</SPAN></P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_71><SPAN class=texample>cin</SPAN> – оператор, который 
+            определяет стандартные потоки ввода данных.</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_73><SPAN class=texample>cout</SPAN> – оператор, который 
+            определяет стандартные потоки вывода данных.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_75><SPAN class=texample>&lt;&lt;</SPAN> – операция записи 
+            данных в поток;</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_77><SPAN class=texample>&gt;&gt;</SPAN> – операция чтения 
+            данных из потока.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_79>Например:</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char s[20];
+  cin&gt;&gt;s; //ввод строки из стандартного потока
+  cout&lt;&lt;s; //вывод строки в стандартный поток
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_81>Результат выполнения программы: при вводе строки <SPAN 
+            class=texample>"123 456 789"</SPAN> чтение данных осуществляется 
+            побайтно до первого пробела, то есть в s занесется только первое 
+            слово строки <SPAN class=texample>"123\0"</SPAN>, следовательно, 
+            выведется: <SPAN class=texample>"123"</SPAN>.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_85><SPAN class=xml_em_italic>Пример 4</SPAN>. Введите слово 
+            и замените в нем все вхождения заглавной латинской <SPAN 
+            class=texample>'A'</SPAN> на малую латинскую <SPAN 
+            class=texample>'a'</SPAN>. Выведите слово после редактирования.</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[80];
+  int i;
+  cout &lt;&lt; "\nВведите слово: ";
+  cin &gt;&gt; st;
+  for(i=0;st[i]!='\0';i++)
+     if (st[i]=='A') st[i]='a';
+  cout &lt;&lt; "\nСлово после редактирования: "&lt;&lt; st;
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_89><SPAN class=xml_em_italic>4) Форматированный ввод-вывод 
+            символьных данных и строк</SPAN></P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_90><SPAN class=texample>printf()</SPAN> – функция, 
+            осуществляющая форматированный вывод данных.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_92><SPAN class=texample>scanf()</SPAN> – функция, 
+            осуществляющая форматированный ввод данных.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_94><SPAN class=texample>%c</SPAN> – спецификатор формата 
+            ввода-вывода одиночного символа.</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_96><SPAN class=texample>%s</SPAN> – спецификатор формата 
+            ввода-вывода строки символов.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_98>Например:</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char s[20];
+  scanf("%s",s); 
+  //для строк не используется обращение по адресу &amp;
+  printf("%s",s);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_100>Результат выполнения программы: при вводе строки <SPAN 
+            class=texample>"123 456 789"</SPAN>, чтение данных осуществляется 
+            побайтно до первого пробела, то есть в строку s занесется только 
+            первое слово строки <SPAN class=texample>"123\0"</SPAN>, 
+            следовательно, выведется: <SPAN class=texample>"123"</SPAN>. Так как 
+            <SPAN class=texample>s</SPAN> – имя символьного массива, то есть 
+            адрес его начального элемента, операция &amp; в функции <SPAN 
+            class=texample>scanf</SPAN> для строк не используется.</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_106><SPAN class=xml_em_italic>Пример 5</SPAN>. Записать 
+            введенную строку символов в обратном порядке.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char st[80];
+  char temp;
+  int i,len=0;
+  printf("\nВведите строку &gt; ");
+  scanf("%s",st);
+  while (st[len++]); //вычисление длины строки
+  len-=2;//поправка на символ конца строки и нумерацию с нуля
+  for(i=0;i&lt;len;i++,len--){
+    temp=st[i]; //обмен символов
+    st[i]=st[len];
+    st[len]=temp;
+  }
+  printf("\nПолученная строка  &gt; %s",st);
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect3></A>
+            <H3>Внутренние коды символов</H3>
+            <P id=id_108>В языке С++ принято соглашение, что везде, где 
+            синтаксис позволяет использовать целые числа, можно использовать и 
+            символы, то есть данные типа char, которые при этом представляются 
+            числовыми значениями своих внутренних кодов. Такое соглашение 
+            позволяет сравнительно просто упорядочивать символы, обращаясь с 
+            ними как с целочисленными величинами. Например, внутренние коды 
+            десятичных цифр в таблицах кодов ASCII упорядочены по числовым 
+            значениям, поэтому несложно перебрать символы десятичных цифр в 
+            нужном порядке.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Печать десятичных цифр и их кодов
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  char z;
+  for (z='0'; z&lt;='9'; z++) {
+    if (z=='0' || z=='5')
+      printf ("\n");
+    printf("%c - %x  ",z,z); 
+  }
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_110>Внутренние коды прописных и строчных символов 
+            латинского алфавита представлены соответственно последовательными 
+            величинами. Однако при использовании символов кириллицы необходимо 
+            учитывать, что между строчными символами <SPAN 
+            class=texample>'п'</SPAN> и <SPAN class=texample>'р'</SPAN> 
+            размещены символы псевдографики, которые прерывают следование кодов. 
+            Поэтому использование стандартных функций изменения регистра для 
+            символов кириллицы может привести к некорректному результату.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_113><SPAN class=xml_em_italic>Пример 6</SPAN>. Вывести на 
+            экран вторую часть таблицы кодировки символов (символы с кодами от 
+            128 до 255). Таблица должна состоять из восьми колонок и шестнадцати 
+            строк.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define SM 128
+int _tmain(int argc, _TCHAR* argv[]){
+  unsigned char ch;
+  /*если ch объявить как char, то буквам русского алфавита 
+    будут соответствовать отрицательные коды*/
+  int i,j;
+  printf("Таблица ASCII кодировки символов\n");
+  for (i=0; i&lt;16; i++) { // шестнадцать строк
+    ch=i+SM;   
+    for (j=1; j&lt;=8; j++) { // восемь колонок
+      printf ("%4c -%4i",ch,ch);
+      ch+=16;
+    }
+    printf ("\n");
+  }
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect4></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_115><B>Внутренние коды символов</B> – целые числа, 
+            однозначно соответствующие символам во внутреннем представлении.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_116><B>Инициализация строки</B> – определение значения 
+            строки.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_117><B>Размер строки</B> – объем памяти, занимаемой 
+            строкой, выраженный в байтах.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_118><B>Символ конца строки</B> – нулевой байт, являющийся 
+            признаком конца строки символов.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119><B>Символьная константа</B> – константа типа <SPAN 
+            class=texample>char</SPAN>.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_121><B>Символьная переменная</B> – переменная типа <SPAN 
+            class=texample>char</SPAN>.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_123><B>Строка</B> – это пронумерованная последовательность 
+            символов, заключенная в двойные кавычки.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_124>
+              <LI>Для представления текстовой информации в С++ используются 
+              символьные данные и строки.
+              <LI>В С++ не определен строковый тип данных, и строка 
+              представляется как массив символов.
+              <LI>Инициализировать строку можно как массив символов.
+              <LI>Признаком конца строки является нулевой символ.
+              <LI>Обратиться к элементу строки можно по индексу, который 
+              соответствует порядковому номеру элемента.
+              <LI>Нумерация элементов строки начинается с нуля. Размер строки 
+              определяется количеством входящих в нее символов.
+              <LI>В С++ предусмотрены различные способы ввода и вывода одиночных 
+              символов и строк: с помощью стандартных функций, с помощью 
+              потокового или форматированного ввода/вывода. При считывании 
+              строки с клавиатуры признак конца строки добавляется 
+автоматически.
+              <LI>Каждому символу однозначно соответствует его внутренний 
+              код.</LI></OL>
+            <DIV id=mark_124 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Лабораторная работа 7. Символьные данные и строки</H3>
+            <P id=id_133><B>Цель работы:</B> изучить особенности внутреннего 
+            представления символьных данных и строк, научиться выполнять 
+            ввод/вывод, просмотр и замену в строках при решении задач на языке 
+            C++.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            одну или несколько строк символов (в зависимости от постановки 
+            задачи), выполняет обработку строк в соответствии с требованиями 
+            задания и выводит результат на экран. Ввод данных осуществляется с 
+            клавиатуры с учетом требований к входным данным, содержащихся в 
+            постановке задачи. Ограничениями на входные данные является 
+            максимальный размер строковых данных в языке С++.</P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135><B>Теоретические сведения.</B></P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <P id=id_136>Ознакомьтесь с материалом лекции 7.</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <P id=id_137><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <P id=id_138>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <OL id=id_139>
+              <LI>Введите предложение, слова в котором разделены пробелами и в 
+              конце которого стоит точка. Удалите повторяющиеся пробелы между 
+              отдельными словами (оставляя по одному пробелу), выведите 
+              отредактированное предложение на экран.
+              <LI>Дана строка. Выполните символьный анализ текста. Ниже 
+              представлен рекомендуемый вид диалога во время работы программы. 
+              Данные, вводимые пользователем, выделены жирным шрифтом. 
+              <DIV class=example><PRE>Введите строку 
+Город Тула основан в 1946 г. I was burn in Tula in 1991.
+Во введенной строке:
+   малых русских букв – 16
+   заглавных русских букв – 2
+   малых латинских букв – 14
+   заглавных латинских букв – 2
+   цифровых символов –8
+   остальных символов – 14
+</PRE></DIV>
+              <LI>Напишите программу, которая проверяет, является ли введенная с 
+              клавиатуры строка целым числом (знак числа не учитывать). Ниже 
+              представлен рекомендуемый вид диалога во время работы программы. 
+              Данные, вводимые пользователем, выделены жирным шрифтом. 
+              <DIV class=example><PRE>Введите число: 24.5
+Введенная строка не является целым числом.
+</PRE></DIV>
+              <LI>Введите строку и символ. Определите частоту появления данного 
+              символа в строке. Частота вычисляется как отношение количества 
+              данных символов в строке к длине всей строки (пробелы учитываются, 
+              а символ конца строки не учитывается). Ниже представлен 
+              рекомендуемый вид диалога во время работы программы. Данные, 
+              вводимые пользователем, выделены жирным шрифтом. 
+              <DIV class=example><PRE>Введите строку  &gt;  Мама мыла раму.
+Введите символ  &gt;  а
+Частота появления символа 'а' в строке "Мама мыла раму." равна 0,27
+</PRE></DIV></LI></OL>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_147><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки строковых и символьных данных в языке 
+            С++.</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <UL id=id_150>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_159><B>Требования к отчету.</B></P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_160>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <UL id=id_161>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_170><B>Контрольные вопросы</B></P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <OL id=id_171>
+              <LI>Почему в С++ не выполняется операция прямого присваивания 
+              значения строке?
+              <LI>Почему символ и строка, состоящая из одного символа, занимают 
+              разный объем памяти?
+              <LI>Почему в функции <SPAN 
+              class=texample>scanf("%s",string);</SPAN> не указывается обращение 
+              к переменной по адресу?
+              <LI>Допустима ли операция сравнения над символами? Если да, то 
+              каким образом определены отношения "больше" и "меньше"? 
+              <LI>Какая из функций, <SPAN class=texample>gets</SPAN> или <SPAN 
+              class=texample>puts</SPAN>, заносит в поток управляющий символ 
+              <SPAN class=texample>'\n'</SPAN> и с какой целью?
+              <LI>Можно ли выполнить присваивание символьной переменной 
+              числового значения? Почему?
+              <LI>В чем различия результатов вывода символьной переменной со 
+              спецификаторами <SPAN class=texample>%d</SPAN> и <SPAN 
+              class=texample>%c?</SPAN></LI></OL>
+            <DIV id=mark_171 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

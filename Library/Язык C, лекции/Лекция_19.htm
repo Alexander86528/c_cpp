@@ -1,0 +1,1079 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_19_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_19_files/mhtF6F9(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_19_files/mhtF6F9(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>19. Лекция: Препроцессор языка С: версия для 
+            печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции рассматриваются 
+            практически важные свойства препроцессора языка С и примеры типовых 
+            препроцессорных директив и конструкций. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_19_files/mhtF6F9(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1><SPAN class=xml_em_italic>Препроцессор</SPAN> (англ. 
+            <SPAN class=xml_em_italic>preprocessor</SPAN> ) – программа, 
+            выполняющая предварительную обработку входных данных для другой 
+            программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#26" 
+            target=_blank>19.1</A>]. Препроцессор языка программирования 
+            <B>С</B> просматривает программу до компилятора и заменяет в 
+            программе определенные сочетания символов (символические 
+            аббревиатуры) на соответствующие директивы. Он отыскивает и 
+            подключает к программе необходимые файлы и может изменить условия 
+            компиляции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#26" 
+            target=_blank>19.1</A>]. Препроцессор имеет тот же смысл, что и 
+            буферный процессор.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Препроцессор языка <B>С</B> выполняет макроподстановку, 
+            условную компиляцию и включение именованных файлов. Строки, 
+            начинающиеся со знака # (перед которыми разрешены символы пустого 
+            пространства), задают препроцессору инструкции-директивы. Их 
+            синтаксис не зависит от остальной части языка; они могут 
+            фигурировать где угодно и оказывать влияние (независимо от области 
+            действия) вплоть до конца единицы трансляции. Границы строк 
+            принимаются во внимание: каждая строка анализируется отдельно (но 
+            есть возможность и сцеплять строки). Лексемами для препроцессора 
+            являются все лексемы языка и последовательность символов, задающие 
+            имена файлов. Кроме того, любой символ, не определенный каким-либо 
+            другим способом, также воспринимается как лексема [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>19.2</A>]. Влияние символов пустого пространства, 
+            отличающихся от пробелов и горизонтальных табуляций, внутри строк 
+            препроцессора не определено.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>В предыдущих лабораторных работах уже встречались строки 
+            с начальным символом #. Это #include и #define. Первая директива 
+            (инструкция) использовалась для подключения заголовочных файлов, в 
+            первую очередь из библиотеки языка <B>С</B>, а вторая – для 
+            подстановки символов или чисел в определенные места программного 
+            кода.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Имеются следующие директивы препроцессора:</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <DIV id=id_5 class=xml_table_env><A></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>#define</TD>
+                <TD bgColor=#eaeaea vAlign=top>#endif</TD>
+                <TD bgColor=#eaeaea vAlign=top>#ifdef</TD>
+                <TD bgColor=#eaeaea vAlign=top>#line</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>#elif</TD>
+                <TD bgColor=#eaeaea vAlign=top>#error</TD>
+                <TD bgColor=#eaeaea vAlign=top>#ifndef</TD>
+                <TD bgColor=#eaeaea vAlign=top>#pragma</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>#else</TD>
+                <TD bgColor=#eaeaea vAlign=top>#if</TD>
+                <TD bgColor=#eaeaea vAlign=top>#include</TD>
+                <TD bgColor=#eaeaea 
+vAlign=top>#undef</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6>Каждая директива препроцессора должна занимать отдельную 
+            строку. Например, строка</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;    #include &lt;stdlib.h&gt;</PRE></DIV>
+            <P id=id_8>рассматривается как недопустимая [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_8 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>Директива #define</H4>
+            <P id=id_9>Директива #define определяет идентификатор и 
+            последовательность символов, которая будет подставляться вместо 
+            идентификатора каждый раз, когда он встретится в исходном файле. 
+            Идентификатор называется именем макроса, а сам процесс замены – 
+            макрозаменой (макрорасширением, макрогенерацией, макроподстановкой) 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. В общем виде директива #define выглядит 
+            следующим образом (должно быть задано буквами латинского 
+            алфавита):</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define имя_макроса  последовательность_символов</PRE></DIV>
+            <P id=id_11>В определении, как правило, в конце последовательности 
+            символов не ставится точки с запятой. Между идентификатором и 
+            последовательностью символов <SPAN 
+            class=xml_em_italic>последовательность_символов</SPAN> может быть 
+            любое количество пробелов, но признаком конца последовательности 
+            символов может быть только разделитель строк [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Имена макросов обычно задаются с помощью букв верхнего 
+            регистра.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13>У директивы #define имя макроса может определяться с 
+            формальными параметрами. Тогда каждый раз, когда в программе 
+            встречается имя макроса, то используемые в его определении 
+            формальные параметры заменяются теми аргументами, которые 
+            встретились в программе. Такого рода макросы называются макросами 
+            <SPAN class=xml_em_italic>с формальными параметрами 
+            (макроопределениями с параметрами</SPAN> и <SPAN 
+            class=xml_em_italic>макросами, напоминающими функции</SPAN> ) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Ключевым элементом макроса с параметрами 
+            являются круглые скобки, внутри которых находятся собственно 
+            формальные параметры. Рассмотрим пример макроса с тремя параметрами 
+            для определения следующего условия: будет ли остаток от деления 
+            случайной функции на правую границу интервала больше, чем половина 
+            этого интервала.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Программный код решения примера</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+#define MAX(a,b,c) ((1+rand()%(b)) &gt; ((a)+(b))/2 ) ? (c):(b)
+
+int main (void) {
+	int a, b, c;
+	srand((unsigned) time(NULL));
+
+	printf("\n Enter a, b, c: ");
+	scanf_s("%d%d%d", &amp;a, &amp;b, &amp;c);
+	printf("\n MAX(a,b,c): %d\n", MAX(a,b,c));	
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_16>В общем случае рекомендуется заключать в круглые скобки 
+            формальные параметры, над которыми выполняются те или иные 
+            действия.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Использование вместо настоящих функций макросов с 
+            формальными параметрами (т. е. <B>a, b, с</B> ) дает следующее 
+            преимущество: увеличивается скорость выполнения кода, потому что в 
+            таких случаях не надо тратить ресурсы на вызов функций. Кроме того, 
+            макрос не чувствителен к типу данных, т. е. в нем отсутствует 
+            проверка типов аргументов. Однако если у макроса с формальными 
+            параметрами очень большие размеры, то тогда из-за дублирования кода 
+            увеличение скорости достигается за счет увеличения размеров 
+            программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. И еще, в конструировании макроса следует 
+            быть очень внимательным. Как правило, макросы используются для 
+            небольших пользовательских функций [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>19.4</A>].</P>
+            <DIV id=mark_17 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>Директива #error</H4>
+            <P id=id_18>Директива #error заставляет компилятор прекратить 
+            компиляцию [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Эта директива используется в основном для 
+            отладки. В общем виде директива #error выглядит следующим 
+            образом:</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#error  сообщение – об – ошибке</PRE></DIV>
+            <P id=id_20>Заданное сообщение об ошибке ( <SPAN 
+            class=xml_em_italic>сообщение – об – ошибке</SPAN> ) в двойные 
+            кавычки не заключается. Когда встречается данная директива, то 
+            выводится сообщение об ошибке – возможно, вместе с другой 
+            информацией, определяемой компилятором [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_20 class=lecture_mark></DIV><A name=sect4></A>
+            <H4>Директива #include</H4>
+            <P id=id_21>Директива #include дает указание компилятору читать еще 
+            один исходный файл – в дополнение к тому файлу, в котором находится 
+            сама эта директива [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Имя исходного файла (подключаемого файла) 
+            должно быть заключено в двойные кавычки или в угловые скобки. Обычно 
+            имена стандартных заголовочных файлов заключают в угловые скобки. А 
+            использование кавычек обычно приберегается для имен специальных 
+            файлов, относящихся к конкретной программе. Способ поиска файла 
+            зависит от того, заключено ли его имя в двойные кавычки или же в 
+            угловые скобки. Если имя заключено в угловые скобки, то поиск файла 
+            проводится тем способом, который определен в компиляторе. Часто это 
+            означает поиск определенного каталога, специально предназначенного 
+            для хранения таких файлов. Если имя заключено в кавычки, то поиск 
+            файла проводится другим способом. Во многих компиляторах это 
+            означает поиск файла в текущем рабочем каталоге. Если же файл не 
+            найден, то поиск повторяется уже так, как будто имя фа йла закл 
+            ючено в угловые скобки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_22>Файлы, имена которых находятся в директивах #include, 
+            могут в свою очередь содержать другие директивы #include. Они 
+            называются вложенными директивами #include. Количество допустимых 
+            уровней вложенности у разных компиляторов может быть разным. Однако 
+            в стандарте С89 предусмотрено, что компиляторы должны допускать не 
+            менее 8 таких уровней [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_22 class=lecture_mark></DIV><A name=sect5></A>
+            <H4>Директивы условной компиляции</H4>
+            <P id=id_23>Директивы условной компиляции (будут рассмотрены ниже) 
+            дают возможность выборочно компилировать части исходного кода 
+            программы. Этот процесс называется <SPAN 
+            class=xml_em_italic>условной компиляцией</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Директива условной компиляции #if выглядит следующим 
+            образом:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#if  константное_выражение
+	последовательность операторов программного кода
+#endif</PRE></DIV>
+            <P id=id_26>Если находящееся за директивой #if константное выражение 
+            истинно, то компилируется код, который находится между этим 
+            выражением и #endif, которая обозначает конец блока #if. Константное 
+            выражение может быть задано через директиву #define. При этом, если, 
+            например, задано число, не равное нулю, то такое константное 
+            выражение будет истинно. Если же заданное число есть нуль, то 
+            константное выражение будет ложным. В частности константное 
+            выражение может быть задано макросом с формальными параметрами, 
+            которые должны быть в свою очередь также константными 
+            параметрами.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>Директива условной компиляции #else используется 
+            практически также как в обычном условном операторе языка <B>С</B>: 
+            if – else. То есть логика действия позволяет перенаправить 
+            выполнение программы. Дополнительная директива условной компиляции 
+            #else в общем случае имеет вид</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#if  константное_выражение
+	последовательность операторов программного кода
+#else
+альтернативная последовательность операторов программного кода
+#endif</PRE></DIV>
+            <P id=id_29>Аналогично используются директивы #elif (else if), 
+            которые в общем случае имеют следующий вид:</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#if  константное_выражение
+	последовательность операторов программного кода
+#elif  2_ константное_выражение
+2_ я_последовательность операторов программного кода
+#elif  3_ константное_выражение
+3_ я_последовательность операторов программного кода
+.
+.
+.
+#elif  N_ константное_выражение
+N_ я_последовательность операторов программного кода
+#else
+альтернативная последовательность операторов программного кода
+#endif</PRE></DIV>
+            <P id=id_31>Если константное выражение в директиве #elif истинно (не 
+            нулевое, например), то будет компилироваться соответствующая 
+            последовательность операторов программного кода. При этом другие 
+            выражения в директивах #elif проверяться уже не будут, в том числе и 
+            директива #else.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>Особенностью рассмотренных конструкций является то, что 
+            проверка выражений осуществляется внутри директив #if и #endif.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>В соответствии со стандартом С89 у директив #if и #elif 
+            может быть не менее 8 уровней вложенности. При вложенности каждая 
+            директива #endif, #else или #elif относится к ближайшей директиве 
+            #if или #elif [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>Каждая директива #if сопровождается директивой 
+            #endif.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_35>Директива условной компиляции #ifdef в общем виде 
+            выглядит следующим образом:</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#ifdef  имя_макроса
+последовательность операторов
+#endif</PRE></DIV>
+            <P id=id_37>Директива условной компиляции #ifdef означает "if 
+            defined" (если определено) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Последовательность операторов будет 
+            компилироваться, если имя макроса было определено ранее с помощью 
+            директивы #define.</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38>Директива условной компиляции #ifndef означает "if not 
+            defined" (если не определено) в общем виде выглядит следующим 
+            образом:</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#ifndef  имя_макроса
+последовательность операторов
+#endif</PRE></DIV>
+            <P id=id_40>Последовательность операторов будет компилироваться, 
+            если имя макроса еще не определено директивой #define. В директивах 
+            #ifdef и #ifndef можно использовать #else или #elif.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Согласно стандарту С89 допускается не менее 8 уровней 
+            #ifdef и #ifndef.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_42>Директива #undef удаляет заданное определение имени 
+            макроса, то есть "аннулирует" его определение; само имя макроса 
+            должно находиться после директивы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43>В общем случае директива #undef выглядит следующим 
+            образом:</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#undef  имя_макроса</PRE></DIV>
+            <P id=id_45>Директива #undef используется в основном для того, чтобы 
+            локализовать имена макросов в тех участках кода, где они нужны.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_46>Для того чтобы узнать определено ли имя макроса, можно 
+            использовать директиву #if в сочетании с оператором времени 
+            компиляции defined [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_47>Оператор defined выглядит следующим образом:</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>defined  имя_макроса</PRE></DIV>
+            <P id=id_49>Если имя_макроса определено, то выражение считается 
+            истинным; в противном случае – ложным.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50>Единственная причина, по которой используется оператор 
+            defined, состоит в том, что с его помощью в #elif можно узнать, 
+            определено ли имя макроса [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_50 class=lecture_mark></DIV><A name=sect6></A>
+            <H4>Директива #line</H4>
+            <P id=id_51>Директива #line изменяет содержимое __LINE__ и __FILE__, 
+            которые являются зарезервированными идентификаторами (макросами) в 
+            компиляторе. В первом из них содержится номер компилируемой в данный 
+            момент строки программного кода программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. А второй идентификатор – это строка, 
+            содержащая имя компилируемого исходного файла.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52>Директива #line выглядит следующим образом:</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#line  номер  "имя_файла"</PRE></DIV>
+            <P id=id_54>В определении директивы #line обязательным является 
+            номер строки, относительно которой будет выполняться подсчет 
+            следующих строк. Второй параметр "имя_файла" является не 
+            обязательным. Если его не будет, то идентификатор __FILE__ будет 
+            содержать путь и имя программы. Если указать в качестве параметра 
+            новое имя файла – "имя_файла", то __FILE__ будет содержать это новое 
+            имя файла.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_55>Директива #line в основном используется для отладки и 
+            специальных применений [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>].</P>
+            <DIV id=mark_55 class=lecture_mark></DIV><A name=sect7></A>
+            <H4>Операторы препроцессора # и ##</H4>
+            <P id=id_56>Операторы <SPAN class=texample>#</SPAN> и <SPAN 
+            class=texample>##</SPAN> применяются в сочетании с директивой <SPAN 
+            class=texample>#define</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Оператор <SPAN class=texample>#</SPAN>, 
+            который обычно называют оператором <SPAN 
+            class=xml_em_italic>превращения в строку (stringize)</SPAN>, 
+            превращает аргумент, перед которым стоит, в строку, заключенную в 
+            кавычки. Оператор # должен использоваться в макросах с аргументами, 
+            поскольку операнд после # ссылается на аргумент макроса [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>].</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_61>Оператор ##, который называют оператором <SPAN 
+            class=xml_em_italic>склеивания (pasting)</SPAN>, или конкатенации 
+            конкатенирует две лексемы. Операция <SPAN class=texample>##</SPAN> 
+            должна иметь два операнда [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>].</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_63>Операторы <SPAN class=texample>#</SPAN> и <SPAN 
+            class=texample>##</SPAN> предусмотрены для работы препроцессора в 
+            некоторых особых случаях [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>,<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>].</P>
+            <DIV id=mark_63 class=lecture_mark></DIV><A name=sect8></A>
+            <H4>Директива #pragma</H4>
+            <P id=id_66>Директива #pragma – это определяемая реализацией 
+            директива, которая позволяет передавать компилятору различные 
+            инструкции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. Она позволяет помещать инструкции 
+            компилятору в исходный код [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>19.4</A>]. Возможности этой директивы следует изучать 
+            по документации по компилятору.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV><A name=sect9></A>
+            <H4>Предопределенные символические константы</H4>
+            <P id=id_67>В языке <B>С</B> определены пять встроенных, 
+            предопределенных имен макрокоманд [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>19.2</A>-<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>-<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>19.4</A>-<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>], которые представлены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#table.19.1">табл. 
+            19.1</A>.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <DIV id=id_68 class=xml_table_env><A name=table.19.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 19.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=2>Предопределенные символические 
+                  константы</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>Символическая константа </TH>
+                <TH bgColor=#d8d8d8>Объяснение</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>__LINE__</TH>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает целую константу для 
+                  номера текущей обрабатываемой строки исходного кода 
+                программы</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>__FILE__</TH>
+                <TD bgColor=#eaeaea vAlign=top>По умолчанию возвращает в виде 
+                  строки символов имя компилируемого исходного файла</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>__DATE__</TH>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает в виде строки 
+                  символов дату (мм дд гг) начала компиляции текущего исходного 
+                  файла</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>__TIME__</TH>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает в виде строки 
+                  символов время (чч:мм:сс) начала компиляции текущего исходного 
+                  файла</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>__STDC__</TH>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает целую константу 1, 
+                  которая указывает на то, что данная реализация совместима со 
+                  стандартом ANSI</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_68 class=lecture_mark></DIV><A name=sect10></A>
+            <H4>Макрос подтверждения assert</H4>
+            <P id=id_69>Макрос <SPAN class=texample>assert</SPAN>, определенный 
+            в заголовочном файле <B>assert.h</B>, проверяет значение выражения 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>]. Если значение выражения равно 0 (ложное 
+            значение), то assert распечатывает (например, выводит на консоль) 
+            сообщение об ошибке и вызывает функцию <SPAN 
+            class=texample>abort()</SPAN> (из библиотеки <B>stdlib.h</B> ), 
+            завершающую работу программы. Например, в программе переменная х 
+            должна принимать значения, не превышающие 10. Для проверки и 
+            подтверждения такого условия в программу можно включить следующую 
+            строку:</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <DIV class=example><PRE>assert( x &lt;= 10 );</PRE></DIV>
+            <P id=id_73>Если при выполнении данного макроса переменная х 
+            окажется больше 10, то выдается сообщение, содержащее номер строки и 
+            имя файла (например, main.c), в котором нарушено условие, а 
+            выполнение программы при этом прерывается. Формат выводимого 
+            сообщения зависит от конкретной реализации системы программирования 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>19.3</A>]. С помощью <SPAN 
+            class=texample>assert</SPAN> можно производить отладку программы во 
+            многих ее местах. Когда программа будет отлажена, то действие 
+            макроса <SPAN class=texample>assert</SPAN> можно устранить с помощью 
+            символической константы NDEBUG (not debugging – без отладки). Для 
+            этого перед заголовочным файлом assert.h следует вставить строку</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define  NDEBUG</PRE></DIV>
+            <P id=id_77>#define NDEBUG</P>
+            <DIV id=mark_77 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Практическая часть</H3>
+            <P id=id_78><B>Пример </B>. Напишите программу с использованием 
+            макро-функции по определению числа, введенного пользователем, на 
+            предмет его простоты. Предусмотрите также вывод на консоль времени 
+            компиляции программы и сообщения о реализации языка <B>С</B>.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_79>Программный код решения примера:</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Макрос с формальными параметрами
+#define SIMPLE(x, d, b) for(d = 2; d &lt; x; d++) \
+	if (!(x%d)) b = 0;  \
+	if (b)  puts("\n It is the simple number"); \
+		else puts("\n It is not the simple number");
+
+int main (void) {
+	int b = 1, d = 0, x = 13;
+
+	printf("\n Enter the natural number: ");
+	scanf("%d", &amp;x);
+	
+     // Макрос с действительными параметрами
+     SIMPLE(x, d, b);
+	printf("\n %5sTime: %s\n Version C: %d \n", "", \
+		__TIME__, __STDC__);
+
+	printf("\n ... Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_81>В первой строке программы включена символическая 
+            константа для исключения вывода предупреждения относительно функции 
+            <SPAN class=texample>scanf()</SPAN> в среде MS Visual Studio 2008. В 
+            программе показано применение макроса функции с тремя формальными 
+            параметрами и несколькими строками программного кода.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_83>Результат выполнения программы приведен на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.1">рис. 
+            19.1</A>.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84 align=left><A name=image.19.1></A></P>
+            <DIV><IMG alt="Проверка введенного числа на простоту" 
+            src="Лекция_19_files/mhtF73B(1).tmp" width=620 
+            height=120></DIV><BR><B>Рис. 19.1.</B>&nbsp; Проверка введенного 
+            числа на простоту
+            <P></P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_85>Результат <SPAN class=texample>Version C: 1</SPAN> 
+            означает, что компилятор поддерживает стандарт ANSI С.</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <OL id=id_87>
+              <LI>Сделайте так, чтобы признак простого или непростого числа 
+              передавался из макроса. Этот признак должен использоваться в 
+              функции <SPAN class=texample>main()</SPAN>, для вывода 
+              соответствующего сообщения на консоль.
+              <LI>В программе предусмотрите вывод на консоль общего количества 
+              строк программного кода.
+              <LI>В программе предусмотрите вывод на консоль даты компиляции и 
+              имени компилируемого файла.
+              <LI>Напишите макрос с формальными параметрами для проверки на 
+              четность целого числа, введенного с клавиатуры.
+              <LI>Напишите макрос с формальными параметрами для обмена 
+              значениями двух переменных (типа функции <SPAN 
+              class=texample>swap()</SPAN> ).
+              <LI>Напишите макрос с формальными параметрами по вычислению 
+              площади круга по известному радиусу (вводимого с клавиатуры). 
+              Значение числа _ определить с 15 знаками после десятичной точки 
+              при использовании директивы <SPAN class=texample>#define</SPAN>.
+              <LI>Введите в программу вычисление случайных чисел, равномерно 
+              распределенных в интервале [0; Х], где Х – номер компьютера (1, 2, 
+              3, ...), на котором выполняется лабораторная работа. Количество 
+              случайных чисел должно соответствовать числу секунд (не равных 
+              нулю), определяемых с помощью символической константы <SPAN 
+              class=texample>__TIME__</SPAN>.</LI></OL>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_99><B>Пример 2</B>. Выполните проверку подключаемого 
+            тестового файла и вывести на консоль содержимого этого файла. 
+            Содержимое файла – стихотворный пример бесконечной рекурсии: у попа 
+            была собака ....</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Программный код решения примера:</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Файл с главной функцией main()
+
+#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;locale.h&gt;
+
+// Подключение текстового файла
+#ifndef AZA
+#define AZA
+#include "dog.txt"
+#endif
+
+int main (void)  {
+	short i , j, n, in;
+	i = j = 0;
+// для поддержки русских шрифтов
+	setlocale (LC_ALL, "rus");
+
+	printf("\n Введите количество стихотворных строф: ");
+	in = scanf("%hd", &amp;n);
+    if (in != 1 || n &lt; 1) {
+	printf("\n Ошибка ввода данных. Нажмите любую клавишу: ");
+		_getch();
+		exit(1);
+	}
+
+// Условие распечатки текстового файла
+#ifdef AZA
+	
+    puts("");
+	for (j = 0; j &lt; n; j++ )
+    {
+         i = 0;
+		while (d[i] != NULL)
+         {
+			printf(" ");
+			puts(d[i]);
+			i++;
+		}
+	}
+
+#endif
+
+	printf("\n ... Нажмите любую клавишу: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_102>Содержимое текстового файла <B>dog.txt</B>:</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char *d[] = {
+"У попа была собака,", \
+"Он её любил,", \
+"Она съела кусок мяса,", \
+"Он её убил...",\
+"Вырыл ямку, закопал,", \
+"На дощечке написал:\n"
+ };</PRE></DIV>
+            <P id=id_104>Решение примера выполнено в виде двух файлового 
+            проекта. Инициализация переменных в главной функции сделано на 
+            случай, если не будет определена директива <SPAN 
+            class=texample>#define AZA</SPAN>, чтобы не было предупреждений 
+            компилятора о неиспользованных переменных <SPAN 
+            class=texample>i</SPAN> и <SPAN class=texample>j</SPAN>.</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_108>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.2">рис. 
+            19.2</A>.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109 align=left><A name=image.19.2></A></P>
+            <DIV><IMG alt="Пример распечатки текстового файла" 
+            src="Лекция_19_files/mhtF75D(1).tmp" width=620 
+            height=310></DIV><BR><B>Рис. 19.2.</B>&nbsp; Пример распечатки 
+            текстового файла
+            <P></P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110><B>Задание 2</B></P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <OL id=id_111>
+              <LI>Стихотворение запишите в текстовый файл с именем compX.txt, 
+              где Х – номер компьютера, на котором выполняется лабораторная 
+              работа.
+              <LI>Вместо препроцессорной директивы <SPAN 
+              class=texample>#ifdef</SPAN> примените другую директиву условной 
+              компиляции.
+              <LI>В программу включите директиву <SPAN 
+              class=texample>#else</SPAN>.
+              <LI>Какой препроцессорной директивой можно исключить из программы 
+              именованную константу <SPAN class=texample>AZA?</SPAN>
+              <LI>Создайте файл <B>dog.h</B> с содержимым файла <B>dog.txt</B> и 
+              подключите его к проекту вместо файла <B>dog.txt</B>.
+              <LI>Напишите "чистую" рекурсивную функцию для распечатки 
+              стихотворения о попе и его собаке. В качестве аргумента функции 
+              включите количество стихотворных строф. Подсчитайте количество 
+              рекурсивных вызовов.</LI></OL>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_121><B>Пример 3</B>. С помощью директив условной компиляции 
+            и символической константы <SPAN class=texample>_DEBUG</SPAN> 
+            напишите программу ввода слов с клавиатуры с проверкой возможности 
+            компиляции программного кода.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_123>Программный код решения примера:</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	char str[80];
+
+// Начало проверки компилируемого кода
+#ifdef _DEBUG
+	printf("\n Start debugging\n");
+#endif
+
+	do {
+		printf("\n Enter a word or \"z\" to exit: ");
+		gets_s(str, 79);
+
+#if _DEBUG
+		printf("\n The word is \"%s\"\n", str );
+
+#else 
+#error This version is not to the C Run-Time Library. \
+Break to debugging.
+
+#endif 
+
+	} while (str[0] != 'z' &amp;&amp; str[0] != 'Z');
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_125>Символическая константа <SPAN 
+            class=texample>_DEBUG</SPAN> будет определяться (существовать) в 
+            режиме Debug, которое находится в списке главного меню 
+            интегрированной системы MS Visual Studio 2010.</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_127>На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.3">рис. 
+            19.3</A> показан выбор режима отладки Debug.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_128 align=left><A name=image.19.3></A></P>
+            <DIV><IMG alt="Выбор режима отладки Debug" 
+            src="Лекция_19_files/mhtF77F(1).tmp" width=620 
+            height=458></DIV><BR><B>Рис. 19.3.</B>&nbsp; Выбор режима отладки 
+            Debug
+            <P></P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.4">рис. 
+            19.4</A>.</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <P id=id_130 align=left><A name=image.19.4></A></P>
+            <DIV><IMG alt="Пример выполнения режима отладки программы" 
+            src="Лекция_19_files/mhtF792(1).tmp" width=620 
+            height=245></DIV><BR><B>Рис. 19.4.</B>&nbsp; Пример выполнения 
+            режима отладки программы
+            <P></P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131><B>Задание 3</B></P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <OL id=id_132>
+              <LI>Внесите изменения в программу, чтобы условие о невозможности 
+              компиляции было реализовано без директивы <SPAN 
+              class=texample>#error</SPAN>.
+              <LI>Вместо специализированной константы _DEBUG введите собственную 
+              символическую константу COMP_X, где Х – номер компьютера, на 
+              котором выполняется лабораторная работа.
+              <LI>Напишите программу со стеком, в который будут помещаться 
+              вводимые слова, а после предусмотреть возможность извлечения 
+              набранных слов (по дисциплине LIFO).</LI></OL>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_137><B>Пример 4</B>. С помощью директивы <SPAN 
+            class=texample>#define</SPAN> и оператора препроцессора <SPAN 
+            class=texample>#</SPAN> напишите программу определения кода 
+            вводимого символа.</P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <P id=id_140>Программный код решения примера:</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+
+#define CHAR_COD(c)  ""#c""
+
+int main (void) {
+	char ch;
+	setlocale (LC_ALL, "rus");
+
+	printf("\n Введите символ: ");
+	scanf("%c", &amp;ch);
+  printf("\n %s \"%c\", его код %d", CHAR_COD(Символ), ch, ch);
+
+	printf("\n\n ... Нажмите любую клавишу: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_142>Оператор <SPAN class=texample>#</SPAN> должен 
+            использоваться в макросах с аргументами, поскольку операнд после 
+            ссылается на аргумент макроса [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>19.5</A>]. В данном случае строка <SPAN 
+            class=texample>"Символ"</SPAN> подставляется в заменяющий текст 
+            вместо <B>#c</B>.</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_145>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.5">рис. 
+            19.5</A>.</P>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <P id=id_146 align=left><A name=image.19.5></A></P>
+            <DIV><IMG alt="Пример определения кода вводимого символа" 
+            src="Лекция_19_files/mhtF7B4(1).tmp" width=620 
+            height=99></DIV><BR><B>Рис. 19.5.</B>&nbsp; Пример определения кода 
+            вводимого символа
+            <P></P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_147><B>Задание 4</B></P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <OL id=id_148>
+              <LI>Напишите программу повторного ввода символов с клавиатуры до 
+              тех пор, пока не будет введен символ <SPAN 
+              class=texample>"z"</SPAN>.
+              <LI>Выполните макроподстановку со строкой "compX" и присоединяемой 
+              строкой "Х" с помощью функции <SPAN 
+              class=texample>printf()</SPAN>, где Х – номер компьютера, на 
+              котором выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_153><B>Пример 5</B>. С помощью директивы <SPAN 
+            class=texample>#define</SPAN> и оператора препроцессора <SPAN 
+            class=texample>##</SPAN> классифицируйте четность или нечетность 
+            кода вводимого символа.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_156>Программный код решения примера:</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+// LEXEME - лексема
+#define TWO_LEXEME(a,b)  a ## b
+
+#define CHAR_COD(c)  ""#c""
+
+int main (void)
+ {
+	char ch;
+	setlocale (LC_ALL, "rus");
+	printf("\n Введите символ: ");
+	scanf("%c", &amp;ch);
+
+	if (!(ch % 2))
+printf("\n %s \"%c\", его код %d %s", \
+CHAR_COD(Символ), ch, ch, TWO_LEXEME(" - четный","!"));
+	
+     else
+printf("\n %s \"%c\", его код %d %s", \
+CHAR_COD(Символ), ch, ch, TWO_LEXEME(" - не ", "четный."));
+
+	printf("\n\n ... Нажмите любую клавишу: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_158>Данная программа – некоторое расширение предыдущей 
+            программы. Операция конкатенации строк <SPAN 
+            class=texample>##</SPAN> осуществляется с помощью макроса <SPAN 
+            class=texample>TWO_LEXEME()</SPAN> с двумя аргументами.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_161>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.6">рис. 
+            19.6</A>.</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162 align=left><A name=image.19.6></A></P>
+            <DIV><IMG alt="Пример классификации четности символа" 
+            src="Лекция_19_files/mhtF7C7(1).tmp" width=620 
+            height=124></DIV><BR><B>Рис. 19.6.</B>&nbsp; Пример классификации 
+            четности символа
+            <P></P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_163><B>Задание 5</B></P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <OL id=id_164>
+              <LI>В программе примените только буквы латинского алфавита.
+              <LI>Для записи четности или нечетности введенного символа 
+              предусмотрите массив символов <SPAN class=texample>str1</SPAN> и 
+              <SPAN class=texample>str2</SPAN>.
+              <LI>Произведите конкатенацию двух строк "comp" и "Х" с помощью 
+              операции <SPAN class=texample>##</SPAN>, где Х – номер компьютера, 
+              на котором выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_171><B>Пример 6</B>. Напишите программу формирования 
+            структуры с информацией о студенте (об учащемся) и с помощью 
+            директивы <SPAN class=texample>#pragma</SPAN> осуществить 
+            оптимизацию использования памяти, выделяемой под структуру.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_173>Для решения примера используем справку системы Visual 
+            Studio 2010 (для этого из меню Help <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+            src="Лекция_19_files/mhtF7E9(1).tmp" width=23 height=9> Index <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+            src="Лекция_19_files/mhtF7E9(1).tmp" width=23 height=9> Look for: 
+            вписать pragma, затем в правой части панели обратиться к опции 
+            pack). Опция pack определяет, как компилятор выравнивает данные при 
+            сохранении в памяти.</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_174>Программный код решения примера:</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#pragma pack (show)
+ 
+struct Student
+{
+	char name[21];   // имя, фамилия
+	int age;         // возраст, полных лет
+	char gender;     // пол, мужской, женский
+	double mean;     // средний балл успеваемости
+} st1;
+
+
+#pragma pack (push)
+#pragma pack (1) 
+#pragma pack (show)
+
+
+struct Student_pack
+{
+	char name[21];   // имя, фамилия
+	int age;         // возраст, полных лет
+	char gender;     // пол, мужской, женский
+	double mean;     // средний балл успеваемости
+} st2;
+
+#pragma pack (pop)
+#pragma pack (show)
+
+int main (void)
+{
+	puts("");
+	printf (" sizeof (struct st1) = %d\n", sizeof (st1));
+	printf (" sizeof (struct st2) = %d\n", sizeof (st2));
+
+		printf("\n ... Press any key: ");
+	_getch();
+
+	return 0;
+}</PRE></DIV>
+            <P id=id_176>В программе опция <SPAN 
+            class=texample>pack(show)</SPAN> используется для диагностики 
+            текущей упаковки полей структуры. Опция <SPAN 
+            class=texample>pack(1)</SPAN> используется для выравнивания областей 
+            памяти полей структуры, кратных единице. Опция <SPAN 
+            class=texample>pack(push)</SPAN> используется для "вталкивания" 
+            параметров. Опция <SPAN class=texample>pack(pop)</SPAN> используется 
+            для "выталкивания" параметров.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_181>После компиляции программы можно видеть сообщения, 
+            показанные на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.7">рис. 
+            19.7</A>.</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_182 align=left><A name=image.19.7></A></P>
+            <DIV><IMG alt="Сообщения об упаковке полей структуры " 
+            src="Лекция_19_files/mhtF7FB(1).tmp" width=620 
+            height=448></DIV><BR><B>Рис. 19.7.</B>&nbsp; Сообщения об упаковке 
+            полей структуры 
+            <P></P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_183>Предупреждения (warning) уведомляют о размере упаковки. 
+            Сначала область памяти выделяется под размер в байтах, кратных 8, 
+            затем, кратных 1. После выталкивания параметров снова область памяти 
+            становится кратной 8 – наибольшему типу данных <SPAN 
+            class=texample>double</SPAN> элемента <SPAN 
+            class=texample>mean</SPAN> структуры.</P>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <P id=id_186>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.8">рис. 
+            19.8</A>.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_187 align=left><A name=image.19.8></A></P>
+            <DIV><IMG alt="Пример определения месяца года" 
+            src="Лекция_19_files/mhtF81E(1).tmp" width=620 
+            height=114></DIV><BR><B>Рис. 19.8.</B>&nbsp; Пример определения 
+            месяца года
+            <P></P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188>Как видно, размер первой структуры равно 40 байтов 
+            (кратных 8). Размер второй структуры, для которой произведена 
+            упаковка, равен 34, что соответствует сумме размеров полей 
+            структуры, т. е. 34 = 21 + 4 + 1 + 8.</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_189><B>Примечание</B>. Выравнивание полей структуры можно 
+            выполнить при настройке компилятора в MS Visual Studio 2010. Эта 
+            настройка показана на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\19. Лекция Препроцессор языка С.mht#image.19.9">рис. 
+            19.9</A>.</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_190 align=left><A name=image.19.9></A></P>
+            <DIV><IMG alt="" src="Лекция_19_files/mhtF830(1).tmp" width=620 
+            height=452></DIV><BR><B>Рис. 19.9.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191><B>Задание 6</B></P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <OL id=id_192>
+              <LI>Запишите в двоичные файлы созданные структуры, проведя их 
+              инициализацию. Определите и сравните размеры созданных бинарных 
+              файлов. Произведите также чтение данных из бинарных файлов с 
+              выводом результата на консоль.
+              <LI>В программе для аргумента <SPAN class=texample>pack()</SPAN> 
+              примите 1, 2, 4, 8, 16. Объясните результаты выполнения программы.
+              <LI>Размер массива типа <SPAN class=texample>char</SPAN> примите 
+              равным 31, т. е. <SPAN class=texample>char name[31]</SPAN>. 
+              Объясните результат выполнения программы.
+              <LI>В качестве элементов структуры используйте следующие типы 
+              данных: <SPAN class=texample>float, short int</SPAN>. Объясните 
+              результат выполнения программы.
+              <LI>Используя меню Project <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_19_files/mhtF7E9(1).tmp" width=23 height=9> Properties 
+              (Alt <IMG style="POSITION: relative; DISPLAY: inline; TOP: 2px" 
+              alt=\to src="Лекция_19_files/mhtF7E9(1).tmp" width=23 height=9> 
+              F7), произведите установку параметров закладки Struct Alignment 
+              для всех возможных значений (1 Byte, 2 Bytes, 4 Bytes, 8 Bytes, 16 
+              Bytes). Определите также значение выравнивания полей структуры по 
+              умолчанию (Default).</LI></OL>
+            <DIV id=mark_192 class=lecture_mark></DIV><A name=sect12></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_202>
+              <LI>Какое назначение отводится препроцессору языка <B>С</B>?
+              <LI>Что такое условная компиляция, производимая препроцессором? В 
+              каких целях производится условная компиляция?
+              <LI>Назовите операторы препроцессора. Для чего они используются?
+              <LI>Какие директивы препроцессора используются наиболее часто в 
+              программах, написанных на языке <B>С</B>?
+              <LI>Что такое макроопределение препроцессора? Как оно 
+              реализуется?</LI></OL>
+            <DIV id=mark_202 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_19_files/mhtF6F9(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

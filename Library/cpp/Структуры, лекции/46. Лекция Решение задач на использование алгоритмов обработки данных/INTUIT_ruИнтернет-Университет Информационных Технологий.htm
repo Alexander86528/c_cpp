@@ -1,0 +1,1519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>46. Лекция: Решение задач на использование 
+            алгоритмов обработки данных: версия для печати и PDA</SPAN> 
+            <BR><SPAN class=rtxt>В лекции даются общие рекомендации по решению 
+            задач повышенной сложности, рассматривается примеры программной 
+            реализации задач обработки данных, которые решаются с помощью 
+            алгоритмов сортировок, обходов графа и сжатия данных. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить основные приемы разработки 
+            алгоритмов обработки данных, научиться применять их при решении 
+            задач и учитывать трудоемкость и эффективность используемых 
+            алгоритмов.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Рассмотренные в предыдущих лекциях алгоритмы в основном 
+            относятся к базовым алгоритмам обработки данных и являются 
+            результатом исследований и разработок, проводившихся на протяжении 
+            десятков лет. Они, как и прежде, продолжают играть важную роль во 
+            все расширяющемся использовании в вычислительных процессах. На этих 
+            алгоритмах строится большинство задач повышенной сложности и задач 
+            олимпиадного уровня.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Приведем <B>общую схему решения задач по 
+            программированию</B>.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <OL id=id_4>
+              <LI><SPAN class=xml_em_italic>Чтение условия</SPAN>. Необходимо 
+              внимательно прочесть условие задачи, не пропуская ни одной фразы.
+              <LI><SPAN class=xml_em_italic>Построение математической 
+              модели</SPAN>. Необходимо понять, в чем заключается задача – 
+              построить ее математическую модель (на листке бумаги или образно), 
+              то есть достаточно формально и математически строго понять 
+условие.
+              <LI><SPAN class=xml_em_italic>Построение общей схемы 
+              решения</SPAN>. Теперь следует перейти от понимания того, что 
+              необходимо сделать, к пониманию того, как это сделать, то есть 
+              наметить эффективный алгоритм решения задачи и пути его 
+реализации.
+              <LI><SPAN class=xml_em_italic>Стыковка</SPAN>. Под стыковкой 
+              понимается уточнение решений, принятых на предыдущем этапе. 
+              Необходимо достаточно медленно и тщательно продумать, из каких 
+              частей будет состоять программа, какие массивы и структуры будут 
+              выделены и т.д.
+              <LI><SPAN class=xml_em_italic>Реализация</SPAN>. На этом этапе 
+              собственно пишется сама программа. Иногда предпочтительнее 
+              программирование "сверху вниз", иногда – "снизу вверх" или их 
+              комбинация.
+              <LI><SPAN class=xml_em_italic>Тестирование и отладка</SPAN>. 
+              Добившись того, чтобы программа компилировалась, необходимо 
+              убедиться в ее правильности. Проблемы могут быть в мелких ошибках, 
+              допущенных в процессе написания: перепутанные имена переменных, 
+              неверный знак в формуле и т.д. Решение может быть принципиально 
+              неправильным или неэффективным. Размер массивов может быть 
+              недостаточным или, напротив, чрезмерным, что будет вызывать ошибку 
+              "превышен предел памяти".</LI></OL>
+            <DIV id=mark_4 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Алгоритмы сортировки данных</H3>
+            <P id=id_11>Данную тему следует рассматривать в двух аспектах. 
+            Во-первых, при решении различных задач повышенной сложности данные 
+            довольно часто требуется упорядочить по некоторому признаку (то есть 
+            отсортировать). При этом, если специально не оговорено иное, 
+            считается, что массив требуется отсортировать в порядке неубывания 
+            значений его элементов (для различных элементов – в порядке 
+            возрастания). Во-вторых, задача сама по себе может требовать 
+            построения оптимального в смысле определенных требований или 
+            нестандартного алгоритма сортировки. Помимо этого, специфика задач 
+            повышенной сложности может состоять в формализации критерия, по 
+            которому следует сортировать данные.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Особую роль при выборе метода сортировки играет его 
+            трудоемкость и эффективность. Приведем таблицу, в которой для 
+            известных универсальных алгоритмов сортировки приведены порядки для 
+            количества выполняемых тем или иным алгоритмом в худшем случае 
+            операций сравнения и присваивания.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV id=id_13 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Название сортировки</TH>
+                <TH bgColor=#d8d8d8>Количество сравнений</TH>
+                <TH bgColor=#d8d8d8>Количество присваиваний</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Простой обмен (пузырьковая)</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Прямой выбор</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>O(N)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Простая вставка</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Быстрая</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN> (на практике <SPAN 
+                  class=texample>O(N log N)</SPAN>)</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O(N<SUP>2</SUP>)</SPAN> (на практике <SPAN 
+                  class=texample>O(N log N)</SPAN>)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Слияниями</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>O(N log 
+                  N)</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>O(N log 
+                  N)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Пирамидальная </TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>O(N log 
+                  N)</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>O(N log 
+                  N)</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_28>Таким образом, наилучшую теоретическую оценку имеют два 
+            последних из перечисленных в таблице алгоритмов, однако, в 
+            практическом программировании для упорядочивания данных обычно 
+            используют быструю сортировку, как в силу высокой производительности 
+            (особенно выигрывает данный алгоритм по числу реально выполняемых 
+            присваиваний), так и в силу простой реализации. Тем не менее, в 
+            задачах повышенной сложности данные могут быть представлены так, что 
+            отсортировать за отведенное время их можно будет лишь с помощью 
+            пирамидальной сортировки или какой-либо другой.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29><SPAN class=xml_em_italic>Пример 1. Задача "Поразрядная 
+            сортировка"</SPAN></P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Поразрядная сортировка была изобретена в 1920-х годах 
+            как побочный результат использования сортирующих машин. Такая машина 
+            обрабатывала перфокарты, имевшие по 80 колонок. Каждая колонка 
+            представляла отдельный символ. В колонке было 12 позиций, и в них 
+            для представления того или иного символа пробивались отверстия. 
+            Цифру от 0 до 9 кодировали одним отверстием в соответствующей 
+            позиции (еще две позиции в колонке использовали для кодировки 
+            букв).</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31>Запуская машину, оператор закладывал в ее приемное 
+            устройство стопку перфокарт и задавал номер колонки на перфокартах. 
+            Машина "просматривала" эту колонку на картах и по цифровому значению 
+            0, 1, ..., 9 в ней распределяла ("сортировала") карты на 10 
+            стопок.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>Несколько колонок (разрядов) с закодированными цифрами 
+            представляли натуральное число, т.е. номер. Чтобы получить стопку 
+            карт, упорядоченных по номерам, оператор действовал так. Вначале он 
+            распределял карты на 10 стопок по значению младшем разряде. Эти 
+            стопки в порядке возрастания значений в младшем разряде он складывал 
+            в одну и повторял процесс, но со следующим разрядом, и т.д. Получив 
+            стопки карт, распределенных по значениям в старшем разряде, оператор 
+            складывал их по возрастанию этих значений и получал то, что 
+            нужно.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>Значения в разрядах номеров заданы цифрами, поэтому 
+            поразрядную сортировку еще называют <SPAN 
+            class=xml_em_italic>цифровой</SPAN>. Заметим, что цифры от 0 до 9 
+            упорядочены по возрастанию, поэтому цифровая сортировка располагает 
+            числа в <SPAN class=xml_em_italic>лексикографическом 
+            порядке</SPAN>.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>Пример.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <DIV id=id_35 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Входные данные</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Выходные данные</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>733 877 
+                  323 231 777 721 123</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>123 231 
+                  323 721 733 777 877</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_38><SPAN class=xml_em_italic>Описание решения.</SPAN></P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39>Принцип решения разберем на конкретном примере. Пусть 
+            задана последовательность трехзначных номеров:</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <DIV class=example><PRE>733   877   323   231   777   721   123
+</PRE></DIV>
+            <P id=id_41>Распределим данную последовательность по младшей цифре 
+            на стопки:</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <DIV class=example><PRE>231   721
+733   323   123
+877   777
+</PRE></DIV>
+            <P id=id_43>Далее сложим получившиеся стопки в одну в порядке 
+            возрастания последней цифры.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>231   721  733   323   123  877   777
+</PRE></DIV>
+            <P id=id_45>На следующем шаге номера, которые обрабатываются именно 
+            в этой последовательности, распределяются по второй цифре на 
+            следующие стопки.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>721   323   123
+231   733
+877   777
+</PRE></DIV>
+            <P id=id_47>Затем из них также образуется одна 
+            последовательность.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>721   323   123   231   733   877   777
+</PRE></DIV>
+            <P id=id_49>Обратим внимание, что перед последним шагом все номера с 
+            числом сотен 7, благодаря предыдущим шагам, расположены один 
+            относительно другого по возрастанию.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50>На последнем шаге номера распределяются по старшей цифре 
+            на стопки:</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <DIV class=example><PRE>123
+231
+323
+721   733   777
+877
+</PRE></DIV>
+            <P id=id_52>и образуется окончательная последовательность:</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>123   231   323   721   733   777   877.
+</PRE></DIV>
+            <P id=id_54>Далее приведем код программы.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+const int D = 3;
+const int B = 10;
+
+typedef int T[D];
+typedef T *List;
+
+void SortD(int k);
+void Done();
+void outDigs(int i);
+
+List Data;
+int PFirst[B], PLast[B], *PQNext;
+int first, n, newL, tempL, i, nextI;
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int k;
+  cout &lt;&lt; "Введите количество элементов массива n  ";
+  cin &gt;&gt; n;
+  Data = new T[n];
+  PQNext = new int[n];
+  for ( k = 0 ; k &lt; n ; k++ ){
+    PQNext[k] = k + 1;
+    for ( int r = 0 ; r &lt; D ; r++ )
+      Data[k][r] = 0;
+  }
+  for ( k = 0 ; k &lt; n ; k++ )
+    for ( int r = 0 ; r &lt; D ; r++ )
+      Data[k][r] = rand()%B;
+  first = 0;
+  Done();
+  cout &lt;&lt; endl;
+  for ( k = D - 1 ; k &gt;= 0 ; k-- )
+    SortD(k);
+  Done();
+  cout &lt;&lt; endl;
+  delete [] PQNext;
+  delete [] Data;
+  system("pause");
+  return 0;
+}
+
+// описание функции поразрядной сортировки
+void SortD(int k){
+  for ( tempL = 0 ; tempL &lt; B ; tempL++ ){
+    PFirst[tempL] = n;
+    PLast[tempL] = n;
+  }
+  i = first;
+  while (i != n){
+    tempL = Data[i][k];
+    nextI = PQNext[i];
+    PQNext[i] = n;
+    if ( PFirst[tempL] == n )
+      PFirst[tempL] = i;
+    else PQNext[PLast[tempL]] = i;
+    PLast[tempL] = i;
+    i = nextI;
+  }
+  tempL = 0;
+  while ( tempL &lt; B &amp;&amp; PFirst[tempL] == n )
+    tempL++;
+  first = PFirst[tempL];
+  while ( tempL &lt; B - 1 ){
+    newL = tempL + 1;
+    while ( newL &lt; B &amp;&amp; PFirst[newL] == n )
+      newL++;
+    if ( newL &lt; B )
+      PQNext[PLast[tempL]] = PFirst[newL];
+    tempL = newL;
+  }
+}
+
+/*описание функции вывода элементов в соответсвии со списком индесов в массиве PQNext*/
+void Done(){
+  int i = first;
+  while ( i != n ){
+    outDigs(i);
+    i = PQNext[i];
+  }
+}
+
+/*описание функции вывода элементов из массива Data, индекс которого задан ее аргументом*/
+void outDigs(int i){
+  int j = 0;
+  while ( Data[i][j] == 0 &amp;&amp; j &lt; D )
+    j++;
+  if ( j == D )
+    cout &lt;&lt; 0;
+  else
+    while ( j &lt; D )
+      cout &lt;&lt; Data[i][j++];
+  cout &lt;&lt; "  ";
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect3></A>
+            <H3>Алгоритмы на графах</H3>
+            <P id=id_56>Многие прикладные задачи и задачи повышенной сложности 
+            легко сформулировать в терминах такой структуры данных как граф. Для 
+            ряда подобных задач хорошо изучены эффективные (полиномиальные) 
+            алгоритмы их решения.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_57>Для хранения графа в программе можно применить различные 
+            методы. Самым простым является хранение матрицы смежности, с помощью 
+            которой легко проверить, существует ли в графе ребро, соединяющее 
+            вершину одну с вершиной с другой. Основной же ее недостаток 
+            заключается в том, что матрица смежности требует, чтобы объем памяти 
+            был достаточен для хранения <SPAN 
+            class=texample>N<SUP>2</SUP></SPAN> значений, даже если ребер в 
+            графе существенно меньше, чем <SPAN 
+            class=texample>N<SUP>2</SUP></SPAN>. Это не позволяет построить 
+            алгоритм со временем порядка <SPAN class=texample>O(N)</SPAN> для 
+            графов, имеющих <SPAN class=texample>O(N)</SPAN> ребер.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_62>Данного недостатка лишены такие способы хранения графа, 
+            как одномерный массив длины <SPAN class=texample>N</SPAN> списков 
+            или множеств вершин. В таком массиве каждый элемент соответствует 
+            одной из вершин и содержит список или множество вершин, смежных 
+            ей.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_64>Для реализации некоторых алгоритмов более удобным 
+            является описание графа путем перечисления его ребер. В этом случае 
+            хранить его можно в одномерном массиве длиной <SPAN 
+            class=texample>M</SPAN>, каждый элемент которого содержит запись о 
+            номерах начальной и конечной вершин ребра, а также его весе в случае 
+            взвешенного графа.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_66>При решении многих задач, как для ориентированных, так и 
+            для неориентированных графов, необходим эффективный метод 
+            систематического обхода вершин графа. На практике применяется два 
+            принципиально различных порядка обхода, основанных на поиске в 
+            глубину и поиске в ширину соответственно.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67>Для определения и нахождения длины кратчайшего пути в 
+            графе в основном используют известные алгоритмы, такие как алгоритм 
+            Дейкстры, Флойда и переборные алгоритмы.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_68>Графы широко используются в различных областях науки и 
+            техники для моделирования отношений между объектами. Объекты 
+            соответствуют вершинам графа, а ребра – отношениям между 
+            объектами.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69><SPAN class=xml_em_italic>Пример 2. Задача 
+            "Тетраэдр"</SPAN></P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70>Дано треугольное поле в виде равностороннего 
+            треугольника. Оно разбито на одинаковые равносторонние треугольники 
+            со сторонами в М раз меньшими, чем сторона большого треугольника (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.1">рис. 
+            46.1</A>).</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_71 align=left><A name=image.46.1></A>
+            <DIV><IMG alt="Общий вид треугольного поля" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_01.png" 
+            width=248 height=213></DIV><BR><B>Рис. 46.1.</B>&nbsp; Общий вид 
+            треугольного поля
+            <P></P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72>Маленькие треугольники пронумерованы подряд с верхнего 
+            ряда вниз по рядам, начиная с 0. Числами показаны номера 
+            треугольников. <SPAN class=texample>I</SPAN>-му треугольнику 
+            приписана пометка <SPAN class=texample>P<SUB>i</SUB></SPAN>.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_75>Имеется также тетраэдр (правильная треугольная пирамида) 
+            с ребром, равным длине стороны маленького треугольника. Тетраэдр 
+            установлен на <SPAN class=texample>S</SPAN>-м треугольнике. Все 
+            грани тетраэдра пронумерованы следующим образом:</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <OL id=id_77>
+              <LI>основание тетраэдра;
+              <LI>правая грань тетраэдра, если смотреть сверху тетраэдра в 
+              направлении стороны <SPAN class=texample>АВ</SPAN> перпендикулярно 
+              ей;
+              <LI>левая грань тетраэдра, если смотреть сверху тетраэдра в 
+              направлении стороны <SPAN class=texample>АВ</SPAN> перпендикулярно 
+              ей;
+              <LI>оставшаяся грань.</LI></OL>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_84>Например, при <SPAN class=texample>S=2</SPAN> жирной 
+            линией выделено нижнее ребро третьей грани, а при <SPAN 
+            class=texample>S=3</SPAN> жирной линией выделено нижнее ребро второй 
+            грани. <SPAN class=texample>J</SPAN>-я грань тетраэдра имеет пометку 
+            <SPAN class=texample>R<SUB>j</SUB></SPAN>.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_89>Имеется возможность перекатывать тетраэдр через ребро, 
+            но при каждом перекатывании взимается штраф, равный квадрату 
+            разности между пометками совмещаемой грани тетраэдра и треугольника. 
+            Требуется перекатить тетраэдр с треугольника <SPAN 
+            class=texample>S</SPAN> на <SPAN class=texample>D</SPAN> с 
+            наименьшим суммарным штрафом <SPAN class=texample>(S<IMG 
+            style="POSITION: relative; TOP: 2px" border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/ne.gif" 
+            width=8 height=18>D)</SPAN>.</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_93>Входные данные находятся в текстовом файле <SPAN 
+            class=texample>INPUT.TXT</SPAN>. Первая строка содержит целые числа 
+            <SPAN class=texample>S</SPAN>, <SPAN class=texample>D</SPAN> и <SPAN 
+            class=texample>М (M<IMG style="POSITION: relative; TOP: 2px" 
+            border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+            width=8 height=18>90)</SPAN>. Каждая из следующих <SPAN 
+            class=texample>M<SUP>2</SUP></SPAN> строк содержит пометку 
+            соответствующего треугольника. В последней строке записаны пометки 
+            граней тетраэдра. Пометки (как граней, так и треугольников) – целые 
+            неотрицательные числа, не превосходящие 300. Числа в одной строке 
+            разделены пробелами.</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_99>В выходной файл OUTPUT.TXT должно быть записано одно 
+            число – минимально возможный штраф.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Пример.</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV id=id_101 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Входные данные</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Выходные данные</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>     0 4 3
+         4
+         3
+         8
+       100
+         7
+         3
+         2
+        49
+         9
+7 50 100 8
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>9446
+</PRE></DIV></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_104><SPAN class=xml_em_italic>Описание решения.</SPAN></P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_105>Перейдем к графу следующим образом: вершина – маленький 
+            треугольник. Ребро – наличие возможности перекатить тетраэдр через 
+            ребро из одного треугольника в другой. Тогда, например, поле, 
+            изображенное на <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.2">рис. 
+            46.2</A>, превратится в граф на <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.3">рис. 
+            46.3</A>.</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106 align=left><A name=image.46.2></A>
+            <DIV><IMG alt="Пример треугольного поля" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_02.png" 
+            width=184 height=186></DIV><BR><B>Рис. 46.2.</B>&nbsp; Пример 
+            треугольного поля
+            <P></P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107 align=left><A name=image.46.3></A>
+            <DIV><IMG alt="Начальное положение развертки тетраэдра" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_03.png" 
+            width=149 height=92></DIV><BR><B>Рис. 46.3.</B>&nbsp; Начальное 
+            положение развертки тетраэдра
+            <P></P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>На этом графе требуется найти путь минимальной 
+            стоимости из одной вершины в другую. Поскольку веса ребер в этом 
+            графе зависят от того, какой именно гранью тетраэдр придет на 
+            соответствующий треугольник, то воспользуемся поиском в ширину. Но 
+            прежде проясним процесс перекатывания тетраэдра. В соответствии с 
+            условиями задачи начальное положение развертки тетраэдра показано на 
+            <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.4">рис. 
+            46.4</A>.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109 align=left><A name=image.46.4></A>
+            <DIV><IMG alt="Перекатывание тетраэдра" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_04.png" 
+            width=126 height=129></DIV><BR><B>Рис. 46.4.</B>&nbsp; Перекатывание 
+            тетраэдра
+            <P></P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110>Обозначим его <SPAN class=texample>1u</SPAN> (в 
+            основании грань номер 1, повернутая вверх). Очевидно, что всего 
+            существует 8 возможных различных состояний тетраэдра: <SPAN 
+            class=texample>1u, 2u, Зu, 4u, 1d, 2d, 3d, 4d</SPAN>. На <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.5">рис. 
+            46.5</A> и <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/46/staldata_46.html#image.46.6">рис. 
+            46.6</A> приведены соответствующие развертки:</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_113 align=left><A name=image.46.5></A>
+            <DIV><IMG alt="Развертки перекатывания тетраэдра вверх" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_05.png" 
+            width=562 height=162></DIV><BR><B>Рис. 46.5.</B>&nbsp; Развертки 
+            перекатывания тетраэдра вверх
+            <P></P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114 align=left><A name=image.46.6></A>
+            <DIV><IMG alt="Развертки перекатывания тетраэдра вниз" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/46_06.png" 
+            width=558 height=158></DIV><BR><B>Рис. 46.6.</B>&nbsp; Развертки 
+            перекатывания тетраэдра вниз
+            <P></P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_115>Составим теперь таблицу, отображающую, в какое из 
+            состояний переходит тетраэдр при перекатывании его вниз, вверх, 
+            вправо, влево из текущего состояния.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <DIV id=id_116 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top>Вниз</TD>
+                <TD bgColor=#eaeaea vAlign=top>Вверх</TD>
+                <TD bgColor=#eaeaea vAlign=top>Вправо</TD>
+                <TD bgColor=#eaeaea vAlign=top>Влево</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1u</TD>
+                <TD bgColor=#eaeaea vAlign=top>4d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>3d</TD>
+                <TD bgColor=#eaeaea vAlign=top>2d</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>4u</TD>
+                <TD bgColor=#eaeaea vAlign=top>2u</TD>
+                <TD bgColor=#eaeaea vAlign=top>3u</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2u</TD>
+                <TD bgColor=#eaeaea vAlign=top>3d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>4d</TD>
+                <TD bgColor=#eaeaea vAlign=top>1d</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>3u</TD>
+                <TD bgColor=#eaeaea vAlign=top>1u</TD>
+                <TD bgColor=#eaeaea vAlign=top>4u</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3u</TD>
+                <TD bgColor=#eaeaea vAlign=top>2d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>1d</TD>
+                <TD bgColor=#eaeaea vAlign=top>4d</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>2u</TD>
+                <TD bgColor=#eaeaea vAlign=top>4u</TD>
+                <TD bgColor=#eaeaea vAlign=top>1u</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4u</TD>
+                <TD bgColor=#eaeaea vAlign=top>1d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>2d</TD>
+                <TD bgColor=#eaeaea vAlign=top>3d</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4d</TD>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>1u</TD>
+                <TD bgColor=#eaeaea vAlign=top>3u</TD>
+                <TD bgColor=#eaeaea vAlign=top>2u</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_117>Для удобства использования этой информации введем 
+            следующее кодирование:</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <DIV id=id_118 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>x</TD>
+                <TD bgColor=#eaeaea vAlign=top>1u</TD>
+                <TD bgColor=#eaeaea vAlign=top>1d</TD>
+                <TD bgColor=#eaeaea vAlign=top>2u</TD>
+                <TD bgColor=#eaeaea vAlign=top>2d</TD>
+                <TD bgColor=#eaeaea vAlign=top>3u</TD>
+                <TD bgColor=#eaeaea vAlign=top>3d</TD>
+                <TD bgColor=#eaeaea vAlign=top>4u</TD>
+                <TD bgColor=#eaeaea vAlign=top>4d</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <DIV id=id_119 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Вниз</TD>
+                <TD bgColor=#eaeaea vAlign=top>Вверх</TD>
+                <TD bgColor=#eaeaea vAlign=top>Вправо</TD>
+                <TD bgColor=#eaeaea vAlign=top>Влево</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120>Получаем двумерный массив <SPAN class=texample>Т</SPAN> 
+            (8 строк, 4 столбца), который описывает все возможные перекатывания 
+            тетраэдра.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <DIV id=id_122 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>T</B></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top><B>1</B></TD>
+                <TD bgColor=#eaeaea vAlign=top><B>2</B></TD>
+                <TD bgColor=#eaeaea vAlign=top><B>3</B></TD>
+                <TD bgColor=#eaeaea vAlign=top><B>4</B></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=8></TD>
+                <TD bgColor=#eaeaea vAlign=top><B>1</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>2</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>3</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>4</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>5</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>6</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>7</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><B>8</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_123>Основная идея решения заключается в следующем:</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <OL id=id_124>
+              <LI>заносим в очередь стартовую позицию <SPAN 
+              class=texample>S</SPAN>;
+              <LI>пока очередь не пуста, берем из очереди очередную позицию, 
+              ставим в очередь позиции, в которые тетраэдр может попасть за одно 
+              перекатывание.</LI></OL>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_128>При установке в очередь очередной элемент включает 
+            номер вершины на графе, тип прихода <SPAN 
+            class=texample>(1u...4d)</SPAN>, текущий штраф после перехода в эту 
+            вершину. Элемент не нужно ставить в очередь, если текущий штраф 
+            больше ранее запомненного для этой вершины графа.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_130>Далее приведем код программы.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+void InputData();
+void OutResult();
+void InitGraph();
+void Put(long long v, long long tv, long long cv);
+void Get(long long *v, long long *tv, long long *cv);
+void PutAll(long long v, long long tv, long long cv);
+long long SQR(long long a);
+int MaxM = 10;
+int Table[8][4]  =  {
+          8, 0, 6, 4,
+          0, 7, 3, 5,
+          6, 0, 8, 2,
+          0, 5, 1, 7,
+          4, 0, 2, 8,
+          0, 3, 7, 1,
+          2, 0, 4, 6,
+          0, 1, 5, 3
+          };
+int MaxQ = MaxM * MaxM * MaxM;
+int *p, *cp, *Pw, **g, **Q;
+long long *R;
+long long i, S, D, M, j, a, TS, QBegin, QEnd, V, TV, CV, Last;
+//V – номер вершины
+//TV – тип вершины
+//CV – текущее значение штрафа
+int _tmain(int argc, _TCHAR* argv[]){
+  p = new int[MaxM * MaxM];
+  cp = new int[MaxM * MaxM];
+  Pw = new int[MaxM * MaxM];
+  for (i = 0; i &lt; MaxM * MaxM; i++)
+    p[i] = cp[i] = Pw[i] = 0;
+  g = new int*[MaxM * MaxM];
+  for (i = 0; i &lt; MaxM * MaxM; i++ ){
+    g[i] = new int[4];
+    g[i][0] = g[i][1] = g[i][2] = g[i][3] = 0;
+  }
+  Q = new int*[MaxQ + 1];
+  for (i = 0; i &lt; MaxQ  + 1; i++ ){
+    Q[i] = new int[4];
+    Q[i][0] = Q[i][1] = Q[i][2] = Q[i][3] = Q[i][4] = 0;
+  }
+  R = new long long[5];
+  R[0] = R[1] = R[2] = R[3] = R[4] = 0;
+  InputData();
+  InitGraph();
+  QEnd = 0;
+  QBegin = 1;
+  Put(S,TS,0);
+  while (QBegin &lt;= QEnd){
+    Get(&amp;V,&amp;TV,&amp;CV);
+    PutAll(V,TV,CV);
+  }
+  OutResult();
+  system("pause");
+  return 0;
+}
+//описание функции ввода исходных данных
+void InputData(){
+  FILE *f;
+  f = fopen("input.txt","r");
+  fscanf(f,"%d %d %d",&amp;S,&amp;D,&amp;M);
+  for ( i = 0; i &lt; M * M; i++ )
+    fscanf(f,"%d",p + i);
+  for ( i = 1; i &lt; 5; i++ )
+    fscanf(f,"%d",R + i);
+  fclose(f);
+}
+//описание функции вывода результата
+void OutResult(){
+  FILE *f;
+  f = fopen("output.txt","w");
+  fprintf(f,"%d",cp[D]);
+  fclose(f);
+}
+//описание функции создания графа по исходным данным
+void InitGraph(){
+  Pw[0] = 1;
+  g[0][1] = 2;
+  for ( i = 1; i &lt; M; i++)
+    for ( j = i * i; j &lt; (i + 1) * (i + 1) - 1; j++){
+      g[j][++Pw[j]] = j + 1;
+      g[j + 1][++Pw[j + 1]] = j;
+    }
+  a = 4;
+  TS = 1;
+  for ( i = 1; i &lt; M - 1; i++){
+    for ( j = i * i; j &lt; (i + 1) * (i + 1); j += 2){
+      g[j][++Pw[j]] = j + a;
+      g[j + a][++Pw[j + a]] = j;
+      if ( S == j ) TS = 2;
+    }
+    a += 2;
+  }
+  for ( i = 0; i &lt; M * M; i++)
+    cp[i] = INT_MAX;
+}
+//описание функции постановки в очередь одной вершины графа
+void Put(long long v, long long tv, long long cv){
+  QEnd++;
+  Q[QEnd][1] = v;
+  Q[QEnd][2] = tv;
+  Q[QEnd][3] = cv;
+  cp[v] = cv;
+}
+//описание функции взятия из очереди очередной вершины графа
+void Get(long long *v, long long *tv, long long *cv){
+  *v = Q[QBegin][1];
+  *tv = Q[QBegin][2];
+  *cv = Q[QBegin][3];
+  QBegin++;
+}
+/*описание функции постановки в очередь всех вершин, смежных с текущей*/
+void PutAll(long long v, long long tv, long long cv){
+  long nv, ntv, ncv, Dir, Base;
+  for ( i = 1 ; i &lt;= Pw[v]; i++ ){
+    nv = g[v][i];
+    if ( nv == v + 1 )
+      Dir = 2;
+    else if ( nv == v - 1 )
+      Dir = 3;
+    else if ( nv &gt; v )
+      Dir = 0;
+    else Dir = 1;
+    ntv = Table[tv-1][Dir];
+    Base = (ntv + 1) / 2;
+    if ( Base &gt; 0 ) {
+      ncv =  cv + SQR(p[nv] - R[Base]);
+      if ( ncv &lt; cp[nv] )
+        Put(nv,ntv,ncv);
+    }
+  }
+}
+//описание функции возведения в квадрат
+long long SQR(long long a){
+  return a*a;
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect4></A>
+            <H3>Алгоритмы сжатия данных</H3>
+            <P id=id_132>Характерной особенностью большинства типов данных 
+            является их избыточность. Степень избыточности данных зависит от 
+            типа данных. Например, для видеоданных степень избыточности в 
+            несколько раз больше, чем для графических данных, а степень 
+            избыточности графических данных, в свою очередь, больше чем степень 
+            избыточности текстовых данных. Другим фактором, влияющим на степень 
+            избыточности, является принятая система кодирования.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133>Существует много разных практических методов сжатия без 
+            потери информации, которые, как правило, имеют разную эффективность 
+            для разных типов данных и разных объемов. Однако в основе этих 
+            методов лежат три теоретических алгоритма:</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <UL id=id_134>
+              <LI>алгоритм RLE (Run Length Encoding);
+              <LI>алгоритмы группы KWE (Key Word Encoding);
+              <LI>алгоритм Хаффмана.</LI></UL>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_138><SPAN class=xml_em_italic>Пример 3. Задача "Энтропийное 
+            кодирование"</SPAN></P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_139>Энтропийное кодирование – это метод кодирования данных, 
+            который обеспечивает компрессию данных за счет удаления избыточной 
+            информации. Например, английский текст, закодированный с помощью 
+            таблицы ASCII, является примером сообщения с высокой энтропией. В 
+            тоже время сжатые сообщения, например zip-архивы, имеют очень 
+            маленькую энтропию, и потому попытки их энтропийного кодирования не 
+            принесут пользы.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140>Английский текст, закодированный с помощью ASCII, имеет 
+            высокую степень энтропии, потому что для кодирования всех символов 
+            используется одно и тоже количество битов – восемь. В то же время 
+            известный факт состоит в том, что буквы <SPAN class=texample>E, L, 
+            N, R, S</SPAN> и <SPAN class=texample>T</SPAN> встречаются со 
+            значительно более высокой частотой, чем другие буквы английского 
+            алфавита. Если найдется способ закодировать только эти буквы 
+            четырьмя битами, то закодированный текст станет существенно меньше и 
+            при этом будет содержать всю исходную информацию и иметь меньшую 
+            энтропию. Однако, как различить при декодировании, четырьмя или 
+            восемью битами закодирован очередной символ? Эта проблема решается с 
+            помощью префиксного кодирования.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_143>В такой схеме кодирования любое количество битов может 
+            быть использовано для конкретного символа. Однако для того, чтобы 
+            иметь возможность восстановить информацию, запрещено, чтобы 
+            последовательность битов, кодирующая некоторый символ, была 
+            префиксом битовой последовательности, используемой для кодирования 
+            любого другого символа. Это позволяет читать входную 
+            последовательность бит за битом, и как только встречено обозначение 
+            символа – его декодировать.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_144>Рассмотрим текст <SPAN class=texample>AAAAABCD</SPAN>. 
+            Кодирование, использующее ASCII, требует 64 бита. Если же символ 
+            <SPAN class=texample>А</SPAN> будет кодироваться битовой 
+            последовательностью <SPAN class=texample>00</SPAN>, символ <SPAN 
+            class=texample>В</SPAN> – последовательностью <SPAN 
+            class=texample>01</SPAN>, символ <SPAN class=texample>С</SPAN> – 
+            последовательностью <SPAN class=texample>10</SPAN>, a <SPAN 
+            class=texample>D</SPAN> – последовательностью <SPAN 
+            class=texample>11</SPAN>, то для кодирования потребуется всего 16 
+            битов. Результирующий поток битов будет такой: <SPAN 
+            class=texample>0000000000011011</SPAN>.</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_155>Но это все еще кодирование с фиксированной длиной, 
+            здесь просто использовались для каждого символа два бита вместо 
+            восьми.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156>Символ <SPAN class=texample>А</SPAN> встречается чаще, 
+            тогда будем его кодировать с помощью меньшего количества битов. 
+            Следовательно, закодируем символы такими последовательностями 
+            битов:</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <DIV class=example><PRE>А – 0
+В –10
+С – 110
+D – 111
+</PRE></DIV>
+            <P id=id_159>Используя такое кодирование, получим только 13 битов в 
+            закодированном сообщении: <SPAN class=texample>0000010110111</SPAN>. 
+            Коэффициент сжатия в этом случае равен 4,9 к 1. Это означает, что 
+            каждый бит в последнем закодированном сообщении содержит столько же 
+            информации, сколько и 4,9 бит в первом закодированном сообщении (с 
+            помощью ASCII).</P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_161>Попробуйте читать сообщение <SPAN 
+            class=texample>0000010110111</SPAN> слева направо – и убедитесь, что 
+            "префиксное" кодирование обеспечивает простое декодирование текста, 
+            даже несмотря на то, что символы кодируются различным количеством 
+            битов.</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_163>В качестве другого примера рассмотрим текст <SPAN 
+            class=texample>THE CAT IN THE HAT</SPAN>.</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_165>В этом тексте символы <SPAN class=texample>Т</SPAN> и 
+            пробел встречаются чаще других. Поэтому их нужно кодировать меньшим 
+            количеством битов. А символы <SPAN class=texample>C</SPAN>, <SPAN 
+            class=texample>I</SPAN> и <SPAN class=texample>N</SPAN> встречаются 
+            только по одному разу, потому будут кодироваться самыми длинными 
+            кодами. Например, так:</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <DIV class=example><PRE>пробел – 00
+А – 100
+С – 1110
+Е – 1111
+Н – 110
+I – 1010
+N – 1011
+Т – 01
+</PRE></DIV>
+            <P id=id_171>При таком кодировании исходного предложения потребуется 
+            только 51 бит против 144, которые необходимы, чтобы закодировать 
+            исходное сообщение с помощью 8-битного ASCII-кодирования. 
+            Коэффициент сжатия равен 2,8 к 1.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_172>Входной файл будет содержать список текстовых 
+            сообщений, по одному в строке. Сообщения будут состоять только из 
+            больших английских букв, цифр и символов подчеркивания (вместо 
+            пробелов). Конец файла обозначается строкой END. Эту строку не нужно 
+            обрабатывать.</P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <P id=id_173>В выходном файле будет содержаться для каждого входного 
+            сообщения количество битов в восьмибитовом ASCII-кодировании, 
+            количество битов при оптимальном префиксном кодировании и 
+            коэффициент сжатия с точность до одного знака после десятичной 
+            точки.</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_174>Пример.</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <DIV id=id_175 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Входные данные</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=xml_em_italic>Выходные данные</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>AAAAABCD
+THE_CAT_IN_THE_HAT
+END
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>64 13 4.9
+144 51 2.8
+</PRE></DIV></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_178><SPAN class=xml_em_italic>Описание решения.</SPAN></P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179>В данной задаче проведем кодирование текста алгоритмом 
+            Хаффмана. Отличиями являются представление входных и выходных 
+            данных. Каждую входную строку нужно кодировать по отдельности. 
+            Строка "END" обозначает конец ввода, ее кодировать не нужно.</P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>На выходе нужно указать три числа:</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <OL id=id_181>
+              <LI>длину сообщения в битах при стандартном восьмибитовом 
+              кодировании;
+              <LI>длину сообщения в битах при выполненном оптимальном 
+              кодировании;
+              <LI>коэффициент сжатия.</LI></OL>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_185>Приведем программную реализацию данной задачи.</P>
+            <DIV id=mark_185 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+void InputData(FILE *f);
+long MinK();
+void SumUp(FILE *f);
+void BuildBits();
+void OutputData(FILE *f);
+void Create();
+void Clear();
+void Destroy();
+
+int MaxK = 1000;
+long *k, *a, *b;
+char **bits;
+char *sk;
+bool *Free;
+char **res;
+long i, j, n, m, kj, kk1, kk2;
+char str[256];
+int _tmain(int argc, _TCHAR* argv[]){
+  FILE *in, *out;
+  in = fopen("input.txt","r");
+  out = fopen("output.txt","w");
+  while ( !feof(in) ) {
+    Create();
+    Clear();
+    InputData(in);
+    cout &lt;&lt; str &lt;&lt; endl;
+    SumUp(out);
+    if (kj != 1) BuildBits();
+    if (kj != 1) OutputData(out);
+    Destroy();
+  }
+  fclose(out);
+  fclose(in);
+  
+  return 0;
+}
+//описание функции выделения памяти
+void Create(){
+  if ( (k = new long[MaxK + 1]) == NULL ){
+    printf ("Memory for k no!\n");
+    system("pause");
+    exit(0);
+  }
+  if ( (a = new long[MaxK + 1]) == NULL ){
+    printf ("Memory for a no!\n");
+    system("pause");
+    exit(0);
+  }
+  if ( (b = new long[MaxK + 1]) == NULL ){
+    printf ("Memory for b no!\n");
+    system("pause");
+    exit(0);
+  }
+  if ( (bits = new char*[MaxK + 1]) == NULL ){
+    printf ("Memory for bits no!\n");
+    system("pause");
+    exit(0);
+  }
+  for (i = 0; i &lt; MaxK + 1 ; i++)
+    if ( (bits[i] = new char[40]) == NULL ){
+      printf ("Memory for bits[%d] no!\n",i);
+      system("pause");
+      exit(0);
+    }
+  if ( (sk = new char[MaxK + 1]) == NULL ){
+    printf ("Memory for sk no!\n");
+    system("pause");
+    exit(0);
+  }
+  if ( (Free = new bool[MaxK + 1]) == NULL ){
+    printf ("Memory for Free no!\n");
+    system("pause");
+    exit(0);
+  }
+  if ( (res = new char*[256]) == NULL ){
+    printf ("Memory for res no!\n");
+    system("pause");
+    exit(0);
+  }
+  for (int i = 0; i &lt; 256 ; i++)
+    if ( (res[i] = new char[40]) == NULL ){
+    printf ("Memory for res[%d] no!\n",i);
+    system("pause");
+    exit(0);
+  }
+}
+//описание функции обнуления данных в массивах
+void Clear(){
+  for (i = 0; i &lt; MaxK + 1; i++){
+    k[i] = a[i] = b[i] = 0;
+    sk[i] = 0;
+    Free[i] = true;
+    for (j = 0; j &lt; 40; j++)
+      bits[i][j] = 0;
+  }
+  for (i = 0; i &lt; 256 ; i++)
+    for (j = 0; j &lt; 40; j++)
+      res[i][j] = 0;
+}
+//описание функции освобождения памяти
+void Destroy(){
+  delete [] res;
+  delete [] Free;
+  delete [] sk;
+  delete [] bits;
+  delete [] b;
+  delete [] a;
+  delete [] k;
+}
+//описание функции ввода данных
+void InputData(FILE *f){
+  char c;
+  long *s = new long[256];
+  for ( i = 0; i &lt; 256; i++)
+    s[i] = 0;
+  fscanf(f,"%s", str);
+  if (strcmp(str,"END") == 0) {
+    system("pause");
+    exit(0);
+  }
+  for ( n = 0; n &lt; strlen(str); n++ ){
+    c = str[n];
+    s[c]++;
+  }
+  j = 0;
+  for ( i = 0; i &lt; 256; i++)
+    if ( s[i] != 0 ){
+      j++;
+      k[j] = s[i];
+      sk[j] = i;
+    }
+  kj = j;
+}
+/*описание функции нахождения минимальной частоты символа в исходном тексте*/
+long MinK(){
+  long min;
+  i = 1;
+  while ( !Free[i] &amp;&amp; i &lt; MaxK) i++;
+  min = k[i];
+  m = i;
+  for ( i = m + 1; i &lt;= kk2; i++ )
+    if ( Free[i] &amp;&amp; k[i] &lt; min ){
+      min = k[i];
+      m = i;
+    }
+  Free[m] = false;
+  return min;
+}
+//описание функции посчета суммарной частоты символов
+void SumUp(FILE *f){
+  long s1, s2, m1, m2;
+  if ( kj == 1 ){
+    fprintf(f,"%d %d %.1f\n",8*strlen(str),strlen(str),8);
+    return;
+  }
+  for ( i = 1; i &lt;= kj; i++ ){
+    Free[i] = true;
+    a[i] = 0;
+    b[i] = 0;
+  }
+  kk1 = kk2 = kj;
+  while (kk1 &gt; 2){
+    s1 = MinK();
+    m1 = m;
+    s2 = MinK();
+    m2 = m;
+    kk2++;
+    k[kk2] = s1 + s2;
+    a[kk2] = m1;
+    b[kk2] = m2;
+    Free[kk2] = true;
+    kk1--;
+  }
+}
+//описание функции формирования префиксных кодов
+void BuildBits(){
+  bits[kk2] = "1";
+  Free[kk2] = false;
+  strcpy(bits[a[kk2]],bits[kk2]);
+  strcat( bits[a[kk2]] , "0");
+  strcpy(bits[b[kk2]],bits[kk2]);
+  strcat( bits[b[kk2]] , "1");
+  i = MinK();
+  bits[m] = "0";
+  Free[m] = true;
+  strcpy(bits[a[m]],bits[m]);
+  strcat( bits[a[m]] , "0");
+  strcpy(bits[b[m]],bits[m]);
+  strcat( bits[b[m]] , "1");
+  for ( i = kk2 - 1; i &gt; 0; i-- )
+    if ( !Free[i] ) {
+      strcpy(bits[a[i]],bits[i]);
+      strcat( bits[a[i]] , "0");
+      strcpy(bits[b[i]],bits[i]);
+      strcat( bits[b[i]] , "1");
+    }
+}
+//описание функции вывода данных
+void OutputData(FILE *f){
+  long b8, bh;
+  for ( i = 1; i &lt;= kj; i++ )
+    res[sk[i]] = bits[i];
+  b8 = 8 * strlen(str);
+  bh = 0;
+  for (i = 0; i &lt; strlen(str); i++)
+    bh += strlen(res[str[i]]);
+  double k = b8 * 1.0 / bh;
+  fprintf(f,"%d %d %.1f\n",b8,bh,k);
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect5></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_187><B>Цифровая (поразрядная) сортировка</B> – это 
+            упорядочивание данных по ключу, которое выполняется отдельно с 
+            каждым разрядом с последующим объединением результатов.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188><B>Энтропийное кодирование</B> – это метод кодирования 
+            данных, который обеспечивает компрессию данных за счет удаления 
+            избыточной информации.</P>
+            <DIV id=mark_188 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_189>
+              <LI>При решении задач повышенной сложности рекомендовано 
+              придерживаться общей схемы решения задач по программированию.
+              <LI>При решении различных задач повышенной сложности данные часто 
+              требуется упорядочить по некоторому признаку, а задача может 
+              требовать построения оптимального в смысле определенных требований 
+              или нестандартного алгоритма сортировки.
+              <LI>Многие прикладные задачи и задачи повышенной сложности удобно 
+              сформулировать в терминах такой структуры данных как граф.
+              <LI>Существует много разных практических методов сжатия без потери 
+              информации, которые имеют разную эффективность для разных типов 
+              данных и разных объемов.</LI></OL>
+            <DIV id=mark_189 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Лабораторная работа 46. Решение задач на использование 
+            алгоритмов обработки данных</H3>
+            <P id=id_194><B>Цель работы:</B> изучить основные приемы разработки 
+            алгоритмов обработки данных, научиться применять их при решении 
+            задач и учитывать трудоемкость и эффективность используемых 
+            алгоритмов.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <P id=id_195>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая используется для 
+            достижения основной цели работы – научиться применять изученные 
+            алгоритмы обработки данных при решении задач и проводить анализ 
+            алгоритмов в соответствии с их функцией трудоемкости. При выполнении 
+            работы возможно использование программных кодов к ранее оформленным 
+            лабораторным работам. Ввод данных осуществляется из файлов с учетом 
+            требований к входным данным, содержащихся в постановке каждой 
+            задачи. Ограничениями на входные данные является максимальный размер 
+            строковых данных и диапазоны числовых типов в языке С++.</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_196><B>Теоретические сведения.</B></P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <P id=id_197>Ознакомьтесь с материалом лекции 46.</P>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_198><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_199>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <OL id=id_200>
+              <LI>Реализуйте коды программ, приведенные в лекции 46. 
+              Откомпилируйте и протестируйте полученные коды.
+              <LI><SPAN class=xml_em_italic>Латинским квадратом</SPAN> порядка 
+              <SPAN class=texample>n</SPAN> называют квадратную матрицу размером 
+              <SPAN class=texample>n&#215;n</SPAN>, элементы которой принадлежат 
+              множеству <SPAN class=texample>M={1,2,...,n}</SPAN>, причем каждое 
+              число из <SPAN class=texample>M</SPAN> встречается ровно один раз 
+              в каждой строке и в каждом столбце. Напишите рекурсивную функцию, 
+              которая при заданном натуральном <SPAN class=texample>n</SPAN> 
+              методом перебора с возвратом подсчитывает количество латинских 
+              квадратов
+              <LI>Имеется <SPAN class=texample>N</SPAN> кубиков разной массы, у 
+              которых грани раскрашены в разные цвета. Необходимо построить 
+              максимально высокую башню из таких кубиков, чтобы выполнялись 
+              требования: 
+              <UL id=id_210>
+                <LI>нельзя класть тяжелый кубик на более легкий;
+                <LI>цвета соприкасающихся граней кубиков должны быть одного 
+                цвета.</LI></UL>
+              <DIV id=mark_210 class=lecture_mark></DIV>Входные данные: первая 
+              строка файла содержит число <SPAN class=texample>N 
+              (1&lt;N&lt;500)</SPAN>. Следующие <SPAN class=texample>i</SPAN> 
+              строк содержат информацию о цветах граней каждого кубика в таком 
+              порядке: передняя, задняя, левая, правая, верхняя, нижняя (цвета 
+              описываются целыми числами от 1 до 100). Считается, что кубики 
+              вводятся в порядке увеличения масс. 
+              <P id=id_215>Выходные данные: высота башни, перечень куликов с их 
+              порядковым номерами из входных данных с указанием вида верхней 
+              грани в башне.</P>
+              <DIV id=mark_215 class=lecture_mark></DIV>
+              <P id=id_216><SPAN class=xml_em_italic>Пример входного 
+              файла:</SPAN></P>
+              <DIV id=mark_216 class=lecture_mark></DIV>
+              <DIV class=example><PRE>10
+1 5 10 3 6 5 
+2 6 7 3 6 9 
+5 7 3 2 1 9
+1 3 3 5 8 10
+6 6 2 2 4 4 
+1 2 3 4 5 6
+10 9 8 7 6 5 
+6 1 2 3 4 7
+1 2 3 3 2 1
+3 2 1 1 2 3 
+</PRE></DIV>
+              <P id=id_218><SPAN class=xml_em_italic>Пример выходного 
+              файла:</SPAN></P>
+              <DIV id=mark_218 class=lecture_mark></DIV>
+              <DIV class=example><PRE>8
+1 bottom
+2 back
+3 right
+4 left
+6 top
+8 front
+9 front
+10' top
+</PRE></DIV></LI></OL>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_220><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_220 class=lecture_mark></DIV>
+            <P id=id_221>Лабораторная работа носит одновременно практический и 
+            исследовательский характер, поэтому для ее выполнения сначала 
+            необходимо изучить материал <A 
+            href="http://www.intuit.ru/department/algorithms/staldata/33/">лекции 
+            33</A>, обратив внимание на приведенные примеры и их описание. 
+            Каждое задание необходимо решить в соответствии с изученными в 
+            предыдущих лабораторных работах алгоритмами обработки данных в языке 
+            С++. Программу для решения каждого задания необходимо разработать 
+            методом процедурной абстракции, используя функции. Этапы решения 
+            сопроводить комментариями в коде. В отчете следует отразить 
+            разработку и обоснование математической модели решения задачи. 
+            Результаты тестирования программ необходимо провести в соответствии 
+            приведенными примерами входных и выходных файлов к задачам (как 
+            дополнение допустимы и собственные примеры тестовых данных). В 
+            выводе к отчету необходимо сформулировать результаты проведения 
+            анализа трудоемкости алгоритмов, сделать выводы о принадлежности 
+            каждого алгоритма к определенному классу сложности с обоснованием 
+            результата.</P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_222>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <UL id=id_223>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <P id=id_232><B>Требования к отчету.</B></P>
+            <DIV id=mark_232 class=lecture_mark></DIV>
+            <P id=id_233>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_233 class=lecture_mark></DIV>
+            <UL id=id_234>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_234 class=lecture_mark></DIV>
+            <P id=id_243><B>Контрольные вопросы</B></P>
+            <DIV id=mark_243 class=lecture_mark></DIV>
+            <OL id=id_244>
+              <LI>На каком этапе общей схемы решения задач по программированию 
+              следует определиться с моделью представления данных?
+              <LI>В чем заключается преимущества поразрядной сортировки по 
+              отношению к быстрым сортировкам?
+              <LI>Приведите пример данных, при сортировке которых поразрядная 
+              сортировка трудоемка по времени. Ответ обоснуйте.
+              <LI>Приведите другую модель представления данных в задаче о 
+              перекатывании тетраэдра.
+              <LI>На чем основана однозначность представления данных при 
+              шифровании в энтропийном кодировании?</LI></OL>
+            <DIV id=mark_244 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

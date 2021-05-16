@@ -1,0 +1,825 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/15/staldata_15.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>15. Лекция: Структуры: версия для печати и 
+            PDA</SPAN> <BR><SPAN class=rtxt>В лекции рассматриваются 
+            определения, способы объявления, инициализация структур, методы 
+            доступа к данным структуры, размещение структур и определение их 
+            размера в памяти, массивы структур. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятия, оформления и 
+            определения структур, доступа к элементам структур, научиться решать 
+            задачи с использованием структур на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>В языке С++ возможно формирование производных 
+            (пользовательских) типов данных прежде всего на основе массивов, 
+            структур и объединений. Комбинирование этих типов данных позволяет 
+            программно моделировать достаточно сложные объекты реальности.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><SPAN class=xml_em_italic>Агрегатным типом данных</SPAN> 
+            называется тип, конструируемый из элементов независимых (возможно 
+            различных) типов.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4><B>Структура</B> – это составной объект, в который входят 
+            элементы любых типов, за исключением функций. В отличие от массива, 
+            который является однородным объектом (все элементы относятся к 
+            одному типу данных), структура может быть неоднородной. Таким 
+            образом, структура – это тип данных, сформированный из объектов 
+            однородных либо разнообразных типов данных.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Структуру можно представить себе как запись, состоящую из 
+            нескольких полей или элементов. Структуры обеспечивают удобный 
+            способ организации связанных по смыслу переменных. Структуры 
+            являются одновременно агрегатным и производным типом данных.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6>В некоторых языках программирования, в частности в 
+            Pascal, структуры называются записями. Структуры помогают в 
+            организации сложных данных (особенно в больших программах), 
+            поскольку позволяют группу связанных между собой переменных 
+            трактовать не как множество отдельных элементов, а как единое 
+            целое.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7>Традиционный пример структуры – строка платежной 
+            ведомости. Она содержит такие сведения о служащем, как его полное 
+            имя, адрес, номер карточки социального страхования, зарплата и т.д. 
+            Некоторые из этих характеристик сами могут быть структурами: 
+            например, полное имя состоит из нескольких компонент (фамилии, имени 
+            и отчества); аналогично адрес и даже зарплата. Другой пример – из 
+            области графики: точка на плоскости есть пара вещественных 
+            координат, шар в пространстве моделируется четырьмя вещественными 
+            числами и т. д.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Объявление структур и определение структурных объектов</H3>
+            <P id=id_8>Использование в программе структуры предполагает вначале 
+            определение (объявление) структуры-шаблона (типа структуры) и его 
+            структурного объекта (структурной переменной). Возможны их 
+            раздельное и совместное определения. Для шаблона структуры (с именем 
+            или без него) компилятор не выделяет в памяти компьютера место под 
+            структуру, а лишь фиксирует правила, необходимые для формирования 
+            структурного объекта (структурной переменной).</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>В момент определения структурного объекта компилятор 
+            выделяет место в памяти, где размещаются все компоненты структуры в 
+            соответствии с заданным шаблоном.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10>Ключевое слово <SPAN class=texample>struct</SPAN> 
+            сообщает компилятору об объявлении структуры. Допустимы три основные 
+            формы объявления структур.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_12><SPAN class=xml_em_italic>1) С поименованным 
+            шаблоном:</SPAN></P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct ИмяСтруктурногоТипа {ОпределенияЭлементов};
+</PRE></DIV>
+            <P id=id_14>где <SPAN class=texample>ИмяСтруктурногоТипа</SPAN> – 
+            идентификатор типа структуры. Следует обратить внимание на точку с 
+            запятой, которой заканчивается определяемая структура;</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_16><SPAN class=texample>ОпределенияЭлементов</SPAN> – 
+            список определений типизированных компонентов (полей), из которых 
+            образуется шаблон структуры. Он в общем случае представляется 
+            так:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Тип1 Компонент11 [,Компонент12,...];
+...................................
+ТипК КомпонентК1 [,КомпонентК2,...];
+</PRE></DIV>
+            <P id=id_19>Здесь допустимы компоненты различных типов. Все имена 
+            компонентов уникальны. Шаблон имеет видимость. Если он объявлен 
+            внутри блока, то это локальный шаблон, видимый только внутри 
+            него.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Например:</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct STUDENT {
+                char name[50]; //Ф.И.О
+                int passw; //шифр зачетной книжки
+               }; 
+</PRE></DIV>
+            <P id=id_22>При указанной форме объявления структуры структурные 
+            объекты определяются ниже в виде отдельной строки:</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяСтруктурногоТипа СписокСтруктур;
+</PRE></DIV>
+            <P id=id_24>где <SPAN class=texample>СписокСтруктур</SPAN> – список 
+            идентификаторов, соответствующих именам структурных объектов.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_26>Структурные объекты можно определить так:</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <DIV class=example><PRE>STUDENT group0l, group02, //структурные объекты
+        *univers, //указатель на структурный объект
+        fam[100]; //массив структурных объектов
+</PRE></DIV>
+            <P id=id_28>При определении структурного объекта (структурной 
+            переменной) <SPAN class=texample>СтруктурныйОбъект</SPAN> допустима 
+            инициализация его компонентов (полей):</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct ИмяСтруктурногоТипа СтруктурныйОбъект = {Инициализатор1,
+                                               Инициализатор2,
+                                               ..............
+                                               ИнициализаторK
+                                              };
+</PRE></DIV>
+            <P id=id_31>Для вышеприведённого примера возможно следующее:</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct STUDENT group0l = {
+                          "Сидоров ", 
+                          6374268 
+                         }; 
+</PRE></DIV>
+            <P id=id_33><SPAN class=xml_em_italic>2) С совмещением определения 
+            структуры и структурных объектов:</SPAN></P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct ИмяСтруктурногоТипа {ОпределенияЭлементов} 
+       СписокСтруктур; 
+</PRE></DIV>
+            <P id=id_35>Структурный объект при такой схеме определения может 
+            быть также инициализирован.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_36>Например, структура типа <SPAN 
+            class=texample>STUDENT</SPAN> с элементами ФИО и номером зачётной 
+            книжки:</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct STUDENT {
+                char name[50]; 
+                int passw;
+               } *univers,//указатель на структурный объект
+                 fam[100],//массив структурных объектов 
+                 group0l = {"Сидоров А.И.", 26276};
+                           //инициализированный объект 
+</PRE></DIV>
+            <P id=id_39>При рассматриваемом подходе <SPAN 
+            class=texample>ИмяСтруктурногоТипа (STUDENT)</SPAN> можно 
+            опустить.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_41>В пределах программы допустим один непоименованный тип 
+            структуры.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_42><SPAN class=xml_em_italic>3) С использованием 
+            оператора</SPAN> <SPAN class=texample>typedef</SPAN>:</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <DIV class=example><PRE>typedef struct [ИмяСтруктурногоТипа] 
+               {ОпределенияЭлементов} 
+               ОбозначениеСтруктурногоТипа;
+</PRE></DIV>
+            <P id=id_45>где <SPAN 
+            class=texample>ОбозначениеСтруктурногоТипа</SPAN> – синонимы типа 
+            структуры. Это упрощает программу при определении структурных 
+            объектов. Кроме того, в упрощённом определении имя типа структуры 
+            можно опустить.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_47>Например:</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>typedef struct {
+                char name[50];
+                int passw;
+               } NSTUstudent; 
+                 //NSTUstudent - псевдоним типа структуры 
+</PRE></DIV>
+            <P id=id_49>Определение структурного объекта для данного случая 
+            можно организовать так:</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>NSTUstudent *pt, //указатель на структуру
+groupStudent; //структурная переменная 
+</PRE></DIV>
+            <P id=id_51>Здесь также допускается инициализация определяемых 
+            структурных объектов.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52>Можно определить структуру с использованием 
+            макроопределения:</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define Идентификатор struct ИмяТипа
+</PRE></DIV>
+            <P id=id_54>Далее следует</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Идентификатор {ОпределенияЭлементов}; 
+</PRE></DIV>
+            <P id=id_56>Например:</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define COMPLEX struct R7 
+COMPLEX {
+         float real;
+         float imag;
+        }; 
+</PRE></DIV><A name=sect3></A>
+            <H3>Инициализация структуры</H3>
+            <P id=id_58>Инициализация структуры заключается в присваивании 
+            начальных значений элементам структуры. Структуры могут быть 
+            проинициализированы при их объявлении.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59><SPAN class=xml_em_italic>Инициализирующая запись</SPAN> 
+            – это заключенный в фигурные скобки список, элементы которого 
+            разделяются запятыми и являются константами. Любые 
+            неинициализированные элементы внешних или статических структур по 
+            умолчанию равны 0. Значения неинициализированных элементов 
+            автоматических структур не определены.</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>Для инициализации структур значения ее полей 
+            перечисляются в фигурных скобках.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_61>Например:</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62><SPAN class=xml_em_italic>Первый способ</SPAN></P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct Student {
+                char name[20];
+                int kurs;
+                float rating;
+               };
+Student s={"Королев",1,3.5};
+</PRE></DIV>
+            <P id=id_64><SPAN class=xml_em_italic>Второй способ</SPAN></P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct {
+        char name[20];
+        char title[30];
+        float rate;
+       } employee={"Петров", "программист",58000};
+</PRE></DIV>
+            <P id=id_66>В соответствии с синтаксисом языка компонентами структур 
+            могут быть данные любых типов, за исключением функций и структур 
+            того же типа, что и определяемый тип. Элементом структуры может быть 
+            структура, тип которой уже определен.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67>Например:</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <DIV class=example><PRE>stuct mix {int N; double *d;}
+struct hole {
+             struct mix exit;
+             float b;
+            }
+</PRE></DIV><A name=sect4></A>
+            <H3>Присваивание структур</H3>
+            <P id=id_69>Для переменных одного и того же структурного типа 
+            определена операция присваивания. При этом происходит поэлементное 
+            копирование.</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Student t=s;
+</PRE></DIV>
+            <P id=id_71>Информация, содержащаяся в одной структуре, может быть 
+            присвоена другой структуре того же типа с помощью одиночного 
+            оператора присваивания, то есть не нужно присваивать значение 
+            каждого члена по отдельности.</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72>Например:</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+void main(){
+struct {
+        int a;
+        int b;
+       } x, y;
+  x.a = 10;
+  x.b = 20;
+  y = x;
+  printf("Содержимое y: %d %d", y.a, y.b);
+}
+</PRE></DIV><A name=sect5></A>
+            <H3>Доступ к элементам структур (полям данных)</H3>
+            <P id=id_74>С помощью операций прямого и косвенного выбора 
+            (соответственно символы точка '.' и '-&gt;') организуется доступ к 
+            элементам структур. Первая операция используется со структурными 
+            объектами, а вторая – при наличии указателя на структурный 
+            объект.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_75>Операция прямого доступа к элементам структуры ('.') – 
+            результатом является значение элемента структуры.</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_76>Синтаксис операции прямого доступа к элементам 
+            структуры:</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяСтруктуры.ИмяЭлементаСтруктуры
+</PRE></DIV>
+            <P id=id_78>Данная операция используется для доступа к элементу 
+            структуры с тем, чтобы присвоить ему значение, напечатать его, 
+            использовать его значение в арифметической операции и т.д. Эта 
+            операция является первичной и находится в самой верхней строке 
+            таблицы приоритетов операций языка С++.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_79>Именем структуры можно пользоваться сразу же после его 
+            появления в программе.</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <P id=id_80>Например:</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct A {
+          int j;
+          char titl[10]; 
+          char x;
+          } Аа, Аb = {128,"Мир",'Q'}; 
+</PRE></DIV>
+            <P id=id_82>Здесь допустимы операторы присваивания вида <SPAN 
+            class=texample>Аа=Аb;</SPAN>. В этом случае элементы структурного 
+            объекта <SPAN class=texample>Аа</SPAN> будут иметь значения, 
+            совпадающие со значениями соответствующих элементов объекта <SPAN 
+            class=texample>Аb</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_86><SPAN class=xml_em_italic>Пример 1</SPAN>.</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Инициализация структуры и вывод значений ее элементов
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  struct goods {
+                char* name;
+                long price;
+                float percent;
+                int vol;
+                char date[9];
+               };
+  struct goods coat={"пиджак черный",4000,7.5,220,"12.01.09"};
+  printf("\n Товар на складе:");
+  printf("\n Наименование: %s.", coat.name);
+  printf("\n Оптовая цена: %ld руб.", coat.price);
+  printf("\n Наценка: %3.1f %%.", coat.percent);  
+  printf("\n Цена товара: %ld руб.",
+          (long)(coat.price*(1.0+coat.percent/100)));  
+  printf("\n Объем партии: %d штук.", coat.vol);
+  printf("\n Дата поставки: %s.",coat.date);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_88><SPAN class=xml_em_italic>Пример 2</SPAN>. Сложение 
+            комплексных чисел</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+typedef  struct {
+                 double real;
+                 double imag;
+                } complex;
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  complex x,y,z;
+  printf("\n Введите два комплексных числа:");
+  printf("\n Вещественная часть:");  scanf("%lf", &amp;x.real);
+  printf("\n Мнимая часть:");  scanf("%lf", &amp;x.imag);
+  printf("\n Вещественная часть:");  scanf("%lf", &amp;y.real);
+  printf("\n Мнимая часть:");  scanf("%lf", &amp;y.imag);
+  z.real=x.real+y.real;
+  z.imag=x.imag+y.imag;
+  printf("\n Результат: z.real=%f z.imag=%f", z.real,z.imag);
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect6></A>
+            <H3>Определение размера памяти, выделяемой под структуру</H3>
+            <P id=id_90>Размер памяти, занимаемый структурным объектом, можно 
+            вычислить, исходя из размеров элементов структуры либо с помощью 
+            операции:</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <DIV class=example><PRE>sizeof (ИмяСтруктуры)
+sizeof (ИмяСтруктурногоТипа)
+</PRE></DIV>
+            <P id=id_92>Определение структурного типа не связано с выделением 
+            памяти под сам тип, а при каждом определении структуры (объекта) ей 
+            выделяется память в таком количестве, чтобы могли разместиться 
+            данные всех элементов. Однако стандарт языка С++ не дает гарантий, 
+            что элементы структур будут размещаться непрерывно. Причиной 
+            появления неиспользованных участков памяти ("дыр") могут явиться 
+            требования выравнивания данных по границам участков адресного 
+            пространства. Эти требования зависят от реализации, от аппаратных 
+            возможностей системы и иногда от режимов (опций) работы 
+            компилятора.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_93>Например:</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_94><SPAN class=texample>sizeof(struct goods)</SPAN> – 24 
+            байта (из Примера 1)</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_96><SPAN class=texample>sizeof(goods)</SPAN> – 24 байта (из 
+            Примера 1)</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_98><SPAN class=texample>sizeof coat</SPAN> – 24 байта (из 
+            Примера 1)</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_100><SPAN class=texample>sizeof(complex)</SPAN> – 16 байтов 
+            (из Примера 2)</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_102><SPAN class=xml_em_italic>Пример 3</SPAN>. Программа 
+            вывода размера памяти для структурного объекта</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+  struct A {
+            int j;
+            char titl[10];
+            char x;
+           } Aa, Ab={128, "Мир", 'Q'};
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  printf("\nAb.j=%d Ab.titl=%s Ab.x=%c", Ab.j, Ab.titl, Ab.x);
+  printf("\nПамять для объекта Аа равна %d байт ", sizeof (Aa));
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_104>Результат выполнения программы:</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Ab.j=128 Ab.titl=Мир Ab.x=Q
+Память для объекта Аа равна 16 байт 
+</PRE></DIV><A name=sect7></A>
+            <H3>Массивы структур</H3>
+            <P id=id_106><SPAN class=xml_em_italic>Массив структур</SPAN> – это 
+            массив, каждый элемент которого является структурой. В памяти 
+            элементы массива структур размещаются последовательно. </P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107>Массивы структур широко используются для структурной 
+            организации данных в прикладных программах и системном программном 
+            обеспечении.</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>Из элементов структурного типа можно организовать 
+            массивы также как из элементов стандартного типа. Для объявления 
+            массива структур следует сначала определить структуру, а затем 
+            объявить массив переменных данного типа. Как и массивы переменных, 
+            массивы структур индексируются с нуля. </P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109>Например:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  struct Student {
+                  char name[30];
+                  char group[10];
+                  float rating;
+                 };
+  Student mas[35]; //массив структур
+  int i;
+
+  //ввод значений массива
+  for(int i=0;i&lt;35;i++){
+    cout &lt;&lt; "\nВведите имя: ";cin &gt;&gt; mas[i].name;
+    cout &lt;&lt; "\nВведите группу: ";cin &gt;&gt; mas[i].group;
+    cout &lt;&lt; "\nВведите рейтинг: ";cin &gt;&gt; mas[i].rating;
+  }
+  //вывод студентов, у которых рейтинг меньше 3
+  cout &lt;&lt; "Рейтинг &lt; 3: ";
+  for(i=0; i&lt;35; i++)
+    if(mas[i].rating&lt;3)
+      cout &lt;&lt; "\n" &lt;&lt; mas[i].name;
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_111><SPAN class=xml_em_italic>Пример 4</SPAN>. Программа 
+            определяет и печатает название самой высокой вершины из списка </P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+struct peak {
+             char name[15];//название вершины
+             int height; //высота вершины
+            } list[30]; //массив структурного типа peak
+int N;
+
+void InputDate();
+void PrintMaxPic();
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  InputDate();
+  printf("\n");
+  PrintMaxPic();
+  system("pause");
+  return 0;
+}
+
+void InputDate() {
+int i;
+  printf("Введите количество вершин: "); scanf("%d",&amp;N);
+  printf("\n");
+  for (i=0; i&lt;N; i++) {
+    printf("Название: ");
+    scanf("%s",&amp;list[i].name);
+    printf("Вершина: ");
+    scanf("%d",&amp;list[i].height);
+  }
+}
+
+void PrintMaxPic(){
+int i,max=list[0].height,num=0;
+  for (i=1; i&lt;N; i++)
+    if (list[i].height&gt;max) {
+      max=list[i].height;
+      num=i;
+    }
+  printf("Самая высокая вершина - %s, она равна &shy; %d", 
+          list[num].name,max);
+}
+</PRE></DIV>
+            <P id=id_113><SPAN class=xml_em_italic>Пример 5</SPAN>. Программа 
+            инициализирует массив структур, сортирует и выводит его на 
+            печать.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;time.h&gt;
+#define num 5
+struct {
+        char name[15];
+        int grade;
+       } x[num];
+
+void init(void);
+int sorts(const void *p1, const void *p2);
+void print(void);
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  printf("\n Введите имена:\n");
+  init();
+  printf("\n Первоначальный массив\n"); 
+  print();
+  printf("\n Отсортированный массив\n");
+  qsort((void *)x, num, sizeof(x[0]), sorts);
+  print();
+  system("pause");
+  return 0;
+}
+
+void init(void){
+  int i, a=-10, b=10;  
+  srand(time(NULL)*1000);
+  for (i=0; i!=num; i++){
+    gets(x[i].name);
+    x[i].grade =int(rand()*1.0/(RAND_MAX)*(b-a)+a);
+  }
+}
+
+//сортируем по имени
+int sorts(const void *p1, const void *p2){
+  return( strcmp((char *)p1,(char *)p2));
+}
+
+void print(void){
+  int t;
+  for (t = 0; t != num; t++)
+    printf("%s\t\t%d\n", x[t].name, x[t].grade);
+}
+</PRE></DIV><A name=sect8></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_115><B>Агрегатный тип данных</B> – это тип, конструируемый 
+            из элементов независимых (возможно различных) типов.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_116><B>Инициализирующая запись</B> – это заключенный в 
+            фигурные скобки список, элементы которого разделяются запятыми и 
+            являются константами.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_117><B>Массив структур</B> – это массив, каждый элемент 
+            которого является структурой.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_118><B>Поименованный шаблон</B> – это одна из основных форм 
+            объявления структур, задаваемая именем структурного типа и 
+            определениями элементов.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119><B>Поля структуры</B> – это составные части структуры, 
+            характеризующиеся именем, типов и размером.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120><B>Размер структуры</B> – это объем памяти, занимаемой 
+            структурой.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121><B>Структура</B> – это составной объект, в который 
+            входят элементы любых типов, за исключением функций.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_122>
+              <LI>Структура является представителем агрегатного типа данных в 
+              языке С++.
+              <LI>Существует три основные формы объявления структур: с 
+              поименованным шаблоном, с совмещением определения структуры 
+              структурных объектов, с использованием оператора <SPAN 
+              class=texample>typedef</SPAN>.
+              <LI>Инициализация структуры заключается в присваивании начальных 
+              значений элементам структуры.
+              <LI>Для структур можно выполнить операцию прямого присваивания.
+              <LI>Доступ к элементам структур (полям данным) можно осуществить с 
+              помощью операций прямого и косвенного выбора.
+              <LI>Размер памяти, занимаемой структурой, зависит от реализации и 
+              вычисляется с помощью операции <SPAN class=texample>sizeof</SPAN>.
+              <LI>Для решения прикладных задач используются массивы 
+              структур.</LI></OL>
+            <DIV id=mark_122 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Лабораторная работа 15. Структуры</H3>
+            <P id=id_132><B>Цель работы:</B> изучить понятия, оформления и 
+            определения структур, доступа к элементам структур, научиться решать 
+            задачи с использованием структур на языке C++.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, в которой выполнена 
+            разработка структуры в соответствии с постановкой задачи, ввод 
+            данных элементов структурного типа, их обработка и вывод на экран в 
+            указанном формате. Ввод данных осуществляется с клавиатуры с учетом 
+            требований к входным данным, содержащихся в постановке задачи. 
+            Ограничениями на входные данные являются максимальный размер 
+            строковых данных, диапазоны числовых типов полей структуры и 
+            допустимый размер массива структур в языке С++.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134><B>Теоретические сведения.</B></P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135>Ознакомьтесь с материалом лекции 15.</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <P id=id_136><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <P id=id_137>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <OL id=id_138>
+              <LI>Описать переменную <SPAN class=xml_em_italic>"студент"</SPAN>, 
+              содержащую: имя, фамилию, отчество, название учебного заведения, 
+              номер группы. Создать список студентов (<SPAN 
+              class=texample>N&gt;10</SPAN>). Определить и распечатать фамилии 
+              студентов, учащихся заданной группы и заданного учебного 
+заведения.
+              <LI>Задана следующая структура: 
+              <DIV class=example><PRE>struct point {
+              float x,y;
+             } A, B;
+</PRE></DIV>Описать переменную <SPAN class=texample>d</SPAN>, 
+              равную расстоянию между точками <SPAN class=texample>A</SPAN> и 
+              <SPAN class=texample>B</SPAN>. 
+              <LI>Описать переменную <SPAN class=texample>"круг"</SPAN>, в 
+              которой содержатся все данные для построения круга на плоскости в 
+              декартовой системе координат. Определить площадь круга и длину 
+              окружности, ограничивающей круг.
+              <LI>Задана следующая структура: 
+              <DIV class=example><PRE>struct card {
+   // масть карт 
+   enum {spades, clubs, diamonds, hearts} suit; 
+   // достоинство карт 
+   enum{six, seven, eight, nine, ten, jack, queen, king, ace} value;
+   } c1, c2;
+</PRE></DIV>Описать логическую функцию <SPAN 
+              class=texample>Kick(с1, с2, сs)</SPAN>, проверяющую, бьёт ли карта 
+              <SPAN class=texample>с1</SPAN> карту <SPAN 
+              class=texample>с2</SPAN>, с учётом того, что масть cs является 
+              козырной. 
+              <P id=id_153>Описать переменную <SPAN 
+              class=texample>"адрес"</SPAN>, содержащую: название города, 
+              название улицы, номер дома, корпус, номер квартиры. Создать массив 
+              адресов. Поменять местами номер дома в <SPAN 
+              class=texample>N</SPAN>-ом адресе и номер квартиры в <SPAN 
+              class=texample>M</SPAN>-ом адресе.</P>
+              <DIV id=mark_153 class=lecture_mark></DIV></LI></OL>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_157><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <P id=id_158>Каждое задание необходимо решить в соответствии с 
+            изученными методами объявления и обработки данных структур в языке 
+            С++. При объявлении структурного типа выполните комментирование 
+            используемых полей структуры. В задаче 1 следует использовать массив 
+            структур, организовав его вывод в виде таблицы.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_159>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <UL id=id_160>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_169><B>Требования к отчету.</B></P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <UL id=id_171>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_180><B>Контрольные вопросы</B></P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <OL id=id_181>
+              <LI>В чем принципиальное отличие типов массив и структура?
+              <LI>Как располагаются в памяти элементы структуры?
+              <LI>Почему размер структуры не всегда совпадает с суммарным 
+              размером ее полей?
+              <LI>Для моделирования каких данных целесообразно использовать 
+              структуры?
+              <LI>Какими способами можно обратиться к данным структуры?
+              <LI>В чем отличие прямого и косвенного доступа к полям структуры?
+              <LI>Всегда ли возможно выполнить напрямую операцию присваивания 
+              значений объектов структуры с одинаковым набором полей?
+              <LI>При каком объявлении структурных объектов возможно выполнить 
+              напрямую операцию присваивания значений объектов структуры?
+              <LI>Для моделирования каких данных целесообразно использовать 
+              массив структур?</LI></OL>
+            <DIV id=mark_181 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

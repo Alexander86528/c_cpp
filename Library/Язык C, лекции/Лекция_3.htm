@@ -1,0 +1,859 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_3_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_3_files/mhtE8A5(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_3_files/mhtE8A5(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>3. Лекция: Организация циклов в языке С: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются операторы цикла while, for, do–while. Приводятся 
+            составные операторы цикла и операторы отношения, для которых 
+            приводятся примеры с полной программной реализацией. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_3_files/mhtE8A5(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Операторы цикла относятся к управляющим конструкциям 
+            всякого языка программирования. Управляющие операторы и конструкции 
+            языка задают порядок, в котором выполняются вычислительные операции 
+            программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>3.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>3.1. Оператор while</H4>
+            <P id=id_2>Изучение операторов цикла начнем с оператора <SPAN 
+            class=texample>while</SPAN>. Цикл <SPAN class=texample>while</SPAN> 
+            имеет следующий формат (синтаксис) записи [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>3.2</A>]:</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <DIV class=example><PRE>while (expression)
+program statement;</PRE></DIV>
+            <P id=id_6>Производится расчет выражения <SPAN 
+            class=texample>expression</SPAN>, заключенного в круглые скобки. 
+            Если в результате расчета выражения <SPAN 
+            class=texample>expression</SPAN> получается истинный результат ( 
+            <SPAN class=texample>TRUE</SPAN> ), то выполняется утверждение <SPAN 
+            class=texample>program statement</SPAN>, следующее непосредственно 
+            за закрывающей круглой скобкой. После выполнения этого утверждения 
+            вновь рассчитывается выражение <SPAN 
+            class=texample>expression</SPAN>. Если в результате расчета будет 
+            <SPAN class=texample>TRUE</SPAN>, то вновь будут выполнены 
+            утверждения <SPAN class=texample>program statement</SPAN>. Цикл 
+            повторяется до тех пор, пока в результате расчета выражения <SPAN 
+            class=texample>expression</SPAN> (в круглых скобках оператора <SPAN 
+            class=texample>while</SPAN> ) не будет получено значение <SPAN 
+            class=texample>FALSE</SPAN> (ложный), которое является признаком 
+            окончания цикла, после чего выполнение программы продолжается с 
+            утверждения, следующего за утверждением <SPAN class=texample>program 
+            statement</SPAN>. Когда требуется выполнить группу утверждений, то 
+            она (группа) располагается в фигурных скобках:</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>while (expression)
+{
+program statement;
+program2 statement2;
+program3 statement3;
+...
+}</PRE></DIV>
+            <P id=id_19>Открывающаяся фигурная скобка может следовать 
+            непосредственно после закрывающей круглой скобки оператора <SPAN 
+            class=texample>while</SPAN>. Все, что находится в фигурных скобках, 
+            будет выполняться, пока верно выражение <SPAN 
+            class=texample>expression</SPAN>.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_22>Очевидно, что неверное задание выражения <SPAN 
+            class=texample>expression</SPAN> может привести к бесконечному циклу 
+            (к зацикливанию).</P>
+            <DIV id=mark_22 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>3.2. Оператор for</H4>
+            <P id=id_24>Оператор цикла <SPAN class=texample>for</SPAN> имеет 
+            следующий формат записи:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV class=example><PRE>for (init_expression; loop_condition; loop_expression)
+program statement;</PRE></DIV>
+            <P id=id_27>Три выражения, заключенные в круглые скобки оператора 
+            цикла <SPAN class=texample>for</SPAN>, задают условия выполнения 
+            программного цикла [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>3.2</A>].</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_29>Первый параметр <SPAN 
+            class=texample>init_expression</SPAN> используется для задания 
+            начального значения цикла.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_31>Второй компонент <SPAN 
+            class=texample>loop_condition</SPAN> определяет условие или условия, 
+            в соответствии с которыми будет происходить выход из цикла. 
+            Повторение будет происходить до тех пор, пока это условие (или 
+            условия) выполняются. Если условие не выполняется, то цикл 
+            немедленно заканчивается.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_33>Третий параметр <SPAN 
+            class=texample>loop_expression</SPAN> выполняется каждый раз, когда 
+            заканчивается обработка тела цикла, т.е. program statement.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_35>Чаще всего выражения <SPAN 
+            class=texample>init_expression</SPAN> и <SPAN 
+            class=texample>loop_expression</SPAN> являются операторами 
+            присваивания или вызовами функций, а второе выражение <SPAN 
+            class=texample>loop_condition</SPAN> – выражением отношения или 
+            логическим выражением [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>3.1</A>]. Любую из трех частей можно опустить, но 
+            точки с запятыми должны остаться на своих местах. Если опустить 
+            <SPAN class=texample>init_expression</SPAN> или <SPAN 
+            class=texample>loop_expression</SPAN>, то соответствующие операции 
+            не будут выполняться. Если же опустить проверку условия <SPAN 
+            class=texample>loop_condition</SPAN>, то по умолчанию считается, что 
+            условие продолжения цикла всегда истинно, и тогда цикл станет 
+            бесконечным (произойдет зацикливание).</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_42>Когда требуется выполнения нескольких утверждений, то 
+            они должны заключаться в фигурные скобки:</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <DIV class=example><PRE>for (init_expression; loop_condition; loop_expression)
+{
+program1 statement1;
+program2 statement2;
+program3 statement3;
+...
+}</PRE></DIV>
+            <P id=id_44>В представленном случае тело цикла находится в фигурных 
+            скобках.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>Конструкция цикла, реализованная оператором <SPAN 
+            class=texample>for</SPAN>, может быть выполнена также и оператором 
+            <SPAN class=texample>while</SPAN> следующим образом [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>3.1</A>]:</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>init_expression;
+while (loop_condition)
+{
+program statement;
+loop_expression;
+}</PRE></DIV>
+            <P id=id_49>Исключением является применение операции <SPAN 
+            class=texample>continue</SPAN>.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_51>Операторы отношения перечислены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#table.3.1">табл. 
+            3.1</A>.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <DIV id=id_52 class=xml_table_env><A name=table.3.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 3.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Операторы отношения языка 
+                  программирования С</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>№&nbsp;п/п</TD>
+                <TD bgColor=#eaeaea vAlign=top>Оператор</TD>
+                <TD bgColor=#eaeaea vAlign=top>Значение</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1)</TD>
+                <TD bgColor=#eaeaea vAlign=top>==</TD>
+                <TD bgColor=#eaeaea vAlign=top>Равно</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2)</TD>
+                <TD bgColor=#eaeaea vAlign=top>!=</TD>
+                <TD bgColor=#eaeaea vAlign=top>Не равно</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3)</TD>
+                <TD bgColor=#eaeaea vAlign=top>&lt;</TD>
+                <TD bgColor=#eaeaea vAlign=top>Меньше</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4)</TD>
+                <TD bgColor=#eaeaea vAlign=top>&lt;=</TD>
+                <TD bgColor=#eaeaea vAlign=top>Меньше или равно</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>5)</TD>
+                <TD bgColor=#eaeaea vAlign=top>&gt;</TD>
+                <TD bgColor=#eaeaea vAlign=top>Больше</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6)</TD>
+                <TD bgColor=#eaeaea vAlign=top>&gt;=</TD>
+                <TD bgColor=#eaeaea vAlign=top>больше или 
+            равно</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>Больше или равно</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_54>В программах языка <B>С</B> возможно применять вложенные 
+            циклы, каждый из которых контролируется своей переменной цикла и 
+            своим отношением (второе выражение в круглых скобках оператора <SPAN 
+            class=texample>for</SPAN> ). Вложенные циклы могут идти 
+            непосредственно друг за другом или составлять тело цикла с помощью 
+            фигурных скобок. Возможно также использование двух индексных 
+            переменных для инициализации начала цикла с последующим их 
+            инкрементированием (увеличением) или декрементированием 
+            (уменьшением).</P>
+            <DIV id=mark_54 class=lecture_mark></DIV><A name=sect4></A>
+            <H4>3.3. Оператор do–while</H4>
+            <P id=id_56>Рассмотренные операторы цикла <SPAN 
+            class=texample>while</SPAN> и <SPAN class=texample>for</SPAN> 
+            производят проверку условия выполнения цикла до начала выполнения 
+            тела цикла [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>3.1</A>]. Поэтому тело цикла может ни разу не 
+            выполниться, если с самого начала результатом расчета условия 
+            выполнения цикла будет значение <SPAN class=texample>FALSE</SPAN> 
+            (ложь). В случае необходимости производить проверку условия 
+            выполнения цикла после тела цикла (т.е. когда выполняется хотя бы 
+            одно предписанное действие в теле цикла) прибегают к циклу <SPAN 
+            class=texample>do–while</SPAN>.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_61>Оператор цикла <SPAN class=texample>do–while</SPAN> 
+            имеет следующий формат записи [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>3.2</A>]:</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV class=example><PRE>do
+program statement;
+while (loop_expression);</PRE></DIV>
+            <P id=id_64>Выполнение цикла <SPAN class=texample>do–while</SPAN> 
+            происходит следующим образом: сначала выполняется утверждение <SPAN 
+            class=texample>program statement</SPAN>, затем производится проверка 
+            условия выполнения цикла <SPAN class=texample>loop_expression</SPAN> 
+            с помощью оператора <SPAN class=texample>while</SPAN>. Если 
+            результатом проверки будет значение <SPAN class=texample>TRUE</SPAN> 
+            (истина), то выполнение цикла продолжится, и утверждение program 
+            statement всякий раз будет выполняться вновь. Повторение цикла будет 
+            продолжаться до тех пор, пока в результате проверки условия 
+            выполнения цикла <SPAN class=texample>loop_expression</SPAN> будет 
+            получаться значение <SPAN class=texample>TRUE</SPAN>. Когда в 
+            результате проверки условия будет вычислено значение <SPAN 
+            class=texample>FALSE</SPAN> (ложь), то выполнение цикла прекратится 
+            и произойдет переход к утверждению (следующему фрагменту программы), 
+            непосредственно следующему за циклом [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>3.2</A>].</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_73>Таким образом, цикл <SPAN class=texample>do–while</SPAN> 
+            гарантированно выполнится хотя бы один раз.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_75>В случае выполнения нескольких утверждений используются 
+            фигурные скобки для выделения тела цикла:</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <DIV class=example><PRE>do {
+program1 statement1;
+program2 statement2;
+program3 statement3;
+... } while (loop_expression);</PRE></DIV>
+            <P id=id_77>Оператор цикла <SPAN class=texample>while</SPAN> 
+            называется оператором цикла <SPAN class=xml_em_italic>с 
+            предусловием</SPAN>, оператор цикла <SPAN class=texample>for</SPAN> 
+            называется оператором цикла <SPAN class=xml_em_italic>с 
+            параметром</SPAN>, оператор цикла <SPAN 
+            class=texample>do–while</SPAN> называется оператором цикла <SPAN 
+            class=xml_em_italic>c постусловием</SPAN>.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Практическая часть</H3>
+            <P id=id_81>Рассмотрим примеры программ с операторами циклов <SPAN 
+            class=texample>while</SPAN>, <SPAN class=texample>for</SPAN> и <SPAN 
+            class=texample>do–while</SPAN>.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_85><B>Пример 1</B>. Напишите программу вывода на экран 
+            пользователя целых положительных чисел с помощью оператора <SPAN 
+            class=texample>while</SPAN>. Начальное и последнее число должно 
+            задаваться пользователем с клавиатуры.</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <P id=id_87>Программный код решения примера:</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void)
+ {
+int i, j = 0, n;
+printf("\n\t Enter the primary natural number: ");
+scanf_s("%d", &amp;i);
+printf("\t Enter the last natural number: ");
+scanf_s("%d", &amp;n);
+
+printf("\n\t The numbers are:");
+while (i &lt;= n) {
+printf("\n\t %3d", i);
+++i;
+++j; 
+}
+printf("\n\t Total numbers: %d\n", j);
+	
+printf("\n Press any key: ");
+	_getch();
+	return 0;
+ }</PRE></DIV>
+            <P id=id_89 align=left><A name=image.3.1></A></P>
+            <DIV><IMG alt="Результат выполнения программы с вводом целых чисе" 
+            src="Лекция_3_files/mhtE8E6(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 3.1.</B>&nbsp; Результат выполнения 
+            программы с вводом целых чисе
+            <P></P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_90>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.1">рис. 
+            3.1</A>.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_91>В программе использована функция <SPAN 
+            class=texample>scanf_s()</SPAN>, принятая в <SPAN class=texample>MS 
+            Visual Studio</SPAN>. В программе применено инкрементирование 
+            переменных, принятое в языке <B>С</B>, а именно <SPAN 
+            class=texample>++i</SPAN> или <SPAN class=texample>++j</SPAN> 
+            означает, что переменные увеличиваются на единицу. При этом знаки 
+            <SPAN class=texample>"++"</SPAN> могут располагаться перед именем 
+            переменной или после. Отличие в том, что <SPAN 
+            class=texample>++i</SPAN> – это значение переменной после 
+            увеличения, а <SPAN class=texample>i++</SPAN> – сначала переменная 
+            имеет заданное значение, а потом происходит ее увеличение. Для 
+            переменных цикла обе формы равнозначны.</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_99>Условием цикла является то, что пока переменная <SPAN 
+            class=texample>i</SPAN> меньше или равна переменной <SPAN 
+            class=texample>n</SPAN> (предполагается, что <SPAN 
+            class=texample>n</SPAN> больше начального значения <SPAN 
+            class=texample>i</SPAN> ), то будут выполняться действия (печать и 
+            увеличение переменной <SPAN class=texample>j</SPAN> ), заложенные в 
+            теле цикла. Расчет выражения, заключенного в круглые скобки 
+            оператора, предназначен для проверки нестрогого неравенства 
+            переменной <SPAN class=texample>i</SPAN> по отношению к переменной 
+            <SPAN class=texample>n</SPAN>. Если это неравенство выполняется, то 
+            в теле цикла происходят печать и увеличение (инкрементирование) 
+            переменных <SPAN class=texample>i, j</SPAN>.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_108><B>Задание 1</B></P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <OL id=id_109>
+              <LI>Предусмотрите ввод только отрицательных чисел.
+              <LI>Предусмотрите ввод только неотрицательных чисел.
+              <LI>Предусмотрите вывод чисел и их порядковые номера (т.е. в два 
+              столбца).
+              <LI>Предусмотрите вывод чисел на консоль в виде строки.
+              <LI>Предусмотрите ввод и вывод только вещественных чисел.
+              <LI>С учетом предыдущего пункта предусмотрите вывод чисел и их 
+              порядковые номера (т.е. в два столбца).
+              <LI>Рассмотреть варианты форм инкрементирования. Выполните вывод 
+              на консоль.</LI></OL>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_117><B>Пример 2</B>. Напишите программу посимвольного ввода 
+            предложения "Hello, world" и подсчитать число символов в нем 
+            (включая запятую и пробел).</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_118>Программный код решения примера:</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void)
+{
+	int c, i = 0;
+
+printf("\n Enter symbol-by-symbol the offer \"Hello, world\",\n  press twice Ctrl+Z and press Enter:\n");
+printf("\t");
+
+while ((c = getchar()) != EOF)
+{
+printf("\t");
+c = getchar();
+++i;
+}
+
+printf("\n\t The number of characters: %d\n", i);
+	
+     printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_120>В программе ввод символьных данных должен завершиться 
+            комбинацией клавиш <SPAN class=texample>Ctrl+Z</SPAN>, что будет 
+            соответствовать окончанию ввода (файла), т.е. <SPAN 
+            class=texample>EOF</SPAN>. Оператор цикла <SPAN 
+            class=texample>while</SPAN> будет выполняться до тех пор, пока не 
+            встретится так называемый конец файла <SPAN 
+            class=texample>EOF</SPAN>. В предложении <SPAN 
+            class=texample>\"Hello, world\"</SPAN> два обратных слэша включены 
+            для вывода на консоль двойных кавычек.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_126>Функции <SPAN class=texample>printf("\t")</SPAN> 
+            осуществляют табуляцию вводимых символов. Подсчет числа вводимых 
+            символов выполняется с помощью переменной цикла (счетчика) i, 
+            которая инкрементируется в теле цикла.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_128>Заголовочный файл <SPAN class=texample>#include 
+            &lt;conio.h&gt;</SPAN> служит для поддержания консольного 
+            ввода-вывода для функции <SPAN class=texample>_getch()</SPAN>. Без 
+            него при компиляции программы могут выводиться предупреждения, хотя 
+            программа с предупреждениями работает.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_131>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.2">рис. 
+            3.2</A>.</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132 align=left><A name=image.3.2></A></P>
+            <DIV><IMG alt="Выполнение программы посимвольного ввода данных" 
+            src="Лекция_3_files/mhtE8F9(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 3.2.</B>&nbsp; Выполнение программы 
+            посимвольного ввода данных
+            <P></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133><B>Задание 2</B></P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <OL id=id_134>
+              <LI>В программу введите комментарии с помощью символов <SPAN 
+              class=texample>//</SPAN> и <SPAN class=texample>/*...*/</SPAN>.
+              <LI>В качестве вводимых символов используйте буквы своей фамилии 
+              (буквами латинского алфавита). В отчет вставьте полученный 
+              результат.
+              <LI>В качестве вводимых символов использовать свою фамилию и имя. 
+              В отчет вставьте полученный результат.
+              <LI>Сделайте вывод своей фамилии и имени по главной диагонали 
+              дисплея.
+              <LI>В качестве символов введите числа от 1 до (2+Х), где Х – номер 
+              компьютера, за которым выполняется лабораторная работа. В отчет 
+              вставьте полученный результат.
+              <LI>Выполните дублирование символов с помощью функции <SPAN 
+              class=texample>putchar()</SPAN>, которая отображает символы на 
+              экране пользователя.</LI></OL>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_144><B>Примечание</B>. Прототип функции <SPAN 
+            class=texample>putchar()</SPAN> имеет следующий вид:</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+int putchar (int ch);</PRE></DIV>
+            <P id=id_147><B>Пример 3</B>. Напишите программу табличного вывода 
+            строчных букв латинского алфавита и их десятичных кодов с помощью 
+            оператора цикла <SPAN class=texample>for</SPAN>.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_149>Как известно, в латинском алфавите 26 букв. Поэтому 
+            можно создать массив символов этих букв. С учетом того, что тип 
+            <SPAN class=texample>char</SPAN> представляет собой целочисленный 
+            тип, то можно обойтись без создания массива.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_151>Программный код решения примера:</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+int main(void){
+	int j = 1;
+	char a = 'a';
+	
+	printf("\n  Table code characters:\n");
+for ( ; a &lt;= 'z'; ++a)
+	printf("\n %4d) %2c: code%4d", j++, a, a);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_153>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.3">рис. 
+            3.3</A>.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154 align=left><A name=image.3.3></A></P>
+            <DIV><IMG alt="Таблица десятичных кодов букв латинского алфавита" 
+            src="Лекция_3_files/mhtE91B(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 3.3.</B>&nbsp; Таблица десятичных кодов 
+            букв латинского алфавита
+            <P></P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_155>Форматированный вывод данных предусматривает 
+            выравнивание по правому краю, для чего предусматриваются числовые 
+            спецификаторы типа <SPAN class=texample>%4d</SPAN> и <SPAN 
+            class=texample>%2c</SPAN> для целых чисел и символов в функции <SPAN 
+            class=texample>printf()</SPAN>.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_159><B>Задание 3</B></P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <OL id=id_160>
+              <LI>Примените префиксную форму инкрементирования переменной <SPAN 
+              class=texample>j</SPAN>.
+              <LI>Инкрементирование переменной <SPAN class=texample>j</SPAN> 
+              создайте отдельно в теле цикла.
+              <LI>Инициализацию переменной <SPAN class=texample>j</SPAN> начните 
+              с нуля. Результат выполнения программы должен быть тот же самый, 
+              что и в приведенной программе.
+              <LI>Напишите программу для вывода кодов букв из заданного 
+              диапазона на усмотрение пользователя, например, от <SPAN 
+              class=texample>'j'</SPAN> до <SPAN class=texample>'w'</SPAN>.
+              <LI>В цикле <SPAN class=texample>for</SPAN> заполните все поля.
+              <LI>Напишите программу для вывода кодов букв латинского алфавита 
+              прописных и строчных букв в одной таблице.
+              <LI>Выведите буквы своей фамилии и коды этих букв.</LI></OL>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_174>Напишите программу расчета значений функции 
+            распределения потока Эрланга 4-го порядка с параметром <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\lambda 
+            src="Лекция_3_files/mhtE92E(1).tmp" width=16 height=16> = 2.3 на 
+            отрезке времени от 0 до 5 (условных единиц) с шагом 0.2:</P>
+            <DIV id=mark_174 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 13px" 
+            alt="F_k(t)=1-\sum\limits_{j=0}^{k}\frac{(\lambda t )^j}{j!}{e}^{-\lambda t}" 
+            src="Лекция_3_files/mhtE940(1).tmp" width=199 height=47>.
+            <P id=id_177>Программный код решения примера:</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void)
+ {
+	int j, f, k = 4;
+	double F, Lt, s, t = 0.0, Tend = 5.0;
+	float L = 2.3F;
+		
+printf("\n Erlang function of order %d, Lambda = %1.2f:\n\n", k, L);
+		
+for ( ; t &lt;= Tend; t += 0.2) {
+s = 0.0; f = 1; Lt = 1.0;
+for (j = 1; j &lt;= k; ++j) {
+f *= j;
+Lt *= (L*t);
+s += (Lt/f)*exp(-L*t);
+}
+F = 1 - exp(-L*t) - s;
+printf("\t %lg\n", F);
+}
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_179>В программе использованы вложенные циклы <SPAN 
+            class=texample>for</SPAN>. Применены специфические условия изменения 
+            переменных (но характерных для языка <B>С</B> ):</P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <DIV class=example><PRE>t += 0.2;      /* t  =  t + 0.2; */
+     f *= j;        /* f  =  f * j; */
+    Lt *= (L*t);    /* Lt  =  Lt * (L*t); */</PRE></DIV>
+            <P id=id_182>Вычисление факториала выполнено с помощью произведения 
+            и выделения отдельного слагаемого суммы, когда рассчитывается <SPAN 
+            class=texample>0</SPAN>!</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_184>В программе также предусмотрено накопление суммы для 
+            каждого шага времени <SPAN class=texample>t</SPAN>. Для расчета 
+            экспоненты в заголовок программы включена библиотека математических 
+            функций <SPAN class=texample>#include &lt;math.h&gt;</SPAN>.</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <P id=id_187>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.4">рис. 
+            3.4</A>.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188 align=left><A name=image.3.4></A></P>
+            <DIV><IMG alt="Расчет функции распределения Эрланга 4-го порядка" 
+            src="Лекция_3_files/mhtE953(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 3.4.</B>&nbsp; Расчет функции 
+            распределения Эрланга 4-го порядка
+            <P></P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_189><B>Задание 4</B></P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <OL id=id_190>
+              <LI>В заголовке внешнего цикла <SPAN class=texample>for</SPAN> 
+              добавьте первое поле и устраните третье поле.
+              <LI>Предусмотрите вывод количества значений рассчитанной функции 
+              Эрланга.
+              <LI>Предусмотрите ввод параметров программы, а именно: порядок 
+              потока Эрланга k, параметр <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\lambda 
+              src="Лекция_3_files/mhtE92E(1).tmp" width=16 height=16>, конечную 
+              величину временного интервала, шаг по времени.</LI></OL>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_196><B>Пример 5</B>. Вычислите с точностью до "машинного 
+            нуля" значение суммы числового ряда:</P>
+            <DIV id=mark_196 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt="\frac 1 {1\cdot 2\cdot  3}+ \frac 1 {2\cdot 3\cdot  4}+\frac 1 {3\cdot 4\cdot  5}+\frac 1 {4\cdot 5\cdot  6}+\cdots" 
+            src="Лекция_3_files/mhtE975(1).tmp" width=249 height=25>
+            <P id=id_198>Программный код решения примера:</P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void)
+ {
+   double denom;
+   double sum1 = 0.0, sum2 = 0.0;
+   int k = 1;
+   denom = k * (k + 1) * (k + 2); // знаменатель ряда
+
+	do {
+	sum1 = sum2;
+	sum2 += 1.0 / denom;
+	denom = denom / k * (k + 3);
+	++k;
+	} while (sum1 &lt; sum2);
+
+printf("\n\t The amount of numerical series: %lg\n", sum2);
+	
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_200>В приведенной программе сумма вычисляется как значение 
+            переменной <SPAN class=texample>sum2</SPAN>. Ее предыдущее значение 
+            сохраняется в переменной <SPAN class=texample>sum1</SPAN>. Так как 
+            приближенное значение с добавлением неотрицательных слагаемых не 
+            уменьшается, условием продолжения цикла служит отношение <SPAN 
+            class=texample>sum1 &lt; sum2</SPAN> (поскольку растет знаменатель 
+            <SPAN class=texample>denom</SPAN> ). Когда при добавлении очередного 
+            слагаемого значение суммы остается неизменным (за счет конечной 
+            разрядной сетки для представления вещественных чисел), нарушается 
+            условие <SPAN class=texample>sum1 &lt; sum2</SPAN> и цикл 
+            прекращается. Таким образом, конечность разрядной сетки 
+            представления вещественных чисел в компьютере определяет собой 
+            "машинный нуль".</P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_206>Инициализация знаменателя сделана до начала цикла. 
+            Форматный вывод результата выполнен с помощью спецификатора символа 
+            <SPAN class=texample>"l"</SPAN>.</P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_208>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.5">рис. 
+            3.5</A>.</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_209 align=left><A name=image.3.5></A></P>
+            <DIV><IMG alt="Результат подсчета суммы бесконечного ряда" 
+            src="Лекция_3_files/mhtE988(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 3.5.</B>&nbsp; Результат подсчета суммы 
+            бесконечного ряда
+            <P></P>
+            <DIV id=mark_209 class=lecture_mark></DIV>
+            <P id=id_210><B>Задание 5</B></P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <OL id=id_211>
+              <LI>Подсчитайте число итераций цикла для подсчета суммы ряда.
+              <LI>Напишите программу с нулевой инициализацией переменной <SPAN 
+              class=texample>k</SPAN>.
+              <LI>Напишите условие "загрубения" результата подсчета суммы ряда.
+              <LI>В программе примените тип <SPAN class=texample>float</SPAN> 
+              вместо типа <SPAN class=texample>double</SPAN>. Проанализируйте 
+              результат.
+              <LI>Вместо оператора цикла <SPAN class=texample>do–while</SPAN> 
+              примените иной оператор цикла.</LI></OL>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <P id=id_221><B>Пример 6</B>. Произведите реверс цифр заданного 
+            целого числа, вводимого с клавиатуры пользователем.</P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_222>Задача заключается в том, чтобы, например, число 123 
+            переписать как 321.</P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <P id=id_223>Программный код решения примера:</P>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void)
+ {
+	long int x, r;
+
+	printf("\n Enter an integer: ");
+	scanf_s("%ld", &amp;x);
+
+	printf("\n Reverse-digit number %ld:\n\n\t", x);
+
+	do {
+	r = x % 10;
+	printf(" %ld", r);
+	x = x / 10;
+	} while ( x != 0);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_225>В программе применена операция арифметическая операция 
+            деления по модулю, которая имеет символ процента, т.е. "%". Любой 
+            остаток, получающийся в результате деления целых чисел, будет 
+            отброшен [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>3.2</A>]. В шкале старшинства оператор деления по 
+            модулю имеет приоритет, равный приоритету операторов умножения и 
+            деления. Переменные, используемые в программе, объявлены как длинные 
+            числа, поэтому применен тип <SPAN class=texample>long int</SPAN> 
+            (или <SPAN class=texample>long</SPAN> ). В некоторых компиляторах 
+            имеются отличия между типами int и long int в смысле максимально 
+            поддерживаемого значения числа.</P>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <P id=id_228>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.6">рис. 
+            3.6</A>.</P>
+            <DIV id=mark_228 class=lecture_mark></DIV>
+            <P id=id_229 align=left><A name=image.3.6></A></P>
+            <DIV><IMG alt="Результат программы по реверсу числа" 
+            src="Лекция_3_files/mhtE9AA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 3.6.</B>&nbsp; Результат программы по 
+            реверсу числа
+            <P></P>
+            <DIV id=mark_229 class=lecture_mark></DIV>
+            <P id=id_230><B>Задание 6</B></P>
+            <DIV id=mark_230 class=lecture_mark></DIV>
+            <OL id=id_231>
+              <LI>Предусмотрите подсчет итераций заданного цикла.
+              <LI>Напишите программу по реверсу числа с оператором цикла <SPAN 
+              class=texample>while</SPAN>. Протестируйте обе программы, в том 
+              числе по вводу числа 0.
+              <LI>Определите максимальное число вида <SPAN 
+              class=texample>123...987..</SPAN>., для которого еще можно 
+              применить тип <SPAN class=texample>long int</SPAN>.</LI></OL>
+            <DIV id=mark_231 class=lecture_mark></DIV>
+            <P id=id_238><B>Пример 7</B>. На основе только оператора цикла <SPAN 
+            class=texample>for</SPAN> напишите программу по выводу "горки" 
+            заглавных букв, симметрично убывающих к букве, введенной 
+            пользователем. Также на основе оператора цикла <SPAN 
+            class=texample>for</SPAN> предусмотрите защиту от неправильного 
+            ввода.</P>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_241>Программный код решения примера:</P>
+            <DIV id=mark_241 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	int p = 0;
+     char ch = 'A'; 
+     char i, j, k, ch2, kk, chA;
+     chA = ch;
+
+printf("\n   Enter a capital letter between \"A\" and \"S\": ");
+scanf_s("%c", &amp;ch2, sizeof(char));
+
+for(chA -= 1; chA &gt;= ch2; chA-- )
+ {
+	printf("\n   Error! Press any key: ");
+	_getch();
+	return -1;
+ }
+
+for (kk = 'S'+1; kk  &lt;= ch2; kk++) 
+{
+printf("\n   Error! Press any key: ");
+	_getch();
+     return -1;
+}
+
+k = ch2;
+for ( kk = ch; kk &lt;=  k; kk++)
+ {
+		printf("\n ");
+
+for (ch2 = ch; ch2 &lt;= k-p ; ch2++) 		
+			printf("  ");	
+
+for (j = ch; j &lt;= kk ; j++)  
+		printf(" %c", j);	
+	for (i = kk; i &gt; ch; i-- )
+			printf(" %c", i-1);
+	p++;
+		
+}
+    printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_243>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\3. Лекция  Организация циклов в языке С.mht#image.3.7">рис. 
+            3.7</A>.</P>
+            <DIV id=mark_243 class=lecture_mark></DIV>
+            <P id=id_244 align=left><A name=image.3.7></A></P>
+            <DIV><IMG alt="Пример горки букв" 
+            src="Лекция_3_files/mhtE9CC(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 3.7.</B>&nbsp; Пример горки букв
+            <P></P>
+            <DIV id=mark_244 class=lecture_mark></DIV>
+            <P id=id_245><B>Задание&nbsp;7</B></P>
+            <DIV id=mark_245 class=lecture_mark></DIV>
+            <OL id=id_246>
+              <LI>Напишите программу на основе только оператора цикла <SPAN 
+              class=texample>for</SPAN> по выводу перевернутой горки букв, а 
+              также "левой" и "правой" горки.
+              <LI>Напишите программу на основе только оператора цикла <SPAN 
+              class=texample>for</SPAN> по выводу "ромба" букв, относительно 
+              введенной буквы.
+              <LI>Напишите программу по выводу горки букв только на основе 
+              оператора цикла <SPAN class=texample>while</SPAN>.</LI></OL>
+            <DIV id=mark_246 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_253>
+              <LI>Как организуются составные операторы циклов в языке <B>С</B>?
+              <LI>Как организуются вложенные циклы в языке <B>С</B>?
+              <LI>В каких случаях может произойти зацикливание при использовании 
+              оператора цикла с предусловием?
+              <LI>В каких случаях может произойти зацикливание при использовании 
+              оператора цикла с постусловием?
+              <LI>Сколько условий требуется для работы оператора цикла с 
+              параметром?
+              <LI>Чем отличаются префиксное и постфиксное инкрементирование и 
+              декрементирование?
+              <LI>Какое различие в операторах цикла между префиксным и 
+              постфиксным инкрементированием?
+              <LI>Сколько операторов отношения в языке <B>С</B>? Перечислите их.
+              <LI>Как реализуется взаимозаменяемость операторов цикла <SPAN 
+              class=texample>while</SPAN> и <SPAN class=texample>for</SPAN>?
+              <LI>В чем сходство и различие между циклами с предусловием и с 
+              постусловием?</LI></OL>
+            <DIV id=mark_253 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_3_files/mhtE8A5(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

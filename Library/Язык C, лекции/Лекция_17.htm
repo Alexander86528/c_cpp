@@ -1,0 +1,1467 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_17_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_17_files/mhtCCDC(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_17_files/mhtCCDC(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>17. Лекция: Программы на языке С, состоящие 
+            из нескольких файлов: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции рассматриваются вопросы сборки программы, 
+            состоящей из нескольких функций, расположенных в разных файлах, а 
+            также дополнительные обращения к функциям. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_17_files/mhtCCDC(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Программа на языке <B>С</B> – это совокупность функций. 
+            Запуск любой программы начинается с запуска главной функции, 
+            содержащей в себе всю остальную часть программы. Внутри главной 
+            функции для реализации заданного алгоритма вызываются все другие 
+            необходимые функции. Часть функций создается самим программистом, 
+            другая часть – библиотечные функции – поставляется пользователю со 
+            средой программирования и используется в процессе разработки 
+            программ (например, <SPAN class=texample>printf()</SPAN>, <SPAN 
+            class=texample>sqrt()</SPAN> и др.).</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_4>Простейший метод использования нескольких функций требует 
+            их размещения в одном и том же файле. Затем выполняется компиляция 
+            этого файла, как если бы он содержал единственную функцию [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Другие подходы к решению этой проблемы 
+            существенно зависят от конкретной операционной системы 
+            (Unix-подобные системы, Windows, Macintosh). Компиляторы 
+            операционных систем Windows и Macintosh представляют собой 
+            компиляторы, ориентированные на проекты [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Проект описывает ресурсы, используемые 
+            программой. Эти ресурсы включают файлы исходного программного 
+            кода.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Если поместить главную функцию <SPAN 
+            class=texample>main()</SPAN> в один файл, а определения собственной 
+            функции программиста – во второй файл, то первому файлу нужны 
+            прототипы функций. Для этого можно хранить прототипы функций в одном 
+            из заголовочных файлов.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_7>Хороший тон в программировании рекомендует размещать 
+            прототипы функций и объявлять их константы в заголовочном файле [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Назначение отдельных задач отдельным 
+            функциям способствует улучшениям программы.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8>Функция может быть либо внешней (по умолчанию), либо 
+            статической. К внешней функции доступ могут осуществлять функции из 
+            других файлов, в то же время статическая функция может 
+            использоваться только в файле, в котором она определена [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Например, возможны следующие объявления 
+            функций:</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <DIV class=example><PRE>double gamma(); // внешняя функция по умолчанию
+static double beta();
+extern double delta();</PRE></DIV>
+            <P id=id_10>Функция <SPAN class=texample>gamma()</SPAN> и <SPAN 
+            class=texample>delta()</SPAN> могут использоваться функциями из 
+            других файлов, которые являются частью программы, тогда как <SPAN 
+            class=texample>beta()</SPAN> – нет. В силу этого применение функции 
+            <SPAN class=texample>beta()</SPAN> ограничено одним файлом, поэтому 
+            в других файлах можно использовать функции с тем же именем. Одна из 
+            причин использования класса статической памяти заключается в 
+            необходимости создания функций, приватных для конкретных модулей, 
+            благодаря чему во многих случаях удается избежать конфликта имен [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>].</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_15>Обычная практика состоит в том, что при объявлении 
+            функции, определенной в другом файле, указывается ключевое слово 
+            <SPAN class=texample>extern</SPAN>. При этом просто достигается 
+            большая ясность, поскольку при объявлении функция и предполагается 
+            как <SPAN class=texample>extern</SPAN>, если только не задано 
+            ключевое слово <SPAN class=texample>static</SPAN>.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_19>Одним из золотых правил для надежного программирования 
+            есть принцип <SPAN class=xml_em_italic>"необходимости знать"</SPAN>, 
+            или принцип минимально необходимой области видимости [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Рекомендуется держать всю внутреннюю работу 
+            каждой функции максимально закрытой по отношению к другим функциям, 
+            используя совместно только те переменные, без которых нельзя 
+            обойтись по логике программы. Другие классы памяти полезны, и ими 
+            можно воспользоваться. Однако всякий раз следует задать вопрос: а 
+            есть ли в этом необходимость?</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Память, использованная для хранения данных, которыми 
+            манипулирует программа, может быть охарактеризована 
+            продолжительностью хранения, областью видимости и связыванием [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>17.1</A>]. Продолжительность хранения может быть 
+            статической, автоматической или распределенной. Если 
+            продолжительность хранения статическая, память распределяется в 
+            начале выполнения программы и остается занятой на протяжении всего 
+            выполнения. Если продолжительность хранения автоматическая, то 
+            память под переменную выделяется в момент, когда выполнение 
+            программы входит в блок, в котором эта переменная определена, и 
+            освобождается, когда выполнение программы покидает этот блок. Если 
+            память выделяется, то она выделяется с помощью функции <SPAN 
+            class=texample>malloc()</SPAN> (или родственной функции) и 
+            освобождается посредством функции <SPAN 
+            class=texample>free()</SPAN>. Область видимости определяет, какая 
+            часть программы может получить доступ к данным. Переменные, 
+            определенные вне пределов функции, имеют обла сть видимости в 
+            пределах фа йла и видимы в любой функции, определенной после 
+            объявления этой переменной. Переменная, определенная в блоке или как 
+            параметр функции, видима только в этом блоке и в любом из блоков, 
+            вложенных в этот блок.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_23>Связывание описывает <SPAN 
+            class=xml_em_italic>экстент</SPAN> (протяжение, пространство), в 
+            пределах которого переменная, определенная в одной части программы, 
+            может быть привязана к любой другой части программы. Переменная с 
+            областью видимости в пределах блока, будучи локальной, не имеет 
+            связывания. Переменная с областью видимости в пределах файла имеет 
+            внутреннее или внешнее связывание. <SPAN 
+            class=xml_em_italic>Внутреннее связывание</SPAN> означает, что 
+            переменная может быть использована в файле, содержащем ее 
+            определение. <SPAN class=xml_em_italic>Внешнее связывание</SPAN> 
+            означает, что переменная может быть использована в других 
+файлах.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Стандарт языка <B>С</B> поддерживает 4 спецификатора 
+            класса памяти [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>]:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <UL id=id_25>
+              <LI>extern
+              <LI>java
+              <LI>perl
+              <LI>java</LI></UL>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_30>Спецификаторы сообщают компилятору, как он должен 
+            разместить соответствующие переменные в памяти. Спецификатор класса 
+            памяти в объявлении всегда должен стоять первым [2].</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31>Приведем характеристику спецификаторов классов памяти 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>].</P>
+            <DIV id=mark_31 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>Спецификатор extern</H4>
+            <P id=id_32>В языке <B>С</B> при редактировании связей к переменной 
+            может применяться одно из трех связываний: внутреннее, внешнее или 
+            же не относящееся ни к одному из этих типов. В общем случае к именам 
+            функций и глобальных переменных применяется внешнее связывание. Это 
+            означает, что после компоновки они будут доступны во всех файлах, 
+            составляющих программу. К объектам, объявленным со спецификатором 
+            <SPAN class=texample>static</SPAN> и видимым на уровне файла, 
+            применяется внутренне связывание, после компоновки они будут 
+            доступны только внутри файла, в котором они объявлены. К локальным 
+            переменным связывание не применяется и поэтому они доступны только 
+            внутри своих блоков.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_34>Спецификатор <SPAN class=texample>extern</SPAN> 
+            указывает на то, что к объекту применяется внешнее связывание, 
+            именно поэтому они будут доступны во всей программе. <SPAN 
+            class=xml_em_italic>Объявление</SPAN> ( <SPAN 
+            class=xml_em_italic>декларация</SPAN> ) объявляет имя и тип объекта. 
+            <SPAN class=xml_em_italic>Описание</SPAN> (определение, дефиниция) 
+            выделяет для объекта участок памяти, где он будет находиться. Один и 
+            тот же объект может быть объявлен неоднократно в разных местах, но 
+            описан он может быть только один раз.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_36>Пример использования спецификатора <SPAN 
+            class=texample>extern</SPAN> при использовании глобальных 
+            переменных:</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Главная функция
+int main (void) {
+// объявление глобальных переменных
+	extern int a, b;
+	
+printf("\n\t a = %d; b = %d\n", a, b);
+printf("\n Press any key: ");
+_getch();
+return 0;  }
+
+// инициализация (описание) глобальных переменных
+int a = 33, b = 34;</PRE></DIV>
+            <P id=id_39>Описание глобальных переменных дано за пределами главной 
+            функции <SPAN class=texample>main()</SPAN>. Если бы их объявление и 
+            инициализация встретились перед <SPAN class=texample>main()</SPAN>, 
+            то в объявлении со спецификатором <SPAN class=texample>extern</SPAN> 
+            не было бы необходимости.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_43><SPAN class=xml_em_italic>При компиляции</SPAN> 
+            выполняются следующие правила:</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <OL id=id_44>
+              <LI>Если компилятор находит переменную, не объявленную внутри 
+              блока, он ищет ее объявление во внешних блоках.
+              <LI>Если не находит ее там, то ищет среди объявлений среди 
+              объявлений глобальных переменных.</LI></OL>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_47>Спецификатор <SPAN class=texample>extern</SPAN> играет 
+            большую роль в программах, состоящих из многих файлов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>17.3</A>]. В языке <B>С</B> программа может быть 
+            записана в нескольких файлах, которые компилируются раздельно, а 
+            затем компонуются в одно целое. В этом случае необходимо как-то 
+            сообщить всем файлам о глобальных переменных программы. Самый лучший 
+            (и наиболее переносимый) способ сделать это – определить (описать) 
+            все глобальные переменные в одном файле и объявить их со 
+            спецификатором <SPAN class=texample>extern</SPAN> в остальных 
+            файлах, например, как это сделано в следующей программе:</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV id=id_50 class=xml_table_env><A></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Первый файл ( <B>main.c</B> 
+)</TD>
+                <TD bgColor=#eaeaea vAlign=top>Второй файл ( <B>second.h</B> 
+                )</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include "D:\second.h"
+
+int x = 99, y = 77;
+char ch;
+void func1(void);
+int main(void)
+{
+ch = 'Z';
+func1();
+
+printf("\n Press any key: ");
+_getch();
+return 0;
+}
+
+void func1(void)
+{
+func22();
+func23();
+	
+printf("\n\t x = %d; y = %d;\
+ ch = %c\n", x, y, ch);
+}</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>extern int x, y;
+extern char ch;
+
+void func22(void)
+{
+y = 100;
+}
+
+void func23(void)
+{
+x = y/10;
+ch = 'R';
+
+}</PRE></DIV></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_53>В программе первый файл – это основная часть 
+            программного проекта. Второй файл создан как текстовый файл (с 
+            помощью блокнота) с расширением <SPAN class=texample>*.h</SPAN>. 
+            Список глобальных переменных ( <B>x, y, ch</B> ) копируется из 
+            первого файла во второй, а затем добавляется спецификатор <SPAN 
+            class=texample>extern</SPAN>. Он сообщает компилятору, что имена и 
+            типы переменных, следующих далее, объявлены в другом месте. Все 
+            ссылки на внешние переменные распознаются в процессе редактирования 
+            связей. Подключение второго файла выполнено с указанием имени диска 
+            (D:), на котором расположен файл <B>second.h</B>.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_56>Для подключения имени файла, созданного пользователем, 
+            его заключают в двойные кавычки.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_57>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.1">рис. 
+            17.1</A></P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_58 align=left><A name=image.17.1></A></P>
+            <DIV><IMG 
+            alt="Результат выполнения программы, состоящей из двух файлов" 
+            src="Лекция_17_files/mhtCD0E(1).tmp" width=620 
+            height=68></DIV><BR><B>Рис. 17.1.</B>&nbsp; Результат выполнения 
+            программы, состоящей из двух файлов
+            <P></P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59>В общем случае <SPAN class=xml_em_italic>h</SPAN> -файл 
+            (например, <B>second.h</B> ) формируется редактором кода: надо 
+            создать заготовку обычным способом, очистить все поле редактора и 
+            записать в это поле необходимые данные (программный код созданной 
+            функции). Затем выполнить команду главного меню: <B>File/Save as</B> 
+            и выбрать для сохраняемого файла расширение <SPAN 
+            class=texample>.h</SPAN> в раскрывающемся списке типов сохраняемого 
+            файла: <B>C++ Header Files (*.h; *.hh; *.hpp; *.hxx; *.inl; *.tlh; 
+            *.tli)</B>. Сохраненный файл с расширением <B>.h</B> следует 
+            подключить к проекту. Для этого потребуется в узле Solution Explorer 
+            навести курсор мыши к папке Header Files и правой кнопкой мыши 
+            выбрать Add – Existing Item сохраненный файл <B>second.h</B>. Затем 
+            с помощью оператора <SPAN class=texample>#include</SPAN> файл 
+            следует включить в основную программу.</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_62>Другой способ, реализуемый в Microsoft Visual Studio 
+            2010, состоит в том, что сразу через пункт меню <B>"File"</B> 
+            выбрать <B>"New"</B> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+            src="Лекция_17_files/mhtCD21(1).tmp" width=23 height=9> 
+            <B>"File"</B>, и далее в списке Installed Templates выбрать 
+            <B>Visual C++</B> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+            src="Лекция_17_files/mhtCD21(1).tmp" width=23 height=9> <B>Header 
+            File (.h)</B>. Откроется окно, показанное на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.2">рис. 
+            17.2</A>.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_63 align=left><A name=image.17.2></A></P>
+            <DIV><IMG alt="Процесс создания нового файла с расширением .h" 
+            src="Лекция_17_files/mhtCD33(1).tmp" width=620 
+            height=446></DIV><BR><B>Рис. 17.2.</B>&nbsp; Процесс создания нового 
+            файла с расширением .h
+            <P></P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64>Далее в правом нижнем углу нажмем клавишу <B>Open</B>. 
+            Откроется пустое поле – заготовка для набора необходимого кода. По 
+            умолчанию этот файл имеет имя <B>Header1.h</B>. При повторном 
+            создании заголовочного файла это будет <B>Header2.h</B> и т.д. После 
+            написания кода можно сохранить этот заголовочный файл по желанию в 
+            любом каталоге с любым (допустимым) именем (а расширение остается 
+            <B>.h</B> ).</P>
+            <DIV id=mark_64 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>Спецификатор static</H4>
+            <P id=id_65>Переменные, объявленные со спецификатором <SPAN 
+            class=texample>static</SPAN>, хранятся постоянно внутри своей 
+            функции или файла. В отличие от глобальных переменных они невидимы 
+            за пределами своей функции или файла, но они сохраняют значение 
+            между вызовами [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>]. Спецификатор <SPAN 
+            class=texample>static</SPAN> воздействует на локальные и глобальные 
+            переменные по-разному.</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_68>Коренное отличие статических локальных от глобальных 
+            переменных заключается в том, что статические локальные переменные 
+            видны только внутри блока, в котором они объявлены. Если бы не было 
+            статических переменных, вместо них пришлось бы использовать 
+            глобальные, подвергая их риску непреднамеренного изменения другими 
+            участками программы.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69>При инициализации статической локальной переменной 
+            следует учитывать, что значение присваивается ей только один раз – в 
+            начале работы всей программы, но не при каждом входе в блок 
+            программы, как обычной локальной переменной.</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70>Спецификатор <SPAN class=texample>static</SPAN> в 
+            объявлении глобальной переменной заставляет компилятор создать 
+            глобальную переменную, видимую только в том файле, в котором она 
+            объявлена. В таком случае статическая глобальная переменная 
+            подвергается внутреннему связыванию.</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_72>Таким образом, имена <SPAN class=xml_em_italic>локальных 
+            статических переменных</SPAN> видимы только внутри блока, в котором 
+            они объявлены; имена <SPAN class=xml_em_italic>глобальных 
+            статических переменных</SPAN> видимы только внутри файла, в котором 
+            они объявлены [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>].</P>
+            <DIV id=mark_72 class=lecture_mark></DIV><A name=sect4></A>
+            <H4>Спецификатор register</H4>
+            <P id=id_73>Спецификатор <SPAN class=texample>register</SPAN> был 
+            разработан для того, чтобы компилятор сохранял значение переменной в 
+            регистре центрального процессора, а не в памяти, как обычно. Это 
+            означает, что операции над регистровыми переменными выполняются 
+            намного <SPAN class=xml_em_italic>быстрее</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>].</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_75>Спецификатор <SPAN class=texample>register</SPAN> можно 
+            применять <SPAN class=xml_em_italic>только к локальным переменным и 
+            формальным параметрам функций</SPAN>. В объявлении глобальных 
+            переменных применение спецификатора <SPAN 
+            class=texample>register</SPAN> не допускается.</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_78>В языке программирования <B>С</B> с помощью оператора 
+            <SPAN class=texample>&amp;</SPAN> нельзя получить адрес регистровой 
+            переменной, потому что она может храниться в регистре процессора, 
+            который обычно не имеет адреса.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_80>Ощутимый эффект от спецификатора <SPAN 
+            class=texample>register</SPAN> может быть получен только для 
+            переменных целого ( <SPAN class=texample>int</SPAN> ) и символьного 
+            ( <SPAN class=texample>char</SPAN> ) типа.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV><A name=sect5></A>
+            <H4>Спецификатор auto</H4>
+            <P id=id_84>Спецификатор <SPAN class=texample>auto</SPAN> 
+            присваивает объявляемым объектам автоматический класс памяти, его 
+            можно применять только внутри функции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>17.4</A>]. Объявления со спецификатором <SPAN 
+            class=texample>auto</SPAN> одновременно являются определениями и 
+            резервируют память. Автоматический класс памяти определяет собой 
+            автоматический период хранения, который могут иметь только 
+            переменные. Локальные переменные функции (определенные в списке 
+            параметров или в теле функции) обычно имеют автоматический период 
+            хранения. Ключевое слово <SPAN class=texample>auto</SPAN> определяет 
+            переменные с автоматическим хранением явным образом.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_88>Автоматическое хранение способствует экономии памяти, 
+            поскольку автоматические переменные существуют только тогда, когда 
+            они необходимы. Они создаются при запуске функции, в которой они 
+            определены, и уничтожаются, когда происходит выход из нее [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>17.3</A>]. Автоматическое хранение является примером 
+            реализации принципа минимальных привилегий [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>17.3</A>]. Поэтому переменные должны храниться в 
+            памяти и быть доступными, когда в данный момент в них нет 
+            необходимости.</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_89>Для переменных со спецификатором auto нет значения по 
+            умолчанию.</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_90>Обычно создаваемые программистом разработки на языке 
+            <B>С</B> принято оформлять в виде файлов с расширением <SPAN 
+            class=texample>.с</SPAN>, хотя расширение может быть любым, 
+            например, <B>.txt, .doc</B> и т.д. Соответственно, разработки для 
+            <B>С++</B> имеют расширение <B>.срр</B>. Для создания собственного 
+            файла можно использовать инструментарий Microsoft Visual Studio 
+            2010. Для этого следует из пункта меню "File" выбрать подпункт "New" 
+            и далее в соответствии с <A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/17/1.html#image.17.2">рис. 
+            17.2</A> выбрать С++File(.cpp). После нажатия клавиши "Open" 
+            откроется файл Source1.cpp (при повторном обращении будет 
+            Source2.cpp и т.д.). Будет открыто окно редактирования для набора 
+            программного кода. После созданный файл можно сохранить с 
+            расширением <B>.c</B>. Теперь следует грамотно объявить переменные, 
+            используемые в проекте, и функции в файлах типа <B>*.h, *.c</B>. 
+            Создаваемые в среде Visual Studio файлы можно раздельно 
+            компилировать, т.е. проверять ошибки, которые отслежи ваются при 
+            обычной комп иляции.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_92>Следует отметить, что создаваемые программистом функции 
+            можно создавать обычным блокнотом операционной системы Windows. При 
+            этом можно даже оставить расширение <B>.txt</B>. После этого следует 
+            предусмотреть в проекте обращение к созданному файлу с данным 
+            расширением. При этом ответственность формирования программного кода 
+            ложится на программиста, который создает этот файл (файлы).</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_93>Приведем возможные действия для создания файлов типа 
+            <B>*.с</B> и <B>*.h</B> в программной среде MS Visual Studio 2010. 
+            Для этого сначала следует открыть стартовую страницу MS Visual 
+            Studio 2010. Далее открыть пункт меню <B>File–New –File</B>. 
+            Откроется страница, показанная на <A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/17/1.html#image.17.2">рис. 
+            17.2</A>. Далее следует выбрать либо <B>С++File(.cpp)</B> либо 
+            <B>Header File(.h)</B>. Завершить нажатием кнопки <B>Open</B>. Если 
+            выбрать <B>С++File(.cpp)</B>, то откроется окно для редактирования, 
+            которое по умолчанию имеет имя <B>Source1.cpp</B>. Написав 
+            необходимый код, надо сохранить файл с именем по усмотрению 
+            пользователя, но с расширением .с. Сохранение проведем по цепочке из 
+            пункта меню <B>File: File–Save – Source1.cpp As..</B>. В пункте меню 
+            "Тип файла" выбрать C Source File (*.c). В итоге откроется окно (в 
+            котором могут быть ранее созданные проекты), показанное на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.3">рис. 
+            17.3</A>.</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_94 align=left><A name=image.17.3></A></P>
+            <DIV><IMG alt="Окно для сохранения С-файла" 
+            src="Лекция_17_files/mhtCD55(1).tmp" width=563 
+            height=419></DIV><BR><B>Рис. 17.3.</B>&nbsp; Окно для сохранения 
+            С-файла
+            <P></P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_95>Сохранить файл можно где угодно. Целесообразно поместить 
+            его в папке разрабатываемого проекта, где будет находиться функция 
+            main.c. Такие же рекомендации обычно принимаются и для сохранения 
+            разрабатываемых программистом <SPAN class=xml_em_italic>h</SPAN> 
+            -файлов.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96>В случае, когда проект разрабатывается несколькими 
+            программистами, для всех может использоваться один и тот же <SPAN 
+            class=xml_em_italic>h</SPAN> -файл. Тогда этот <SPAN 
+            class=xml_em_italic>h</SPAN> -файл следует расположить в какой-то 
+            директории, расположенной на один или несколько уровней выше, чем 
+            папка создаваемого проекта. При этом подключение в программу такого 
+            <SPAN class=xml_em_italic>h</SPAN> -файла следует выполнить в 
+            соответствии со следующей нотацией:</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "..\..\some.h"</PRE></DIV>
+            <P id=id_98>Такое подключение означает, что файл <B>some.h</B> 
+            находится на два уровня выше, чем главный файл <B>main.c</B>.</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99>Можно указывать полный путь расположения заданного <SPAN 
+            class=xml_em_italic>h</SPAN> -файла. Если разрабатывается проект, 
+            который переносится с диска на диск, то всякий раз придется 
+            прописывать полный путь к <SPAN class=xml_em_italic>h</SPAN> -файлу. 
+            Поэтому обычно договариваются переносить проект на новый диск со 
+            всеми файлами. Тогда каждый программист просто рассчитывает число 
+            уровней до заданного <SPAN class=xml_em_italic>h</SPAN> -файла. При 
+            этом структура объявлений функций сохранится неизменной, т.е. без 
+            указания полного пути.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Обычно в <SPAN class=xml_em_italic>h</SPAN> -файлах 
+            дается описание прототипов разработанных файлов, постоянных, общих 
+            для проекта и препроцессорных директив. В случае использования 
+            препроцессорных директив <SPAN class=texample>(#define...)</SPAN> 
+            следует после них оставить одну пустую строку.</P>
+            <DIV id=mark_100 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Практическая часть</H3>
+            <P id=id_102><B>Пример 1</B>. Рассмотрим пример создания проекта в 
+            Microsoft Visual Studio 2010, состоящего из одного заголовочного 
+            файла (например, <B>hfile.h</B> ) и двух подключаемых функций, 
+            созданных программистом (например, <SPAN 
+            class=texample>degree()</SPAN>, <SPAN class=texample>print()</SPAN> 
+            ). В файле <B>myfile3.c</B> поместим функцию <SPAN 
+            class=texample>degree()</SPAN>, а функцию <SPAN 
+            class=texample>print()</SPAN> поместим в файл <B>myfile2.c</B>. Файл 
+            с главной функцией создаваемого проекта озаглавим как <B>main.c</B>. 
+            При этом файлы <B>hfile.h</B>, <B>myfile3.c</B> и <B>myfile2.c</B> 
+            разместим на другом диске, например, на диске <SPAN 
+            class=xml_em_italic>D</SPAN>.</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_107>В качестве примера запрограммируем решение следующей 
+            задачи. Сформируйте матрицу, состоящую из <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=N=2^k 
+            src="Лекция_17_files/mhtCD68(1).tmp" width=63 height=20> строк. 
+            Число столбцов равно k. При этом столбцы такой матрицы заполняются 
+            +1 или –1 по степеням двойки. То есть, первый столбец заполняется 
+            +1, –1, +1, –1, +1, –1 и т.д. Второй столбец: +1, +1, –1, –1, +1, 
+            +1, –1, –1 и т.д. Третий столбец: +1, +1, +1, +1, –1, –1, –1, –1 и 
+            т.д. Эту матрицу называют матрицей планирования эксперимента типа 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt=2^k 
+            src="Лекция_17_files/mhtCD7B(1).tmp" width=22 height=20>. Расчет 
+            такой матрицы должно выполняться в одном файле, а печать результата 
+            – в другом файле, при этом результат можно записать в текстовый 
+            файл. В файле <B>main.c</B> происходит обращение к созданным 
+            функциям.</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_110>Для получения числа +1 или –1 следует использовать 
+            возведение в степень числа –1. Для нечетной степени получим –1, а 
+            для четной степени – +1. Для этого разработаем специальную функцию 
+            возведения целого числа в целую степень. Для вывода результата на 
+            консоль или в файл разработаем свою функцию.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_111>Программный код решения примера:</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+#include "D:\\hfile.h"
+
+int main(void) {
+double k;
+
+printf("\n\tConstruction of a matrix of planning experiment N = 2^k\n");
+printf("\n\tEnter a natural number: ");
+scanf_s("%lf", &amp;amp;amp;amp;amp;k);
+
+if (k &lt; 1 || (ceil(k) != k) ) {
+printf("\n Error! Press any key: ");
+_getch();
+ return 0; }
+// Обращение к функции формирования матрицы планирования
+print((int)k);
+
+printf("\n\n Press any key: ");
+_getch();
+return 0; 
+}</PRE></DIV>
+            <DIV class=example><PRE>// Файл myfile3.c
+int degree(int x, int k)  {
+ int i, a = 1;
+for (i = 1; i &lt;= k; ++i)
+a *= x; return a; }</PRE></DIV>
+            <DIV class=example><PRE>// Файл myfie2.c
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+
+void print(int k) {
+int i, j, N, *PTR;
+FILE *fid;
+
+N = degree(2,k); // N = 2^k
+
+// Динамически выделяемая память
+PTR = (int *)malloc(N*k*sizeof(int));
+for (i = 0; i &lt; N; ++i)
+   for (j = 0; j &lt; k; ++j)
+PTR[i*k + j] = 0; // заполнение нулями
+
+for (i = 0; i &lt; N; ++i)
+   for (j = 0; j &lt; k; ++j)
+PTR[i*k + j] = degree(-1,(int)floor(i/degree(2,j)));
+printf("\n Matrix is planning experiment, N = 2^k, N = %d, k = %d\n", N, k);
+if (k &lt; 5) {
+   for (i = 0; i &lt; N; ++i)  {
+printf("\n%4d) ", i+1);
+     for (j = 0; j &lt; k; ++j)
+printf(" %3d", PTR[i*k+j]);
+}
+}
+else {
+    fopen_s(&amp;amp;amp;amp;amp;fid, "D:\\data.txt", "w");
+fprintf(fid, "\r\n Matrix is planning experiment, N = 2^k, N = %d, k = %d\r\n", N, k);
+for (i = 0; i &lt; N; ++i) {
+fprintf(fid, "\r\n%4d) ", i+1);
+    for (j = 0; j &lt; k; ++j)
+fprintf(fid, "%3d", PTR[i*k+j]);
+}
+fclose(fid);
+printf("\n See the result in the file \"D:\\data.txt\" \n");
+}
+}</PRE></DIV>
+            <DIV class=example><PRE>// Заголовочный файл hfile.h
+#include "D:\myfile3.c"
+#include "D:\myfile2.c"</PRE></DIV>
+            <P id=id_116>Подключение файлов сделано в двух местах: в главной 
+            функции <SPAN class=texample>main()</SPAN> и в заголовочном файле 
+            <B>hfile.h</B>. При этом прототипы функций не прописаны. 
+            Заголовочный файл <B>hfile.h</B> "выгружает" содержимое файлов 
+            <B>myfile3.c</B> и <B>myfile2.c</B> перед главной функцией <SPAN 
+            class=texample>main()</SPAN>, поэтому в теле функции можно 
+            обращаться к функциям <SPAN class=texample>degree()</SPAN> и <SPAN 
+            class=texample>print()</SPAN>. Функция <SPAN 
+            class=texample>degree()</SPAN> предназначена для возведения целого 
+            числа в степень. Она формирует матрицу планирования (с помощью 
+            указателя <SPAN class=texample>*PTR</SPAN> ) и вывода значений 
+            матрицы на консоль и (или) в текстовый файл. Имеет важное значение 
+            очередность подключения файлов <B>myfile3.c</B> и <B>myfile2.c</B>. 
+            Следует обратить внимание на синтаксис заключения в двойные ковычки 
+            имени текстового файла <B>data.txt</B>. Функция <SPAN 
+            class=texample>ceil()</SPAN> возвращает наименьшее целое 
+            (представленное в виде значения с плава ющей точкой), которое больше 
+            своего аргумента или равно ему [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>17.2</A>]. Она включена на тот случай, если 
+            пользователь введет не целое число</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_124>Возможный результат выполнения программы при выводе 
+            искомой матрицы на консоль показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.4">рис. 
+            17.4</A>.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_125 align=left><A name=image.17.4></A></P>
+            <DIV><IMG alt="" src="Лекция_17_files/mhtCD8D(1).tmp" width=611 
+            height=287></DIV><BR><B>Рис. 17.4.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_126><B>Задание 1</B></P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <OL id=id_127>
+              <LI>Проверьте работу программ при записи результата в файл. В 
+              качестве имени текстового файла примите compX.txt, где Х – номер 
+              компьютера, на котором выполняется лабораторная работа.
+              <LI>В файле <B>hfile.h</B> поменяйте местами подключаемые файлы. 
+              Добавьте необходимые изменения, чтобы программа работала корректно 
+              (без предупреждений).
+              <LI>Вместо разработанной функции <SPAN 
+              class=texample>degree()</SPAN> примените стандартную функцию <SPAN 
+              class=texample>pow()</SPAN>.
+              <LI>В программу добавьте изменения для вывода матрицы планирования 
+              при зеркальном отображении столбцов.
+              <LI>В матрицу планирования добавьте в качестве первого столбца 
+              массив положительных единиц, т.е. +1.</LI></OL>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_135><B>Пример 2</B>. Напишите программу вывода на консоль 
+            содержимого текстового файла, расположенного в заданном каталоге. 
+            Вывод на консоль содержимого файла оформить в виде отдельного 
+            файла.</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <P id=id_136>Предположим, что программный проект расположен на диске 
+            Е:\Project_C. Текстовый файл расположен на диске D:\data16.txt. 
+            Пусть содержимое текстового файла будет следующим:</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <DIV class=example><PRE>1, 2, 3, 4, 5
+ Programming in C
+ department: electronic engineering</PRE></DIV>
+            <P id=id_138>Программный код решения примера:</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Подключаемый файл fun1.c
+#include &lt;stdlib.h&gt; // Для функции exit()
+
+void print_file(char *st) { 
+char str[79+1];
+FILE *fid;
+printf("\n Data from \"%s\":\n", st);
+
+if ( (fopen_s(&amp;amp;amp;amp;amp;fid, st, "r")) ) {
+printf("\n File could not be opened.\n");
+
+printf("\n Break. Press any key: ");
+_getch(); exit(1); }
+
+printf("\n Data from the file \"%s"\n", st);
+while (!feof(fid)) {
+fgets(str, 79, fid);
+printf("%s", str);
+}
+	
+fclose(fid);
+printf("\n");
+}</PRE></DIV>
+            <DIV class=example><PRE>// Основной программный модуль проекта main.c
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include "D:\\fun1.c"
+
+// Главная функция
+int main (void) {
+	char str[79+1];
+	printf("\n Enter the file name and path: ");
+	gets_s(str, 79);
+
+// Вызов функции распечатки файла	
+	print_file(str);
+	
+	printf("\n Press any key: ");
+	_getch();
+     return 0;
+ }</PRE></DIV>
+            <P id=id_141>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.5">рис. 
+            17.5</A>.</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_142 align=left><A name=image.17.5></A></P>
+            <DIV><IMG alt="Содержимое заданного текстового файла" 
+            src="Лекция_17_files/mhtCDAF(1).tmp" width=620 
+            height=153></DIV><BR><B>Рис. 17.5.</B>&nbsp; Содержимое заданного 
+            текстового файла
+            <P></P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_143><B>Задание 2</B></P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <OL id=id_144>
+              <LI>На консоль выведите содержимое подключаемого файла 
+              <B>fun1.c</B>.
+              <LI>Измените расположение подключаемого файла, например, поместите 
+              его на диск D:\students\fun1.c.
+              <LI>В текстовый файл запишите фамилию и имя пользователя 
+              (студента), год рождения, год поступления в университет, 
+              наименование специальности.
+              <LI>Содержимое текстового файла предыдущего пункта выведите на 
+              консоль и запишите в другой текстовый файл с именем compX.txt, где 
+              Х – номер компьютера, на котором выполняется лабораторная работа. 
+              Запись в текстовый файл оформите в виде функции <B>surname.c</B>, 
+              где <B>surname</B> – фамилия пользователя.
+              <LI>В программе вместо указателя, являющегося формальным 
+              параметром функции <SPAN class=texample>print_file()</SPAN>, 
+              примените массив символов.</LI></OL>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_151><B>Пример 3</B>. Напишите программу преобразования 
+            десятичной системы счисления в двоичную, восьмеричную, 
+            шестнадцатеричную на основе системы меню. Примените массив 
+            указателей на функцию, используйте заголовочные файлы.</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <P id=id_152>Перевод заданного десятичного числа в соответствующее 
+            число по заданному основанию оформим в виде трех функций, каждая из 
+            которых будет вызываться по индексу, по которому из массива будет 
+            выбираться указатель на нужную функцию. Прототипы функций включим в 
+            заголовочный <SPAN class=xml_em_italic>h</SPAN> -файл. Основания 
+            систем счисления также поместим в заголовочный <SPAN 
+            class=xml_em_italic>h</SPAN> -файл. Для решения примера используем 
+            программы предыдущего примера.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_153>Программный код решения примера состоит из шести 
+            файлов:</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Основной программный модуль main.c
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include "hdec.h"
+
+int main (void) {
+int index[3] = {0, 1, 2};
+long int number;
+int basen;
+
+void (*fun[3])(long int) = {dec2, dec8, dec16};
+
+printf("\n Enter a positive integer numbers: ");
+scanf_s("%ld", &amp;amp;amp;amp;amp;number);
+printf("\n Select base system notation (2, 8, 16): ");
+scanf_s("%d", &amp;amp;amp;amp;amp;basen);
+if (basen == 2)
+(*fun[0])(number);
+else if (basen == 8)
+(*fun[1])(number);
+else if (basen == 16)
+(*fun[2])(number);
+else {
+printf("\n\t Error choice.");
+printf("\n Break. Press any key: ");
+_getch();
+return 0;
+}
+
+printf("\n\n Press any key: ");
+_getch();
+return 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл Dec_2.c
+// Перевод в двоичную систему счисления
+#include "base.h"
+void dec2 (long int x) {
+int i = 0;
+int Num[64];
+int next;
+long int xx = x;
+
+do {
+Num[i] = x % base2; 
+
+++i;
+x /= base2;
+
+} while (x != 0);
+
+// Результат в обратном порядке
+printf("\n Decimal number \"%ld\" has a binary equivalent:\n", xx);
+for (--i; i &gt;= 0; --i) {
+next = Num[i];
+printf("%2d", next);
+}
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл Dec_8.c
+// Перевод в восьмеричную систему счисления
+#include "base.h"
+
+void dec8 (long int y) {
+int i = 0, next;
+int Num[64];
+long int yy = y;
+
+do {
+Num[i] = y % base8; 
+++i;
+y /= base8;
+
+} while (y != 0);
+
+// Результат в обратном порядке
+printf("\n Decimal number \"%ld\" has an octal equivalent:\n", yy);
+for (--i; i &gt;= 0; --i) {
+next = Num[i];
+printf("%2d", next);
+}
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл Dec_16.c
+// Перевод в шестнадцатеричную систему счисления
+#include "base.h"
+
+void dec16 (long int z) {
+int i = 0;
+int Num[64];
+int next;
+long int zz = z;
+
+const char digits_16[16] = {
+'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+'A', 'B', 'C', 'D', 'E', 'F' };
+
+do {
+Num[i] = z % base16; 
+++i;
+z /= base16;
+
+} while (z != 0);
+
+// Результат в обратном порядке
+printf("\n Decimal number \"%ld\" has a hexadecimal equivalent:\n", zz);
+for (--i; i &gt;= 0; --i) {
+next = Num[i];
+printf("%2c", digits_16[next]);
+}
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл base.h
+// Основания систем счисления
+#define base2 2
+#define base8 8
+#define base16 16</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл hdec.h
+// Поключение файлов с функциями преобразования систем 
+// счисления
+
+#include "Dec_2.c"
+#include "Dec_8.c"
+#include "Dec_16.c"
+
+// Прототипы функций преобразования систем счисления
+void dec2 (long int a);
+void dec8 (long int b);
+void dec16 (long int c);</PRE></DIV>
+            <P id=id_160>В программе используется заголовочный файл 
+            <B>base.h</B> в целях демонстрации препроцессорных директив языка 
+            <B>С</B>. Другой заголовочный файл <B>hdec.h</B> подключает файлы с 
+            программами преобразования чисел и прототипы функций. 
+            <B>Внимание</B>! Особенность создания <SPAN 
+            class=xml_em_italic>h</SPAN> -файлов заключается в том, что они 
+            должны заканчиваться пустой строкой (после всех операторов, 
+            прототипов функций и пр.)</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_161>Файлы <B>Dec_2.c, Dec_8.c, Dec_16.c, base.h, hdec.h</B> 
+            созданы с помощью инструментальной среды Microsoft Visual Studio 
+            2010 при создании нового файла из меню <B>File–New–File</B> с 
+            последующим выбором: либо <SPAN class=xml_em_italic>h</SPAN> -файлы, 
+            либо <SPAN class=xml_em_italic>cpp</SPAN> -файлы с последующим 
+            установлением расширения языка <B>С</B>, т.е. . <B>с</B>. Созданные 
+            файлы следует сохранить в папке с основным программным котодом типа 
+            <B>main.c.</B></P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162>В программе использован массив указателей на функцию. 
+            По определению указатель на функцию содержит адрес первого байта или 
+            слова выполняемого кода функции. Над указателями на функцию 
+            запрещены арифметические операции. Так же как и для других типов 
+            переменных, можно использовать массив указателей на функцию. 
+            Соответствующая функция вызывается с указанием индекса требуемой 
+            функции. Например:</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <DIV class=example><PRE>(*fun[0])(number);</PRE></DIV>
+            <P id=id_164>Десятичное число <B>number</B> передается в функцию 
+            <SPAN class=texample>dec2()</SPAN>. Нулевой индекс соответствует 
+            выбору функции перевода десятичного числа в двоичный эквивалент.</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_166>Расположение файлов с созданными функциями в основной 
+            папке проекта, где находится файл <B>main.c</B>, позволяет 
+            подключать необходимые файлы как в текущей папке (директории).</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_167>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.6">рис. 
+            17.6</A>.</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_168 align=left><A name=image.17.6></A></P>
+            <DIV><IMG alt="Перевод десятичного числа в шестнадцатеричное" 
+            src="Лекция_17_files/mhtCDC2(1).tmp" width=620 
+            height=125></DIV><BR><B>Рис. 17.6.</B>&nbsp; Перевод десятичного 
+            числа в шестнадцатеричное
+            <P></P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_169><B>Задание 3</B></P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <OL id=id_170>
+              <LI>Получаемые результаты проверьте с помощью встроенного 
+              калькулятора calc операционной системы Windows.
+              <LI>Все файлы проекта, кроме <B>main.c</B>, расположите на один 
+              уровень выше с помощью нотации <SPAN class=texample>../</SPAN>.
+              <LI>Дополните программу вывода преобразованного десятичного числа 
+              во всех системах счисления одновременно, т.е. по основаниям 2, 8, 
+              16.
+              <LI>Видоизмените программу так, чтобы функции преобразования 
+              десятичного числа возвращали преобразованное число в основной 
+              модуль программного проекта и в нем происходил вывод на 
+              консоль.</LI></OL>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_176><B>Пример 4</B>. Напишите программу, в которой 
+            используется функция формирования накопительной суммы для заданного 
+            одномерного целочисленного массива, размерность которого вводится с 
+            клавиатуры пользователем.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_177>Для пояснения формирования накопительной суммы приведем 
+            пример. Пусть задан исходный одномерный массив:</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178>1 2 3 4 5 6 7.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179>Тогда массив накопительной суммы (cumsum – cumulative 
+            sum of elements):</P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>1 3 6 10 15 21 28.</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_181>Программный код решения примера состоит из трех 
+            файлов:</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Файл main.c
+// Основной модуль проекта
+//#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+//#include &lt;stdlib.h&gt;
+#include &lt;locale.h&gt;
+#include "hcum.h"
+
+int main (void) {
+	int i, n;
+	int *M;// Указатель для исходного массива
+	int *N;// Указатель для накопительного массива
+
+// Для поддержки русских шрифтов
+setlocale(LC_ALL, ".1251"); 
+	printf("\n Введите размерность одномерного массива: ");
+	scanf_s("%d", &amp;amp;amp;amp;amp;n);
+
+	M = (int *)calloc(n, sizeof(int));
+
+	// Формирование исходного массива
+	for (i = 0; i &lt; n; ++i)
+		M[i] = (i + 1);	
+
+printf("\n Исходный массив:\n ");
+	for (i = 0; i &lt; n; ++i)	
+		if (M[i] &lt; 10)
+			printf("%3d", M[i]); 
+
+		else if (M[i] == 10)
+			printf(" %3d", M[i]);
+		else if (M[i] &gt; 10 &amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp; M[i] &lt; 100)
+			printf("%4d", M[i]); 
+		else
+			printf("%5d", M[i]); 
+
+	printf("\n\n Массив накопительной суммы:\n ");
+	// M - фактический аргумент функции cumsum()
+	N = cumsum(M, n);
+	for (i = 0; i &lt; n; ++i) 
+		if (N[i] &lt; 10)
+			printf("%3d", N[i]);
+		else if (N[i] == 10 )
+			printf(" %3d", N[i]); 
+		else if (N[i] &gt; 10 &amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp; N[i] &lt; 100)
+			printf("%4d", N[i]); 
+		else
+			printf("%5d", N[i]); 
+
+// Освобождение выделенной памяти
+	free(M);
+	free(N);
+
+	printf("\n\n\n Нажмите любую клавишу (Press any key): ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый заголовочный Файл hcum.h
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;locale.h&gt;
+
+// Прототип функции cumsum()
+int *(cumsum)(int *arr, int n);</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл fcum.c
+// Функция cumsum()
+#include "hcum.h"
+
+int *(cumsum)(int *arr, int n)
+ {
+	int i;
+	int *SUM;// Указатель для накопительного массива
+
+
+	// Выделение памяти для нового указателя
+	SUM = (int *)calloc(n, sizeof(int));
+setlocale(LC_ALL, ".1251"); // для русских шрифтов
+	// Проверка выделенной памяти
+	if (SUM == NULL) {
+		printf("\n Память не выделена.\n");
+		exit(1); 	}
+	
+// Основной код формирования накопительной суммы
+	SUM[0] = arr[0];
+	for (i = 1; i &lt; n; ++i)
+		SUM[i] = SUM[i-1] + arr[i];
+
+	return (SUM); 
+}</PRE></DIV>
+            <P id=id_185>Следует обратить внимание на расположение заголовочного 
+            файла <B>stdlib.h</B> – он впереди подключаемого файла 
+            <B>fcum.c</B>, поскольку в файле <B>fcum.c</B> используется 
+            динамическое распределение памяти, для чего требуется библиотека 
+            <B>stdlib.h</B>. Формирование накопительной суммы выполнено в 
+            разработанной функции <B>fcum.c</B>.</P>
+            <DIV id=mark_185 class=lecture_mark></DIV>
+            <P id=id_186>В программе закомментированы библиотечные заголовочные 
+            файлы, которые включены в файл <B>hcum.h</B>. Сама накопительная 
+            функция <SPAN class=texample>cumsum()</SPAN> определена через 
+            указатель на функцию. Поэтому она возвращает указатель, который 
+            указывает на нулевой элемент массива накопительной суммы. Созданные 
+            файлы <B>hcum.h</B> и <B>fcum.c</B> расположены в папке проекта 
+            вместе с файлом главной функции <B>main.c</B>.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_188>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.7">рис. 
+            17.7</A>.</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_189 align=left><A name=image.17.7></A></P>
+            <DIV><IMG alt="Пример расчета накопительной суммы" 
+            src="Лекция_17_files/mhtCDE4(1).tmp" width=620 
+            height=156></DIV><BR><B>Рис. 17.7.</B>&nbsp; Пример расчета 
+            накопительной суммы
+            <P></P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_190><B>Задание 4</B></P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <OL id=id_191>
+              <LI>Файлы <B>hcum.h</B> и <B>fcum.c</B> расположите за пределами 
+              папки проекта. Применить различные комбинации расположения файлов 
+              <B>hcum.h</B> и <B>fcum.c</B> в различных папках данного диска. 
+              Обеспечьте работоспособность программы.
+              <LI>Внесите изменения в программу, чтобы она была работоспособной 
+              без заголовочного файла <B>hcum.h</B>.
+              <LI>Напишите программу формирования накопительной суммы 
+              вещественных чисел заданного массива. Формирование исходного 
+              массива выполните по случайному равномерному закону из интервала 
+              [–X; +X], где Х – номер компьютера, на котором выполняется 
+              лабораторная работа.
+              <LI>Напишите функцию для расчета накопительной суммы столбцов 
+              прямоугольной матрицы, размерность которой задается пользователем, 
+              и заполняется, например, натуральными числами.
+              <LI>Напишите функцию для расчета накопительной суммы строк 
+              прямоугольной матрицы, размерность которой задается пользователем, 
+              и заполняется, например, натуральными числами.
+              <LI>В программе предусмотрите вывод результатов в текстовый файл с 
+              именем compX.txt, где Х – номер компьютера, на котором выполняется 
+              лабораторная работа.</LI></OL>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_198><B>Пример 5</B>. Напишите программу быстрой сортировки 
+            Хоара одномерного массива целых чисел с расположением функций в 
+            разных файлов [5]. Предусмотрите формирование одномерного массива 
+            случайным образом с динамическим распределением памяти.</P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_199>Программный код решения примера состоит из трех 
+            файлов:</P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//   1-й файл с главной функцией - файл main.c 
+
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;time.h&gt;
+#include "hsort.h"// Созданный заголовочный файл
+	
+int main (void) {
+int i, n;
+	int *M;// Указатель для исходного массива
+	int Limit = 100;
+	time_t t; // переменная текущего времени
+
+// Рандомизация генератора псевдослучайных чисел
+	srand( (unsigned int) time(&amp;amp;amp;amp;amp;t));
+
+// Для поддержки русских шрифтов
+	setlocale(LC_ALL, ".1251"); 
+
+	printf("\n\t Быстрая сортировка Хоара\n");
+     printf("\n Введите размерность одномерного массива: ");
+	scanf_s("%d", &amp;amp;amp;amp;amp;n);
+
+// Выделение памяти для заданной размерности массива
+	M = (int *)malloc(n*sizeof(int));
+
+// Формирование случайного исходного массива
+	for (i = 0; i &lt; n; ++i)
+		M[i] = -Limit/2 + rand() % Limit; 	
+
+	printf("\n Исходный одномерный массив:\n");
+	for (i = 0; i &lt; n; ++i)	
+		if (abs(M[i]) &lt; 10) {
+			if (M[i] &lt; 0)
+			printf("%4d", M[i]); 
+			else
+			printf("%3d", M[i]);
+		}
+		else {
+			if (M[i] &lt; 0)
+			printf("%5d", M[i]);
+			else
+			printf("%4d", M[i]);
+		}
+
+printf("\n\n Отсортированный одномерный массив:\n");
+QuickSort(M, n);
+for (i = 0; i &lt; n; ++i)	
+		if (abs(M[i]) &lt; 10) {
+			if (M[i] &lt; 0)
+			printf("%4d", M[i]); 
+			else
+			printf("%3d", M[i]);
+		}
+		else {
+			if (M[i] &lt; 0)
+			printf("%5d", M[i]);
+			else
+			printf("%4d", M[i]);
+		}
+
+	printf("\n\n Нажмите любую клавишу: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// 2-файл - подключаемый заголовочный файл hsort.h 
+// с прототипом функции быстрой сортировки Хоара
+void QuickSort(int *A, int n);</PRE></DIV>
+            <DIV class=example><PRE>// 3-й файл - подключаемый файл my_sort.c 
+// с кодом быстрой сортировки Хоара
+
+void QuickSort (int *A, int n)
+ {
+	int i, j, s;
+	int L, R;
+	int k, x;
+#define D 1000
+	struct stack {
+		int L;
+		int R;
+	} st[D];// имитация стека
+
+	s = 1; st[1].L = 0; st[1].R = n - 1;
+
+	do {
+		L = st[s].L; R = st[s].R; s--;
+		do {
+			i = L; j = R;
+			x = A[(L+R)/2]; // разделяющий элемент
+			
+               do {
+				while (A[i] &lt; x)
+					i++;
+				while (x &lt; A[j])
+					j--;
+				if (i &lt;= j){
+					k = A[i]; A[i] = A[j]; A[j] = k;
+					i++; j--;
+				}// end if
+
+			} while (i &lt; j); // end 3d do
+
+			if (i &lt; R)
+			{s++; st[s].L = i; st[s].R = R;}
+			
+            R = j;
+		} while (L &lt; R);// end 2nd do
+	} while (s != 0);// end 1st do
+
+}</PRE></DIV>
+            <P id=id_203>Цикл <SPAN class=texample>do–while</SPAN> применен для 
+            того, чтобы тело цикла выполнялось хотя бы один раз.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_205>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.8">рис. 
+            17.8</A>.</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_206 align=left><A name=image.17.8></A></P>
+            <DIV><IMG alt="Пример сортировки одномерного массива" 
+            src="Лекция_17_files/mhtCE06(1).tmp" width=620 
+            height=200></DIV><BR><B>Рис. 17.8.</B>&nbsp; Пример сортировки 
+            одномерного массива
+            <P></P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_207><B>Задание 5</B></P>
+            <DIV id=mark_207 class=lecture_mark></DIV>
+            <OL id=id_208>
+              <LI>Произведите сборку проекта из трех предложенных файлов.
+              <LI>Напишите программу с сохранением исходного массива и 
+              полученного отсортированного массива.
+              <LI>Выведите результаты в текстовый файл с именем compX.txt, где Х 
+              – номер компьютера, на котором выполняется лабораторная работа. В 
+              текстовом файле массивы выведите в виде двух столбцов: исходный 
+              массив и отсортированный массив. Размер массивов не менее 10.
+              <LI>Измените программу: исключите заголовочный файл 
+<B>hsort.h</B>.
+              <LI>Введите изменения в программу для сортировки вещественных 
+              чисел.</LI></OL>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_214><B>Пример 6</B>. Напишите программу вычисления 
+            степенного полинома в заданной точке по схеме Горнера.</P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_215>Пусть задан полином в следующем виде:</P>
+            <DIV id=mark_215 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="P(x)=a_o x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n" 
+            src="Лекция_17_files/mhtCE29(1).tmp" width=336 height=22>.
+            <P id=id_217>Алгоритм схемы Горнера осуществляется при помощи 
+            формулы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#17" 
+            target=_blank>17.6</A>]:</P>
+            <DIV id=mark_217 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt=P(x)=a_o+x(a_1+x(a_2+\cdots+x(a_{n-1}+xa_n)\cdots)) 
+            src="Лекция_17_files/mhtCE3B(1).tmp" width=417 height=22>.
+            <P id=id_219>Полагая, что <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=u_n=a_n, 
+            src="Лекция_17_files/mhtCE4E(1).tmp" width=72 height=14> расчет 
+            полинома в заданной точке производится по следующей итерационной 
+            формуле [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#17" 
+            target=_blank>17.6</A>]:</P>
+            <DIV id=mark_219 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=u_k=x_ou_{k+1}+a_k,k=n-1,\cdots,1,10 
+            src="Лекция_17_files/mhtCE70(1).tmp" width=303 height=20>.
+            <P id=id_222>Для программной реализации примера примем следующий 
+            полином:</P>
+            <DIV id=mark_222 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt=P(x)=x^4+2x^3+3x^2+4x+5 src="Лекция_17_files/mhtCE83(1).tmp" 
+            width=255 height=22>.
+            <P id=id_224>Рассчитаем значение полинома в точке <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" alt="х_0 = 2" 
+            src="Лекция_17_files/mhtCE95(1).tmp" width=54 height=18>.</P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <P id=id_226>Программный код решения примера:</P>
+            <DIV id=mark_226 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+
+// Размерность массива коэффициентов полинома
+#define N 5
+// Главная функция
+int main (void)  {
+	int i;
+
+// Массив коэффициентов полинома
+double A[ ] = {1.0, 2.0, 3.0, 4.0, 5.0};
+double x0 = 2.0, y;
+
+// Для русских шрифтов
+setlocale(LC_ALL, ".1251");
+
+// Для вывода чисел с плавающей точкой
+setlocale(LC_NUMERIC, "English");
+// Консольный заголовок
+  printf("\n\t Применение схемы Горнера\n");
+printf(" Вычисление полинома P(x) %d порядка в точке х = %1.4f:\n", N-1, x0);
+
+// Основной цикла расчета по схеме Горнера
+y = A[0];
+
+for ( i = N-2; i &gt;= 0; --i )
+y = y*x0 + A[(N-1)-i];
+
+// Вывод результата
+printf("\n\t P(x) = %0.4f \n", y );
+
+printf("\n Нажмите любую клавишу (Press any key): \a");
+_getch();
+return 0;
+}</PRE></DIV>
+            <P id=id_228>Следует обратить внимание на индексацию массива, 
+            который находится в теле цикла. В последней функции <SPAN 
+            class=texample>printf()</SPAN> использован спецификатор <SPAN 
+            class=texample>"\a"</SPAN> для подачи звукового сигнала.</P>
+            <DIV id=mark_228 class=lecture_mark></DIV>
+            <P id=id_231>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\17. Лекция Программы на языке С, состоящие из нескольких файлов.mht#image.17.9">рис. 
+            17.9</A>.</P>
+            <DIV id=mark_231 class=lecture_mark></DIV>
+            <P id=id_232 align=left><A name=image.17.9></A></P>
+            <DIV><IMG alt="Результат вычисления полинома по схеме Горнера" 
+            src="Лекция_17_files/mhtCEB7(1).tmp" width=620 
+            height=127></DIV><BR><B>Рис. 17.9.</B>&nbsp; Результат вычисления 
+            полинома по схеме Горнера
+            <P></P>
+            <DIV id=mark_232 class=lecture_mark></DIV>
+            <P id=id_233><B>Задание 6</B></P>
+            <DIV id=mark_233 class=lecture_mark></DIV>
+            <OL id=id_234>
+              <LI>Примените оператор цикла <SPAN class=texample>do – 
+              while</SPAN> вместо оператора цикла <SPAN 
+              class=texample>for</SPAN>.
+              <LI>Создайте подключаемый файл, в котором реализуется схема 
+              Горнера. Предусмотрите вызов этого файла из главной функции.
+              <LI>Предусмотрите ввод коэффициентов полинома с клавиатуры. Далее 
+              предусмотрите обращение к созданному файлу с реализацией схемы 
+              Горнера.
+              <LI>Напишите программу символической записи на консоли заданного 
+              полинома по известным коэффициентам. Оформите этот фрагмент 
+              программы в виде подключаемого файла.
+              <LI>Предусмотрите запись в текстовый файл символического 
+              представления полинома с заданными коэффициентами и значения 
+              полинома в заданной точке. Имя файла примите compX.txt, где X – 
+              номер компьютера, на котором выполняется лабораторная 
+            работа.</LI></OL>
+            <DIV id=mark_234 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_242>
+              <LI>Как рекомендуется организовать внутреннюю работу 
+              пользовательских функций по отношению к другим функциям в 
+              программах на языке <B>С</B>? Перечислите основные правила 
+              организации внутренней работы функций и достоинства этих правил.
+              <LI>В чем заключается основное назначение заголовочных файлов ( 
+              <SPAN class=xml_em_italic>h</SPAN> -файлов) в проектах языка 
+              <B>С</B>?
+              <LI>Как следует объявить функцию, чтобы доступ к ней был 
+              невозможен за пределами файла, где она была определена?
+              <LI>Как следует объявить функцию, чтобы к ней можно было 
+              обращаться из других функций проекта?
+              <LI>Какие классификаторы классов памяти поддерживает стандарт 
+              языка <B>С</B>?
+              <LI>Какой классификатор памяти используется по умолчанию в 
+              программах на языке <B>С</B>?
+              <LI>Какие расширения можно применить к файлам, содержащим 
+              пользовательские функции?
+              <LI>Как осуществляется компиляция файлов с пользовательскими 
+              функциями в программной среде Visual Studio?
+              <LI>Как осуществляется подключение файлов с пользовательскими 
+              функциями, которые расположены на различных логических дисках 
+              компьютера?</LI></OL>
+            <DIV id=mark_242 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_17_files/mhtCCDC(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

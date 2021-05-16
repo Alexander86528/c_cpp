@@ -1,0 +1,33 @@
+﻿# Project: Проект2
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++rus.exe
+CC   = gccrus.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = 9a-alphalist.o wordlist.o $(RES)
+LINKOBJ  = 9a-alphalist.o wordlist.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = 9a-alphalist.exe
+CXXFLAGS = $(CXXINCS)   -std=c99
+CFLAGS = $(INCS)   -std=c99
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before 9a-alphalist.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "9a-alphalist.exe" $(LIBS)
+
+9a-alphalist.o: 9a-alphalist.c
+	$(CC) -c 9a-alphalist.c -o 9a-alphalist.o $(CFLAGS)
+
+wordlist.o: wordlist.c
+	$(CC) -c wordlist.c -o wordlist.o $(CFLAGS)

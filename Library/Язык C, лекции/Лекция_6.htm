@@ -1,0 +1,996 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_6_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG src="Лекция_6_files/mhtF89(1).tmp" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_6_files/mhtF89(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_6_files/mhtF89(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>6. Лекция: Символьные массивы в языке С. 
+            Работа со строками: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции надлежит изучить задание и инициализацию 
+            символьных массивов в языке программирования С, изучить решение 
+            задач с символьными массивами, изучить базовые функции для работы со 
+            строками. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_6_files/mhtF89(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>В языке программирования <B>С</B> заложены средства для 
+            задания последовательностей упорядоченных данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>6.1</A>]. Такие последовательности называются 
+            массивами. В массивах должны быть упорядочены данные одного и того 
+            же типа. В данной лабораторной работе будут рассматриваться массивы 
+            символов, которые определятся типом <SPAN 
+            class=texample>char</SPAN>. Одномерный массив наиболее часто 
+            применяется в виде строки символов. Строка – это одномерный массив 
+            символов, заканчивающийся нулевым символом [1; 2]. В языке <B>С</B> 
+            признаком окончания строки служит символ <SPAN 
+            class=texample>'\0'</SPAN>. При объявлении массива символов, 
+            предназначенного для хранения строки, необходимо отвести одно место 
+            для нуля, т.е. для символа окончания строки <SPAN 
+            class=texample>'\0'</SPAN>. Например, если дана строка <SPAN 
+            class=texample>qwerty</SPAN>, в которой 6 символов, каждый из 
+            которых занимает в памяти 1 байт, то при инициализации такой строки 
+            необходимо отвести 1 байт для нулевого символа. Поэтому следует 
+            сделать объявление строки для семи символов:</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[7] = "qwerty";</PRE></DIV>
+            <P id=id_7>Альтернативным объявлением может служить безразмерная 
+            инициализация:</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[ ] = "qwerty";</PRE></DIV>
+            <P id=id_9>При этом в случае определения длины строки результатом 
+            будет число 6. Размер строки не изменится, если в ней указать символ 
+            окончания строки:</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[ ] = "qwerty\0";</PRE></DIV>
+            <P id=id_11>Аналогично числовым массивам в языке <B>С</B> могут 
+            использоваться массивы строк, т.е. набор одномерных массивов 
+            символов. Например, сервер базы данных сверяет команды пользователей 
+            с массивом допустимых команд [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]. В качестве массива строк для этого случая 
+            будет служить двухмерный символьный массив. Размер левого измерения 
+            определяет количество строк, а правого – максимальную длину каждой 
+            строки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]. Например:</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[30][80];</PRE></DIV>
+            <P id=id_13>Число 30 – это количество строк массива, а число 80 – 
+            максимальная длина каждой строки с учетом нулевого символа 
+            завершения строки.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Чтобы обратиться к отдельной строке двухмерного 
+            символьного массива, достаточно указать только левый индекс 
+            объявленного массива.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Многомерные символьные массивы образуются, как и 
+            числовые массивы:</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[n][m]...[N];</PRE></DIV>
+            <P id=id_17>В объявлении массива <B>n</B> – первая размерность, 
+            <B>m</B> – вторая размерность,&nbsp;..., <B>N</B> – <SPAN 
+            class=xml_em_italic>N</SPAN> -я (последняя) размерность. Значения 
+            размерностей – целые неотрицательные числа.</P>
+            <DIV id=mark_17 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>6.1. Одномерные символьные массивы – строки</H4>
+            <P id=id_18><SPAN class=xml_em_italic>Одномерный массив</SPAN> – это 
+            список связанных однотипных переменных.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Общая форма записи одномерного массива [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер];</PRE></DIV>
+            <P id=id_21>В приведенной записи элемент тип объявляет базовый 
+            <B>тип</B> массива. Количество элементов, которые будут храниться в 
+            массиве с именем <SPAN class=texample>имя_массива</SPAN>, 
+            определяется элементом <B>размер</B>.</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_23>В языке <B>С</B> индексация массива (символьного или 
+            числового) начинается с нуля.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Доступ к отдельному элементу массива осуществляется с 
+            помощью индекса. <SPAN class=xml_em_italic>Индекс</SPAN> описывает 
+            позицию элемента внутри массива.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25>Все массивы занимают смежные ячейки памяти, т.е. 
+            элементы массива в памяти расположены последовательно друг за 
+            другом. Ячейка памяти с наименьшим адресом относится к первому 
+            элементу массива, а с наибольшим – к последнему.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>Для массива символов при инициализации массива 
+            необходимо резервировать место для символа окончания строки, т.е. 
+            для символа <SPAN class=texample>'\0'</SPAN>.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_28>Символьная константа – это набор символов, заключенных в 
+            двойные апострофы, например, <SPAN 
+class=texample>"hello"</SPAN>.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_30>В конец символьной строки не требуется обязательно 
+            добавлять нуль, компилятор языка <B>С</B> делает это автоматически. 
+            При инициализации символьной строки как одномерного массива 
+            необходимо предусмотреть место для нулевого символа, например:</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[7] =  "hello";</PRE></DIV>
+            <P id=id_32><SPAN class=xml_em_italic>Каждая строка содержит на один 
+            символ больше, чем задано явно</SPAN>: все строки оканчиваются 
+            нулевым символом, имеющим значение 0.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>Для одномерных массивов общий размер массива в байтах 
+            вычисляется по формуле:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = размер типа в байтах *  количество элементов</PRE></DIV><A 
+            name=sect3></A>
+            <H4>6.2. Двухмерные символьные массивы</H4>
+            <P id=id_35>Двухмерный массив представляет собой список одномерных 
+            массивов.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_36>Общая форма записи двухмерного массива:</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер1] [размер2];</PRE></DIV>
+            <P id=id_38>В приведенной записи <B>размер1</B> означает число строк 
+            двухмерного массива, а <B>размер2</B> – количество столбцов. При 
+            этом размерность <B>размер2</B> определяет максимальную длину для 
+            заданного массива. Обычно <B>размер2</B> задают с некоторым 
+            запасом.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39>В двухмерном массиве позиция любого элемента 
+            определяется двумя индексами. Индексы каждого из размеров массива 
+            начинаются с нуля.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40>Место хранения для всех элементов массива определяется 
+            во время компиляции. Память, выделенная для хранения массива, 
+            используется в течение всего времени существования массива.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Для двухмерных массивов заданного типа общий размер 
+            массива в байтах вычисляется по формуле:</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = количество строк * количество столбцов * размер в байтах</PRE></DIV>
+            <P id=id_43>Инициализация двухмерного символьного массива может быть 
+            определена либо посимвольно, либо построчно, например</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char str[3][80] = {
+		{'1','2','3','4','5'},
+		{'x','y','z'},
+		{'A','B','C','D'}
+          };
+
+char str2[3][80] = {
+		"0123456789",
+		"x_y_z",
+		"A B C D" };</PRE></DIV>
+            <P id=id_45>Число 80 взято с запасом для возможной длины строки. 
+            Число 3 – это количество строк двухмерного массива. В обоих случаях 
+            могут быть добавлены символы окончания строки ( <SPAN 
+            class=texample>'\0'</SPAN> ). Символ <SPAN 
+            class=texample>'\0'</SPAN> не выводится на экран дисплея и не 
+            передается в файл, например, в текстовый файл. В то же время 
+            необходимо помнить, что каждая строка заканчивается нулевым 
+            символом.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV><A name=sect4></A>
+            <H4>6.3. Многомерные символьные массивы</H4>
+            <P id=id_48>Общая форма записи многомерного массива:</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер1] [размер2]... [размерN];</PRE></DIV>
+            <P id=id_50>Индексация каждого размера начинается с нуля. Элементы 
+            многомерного массива располагаются в памяти в порядке возрастания 
+            самого правого индекса. Поэтому правый индекс будет изменяться 
+            быстрее, чем левый (левые). При этом в конце каждой строки 
+            подразумевается нулевой символ.</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51>При обращении к многомерным массивам компьютер много 
+            времени затрачивает на вычисление адреса, так как при этом 
+            приходится учитывать значение каждого индекса [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]. Поэтому доступ к элементам многомерного 
+            массива происходит значительно медленнее, чем к элементам 
+            одномерного. В связи с этим использование многомерных массивов 
+            встречается значительно реже, чем одномерных или двухмерных 
+            массивов.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52>Для многомерных массивов общий размер многомерного 
+            массива в байтах вычисляется по формуле:</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = размер1 * размер2* ... *размерN * размер типа в байтах</PRE></DIV>
+            <P id=id_54>Очевидно, многомерные массивы способны занять большой 
+            объем памяти, а программа, которая их использует, может очень быстро 
+            столкнуться с проблемой нехватки памяти.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_55>Для определения размера типа в байтах применяется 
+            функция <SPAN class=texample>sizeof()</SPAN>, которая возвращает 
+            целое число. Например, <SPAN class=texample>sizeof(char)</SPAN>.</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_58>При инициализации многомерных массивов необходимо 
+            указать все данные (размерности) за исключением крайней слева 
+            размерности. Это нужно для того, чтобы компилятор смог определить 
+            длину подмассивов, составляющих массив, и смог выделить необходимую 
+            память.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Практическая часть</H3>
+            <P id=id_59><B>Пример 1</B>. Напишите программу определения длины 
+            заданных строк и их распечатки, а также определения размера строк в 
+            байтах.</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>Для решения поставленной задачи применим библиотечную 
+            функцию <SPAN class=texample>strlen()</SPAN> и оператор <SPAN 
+            class=texample>sizeof</SPAN>.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_63>Программный код решения примера:</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+int main (void) {
+	char str[] = {'A','B','C','D','\0'};
+	char str2[] = "hello, world\0";
+	printf("\n\t The lines are:\n\n\t ");
+puts(str);
+printf("\t "); // Для отступа от края дисплея
+puts(str2);
+
+printf("\n\t The length of the 1st line (%s) is: %i\n", str, strlen(str));
+printf("\t The size of the memory of the 1st line (%s) is: %i\n", str, sizeof str);
+printf("\n\t The length of 2-nd line (%s) is: %i\n", str2, strlen(str2));
+printf("\t Memory size 2-nd line (%s) is: %i\n", str2, sizeof str2);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_65>В программе функция <SPAN class=texample>strlen()</SPAN> 
+            возвращает длину строки, причем строка должна заканчиваться символом 
+            строки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]. Символ конца строки не учитывается. Для 
+            работы с функцией <SPAN class=texample>strlen()</SPAN> необходимо 
+            подключить заголовок <SPAN class=texample>&lt;string.h&gt;</SPAN>. 
+            Оператор <SPAN class=texample>sizeof</SPAN> во время компиляции 
+            программы получает размер типа или значения. Для определения размера 
+            типа оператор используется со скобками, например, <SPAN 
+            class=texample>sizeof(char)</SPAN>, а для определения размера 
+            конкретного значения оператор может использоваться без скобок.</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_71>В программе использована функция <SPAN 
+            class=texample>puts()</SPAN>, которая записывает строку, адресуемую, 
+            например, параметром <B>str</B>, в стандартное выходное устройство – 
+            дисплей. Символ конца строки преобразуется в разделитель строк.</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_73>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.1">рис. 
+            6.1</A>.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74 align=left><A name=image.6.1></A></P>
+            <DIV><IMG alt="Определение длины и размерности строк" 
+            src="Лекция_6_files/mhtFCA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.1.</B>&nbsp; Определение длины и 
+            размерности строк
+            <P></P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_75><B>Задание 1</B></P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <OL id=id_76>
+              <LI>В строке <SPAN class=texample>str2[]</SPAN> уберите символ 
+              завершения строки. Проанализируйте и объясните результат.
+              <LI>Вместо функций <SPAN class=texample>puts()</SPAN> примените 
+              функции <SPAN class=texample>printf()</SPAN>.
+              <LI>Задайте явную инициализацию строк как одномерных массивов. 
+              Сравните результаты длины и размерности строк.
+              <LI>При явной инициализации одномерных массивов в заданных строках 
+              не указывайте символы конца строки. Проанализируйте результат 
+              выполнения программы.
+              <LI>Напишите программу циклического заполнения символьного 
+              массива, соответствующего фамилии пользователя (студента).
+              <LI>Определите размерности типов: <B>char, int, float, double, 
+              long int, long double, long long int</B>. Выполните в цикле при 
+              использовании оператора типа переключатель.</LI></OL>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_86><B>Пример 2</B>. Напишите программу копирования одной 
+            заданной строки в другую.</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_87>Для решения используем библиотечную функцию <SPAN 
+            class=texample>strcpy()</SPAN>, для которой подключим заголовок 
+            <SPAN class=texample>&lt;string.h&gt;</SPAN>.</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_90>Программный код решения примера:</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+int main (void) {
+	char str1[] = "123456789";
+	char str2[] = "qwerty";
+printf("\n\t The length of the line \"%s\" is: %d\n", str1, strlen(str1));
+		strcpy(str1, str2);
+	printf("\t After copying: ");
+	puts(str1);
+printf("\n\t The length of the line \"%s\" is: %d\n", str1, strlen(str1));
+	
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_92>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.2">рис. 
+            6.2</A>.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_93 align=left><A name=image.6.2></A></P>
+            <DIV><IMG alt="Копирование строк" src="Лекция_6_files/mhtFEC(1).tmp" 
+            width=620 height=313></DIV><BR><B>Рис. 6.2.</B>&nbsp; Копирование 
+            строк
+            <P></P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_94><B>Задание 2</B></P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <OL id=id_95>
+              <LI>В программе для строк добавьте символ окончания строки. 
+              Проанализируйте результат выполнения программы.
+              <LI>Скопированную строку выведите на экран дисплея с разрядкой (с 
+              пробелами) между символами.
+              <LI>Произведите копирование одной строки в другую при их задании 
+              через клавиатуру.
+              <LI>Введите с клавиатуры две строки, различающиеся одним символом. 
+              Напишите программу по определению индексов двух различных символов 
+              для введенных строк. Длину строк возьмите не менее 7 символов.
+              <LI>Произведите копирование одной строки в другую без применения 
+              функции <SPAN class=texample>strcpy()</SPAN>.
+              <LI>С клавиатуры введите свою фамилию (буквами латинского 
+              алфавита), выведите ее на консоль в прямом и обратном порядке, 
+              например, Ivanov, vonavI.</LI></OL>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_103><SPAN class=texample>Пример 3</SPAN>. Напишите 
+            программу преобразования десятичной системы счисления в двоичную. 
+            Исходное десятичное число считайте целым без знака.</P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <P id=id_105>Программный код решения примера:</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	const char D[] = {
+		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	    int newNumber[80];
+		long int inputNumber;
+		int i = 0, base = 2;
+	printf("\n\t Enter a positive integer: ");
+		scanf_s("%ld", &amp;inputNumber);
+// Прямой процесс преобразования десятичного числа в двоичное
+		do {
+			newNumber[i] = inputNumber % base;
+			++i;
+			inputNumber /= base;
+		} while ( inputNumber != 0 );
+
+//Запись преобразованного числа в обратном порядке
+		printf("\n\t Result after conversion: ");	
+for (--i; i &gt;= 0; --i)
+		printf("%d", newNumber[i]);
+	
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_107>В программе использован квалификатор (спецификатор) 
+            типа <B>const</B>, который указывает компилятору, что символьный 
+            массив не может изменяться в программе.</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.3">рис. 
+            6.3</A>.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109 align=left><A name=image.6.3></A></P>
+            <DIV><IMG alt="Перевод десятичного числа в двоичное число" 
+            src="Лекция_6_files/mht100E(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.3.</B>&nbsp; Перевод десятичного 
+            числа в двоичное число
+            <P></P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110><B>Задание 3</B></P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <OL id=id_111>
+              <LI>Проверьте работу программы с помощью инженерного калькулятора 
+              (см. <B>calc</B> через Пуск–Выполнить).
+              <LI>Подсчитайте число итераций цикла для преобразования числа 13 в 
+              двоичное число.
+              <LI>Вместо цикла <SPAN class=texample>do–while</SPAN> примените 
+              цикл <SPAN class=texample>while</SPAN>.
+              <LI>Напишите программу преобразования двоичного числа в десятичное 
+              число. Проверьте работу программы с помощью инженерного 
+              калькулятора.
+              <LI>Проверьте программу для преобразования десятичных чисел в 
+              числа с основанием 3 и 8.</LI></OL>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_119><B>Пример 4</B>. С помощью функции <SPAN 
+            class=texample>strcat()</SPAN> присоедините одну строку к другой с 
+            пробелом и без.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_121>Пусть имеются строки <SPAN class=texample>str1</SPAN> и 
+            <SPAN class=texample>str2</SPAN>. Функция <SPAN 
+            class=texample>strcat()</SPAN> присоединяет к строке <SPAN 
+            class=texample>str1</SPAN> копию строки <SPAN 
+            class=texample>str2</SPAN> и завершает строку <SPAN 
+            class=texample>str1</SPAN> нулевым символом. Процесс присоединения 
+            называется конкатенацией.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_128>Программный код решения примера:</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#define N 79
+
+int main (void) {
+	char str1[N+1], str2[N+1];
+
+	printf("\n\t Print 1 string of characters: ");
+     gets_s(str1, N); // для MS Visual Studio
+
+	printf("\t Print 2 string of characters: "); 	gets_s(str2, N); // для MS Visual Studio
+
+	strcat_s(str1, N, str2); // для MS Visual Studio
+	printf("\n\t Result after concatenation: %s\n", str1);
+	
+     printf("\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_130>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.4">рис. 
+            6.4</A>.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131 align=left><A name=image.6.4></A></P>
+            <DIV><IMG alt="Результат конкатенации двух строк" 
+            src="Лекция_6_files/mht1021(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.4.</B>&nbsp; Результат конкатенации 
+            двух строк
+            <P></P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132><B>Задание 4</B></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <OL id=id_133>
+              <LI>Дополните программу присоединением трех строк, например, 
+              имени, отчества и фамилии пользователя с учетом необходимых 
+              пробелов.
+              <LI>Примените посимвольный ввод строк и произведите их 
+              конкатенацию с выводом на дисплей результата конкатенации.
+              <LI>Произведите конкатенацию имени и фамилии пользователя с 
+              помощью операторов цикла, т.е. без помощи функции <SPAN 
+              class=texample>strcat()</SPAN>. Предусмотрите пробел между именем 
+              и фамилией.
+              <LI>Присоедините к своему имени свою фамилию, записанную в 
+              обратном порядке.</LI></OL>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_139><B>Пример 5</B>. Для заданного двухмерного символьного 
+            массива сравните длину каждой строки друг с другом и вывести 
+            результат сравнения: 1-я строка меньше или больше 2-й строки, строки 
+            равны между собой.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140>Для сравнения двух строк используем библиотечную 
+            функцию <SPAN class=texample>strcmp()</SPAN>, которая сравнивает в 
+            <SPAN class=xml_em_italic>лексикографическом порядке</SPAN> две 
+            строки и возвращает целое значение, зависящее от результата 
+            сравнения [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>6.2</A>]. Если первая строка меньше второй, то 
+            возвращается значение меньше нуля, если строки равны (по длине), то 
+            возвращается нуль, если первая строка больше второй, то возвращается 
+            число больше нуля.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_142>Программный код решения примера:</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt; // Для функции strcmp()
+
+#define n 2
+#define m 80
+
+int main (void)
+{
+          int i, x;
+		char str[n][m] = {
+		"hello,",
+		"Hello," 	};
+
+	printf("\n\t Array of strings:\n");
+for (i = 0; i &lt; n; ++i)
+printf("\t %d) %s\n\t (Length: %d)\n", i+1, str[i], strlen(str[i]));
+
+printf("\n\t Comparision of lines: ");
+for (i = 0; i &lt; (n - 1); ++i)
+{x = strcmp(str[i], str[i+1]);
+printf("\n\t Return the function of \"strcmp()\": %d", x);
+ 
+if (x == 0)
+printf("\n Line %d is equal to %d?nd line.", i+1, i+2);
+ 
+else if (x &gt; 0)
+printf("\n Line %d is not equal to %d?nd line.", i+1, i+2);
+  
+else if (x &lt; 0)
+printf("\n Line %d is not equal to %d-nd line.", i+1, i+2);
+}
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_144>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.5">рис. 
+            6.5</A>.</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_145 align=left><A name=image.6.5></A></P>
+            <DIV><IMG alt="Лексикографическое сравнение двух строк" 
+            src="Лекция_6_files/mht1043(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.5.</B>&nbsp; Лексикографическое 
+            сравнение двух строк
+            <P></P>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <P id=id_146><B>Задание 5</B></P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <OL id=id_147>
+              <LI>Произведите последовательное изменение букв во второй строке: 
+              каждую строчную букву замените прописной, записывая при этом 
+              оставшиеся буквы строчными. Проанализируйте результат выполнения 
+              программы.
+              <LI>Протестируйте программу при изменении длины одной из строк, 
+              т.е. когда в одной строке не писать запятую.
+              <LI>Внесите изменения в программу для совпадения двух строк.
+              <LI>В символьный массив добавьте еще одну строку. Произведите 
+              сравнение между собой всех трех строк массива.
+              <LI>Напишите программу по выводу на консоль информации о человеке 
+              с помощью пароля, который вводится с клавиатуры. Информация должна 
+              содержать имя, фамилию, год, месяц и число рождения, место 
+              рождения. В качестве пароля возьмите свою фамилию с учетом 
+              регистра (т.е. прописные или строчные буквы).</LI></OL>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_153><B>Пример 6</B>. Напишите программу создания 
+            символьного трехмерного массива, когда, например, на одной странице 
+            имеются три строки и на второй странице имеются также три строки. 
+            Предусмотрите изменение регистра в выводе на экран строк, когда 
+            строчные буквы становятся прописными и наоборот.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154>Для перевода регистра используем библиотечные функции 
+            <SPAN class=texample>tolower()</SPAN> и <SPAN 
+            class=texample>toupper()</SPAN> с подключением библиотеки <SPAN 
+            class=texample>&lt;ctype.h&gt;</SPAN>.</P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_158>Программный код решения примера:</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;ctype.h&gt;
+
+#define n 3
+#define m 2
+#define N 79
+
+int main (void)
+ {	
+int i, k; 
+// Определение и инициализация символьного массива
+	char str[n][m][N] = {
+		{"department: fet", "Specialization: acouY"},
+		{"Course: 1st", "SURNAME: ivAnov"},
+		{"Group: 141", "nAmE: Peter"}
+	};
+// Построчный вывод 1-й страницы
+	printf("\n\t 1?st page:\n");
+	for (i = 0; i &lt; n; ++i){
+		printf("\t");
+		printf("%s\n", str[i]);
+	}
+
+// Посимвольный вывод 2-й страницы	
+printf("\n\t 2?nd page:\n");
+for (i = 0; i &lt; n; ++i) {
+printf("\t");
+	for (k = 0; k &lt; N; ++k)
+printf("%c", toupper(str[i][m-1][k])); // или tolower()
+}
+
+		printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_160>В программе используется трехмерный массив размера 3 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_6_files/mht1056(1).tmp" width=20 height=16> 2 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_6_files/mht1056(1).tmp" width=20 height=16> 
+            80. Это означает, что прямоугольная таблица (массив) данных размера 
+            3 <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_6_files/mht1056(1).tmp" width=20 height=16> 
+            80 как бы скрепляется 2 раза, например, по заданному числу страниц. 
+            Следует обратить внимание на вывод страниц. В первом случае 
+            используется построчный вывод со спецификатором <SPAN 
+            class=texample>%s</SPAN>, а во втором – посимвольный вывод со 
+            спецификатором <SPAN class=texample>%c</SPAN>. Кроме того, в первом 
+            случае к заданному массиву обращение происходит только по одной 
+            размерности, а во втором – используются все три размерности массива. 
+            Третий размер – число 80 – взят для того, чтобы строки умещались на 
+            всей ширине дисплея.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_166>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.6">рис. 
+            6.6</A>.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_167 align=left><A name=image.6.6></A></P>
+            <DIV><IMG alt="Вывод страничных данных трехмерного массива" 
+            src="Лекция_6_files/mht1078(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.6.</B>&nbsp; Вывод страничных данных 
+            трехмерного массива
+            <P></P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_168><B>Задание 6</B></P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <OL id=id_169>
+              <LI>Примените функцию <SPAN class=texample>tolower()</SPAN> для 
+              перевода в строчные буквы.
+              <LI>Для построчного вывода 1-й страницы используйте две 
+              размерности заданного массива.
+              <LI>В программу добавьте нумерацию строк, например, 1), 2), 3).
+              <LI>Предусмотрите вывод всей первой страницы, а для второй 
+              страницы – только 1-ю и 3-ю строки.
+              <LI>Напишите программу с обработкой трехмерного символьного 
+              массива размера 2 <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_6_files/mht1056(1).tmp" width=20 height=16> 3 <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_6_files/mht1056(1).tmp" width=20 height=16> 80.
+              <LI>Сделайте вывод строк с заглавными первыми буквами.</LI></OL>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_179><B>Пример 7</B>. В символьной строке находятся слова и 
+            два числа, разделенные пробелами или запятыми. Выделите из строки 
+            слова и числа, разместите их в отдельных массивах. При этом 
+            считанные числа и слова разместите в дополнительных символьных 
+            массивах. Выведите значения сформированных символьных массивов. 
+            Произведите преобразование строковых (символьных) чисел к числам с 
+            плавающей точкой (тип <B>double</B> ). Если после десятичной точки 
+            находится нуль (или нули), то число определите как целое, в 
+            противном случае – как число с плавающей точкой, т.е. типа 
+            <B>double</B>.</P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>Для решения примера используем библиотечные функции 
+            <SPAN class=texample>isalpfa()</SPAN> для определения буквы во 
+            входном потоке (с подключением библиотеки <SPAN 
+            class=texample>ctype.h</SPAN> ), <SPAN 
+            class=texample>isspace()</SPAN> – для определения пробелов во 
+            входном потоке (с подключением библиотеки <SPAN 
+            class=texample>ctype.h</SPAN> ), <SPAN 
+            class=texample>isdigit()</SPAN> – для определения цифры во входном 
+            потоке (с подключением библиотеки <SPAN 
+            class=texample>ctype.h</SPAN> ), <SPAN class=texample>atof()</SPAN> 
+            – для преобразования строки чисел в число с плавающей точкой (с 
+            подключением библиотеки <SPAN class=texample>stdlib.h</SPAN> ), 
+            <SPAN class=texample>atoi()</SPAN> – для преобразования строки чисел 
+            в целое число (с подключением библиотеки <SPAN 
+            class=texample>stdlib.h</SPAN> ), <SPAN class=texample>modf()</SPAN> 
+            – для выделения целой и дробной части числа (с подключением 
+            библиотеки <SPAN class=texample>math.h</SPAN> ), <SPAN 
+            class=texample>strlen()</SPAN> – для определения длины строки (с 
+            подключением библиотеки <SPAN class=texample>string.h</SPAN> ).</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_195>Программный код решения примера:</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;math.h&gt;
+#define N 79
+
+int main (void)  {
+	double r = 0.0, b3, b4; 
+int i, j, k, m, n, A[N], n2, n3, n4; 
+    char str[N], str2[N], str3[N], str4[N];
+// Множественная инициализация	
+i = j = k = m = 0;
+
+// Обнуление символьных массивов
+for (n2 = 0; n2 &lt; N; ++n2)
+		str2[n2] = 0;
+	for (n3 = 0; n3 &lt; N; ++n3)
+		str3[n3] = 0;
+	for (n4 = 0; n4 &lt; N; ++n4)
+		str4[n4] = 0;
+
+	printf("\n\t Print line with 2-nd numbers:\n\t ");
+gets_s(str, sizeof(str)/sizeof(str[0]));
+
+printf("\n\t The line is:\n");
+printf("\t %s\n", str);
+
+while (str[i] != '\0') {
+if ( isalpha(str[i]) || isspace(str[i]) )
+str2[j++] = str[i];
+else if (isdigit(str[i]) || str[i] == '.')
+A[k++] = i; // массив индексов цифр потока
+else
+str2[j++] = str[i];
+++i; }
+
+printf("\n\t A string of words and symbols:\n\t"); puts(str2);
+if (k &gt; 0)
+ {
+n = 0;
+for (i = 0; i &lt; k; ++i){
+if (A[i + 1] - A[i] == 1 )
+str3[n++] = str[A[i]];
+
+else if (A[i+1] - A[i] &gt; 1)
+{m = A[i+1]; str3[n++] = str[A[i]]; break;}
+}
+}
+printf("\n");
+if (n &gt; 0) { 
+r = modf(atof(str3), &amp;b3);
+if (!r) // если не нуль
+printf("\t The number is an integer: %d", atoi(str3));
+else 
+printf("\t The number is real (double): %lf\n", atof(str3));
+}
+
+if (m &gt; 0 ) {
+j = 0;
+for (i = m; i &lt;= A[k - 1]; ++i)
+str4[j++] = str[i];
+r = modf(atof(str4), &amp;b4);
+if (!r) // если не нуль
+
+printf("\t The number is an integer: %d", atoi(str4));
+else 
+printf("\t The number is real (double): %lf\n", atof(str4));
+}
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_197>В программе функция <SPAN class=texample>modf()</SPAN> 
+            возвращает величину дробной части числа (переменная <SPAN 
+            class=texample>r</SPAN> ) и целой части (от переменных <SPAN 
+            class=texample>b3</SPAN>, <SPAN class=texample>b4</SPAN> взяты их 
+            адреса, т.е. <SPAN class=texample>&amp;b3</SPAN>, <SPAN 
+            class=texample>&amp;b4</SPAN> ). Анализ массива с индексами цифр 
+            исходного символьного массива дает возможность выделить индексацию 
+            двух чисел входного потока. Функция <SPAN 
+            class=texample>gets_s()</SPAN> автоматически добавляет символ конца 
+            строки <SPAN class=texample>'\0'</SPAN>, поэтому при объявлении 
+            размерности символьного массива следует предусмотреть одно место для 
+            <SPAN class=texample>'\0'</SPAN>. Для переносимости программ 
+            размерность массива в функции <SPAN class=texample>gets_s()</SPAN> 
+            определена с помощью функции <SPAN 
+            class=texample>sizeof()</SPAN>.</P>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_209>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.7">рис. 
+            6.7</A>.</P>
+            <DIV id=mark_209 class=lecture_mark></DIV>
+            <P id=id_210 align=left><A name=image.6.7></A></P>
+            <DIV><IMG alt="Выделение чисел из строки" 
+            src="Лекция_6_files/mht109A(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.7.</B>&nbsp; Выделение чисел из 
+строки
+            <P></P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <P id=id_211><B>Задание 7</B></P>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <OL id=id_212>
+              <LI>Условие оператора <SPAN class=texample>while</SPAN> сделайте 
+              короче.
+              <LI>Ввести свою фамилию (буквами латинского алфавита), год 
+              рождения (числом), месяц рождения (словом) и приблизительный свой 
+              вес с точностью до долей килограмма. Результат выполнения 
+              программы занесите в отчет лабораторной работы.
+              <LI>Вместо переменных и массива типа <SPAN 
+              class=texample>double</SPAN> примените тип <SPAN 
+              class=texample>float</SPAN>. Проверьте работоспособность 
+программы.
+              <LI>Вместо оператора <SPAN class=texample>break</SPAN> примените 
+              оператор безусловного перехода <SPAN class=texample>goto</SPAN>. 
+              Проверьте работоспособность программы.
+              <LI>Напишите программу при вводе строки с несколькими словами и 
+              одним числом (с десятичной точкой или без нее).
+              <LI>Напишите программу при вводе строки с несколькими словами и 
+              тремя числами (с десятичной точкой или без нее).</LI></OL>
+            <DIV id=mark_212 class=lecture_mark></DIV>
+            <P id=id_224><B>Пример 8</B>. Напишите программу, в которой 
+            генерируется строка символов заданного размера (более трех) и для 
+            которой определяется подстрока из трех символов, вводимой 
+            пользователем. В случае, когда подстрока не обнаружена, 
+            предусмотреть генерирование случайной строки поиска 1000 раз, и 
+            программа должна искать подстроку до первого совпадения.</P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <P id=id_225>Программный код решения примера:</P>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main (void) {
+	int i, j, k, n,
+		N = 1000,
+		numA, numZ,
+		in,
+		ch_box[3];
+
+	char str[16],
+		str2[4];
+
+	srand((unsigned)time(NULL));
+	numA = (int)'a'; // числовой код латинской буквы а
+	numZ = (int)'z'; // числовой код латинской буквы z
+
+	printf("\n Enter a string of 3 letters: ");
+	in = scanf_s("%s", str2, sizeof(str2));
+	if ( in == 0 )
+	{
+		printf("\n Error input. Print any key: ");
+		_getch();
+		exit(1);
+	}
+	printf("\n\t substring is \"%s\"\n", str2);
+
+	for (n = 0; n &lt; N; n++) {
+		for (i = 0; i &lt; 15; i++)
+			str[i] = numA + rand() % (numZ - numA) + 1; 
+		str[i] = '\0';
+
+		k = 0;
+		for (i = 0; i &lt; 13; i++)
+if (str2[0] == str[i] &amp;&amp; str2[1] == str[i+1] &amp;&amp; \
+    str2[2] == str[i+2])
+			{
+ch_box[0] = i; ch_box[1] = i+1; ch_box[2] = i+2;
+     k++;
+	break; }
+
+			if (k &gt; 0)
+				break;
+	}
+
+	if (k == 0)
+		printf("\n\t \"%s\" not found", str2);
+	else
+ printf("\n Substring \"%s\" found at positions %d, %d, %d", \
+ str2, ch_box[0]+1, ch_box[1]+1, ch_box[2]+1);
+
+	puts("\n");
+	for (k = 0; k &lt; 15; k++)
+		printf(" %3d)", k+1);
+	puts("");
+	for (j = 0; j &lt; 15; j++)
+		printf(" %3c ", str[j]);
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_227>букв. Интервал чисел определяется между кодом буквы 
+            <B>'a'</B> и кодом буквы <B>'z'</B>.</P>
+            <DIV id=mark_227 class=lecture_mark></DIV>
+            <P id=id_228>Возможный положительный результат выполнения программы 
+            показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\6. Лекция Символьные массивы в языке С. Работа со строками.mht#image.6.8">рис. 
+            6.8</A>.</P>
+            <DIV id=mark_228 class=lecture_mark></DIV>
+            <P id=id_229 align=left><A name=image.6.8></A></P>
+            <DIV><IMG alt="Пример определения подстроки в строке" 
+            src="Лекция_6_files/mht10BC(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 6.8.</B>&nbsp; Пример определения 
+            подстроки в строке
+            <P></P>
+            <DIV id=mark_229 class=lecture_mark></DIV>
+            <P id=id_230>Задание&nbsp;8</P>
+            <DIV id=mark_230 class=lecture_mark></DIV>
+            <OL id=id_231>
+              <LI>Условие нахождения подстроки в строке выполните с помощью 
+              оператора <SPAN class=texample>goto</SPAN>.
+              <LI>В случае положительного поиска подстроки в строке, определите 
+              количество итераций цикла с предельным значением 1000.
+              <LI>Предусмотрите, чтобы вводимые буквы могли быть и нижнего и 
+              верхнего регистров.
+              <LI>В программе сделайте ввод с клавиатуры количество циклов 
+              формирования строки, в которой следует найти заданную подстроку.
+              <LI>Сделайте поиск подстроки в строке, которую сформировали 
+              случайно один раз. Если подстроки не будет найдено, предусмотрите 
+              ввод количество попыток поиска для генерируемых строк (в 15 
+              символов).</LI></OL>
+            <DIV id=mark_231 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_238>
+              <LI>Какой размер одномерного символьного массива должен быть 
+              объявлен для записи в него строки из 5 символов?
+              <LI>Как организуются многомерные символьные массивы в языке 
+              <B>С</B>?
+              <LI>Как организуется индексирование символьных массивов в языке 
+              <B>С</B>?
+              <LI>На кого или на что возлагается контроль границ символьных 
+              массивов в языке <B>С</B>?
+              <LI>Как следует объявить символьный массив для записи в него трех 
+              строк различной длины?
+              <LI>Как следует организовать посимвольное заполнение одномерного 
+              массива?
+              <LI>Сколько потребуется операторов цикла для вывода на консоль 
+              двухмерного символьного массива (строк различной длины)?
+              <LI>Какие функции используются для считывания с консоли символьных 
+              массивов?
+              <LI>Для каких функций включаются в программу заголовочные файлы 
+              <SPAN class=texample>ctype.h</SPAN> и <SPAN 
+              class=texample>string.h</SPAN>?
+              <LI>Что такое лексиграфическое упорядочивание строк?
+              <LI>Чем отличается сравнение строк при помощи оператора "==" 
+              (равно) и функции <SPAN class=texample>strcmp()</SPAN>?</LI></OL>
+            <DIV id=mark_238 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_6_files/mhtF89(1).tmp" width=8 
+height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_6_files/mhtF89(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

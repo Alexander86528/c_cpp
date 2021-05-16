@@ -1,0 +1,944 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_13_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_13_files/mhtD2CA(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_13_files/mhtD2CA(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>13. Лекция: Структуры – производные типы 
+            данных языка С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции рассматриваются вопросы создания и использования 
+            структур в языке программирования С. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_13_files/mhtD2CA(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1><SPAN class=xml_em_italic>Структура</SPAN> – это 
+            совокупность нескольких переменных, часто различных типов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>13.1</A>]. В структурах совокупность переменных 
+            объединяют под одним именем. Переменные, из которых состоит 
+            структура, называются ее членами. Члены структуры еще называются 
+            <SPAN class=xml_em_italic>элементами</SPAN> или <SPAN 
+            class=xml_em_italic>полями</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>13.2</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>С помощью структур удобно размещать в смежных полях 
+            связанные между собой элементы информации. В структуре могут быть 
+            собраны различные объекты – переменные, массивы, указатели, другие 
+            структуры и т.д., которые для удобства работы с ними сгруппированы 
+            под одним именем. Если в массиве собраны переменные одного типа 
+            (например, <SPAN class=texample>float</SPAN> ), то в структуре могут 
+            быть переменные различных типов. Объявление структуры создает 
+            шаблон, который можно использовать для создания ее объектов (то есть 
+            экземпляров этой структуры) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>13.2</A>]. При объявлении структуры определяется 
+            агрегатный тип данных, но не переменная</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_4>Определение структуры состоит из двух шагов:</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <OL id=id_5>
+              <LI>объявление шаблона структуры (задание нового типа данных, 
+              определенного пользователем);
+              <LI>определение переменных типа объявленного шаблона [<A 
+              href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+              target=_blank>13.3</A>].</LI></OL>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_8>Имена шаблонов должны быть уникальными в пределах их 
+            области определения, для того чтобы компилятор мог различать типы 
+            шаблонов. Задание шаблона осуществляется с помощью ключевого слова 
+            <SPAN class=texample>struct</SPAN>, за которым следует имя шаблона 
+            структуры и списка элементов, заключенных в фигурные скобки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+            target=_blank>13.3</A>]. Имена элементов в одном шаблоне также 
+            должны быть уникальными. Задание только шаблона не влечет 
+            резервирования памяти компилятором. Шаблон предоставляет компилятору 
+            необходимую информацию об элементах структурной переменной для 
+            резервирования места в оперативной памяти и организации доступа к 
+            ней при определении структурной переменной и использовании ее 
+            отдельных элементов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+            target=_blank>13.3</A>].</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_10>Рассмотрим шаблон структуры для определения имени и 
+            фамилии работника (служащего – employee), его возраста, почасовой 
+            оплаты:</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee {
+char Name [20+1];     // Имя 
+char Surname [20+1];  // Фамилия
+int age;              // возраст
+double hourlysalary;  // почасовой оклад
+};</PRE></DIV>
+            <P id=id_12>Как видно, шаблон структуры <SPAN class=texample>struct 
+            employee</SPAN> состоит из символьных массивов типа <SPAN 
+            class=texample>char</SPAN>, целого числа типа <SPAN 
+            class=texample>int</SPAN> и числа с плавающей точкой и двойной 
+            точности типа <SPAN class=texample>double</SPAN>. Описания элементов 
+            производится в фигурных скобках, после закрывающей скобки 
+            обязательно должна быть точка с запятой.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_17>Определение структуры начинается с ключевого слова <SPAN 
+            class=texample>struct</SPAN>. Идентификатор <SPAN 
+            class=texample>employee</SPAN> является <SPAN 
+            class=xml_em_italic>именем-этикеткой (tag name), 
+            дескриптором</SPAN>. Имя-этикетка <SPAN 
+            class=texample>employee</SPAN> именует структуру и используется 
+            совместно с ключевым словом <SPAN class=texample>struct</SPAN> для 
+            объявления переменных структурного типа [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>13.4</A>].</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_22>Переменные структуры объявляются так же, как и 
+            переменные других типов. На основе вышеприведенного шаблона сделаем 
+            несколько объявлений новых структурных переменных:</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee new_ employee, * employeePtr, stack[120];</PRE></DIV>
+            <P id=id_24>В приведенном объявлении <SPAN 
+            class=texample>new_employee</SPAN> – переменная типа <SPAN 
+            class=texample>struct employee</SPAN>, <SPAN 
+            class=texample>*employeePtr</SPAN> – указатель на <SPAN 
+            class=texample>struct employee</SPAN>, <SPAN 
+            class=texample>emstack[120]</SPAN> – массив из 120 элементов типа 
+            <SPAN class=texample>struct employee</SPAN>.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_31>Объявленные структурные переменные <SPAN 
+            class=texample>new_employee</SPAN>, <SPAN 
+            class=texample>*employeePtr</SPAN>, <SPAN 
+            class=texample>stack[102]</SPAN> могут быть объединены с 
+            определением структуры, а именно:</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee {
+char Name [20+1];       // Имя 
+char Surname [20+1];    // Фамилия
+int age;                // возраст
+double hourlysalary;    // почасовой оклад
+}  new_employee, *employeePtr, stack[120];</PRE></DIV>
+            <P id=id_36><SPAN class=xml_em_italic>Имя-этикетка (tag name)</SPAN> 
+            не является для структуры обязательным. Если определение структуры 
+            не содержит имя-этикетку, то переменные для этой структуры могут 
+            быть объявлены только в определении структуры, но не отдельным 
+            объявлением [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>13.1</A>].</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_37>При создании структур часто используется ключевое слово 
+            <SPAN class=texample>typedef</SPAN> (оператор). Оно предоставляет 
+            программисту средство для создания синонимов (или псевдонимов) для 
+            ранее определенных типов данных. Часто используют <B>typedef</B> для 
+            того, чтобы дать укороченное имя структурному типу [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>13.4</A>]. Например, оператор вида</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <DIV class=example><PRE>typedef struct card Card;</PRE></DIV>
+            <P id=id_40>определяет новый тип с именем <SPAN 
+            class=texample>Card</SPAN> как синоним типа <SPAN 
+            class=texample>struct card</SPAN>.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_43>Ключевое слово <SPAN class=texample>typedef</SPAN> может 
+            быть использовано в определении типа структуры без имени-этикетки. 
+            Например:</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>typedef  struct  {
+char *Name;          // Имя 
+char *Surname;       // Фамилия
+int age;             // возраст
+double hourlysalary; // почасовой оклад
+}  Man;</PRE></DIV>
+            <P id=id_46>создает тип <SPAN class=texample>Man</SPAN> без 
+            использования отдельного оператора <SPAN 
+            class=texample>typedef</SPAN>.</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_49>В приведенном примере под символьные указатели 
+            необходимо предусмотреть выделение памяти.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50>Созданный тип <SPAN class=texample>Man</SPAN> можно 
+            использовать для объявления структурных переменных типа <SPAN 
+            class=texample>struct employee</SPAN>, например:</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Man stack[120];</PRE></DIV>
+            <P id=id_54><B>Примечание</B>. Использование typedef помогает 
+            сделать программу более переносимой.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_55>Синтаксис инициализации структур аналогичен 
+            инициализации массивов. Например, выполним инициализацию 
+            структуры:</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee {
+char Name [20+1];      // Имя 
+char Surname [20+1];   // Фамилия
+int age;               // возраст
+double hourlysalary;   // почасовой оклад
+}   new_employee;</PRE></DIV>
+            <P id=id_57>Возможный вариант инициализации:</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee {
+char Name [20];       // Имя 
+char Surname [20];    // Фамилия
+int age;              // возраст
+double hourlysalary;  // почасовой оклад
+}   new_employee =  { "Peter", "Smith", 25, 6.78 };</PRE></DIV>
+            <P id=id_59>При инициализации структуры структурные элементы 
+            (инициализаторы) должны соответствовать заданному типу и отделяться 
+            друг от друга запятыми.</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>Доступ к элементам (компонентам, полям) структуры 
+            осуществляется двумя способами:</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <OL id=id_61>
+              <LI>с помощью оператора связывающей точки (оператора точки) "." 
+              при непосредственной работе со структурой;
+              <LI>при использовании указателей на структуры с помощью стрелки 
+              "–&gt;".</LI></OL>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_64>Общий формат доступа к элементам структуры имеет 
+            следующий вид:</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>имя_переменной_структуры.имя_поля;
+имя_указателя_на_структуру–&gt;имя_поля;
+(*имя_указателя_на_структуру).имя_поля;</PRE></DIV>
+            <P id=id_66>Например, для вышеприведенной инициализации можно 
+            изменить почасовой оклад с помощью оператора точки и указателя на 
+            структуру:</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <DIV class=example><PRE>new_employee.hourlysalary = 21.0;
+employeePtr –&gt; hourlysalary = 21.0;</PRE></DIV>
+            <P id=id_68>Следует обратить внимание, что <SPAN 
+            class=texample>new_employee</SPAN> – это имя всего 
+            объекта-структуры, а <SPAN class=texample>hourlysalary</SPAN> – имя 
+            элемента этой структуры. Аналогично и в случае указателя <SPAN 
+            class=texample>*employeePtr</SPAN> на структуру.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_72>В случае изменения полей структуры следует выделить 
+            случай со строками, например:</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <DIV class=example><PRE>strcpy(new_employee.name, "Stephen");</PRE></DIV>
+            <P id=id_74>При этом должен быть предусмотрен заголовочный файл 
+            <SPAN class=texample>&lt;string.h&gt;</SPAN>. для функции <SPAN 
+            class=texample>strcpy()</SPAN>.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_77>Когда объявлен массив структур, например, <SPAN 
+            class=texample>stack[120]</SPAN>, то это означает, что создано 120 
+            наборов переменных, каждый из которых организован также, как 
+            определено в структуре с дескриптором <SPAN 
+            class=texample>employee</SPAN>.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_80>Чтобы получить доступ к определенной структуре <SPAN 
+            class=texample>stack[120]</SPAN>, следует указать имя массива с 
+            индексом, который пробегает значения от 0 до 119. Например, для 
+            пятой структуры можно сделать изменения в почасовом окладе:</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <DIV class=example><PRE>stack[4].hourlysalary = 121.5;</PRE></DIV>
+            <P id=id_83>Как и в других массивах переменных языка <B>С</B>, в 
+            массивах структур индексирование начинается с нуля [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>13.2</A>]. Членами структуры могут быть также 
+            массивами или структурами. Когда структура является членом другой 
+            структуры, она называется <SPAN class=xml_em_italic>вложенной</SPAN> 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>13.2</A>].</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84>Рассмотрим следующий пример:</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct X = {
+int A[7][8]; 
+float b;
+char ch;
+struct employee Emp2;
+} Y;</PRE></DIV>
+            <P id=id_86>Тогда инициализация элементов двухмерного массива А 
+            может быть такой:</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Y.A[2][5] = 99;</PRE></DIV>
+            <P id=id_88>Инициализация вложенной структуры может быть такой:</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Y.Emp2.hourlysalary = 12.75;</PRE></DIV>
+            <P id=id_90>В соответствии со стандартом С89 структуры могут быть 
+            вложенными вплоть до 15-го уровня. Стандарт С99 допускает уровень 
+            вложенности до 63-го включительно [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>13.2</A>].</P>
+            <DIV id=mark_90 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_91><B>Пример 1</B>. Напишите программу структурного 
+            описания каталога одной книги.</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_92>Программный код решения примера:</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#define N 40
+struct  book  { // Определение структуры
+	char title[N+1];    // Название книги
+	char author[N+1];   // Автор
+	int year;           // Год издания
+	int page;           // Количество страниц
+	float price;        // Цена в у.е.
+} Library;
+
+int main (void)
+ {
+// Инициализация полей структуры
+Library.year = 2007;
+Library.page = 496;
+Library.price = 12.78F;
+strcpy_s(Library.title, N, "Programming in C");
+strcpy_s(Library.author, N, "Stephen G. Kochan");
+
+// Вывод на консоль
+printf("\n\t Title: %s\n", Library.title);
+printf("\t Author: %s\n", Library.author);
+printf("\t Year: %d\n", Library.year );
+printf("\t Number of pages: %d p.\n", Library.page );
+printf("\t Price: %1.2f y.e.\n", Library.price);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_94>В программе использованы функции <SPAN 
+            class=texample>strcpy_s()</SPAN> вместо стандартных функций <SPAN 
+            class=texample>strcpy()</SPAN>, что позволило избавиться от 
+            предупреждений в системе Visual Studio 2008. В случае применения 
+            функций <SPAN class=texample>strcpy()</SPAN>, их формат записи был 
+            бы следующим:</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <DIV class=example><PRE>strcpy(Library.title, "Programming in C");
+strcpy(Library.author, "Stephen G. Kochan");</PRE></DIV>
+            <P id=id_99>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.1">рис. 
+            13.1</A>.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100 align=left><A name=image.13.1></A></P>
+            <DIV><IMG alt="Пример инициализированных полей структуры" 
+            src="Лекция_13_files/mhtD2EC(1).tmp" width=620 
+            height=141></DIV><BR><B>Рис. 13.1.</B>&nbsp; Пример 
+            инициализированных полей структуры
+            <P></P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_101><B>Задание 1</B></P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <OL id=id_102>
+              <LI>Совместите объявление и инициализацию структуры. После 
+              инициализации структуры выполните изменение ее полей с последующим 
+              выводом на консоль.
+              <LI>Примените оператор <SPAN class=texample>typedef</SPAN>.
+              <LI>Поля структуры <SPAN class=texample>title</SPAN> и <SPAN 
+              class=texample>author</SPAN> определите с помощью указателей.
+              <LI>Произведите инициализацию структуры после ввода значений полей 
+              с клавиатуры.
+              <LI>Выполните вывод полей структуры в текстовый файл compX.txt, 
+              где Х – номер компьютера, за которым выполняется лабораторная 
+              работа.</LI></OL>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_111><B>Пример 2</B>. Напишите программу анализа средней 
+            успеваемости четырех студентов по четырем предметам за сессию на 
+            основе структурного типа данных.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112>Программный код решения примера:</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define N 4 // Число студентов
+#define CH 30 // Число символов для фамилии или имени
+
+// Определение структуры
+struct {
+char *name;// Имя студента
+char *surname; // Фамилия студента
+int M;   // Отметка по математическому анализу
+int A;   // Отметка по алгебре
+int H;   // Отметка по истории
+int In;  // Отметка по информатике
+} student[N];
+
+int main (void)  {
+float mark;
+ int i;
+
+ // Выделение памяти для символьных указателей
+ for (i = 0; i &lt; N; ++i) {
+student[i].name = (char *) malloc(CH*sizeof(char));
+student[i].surname = (char *) malloc(CH*sizeof(char));
+ }
+ 
+printf("\n");
+for (i = 0; i &lt; N; ++i) {
+	printf("\t Enter a name of %d student \n\t: ", i+1);
+gets_s(student[i].name, CH);
+
+printf("\t Enter a surname of %d student \n\t: ", i+1);
+gets_s(student[i].surname, CH);
+
+printf("\t Enter marks in 4 subjects for %d student (through a blank) \n\t: ", i+1);
+
+scanf_s("%i%i%i%i", &amp;(student[i].M),&amp;(student[i].A),&amp;(student[i].H),&amp;(student[i].In));
+_flushall();
+}
+
+puts("\n=====================================================================================");
+printf("\t Statement of Achievement students:\n");
+
+puts("======================================================================================\n");
+for (i = 0; i &lt; N; ++i)
+ {
+printf("\t %s \t %s:\n\t Mathematical analyses, Algebra, History, Informatics\n \
+\n\t\t %d\t\t %3d\t \
+%3d\t %5d\n----------------------------------------------\n", \
+student[i].name, student[i].surname, \
+student[i].M,student[i].A,student[i].H,student[i].In); }
+
+mark = 0.0F; // F – спецификатор для типа float 
+
+for (i = 0; i &lt; N; ++i)
+{
+mark += (student[i].M + student[i].A + student[i].H + student[i].In); 
+}
+
+// Средняя оценка группы из 4 (N)студентов
+printf("\n\t The average mark groups of %d students: %1.4f", N, mark/(4*N));
+// 4*N - общее количество оценок
+
+   printf("\n\n Press any key: ");
+   _getch();
+   return 0; 
+}</PRE></DIV>
+            <P id=id_114>В программе использован массив структур – переменная 
+            <SPAN class=texample>student[N]</SPAN>. Для определения имени и 
+            фамилии предварительно выделяется память для символьных указателей с 
+            помощью функций <SPAN class=texample>malloc()</SPAN>, для которых 
+            включен заголовок <SPAN class=texample>#include 
+            &lt;stdlib.h&gt;</SPAN>.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_118>Шаблон структуры задан без имени-этикетки (без тегового 
+            имени).</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.2">рис. 
+            13.2</A>.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120 align=left><A name=image.13.2></A></P>
+            <DIV><IMG alt="Пример инициализированных полей структуры" 
+            src="Лекция_13_files/mhtD30F(1).tmp" width=576 
+            height=620></DIV><BR><B>Рис. 13.2.</B>&nbsp; Пример 
+            инициализированных полей структуры
+            <P></P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121><B>Задание 2</B></P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <OL id=id_122>
+              <LI>Выполните усреднение оценок для каждого студента.
+              <LI>Предусмотрите ввод названий предметов (математический анализ, 
+              алгебра и т.д.) и определите их в виде инициализаторов структуры.
+              <LI>Увеличьте число студентов до семи и произведите запись 
+              результатов в текстовый файл с именем compX.txt, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>В шаблоне структуры задайте теговое имя. Проанализируйте 
+              работу программы.
+              <LI>Примените оператор <SPAN class=texample>typedef</SPAN> для 
+              определения структурного типа данных
+              <LI>Расположите фамилии (с именем) студентов в порядке возрастания 
+              их среднего балла за сессию.</LI></OL>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_130><B>Пример 3</B>. Напишите программу создания карточки 
+            служащего с помощью структурного типа данных и указателя на 
+            структуру. Предусмотрите инициализацию полей структуры и изменения 
+            этих полей.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131>Для решения примера воспользуемся структурой, 
+            рассмотренной в теоретической части данной лабораторной работы:</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct employee {
+char Name [20+1];         // Имя 
+char Surname [20+1];      // Фамилия
+int age;                  // возраст
+double hourlysalary;      // почасовой оклад
+}   employee_new, *PTR;  // *PTR – указатель на структуру</PRE></DIV>
+            <P id=id_133>Программный код решения примера:</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;locale.h&gt;
+// Предполагаемое число символов в имени или фамилии
+#define n 20 
+
+int main (void)
+ {
+
+// Определение структуры
+struct emloyee {
+char name[n+1];          // имя 
+char surname[n+1];       // фамилия
+int age;               // возраст
+double hourlysalary;   // почасовой оклад в у.е.
+} emloyee_new, *PTR;   // *PTR - указатель на структуру
+
+// Для поддержки русских шрифтов
+setlocale( LC_ALL, ".1251");// кодовая страница Windows – 1251
+PTR = &amp;emloyee_new; //В указатель помещается адрес employee_new 
+// Инициализация полей структуры
+strcpy_s(PTR -&gt; name, n, "Владимир");
+strcpy_s(PTR -&gt; surname, n, "Викулов");
+PTR -&gt; age = 25;
+PTR -&gt; hourlysalary = 6.78;
+
+// Вывод на консоль
+puts("\n=============== Поля структуры ====================");
+printf("\n Имя: %s\n Фамилия: %s\n возраст: %d лет\n почасовой оклад: %1.2f y.e.\n", \
+PTR -&gt; name, PTR -&gt; surname, PTR -&gt; age, PTR -&gt; hourlysalary);
+
+puts("\n==================================================\n");
+printf("\n\n Нажмите любую клавишу (Press any key): ");
+_getch();
+return 0;
+}</PRE></DIV>
+            <P id=id_135>В программе инициализация полей структуры выполнена с 
+            помощью оператора стрелка "–&gt;". С подключением заголовочного 
+            файла <SPAN class=texample>&lt;locale.h&gt;</SPAN> и определением 
+            прототипа функции <SPAN 
+            class=texample>setlocale(LC_ALL,".1251")</SPAN> производится 
+            поддержка русских шрифтов.</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <P id=id_138>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.3">рис. 
+            13.3</A>.</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_139 align=left><A name=image.13.3></A></P>
+            <DIV><IMG alt="Пример вывода полей структуры на консоль" 
+            src="Лекция_13_files/mhtD321(1).tmp" width=620 
+            height=176></DIV><BR><B>Рис. 13.3.</B>&nbsp; Пример вывода полей 
+            структуры на консоль
+            <P></P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140><B>Задание 3</B></P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <OL id=id_141>
+              <LI>В программу добавьте нумерацию полей структуры, например: 1) 
+              имя: и т.д.
+              <LI>В программу введите свое имя и фамилию, возраст и размер 
+              получаемой стипендии (если нет, то нуль). Значения новых полей 
+              выведите на консоль и в текстовый файл с именем compX.txt, где Х – 
+              номер компьютера, за которым выполняется лабораторная работа.
+              <LI>Инициализацию полей структуры выполните с помощью указателя.
+              <LI>Выполните предварительную инициализацию структуры, а затем 
+              смените значения полей.
+              <LI>Тип данных <SPAN class=texample>double</SPAN> замените на тип 
+              <SPAN class=texample>float</SPAN></LI></OL>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_149><B>Пример 4</B>. Напишите программу информационной 
+            карточки студенческой группы с данными о студентах, применив 
+            вложенные структуры.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150>Как известно, если членом структуры является другая 
+            структура, то она называется <SPAN 
+            class=xml_em_italic>вложенной</SPAN>.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_151>Программный код решения примера:</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+#define N 20
+
+int main (void)
+  {
+struct stud {    // шаблон структуры
+char name[N+1];    // имя студента
+char surname[N+1]; // фамилия студента
+int age;         // возраст - полных лет
+double av_mark;  // средняя успеваемость
+	}; 
+
+struct group {      // шаблон структуры
+int number;         // номер группы
+int quantity;       // количество студентов в группе
+struct stud student;// вложенная структура
+} ACOUY;            // ACOUY - структурная переменная
+
+// Инициализация полей структуры
+ACOUY.number = 3;
+ACOUY.quantity = 21;
+strcpy_s(ACOUY.student.name, N, "Peter");
+strcpy_s(ACOUY.student.surname, N, "Bobrov");
+ACOUY.student.age = 20;
+ACOUY.student.av_mark = 4.25;
+
+// Вывод на консоль
+puts("\n========= Varient field of structure ===============");
+printf("\n Group Number: %d,\n The number of students in the group: %d,\n\
+ Name: %s,\n Surname: %s,\n Age: %d,\n Average mark: %1.2f", \
+  ACOUY.number, ACOUY.quantity, ACOUY.student.name, ACOUY.student.surname, \
+  ACOUY.student.age, ACOUY.student.av_mark);
+puts("\n\n================================================\n");
+
+    printf("\n Press any key: ");
+    _getch();
+    return 0;
+ }</PRE></DIV>
+            <P id=id_153>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.4">рис. 
+            13.4</A>.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154 align=left><A name=image.13.4></A></P>
+            <DIV><IMG alt="Пример информационной карточки студенческой группы" 
+            src="Лекция_13_files/mhtD343(1).tmp" width=620 
+            height=188></DIV><BR><B>Рис. 13.4.</B>&nbsp; Пример информационной 
+            карточки студенческой группы
+            <P></P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_155><B>Задание 4</B></P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <OL id=id_156>
+              <LI>Инициализацию структуры выполните с клавиатуры.
+              <LI>Предусмотрите массив структур <SPAN 
+              class=texample>ACOUY[N]</SPAN>, где <B>N</B> – количество групп 
+              (например, <SPAN class=texample>N = 3</SPAN> ).
+              <LI>Введите данные своей студенческой группы и предусмотрите вывод 
+              на консоль данных о себе.
+              <LI>Примените оператор <SPAN class=texample>typedef</SPAN> и 
+              указатель на структуру.</LI></OL>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_164><B>Пример 5</B>. Напишите программу составления 
+            карточки на студента с динамическим распределением памяти для имени 
+            и фамилии на основе структурного типа данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>13.5</A>].</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_165>Для динамического распределения памяти применим функцию 
+            <SPAN class=texample>malloc()</SPAN> и символьные указатели в 
+            качестве инициализаторов структуры.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_167>Программный код решения примера:</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;locale.h&gt;
+
+const int MAX = 80; // Предполагаемое число символов
+
+int main (void) {
+	char *NAME, *SURNAME;
+
+struct stud {    // шаблон структуры
+char *name;    // указатель вместо массива символов имени студента
+char *surname; // указатель вместо массива символов фамилии студента
+int age;         // возраст - полных лет
+float av_mark;  // средняя успеваемость
+int letters;     // число символов в имени и фамилии
+	} TABLE, *PTR; 
+
+PTR = &amp;TABLE; // инициализация указателя на структуру
+NAME = (char *)malloc(MAX);
+printf("\n Enter a name of the student: ");
+gets_s(NAME, MAX);
+
+SURNAME = (char *)malloc(MAX);
+printf(" Enter a surname of the student: ");
+gets_s(SURNAME, MAX);
+
+// Распределение памяти для хранения "структурного" имени 
+PTR-&gt;name = (char *)malloc(strlen(NAME)+1);
+// Копирование имени в распределенную память
+strcpy_s(PTR-&gt;name, strlen(NAME)+1, NAME);
+
+// Распределение памяти для хранения "структурной" фамилии
+PTR-&gt;surname = (char *)malloc(strlen(SURNAME)+1);
+// Копирование фамилии в распределенную память
+strcpy_s(PTR-&gt;surname, strlen(SURNAME)+1, SURNAME);
+
+printf(" Enter the age of the student: ");
+scanf_s("%d", &amp;TABLE.age);
+
+printf(" Enter an average mark of the student: ");
+scanf_s("%f", &amp;TABLE.av_mark);
+
+TABLE.letters = strlen(PTR-&gt;name) + strlen(PTR-&gt;surname);
+// Для вывода чисел с десятичной запятой
+setlocale(LC_NUMERIC, ".1251"); 
+puts("\n======== Varient field of structure ===============");
+printf("\n Name: %s\n Surname: %s\n Age: %d\n Average mark: %1.2f\n\
+ The name and surname of student have: %d letters", \
+PTR-&gt;name, PTR-&gt;surname, PTR-&gt;age, PTR-&gt;av_mark, PTR-&gt;letters);
+puts("\n\n================================================\n");
+
+// Освобождение памяти
+free(NAME);
+free(SURNAME);
+free(PTR-&gt;name);
+free(PTR-&gt;surname);
+
+   printf("\n Press any key: ");
+   _getch(); return 0;
+  }</PRE></DIV>
+            <P id=id_169>В программе сначала выделяется память для имени и 
+            фамилии, для которых использованы указатели <SPAN 
+            class=texample>*NAME</SPAN>, <SPAN class=texample>*SURNAME</SPAN>. 
+            После того как имя и фамилия введены с клавиатуры, рассчитывается 
+            количество символов плюс символ окончания строки <SPAN 
+            class=texample>'\0'</SPAN>, которые используются для выделения 
+            памяти для структурных переменных.</P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_173>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.5">рис. 
+            13.5</A>.</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_174 align=left><A name=image.13.5></A></P>
+            <DIV><IMG alt="Пример динамического создания карточки студента" 
+            src="Лекция_13_files/mhtD356(1).tmp" width=620 
+            height=227></DIV><BR><B>Рис. 13.5.</B>&nbsp; Пример динамического 
+            создания карточки студента
+            <P></P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175><B>Задание 5</B></P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <OL id=id_176>
+              <LI>С клавиатуры введите данные о себе (буквами русского 
+              алфавита), выведите информацию на консоль и в текстовый файл с 
+              именем compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа.
+              <LI>Поменяйте операторы стрелка на операторы точка, и наоборот.
+              <LI>Вместо функций <SPAN class=texample>malloc()</SPAN> примените 
+              функции <SPAN class=texample>calloc()</SPAN>.
+              <LI>Вместо указателей <SPAN class=texample>*NAME</SPAN>, <SPAN 
+              class=texample>*SURNAME</SPAN> примените массивы символов
+              <LI>Предусмотрите нумерацию полей структуры, например, 1) Name: 
+              Peter и т.д.</LI></OL>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_186><B>Пример 6</B>. Напишите программу записи структуры в 
+            двоичный файл и чтения ее из двоичного файла.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_187>Решение примера разобьем на две части: создадим 
+            структуру и произведем пакетную запись в файл этой структуры. Потом 
+            операцию записи закомментируем, изменим поля структуры и выполним 
+            чтение из файла структуры.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188>Для динамического распределения памяти применим функцию 
+            <SPAN class=texample>malloc()</SPAN> и символьные указатели в 
+            качестве инициализаторов структуры.</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_190>Программный код решения примера:</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX  80 // Предполагаемое число символов
+
+// шаблон структуры
+struct stud 
+{  
+char name[MAX+1];    // массив символов имени студента
+char surname[MAX+1]; // массив символов фамилии студента
+char ACOUY[MAX+1];    // специальность
+int age;         // возраст - полных лет
+float av_mark;  // средняя успеваемость
+};
+
+int main (void)
+ {
+char NAME[MAX+1], SURNAME[MAX+1], SPEC[MAX+1];
+FILE *fid;
+
+// условная инициализация переменной структуры и 
+// определение указателя на структуру
+struct stud TABLE = {"--", "--", "--", 0, 0.0}, *PTR;
+PTR = &amp;TABLE; // инициализация указателя на структуру
+
+printf("\n Enter a name of student: ");
+gets_s(NAME, MAX);
+printf(" Enter a surname of student: ");
+gets_s(SURNAME, MAX);
+printf(" Enter a speciality: ");
+gets_s(SPEC, MAX);
+
+// Занесение имени в структуру
+strcpy_s(PTR-&gt;name, strlen(NAME)+1, NAME);
+// Занесение фамилии в структуру
+strcpy_s(PTR-&gt;surname, strlen(SURNAME)+1, SURNAME);
+// Занесение названия специальности в структуру
+strcpy_s(PTR-&gt;ACOUY, strlen(SPEC)+1, SPEC);
+
+printf("Enter the age of the student: ");
+scanf_s("%d", &amp;TABLE.age);
+printf(" Enter the average mark student: ");
+scanf_s("%f", &amp;TABLE.av_mark);
+
+puts("\n======= Varient field of structure ============");
+printf("\n Name: %s\n Surname: %s\n \
+Specialisation: %s\n Age: %d\n Average mark: %0.2f\n ", \
+PTR-&gt;name, PTR-&gt;surname, PTR-&gt;ACOUY, PTR-&gt;age, PTR-&gt;av_mark );
+puts("\n================================================\n");
+if ( fopen_s(&amp;fid, "D:\\data12.dat", "wb") )
+{printf("\n File could not be opened\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+//Пакетная запись в двоичный файл
+fwrite(PTR, sizeof(struct stud), 1, fid);
+fclose(fid);
+  
+//if ( fopen_s(&amp;fid, "D:\\data12.dat", "rb") )
+//{printf("\n File could not be opened\n");
+//printf("\n Press any key: ");
+//_getch(); return 0; }
+// Чтение из двоичного файла
+//fread(PTR, sizeof(struct stud), 1, fid);
+//puts("\n===== Variants of fields of structure =====");
+//printf("\n Name: %s\n Surname: %s\n \
+//Specialisation: %s\n Age: %d\n Average mark: %1.2f\n ", \
+
+//PTR-&gt;name, PTR-&gt;surname, PTR-&gt;ACOUY, PTR-&gt;age, PTR-&gt;av_mark );
+//puts("\n===============================================\n");
+//fclose(fid);
+   printf("\n\n Press any key: ");
+   _getch();
+   return 0; 
+}</PRE></DIV>
+            <P id=id_192>Форматы записи в двоичный файл и чтения из двоичного 
+            файла:</P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fwrite(PTR, sizeof(struct stud), 1, fid);
+fread(PTR, sizeof(struct stud), 1, fid);</PRE></DIV>
+            <P id=id_194>В функции <SPAN class=texample>fwrite()</SPAN> первый 
+            параметр <SPAN class=texample>PTR</SPAN> определяет собой содержимое 
+            структуры (данных в других случаях), которое по указателю <SPAN 
+            class=texample>*fid</SPAN> на файл записывается в файл. Второй 
+            параметр <SPAN class=texample>sizeof(struct stud)</SPAN> определяет 
+            собой размер в байтах. Третий параметр 1 – это количество блоков, 
+            которое будет записываться в файл. При этом второй и третий 
+            параметры перемножаются, поэтому их можно поменять местами.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <P id=id_199>В программе чтение из двоичного файла закомментировано. 
+            Для корректной работы программы сделана условная инициализация полей 
+            структуры, чтобы прописать адрес структуры в памяти с данными.</P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <P id=id_200>Возможный вариант выполнения программы при записи 
+            информации в двоичный файл показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.6">рис. 
+            13.6</A>. После комментирования программного кода с записью в файл и 
+            снятия комментариев к программному коду чтения из файла результат 
+            выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\13. Лекция Структуры – производные типы данных языка С.mht#image.13.7">рис. 
+            13.7</A>.</P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_201 align=left><A name=image.13.6></A></P>
+            <DIV><IMG alt="Вариант записи информации в двоичный файл" 
+            src="Лекция_13_files/mhtD369(1).tmp" width=620 
+            height=289></DIV><BR><B>Рис. 13.6.</B>&nbsp; Вариант записи 
+            информации в двоичный файл
+            <P></P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202 align=left><A name=image.13.7></A></P>
+            <DIV><IMG alt="Результат чтения из двоичного файла" 
+            src="Лекция_13_files/mhtD38B(1).tmp" width=620 
+            height=237></DIV><BR><B>Рис. 13.7.</B>&nbsp; Результат чтения из 
+            двоичного файла
+            <P></P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203><B>Задание 6</B></P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <OL id=id_204>
+              <LI>Перезапишите информацию из файла data12.dat в двоичный файл с 
+              именем compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа. Символьные массивы полей структуры задайте с 
+              помощью указателей.
+              <LI>Запись данных произведите в двоичный файл с различными 
+              расширениями: <B>.txt</B>, <B>.bin</B>, <B>.doc</B>. Определите 
+              размеры этих файлов в байтах.
+              <LI>Напишите программу записи массива структур в двоичный файл и 
+              чтения из него всей структуры с выводом результатов на 
+              консоль.</LI></OL>
+            <DIV id=mark_204 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_208>
+              <LI>Как определяется структура в языке <B>С</B>?
+              <LI>Как объявляется структура в языке <B>С</B>?
+              <LI>Какими способами можно объявить новые структурные переменные?
+              <LI>Какие форматы используются для доступа к элементам структуры?
+              <LI>Что такое вложенная структура?
+              <LI>Какой уровень вложенности структур поддерживается стандартом 
+              С89?
+              <LI>Как объявляется массив структур?
+              <LI>Как объявляется указатель на структуру?
+              <LI>Как инициализируется указатель на структуру?
+              <LI>Как осуществляется инициализация полей структуры, определенных 
+              как символьные массивы?
+              <LI>Какой оператор может быть использован для определения 
+              структурного типа данных?
+              <LI>Является ли <SPAN class=xml_em_italic>тег</SPAN> структуры 
+              именем ее типа?</LI></OL>
+            <DIV id=mark_208 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_13_files/mhtD2CA(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,742 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_14_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_14_files/mht3F7B(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_14_files/mht3F7B(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>14. Лекция: Объединения и перечислимые типы 
+            в языке С: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются вопросы создания и использования объединений 
+            и перечислимых типов в языке программирования С. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_14_files/mht3F7B(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3><A name=sect2></A>
+            <H4>14.1. Объединения</H4>
+            <P id=id_2><SPAN class=xml_em_italic>Объединение</SPAN> ( 
+            <B>union</B> ) – это тип, который позволяет хранить различные типы 
+            данных в одном и том пространстве памяти (но не одновременно)[<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>].</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Объединения образуются во многом подобно структурам. 
+            Существуют шаблоны объединений и переменные типа объединения. Они 
+            могут быть определены с помощью одного или двух действий, причем в 
+            последнем случае используется дескриптор объединения [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>].</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Пример шаблона объединения с дескриптором <SPAN 
+            class=texample>hold</SPAN>:</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <DIV class=example><PRE>union hold {
+int digit;
+double bigf;
+char letter;
+};</PRE></DIV>
+            <P id=id_7>Объединение может хранить значение типа <SPAN 
+            class=texample>int</SPAN>, или <SPAN class=texample>double</SPAN>, 
+            или <SPAN class=texample>char</SPAN>. Структура с такими же полями 
+            способна хранить все типы одновременно. Пример определения трех 
+            переменных объединения:</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <DIV class=example><PRE>union hold fit;     // переменная объединения типа hold
+union hold save[10];// массив из 10 переменных объединения
+union hold *ptr;    // указатель на переменную типа hold</PRE></DIV>
+            <P id=id_12>Первое объявление создает единственную переменную <SPAN 
+            class=texample>fit</SPAN>. Компилятор выделяет пространство памяти, 
+            достаточное для того, чтобы хранить наибольшую из описанных 
+            вариантов, а именно тип <SPAN class=texample>double</SPAN>, который 
+            требует для себя обычно 8 байт. Второе объявление <SPAN 
+            class=texample>save[10]</SPAN> создает массив с 10 элементами, 
+            каждый из которых имеет размер в 8 байт. Третье объявление создает 
+            указа-тель, который может содержать адрес объединения <SPAN 
+            class=texample>hold</SPAN>.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_17>Рассмотрим варианты инициализации объединения [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>]:</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <DIV class=example><PRE>union hold valA;// создали переменную valA по шаблону union hold
+valA.letter = 'R';
+union hold valB = valB;// инициализация одного объединения другим
+union hold valC = {88};// инициализация числового элемента</PRE></DIV>
+            <P id=id_19>Рассмотрим варианты использования объединения:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <DIV class=example><PRE>union hold fit;  
+fit.digit = 23;  // Число 23 хранится в переменной fit, 2 байта
+fit.bigf = 6.78; // Число 23 затерто, хранится 6.78, 8 байтов
+fit.letter = 'h';// Число 6.78 затерто, хранится символ h,1 байт</PRE></DIV>
+            <P id=id_21>Операция точки показывает, какой тип данных используется 
+            в текущий момент [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>]. За один раз запоминается только одно 
+            значение. Нельзя одновременно хранить значение типа <SPAN 
+            class=texample>char</SPAN> и значение типа <SPAN 
+            class=texample>int</SPAN>, даже если для этого имеется достаточно 
+            пространства (памяти для 8 байт). Следить за тем, какие значения на 
+            текущий момент хранятся в объединении, входит в обязанности 
+            программиста. Бывает, что на различных этапах выполнения программы 
+            одни переменные могут быть не нужны, в то время как другие, 
+            наоборот, используются только в текущей части программы, поэтому 
+            объединения экономят пространство, вместо того чтобы впустую тратить 
+            память на не использующиеся в данный момент переменные.</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_24>При инициализации полей объединения вместо операции 
+            точки можно использовать операцию стрелки, если используется 
+            указатель на объединение. В частности, для рассмотренных 
+            примеров:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int x;
+ptr = &amp;fit;
+x = ptr-&gt;digit;</PRE></DIV>
+            <P id=id_26>В содержимом объединения (в качестве инициализаторов) 
+            могут быть структуры. При этом по правилам использования объединения 
+            обращаться можно будет только к одной из структур.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>Фактически объединение является структурой, в которой 
+            все элементы имеют нулевое смещение от ее начала. Она имеет 
+            достаточную длину, чтобы в нее поместился самый длинный элемент, и 
+            при этом выравнивание выполняется правильно для всех типов данных в 
+            объединении [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>14.2</A>]. Над объединениями разрешено выполнять те же 
+            операции, что и над структурами: присваивать или копировать как 
+            единое целое, брать адрес и обращаться к отдельным элементам.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28>Объединения могут употребляться в структурах и массивах 
+            и наоборот. Способ обращения к члену объединения в структуре (или к 
+            члену структуры в объединении) полностью идентичен обращению к 
+            элементу вложенной структуры. Объединение можно инициализировать 
+            только данными того типа, который имеет его первый элемент [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>14.2</A>].</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29>Смысловое отличие объединения от структуры состоит в 
+            том, что записать информацию в объединение можно с помощью одного из 
+            его элементов, а выбрать данные из того участка памяти можно с 
+            помощью другого элемента того же объединения [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>14.3</A>].</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>К объединениям может быть применен оператор <SPAN 
+            class=texample>typedef</SPAN>, после чего можно вводить обозначения 
+            объединяющих типов, не требующие применения служебного слова 
+            <B>union</B>. Рассмотрим пример:</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <DIV class=example><PRE>typedef union data
+{
+char str[79+1];
+int  a;
+double x;
+} new_data;</PRE></DIV>
+            <P id=id_33>Определения новых переменных (например, <SPAN 
+            class=texample>student1</SPAN>, <SPAN class=texample>student2</SPAN> 
+            ) объединений будут выглядеть таким образом:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>new_data student1, student2;</PRE></DIV>
+            <P id=id_37>Объединения не относятся ни к скалярным данным, ни к 
+            данным агрегирующих типов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>14.3</A>].</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38>Объединения не могут сравниваться операциями <SPAN 
+            class=texample>"=="</SPAN> и <SPAN class=texample>"!="</SPAN> по тем 
+            же самым причинам, что и структуры, поскольку элементы объединения 
+            не обязательно хранятся в последовательных байтах памяти.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_41>Объединения часто используются для специального 
+            преобразования типов, поскольку к хранящимся в объединении данным 
+            можно обращаться разными способами [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>14.4</A>].</P>
+            <DIV id=mark_41 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>14.2. Перечислимые типы</H4>
+            <P id=id_43><SPAN class=xml_em_italic>Перечислимый 
+            (enumerated)</SPAN> и тип служит для объявления символических имен, 
+            представляющих целочисленные константы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>].</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44>Можно сказать, что <SPAN class=xml_em_italic>enumerated 
+            type</SPAN> (перечислимый тип) – это тип данных, заданных списком 
+            принадлежащих ему значений.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>Назначение перечислимых типов заключается в том, чтобы 
+            повысить удобочитаемость программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>14.1</A>]. Синтаксис в этом случае аналогичен 
+            синтаксису, который используется для описания структур.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_46>Примеры объявления перечислимого типа:</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <DIV class=example><PRE>enum spectrum {red, orange, yellow, green, blue, violet};
+enum spectrum color;</PRE></DIV>
+            <P id=id_48>Первое объявление устанавливает <SPAN 
+            class=texample>spectrum</SPAN> как имя дескриптора, который 
+            позволяет использовать <SPAN class=texample>enum spectrum</SPAN> в 
+            качестве имени типа. Второе объявление делает <SPAN 
+            class=texample>color</SPAN> переменной этого типа. Идентификаторы, 
+            заключенные в фигурные скобки, перечисляют возможные значения, 
+            которые может принимать переменная <SPAN 
+            class=texample>spectrum</SPAN>. Соответственно, возможными 
+            значениями <SPAN class=texample>color</SPAN> являются <B>red, 
+            orange, yellow</B> и т. д. Но эти возможные значения являются 
+            целочисленными, т.е. 0, 1, 2, 3, 4, 5. Другими словами, значения в 
+            <B>enum</B> начинаются с 0, если не задано иное число, и всегда 
+            увеличиваются на 1.</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_54>В общем случае перечислимые константы имеют тип <SPAN 
+            class=texample>int</SPAN>, но перечислимые переменные не так жестко 
+            привязаны к целочисленному типу данных, поскольку этот тип может 
+            содержать перечислимые константы. Например, перечислимые константы 
+            переменной <B>spectrum</B> имеют диапазон 0&nbsp;...&nbsp;5 (как в 
+            массиве), поэтому компилятор может выбрать тип <SPAN 
+            class=texample>unsigned char</SPAN> для представления переменной 
+            <SPAN class=texample>color</SPAN>.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_58>В языке программирования С к перечислимой переменной 
+            можно применять операции инкрементирования <SPAN 
+            class=texample>"++"</SPAN> и декрементирования <SPAN 
+            class=texample>"––"</SPAN>. Например,</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <DIV class=example><PRE>for (color = red;  color &lt;= violet; ++color)
+...;</PRE></DIV>
+            <P id=id_62>По умолчанию константам в перечислимом списке 
+            присваиваются целые значения 0, 1, 2 и так далее. В то же время 
+            возможны и присваиваемые значения, например:</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <DIV class=example><PRE>enum levels {low = 100, medium = 500, high = 2000};</PRE></DIV>
+            <P id=id_64>Если назначить конкретное значение одной из констант, то 
+            все следующие константы будут пронумерованы последовательно в 
+            возрастающем порядке, например:</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>enum feline {cat, lynx = 10, puma, tiger};</PRE></DIV>
+            <P id=id_66>В этом случае <B>cat</B> (кошка) получает значение 0 по 
+            умолчанию, <B>lynx</B> (рысь), <B>puma</B> (пума), <B>tiger</B> 
+            (тигр), соответственно, получают значения 10, 11, 12.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67>Перечисления особенно полезны там, где не требуется 
+            преобразования значений (целого типа) в имена (массив символов). В 
+            частности, перечисления часто используются в компиляторах для 
+            создания таблицы соответствия символов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>14.4</A>].</P>
+            <DIV id=mark_67 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Практическая часть</H3>
+            <P id=id_68><B>Пример 1</B>. Для переменной типа объединения 
+            предусмотрите ввод, и вывод элементов ее полей.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69>Программный код решения примера:</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+#define N 79
+
+union hold 
+	{
+	char str[N+1];
+	double bigf;
+	char ch;
+	int digit;
+	};
+
+int main (void)
+ {
+	double D2;
+int i = 0, digit2;
+char str2[80], ch2;
+
+	union hold fit, *PTR = &amp;fit;
+	//PTR = &amp;fit; // вариант взятия адреса
+
+printf("\n\t Fields of the \"union\":\n \
+1) string, 2) double, 3) character, 4) integer\n");	
+   
+ 	do {
+	printf("\n Enter %d field of the \"union\": ", i+1);
+_flushall();		
+		if (i == 0)
+     {
+gets_s(str2, N);
+
+strcpy_s(PTR-&gt;str, strlen(str2) + 1, str2);
+printf(" The first field: %s\n", PTR-&gt;str);
+i++; }
+		else if (i == 1) 
+     {
+			scanf_s("%lf", &amp;D2);
+printf(" The second field: %1.4f\n", PTR-&gt;bigf = D2);
+i++; }
+		else if (i == 2) 
+     {
+			scanf_s("%c", &amp;ch2);
+printf(" The third field: %c\n", PTR-&gt;ch = ch2);
+i++; }
+		else
+     {
+		scanf_s("%d", &amp;digit2);
+printf(" The fourth field: %d\n", PTR-&gt;digit = digit2);
+i++; }
+	    } while (i &lt; 4);
+	
+printf("\n 1 field: %s\n 2 field: %1.4f\n \
+3 field: %c\n 4 field: %d\n", \
+PTR-&gt;str, PTR-&gt;bigf, PTR-&gt;ch, PTR-&gt;digit);
+
+printf("\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_71>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\14. Лекция Объединения и перечислимые типы в языке С.mht#image.14.1">рис. 
+            14.1</A>.</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72 align=left><A name=image.14.1></A></P>
+            <DIV><IMG alt="Результат заполнения полей объединения" 
+            src="Лекция_14_files/mht3FAC(1).tmp" width=620 
+            height=289></DIV><BR><B>Рис. 14.1.</B>&nbsp; Результат заполнения 
+            полей объединения
+            <P></P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_73>Как видно из результата выполнения программы, заполнение 
+            четырех полей объединения возможно поочередно. После "прохода" всех 
+            полей строчные поля не сохранились.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74><B>Задание 1</B></P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <OL id=id_75>
+              <LI>В программе переставьте очередность полей объединения. 
+              Проанализируйте результат выполнения измененной программы.
+              <LI>Определите размерность объединения с помощью оператора <SPAN 
+              class=texample>sizeof()</SPAN>.
+              <LI>Введите свою фамилию, средний балл за последнюю сессию, 
+              начальную букву своего имени и год своего рождения.
+              <LI>Вместо операции "стрелка" примените операцию "точка".
+              <LI>С помощью оператора <SPAN class=texample>typedef</SPAN> 
+              создайте переменную объединения с именем compX, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_83><B>Пример 2</B>. Напишите программу, в которой 
+            информация о геометрических фигурах представляется на основе 
+            комбинированного использования переменных типа структуры и 
+            объединения. В качестве фигур примите эллипс с заданными полуосями, 
+            окружность с заданным радиусом и координатами центра, равнобочную 
+            трапецию с заданными основаниями и боковыми сторонами. Общие 
+            компоненты фигур: площадь фигур, периметр трапеции, длина 
+            окружности, длина эллипса.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84>Программный код решения примера:</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+// #define ?_USE_MATH_DEFINES
+#include &lt;math.h&gt;
+
+const double pi = 3.14159265358979L;
+
+int main (void)
+ {
+	double Ltr, AK;
+
+	struct figure
+   {
+	double area, perimeter;
+	int type;
+	union select {
+double R[3]; // circle
+double E[2]; // ellipse
+double Trap[3]; //trapezium
+	} geom_fig;
+		} geom, *PTR = &amp;geom;
+
+printf("\n Figures: 1 - Circle, 2 - Ellipse, 3 - trapezium");
+	printf("\n\n Select figure: ");
+	scanf_s("%d", &amp;(PTR-&gt;type));
+
+	switch (PTR-&gt;type)
+ 	{
+	case 1:
+PTR-&gt;geom_fig.R[0] = 5.0L; // радиус круга
+PTR-&gt;geom_fig.R[1] = 1.5L; // x0
+PTR-&gt;geom_fig.R[2] = 2.5L; // y0
+PTR-&gt;area = pi*(PTR-&gt;geom_fig.R[0])*(PTR-&gt;geom_fig.R[0]);
+PTR-&gt;perimeter = 2*pi*(PTR-&gt;geom_fig.R[0]);
+printf("\n %d) Circle:\n R = %1.4f, \
+x0 = %1.4f, y0 = %1.4f, area = %1.4f, L = %1.4f\n", \
+PTR-&gt;type, PTR-&gt;geom_fig.R[0], PTR-&gt;geom_fig.R[1], PTR-&gt;geom_fig.R[2], \
+PTR-&gt;area, PTR-&gt;&gt;perimeter);
+break;
+	
+	case 2:
+PTR-&gt;geom_fig.E[0] = 5.0L; // a - большая полуось
+PTR-&gt;geom_fig.E[1] = 4.0L; // b - малая полуось
+PTR-&gt;area = pi*(PTR-&gt;geom_fig.E[0])*(PTR-&gt;geom_fig.E[1]);
+PTR-&gt;perimeter = 2.0*pi*(PTR-&gt;geom_fig.E[0])*\
+(PTR-&gt;geom_fig.E[0] - PTR-&gt;geom_fig.E[1])/(PTR-&gt;geom_fig.E[0]);
+
+printf("\n %d) - Ellipse:\n a = %1.4f, b = %1.4f, \
+area = %1.4f, L = %1.4f\n", \
+PTR-&gt;type, PTR-&gt;geom_fig.E[0], PTR-&gt;geom_fig.E[1], \
+PTR-&gt;area,PTR-&gt;perimeter);
+break;
+
+
+	case 3:
+PTR-&gt;geom_fig.Trap[0] = 12.0L;// AD
+PTR-&gt;geom_fig.Trap[1] = 7.0L; // BD
+PTR-&gt;geom_fig.Trap[2] = 5.5L; // h
+AK = (PTR-&gt;geom_fig.Trap[0] - PTR-&gt;geom_fig.Trap[1])/2.0;
+Ltr = (PTR-&gt;geom_fig.Trap[0] + PTR-&gt;geom_fig.Trap[1]) + \
+2.0*sqrt(AK*AK + (PTR-&gt;geom_fig.Trap[2])*(PTR-&gt;geom_fig.Trap[2]) );
+PTR-&gt;area = 0.5*(PTR-&gt;geom_fig.Trap[0] + PTR-&gt;geom_fig.Trap[1])*\
+(PTR-&gt;geom_fig.Trap[2]);
+PTR-&gt;perimeter = Ltr;
+
+printf("\n %d) Trapezium:\n AD = %.4f, BC = %.4f, h = %.4f, \
+Area = %1.4f, L = %1.4f\n", \
+PTR-&gt;type, PTR-&gt;geom_fig.Trap[0], PTR-&gt;geom_fig.Trap[1], \
+PTR-&gt;geom_fig.Trap[2], PTR-&gt;area, PTR-&gt;perimeter);
+break;
+	
+	default :
+		printf("\n\t Error! Break\n");
+		break;
+	}
+
+     printf("\n Press any key: ");
+	_getch();
+	return 0;
+ }</PRE></DIV>
+            <P id=id_86>В программе одним из полей структуры <SPAN 
+            class=texample>geom</SPAN> является объединение. В зависимости от 
+            выбора типа – <SPAN class=xml_em_italic>метки активного 
+            элемента</SPAN> <SPAN class=texample>type</SPAN> – происходит вывод 
+            на консоль параметров фигуры, ее площади и длины граничной линии 
+            (периметр трапеции и т.д.). Компонент <SPAN 
+            class=texample>type</SPAN> используется для указания, какой из 
+            компонентов (полей) объединения <SPAN class=texample>geom_fig</SPAN> 
+            является активным в данный момент. Подобную структуру называют <SPAN 
+            class=xml_em_italic>переменной структурой</SPAN>.</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_91>Определение числа <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_14_files/mht3FEE(1).tmp" width=14 height=11> <SPAN 
+            class=texample>(M_PI)</SPAN> может быть выполнено с помощью 
+            препроцессорного определения <SPAN 
+            class=texample>#define_USE_MATH_DEFINES</SPAN> и подключения 
+            математической библиотеки <SPAN 
+            class=texample>#include&lt;math.h&gt;</SPAN>. В программе это 
+            определение числа <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_14_files/mht3FEE(1).tmp" width=14 height=11> 
+            закомментировано. Используется прямое определение числа <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_14_files/mht3FEE(1).tmp" width=14 height=11> с помощью 
+            типа <SPAN class=texample>const double</SPAN>.</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_98>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\14. Лекция Объединения и перечислимые типы в языке С.mht#image.14.2">рис. 
+            14.2</A>.</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99 align=left><A name=image.14.2></A></P>
+            <DIV><IMG alt="Результат выбора и  расчета плоской фигуры" 
+            src="Лекция_14_files/mht4010(1).tmp" width=620 
+            height=149></DIV><BR><B>Рис. 14.2.</B>&nbsp; Результат выбора и 
+            расчета плоской фигуры
+            <P></P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100><B>Задание 2</B></P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <OL id=id_101>
+              <LI>Выполните программу для всех возможных случаев.
+              <LI>По программному коду запишите формулы для расчета площадей и 
+              длин граничных линий каждой из фигур.
+              <LI>Предусмотрите ввод с клавиатуры параметров выбранной 
+              фигуры.</LI></OL>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_105><B>Пример 3</B>. Напишите программу вывода на консоль 
+            дня недели до и после заданного номера дня недели с помощью 
+            перечислимого типа данных <SPAN class=texample>enum</SPAN>. 
+            Программный код решения примера:</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+const int NUMDAYS = 7;
+enum DAYS
+ {
+Mon,      // Monday,
+Tue,      // Tuesday,
+Wed,      // Wednesday,
+Thu,      // Thursday,
+Fri,      // Friday,
+Sat,      // Saturday,
+Sun       // Sunday
+} day1, day2, day3; // сегодня, вчера, завтра
+
+// Прототипы функций
+int day_before(DAYS);
+int day_after(DAYS);
+void print_day(DAYS);
+
+int main (void) {
+printf("\n Days of week:\n 1) Monday, 2) Tuesday, 3) Wednesday, \
+4) Thursday,\n 5) Friday, 6) Saturday, 7) Sunday\n");
+
+printf("\n Select the number of days a week: ");
+scanf_s("%d", &amp;day1);
+
+if (day1 &gt; 7 || day1 &lt; 1)
+printf("\n\t Error!\n");
+else {
+day2 = day_before(day1);
+day3 = day_after(day1);
+printf("\n If today ");
+print_day(day1);
+printf("\n yesterday was ");
+print_day(day2);
+printf("\n and tomorrow will be ");
+print_day(day3); 
+}
+     printf("\n\n Press any key: ");
+	_getch();
+	return 0; }
+
+// Описание функции
+int day_after(day) {
+int aft, ex;
+aft = (day+1) % NUMDAYS; // Остаток от деления по модулю
+if (aft == 0)
+ex = NUMDAYS;
+else
+ex = aft;
+return ex; }
+
+// Описание функции
+int day_before(day) {
+int pre, ex;
+pre = (day-1) % NUMDAYS;
+if (pre == 0)
+ex = NUMDAYS;
+else
+ex = pre;
+return ex; }
+
+// Описание функции
+void print_day(day) {
+int day_i = day-1;
+// Массив указателей
+static char *days[] = 
+char *days[] =
+{"Monday",
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday",
+"Sunday" };
+printf(" %s\n", days[day_i]); }</PRE></DIV>
+            <P id=id_108>В программе использован спецификатор класса памяти 
+            <SPAN class=texample>static</SPAN> для массива указателей, 
+            инициированных названиями дней недели. В таком случае массив 
+            указателей с заданным именем будет не доступен за пределами функции, 
+            где он определен. Для данной программы класс памяти <SPAN 
+            class=texample>static</SPAN> внутри функции <SPAN 
+            class=texample>print_day()</SPAN> инициирует выделение памяти для 
+            объекта (массив указателей) и служит определением массива 
+            указателей.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_112>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\14. Лекция Объединения и перечислимые типы в языке С.mht#image.14.3">рис. 
+            14.3</A>.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113 align=left><A name=image.14.3></A></P>
+            <DIV><IMG alt="Пример выбора полей  перечисления по дням недели" 
+            src="Лекция_14_files/mht4032(1).tmp" width=620 
+            height=197></DIV><BR><B>Рис. 14.3.</B>&nbsp; Пример выбора полей 
+            перечисления по дням недели
+            <P></P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114><B>Задание 3</B></P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <OL id=id_115>
+              <LI>В программе используйте кодовые страницы (Windows или DOS) для 
+              работы с русскими шрифтами (с подключением заголовка <SPAN 
+              class=texample>&lt;locale.h&gt;</SPAN> ).
+              <LI>Видоизмените программу для выбора месяца года (с учетом п.1).
+              <LI>Видоизмените программу для выбора одного из 7 цветов ( 
+              <B>К</B> аждый <B>О</B> хотник <B>Ж</B> елает <B>З</B> нать, 
+              <B>Г</B> де <B>С</B> идят <B>Ф</B> азаны – красный, оранжевый, 
+              желтый, зеленый, голубой, синий, фиолетовый) с выводом на консоль 
+              цвета и его кода RGB ( <B>R</B> ed, <B>G</B> reen, <B>B</B> lue – 
+              красный, зеленый, синий).
+              <LI>Выполните изменения в программе, чтобы выбор дня недели 
+              осуществлялся при инициализации переменной <SPAN 
+              class=texample>day1</SPAN>, например, <SPAN class=texample>day1 = 
+              Sun</SPAN>.
+              <LI>Напишите программу вывода на консоль названия месяца до и 
+              после заданного (введенного пользователем) номера месяца года с 
+              помощью перечислимого типа данных <B>enum</B>.</LI></OL>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_124><B>Пример 4</B>. Напишите программу вывода количества 
+            дней для каждого месяца не високосного года на основе перечислимого 
+            типа данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>14.5</A>].</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_125>Программный код решения примера:</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	enum month {january = 1, february, march, april, may, june,july, august, september, october, november, 
+december } aMonth;
+	int days;
+	printf("\n Enter the number of the month (1 - 12): ");
+	scanf_s("%d", &amp;aMonth);
+
+switch (aMonth)
+ {
+	// 31 день
+case january:
+case march:
+case may:
+case july:
+case august:
+case october:
+case december:
+	days = 31;
+	break;
+	
+// 30 дней
+case april:
+case june:
+case september:
+case november:
+	days = 30;
+	break;
+
+case february:
+	days = 28;
+	break;
+
+default:
+	printf("\n\t Wrong number of the month\n");
+	days = 0;
+	break; 
+}
+
+if (days)
+printf("\n The number of days of the month: %d\n", days);
+
+if (aMonth == february)
+printf("\n ... or 29 if it is a leap year\n");
+
+     printf("\n\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_127>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\14. Лекция Объединения и перечислимые типы в языке С.mht#image.14.4">рис. 
+            14.4</A>.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_128 align=left><A name=image.14.4></A></P>
+            <DIV><IMG alt="Подсчет количества дней в месяце года" 
+            src="Лекция_14_files/mht4054(1).tmp" width=620 
+            height=111></DIV><BR><B>Рис. 14.4.</B>&nbsp; Подсчет количества дней 
+            в месяце года
+            <P></P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129><B>Задание 4</B></P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <OL id=id_130>
+              <LI>Произведите запись в текстовый файл с именем compX.txt, где Х 
+              – номер компьютера, за которым выполняется лабораторная работа.
+              <LI>Создайте переменную перечислимого типа compX, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>Предусмотрите вывод названия месяца и количества его дней.
+              <LI>Предусмотрите количество дней в феврале для високосного года 
+              (без добавления разделительного союза "или").</LI></OL>
+            <DIV id=mark_130 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_135>
+              <LI>Какие отличия и общие черты имеются у структур и объединений?
+              <LI>Для чего используются объединения в языке <B>С</B>? Как они 
+              определяются?
+              <LI>Как осуществляется инициализация полей объединения?
+              <LI>Как можно вывести значения полей объединения на дисплей?
+              <LI>Для чего служит перечислимый тип данных в языке <B>С</B>? Как 
+              он определяется?
+              <LI>Какие операции разрешено выполнять над объединениями?
+              <LI>Какие значения по умолчанию присваиваются полям перечислимого 
+              списка?</LI></OL>
+            <DIV id=mark_135 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_14_files/mht3F7B(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

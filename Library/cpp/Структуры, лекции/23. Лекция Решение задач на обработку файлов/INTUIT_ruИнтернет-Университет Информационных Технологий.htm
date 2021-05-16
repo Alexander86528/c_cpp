@@ -1,0 +1,817 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/23/staldata_23.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>23. Лекция: Решение задач на обработку 
+            файлов: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются функции библиотеки классов потокового ввода-вывода, 
+            примеры реализации алгоритмов решения задач на обработку файлов. 
+            </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить использование алгоритмов 
+            обработки элементов файла в решении задач и научится приемам решения 
+            задач на обработку элементов файла на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Потоки для работы с файлами создаются как объекты 
+            следующих классов:</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><SPAN class=texample>ofstream</SPAN> – для вывода 
+            (записи) данных в файл;</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_5><SPAN class=texample>ifstream</SPAN> – для ввода (чтения) 
+            данных из файла;</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_7><SPAN class=texample>fstream</SPAN> – для чтения и для 
+            записи данных (двунаправленный обмен).</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_9>Чтобы использовать эти классы, в текст программы 
+            необходимо включить дополнительный заголовочный файл <SPAN 
+            class=texample>fstream.h</SPAN>. После этого в программе можно 
+            определять конкретные файловые потоки, соответствующих типов.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_11>Создание файлового потока (объекта соответствующего 
+            класса) связывает имя потока с выделяемым для него буфером и 
+            инициализирует переменные состояния потока. Так как перечисленные 
+            классы файловых потоков наследуют свойства класса <SPAN 
+            class=texample>ios</SPAN>, то и переменные состояния каждого 
+            файлового потока наследуются из этого базового класса. Файловые 
+            классы являются производными от классов <SPAN 
+            class=texample>ostream</SPAN> (класс <SPAN 
+            class=texample>ofstream</SPAN>), <SPAN class=texample>istream</SPAN> 
+            (класс <SPAN class=texample>ifstream</SPAN>), <SPAN 
+            class=texample>stream</SPAN> (класс <SPAN 
+            class=texample>fstream</SPAN>), они поддерживают описанный в 
+            предыдущих шагах форматированный и бесформатный обмен с файлами. 
+            Однако прежде чем выполнить обмен, необходимо открыть 
+            соответствующий файл и связать его с файловым потоком.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_19>Открытие файла в самом общем смысле означает процедуру, 
+            информирующую систему о тех действиях, которые предполагается 
+            выполнять с файлом. Работая с файловыми потоками с помощью библиотек 
+            ввода-вывода языка С++, удобнее пользоваться компонентными функциями 
+            соответствующих классов.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Большинство средств управления потоковым вводом-выводом 
+            сосредоточены в классе <SPAN class=texample>ios</SPAN>, который 
+            является базовым для <SPAN class=texample>ostream</SPAN> и <SPAN 
+            class=texample>istream</SPAN>. По сути здесь находится управление 
+            связью между <SPAN class=texample>istream</SPAN> или <SPAN 
+            class=texample>ostream</SPAN> и буфером, используемым для операций 
+            ввода-вывода. Именно класс <SPAN class=texample>ios</SPAN> 
+            контролирует работу буфера обмена: как символы заносятся и как они 
+            считываются.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Класс ios (iostream.h)</H3>
+            <P id=id_27>Обеспечивает общие операции для ввода и вывода. 
+            Производные от него классы (<SPAN class=texample>istream, ostream, 
+            iostream</SPAN>) специализируют ввод-вывод с помощью операций 
+            форматирования высокого уровня. Класс <SPAN 
+            class=texample>ios</SPAN> является базовым для <SPAN 
+            class=texample>istream, ostream, fstreambase</SPAN> и <SPAN 
+            class=texample>strstreambase</SPAN>.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_32><SPAN class=xml_em_italic>Флаги форматирования</SPAN> – 
+            воичные коды, управляющие форматом выводимых значений. В 
+            заголовочном файле <SPAN class=texample>iostream.h</SPAN> определено 
+            следующее перечисление, задающее флаги форматирования.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <DIV id=id_34 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Значения флагов форматирования файла iostream.h</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8></TH>
+                <TH bgColor=#d8d8d8></TH>
+                <TH bgColor=#d8d8d8></TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>skipws</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0001</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Пропускает при вводе пробелы и 
+                  разделители.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>left</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0002</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Выравнивание вывода влево. 
+              </TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>right</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0004</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Выравнивание вывода 
+влево.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>internal</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0008</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Дополнение после знака или 
+                  указателя основания.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>dec</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0010</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Десятичное 
+преобразование.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>oct</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0020</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Восьмеричное 
+              преобразование.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>hex</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0040</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Шестнадцатеричное 
+                  преобразование.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>showbase</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0080</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Показывает в выводе индикатор 
+                  основания.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>showpoint</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0100</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Показывает при выводе с 
+                  плавающей точкой десятичную точку.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>uppercase</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0200</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Преобразует шестнадцатеричный 
+                  вывод в верхний регистр.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>showpos</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0400</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Выводит с положительными 
+                  числами символ '+'.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>scientific</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х0800</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавляет к числам с плавающей 
+                  точкой суффикс с показателем степени (E).</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fixed</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х1000</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Для вывода чисел с плавающей 
+                  точкой использует десятичную фиксированную точку.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>unitbuf</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х2000</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>После включения выводит все 
+                  потоки.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>stdio</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>0х4000</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>После включения выводит <SPAN 
+                  class=texample>stdout</SPAN> и <SPAN 
+                  class=texample>stderr</SPAN>.</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_67>Фактически в этом списке содержатся имена констант, 
+            определяющие флаги соответствующих назначений. Коду формата 
+            соответствует целый тип <SPAN class=texample>long</SPAN>. Изменить 
+            состояние флагов формата можно с помощью функции класса <SPAN 
+            class=texample>ios</SPAN>, имеющей прототип</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <DIV class=example><PRE>long setf(long flags); 
+</PRE></DIV>
+            <P id=id_71>Например, чтобы установить флаг <SPAN 
+            class=texample>showbase</SPAN> в активный режим (включить) 
+            применительно к стандартному потоку вывода <SPAN 
+            class=texample>cout</SPAN>, используется оператор</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <DIV class=example><PRE>cout.setf(ios::showbase); 
+</PRE></DIV>
+            <P id=id_75>Для установки флагов можно использовать побитовые 
+            операции. Например:</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <DIV class=example><PRE>cout.setf(ios::left|ios::hex); 
+</PRE></DIV>
+            <P id=id_77>В результате включатся одновременно флаги, управляющие 
+            выравниванием по левому краю и выводом целых значений в 
+            шестнадцатеричной системе.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <DIV id=id_78 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Функции класса ios</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Функция</TH>
+                <TH bgColor=#d8d8d8>Прототип</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>bad</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  bad();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Ненулевое значение в случае 
+                  ошибки.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>bitalloc</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>static 
+                  long bitalloc();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Получает новый флаг битового 
+                  набора. Возвращаемое значение может использовать для 
+                  установки, очистки и проверки флаги. Это флаги форматирования, 
+                  определяемые пользователем.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>eof</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  eof();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>В случае достижения конца файла 
+                  возвращает ненулевое значение.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>fail</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  fail();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Не 0 при неуспешном выполнении 
+                  операции с потоком.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>fill</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  fill();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущий 
+                  символ-заполнитель потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>char 
+                  fill(char);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Заменяет значением параметра 
+                  символ заполнения потока; возвращает ранее установленное 
+                  значение символа заполнения.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>flags</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  flags();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущее значение 
+                  флагов форматирования.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  flags(long);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает флаги 
+                  форматирования по значению параметра; возвращает ранее 
+                  установленное значение флагов.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>good</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  good();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает ненулевое значение, 
+                  если не установлен ни один флаг (ошибок нет).</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>presicion</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  presicion();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущую точность 
+                  числа с плавающей точкой.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  presicion(int);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает точность 
+                  вещественных чисел с плавающее точкой по значению параметра; 
+                  Возвращает предыдущее значение параметра.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>rdbuf</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>streambuf* 
+                  rdbuf();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает указатель на 
+                  streambuf, назначенный для данного потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>rdstate</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  rdstate();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущее состояние 
+                  потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>setf</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  setf(long);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает флаги по значению 
+                  параметра; возвращает ранее установленные флаги.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>sync_with_stdio</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>sync_with_stdio;</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Смешивает файлы stdio и потоки 
+                  iostreams. В новой программе этого использовать не 
+              следует.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>unseft</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  unseft(long);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Очищает биты состояния потока, 
+                  отмеченные параметром; возвращает предыдущее состояние 
+                битов.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>with</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  with();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущее значение 
+                  ширины.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  with(int);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает ширину, равную 
+                  параметру; возвращает предыдущее значение параметра.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>gcount</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  gcount();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает число символов, 
+                  извлеченных из потока последним обращением.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>get</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  get();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Получает следующий символ либо 
+                  EOF, сохраняя их в буфере.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  get(signed char*, int, char='\n');</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Извлекает из входного потока 
+                  символы и помещает их в буфер, на начало которого указывает 
+                  <SPAN class=texample>char*</SPAN>. Передача завершается, если 
+                  число принятых символов на 1 меньше второго параметра или 
+                  встретился символ <SPAN class=texample>'\n'</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>getline</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>iostream&amp; getline(signed char*, int, 
+                  char='\n');</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Извлекает из входного потока 
+                  символы и помещает их в буфер, на начало которого указывает 
+                  char*. Передача завершается, если число принятых символов на 1 
+                  меньше второго параметра или встретился символ <SPAN 
+                  class=texample>'\n'</SPAN>,который помещается в строку.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ignore</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>iostream&amp; ignore(int n, int 
+                delim);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Пропускает <SPAN 
+                  class=texample>n</SPAN> символов в потоке. При обнаружении 
+                  <SPAN class=texample>delim</SPAN> останавливается (по 
+                  умолчанию, <SPAN class=texample>delim=EOF</SPAN>).</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>peek</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>int 
+                  peek();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает следующий символ без 
+                  извлечения из потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>putback</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>iostream&amp; putback(char);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Помещает символ обратно в 
+                поток.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>read</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>read(signed char*, int);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Извлекает из потока и помещает 
+                  в символьный массив указанное число символов.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>seekg</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>iostream&amp; seekg(long);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Перемещает заданное число байт 
+                  относительно текущей позиции для потока ввода. Можно задавать 
+                  направление.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>telig</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>Long 
+                  telig();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущую позицию 
+                  курсора. В случае неуспешного выполнения возвращает 
+                  отрицательное число.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>flush</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; flush();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Флэширует внутренний буфер 
+                  выходного потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>put</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; put(char);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Помещает заданный параметром 
+                  char символ в выходной поток.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>seekp</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; seekp (long);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает указатель записи 
+                  выходного потока на абсолютную позицию, заданную параметром 
+                  <SPAN class=texample>long</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; seekp (long, seek_dir);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Перемещает указатель текущей 
+                  позиции выходного потока на число байтов, заданное первым 
+                  параметром. Второй параметр задает точку отсчета (0 – начало; 
+                  1 – текущая позиция; 2 – конец потока)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>tellp</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>long 
+                  tellp();</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущую позицию 
+                  выходного потока.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2><SPAN 
+                  class=texample>write</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; write (const signed, char *, int 
+                  n);</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Помещает в выходной 
+                  поток <SPAN class=texample>n</SPAN> символов из массива, на 
+                  который указывает <SPAN class=texample>char *</SPAN>. 
+                  Нуль-символы включаются в число переносимых символов.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ostream&amp; write (const signed, char *, int 
+                  n);</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_151><SPAN class=xml_em_italic>Пример 1</SPAN>. Входной файл 
+            содержит следующую информацию: в первой строке натуральное число 
+            указывает количество чисел, далее следуют вещественные числа. 
+            Выведите в выходной файл только положительные числа из входного 
+            файла и их сумму.</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fstream&gt; 
+int _tmain(int argc, _TCHAR* argv[]){
+  int n,i=1; 
+  float s, sum=0.0;
+  // Открываем входной файл для ввода данных
+  ifstream infile("in.txt"); 
+  // Открываем выходной файл для вывода данных
+  ofstream outfile("out.txt"); 
+  // Проверка корректности открытия входного файла
+  if (!infile) {cout &lt;&lt; "Файл не открыт.\n";} 
+    else {
+      infile &gt;&gt; n; //Считываем количество чисел
+      while (i++&lt;=n){
+        infile &gt;&gt; s; //Считываем вещественные числа
+        if (s&gt;0) {
+            sum+=s;
+            outfile &lt;&lt; s &lt;&lt;"\n"; 
+            //Выводим положительные числа  
+                 }
+        }
+        outfile &lt;&lt; sum; //Выводим сумму в выходной файл
+        // Закрываем файлы 
+        infile.close();
+        outfile.close(); 
+        cout &lt;&lt; "Запись в файл завершена"; 
+      }
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_153><SPAN class=xml_em_italic>Пример 2</SPAN>. Дан 
+            текстовый файл. Выведите в выходной файл длину наибольшей строки и 
+            все строки такой длины.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fstream&gt; 
+#include &lt;string.h&gt;
+int _tmain(int argc, _TCHAR* argv[]){
+  int maxlen=0, len; 
+  char st[200],delim;
+  //Связываем переменные с потоками
+  ifstream infile; 
+  ofstream outfile;
+  // Открываем входной файл для ввода данных
+  infile.open("in.txt"); 
+  // Проверка корректности открытия входного файла
+  if (!infile) {cout &lt;&lt; "Файл не открыт.\n";} 
+  else {
+    //Поиск максимальной длины строк       
+    while (!infile.eof()) {
+      infile.getline(st,200,delim='\n');
+      len=strlen(st); 
+      if (len&gt;maxlen) maxlen=len;
+    }
+    // Закрываем входной файл 
+    infile.close();
+  }
+   //Открываем входной файл для ввода данных
+   infile.open("in.txt"); 
+   // Открываем выходной файл для вывода данных
+   outfile.open("out.txt");
+  // Проверка корректности открытия входного файла
+  if (!infile) {cout &lt;&lt; "Файл не открыт.\n";} 
+  else {
+    outfile&lt;&lt;"Длина наибольшей строки равна "&lt;&lt;maxlen&lt;&lt;"\n";
+    //Поиск и вывод строк максимальной длины
+    while (!infile.eof()) {
+      infile.getline(st,200,delim='\n');
+      len=strlen(st);
+      if (len==maxlen) outfile &lt;&lt;st&lt;&lt;"\n";
+    }
+    // Закрываем файлы 
+    infile.close(); 
+    outfile.close(); 
+    cout &lt;&lt; "Запись в файл завершена";
+  }  
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect3></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_155><B>Извлечение из потока</B> – это процесс чтения данных 
+            из потока.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156><B>Класс</B> <SPAN class=texample>fstream</SPAN> – это 
+            поток для чтения и для записи данных (двунаправленный обмен).</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_158><B>Класс</B> <SPAN class=texample>ifstream</SPAN> – это 
+            поток для ввода (чтения) данных из файла </P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_160><B>Класс</B> <SPAN class=texample>ios</SPAN> – 
+            родительский класс для файловых потоков.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_162><B>Класс</B> <SPAN class=texample>ofstream</SPAN> – это 
+            поток для вывода (записи) данных в файл. </P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_164><B>Помещение или включение в поток</B> – это процесс 
+            вывода данных в поток.</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_165><B>Поток</B> – это абстрактное понятие, относящееся к 
+            любому переносу данных от источника к приемнику.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_166><B>Флаги форматирования</B> – двоичные коды, 
+            управляющие форматом выводимых значений.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_167>
+              <LI>Файловые потоки <SPAN class=texample>ofstream, ifstream, 
+              fstream</SPAN> наследуются из базового класса <SPAN 
+              class=texample>ios</SPAN>.
+              <LI>Класс <SPAN class=texample>ios</SPAN> контролирует работу 
+              буфера обмена.
+              <LI>Создание файлового потока связывает имя потока с выделяемым 
+              для него буфером и инициализирует переменные состояния потока.
+              <LI>Флаги форматирования управляют форматом выводимых значений.
+              <LI>Файловые потоки используются для обмена данными при решении 
+              задач.</LI></OL>
+            <DIV id=mark_167 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Лабораторная работа 23. Решение задач на обработку файлов</H3>
+            <P id=id_176><B>Цель работы:</B> изучить использование алгоритмов 
+            обработки элементов файла в решении задач и научится приемам решения 
+            задач на обработку элементов файла на языке C++.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_177>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            строковые величины, являющиеся корректными именами входных и 
+            выходных файлов (при этом в программе следует предусмотреть проверку 
+            существования и корректности открытия используемых файлов). Ввод 
+            данных осуществляется из входных файлов с учетом требований к 
+            входным данным, содержащихся в постановке задачи. Ограничениями на 
+            входные данные является максимальный размер строковых данных и 
+            допустимый диапазон числовых типов в языке С++. При некорректном 
+            открытии файла программа должна завершить работу с выдачей на экран 
+            соответствующего сообщения. Считанные из файла данные обрабатываются 
+            в соответствии с условием задачи с помощью алгоритмов обработки 
+            данных файлов, после чего осуществляется вывод в выходной файл.</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178><B>Теоретические сведения.</B></P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179>Ознакомьтесь с материалом лекции 23.</P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_181>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <OL id=id_182>
+              <LI>Заполните файл <SPAN class=texample>in.dat</SPAN> числами по 
+              закономерности: 1/2, 1/4, 2/6, 3/8, 5/16,… Считывая данные из 
+              <SPAN class=texample>in.dat</SPAN>, заполните файл <SPAN 
+              class=texample>out.dat</SPAN> квадратами чисел, попавших в отрезок 
+              <SPAN class=texample>[a, b]</SPAN>.
+              <LI>Дан входной текстовый файл. Заполните выходной файл только 
+              теми строками, в которых ровно <SPAN class=texample>k</SPAN> 
+              символов <SPAN class=texample>ch</SPAN>.
+              <LI>Даны два входных текстовых файла. Сформируйте выходной файл из 
+              строк, полученных конкатенацией соответствующих по порядку строк 
+              входных файлов. Если один из входных файлов закончится раньше, то 
+              оставшиеся строки второго файла допишите без изменения.
+              <LI>Решите задачу на обработку файла. Использование 
+              дополнительного массива не предусматривается. Записать в файл 
+              <SPAN class=texample>N</SPAN> вещественных чисел. Найти наибольшее 
+              из значений модулей компонентов с нечетными номерами. Выведите 
+              результат на экран и в файл.</LI></OL>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_194>Указания к выполнению работы.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <P id=id_195>Каждое задание необходимо решить в соответствии с 
+            изученными методами и алгоритмами обработки файлов в языке С++. В 
+            программном коде к каждой задаче следует выполнять чтение данных из 
+            существующих входных файлов (имя каждого файла вводится в виде 
+            строки символов и считается корректным с точки зрения организации 
+            файловой системы). Данные входных файлов необходимо обработать, 
+            применив алгоритмы обработки файлов. В задаче 4 нельзя использовать 
+            дополнительные массивы для хранения промежуточных данных. Вывод 
+            следует осуществить в выходной файл, имя которого вводится как 
+            строка символов с клавиатуры. Данные входного и выходного файлов 
+            необходимо дублировать на экране с соответствующими комментариями. 
+            Программу для решения каждого задания необходимо разработать методом 
+            процедурной абстракции, оформив комментарии к коду.</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_196>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <UL id=id_197>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_206><B>Требования к отчету.</B></P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_207>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_207 class=lecture_mark></DIV>
+            <UL id=id_208>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_217>Контрольные вопросы</P>
+            <DIV id=mark_217 class=lecture_mark></DIV>
+            <OL id=id_218>
+              <LI>Предусмотрены ли флаги форматирования для вводимых в файл 
+              значений? Почему?
+              <LI>С какой целью выделены как отдельные потоки <SPAN 
+              class=texample>ofstream, ifstream, fstream</SPAN>?
+              <LI>В чем отличие выполнения функции <SPAN 
+              class=texample>get</SPAN> без параметров и с тремя параметрами?
+              <LI>В чем отличие выполнения функции <SPAN 
+              class=texample>flags</SPAN> без параметров и с параметром?
+              <LI>Назовите возможные причины ошибок, возникающих при открытии 
+              файлов для чтения и для записи.
+              <LI>Можно ли один и тот же файл одновременно открыть для записи и 
+              для чтения? Если да, то где будет находиться файловый 
+              указатель?</LI></OL>
+            <DIV id=mark_218 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/20/staldata_20.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>20. Лекция: Обработка файлов в потоковом 
+            режиме: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятие потокового режима при работе с файлами, 
+            потоки как типы данных, библиотечные функции ввода-вывода в 
+            потоковом режиме, примеры решения задач на обработку данных из 
+            файлов. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить организацию потокового 
+            ввода-вывода в файлы, научиться решать задачи с использованием 
+            прямого доступа к данным файла на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Для работы с файлами используются специальные типы 
+            данных, называемые <B>потоками</B>.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Поток <SPAN class=texample>ifstream</SPAN> служит для 
+            работы с файлами в режиме чтения. </P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_5>Поток <SPAN class=texample>ofstream</SPAN> служит для 
+            работы с файлами в режиме записи. </P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_7>Поток <SPAN class=texample>fstream</SPAN> служит для 
+            работы с файлами в режиме, как чтения, так и записи.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_9>В программах на C++ при работе с текстовыми файлами в 
+            потоковом режиме необходимо подключать библиотеки <SPAN 
+            class=texample>iostream</SPAN> и <SPAN 
+            class=texample>fstream</SPAN>.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Функция открытия файла</H3>
+            <P id=id_12>Для того чтобы начать работать с текстовым файлом, 
+            необходимо описать переменную типа <SPAN 
+            class=texample>ofstream</SPAN>.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_14>Например, с помощью оператора</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ofstream F;
+</PRE></DIV>
+            <P id=id_16>будет создана переменная <SPAN class=texample>F</SPAN> 
+            для записи информации в файл.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_18>На следующем этапе файл необходимо открыть для записи. В 
+            общем случае оператор открытия файла будет иметь вид:</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <DIV class=example><PRE>F.open("file", mode);
+</PRE></DIV>
+            <P id=id_20>где <SPAN class=texample>F</SPAN> – переменная, 
+            описанная как <SPAN class=texample>ofstream;</SPAN></P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_23><SPAN class=texample>file</SPAN> – полное имя файла на 
+            диске;</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_25><SPAN class=texample>mode</SPAN> – режим работы с 
+            открываемым файлом.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_27>Существуют следующие режимы для открытия файла.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <DIV id=id_28 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Режимы работы с файлом при открытии</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Режим</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::in</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>открыть файл в режиме чтения 
+                  данных, этот режим является режимом по умолчанию для потоков 
+                  <SPAN class=texample>ifstream</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::out</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>открыть файл в режиме записи 
+                  данных, этот режим является режимом по умолчанию для потоков 
+                  <SPAN class=texample>ofstream</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::app</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>открыть файл в режиме записи 
+                  данных в конец файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::ate</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>передвинуться в конец уже 
+                  открытого файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::trunc</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>очистить файл, это же 
+                  происходит в режиме <SPAN class=texample>ios::out</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::nocreate</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>не выполнять операцию открытия 
+                  файл, если он не существует</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::noreplace</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>не открывать существующий 
+                файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ios::binary</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>открыть двоичный 
+              файл</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_40>Параметр mode может отсутствовать, в этом случае файл 
+            открывается в режиме по умолчанию для данного потока:</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41><SPAN class=texample>ios::in</SPAN> – для потоков <SPAN 
+            class=texample>ifstream</SPAN>,</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_44><SPAN class=texample>ios::out</SPAN> – для потоков <SPAN 
+            class=texample>ofstream</SPAN>.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_47>После удачного открытия файла (в любом режиме) в 
+            переменной <SPAN class=texample>F</SPAN> будет храниться <SPAN 
+            class=texample>1 (true)</SPAN>, в противном случае <SPAN 
+            class=texample>0 (false)</SPAN>. Это позволит проверять корректность 
+            операции открытия файла.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_51>Если открытие файла завершилось неудачей, объект, 
+            соответствующий потоку, будет возвращать значение <SPAN 
+            class=texample>0</SPAN>:</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (!ofs){ 
+  cout &lt;&lt; "Файл не открыт\n";
+  } 
+</PRE></DIV>
+            <P id=id_54>Проверить успешность открытия файла можно также с 
+            помощью функции <SPAN class=texample>is_open()</SPAN>, имеющей 
+            следующий прототип:</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_56>Функция возвращает 1, если поток удалось связать с 
+            открытым файлом. Например,</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (!ofs.is_open()) 
+  cout &lt;&lt; "Файл не открыт\n";
+</PRE></DIV>
+            <P id=id_58>Открыть файл в режиме записи можно одним из следующих 
+            способов:</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59><SPAN class=xml_em_italic>Первый способ</SPAN></P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ofstream F;
+F.open("abc.txt", ios::out);
+</PRE></DIV>
+            <P id=id_61><SPAN class=xml_em_italic>Второй способ</SPAN>, режим 
+            <SPAN class=texample>ios::out</SPAN> является режимом по умолчанию 
+            для потока <SPAN class=texample>ofstream</SPAN></P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ofstream F;
+F.open("abc.txt");
+</PRE></DIV>
+            <P id=id_65><SPAN class=xml_em_italic>Третий способ</SPAN> 
+            объединяет описание переменной типа поток и открытие файла в одном 
+            операторе.</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ofstream F("abc.txt", ios::out);
+</PRE></DIV>
+            <P id=id_67>После открытия файла в режиме записи, будет создан 
+            пустой файл, в который можно будет записывать информацию. Если 
+            необходимо открыть существующий файл (при этом сохранить его 
+            содержимое), то в качестве режима следует использовать значение 
+            <SPAN class=texample>ios::app</SPAN>.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_69>После открытия файла в режиме записи, в него можно 
+            писать точно так же, как и на экран, только вместо стандартного 
+            устройства вывода cout необходимо указать имя открытого для записи 
+            файла.</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70>Например, для записи в поток <SPAN 
+            class=texample>F</SPAN> переменной <SPAN class=texample>a</SPAN>, 
+            оператор вывода будет иметь вид:</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <DIV class=example><PRE>F &lt;&lt; a;
+</PRE></DIV>
+            <P id=id_74>Для последовательного вывода в поток <SPAN 
+            class=texample>G</SPAN> переменных <SPAN class=texample>b</SPAN>, 
+            <SPAN class=texample>c</SPAN> и <SPAN class=texample>d</SPAN> 
+            оператор вывода станет таким:</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <DIV class=example><PRE>G &lt;&lt; b &lt;&lt; c &lt;&lt; d;
+</PRE></DIV>
+            <P id=id_80>Чтение из файла выполняется корректно до достижения 
+            конца файла. Для проверки, достигнут ли конец файла, можно 
+            использовать функцию</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ios::eof(),
+</PRE></DIV>
+            <P id=id_82>которая имеет прототип <SPAN class=texample>int 
+            eof();</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_84>Данная функция возвращает <SPAN class=texample>0</SPAN>, 
+            если конец файла не достигнут, и значение <SPAN 
+            class=texample>1</SPAN> при достижении конца файла.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Функция закрытия файла</H3>
+            <P id=id_87>Открытые на диске файлы после окончания работы с ними 
+            рекомендуется закрыть. Оператор закрытия файла будет иметь вид:</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <DIV class=example><PRE>F.close;
+</PRE></DIV>
+            <P id=id_89>где <SPAN class=texample>F</SPAN> – переменная для 
+            записи информации в файл.</P>
+            <DIV id=mark_89 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Основные алгоритмы работы с файлами</H3>
+            <P id=id_91><SPAN class=xml_em_italic>Для записи данных в 
+            файл</SPAN> нужно выполнить:</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <OL id=id_92>
+              <LI>Описать переменную типа <SPAN class=texample>ofstream</SPAN>.
+              <LI>Отрыть файл для записи с помощью функции <SPAN 
+              class=texample>open</SPAN>.
+              <LI>Вывести информацию в файл с помощью <SPAN 
+              class=texample>cout</SPAN>.
+              <LI>Обязательно закрыть файл.</LI></OL>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_100><SPAN class=xml_em_italic>Для чтения данных из 
+            текстового файла</SPAN> нужно выполнить:</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <OL id=id_101>
+              <LI>Описать переменную типа <SPAN class=texample>ifstream</SPAN>.
+              <LI>Отрыть файл для чтения с помощью функции <SPAN 
+              class=texample>open</SPAN>.
+              <LI>Считать информацию из файла с помощью <SPAN 
+              class=texample>cin</SPAN> при считывании каждой порции данных 
+              необходимо проверять, что чтение возможно.
+              <LI>Закрыть файл.</LI></OL>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_109><SPAN class=xml_em_italic>Пример</SPAN>. Работа с 
+            файлом в потоковом режиме.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fstream&gt;
+int _tmain(int argc, _TCHAR* argv[]){
+  int n = 50; 
+  char str[20];
+  // Открываем файл для вывода 
+  ofstream ofs("Test.txt"); 
+  // Проверка корректности открытия файла
+  if (!ofs) cout &lt;&lt; "Файл не открыт.\n"; 
+   else {
+     ofs &lt;&lt; "Hello!\n" &lt;&lt; n; 
+  // Закрываем файл 
+     ofs.close(); 
+      }
+  // Открываем тот же файл для ввода 
+  ifstream file("Test.txt"); 
+  // Проверка корректности открытия файла
+  if (!file) cout &lt;&lt; "Файл не открыт.\n"; 
+   else {
+    file &gt;&gt; str &gt;&gt; n; 
+    cout &lt;&lt; str &lt;&lt; "\n" &lt;&lt; n; 
+  // Закрываем файл 
+    file.close();       
+       }
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect5></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_111><B>Поток</B> <SPAN class=texample>fstream</SPAN> – это 
+            поток для работы с файлами в режиме, как чтения, так и записи.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_113><B>Поток</B> <SPAN class=texample>ifstream</SPAN> – это 
+            поток для работы с файлами в режиме чтения.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_115><B>Поток</B> <SPAN class=texample>ofstream</SPAN> – это 
+            поток для работы с файлами в режиме записи.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_117><B>Поток как тип данных</B> – это тип, который 
+            описывает объекты, реализующие процесс ввода и вывода данных в 
+            файлы.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_118><B>Режимы открытия файлов</B> – это наборы допустимых 
+            действий с открываемыми в программе файлами.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_119>
+              <LI>В С++ определен специальный тип данных – поток.
+              <LI>Каждый из потоков: <SPAN class=texample>fstream</SPAN>, <SPAN 
+              class=texample>ifstream</SPAN>, <SPAN 
+              class=texample>ofstream</SPAN> – служит для работы с файлами в 
+              определенном режиме.
+              <LI>Прототипы функций по работе с файлами в потоковом режиме 
+              находятся в стандартных библиотеках.
+              <LI>Перед началом работы с файлом его необходимо открыть, указав 
+              режим открытия.
+              <LI>Любой открытый в программе файл необходимо закрыть после 
+              использования.</LI></OL>
+            <DIV id=mark_119 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Лабораторная работа 20. Обработка файлов в потоковом режиме</H3>
+            <P id=id_128>Цель работы: изучить организацию потокового 
+            ввода-вывода в файлы, научиться решать задачи с использованием 
+            прямого доступа к данным файла на языке C++.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            одну строковую величину, являющуюся корректным именем входного файла 
+            (при этом в программе следует предусмотреть проверку существования и 
+            корректности открытия файла). Ввод данных осуществляется из входного 
+            файла в потоковом режиме с учетом требований к входным данным, 
+            содержащихся в постановке задачи. Ограничениями на входные данные 
+            является максимальный размер строковых данных и допустимый диапазон 
+            числовых типов в языке С++. При некорректном открытии файла 
+            программа должна завершить работу с выдачей на экран 
+            соответствующего сообщения.</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <P id=id_130><B>Теоретические сведения.</B></P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131>Ознакомьтесь с материалом лекции 20.</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133><SPAN class=xml_em_italic>При выполнении заданий 
+            используйте работу с файлами с помощью потоков.</SPAN></P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <OL id=id_134>
+              <LI>Определите, какая буква чаще всего встречается в заданном 
+              текстовом файле.
+              <LI>Удвойте в текстовом файле каждый символ, кроме пробела.
+              <LI>Подсчитайте число цифр в данном текстовом файле и их сумму.
+              <LI>Найдите в файле все строки с максимальной длиной. Выведите их 
+              на экран и укажите длину. Выполните чтение их входного файла 
+              только один раз.
+              <LI>Определите переменную <SPAN 
+              class=xml_em_italic>"студент"</SPAN>, содержащую следующие поля: 
+              имя, фамилия, отчество студента, название института, курс, номер 
+              группы, специальность. Данные считайте из текстового файла. 
+              Выведите данные о студентах, которые учатся на одинаковом курсе и 
+              по одной специальности. Курс и специальность задаются 
+              пользователем.</LI></OL>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_140><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_141>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки файлов в потоковом режиме в языке С++. 
+            В программном коде к каждой задаче следует выполнять чтение данных 
+            из существующего входного файла (имя файла вводится в виде строки 
+            символов и считается корректным с точки зрения организации файловой 
+            системы). В задаче 2 возможно использование вспомогательного файла, 
+            который выступает в роли выходного файла. Программу для решения 
+            каждого задания необходимо разработать методом процедурной 
+            абстракции, оформив комментарии к коду.</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_142>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <OL id=id_143>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></OL>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_152><B>Требования к отчету.</B></P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_153>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <UL id=id_154>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_163>Контрольные вопросы</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <OL id=id_164>
+              <LI>Почему ввод-вывод в файлы в потоковом режиме аналогичен работе 
+              с другими устройствами ввода-вывода?
+              <LI>С какой целью предусмотрены режимы открытия файлов и почему их 
+              такое многообразие?
+              <LI>Каковы могут быть причины ошибок при открытии файлов в 
+              потоковом режиме?
+              <LI>Какие значения возвращает функция открытия файла в потоковом 
+              режиме в зависимости от результата?
+              <LI>Каким образом в программе происходит проверка достижения конца 
+              файла?
+              <LI>Может ли один и тот же файл одновременно быть открыт для 
+              чтения и для записи?
+              <LI>Можно ли один и тот же файл открыть несколько раз, не закрывая 
+              после каждого открытия?
+              <LI>Сохранится ли информация в файле, если его не закрыть в 
+              программе с помощью функции? Обоснуйте ответ.
+              <LI>В чем принципиальное отличие ввода-вывода в файлы при 
+              потоковом и стандартном режимах?</LI></OL>
+            <DIV id=mark_164 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

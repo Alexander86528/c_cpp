@@ -1,0 +1,965 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/32/staldata_32.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>32. Лекция: Решение задач на динамические 
+            структуры данных: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции рассматриваются определения, способы объявления, 
+            инициализация и особенности использования при решении задач 
+            циклических списков, деков, красно-черных деревьев, приводятся 
+            примеры решения задач на обработку кольцевых списков, деков, 
+            красно-черных деревьев. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить алгоритмы и приемы работы с 
+            динамическими структурами данных, научиться решать задачи с 
+            использованием динамических структур данных и алгоритмов работы с 
+            ними на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Структурированные типы данных, такие, как массивы, 
+            множества, записи, представляют собой статические структуры, так как 
+            их размеры неизменны в течение всего времени выполнения программы. 
+            Часто требуется, чтобы структуры данных меняли свои размеры в ходе 
+            решения задачи. Такие структуры данных называются динамическими, к 
+            ним относятся стеки, очереди, списки, деревья и другие. Описание 
+            динамических структур с помощью массивов, записей и файлов приводит 
+            к неэкономному использованию памяти и увеличивает время решения 
+            задач.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Используя структурные типы, указатели и динамические 
+            переменные, можно создавать разнообразные динамические структуры 
+            памяти. Особенности указателей в языке С++ позволяют строить 
+            динамические структуры памяти на основе статически объявленных 
+            переменных или на смеси статических и динамических переменных. Идея 
+            организации всех динамических структур одна и та же. Определяется 
+            некоторый структурный тип <SPAN class=texample>S</SPAN>, одно или 
+            несколько полей которого объявлены указателями на тот же или 
+            некоторый другой структурный тип. В программе объявляется переменная 
+            <SPAN class=texample>d</SPAN> типа <SPAN class=texample>S</SPAN> или 
+            переменная типа указатель на <SPAN class=texample>S</SPAN> в случае 
+            полностью динамического создания структуры. Имя этой переменной при 
+            выполнении программы используется как имя "корня" (родительское имя) 
+            динамической структуры. При выполнении программы по мере построения 
+            динамической структуры запрашиваются динамические переменные 
+            соответствующих типов и связываются ссылками, начиная с переменной 
+            <SPAN class=texample>d</SPAN> или первой динамической переменной, 
+            указатель на которую содержится в переменной <SPAN 
+            class=texample>d</SPAN>. Этот подход позволяет создать динамическую 
+            структуру с любой топологией.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Циклические (кольцевые) списки</H3>
+            <P id=id_10><B>Циклический (кольцевой) список</B> – это структура 
+            данных, представляющая собой последовательность элементов, последний 
+            элемент которой содержит указатель на первый элемент списка, а 
+            первый (в случае двунаправленного списка) – на последний.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>Основная особенность такой организации состоит в том, 
+            что в этом списке нет элементов, содержащих пустые указатели, и, 
+            следовательно, нельзя выделить крайние элементы.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Циклические списки, так же как и линейные, бывают 
+            однонаправленными и двунаправленными.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13><SPAN class=xml_em_italic>Циклический однонаправленный 
+            список</SPAN> похож на линейный однонаправленный список, но его 
+            последний элемент содержит указатель, связывающий его с первым 
+            элементом (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/32/staldata_32.html#image.32.1">рис. 
+            32.1</A>).</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Для полного обхода такого списка достаточно иметь 
+            указатель на произвольный элемент, а не на первый, как в линейном 
+            однонаправленном списке. Понятие "первого" элемента здесь достаточно 
+            условно и не всегда требуется. Хотя иногда бывает полезно выделить 
+            некоторый элемент как "первый" путем установки на него специального 
+            указателя. Это требуется, например, для предотвращения 
+            "зацикливания" при просмотре списка.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15 align=left><A name=image.32.1></A>
+            <DIV><IMG alt="Циклический однонаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/32_01.png" 
+            width=583 height=145></DIV><BR><B>Рис. 32.1.</B>&nbsp; Циклический 
+            однонаправленный список
+            <P></P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16>Основные операции, осуществляемые с циклическим 
+            однонаправленным списком:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <UL id=id_17>
+              <LI>создание списка;
+              <LI>печать (просмотр) списка;
+              <LI>вставка элемента в список;
+              <LI>удаление элемента из списка;
+              <LI>поиск элемента в списке;
+              <LI>проверка пустоты списка;
+              <LI>удаление списка.</LI></UL>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_25>Для описания алгоритмов этих основных операций будем 
+            использовать те же объявления, что и для линейного однонаправленного 
+            списка.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>Приведем функции перечисленных основных операций при 
+            работе с циклическим однонаправленным списком.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>//создание циклического однонаправленного списка 
+void Make_Circle_Single_List(int n,
+       Circle_Single_List** Head,Circle_Single_List* Loop){
+    if (n &gt; 0) {
+        (*Head) = new Circle_Single_List();
+        //выделяем память под новый элемент
+        if (Loop == NULL) Loop = (*Head);
+        cout &lt;&lt; "Введите значение ";
+        cin &gt;&gt; (*Head)-&gt;Data;
+        //вводим значение информационного поля
+        (*Head)-&gt;Next=NULL;//обнуление адресного поля
+        Make_Circle_Single_List(n-1,&amp;((*Head)-&gt;Next),Loop);
+    }
+    else {
+        (*Head) = Loop;
+    }
+}
+
+//печать циклического однонаправленного списка
+void Print_Circle_Single_List(Circle_Single_List* Head) {
+    Circle_Single_List* ptr=Head; 
+    //вспомогательный указатель
+    do {
+       cout &lt;&lt; ptr-&gt;Data &lt;&lt; "\t";
+       ptr=ptr-&gt;Next;
+    } while (ptr!=Head);
+    cout &lt;&lt; "\n"; 
+}
+
+/*вставка элемента после заданного номера в циклический однонаправленный список*/
+Circle_Single_List* Insert_Item_Circle_Single_List(Circle_Single_List* Head, 
+      int Number, int DataItem){
+  Circle_Single_List *Current = Head;
+  //встали на первый элемент
+  Circle_Single_List *NewItem = new(Circle_Single_List);
+  //создали новый элемент   
+  NewItem-&gt;Data = DataItem; 
+  if (Head == NULL) {//список пуст
+    NewItem-&gt;Next = NewItem;
+    Head = NewItem;
+  }
+  else {//список не пуст
+    for (int i = 1; i &lt; Number; i++)
+      Current = Current-&gt;Next;
+    NewItem-&gt;Next = Current-&gt;Next;
+    Current-&gt;Next = NewItem;
+  }
+  return Head;
+}
+
+/*удаление элемента с заданным номером из циклического однонаправленного списка*/
+Circle_Single_List* Delete_Item_Circle_Single_List
+      (Circle_Single_List* Head, int Number){
+  if (Head != NULL){
+    Circle_Single_List *Current = Head;
+    if (Head-&gt;Next != Head){
+      for (int i = 1; i &lt; Number; i++)
+        Current = Current-&gt;Next;
+        Circle_Single_List *ptr = Head;
+      while (ptr-&gt;Next != Current)
+        ptr = ptr-&gt;Next;
+      //непосредственное удаление элемента
+      ptr-&gt;Next = Current-&gt;Next;
+      if (Head = Current) Head = Current-&gt;Next;
+      delete(Current);
+    }
+    else{
+      Head = NULL;
+      delete(Current);
+    }
+  }
+  return Head;
+}
+
+//поиск элемента в циклическом однонаправленном списке
+bool Find_Item_Circle_Single_List(Circle_Single_List* Head, 
+         int DataItem){
+  Circle_Single_List *ptr = Head; 
+  //вспомогательный указатель
+  do {
+    if (DataItem == ptr-&gt;Data) return true; 
+    else ptr = ptr-&gt;Next;
+    }
+  while (ptr != Head);
+  return false;
+}
+
+//проверка пустоты циклического однонаправленного списка
+bool Empty_Circle_Single_List(Circle_Single_List* Head){
+  return (Head != NULL ? false : true);
+}
+
+//удаление циклического однонаправленного списка
+void Delete_Circle_Single_List(Circle_Single_List* Head){
+  if (Head != NULL){
+    Head = Delete_Item_Circle_Single_List(Head, 1);
+    Delete_Circle_Single_List(Head);
+  } 
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV>
+            <P id=id_28><SPAN class=xml_em_italic>Циклический двунаправленный 
+            список</SPAN> похож на линейный двунаправленный список, но его любой 
+            элемент имеет два указателя, один из которых указывает на следующий 
+            элемент в списке, а второй указывает на предыдущий элемент (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/32/staldata_32.html#image.32.2">рис. 
+            32.2</A>).</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29 align=left><A name=image.32.2></A>
+            <DIV><IMG alt="Циклический двунаправленный список" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/32_02.png" 
+            width=587 height=185></DIV><BR><B>Рис. 32.2.</B>&nbsp; Циклический 
+            двунаправленный список
+            <P></P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Основные операции, осуществляемые с циклическим 
+            двунаправленным списком:</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <UL id=id_31>
+              <LI>создание списка;
+              <LI>печать (просмотр) списка;
+              <LI>вставка элемента в список;
+              <LI>удаление элемента из списка;
+              <LI>поиск элемента в списке
+              <LI>проверка пустоты списка;
+              <LI>удаление списка. </LI></UL>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_39>Для описания алгоритмов этих основных операций будем 
+            использовать те же объявления, что и для линейного двунаправленного 
+            списка.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40>Приведем функции перечисленных основных операций при 
+            работе с циклическим двунаправленным списком.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>//создание циклического двунаправленного списка 
+Circle_Double_List* Make_Circle_Double_List(int n,
+      Circle_Double_List** Head,Circle_Double_List* Loop){
+  Circle_Double_List* ptr;//вспомогательный указатель
+  if (n &gt; 0) {
+    (*Head) = new Circle_Double_List();
+    //выделяем память под новый элемент
+    if (Loop == NULL) Loop = (*Head);
+      cout &lt;&lt; "Введите значение ";
+    cin &gt;&gt; (*Head)-&gt;Data;
+    //вводим значение информационного поля
+    (*Head)-&gt;Next=NULL;//обнуление адресного поля
+    ptr = Make_Circle_Double_List(n-1,&amp;((*Head)-&gt;Next),Loop);
+    if ((*Head)-&gt;Next != NULL) 
+      (*Head)-&gt;Next-&gt;Prior = (*Head);
+    if ((*Head)-&gt;Prior == NULL)
+      (*Head)-&gt;Prior = ptr;
+    if (ptr == NULL) 
+      return *Head;
+    else return ptr;
+    }
+    else {
+      (*Head) = Loop;
+    return NULL;
+  }
+}
+
+//печать циклического двунаправленного списка
+void Print_Circle_Double_List(Circle_Double_List* Head) {
+    Circle_Double_List* ptr=Head; 
+    //вспомогательный указатель
+    do {
+       cout &lt;&lt; ptr-&gt;Data &lt;&lt; "\t";
+       ptr=ptr-&gt;Next;
+    } while (ptr!=Head);
+    cout &lt;&lt; "\n"; 
+}
+
+/*вставка элемента после заданного номера в циклический двунаправленный список*/
+Circle_Double_List* Insert_Item_Circle_Double_List
+   (Circle_Double_List* Head, int Number, int DataItem){
+  Circle_Double_List *Current = Head;
+  //встали на первый элемент
+  Circle_Double_List *NewItem = new(Circle_Double_List);
+  //создали новый элемент 
+  NewItem-&gt;Data = DataItem; 
+  if (Head == NULL) {//список пуст
+    NewItem-&gt;Next = NewItem;
+    NewItem-&gt;Prior = NewItem;
+    Head = NewItem;
+  }
+  else {//список не пуст
+    for (int i = 1; i &lt; Number; i++)
+      Current = Current-&gt;Next;
+    NewItem-&gt;Next = Current-&gt;Next;
+    Current-&gt;Next = NewItem;
+    NewItem-&gt;Prior = Current;
+    NewItem-&gt;Next-&gt;Prior = NewItem;
+  }
+  return Head;
+}
+
+/*удаление элемента с заданным номером из циклического двунаправленного списка*/
+Circle_Double_List* Delete_Item_Circle_Double_List(Circle_Double_List* Head, 
+      int Number){
+  if (Head != NULL){
+    Circle_Double_List *Current = Head;
+    if (Head-&gt;Next != Head){
+      for (int i = 1; i &lt; Number; i++)
+        Current = Current-&gt;Next;
+      Circle_Double_List *ptr = Current-&gt;Next;
+      Current-&gt;Prior-&gt;Next = Current-&gt;Next;
+      Current-&gt;Next-&gt;Prior = Current-&gt;Prior;
+      if (Head = Current) //удаляем первый 
+        Head = Current-&gt;Next;
+      delete(Current);
+    }
+    else{
+      Head = NULL;
+      delete(Current);
+    }
+  }
+  return Head;
+}
+
+//поиск элемента в циклическом двунаправленном списке
+bool Find_Item_Circle_Double_List(Circle_Double_List* Head, 
+         int DataItem){
+  Circle_Double_List *ptr = Head; 
+  //вспомогательный указатель
+  do {
+    if (DataItem == ptr-&gt;Data) 
+      return true; 
+    else ptr = ptr-&gt;Next;
+    }
+  while (ptr != Head);
+  return false;
+}            
+
+//проверка пустоты циклического двунаправленного списка
+bool Empty_Circle_Double_List(Circle_Double_List* Head){
+  return (Head != NULL ? false : true);
+}
+
+//удаление циклического двунаправленного списка    
+void Delete_Circle_Double_List(Circle_Double_List* Head){
+  if (Head != NULL){
+    Head = Delete_Item_Circle_Double_List(Head, 1);
+    Delete_Circle_Double_List(Head);
+  }
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect3></A>
+            <H3>Деки</H3>
+            <P id=id_42>Дек является особым видом очереди.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43><B>Дек</B> (англ. <SPAN class=xml_em_italic>deque</SPAN> 
+            – аббревиатура от <SPAN class=xml_em_italic>double-ended 
+            queue</SPAN>, двухсторонняя очередь) – это структура данных, 
+            представляющая собой последовательность элементов, в которой можно 
+            добавлять и удалять в произвольном порядке элементы с двух сторон 
+            (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/32/staldata_32.html#image.32.3">рис. 
+            32.3</A>). Первый и последний элементы дека соответствуют входу и 
+            выходу дека.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44 align=left><A name=image.32.3></A>
+            <DIV><IMG alt="Дек и его организация" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/32_03.png" 
+            width=580 height=340></DIV><BR><B>Рис. 32.3.</B>&nbsp; Дек и его 
+            организация
+            <P></P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>Частные случаи дека – это <SPAN 
+            class=xml_em_italic>ограниченные деки</SPAN>:</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <UL id=id_46>
+              <LI>дек с ограниченным входом – из конца дека можно только 
+              извлекать элементы;
+              <LI>дек с ограниченным выходом – в конец дека можно только 
+              добавлять элементы.</LI></UL>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_49>Данная структура является наиболее универсальной из 
+            рассмотренных выше линейных структур. Накладывая дополнительные 
+            ограничения на операции с началом и/или концом дека, можно 
+            осуществлять моделирование стека и очереди.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50>Однако применительно к деку целесообразно говорить не о 
+            начале и конце как в очереди, а о левом и правом конце.</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51>Описание элементов дека аналогично описанию элементов 
+            линейного двунаправленного списка. Поэтому объявим дек через 
+            объявление линейного двунаправленного списка:</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <UL id=id_52>
+              <LI>создание дека;
+              <LI>печать (просмотр) дека;
+              <LI>добавление элемента в левый конец дека;
+              <LI>добавление элемента в правый конец дека;
+              <LI>извлечение элемента из левого конца дека;
+              <LI>извлечение элемента из правого конца дека;
+              <LI>проверка пустоты дека;
+              <LI>очистка дека.</LI></UL>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_61>Реализацию этих операций приведем в виде соответствующих 
+            функций, которые, в свою очередь, используют функции операций с 
+            линейным двунаправленным списком.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>//создание дека
+void Make_Deque(int n, Deque* End_Deque){
+  Make_Double_List(n,&amp;(End_Deque-&gt;Begin),NULL);
+  Double_List *ptr; //вспомогательный указатель
+  ptr = End_Deque-&gt;Begin;
+  while (ptr-&gt;Next != NULL){
+    ptr = ptr-&gt;Next;
+  }
+  End_Deque-&gt;End = ptr;
+}
+
+//печать дека
+void Print_Deque(Deque* Begin_Deque){
+  Print_Double_List(Begin_Deque-&gt;Begin);  
+}
+
+//добавление элемента в правый конец дека
+void Add_Right_Item_Deque(int NewElem, Deque* End_Deque){
+  End_Deque-&gt;End =Insert_Item_Double_List(End_Deque-&gt;End,2,NewElem);
+  End_Deque-&gt;End = End_Deque-&gt;End-&gt;Next;
+}
+
+//добавление элемента в левый конец дека
+void Add_Left_Item_Deque(int NewElem, Deque* Begin_Deque){
+  Begin_Deque-&gt;Begin =
+    Insert_Item_Double_List(Begin_Deque-&gt;Begin, 1, NewElem);
+}
+
+//извлечение элемента из левого конца дека
+int Extract_Left_Item_Deque(Deque* Begin_Deque){
+  int NewElem = NULL;
+  if (Begin_Deque-&gt;Begin != NULL) {
+   NewElem = Begin_Deque-&gt;Begin-&gt;Data;
+   Begin_Deque-&gt;Begin=Delete_Item_Double_List(Begin_Deque-&gt;Begin,0);
+   //удаляем вершину
+  }
+  return NewElem;
+}
+
+//извлечение элемента из правого конца дека
+int Extract_Right_Item_Deque(Deque* End_Deque){
+  int NewElem = NULL;
+  if (End_Deque-&gt;End != NULL) {
+    NewElem = End_Deque-&gt;End-&gt;Data;
+    Delete_Item_Double_List(End_Deque-&gt;End, 1); 
+    //удаляем вершину
+    }
+  return NewElem;
+}
+
+//проверка пустоты очереди
+bool Empty_Deque(Deque* Begin_Deque){
+  return Empty_Double_List(Begin_Deque-&gt;Begin);  
+}
+
+//очистка очереди
+void Clear_Deque(Deque* Begin_Deque){
+  Delete_Double_List(Begin_Deque-&gt;Begin);  
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect4></A>
+            <H3>Красно-черные деревья</H3>
+            <P id=id_63>Бинарные деревья работают лучше всего, когда они 
+            сбалансированы, когда длина пути от корня до любого из листьев 
+            находится в определенных пределах, связанных с числом вершин. 
+            Красно-черные деревья являются одним из способов балансировки 
+            деревьев. Название происходит от стандартной раскраски узлов таких 
+            деревьев в красный и черный цвета. Цвета вершин используются при 
+            балансировке дерева.</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64><B>Красно-черное дерево</B> (<SPAN 
+            class=xml_em_italic>Red-Black-Tree, RB-Tree</SPAN>) – это бинарное 
+            дерево со следующими свойствами (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/32/staldata_32.html#image.32.4">рис. 
+            32.4</A>):</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <UL id=id_65>
+              <LI>каждая вершина должна быть окрашена либо в черный, либо в 
+              красный цвет;
+              <LI>корень дерева должен быть черным;
+              <LI>листья дерева должны быть черными и объявляться как 
+              NIL-вершины (NIL-узлы, то есть "виртуальные" узлы, наследники 
+              узлов, которые обычно называют листьями; на них "указывают" NULL 
+              указатели);
+              <LI>каждый красный узел должен иметь черного предка;
+              <LI>на всех ветвях дерева, ведущих от его корня к листьям, число 
+              черных вершин одинаково. </LI></UL>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_71 align=left><A name=image.32.4></A>
+            <DIV><IMG alt="Красно-черное дерево" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/32_04.png" 
+            width=587 height=279></DIV><BR><B>Рис. 32.4.</B>&nbsp; Красно-черное 
+            дерево
+            <P></P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72>Количество черных вершин на ветви от корня до листа 
+            называется <SPAN class=xml_em_italic>черной высотой дерева</SPAN>. 
+            Перечисленные свойства гарантируют, что самая длинная ветвь от корня 
+            к листу не более чем вдвое длиннее любой другой ветви от корня к 
+            листу.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_73>Над красно-черными деревьями можно выполнять все те же 
+            основные операции, что и над бинарными деревьями.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74>Приведем функции следующих операций над красно-черными 
+            деревьями: создание дерева, печать (просмотр) дерева, обход дерева, 
+            проверка пустоты дерева и удаление дерева.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>//создание красно-черного дерева
+void Make_RBTree(RBTree** Node, int n){
+  int Data;
+  while (n &gt; 0) {
+    cout &lt;&lt; "Введите значение ";
+        cin &gt;&gt; Data;
+    Insert_Node(Node, Data);
+    n--;
+  }
+}
+
+//добавление узла в красно-черное дерево
+void Insert_Node(RBTree** Node,int Data) {
+  RBTree **Curent, *Parent, *New_Node;
+  Curent = Node;
+  Parent = NIL;
+  // Поиск местоположения
+  while (*Curent != NIL) {
+    Parent = (*Curent);
+    Curent = Data &lt; (*Curent)-&gt;Data ? &amp;((*Curent)-&gt;Left) : &amp;((*Curent)-&gt;Right);
+  }
+  // Создание нового узла
+  New_Node = new RBTree();
+  New_Node-&gt;Data = Data;
+  New_Node-&gt;Parent = Parent;
+  New_Node-&gt;Left = NIL;
+  New_Node-&gt;Right = NIL;
+  New_Node-&gt;color = RED;
+  // Вставка элемента в дерево
+  if(Parent != NIL){
+    if (Data &lt; Parent-&gt;Data) Parent-&gt;Left = New_Node;
+    else Parent-&gt;Right = New_Node;
+  }
+  else (*Curent) = New_Node;
+  Insert_Fixup(Node, New_Node);
+} 
+
+// Поддержка баланса дерева после вставки нового элемента
+void Insert_Fixup(RBTree** Node,RBTree* New_Node){
+  RBTree* Current = New_Node;
+  // Проверка свойств дерева
+  while (Current != *(Node) &amp;&amp; Current-&gt;Parent-&gt;color == RED){
+    // если есть нарушение
+    if (Current-&gt;Parent == Current-&gt;Parent-&gt;Parent-&gt;Left) {
+      RBTree *ptr = Current-&gt;Parent-&gt;Parent-&gt;Right;
+      if (ptr-&gt;color == RED) {
+        Current-&gt;Parent-&gt;color = BLACK;
+        ptr-&gt;color = BLACK;
+        Current-&gt;Parent-&gt;Parent-&gt;color = RED;
+        Current = Current-&gt;Parent-&gt;Parent;
+      }
+      else {
+        if (Current == Current-&gt;Parent-&gt;Right) {
+          // сделать Current левым потомком
+          Current = Current-&gt;Parent;
+          Rotate_Left(Node,Current);
+        }
+        // перекрасить и повернуть
+        Current-&gt;Parent-&gt;color = BLACK;
+        Current-&gt;Parent-&gt;Parent-&gt;color = RED;
+        Rotate_Right(Node,Current-&gt;Parent-&gt;Parent);
+      }
+    }
+    else {
+      RBTree *ptr = Current-&gt;Parent-&gt;Parent-&gt;Left;
+      if (ptr-&gt;color == RED) {
+        Current-&gt;Parent-&gt;color = BLACK;
+        ptr-&gt;color = BLACK;
+        Current-&gt;Parent-&gt;Parent-&gt;color = RED;
+        Current = Current-&gt;Parent-&gt;Parent;
+      }
+      else {
+        if (Current == Current-&gt;Parent-&gt;Left) {
+          Current = Current-&gt;Parent;
+          Rotate_Right(Node,Current);
+        }
+        Current-&gt;Parent-&gt;color = BLACK;
+        Current-&gt;Parent-&gt;Parent-&gt;color = RED;
+        Rotate_Left(Node,Current-&gt;Parent-&gt;Parent);
+      }
+    }
+  }
+  (*Node)-&gt;color = BLACK;
+}
+
+//поворот узла Current влево
+void Rotate_Left(RBTree** Node,RBTree *Current) {
+  RBTree *ptr = Current-&gt;Right;
+  Current-&gt;Right = ptr-&gt;Left;
+  if (ptr-&gt;Left != NIL) ptr-&gt;Left-&gt;Parent = Current;
+  if (ptr != NIL) ptr-&gt;Parent = Current-&gt;Parent;
+  if (Current-&gt;Parent != NIL) {
+    if (Current == Current-&gt;Parent-&gt;Left)
+      Current-&gt;Parent-&gt;Left = ptr;
+    else
+      Current-&gt;Parent-&gt;Right = ptr;
+    }
+  else {
+    (*Node) = ptr; 
+  }
+  ptr-&gt;Left = Current;
+  if (Current != NIL) Current-&gt;Parent = ptr;
+}
+
+//поворот узла Current вправо
+void Rotate_Right(RBTree** Node,RBTree *Current) {
+  RBTree *ptr = Current-&gt;Left;
+  Current-&gt;Left = ptr-&gt;Right;
+  if (ptr-&gt;Right != NIL) ptr-&gt;Right-&gt;Parent = Current;
+  if (ptr != NIL) ptr-&gt;Parent = Current-&gt;Parent;
+  if (Current-&gt;Parent != NIL) {
+    if (Current == Current-&gt;Parent-&gt;Right)
+      Current-&gt;Parent-&gt;Right = ptr;
+    else
+      Current-&gt;Parent-&gt;Left = ptr;
+  }
+  else {
+    (*Node) = ptr;
+  }
+  ptr-&gt;Right = Current;
+  if (Current != NIL) Current-&gt;Parent = ptr;
+}
+
+//печать красно-черного дерева
+void Print_RBTree(RBTree* Node, int l){
+  int i;
+  if (Node != NIL) {
+    Print_RBTree(Node-&gt;Right, l+1);
+    for (i=0; i&lt; l; i++) cout &lt;&lt; "    ";
+    if (Node-&gt;color == RED) 
+      SetConsoleTextAttribute(hStd,FOREGROUND_RED);
+    cprintf ("%4ld", Node-&gt;Data);
+    SetConsoleTextAttribute(hStd,atr);
+    Print_RBTree(Node-&gt;Left, l+1);
+  }
+  else cout &lt;&lt; endl;
+}
+
+//прямой обход красно-черного дерева
+void PreOrder_RBTree(RBTree* Node){
+  if (Node != NIL) {
+    printf ("%3ld",Node-&gt;Data);
+    PreOrder_RBTree(Node-&gt;Left);
+    PreOrder_RBTree(Node-&gt;Right);
+  }
+}
+
+//обратный обход красно-черного дерева
+void PostOrder_RBTree(RBTree* Node){
+  if (Node != NIL) {
+    PostOrder_RBTree(Node-&gt;Left);
+    PostOrder_RBTree(Node-&gt;Right);
+    printf ("%3ld",Node-&gt;Data);
+  }
+}
+
+//симметричный обход красно-черного дерева
+void SymmetricOrder_RBTree(RBTree* Node){
+  if (Node != NIL) {
+    PostOrder_RBTree(Node-&gt;Left);
+    printf ("%3ld",Node-&gt;Data);
+    PostOrder_RBTree(Node-&gt;Right);
+  }
+}
+
+//проверка пустоты красно-черного дерева
+bool Empty_RBTree(RBTree* Node){
+  return ( Node == NIL ? true : false );
+}
+
+//освобождение памяти, выделенной под красно-черное дерево
+void Delete_RBTree(RBTree* Node){
+  if (Node != NIL) {
+    Delete_RBTree(Node-&gt;Left);
+    Delete_RBTree(Node-&gt;Right);
+    delete(Node);
+  }
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV><A 
+            name=sect5></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_76><B>Циклический (кольцевой) список</B> – это структура 
+            данных, представляющая собой последовательность элементов, последний 
+            элемент которой содержит указатель на первый элемент списка, а 
+            первый (в случае двунаправленного списка) – на последний.</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_77><B>Дек</B> – это структура данных, представляющая собой 
+            последовательность элементов, в которой можно добавлять и удалять в 
+            произвольном порядке элементы с двух сторон.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_78><B>Дек с ограниченным входом</B> – это дек, из конца 
+            которого можно только извлекать элементы;</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_79><B>Дек с ограниченным выходом</B> – это дек, в конец 
+            которого можно только добавлять элементы.</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <P id=id_80><B>Красно-черное дерево (Red-Black-Tree, RB-Tree)</B> – 
+            это бинарное дерево со следующими свойствами:</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <UL id=id_81>
+              <LI>каждая вершина должна быть окрашена либо в черный, либо в 
+              красный цвет;
+              <LI>корень дерева должен быть черным;
+              <LI>листья дерева должны быть черными и объявляться как 
+              NIL-вершины;
+              <LI>каждый красный узел должен иметь черного предка;
+              <LI>на всех ветвях дерева, ведущих от его корня к листьям, число 
+              черных вершин одинаково.</LI></UL>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_87><B>Черная высота дерева</B> – это количество черных 
+            вершин на ветви красно-черного дерева от корня до листа.</P>
+            <DIV id=mark_87 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_88>
+              <LI>Особенности указателей в языке С++ позволяют строить 
+              динамические структуры памяти на основе статически объявленных 
+              переменных или на смеси статических и динамических переменных.
+              <LI>Циклический (кольцевой) список является структурой данных, 
+              представляющей собой последовательность элементов, последний 
+              элемент которой содержит указатель на первый элемент списка, а 
+              первый (в случае двунаправленного списка) – на последний.
+              <LI>Основными операциями с циклическим списком являются: создание 
+              списка; печать (просмотр) списка; вставка элемента в список; 
+              удаление элемента из списка; поиск элемента в списке; проверка 
+              пустоты списка; удаление списка.
+              <LI>Дек является структурой данных, представляющей собой 
+              последовательность элементов, в которой можно добавлять и удалять 
+              в произвольном порядке элементы с двух сторон. Первый и последний 
+              элементы дека соответствуют входу и выходу дека.
+              <LI>Частные случаи дека – это ограниченные деки.
+              <LI>Основными операциями с деком являются: создание дека; печать 
+              (просмотр) дека; добавление элемента в левый конец дека; 
+              добавление элемента в правый конец дека; извлечение элемента из 
+              левого конца дека; извлечение элемента из правого конца дека; 
+              проверка пустоты дека; очистка дека.
+              <LI>Красно-черные деревья являются одним из способов балансировки 
+              деревьев, что определяется свойствами данной структуры.
+              <LI>Над красно-черными деревьями можно выполнять все те же 
+              основные операции, что и над бинарными деревьями. 
+              <LI>При вставке/удалении элемента необходима поддержка баланса 
+              дерева через проверку и перекрашивание узлов при 
+              необходимости.</LI></OL>
+            <DIV id=mark_88 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Лабораторная работа 32. Решение задач на динамические структуры 
+            данных</H3>
+            <P id=id_98><B>Цель работы:</B> изучить алгоритмы и приемы работы с 
+            динамическими структурами данных, научиться решать задачи с 
+            использованием динамических структур данных и алгоритмов работы с 
+            ними на языке C++.</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, в которой выполнено 
+            формирование красно-черного дерева, дека или циклического списка в 
+            соответствии с постановкой задачи, ввод данных элементов 
+            динамических структур с учетом типа информационного поля, их 
+            обработка и вывод на экран в указанном формате. Для хранения данных 
+            динамических структур следует использовать ресурсы динамической 
+            памяти. Ввод данных осуществляется с клавиатуры с учетом требований 
+            к входным данным, содержащихся в постановке задачи. Ограничениями на 
+            входные данные являются максимальный размер строковых данных, 
+            диапазоны числовых типов полей структуры и допустимый размер области 
+            динамической памяти в языке С++.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100><B>Теоретические сведения.</B></P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_101>Ознакомьтесь с материалом лекции 32.</P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_102><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_103>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <OL id=id_104>
+              <LI>На основе кодов функций, представленных в лекции 32, 
+              реализуйте все основные операции над красно-черным деревом.
+              <LI>Разработайте программу, с помощью которой можно определить 
+              наибольший допустимый размер дека с вещественным информационным 
+              полем. Найдите этот размер (число элементов в деке). Сравните с 
+              наибольшим допустимым размером стека и очереди с аналогичным 
+              информационным полем.
+              <LI>Элементами дека являются натуральные числа. Удалите из дека 
+              элементы, оставив только простые числа. Расположите их в порядке 
+              неубывания.
+              <LI>Удалите из циклического однонаправленного списка все 
+              отрицательные числа.
+              <LI>Решите задачу Иосифа Флавия с помощью циклического списка.
+              <LI>В красно-черном дереве найдите путь от корня к некоторому 
+              листу, содержащий минимальное количество красных вершин.</LI></OL>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_111><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112>Выполнение работы следует начать с решения задачи 1, 
+            реализовав алгоритмы основных операций над красно-черным деревом. 
+            Каждое из заданий необходимо решить в соответствии с изученными 
+            методами и реализованными алгоритмами формирования, вывода и 
+            обработки данных динамических структур в языке С++. Обработку 
+            динамических структур следует выполнить на основе базовых 
+            алгоритмов: поиск структуре, вставка элемента в структуру, 
+            балансировка красно-черного дерева, удаление элемента из структуры, 
+            удаление всей динамической структуры. При объявлении динамических 
+            структур выполните комментирование используемых полей. Задача 2 
+            носит исследовательский характер, поэтому следует отразить в отчете 
+            подробное описание предлагаемого метода определения максимального 
+            размера дека и выводы по сравнению с размерами стека и очереди. 
+            Программу для решения каждого задания необходимо разработать методом 
+            процедурной абстракции, оформив комментарии к коду.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <UL id=id_114>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_123><B>Требования к отчету.</B></P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <UL id=id_125>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_134><B>Контрольные вопросы</B></P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <OL id=id_135>
+              <LI>В чем принципиальное отличие линейного однонаправленного 
+              (двунаправленного) и циклического однонаправленного 
+              (двунаправленного) списков?
+              <LI>Как избежать зацикливания при просмотре циклического списка?
+              <LI>Какое значение содержит указатель на дек?
+              <LI>Нужно ли в деке определять первый элемент? Ответ обоснуйте.
+              <LI>На основании чего в красно-черном дереве самая длинная ветвь 
+              от корня к листу не более чем вдвое длиннее любой другой ветви от 
+              корня к листу?
+              <LI>Куда может быть добавлен элемент в красно-черное дерево? Вид 
+              дерева при этом должен сохраниться.
+              <LI>Как можно охарактеризовать красно-черное дерево: полное, 
+              неполное, строгое, нестрогое?
+              <LI>Каким образом при удалении элемента из красно-черного дерева 
+              перекрашиваются узлы?</LI></OL>
+            <DIV id=mark_135 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

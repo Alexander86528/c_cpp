@@ -1,0 +1,729 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/16/staldata_16.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>16. Лекция: Структуры и указатели: версия 
+            для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются определения, способы объявления, инициализация 
+            указателей на структуры, ограничения на использование указателей как 
+            типов элементов структур, методы доступа к данным структуры через 
+            указатели, использование указателей на структуры как параметров и 
+            значений функций. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить указатели на структуры, 
+            операции над указателями на структуры, взаимодействие структур и 
+            функций, указатели как компоненты структур, научиться решать задачи 
+            с использованием указателей на структуры на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2><B>Структура</B> – это совокупность переменных, 
+            объединенных одним именем, предоставляющая общепринятый способ 
+            совместного хранения информации. В отличие от массива, всегда 
+            состоящего из однотипных элементов, компоненты структуры могут быть 
+            разных типов и все должны иметь различные имена.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Указатели на структуры</H3>
+            <P id=id_3>Указатель на структуру объявляется точно так же, как и 
+            указатель на данные простых типов: используется операция <SPAN 
+            class=texample>'*'</SPAN> и указывается тип данных. Тип данных 
+            структуры указывается заданием ключевого слова <SPAN 
+            class=texample>struct</SPAN> и имени шаблона этой структуры.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_6>Синтаксис:</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяСтруктурногоТипа *ИмяУказателяНаСтруктуру
+</PRE></DIV>
+            <P id=id_8>Например:</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct goods *p_goods;
+struct student *p_stu1, *p_stu2;
+</PRE></DIV>
+            <P id=id_10>Указатели на структуры могут вводиться и для безымянных 
+            (не имеющих имен) структурных типов.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>Например:</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct  {
+         char *name;
+         int age;
+        } *person; //указатель на структуру
+</PRE></DIV>
+            <P id=id_13>Если структура объявлена с помощью <SPAN 
+            class=texample>typedef</SPAN>, то при определении указателей 
+            название этого типа может использоваться без служебного слова <SPAN 
+            class=texample>struct</SPAN>.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_16>Например:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <DIV class=example><PRE>complex *cc, *ss, comp;
+</PRE></DIV>
+            <P id=id_18>При определении указателя на структуру он может быть 
+            инициализирован. Корректно в качестве инициализирующего значения 
+            применять адрес структурного объекта того же типа, что и тип 
+            определяемого указателя.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Например:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct particle {
+                 double mass;
+                 float coord[3];
+                } dot[3], point, *pinega;
+
+//Инициализация указателей
+struct particle *p_d=&amp;dot[1], *pinta=&amp;point;
+</PRE></DIV>
+            <P id=id_21>Значение указателя на структуру может быть определено и 
+            с помощью присваивания.</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_22>Например:</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <DIV class=example><PRE>pinega=&amp;dot[0];
+</PRE></DIV>
+            <P id=id_24>При определении элемента структуры запрещено указание в 
+            качестве элемента самого себя (через структурный объект).</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25>Например:</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct STUD { //некорректное объявление поля структуры
+             STUD t;
+            } a, b;
+</PRE></DIV>
+            <P id=id_27>Однако элемент структуры может быть указателем на 
+            определяемую структуру.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28>Например:</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct STUD { //корректное объявление поля структуры
+             STUD *pt;
+            } a, b;
+</PRE></DIV>
+            <P id=id_30>Кроме того, допустимо неполное определение типа 
+            структуры, если ее указатель является элементом другой 
+структуры.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31>Например:</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct A; //неполное определение структурного типа
+struct B {struct A *pta;};
+struct A {struct B *ptb;};
+</PRE></DIV>
+            <P id=id_33>При определении структурных типов может потребоваться 
+            организация взаимных перекрестных связей между структурами двух и 
+            более разных типов. В этом случае помогает применение указателей на 
+            структуры.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>Например:</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct part {
+             double modul;
+             struct cell *element_cell;
+             struct part *element_part;
+            };
+struct cell {
+             long summa;
+             struct cell *one;
+             struct part *two;
+            };
+</PRE></DIV><A name=sect3></A>
+            <H3>Доступ к элементам структур через указатель</H3>
+            <P id=id_36>Указатель на структуру обеспечивает доступ к ее 
+            элементам двумя способами:</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <DIV class=example><PRE>(*УказательНаСтруктуру).ИмяЭлемента
+</PRE></DIV>
+            <P id=id_38>или</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <DIV class=example><PRE>УказательНаСтруктуру-&gt;ИмяЭлемента
+</PRE></DIV>
+            <P id=id_40>В первом случае круглые скобки необходимы, чтобы учесть 
+            приоритет операций.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Во втором случае используется операция "стрелка" (<SPAN 
+            class=texample>-&gt;</SPAN>), которая называется операцией 
+            косвенного выбора элемента структурного объекта, адресуемого 
+            указателем.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_43>Например:</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44><SPAN 
+            class=texample>(*pinega).mass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> 
+            эквивалентно <SPAN class=texample>&nbsp;&nbsp;&nbsp;&nbsp;pinega 
+            -&gt; mass</SPAN></P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_47><SPAN 
+            class=texample>(*pinega).coord[0]&nbsp;&nbsp;</SPAN> эквивалентно 
+            <SPAN class=texample>&nbsp;&nbsp;&nbsp;&nbsp;pinega -&gt; 
+            coord[0]</SPAN></P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_50><SPAN class=xml_em_italic>Пример 1.</SPAN></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+struct student {
+                char name[10];
+                char surname[15];
+                int age;
+               } stud;  
+       //переменная stud объявлена как структура типа student
+int _tmain(int argc, _TCHAR* argv[]) {
+  struct student *s;  // указатель на структуру student
+  s=&amp;stud;            // инициализация указателя
+  strcpy(s-&gt;name,"Larry"); 
+  //обращение как к указателю на структуру
+  strcpy(s-&gt;surname,"Johnson");
+  (*s).age=34;    //обращение как к переменной 
+  printf("\n Имя: %s \n Фамилия: %s \n Возраст = %i",
+           s-&gt;name,s-&gt;surname,s-&gt;age);
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect4></A>
+            <H3>Операции над указателями на структуры</H3>
+            <P id=id_52>Эти операции не отличаются от операций над другими 
+            указателями на данные. Исключение составляет операция "стрелка" 
+            (<SPAN class=texample>-&gt;</SPAN>). Если присвоить указателю на 
+            структуру конкретного структурного типа значение адреса одного из 
+            элементов массива структур того же типа, то, изменяя значение 
+            указателя (например, с помощью операций <SPAN 
+            class=texample>++</SPAN> или <SPAN class=texample>--</SPAN>), можно 
+            равномерно "перемещаться" по массиву структур.</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_56><SPAN class=xml_em_italic>Пример 2.</SPAN> Вычислить 
+            сумму заданного количества комплексных чисел, представленных в 
+            программе массивом структур.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;stdio.h&gt;
+struct complex {//Опредение структуры
+                float x;
+                float y;
+               }array[]={1.0,2.0,3.0,-4.0,-5.0,-6.0,-7.0,-8.0};
+  struct complex summa = {0.0, 0.0};
+  struct complex *point = &amp;array[0];
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  int i;
+  int k;
+  k=sizeof(array)/sizeof(array[0]);
+  for (i=0; i&lt;k; i++){
+    summa.x+=point-&gt;x;   
+    summa.y+=point-&gt;y; }
+  printf("\n Сумма: real=%f, \t  imag=%f", summa.x, summa.y);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_58><SPAN class=xml_em_italic>Пример 3</SPAN>. Программа 
+            считывает системное время компьютера и переводит его во время по 
+            Гринвичу.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;time.h&gt;
+int _tmain(int argc, _TCHAR* argv[]) {
+  struct tm {
+  int tm_sec;   //Секунды
+  int tm_min;   //Минуты
+  int tm_hour;  //Часы (0-23)
+  int tm_mday;  //День месяца (1-31)
+  int tm_mon;   //Месяц (0-11)
+  int tm_year;  //Год (календарный год минус 1900)
+  int tm_wday;  //День недели (0-6; Воскресенье = 0) 
+  int tm_yday;  //День года (0-365)
+  int tm_isdst; 
+  //0, если переход на летнее время не используется
+  };
+  time_t t;
+  struct tm *gmt, *area;
+  t = time(NULL);
+  //Преобразует дату и время в структуру
+  area=localtime(&amp;t); 
+  printf("Секунды: %d\n", area-&gt;tm_sec);
+  printf("Минуты: %d\n", area-&gt;tm_min);
+  printf("Часы: %d\n", area-&gt;tm_hour);
+  printf("День: %d\n", area-&gt;tm_mday);
+  printf("Месяц: %d\n", area-&gt;tm_mon);
+  printf("Год: %d\n", area-&gt;tm_year);
+  printf("День недели: %d\n", area-&gt;tm_wday);
+  printf("День года: %d\n", area-&gt;tm_yday);
+  printf("Местное время: %s", asctime(area));
+  //Преобразуем структуру в строку
+  gmt=gmtime(&amp;t);
+  //Преобразует дату и время во время по Гривинчу
+  printf("Время по Гринвичу: %s", asctime(gmt));
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect5></A>
+            <H3>Структуры и функции</H3>
+            <P id=id_60>Для взаимодействия структур и функций имеются две 
+            основные возможности: структура может быть возвращаемым функцией 
+            значением и структура может использоваться в параметрах функции. 
+            Кроме того, в обоих случаях могут использоваться указатели на 
+            объекты структурных типов.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_61>Например:</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Определение структурного типа
+struct person {
+               char *name; 
+               int age;
+              };
+</PRE></DIV>
+            <UL id=id_63>
+              <LI>Функция может возвращать структуру как результат: 
+              <DIV class=example><PRE>//Прототип функции
+struct person f (int N);
+</PRE></DIV>
+              <LI>Функция может возвращать указатель на структуру: 
+              <DIV class=example><PRE>//Прототип функции
+struct person *ff (void);
+</PRE></DIV>
+              <LI>Параметром функции может быть структура: 
+              <DIV class=example><PRE>//Прототип функции
+void fff (struct person str);
+</PRE></DIV>
+              <LI>Параметром функции может быть указатель на объект структурного 
+              типа: 
+              <DIV class=example><PRE>//Прототип функции
+void ffff (struct person *pst);
+</PRE></DIV></LI></UL>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_72>При вызове функции <SPAN class=texample>fff()</SPAN> 
+            выделяется память для формального параметра, т.е. для 
+            вспомогательного объекта типа <SPAN class=texample>struct 
+            person</SPAN>. В этот объект переносится значение фактического 
+            параметра, заменяющего формальный параметр – структуру <SPAN 
+            class=texample>str</SPAN>. Далее выполняются действия, 
+            предусмотренные операторами тела функции <SPAN 
+            class=texample>fff()</SPAN>. Эти действия не могут изменять 
+            структуру, использованную в качестве фактического параметра.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_77>В случае, когда параметром служит указатель на объект 
+            структурного типа, действиями внутри тела функции <SPAN 
+            class=texample>ffff()</SPAN> можно изменить ту структуру вызывающей 
+            функции, которая адресуется фактическим параметром <SPAN 
+            class=texample>pst</SPAN>.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_80>Если функция не изменяет структуру, то такую структуру 
+            можно передать по значению.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81><SPAN class=xml_em_italic>Пример 4</SPAN>. Отображение 
+            полей структуры на экране.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+  struct book {
+    char title[40];
+    char authors[30];
+    char publishing_house[25];
+    int year;
+    int pages;
+    };
+void show_book(book b) { 
+  cout &lt;&lt; "Название: "&lt;&lt; b.title&lt;&lt;"\n";
+  cout &lt;&lt; "Автор: "&lt;&lt; b.authors&lt;&lt;"\n";
+  cout &lt;&lt; "издательство: "&lt;&lt; b. publishing_house&lt;&lt;"\n";
+  cout &lt;&lt; "Год: "&lt;&lt; b.year&lt;&lt;"\n";
+  cout &lt;&lt; "Количество страниц: " &lt;&lt; b.pages&lt;&lt;"\n";
+}
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  book a={"Программирование на языке Си", "Подбельский В.В.",
+          "Финансы и статистика", 2004, 600};
+  show_book(a);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_83>Если обработка структуры в функции связана с изменением 
+            содержимого полей, то такую структуру необходимо передавать по 
+            указателю или по ссылке.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84><SPAN class=xml_em_italic>Пример 5</SPAN>. Параметр 
+            функции – указатель на структуру.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+  struct book {
+    char title[40];
+    char authors[30];
+    char publishing_house[15];
+    int year;
+    int pages;
+   };
+void input_book(book *b){ //структура передается по указателю
+  cout &lt;&lt; "Название: ";
+  cin &gt;&gt; b-&gt;title;
+  cout &lt;&lt; "Автор: ";
+  cin &gt;&gt; b-&gt;authors;
+  cout &lt;&lt; "Издательство: ";
+  cin &gt;&gt; b-&gt;publishing_house;
+  cout &lt;&lt; "Год: ";
+  cin &gt;&gt; b-&gt;year;
+  cout &lt;&lt; "Количество страниц: ";
+  cin &gt;&gt; b-&gt;pages;
+}
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  book a,*pa=&amp;a;
+  input_book(pa);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_86><SPAN class=xml_em_italic>Пример 6</SPAN>. Параметр 
+            функции – ссылка на структуру.</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+  struct book {
+    char title[40];
+    char authors[30];
+    char publishing_house[15];
+    int year;
+    int pages;
+  };
+void input_book(book &amp;b) { //структура передается по ссылке
+  cout &lt;&lt; "Название: ";
+  cin &gt;&gt; b.title;
+  cout &lt;&lt; "Автор: ";
+  cin &gt;&gt; b.authors;
+  cout &lt;&lt; "Издательство: ";
+  cin &gt;&gt; b.publishing_house;
+  cout &lt;&lt; "Год: ";
+  cin &gt;&gt; b.year;
+  cout &lt;&lt; "Количество страниц: ";
+  cin &gt;&gt; b.pages;
+}
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  book a;
+  input_book(a);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_88>Функции могут не только получать структуры в качестве 
+            своих параметров, но и возвращать результаты в виде структур. Это 
+            означает, что функция, возвращающая значение, может иметь в качестве 
+            результата своей работы совокупность значений полей соответствующей 
+            структуры.</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_89><SPAN class=xml_em_italic>Пример 7</SPAN>. Функции <SPAN 
+            class=texample>g1</SPAN>, <SPAN class=texample>g2</SPAN> и <SPAN 
+            class=texample>g3</SPAN> возвращают структуру.</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+
+struct ss {
+           int a; 
+           float b; 
+          };
+ss g1(ss v){ //параметр - значение
+  v.a=7; 
+  v.b=8; 
+  return v; 
+}
+ss g2(ss &amp;v){ //параметр - ссылка
+  v.a=v.b+7; 
+  v.b=v.a+8; 
+  return v; 
+}
+ss g3(const ss &amp;v){ //параметр - константная ссылка
+  ss q;
+  q.a=v.b+7; 
+  q.b=v.a+8; 
+  return q;
+}
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  ss x1,y1={1,2};
+  ss x2,y2={3,4};
+  ss x3,y3={5,6};
+  x1=g1(y1);
+  cout &lt;&lt; "x1=" &lt;&lt; x1.a &lt;&lt; "; " &lt;&lt; x1.b &lt;&lt; "\n";
+  cout &lt;&lt; "y1=" &lt;&lt; y1.a &lt;&lt; "; " &lt;&lt; y1.b &lt;&lt; "\n";
+  y1=g1(y1);
+  cout &lt;&lt; "x1=" &lt;&lt; x1.a &lt;&lt; "; " &lt;&lt; x1.b &lt;&lt; "\n";
+  cout &lt;&lt; "y1=" &lt;&lt; y1.a &lt;&lt; "; " &lt;&lt; y1.b &lt;&lt; "\n";
+  x2=g2(y2);
+  cout &lt;&lt; "x2=" &lt;&lt; x2.a &lt;&lt; "; " &lt;&lt; x2.b &lt;&lt; "\n";
+  cout &lt;&lt; "y2=" &lt;&lt; y2.a &lt;&lt; "; " &lt;&lt; y2.b &lt;&lt; "\n";
+  x3=g3(y3);
+  cout &lt;&lt; "x3=" &lt;&lt; x3.a &lt;&lt; "; " &lt;&lt; x3.b &lt;&lt; "\n";
+  cout &lt;&lt; "y3=" &lt;&lt; y3.a &lt;&lt; "; " &lt;&lt; y3.b &lt;&lt; "\n";
+  y3=g3(y3);
+  cout &lt;&lt; "x3=" &lt;&lt; x3.a &lt;&lt; "; " &lt;&lt; x3.b &lt;&lt; "\n";
+  cout &lt;&lt; "y3=" &lt;&lt; y3.a &lt;&lt; "; " &lt;&lt; y3.b &lt;&lt; "\n";
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect6></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_94><B>Значение указателя на структуру</B> – адрес 
+            расположения элементов структуры.</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_95><B>Структура</B> – это совокупность переменных, 
+            объединенных одним именем, предоставляющая общепринятый способ 
+            совместного хранения информации.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96><B>Структура как значение функции</B> является 
+            результатом работы функции, возвращающей совокупность значений полей 
+            соответствующей структуры.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_97><B>Структура как параметр функции</B> является 
+            передаваемыми фактическими значениями соответствующих полей 
+            структуры.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98><B>Указатель на структуру</B> – это указатель на 
+            расположение элементов структуры в памяти.</P>
+            <DIV id=mark_98 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_99>
+              <LI>В языке С++ определены указатели на структуры.
+              <LI>В качестве инициализирующего значения указателя на структуру 
+              применяется адрес определяемого структурного объекта.
+              <LI>При определении структуры запрещено указание в качестве 
+              элемента самого себя.
+              <LI>Элементом структуры может быть указатель на определяемую или 
+              другую структуру.
+              <LI>Указатель на структуру обеспечивает доступ к ее элементам 
+              двумя способами: прямым и косвенным.
+              <LI>Операции над указателями на структуры не отличаются от 
+              операций над другими указателями на данные. Исключение составляет 
+              операция "стрелка" (<SPAN class=texample>-&gt;</SPAN>).
+              <LI>Структура может использоваться как параметр и значение 
+функции.
+              <LI>Взаимодействие структуры и функции может быть организовано 
+              через указатель или ссылку.</LI></OL>
+            <DIV id=mark_99 class=lecture_mark></DIV><A name=sect8></A>
+            <H3>Лабораторная работа 16. Структуры и указатели.</H3>
+            <P id=id_109><B>Цель работы:</B> изучить указатели на структуры, 
+            операции над указателями на структуры, взаимодействие структур и 
+            функций, указатели как компоненты структур, научиться решать задачи 
+            с использованием указателей на структуры на языке C++.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, в которой выполнена 
+            разработка структуры в соответствии с постановкой задачи, ввод 
+            данных элементов структурного типа, их обработка и вывод на экран в 
+            указанном формате. Обработку данных структуры следует выполнить в 
+            виде отдельной функции, организовав передачу структуры в качестве 
+            параметра функции через указатель на структуру. Ввод данных 
+            осуществляется с клавиатуры с учетом требований к входным данным, 
+            содержащихся в постановке задачи. Ограничениями на входные данные 
+            являются максимальный размер строковых данных, диапазоны числовых 
+            типов полей структуры и допустимый размер массива структур в языке 
+            С++.</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_111><B>Теоретические сведения.</B></P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112>Ознакомьтесь с материалом лекции 16.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <OL id=id_115>
+              <LI>Разработайте структуру, содержащую сведения о результатах ЕГЭ 
+              по предмету: Фамилия, Имя, Отчество, Число баллов по первому 
+              предмету, Число баллов по второму предмету, Число баллов по 
+              третьему предмету. Разработайте функцию, определяющую результат 
+              поступления абитуриента по заданному проходному баллу. Введите 
+              сведения об N абитуриентах и выведите результаты зачисления по 
+              образцу (данные, введенные пользователем, выделены жирным 
+              шрифтом): 
+              <DIV class=example><PRE>Введите проходной балл на специальность: 255
+Введите количество абитуриентов: 5
+
+Сведения о 1 абитуриенте
+Фамилия: Петров
+Имя: Федор
+Отчество: Степанович
+Число баллов по первому предмету: 84
+Число баллов по второму предмету: 76
+Число баллов по третьему предмету: 95
+Результат: зачислен
+...
+</PRE></DIV>
+              <LI>Разработайте структуру, описывающую комплексное число. 
+              Разработайте функции, выполняющие с комплексными числами четыре 
+              арифметические операции (+, -, *, /). Введите два комплексных 
+              числа и знак операции. Выведите результат.
+              <LI>Разработайте структуры, определяющие положение точки в 
+              декартовой и полярной системе координат. Опишите функцию, 
+              преобразующую координаты точки на плоскости из полярных в 
+              декартовы. Введите точку в полярных координатах, преобразуйте 
+              координаты в декартовы.</LI></OL>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_120><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121>Каждое задание необходимо решить в соответствии с 
+            изученными методами объявления и обработки данных структур в языке 
+            С++. При объявлении структурного типа выполните комментирование 
+            используемых полей структуры. В задаче 1 следует использовать массив 
+            структур, организовав его хранение и обработку. Программу для 
+            решения каждого задания необходимо разработать методом процедурной 
+            абстракции, используя указатели на структуры, а также структуры в 
+            качестве параметров функций.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_122>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <UL id=id_123>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_132><B>Требования к отчету.</B></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <UL id=id_134>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_143><B>Контрольные вопросы</B></P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <OL id=id_144>
+              <LI>Какие данные о структуре содержит указатель на эту структуру?
+              <LI>Какие ограничения накладываются на тип элемента структуры?
+              <LI>Возможно ли в качестве типа элемента структуры использовать 
+              указатель на другую структуру?
+              <LI>Как выполняется инициализация указателя на структуру?
+              <LI>Как выполняются операции инкремента и декремента над 
+              указателями на структуры?
+              <LI>Какими способами можно обратиться к данным структуры, 
+              используя указатели?
+              <LI>Каким образом необходимо передать структуру в качестве 
+              параметра функции, чтобы сохранить изменения, совершаемые функцией 
+              с данной структурой?
+              <LI>Что возвращается в качестве значения функции, тип которой 
+              объявлен как структура?
+              <LI>Что возвращается в качестве значения функции, тип которой 
+              объявлен как указатель на структуру?</LI></OL>
+            <DIV id=mark_144 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

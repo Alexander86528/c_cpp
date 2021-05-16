@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>34. Лекция: Рекурсия и рекурсивные 
+            алгоритмы: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются основные понятия рекурсии в контексте 
+            разработки алгоритмов с помощью рекурсивной триады, дается 
+            представление о ресурсной эффективности и о методе оценки 
+            рекурсивных алгоритмов через подсчет вершин рекурсивного дерева. 
+            </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятие, виды рекурсии и 
+            рекурсивную триаду, научиться разрабатывать рекурсивную триаду при 
+            решении задач на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Одной из идей процедурного программирования, которая 
+            оформилась в начале шестидесятых годов ХХ века, стало активное 
+            применение в практике программирования некоторого метода, 
+            основанного на организации серий взаимных обращений программ 
+            (функций) друг к другу. Вопросы об эффективности использования 
+            данного метода при разработке алгоритмических моделей актуальны и в 
+            настоящее время, несмотря на существование различных парадигм 
+            программирования, создание новых и совершенствование существующих 
+            языков программирования. Речь идет о рекурсивном методе в 
+            программировании, который рассматривается альтернативным по 
+            отношению к итерационному.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><B>Рекурсия</B> – это определение объекта через обращение 
+            к самому себе.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4><B>Рекурсивный алгоритм</B> – это алгоритм, в описании 
+            которого прямо или косвенно содержится обращение к самому себе. В 
+            технике процедурного программирования данное понятие 
+            распространяется на функцию, которая реализует решение отдельного 
+            блока задачи посредством вызова из своего тела других функций, в том 
+            числе и себя самой. Если при этом на очередном этапе работы функция 
+            организует обращение к самой себе, то такая функция является <SPAN 
+            class=xml_em_italic>рекурсивной</SPAN>.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Прямое обращение функции к самой себе предполагает, что в 
+            теле функции содержится вызов этой же функции, но с другим набором 
+            фактических параметров. Такой способ организации работы называется 
+            <SPAN class=xml_em_italic>прямой рекурсией</SPAN>. Например, чтобы 
+            найти сумму первых <SPAN class=texample>n</SPAN> натуральных чисел, 
+            надо сумму первых <SPAN class=texample>(n-1)</SPAN> чисел сложить с 
+            числом <SPAN class=texample>n</SPAN>, то есть имеет место 
+            зависимость: <SPAN 
+            class=texample>S<SUB>n</SUB>=S<SUB>n-1</SUB>+n</SPAN>. Вычисление 
+            происходит с помощью аналогичных рассуждений. Такая цепочка взаимных 
+            обращений в конечном итоге сведется к вычислению суммы одного 
+            первого элемента, которая равна самому элементу.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_10>При косвенном обращении функция содержит вызовы других 
+            функций из своего тела. При этом одна или несколько из вызываемых 
+            функций на определенном этапе обращаются к исходной функции с 
+            измененным набором входных параметров. Такая организация обращений 
+            называется <SPAN class=xml_em_italic>косвенной рекурсией</SPAN>. 
+            Например, поиск максимального элемента в массиве размера <SPAN 
+            class=texample>n</SPAN> можно осуществлять как поиск максимума из 
+            двух чисел: одно их них – это последний элемент массива, а другое 
+            является максимальным элементом в массиве размера <SPAN 
+            class=texample>(n-1)</SPAN>. Для нахождения максимального элемента 
+            массива размера <SPAN class=texample>(n-1)</SPAN> применяются 
+            аналогичные рассуждения. В итоге решение сводится к поиску 
+            максимального из первых двух элементов массива.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_14>Рекурсивный метод в программировании предполагает 
+            разработку решения задачи, основываясь на свойствах рекурсивности 
+            отдельных объектов или закономерностей. При этом исходная задача 
+            сводится к решению аналогичных подзадач, которые являются более 
+            простыми и отличаются другим набором параметров.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Разработке рекурсивных алгоритмов предшествует 
+            <B>рекурсивная триада</B> – этапы моделирования задачи, на которых 
+            определяется набор параметров и соотношений между ними. Рекурсивную 
+            триаду составляют параметризация, выделение базы и декомпозиция.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16>На этапе <SPAN class=xml_em_italic>параметризации</SPAN> 
+            из постановки задачи выделяются параметры, которые описывают 
+            исходные данные. При этом некоторые дальнейшие разработки решения 
+            могут требовать введения дополнительных параметров, которые не 
+            оговорены в условии, но используются при составлении зависимостей. 
+            Необходимость в дополнительных параметрах часто возникает также при 
+            решении задач оптимизации рекурсивных алгоритмов, в ходе которых 
+            сокращается их временная сложность.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Выделение <SPAN class=xml_em_italic>базы рекурсии</SPAN> 
+            предполагает нахождение в решаемой задаче тривиальных случаев, 
+            результат для которых очевиден и не требует проведения расчетов. 
+            Верно найденная база рекурсии обеспечивает завершенность рекурсивных 
+            обращений, которые в конечном итоге сводятся к базовому случаю. 
+            Переопределение базы или ее динамическое расширение в ходе решения 
+            задачи часто позволяют оптимизировать рекурсивный алгоритм за счет 
+            достижения базового случая за более короткий путь обращений.</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_18><SPAN class=xml_em_italic>Декомпозиция</SPAN> 
+            представляет собой сведение общего случая к более простым 
+            подзадачам, которые отличаются от исходной задачи набором входных 
+            данных. Декомпозиционные зависимости описывают не только связь между 
+            задачей и подзадачами, но и характер изменения значений параметров 
+            на очередном шаге. От выбранных отношений зависит трудоемкость 
+            алгоритма, так как для одной и той же задачи могут быть составлены 
+            различные зависимости. Пересмотр отношений декомпозиции 
+            целесообразно проводить комплексно, то есть параллельно с 
+            корректировкой параметров и анализом базовых случаев.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Анализ трудоемкости рекурсивных алгоритмов методом подсчета 
+            вершин дерева рекурсии</H3>
+            <P id=id_19>Рекурсивные алгоритмы относятся к классу алгоритмов с 
+            высокой ресурсоемкостью, так как при большом количестве самовызовов 
+            рекурсивных функций происходит быстрое заполнение стековой области. 
+            Кроме того, организация хранения и закрытия очередного слоя 
+            рекурсивного стека являются дополнительными операциями, требующими 
+            временных затрат. На трудоемкость рекурсивных алгоритмов влияет и 
+            количество передаваемых функцией параметров.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Рассмотрим один из методов анализа трудоемкости 
+            рекурсивного алгоритма, который строится на основе подсчета вершин 
+            рекурсивного дерева. Для оценки трудоемкости рекурсивных алгоритмов 
+            строится <B>полное дерево рекурсии</B>. Оно представляет собой граф, 
+            вершинами которого являются наборы фактических параметров при всех 
+            вызовах функции, начиная с первого обращения к ней, а ребрами – пары 
+            таких наборов, соответствующих взаимным вызовам. При этом вершины 
+            дерева рекурсии соответствуют фактическим вызовам рекурсивных 
+            функций. Следует заметить, что одни и те же наборы параметров могут 
+            соответствовать разным вершинам дерева. <SPAN 
+            class=xml_em_italic>Корень полного дерева рекурсивных вызовов</SPAN> 
+            – это вершина полного дерева рекурсии, соответствующая начальному 
+            обращению к функции.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21>Важной характеристикой рекурсивного алгоритма является 
+            <B>глубина рекурсивных вызовов</B> – наибольшее одновременное 
+            количество рекурсивных обращений функции, определяющее максимальное 
+            количество слоев рекурсивного стека, в котором осуществляется 
+            хранение отложенных вычислений. Количество элементов полных 
+            рекурсивных обращений всегда не меньше глубины рекурсивных вызовов. 
+            При разработке рекурсивных программ необходимо учитывать, что 
+            глубина рекурсивных вызовов не должна превосходить максимального 
+            размера стека используемой вычислительной среды. </P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_22>При этом <B>объем рекурсии</B> - это одна из 
+            характеристик сложности рекурсивных вычислений для конкретного 
+            набора параметров, представляющая собой количество вершин полного 
+            рекурсивного дерева без единицы.</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_23>Будем использовать следующие обозначения для конкретного 
+            входного параметра <SPAN class=texample>D</SPAN>:</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_25><SPAN class=texample>R(D)</SPAN> – общее число вершин 
+            дерева рекурсии,</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_27><SPAN class=texample>R<SUB>V</SUB>(D)</SPAN> – объем 
+            рекурсии без листьев (внутренние вершины),</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_29><SPAN class=texample>R<SUB>L</SUB>(D)</SPAN> – 
+            количество листьев дерева рекурсии,</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_31><SPAN class=texample>H<SUB>R</SUB>(D)</SPAN> – глубина 
+            рекурсии.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_33>Например, для вычисления <SPAN 
+            class=texample>n</SPAN>-го члена последовательности Фибоначчи 
+            разработана следующая рекурсивная функция:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int Fib(int n){ //n – номер члена последовательности
+  if(n&lt;3) return 1; //база рекурсии
+  return Fib(n-1)+Fib(n-2); //декомпозиция 
+}
+</PRE></DIV>
+            <P id=id_36>Тогда полное дерево рекурсии для вычисления пятого члена 
+            последовательности Фибоначчи будет иметь вид (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.1">рис. 
+            34.1</A>):</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_37 align=left><A name=image.34.1></A>
+            <DIV><IMG 
+            alt="Полное дерево рекурсии для пятого члена последовательности Фибоначчи" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/34_01.png" 
+            width=279 height=206></DIV><BR><B>Рис. 34.1.</B>&nbsp; Полное дерево 
+            рекурсии для пятого члена последовательности Фибоначчи
+            <P></P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38>Характеристиками рассматриваемого метода оценки 
+            алгоритма будут следующие величины.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <DIV id=id_39 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>D = 5</TH>
+                <TH bgColor=#d8d8d8>D = n</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=9</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=2fn-1</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=4</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=fn-1</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=5</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=fn</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=4</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=n-1</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_48><SPAN class=xml_em_italic>Пример 1. Задача о разрезании 
+            прямоугольника на квадраты.</SPAN></P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49>Дан прямоугольник, стороны которого выражены 
+            натуральными числами. Разрежьте его на минимальное число квадратов с 
+            натуральными сторонами. Найдите число получившихся квадратов.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50>Разработаем рекурсивную триаду.</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51><SPAN class=xml_em_italic>Параметризация:</SPAN> <SPAN 
+            class=texample>m, n</SPAN> – натуральные числа, соответствующие 
+            размерам прямоугольника.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_53><SPAN class=xml_em_italic>База рекурсии:</SPAN> для 
+            <SPAN class=texample>m=n</SPAN> число получившихся квадратов равно 
+            1, так как данный прямоугольник уже является квадратом.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_55>Декомпозиция: если <SPAN class=texample>m <IMG 
+            style="POSITION: relative; TOP: 2px" border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/ne.gif" 
+            width=8 height=18> n</SPAN>, то возможны два случая <SPAN 
+            class=texample>m &lt; n</SPAN> или <SPAN class=texample>m &gt; 
+            n</SPAN>. Отрежем от прямоугольника наибольший по площади квадрат с 
+            натуральными сторонами. Длина стороны такого квадрата равна 
+            наименьшей из сторон прямоугольника. После того, как квадрат будет 
+            отрезан, размеры прямоугольника станут следующие: большая сторона 
+            уменьшится на длину стороны квадрата, а меньшая не изменится. Число 
+            искомых квадратов будет вычисляться как число квадратов, на которые 
+            будет разрезан полученный прямоугольник, плюс один (отрезанный 
+            квадрат). К получившемуся прямоугольнику применим аналогичные 
+            рассуждения: проверим на соответствие базе или перейдем к 
+            декомпозиции (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.2">рис. 
+            34.2</A>).</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_59 align=left><A name=image.34.2></A>
+            <DIV><IMG alt="Пример разрезания прямоугольника 13&#215;5 на квадраты" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/34_02.png" 
+            width=416 height=157></DIV><BR><B>Рис. 34.2.</B>&nbsp; Пример 
+            разрезания прямоугольника 13&#215;5 на квадраты
+            <P></P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int kv(int m,int n);
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  int a,b,k;
+  printf("Введите стороны прямоугольника-&gt;");
+  scanf("%d%d",&amp;a,&amp;b);
+  k = kv(a,b);
+  printf("Прямоугольник со сторонами %d и %d можно разрезать 
+          на %d квадратов",a,b,k);
+  system("pause");
+  return 0;
+}
+
+int kv(int m,int n){ //m,n – стороны прямоугольника
+  if(m==n) return 1; //база рекурсии
+  if(m&gt;n) return 1+kv(m-n,n); //декомпозиция для m&gt;n
+  return 1+kv(m,n-m); //декомпозиция для m&lt;n
+}
+</PRE></DIV>
+            <P id=id_61>Характеристиками рассматриваемого метода оценки 
+            алгоритма будут следующие величины (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.3">рис. 
+            34.3</A>).</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV id=id_62 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>D = (13, 5)</TH>
+                <TH bgColor=#d8d8d8>D = (m, n), m <IMG 
+                  style="POSITION: relative; TOP: 2px" border=0 alt="" 
+                  src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/ge.gif" 
+                  width=8 height=18> n, худший случай</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=6</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=m</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=4</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=m-2</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=1</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=1</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=6</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=m</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_71 align=left><A name=image.34.3></A>
+            <DIV><IMG 
+            alt="Пример полного дерева рекурсии для разрезания прямоугольника 13&#215;5 на квадраты" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/34_03.png" 
+            width=383 height=208></DIV><BR><B>Рис. 34.3.</B>&nbsp; Пример 
+            полного дерева рекурсии для разрезания прямоугольника 13&#215;5 на 
+            квадраты
+            <P></P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72><SPAN class=xml_em_italic>Пример 2. Задача о нахождении 
+            центра тяжести выпуклого многоугольника.</SPAN></P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_73>Выпуклый многоугольник задан на плоскости координатами 
+            своих вершин. Найдите его центр тяжести.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74>Разработаем рекурсивную триаду.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_75><SPAN class=xml_em_italic>Параметризация:</SPAN> <SPAN 
+            class=texample>x, y</SPAN> – вещественные массивы, в которых 
+            хранятся координаты вершин многоугольника; <SPAN 
+            class=texample>n</SPAN> – это число вершин многоугольника, по 
+            условию задачи, <SPAN class=texample>n&gt;1</SPAN> так как 
+            минимальное число вершин имеет двуугольник (отрезок).</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_79><SPAN class=xml_em_italic>База рекурсии:</SPAN> для 
+            <SPAN class=texample>n=2</SPAN> в качестве многоугольника 
+            рассматривается отрезок, центром тяжести которого является его 
+            середина (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.4">рис. 
+            4А</A>). При этом середина делит отрезок в отношении 1 : 1. Если 
+            координаты концов отрезка заданы как <SPAN 
+            class=texample>(x<SUB>0</SUB>,y<SUB>0</SUB>)</SPAN> и <SPAN 
+            class=texample>(x<SUB>1</SUB>,y<SUB>1</SUB>)</SPAN>, то координаты 
+            середины вычисляются по формуле:</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <DIV id=id_83><IMG 
+            alt="&#10;cx=\frac{x_0+x_1}{2},\quad cy=\frac{y_0+y_1}{2}.&#10;" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/4b88928c44304e5626994623b46ca767.png" 
+            width=242 height=38></DIV>
+            <P id=id_84><SPAN class=xml_em_italic>Декомпозиция:</SPAN> если 
+            <SPAN class=texample>n&gt;2</SPAN>, то рассмотрим последовательное 
+            нахождение центров тяжести треугольника, четырехугольника и т.д. 
+</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_86>Для <SPAN class=texample>n=3</SPAN> центром тяжести 
+            треугольника является точка пересечения его медиан, которая делит 
+            каждую медиану в отношении 2 : 1, считая от вершины. Но основание 
+            медианы – это середина отрезка, являющегося стороной треугольника. 
+            Таким образом, для нахождения центра тяжести треугольника 
+            необходимо: найти центр тяжести стороны треугольника (отрезка), 
+            затем разделить в отношении 2 : 1, считая от вершины, отрезок, 
+            образованный основанием медианы и третьей вершиной (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.4">рис. 
+            4B</A>).</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_88>Для <SPAN class=texample>n=3</SPAN> центром тяжести 
+            четырехугольника является точка, делящая в отношении 3 : 1, считая 
+            от вершины, отрезок: он образован центром тяжести треугольника, 
+            построенного на трех вершинах, и четвертой вершиной (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/34/staldata_34.html#image.34.4">рис. 
+            4C</A>).</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_90 align=left><A name=image.34.4></A>
+            <DIV><IMG alt="Примеры построения центров тяжести многоугольников" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/34_04.png" 
+            width=631 height=297></DIV><BR><B>Рис. 34.4.</B>&nbsp; Примеры 
+            построения центров тяжести многоугольников
+            <P></P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_91>Таким образом, для нахождения центра тяжести <SPAN 
+            class=texample>n</SPAN>-угольника необходимо разделить в отношении 
+            <SPAN class=texample>(n-1)</SPAN> : 1, считая от вершины, отрезок: 
+            он образован центром тяжести <SPAN 
+            class=texample>(n-1)</SPAN>-угольника и <SPAN 
+            class=texample>n</SPAN>-ой вершиной рассматриваемого многоугольника. 
+            Если концы отрезка заданы координатами вершины <SPAN 
+            class=texample>(x<SUB>n</SUB>,y<SUB>n</SUB>)</SPAN> и центра тяжести 
+            <SPAN class=texample>(n-1)</SPAN>-угольника <SPAN 
+            class=texample>(cx<SUB>n-1</SUB>,cy<SUB>n-1</SUB>)</SPAN>, то при 
+            делении отрезка в данном отношении получаем координаты:</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <DIV id=id_99><IMG 
+            alt="&#10;cx_n=\frac{x_n+(n-1)cx_{n-1}}{n},\quad cy_n=\frac{y_n+(n-1)cy_{n-1}}{n}&#10;" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/fb13985c0a9279ae192866bb727255fd.png" 
+            width=423 height=42></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define max 20
+void centr(int n,float *x, float *y, float *c);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int m, i=0;
+  FILE *f;
+  if ( ( f = fopen("in.txt", "r") ) == NULL )
+    perror("in.txt");
+  else {
+    fscanf(f, "%d",&amp;m);
+    printf("\n%d",m);
+    if ( m &lt; 2 || m &gt; max ) //вырожденный многоугольник
+      printf ("Вырожденный многоугольник");
+    else {
+     float *px,*py,*pc;
+      px = new float[m];
+      py = new float[m]; 
+      pc = new float[2]; 
+      pc[0] = pc[1] = 0;
+      while(i&lt;m) {
+        fscanf(f, "%f %f",&amp;px[i], &amp;py[i]); 
+        printf("\n%f %f",px[i], py[i]); 
+        i++;
+      } 
+      centr(m,px,py,pc);
+      printf ("\nЦентр тяжести имеет координаты: 
+              (%.4f, %.4f)",pc[0],pc[1]);
+      delete [] pc;
+      delete [] py;
+      delete [] px;
+    }
+    fclose(f); 
+  }
+  system("pause");
+  return 0;
+}
+
+void centr(int n,float *x, float *y, float *c){        
+//n - количество вершин, 
+//x,y - координаты вершин,
+//c - координаты центра тяжести
+  if(n==2){ //база рекурсии
+           c[0]=(x[0]+x[1])/2; 
+           c[1]=(y[0]+y[1])/2;
+          }         
+  if(n&gt;2) { //декомпозиция
+           centr(n-1,x,y,c);
+           c[0]= (x[n-1] + (n-1)*c[0])/n;
+           c[1]= (y[n-1] + (n-1)*c[1])/n;
+         }
+}
+</PRE></DIV>
+            <P id=id_101>Характеристиками рассматриваемого метода оценки 
+            алгоритма будут следующие величины.</P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <DIV id=id_102 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>D = 4</TH>
+                <TH bgColor=#d8d8d8>D = n</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=3</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R(D)=n-1</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=1</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>V</SUB>(D)=n-3</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=1</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>R<SUB>L</SUB>(D)=1</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=3</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>H<SUB>R</SUB>(D)=n-1</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_111>Однако в данном случае для более достоверной оценки 
+            необходимо учитывать емкостные характеристики алгоритма.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112><SPAN class=xml_em_italic>Пример 3. Задача о разбиении 
+            целого на части.</SPAN></P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113>Найдите количество разбиений натурального числа на 
+            сумму натуральных слагаемых.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Разбиение подразумевает представление натурального 
+            числа в виде суммы натуральных слагаемых, при этом суммы должны 
+            отличаться набором чисел, а не их последовательностью. В разбиение 
+            также может входить одно число.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_115>Например, разбиение числа 6 будет представлено 11 
+            комбинациями:</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <DIV class=example><PRE>6
+5+1
+4+2,  4+1+1
+3+3,  3+2+1,  3+1+1+1
+2+2+2,  2+2+1+1,  2+1+1+1+1
+1+1+1+1+1+1
+</PRE></DIV>
+            <P id=id_117>Рассмотрим решение в общем виде. Пусть зависимость 
+            <SPAN class=texample>R(n,k)</SPAN> вычисляет количество разбиений 
+            числа <SPAN class=texample>n</SPAN> на сумму слагаемых, не 
+            превосходящих <SPAN class=texample>k</SPAN>. Опишем свойства <SPAN 
+            class=texample>R(n,k)</SPAN>.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_122>Если в сумме все слагаемые не превосходят 1, то такое 
+            представление единственно, то есть <SPAN 
+            class=texample>R(n,k)=1</SPAN>.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_124>Если рассматриваемое число равно 1, то при любом 
+            натуральном значении второго параметра разбиение также единственно: 
+            <SPAN class=texample>R(n,k)=1</SPAN>.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_126>Если второй параметр превосходит значение первого , то 
+            имеет место равенство <SPAN class=texample>R(n,k)=R(n,n)</SPAN>, так 
+            как для представления натурального числа в сумму не могут входить 
+            числа, превосходящие его.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_128>Если в сумму входит слагаемое, равное первому 
+            параметру, то такое представление также единственно (содержит только 
+            это слагаемое), поэтому имеет место равенство: <SPAN 
+            class=texample>R(n,n)=R(n,n-1)+1</SPAN>.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_130>Осталось рассмотреть случай <SPAN 
+            class=texample>(n&gt;k)</SPAN>. Разобьем все представления числа 
+            <SPAN class=texample>n</SPAN> на непересекающиеся разложения: в одни 
+            обязательно будет входить слагаемое <SPAN class=texample>k</SPAN>, а 
+            другие суммы не содержат <SPAN class=texample>k</SPAN>. Первая 
+            группа сумм, содержащая <SPAN class=texample>k</SPAN>, эквивалентна 
+            зависимости <SPAN class=texample>R(n-k,k)</SPAN>, что следует после 
+            вычитания числа <SPAN class=texample>k</SPAN> из каждой суммы. 
+            Вторая группа сумм содержит разбиение числа <SPAN 
+            class=texample>n</SPAN> на слагаемые, каждое из которых не 
+            превосходит <SPAN class=texample>k-1</SPAN>, то есть число таких 
+            представлений равно <SPAN class=texample>R(n,k-1)</SPAN>. Так как 
+            обе группы сумм не пересекаются, то <SPAN 
+            class=texample>R(n,k)=R(n-k,k)+R(n,k-1)</SPAN>.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_142>Разработаем рекурсивную триаду.</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_143><SPAN class=xml_em_italic>Параметризация:</SPAN> 
+            Рассмотрим разбиение натурального числа <SPAN 
+            class=texample>n</SPAN> на сумму таких слагаемых, которые не 
+            превосходят натурального числа <SPAN class=texample>k</SPAN>.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_146><SPAN class=xml_em_italic>База рекурсии:</SPAN> исходя 
+            из свойств рассмотренной зависимости, выделяются два базовых 
+            случая:</P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_147>при <SPAN 
+            class=texample>n=1</SPAN>&nbsp;&nbsp;&nbsp;<SPAN 
+            class=texample>R(n,k)=1</SPAN>,</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_150>при <SPAN 
+            class=texample>k=1</SPAN>&nbsp;&nbsp;&nbsp;<SPAN 
+            class=texample>R(n,k)=1</SPAN>.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_153><SPAN class=xml_em_italic>Декомпозиция:</SPAN> общий 
+            случай задачи сводится к трем случаям, которые и составляют 
+            декомпозиционные отношения.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154>при <SPAN 
+            class=texample>n=k</SPAN>&nbsp;&nbsp;&nbsp;<SPAN 
+            class=texample>R(n,k)=R(n,n-1)+1</SPAN>,</P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_157>при <SPAN 
+            class=texample>n&lt;k</SPAN>&nbsp;&nbsp;&nbsp;<SPAN 
+            class=texample>R(n,k)=R(n,n)</SPAN>,</P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <P id=id_160>при <SPAN 
+            class=texample>n&gt;k</SPAN>&nbsp;&nbsp;&nbsp;<SPAN 
+            class=texample>R(n,k)=R(n-k,k)+R(n,k-1)</SPAN>.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+unsigned long int Razbienie(unsigned long int n, 
+                            unsigned long int k);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  unsigned long int number, max,num;
+  printf ("\nВведите натуральное число: ");
+  scanf ("%d", &amp;number);
+  printf ("Введите максимальное натуральное слагаемое в 
+           сумме: ");
+  scanf ("%d", &amp;max); 
+  num=Razbienie(number,max);
+  printf ("Число %d можно представить в виде суммы с 
+           максимальным слагаемым %d.", number, max);
+  printf ("\nКоличество разбиений равно %d",num);
+  system("pause");
+  return 0;
+}
+
+unsigned long int Razbienie(unsigned long int n,
+                            unsigned long int k){
+  if(n==1 || k==1)  return 1;
+  if(n&lt;=k)  return Razbienie(n,n-1)+1;        
+  return Razbienie(n,k-1)+Razbienie(n-k,k);
+}
+</PRE></DIV>
+            <P id=id_164><SPAN class=xml_em_italic>Пример 4. Задача о переводе 
+            натурального числа в шестнадцатеричную систему счисления.</SPAN></P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_165>Дано натуральное число, не выходящее за пределы типа 
+            <SPAN class=texample>unsigned long</SPAN>. Число представлено в 
+            десятичной системе счисления. Переведите его в систему счисления с 
+            основанием 16.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_167>Пусть требуется перевести целое число <SPAN 
+            class=texample>n</SPAN> из десятичной в <SPAN 
+            class=texample>р</SPAN>-ичную систему счисления (по условию задачи, 
+            <SPAN class=texample>р</SPAN> = 16), то есть найти такое <SPAN 
+            class=texample>k</SPAN>, чтобы выполнялось равенство <SPAN 
+            class=texample>n<SUB>10</SUB>=k<SUB>p</SUB></SPAN>.</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_173><SPAN class=xml_em_italic>Параметризация:</SPAN> <SPAN 
+            class=texample>n</SPAN> – данное натуральное число, <SPAN 
+            class=texample>р</SPAN> – основание системы счисления.</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_176><SPAN class=xml_em_italic>База рекурсии:</SPAN> на 
+            основании правил перевода чисел из десятичной системы в систему 
+            счисления с основанием <SPAN class=texample>р</SPAN>, деление нацело 
+            на основание системы выполняется до тех пор, пока неполное частное 
+            не станет равным нулю, то есть: если целая часть частного <SPAN 
+            class=texample>n</SPAN> и <SPAN class=texample>р</SPAN> равна нулю, 
+            то <SPAN class=texample>k = n</SPAN>. Данное условие можно 
+            реализовать иначе, сравнив <SPAN class=texample>n</SPAN> и <SPAN 
+            class=texample>р</SPAN>: целая часть частного равна нулю, если <SPAN 
+            class=texample>n &lt; р</SPAN>.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_184><SPAN class=xml_em_italic>Декомпозиция:</SPAN> в общем 
+            случае <SPAN class=texample>k</SPAN> формируется из цифр целой части 
+            частного <SPAN class=texample>n</SPAN> и <SPAN 
+            class=texample>р</SPAN>, представленной в системе счисления с 
+            основанием <SPAN class=texample>р</SPAN>, и остатка от деления <SPAN 
+            class=texample>n</SPAN> на <SPAN class=texample>p</SPAN>.</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define maxline 50 
+void perevod( unsigned long n, unsigned int p,FILE *pf);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  unsigned long number10;
+  unsigned int osn=16; 
+  char number16[maxline];
+  FILE *f;
+  if ((f=fopen("out.txt", "w"))==NULL)
+    perror("out.txt");
+  else {
+    printf ("\nВведите число в десятичной системе: "); 
+    scanf("%ld", &amp;number10);
+    perevod(number10, osn, f); 
+   fclose(f);
+  }
+  if ((f=fopen("out.txt", "r"))==NULL)
+    perror("out.txt"); 
+  else {  
+    fscanf(f,"%s",number16);
+    printf("\n %ld(10)=%s(16)", number10, number16);
+    fclose(f); 
+  }
+  system("pause");
+  return 0;
+}
+
+void perevod(unsigned long n, unsigned int p, FILE *pf){
+  char c;
+  unsigned int r;
+  if(n &gt;= p) perevod (n/p, p, pf);//декомпозиция
+  r=n%p;
+  c=r &lt; 10 ? char (r+48) : char (r+55);
+  putc(c, pf);
+}
+</PRE></DIV><A name=sect3></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_192><B>База рекурсии</B> – это тривиальный случай, при 
+            котором решение задачи очевидно, то есть не требуется обращение 
+            функции к себе.</P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <P id=id_193><B>Глубина рекурсивных вызовов</B> – это наибольшее 
+            одновременное количество рекурсивных обращений функции, определяющее 
+            максимальное количество слоев рекурсивного стека. </P>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_194><B>Декомпозиция</B> – это выражение общего случая через 
+            более простые подзадачи с измененными параметрами.</P>
+            <DIV id=mark_194 class=lecture_mark></DIV>
+            <P id=id_195><B>Корень полного дерева рекурсивных вызовов</B> – это 
+            вершина полного дерева рекурсии, соответствующая начальному 
+            обращению к функции.</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_196><B>Косвенная (взаимная) рекурсия</B> – это 
+            последовательность взаимных вызовов нескольких функций, 
+            организованная в виде циклического замыкания на тело первоначальной 
+            функции, но с иным набором параметров.</P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <P id=id_197><B>Объем рекурсии</B> - это характеристика сложности 
+            рекурсивных вычислений для конкретного набора параметров, 
+            представляющая собой количество вершин полного рекурсивного дерева 
+            без единицы.</P>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_198><B>Параметризация</B> – это выделение из постановки 
+            задачи параметров, которые используются для описания условия задачи 
+            и решения.</P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_199><B>Полное дерево рекурсии</B> – это граф, вершинами 
+            которого являются наборы фактических параметров при всех вызовах 
+            функции, начиная с первого обращения к ней, а ребрами – пары таких 
+            наборов, соответствующих взаимным вызовам.</P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <P id=id_200><B>Прямая рекурсия</B> – это непосредственное обращение 
+            рекурсивной функции к себе, но с иным набором входных данных. </P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_201><B>Рекурсивная триада</B> – это этапы решения задач 
+            рекурсивным методом.</P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202><B>Рекурсивная функция</B> – это функция, которая в 
+            своем теле содержит обращение к самой себе с измененным набором 
+            параметров.</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203><B>Рекурсивный алгоритм</B> – это алгоритм, в 
+            определении которого содержится прямой или косвенный вызов этого же 
+            алгоритма.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_204><B>Рекурсия</B> – это определение объекта посредством 
+            ссылки на себя.</P>
+            <DIV id=mark_204 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_205>
+              <LI>Рекурсия характеризуется определением объекта посредством 
+              ссылки на себя.
+              <LI>Рекурсивные алгоритмы содержат в своем теле прямое или 
+              опосредованное обращение с самим себе.
+              <LI>Рекурсивные функции содержат в своем теле обращение к самим 
+              себе с измененным набором параметров в виде прямой рекурсии. При 
+              этом обращение к себе может быть организовано посредством 
+              косвенной рекурсии – через цепочку взаимных обращений функций, 
+              замыкающихся в итоге на первоначальную функцию.
+              <LI>Решение задач рекурсивными способами проводится посредством 
+              разработки рекурсивной триады.
+              <LI>Целесообразность применения рекурсии в программировании 
+              обусловлена спецификой задач, в постановке которых явно или 
+              опосредовано указывается на возможность сведения задачи к 
+              подзадачам, аналогичным самой задаче.
+              <LI>Рекурсивные методы решения задач широко используются при 
+              моделировании задач из различных предметных областей.
+              <LI>Рекурсивные алгоритмы относятся к ресурсоемким алгоритмам. Для 
+              оценки сложности рекурсивных алгоритмов учитывается число вершин 
+              полного рекурсивного дерева, количество передаваемых параметров, 
+              временные затраты на организацию стековых слоев.</LI></OL>
+            <DIV id=mark_205 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Лабораторная работа 34. Рекурсия и рекурсивные алгоритмы</H3>
+            <P id=id_213><B>Цель работы:</B> изучить понятие, виды рекурсии и 
+            рекурсивную триаду, научиться разрабатывать рекурсивную триаду при 
+            решении задач на языке C++.</P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <P id=id_214>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            числовые данные, выполняет их обработку в соответствии с 
+            требованиями задания и выводит результат на экран. Для обработки 
+            данных необходимо реализовать рекурсивную функцию. Ввод данных 
+            осуществляется с клавиатуры с учетом требований к входным данным, 
+            содержащихся в постановке задачи (ввод данных сопровождайте 
+            диалогом). Ограничениями на входные данные является допустимый 
+            диапазон значений используемых числовых типов в языке С++.</P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_215><B>Теоретические сведения.</B></P>
+            <DIV id=mark_215 class=lecture_mark></DIV>
+            <P id=id_216>Ознакомьтесь с материалом лекции 34.</P>
+            <DIV id=mark_216 class=lecture_mark></DIV>
+            <P id=id_217><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_217 class=lecture_mark></DIV>
+            <P id=id_218>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_218 class=lecture_mark></DIV>
+            <OL id=id_219>
+              <LI>Разработайте рекурсивную функцию, подсчитывающую количество 
+              способов разбиения выпуклого многоугольника на треугольники 
+              непересекающимися диагоналями.
+              <LI>В Фибоначчиевой системе счисления числа формируются по 
+              правилам. 
+              <UL id=id_222>
+                <LI>Используются только символы 0 и 1;
+                <LI>Каждый разряд соответствует элементу последовательности 
+                Фибоначчи 1, 2, 3, 5, 8, …, то есть указывает на наличие или 
+                отсутствие такового;
+                <LI>В соседних разрядах не могут стоять символы 1, так как это 
+                автоматически означает формирование следующего за ними разряда. 
+                Например, 17<SUB>10</SUB> = 13<SUB>10</SUB> + 3<SUB>10</SUB> + 
+                1<SUB>10</SUB> = 100101<SUB>ф</SUB>.</LI></UL>
+              <DIV id=mark_222 class=lecture_mark></DIV>Составьте программу 
+              перевода числа из десятичной системы в Фибоначчиевую. Считать 
+              входные данные введенными корректно. 
+              <LI>Найдите походящие дроби рационального числа <SPAN 
+              class=texample>x/y</SPAN> (<SPAN class=texample>x</SPAN> – 
+              неотрицательно, <SPAN class=texample>y</SPAN> – положительно). 
+              Например, <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 8px" 
+              alt=\frac56=0+\frac{1}{1+\frac15} 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/57c2b97314a95ad68454d928d4fbfbed.png" 
+              width=99 height=31>, то есть для <SPAN class=texample>х = 5, y = 
+              6</SPAN> ответом будет последовательность <SPAN class=texample>[0; 
+              1, 5]</SPAN>.
+              <LI>Вычислите определитель квадратной матрицы размера <SPAN 
+              class=texample>n&#215;n</SPAN>.</LI></OL>
+            <DIV id=mark_219 class=lecture_mark></DIV>
+            <P id=id_235><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_235 class=lecture_mark></DIV>
+            <P id=id_236>Каждое задание необходимо решить в соответствии с 
+            изученными рекурсивными методами решения задач и методами обработки 
+            числовых данных в языке С++. Перед реализацией кода каждой задачи 
+            необходимо разработать рекурсивную триаду в соответствии с 
+            постановкой задачи: выполнить параметризацию, выделить базу и 
+            оформить декомпозицию рекурсии. Этапы рекурсивной триады необходимо 
+            отразить в математической модели к отчету, выполнив обоснование 
+            декомпозиции. Программу для решения каждого задания необходимо 
+            разработать методом процедурной абстракции, используя рекурсивные 
+            функции. Этапы сопроводить комментариями в коде.</P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <P id=id_237>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_237 class=lecture_mark></DIV>
+            <UL id=id_238>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_247><B>Требования к отчету.</B></P>
+            <DIV id=mark_247 class=lecture_mark></DIV>
+            <P id=id_248>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_248 class=lecture_mark></DIV>
+            <UL id=id_249>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_249 class=lecture_mark></DIV>
+            <P id=id_258><B>Контрольные вопросы</B></P>
+            <DIV id=mark_258 class=lecture_mark></DIV>
+            <OL id=id_259>
+              <LI>Можно ли случай косвенной рекурсии свести к прямой рекурсии? 
+              Ответ обоснуйте.
+              <LI>Может ли рекурсивная база содержать несколько тривиальных 
+              случаев? Ответ обоснуйте.
+              <LI>Являются ли параметры, база и декомпозиция единственными для 
+              конкретной задачи? Ответ обоснуйте.
+              <LI>С какой целью в задачах происходит пересмотр или корректировка 
+              выбранных параметров, выделенной базы или случая декомпозиции?
+              <LI>Является ли рекурсия универсальным способом решения задач? 
+              Ответ обоснуйте.
+              <LI>Почему для оценки трудоемкости рекурсивного алгоритма 
+              недостаточно одного метода подсчета вершин рекурсивного дерева?
+              <LI>Выполните оценку алгоритма из <SPAN 
+              class=xml_em_italic>Примера 3</SPAN> лекции 34 методом подсчета 
+              вершин рекурсивного дерева для случая <SPAN class=texample>n = 6, 
+              k = 6</SPAN>.</LI></OL>
+            <DIV id=mark_259 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

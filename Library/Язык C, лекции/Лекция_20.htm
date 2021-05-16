@@ -1,0 +1,1059 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_20_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_20_files/mht5911(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_20_files/mht5911(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_20_files/mht5911(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>20. Лекция: Программы на языке С при 
+            использовании статически подключаемой библиотеки: версия для печати 
+            и PDA</SPAN> <BR><SPAN class=rtxt>В лекции ставится задача научиться 
+            создавать и применять статическую подключаемую библиотеку с помощью 
+            MS Visual Studio 2010, осуществлять компиляцию нескольких файлов, 
+            размещенных в статической библиотеке. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_20_files/mht5911(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Библиотека представляет собой набор функций [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>20.1</A>]. Когда программа использует библиотечную 
+            функцию, редактор связей находит эту функцию и добавляет ее код в 
+            программу. Исполняемый файл содержит только те функции, которые 
+            используются программой, а не все библиотечные функции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>20.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Статически подключаемая библиотека содержит набор уже 
+            откомпилированных объектных файлов с функциями и данными. Библиотеки 
+            целесообразно применять для хранения функций, которые могут быть 
+            использованы при создании различных программ, реализующих 
+            распространенные алгоритмы и осуществляющих поддержку и обработку 
+            распространенных структур данных.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Библиотека называется <SPAN 
+            class=xml_em_italic>статически подключаемой</SPAN>, если код, 
+            содержащийся в ней, непосредственно компонуется к основной 
+            программе.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Механизм компиляции и компоновки программы на языке 
+            <B>C</B> требует, помимо наличия откомпилированного библиотечного 
+            модуля, присутствия заголовочных файлов ( <SPAN 
+            class=xml_em_italic>h</SPAN> -файлов), содержащих объявления 
+            структур данных и прототипы функций, предоставляемых 
+библиотекой.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Среда Visual Studio 2010 использует расширение 
+            <B>.lib</B> для библиотечных модулей. При создании статически 
+            подключаемой библиотеки в среде Visual Studio 2010 необходимо 
+            выполнить следующую последовательность действий.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6>Создать новый проект (пункты главного меню: 
+            <B>File–New–Project</B> ), выбрать тип проекта в списке <B>Project 
+            types: Win32–Win32Project</B> и задать имя проекта, например, 
+            <B>containers</B>. При необходимости можно указать место его 
+            расположения, используя кнопку <B>Browse</B>. В результате должна 
+            получиться форма, показанная на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.1">рис. 
+            20.1</A>.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7 align=left><A name=image.20.1></A></P>
+            <DIV><IMG alt="Окно создания проекта с подключаемой библиотекой" 
+            src="Лекция_20_files/mht5952(1).tmp" width=620 
+            height=446></DIV><BR><B>Рис. 20.1.</B>&nbsp; Окно создания проекта с 
+            подключаемой библиотекой
+            <P></P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8>Далее следует нажать кнопку <B>OK</B>. Появится форма С 
+            заголовком "Win32 Application Wizard – containers.</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>На закладке <B>Application Settings</B> мастера создания 
+            проекта сделать следующие настройки:</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <UL id=id_10>
+              <LI><B>Application type</B> (тип приложения) установить в 
+              <B>Static Library</B> (статическая библиотека);
+              <LI>Снять флажок с пункта <B>Precompiled header</B> 
+              (прекомпилированный заголовок).</LI></UL>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_13>После установки настроек появится форма (<A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.2">рис. 
+            20.2</A>), которая представляет собой пустой проект статической 
+            библиотеки.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14 align=left><A name=image.20.2></A></P>
+            <DIV><IMG alt="Окно создания проекта с подключаемой библиотекой" 
+            src="Лекция_20_files/mht59C2(1).tmp" width=615 
+            height=524></DIV><BR><B>Рис. 20.2.</B>&nbsp; Окно создания проекта с 
+            подключаемой библиотекой
+            <P></P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Для завершения настройки закладки Application Settings 
+            следует нажать кнопку <B>Finish</B>. Появится форма, показанная на 
+            <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.3">рис. 
+            20.3</A>.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16 align=left><A name=image.20.3></A></P>
+            <DIV><IMG alt="Окно пустого проекта для статической библиотеки" 
+            src="Лекция_20_files/mht59E5(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 20.3.</B>&nbsp; Окно пустого проекта 
+            для статической библиотеки
+            <P></P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Добавление файлов в проект библиотеки осуществляется 
+            стандартным образом, как и для проекта Win32 Console Application. В 
+            соответствии с <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.3">рис. 
+            20.3</A>существующие файлы, которые будут использоваться в 
+            многофайловом проекте, могут быть подключены при установки курсора 
+            мыши на папках Header Files, Resource Files, Source Files с 
+            последующим нажатием правой клавиши и выбором пункта меню 
+            <B>Add</B>, а именно <B>Existing Item</B>.</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_18>Для подключения <SPAN class=xml_em_italic>h</SPAN> 
+            -файлов, т.е. <B>*.h</B>, следует обратиться к папке проекта Header 
+            Files, для подключения к проекту с-файлов, т. е. <B>*.с</B>, 
+            использовать папку Source Files.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Выполним подключение существующих файлов <B>stack.h</B> 
+            / <B>stack.c</B>, <B>queue.h</B> / <B>queue.c</B>, реализующие в 
+            простейшем виде две важные структуры данных – стек и очередь.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Так как статическая библиотека не является исполняемой 
+            программой, а только механизмом для хранения подпрограмм, то среди 
+            функций библиотеки не должно быть функции <SPAN 
+            class=texample>main()</SPAN>.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_22>После подключения файлов получится форма, показанная на 
+            <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.4">рис. 
+            20.4</A>, с открытой программой файла <B>stack.h</B>.</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_23 align=left><A name=image.20.4></A></P>
+            <DIV><IMG 
+            alt="Окно проекта статической библиотеки с подключенными файлами" 
+            src="Лекция_20_files/mht5A07(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 20.4.</B>&nbsp; Окно проекта 
+            статической библиотеки с подключенными файлами
+            <P></P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>До выполнения компиляции необходимо выполнить настройку 
+            проекта. Настройка параметров компилятора выполняется так же, как и 
+            для проекта Win32 Console Application. В частности, из пункта меню 
+            <B>Project</B> следует выбрать <B>containers Properties</B> 
+            (Alt+F7). После раскрытия узла Configuration Properties появится 
+            форма, показанная на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.5">рис. 
+            20.5</A>.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25 align=left><A name=image.20.5></A></P>
+            <DIV><IMG alt="Обращение к странице свойств проекта" 
+            src="Лекция_20_files/mht5A19(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.5.</B>&nbsp; Обращение к странице 
+            свойств проекта
+            <P></P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>Сначала следует обратиться к пункту <B>General</B>. 
+            Затем, к закладке <B>Character Set</B>, в которой выбрать <B>Use 
+            Multy-Byte Character Set</B> (как и при настройке консольного 
+            приложения).</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>Далее необходимо раскрыть узел <B>С/С++</B>, в котором 
+            следует обратиться к закладке <B>Code Generation</B>, затем в другой 
+            панели закладка <B>Enable C++ Exceptions</B> устанавливается в 
+            положение <B>No</B> (как и при настройке консольного 
+приложения).</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28>Результат установки свойств следующей закладки 
+            <B>Language</B> показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.6">рис. 
+            20.6</A>.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29 align=left><A name=image.20.6></A></P>
+            <DIV><IMG alt="Установка свойств закладки Language" 
+            src="Лекция_20_files/mht5A3C(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.6.</B>&nbsp; Установка свойств 
+            закладки Language
+            <P></P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Режим работы языка <B>С</B> в MS Visual Studio 
+            устанавливается на закладке <B>Advanced</B>. Результат установки 
+            показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.7">рис. 
+            20.7</A>.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31 align=left><A name=image.20.7></A></P>
+            <DIV><IMG alt="Результат выбора компиляции языка С" 
+            src="Лекция_20_files/mht5A5E(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.7.</B>&nbsp; Результат выбора 
+            компиляции языка С
+            <P></P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>Важным моментом, на который требуется обратить внимание, 
+            является версия используемой библиотеки времени выполнения (runtime 
+            library). Библиотека времени выполнения содержит функции стандартной 
+            библиотеки языка <B>С</B>, а также некоторое вспомогательное 
+            окружение, которое позволяет программе, написанной на языке 
+            <B>С</B>, выполняться в ОС Windows. Версия библиотеки времени 
+            выполнения для статически подключаемой библиотеки и для программы, 
+            ее использующей, должны совпадать. По этой причине статически 
+            подключаемую библиотеку часто компилируют в различных конфигурациях, 
+            каждая из которых использует свою версию библиотеки времени 
+            выполнения. В примере будем использовать многопоточную отладочную 
+            версию библиотеки времени выполнения, подключаемую к программе 
+            динамически (Multi-threaded Debug DLL) для отладочной сборки 
+            библиотеки, и многопоточную версию подключаемую динамически 
+            (Multi-threaded DLL), для конечной версии программы.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>Тип используемой библиотеки времени выполнения 
+            выбирается на странице свойств 
+            <B>[C/C++]|[Code?Generation]|[Runtime?Library]</B>. Результат выбора 
+            типа библиотеки показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.8">рис. 
+            20.8</A> (по умолчанию).</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34 align=left><A name=image.20.8></A></P>
+            <DIV><IMG alt="Установка типа библиотеки времени выполнения" 
+            src="Лекция_20_files/mht5A80(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.8.</B>&nbsp; Установка типа 
+            библиотеки времени выполнения
+            <P></P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_141>Подключение программных файлов осуществляется обычными 
+            средствами, рассмотренными, например, в <A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/17/">лекции 
+            17</A>.</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_35>Добавим к проекту статической библиотеки файлы 
+            <B>stack.h/stack.c</B> и <B>queue.h/queue.c</B>, реализующие в 
+            простейшем виде две важные структуры данных – стек и очередь. 
+            Подключение программных файлов осуществляется обычными средствами, 
+            рассмотренными, например, в предыдущей теме. Программный код каждого 
+            из подключенных файлов можно вывести (двойным щелчком мыши) в окно 
+            редактирования. Для примера выведем код файла <B>stack.h</B>.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_36>Результат подключения файлов файлы 
+            <B>stack.h/stack.c</B> и <B>queue.h/queue.c</B>, показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.9">рис. 
+            20.9</A>.</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_37 align=left><A name=image.20.9></A></P>
+            <DIV><IMG alt="Форма с подключенными файлами" 
+            src="Лекция_20_files/mht5A93(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 20.9.</B>&nbsp; Форма с подключенными 
+            файлами
+            <P></P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38>После выполнения настроек компилятора необходимо 
+            выполнить настройки библиотекаря ( <B>Librarian</B> ) на вкладке 
+            после узла <B>С/С++</B>. Страница свойств библиотекаря содержит 
+            несколько настроек, из которых основной является имя создаваемой 
+            библиотеки. По умолчанию имя библиотеки совпадает с именем проекта. 
+            В этом случае следует оставить без изменения имеющиеся настройки 
+            закладки <B>General</B> узла <B>Librarian</B>. На закладке 
+            <B>General</B> в пункте Output File по умолчанию установлено 
+            <B>$OutDir$(TargetName)$(TargetExt)</B>, что оставляем без 
+            изменения.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39>Открывающаяся страница свойств показана на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.10">рис. 
+            20.10</A>.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <P id=id_40 align=left><A name=image.20.10></A></P>
+            <DIV><IMG alt="Страница свойств Librarian – General – Output File" 
+            src="Лекция_20_files/mht5AB5(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.10.</B>&nbsp; Страница свойств 
+            Librarian – General – Output File
+            <P></P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Настройка свойств Librarian завершается нажатием клавиш 
+            "Применить" и "OK".</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <P id=id_42>После завершения настроек выполняется компиляция и 
+            сборка библиотеки. В процессе компиляции модули, входящие в состав 
+            библиотеки (файлы с расширением <B>.c</B> ), сначала обрабатываются 
+            препроцессором языка <B>C</B>, затем компилируются независимо друг 
+            от друга. В результате компиляции получается набор файлов с 
+            расширением <B>.obj</B>, содержащих скомпилированный код 
+            библиотечных функций. Затем полученный набор объектных файлов (с 
+            расширением <B>.obj</B> ) объединяется в библиотечный модуль (файл с 
+            расширением <B>.lib</B> ).</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43>Процесс сборки проекта статической библиотеки 
+            запускается из пункта меню <B>Build&nbsp;–&nbsp;Build 
+            containers</B>. Результат выбора показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.11">рис. 
+            20.11</A>.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44 align=left><A name=image.20.11></A></P>
+            <DIV><IMG alt="Запуск компиляции и сборки библиотеки" 
+            src="Лекция_20_files/mht5AD7(1).tmp" width=583 
+            height=424></DIV><BR><B>Рис. 20.11.</B>&nbsp; Запуск компиляции и 
+            сборки библиотеки
+            <P></P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>В процессе сборки библиотеки компилятор и библиотекарь 
+            (Librarian) выводят в окно сообщений (Output) среды Visual Studio 
+            диагностическую информацию. Эти сообщения содержат результаты 
+            компиляции каждого из модулей, подключенных к проекту статической 
+            библиотеки, возможные предупреждения компилятора и конечную 
+            статистику (например, количество ошибок и предупреждений) сборки 
+            статической библиотеки.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_46>Сообщение о результатах компиляции рассматриваемого 
+            примера показаны на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.12">рис. 
+            20.12</A>.</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_47 align=left><A name=image.20.12></A></P>
+            <DIV><IMG alt="Окно с сообщением об успешной компиляции библиотеки" 
+            src="Лекция_20_files/mht5AF9(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 20.12.</B>&nbsp; Окно с сообщением об 
+            успешной компиляции библиотеки
+            <P></P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_48>В результате произведенной компиляции получаем папку с 
+            именем созданной библиотеки (containers), в которой в папке Debug 
+            располагается двоичный объектный библиотечный модуль – файл с 
+            расширением <B>.lib</B>. Для данного случая это файл 
+            <B>containers.lib</B>.</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49>Программные коды подключаемых файлов:</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// file stack.h
+#ifndef STACK_H__
+#define STACK_H__
+
+/// by default a stack reserves space for 16 items
+#define STACK_INITIAL_CAPACITY 16
+
+typedef struct stack {
+	/// number of items in the stack
+	int m_length;
+	/// capacity of the stack
+	int m_capacity;
+	/// block of memory for the stack
+	int *m_items;
+} stack_t;
+   
+/// create a new stack and returns it
+stack_t *stack_create (int capacity);
+/// destroys the stack and frees resources
+void stack_destroy (stack_t *stack);
+
+/// pushes an item into the stack
+int stack_push (stack_t *stack, int item);
+/// pops the item from the stack
+int stack_pop (stack_t *stack);
+/// checks whether the stack is empty
+int stack_is_empty (stack_t *stack);
+
+#endif</PRE></DIV>
+            <DIV class=example><PRE>// file stack.c
+#include &lt;assert.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stddef.h&gt;
+#include "stack.h"
+
+static int stack_ensure_capacity (stack_t *stack, int capacity)
+{
+	int capacityDesired;
+	int *p;
+
+	if (stack-&gt;m_capacity &gt;= capacity)
+		return 1;
+	capacityDesired = stack-&gt;m_capacity * 2;
+p = realloc (stack-&gt;m_items, capacityDesired * sizeof (int));
+	if (!p)
+		return 0;
+
+	stack-&gt;m_items = p;
+	stack-&gt;m_capacity = capacityDesired;
+	return 1;
+}
+     stack_t* stack_create (int capacity) {
+	stack_t *result;
+
+	if (capacity &lt;= 0)
+		capacity = STACK_INITIAL_CAPACITY;
+		result = malloc (sizeof (stack_t));
+	if (!result)
+		return NULL;
+	
+	result-&gt;m_items = malloc (capacity * sizeof (int));
+	if (!result-&gt;m_items) {
+		free (result);
+		return NULL;
+	}
+	result-&gt;m_capacity = capacity;
+	result-&gt;m_length = 0;
+	return result;
+}
+    void stack_destroy (stack_t *stack)
+ {
+	assert (stack != NULL);
+	assert (stack-&gt;m_items != NULL);
+
+	free (stack-&gt;m_items);
+	free (stack);
+}
+
+int stack_push (stack_t *stack, int item)
+ {
+	assert (stack != NULL);
+	assert (stack-&gt;m_capacity &gt; 0);
+	assert (stack-&gt;m_items != NULL);
+
+	if (!stack_ensure_capacity (stack, stack-&gt;m_length + 1))
+		return 0;
+
+	stack-&gt;m_items[stack-&gt;m_length++] = item;
+	return 1;
+}
+
+int stack_pop (stack_t *stack)
+ {
+	assert (!stack_is_empty (stack));
+
+	return stack-&gt;m_items[--stack-&gt;m_length];
+}
+
+int stack_is_empty (stack_t *stack)
+ {
+	assert (stack != NULL);
+
+return stack-&gt;m_length &lt;= 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// file queue.h
+#ifndef QUEUE_H__
+#define QUEUE_H__
+
+typedef struct queue_item 
+{
+	/// pointer to the next item in the queue
+	struct queue_item *m_next;
+	
+    /// item data
+	int m_item;
+} queue_item_t;
+
+typedef struct queue
+ {
+	/// number of items in the queue
+	int m_length;
+	/// first item in the queue
+	struct queue_item *m_head;
+	/// last items in the queue
+	struct queue_item **m_tailnext;
+} queue_t;
+
+/// creates a new queue and returns it
+queue_t *queue_create ();
+/// destroys the queue and frees resources
+void queue_destroy (queue_t *queue);
+/// pushes an item into the queue adding it to the queue's tail
+int queue_push (queue_t *queue, int item);
+/// pops the item from the queue, removing it from the queue's head
+int queue_pop (queue_t *queue);
+/// checks whether the queue is empty
+int queue_is_empty (queue_t *queue);
+
+#endif</PRE></DIV>
+            <DIV class=example><PRE>// file queue.c
+#include &lt;assert.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stddef.h&gt;
+#include "queue.h"
+
+queue_t* queue_create () 
+{
+	queue_t *queue;
+	queue = malloc (sizeof (queue_t));
+	if (!queue)
+		return NULL;
+	
+	queue-&gt;m_head = NULL;
+	queue-&gt;m_tailnext = &amp;(queue-&gt;m_head);
+	queue-&gt;m_length = 0;
+	return queue;
+}
+
+void queue_destroy (queue_t *queue)
+ {
+	queue_item_t *p;
+	assert (queue != NULL);
+
+	for (p = queue-&gt;m_head; p != NULL; p = p-&gt;m_next)
+		free (p);
+	free (queue);
+}
+
+int queue_push (queue_t *queue, int item)
+ {
+	queue_item_t *p;
+	assert (queue != NULL);
+	assert (queue-&gt;m_tailnext != NULL);
+
+	// create new queue item and insert it into tail
+	p = malloc (sizeof (queue_item_t));
+	if (!p)
+		return 0;
+	p-&gt;m_next = NULL;
+	p-&gt;m_item = item;
+	*queue-&gt;m_tailnext = p;
+	queue-&gt;m_tailnext = &amp;(p-&gt;m_next);
+	++queue-&gt;m_length;
+	return 1; }
+
+int queue_pop (queue_t *queue) {
+	queue_item_t *p;
+	assert (!queue_is_empty (queue));
+
+	// detach head and return the item
+	p = queue-&gt;m_head;
+	if (p) 
+    {
+		int item = p-&gt;m_item;
+		queue-&gt;m_head = p-&gt;m_next;
+		// if the last one was removed than 
+         // we should reset our tail
+		if (queue-&gt;m_tailnext == &amp;(p-&gt;m_next))
+			queue-&gt;m_tailnext = &amp;(queue-&gt;m_head);
+		free (p);
+		
+         --queue-&gt;m_length;
+		assert (queue-&gt;m_length &gt;= 0);
+		return item;
+	}
+	assert (1 != 1);
+	// should not happen
+	return 0;
+}
+
+int queue_is_empty (queue_t *queue)
+{
+	assert (queue != NULL);
+
+	return queue-&gt;m_length &lt;= 0;
+}</PRE></DIV>
+            <P id=id_54>Для работы с созданной библиотекой следует создать 
+            проект с главной функцией <SPAN class=texample>main()</SPAN>, в 
+            которой подключаются файлы, расположенные в созданной статической 
+            библиотеке, с помощью директив <B>#include</B>. Для подключаемых 
+            файлов необходимо указать путь, где они расположены. Обычно это 
+            делается с помощью нотации <B>"..\..\stack.h"</B>, которая 
+            указывает, что файл <B>stack.h</B> расположен на два уровня выше, 
+            чем функция <SPAN class=texample>main()</SPAN>, в которой он будет 
+            использоваться.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_57>Настройка проекта с главной функцией <SPAN 
+            class=texample>main()</SPAN> выполняется при установке режима 
+            компиляции языка С системы MS Visual Studio 2010.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_59>Для этого в меню системы MS Visual Studio 
+            последовательно выбирается 
+            <B>File&nbsp;–&nbsp;New&nbsp;–&nbsp;Project</B>. Далее из списка 
+            типа проекта Project types также последовательно выбираются 
+            <B>Visual C++ – Win32–&nbsp;Win32 Console Application</B>. 
+            Прописывается в поле <B>Name</B>: имя проекта, например, 
+            <B>Lab20</B>. Далее осуществляется настройка проекта в режиме 
+            компиляции языка <B>С</B> (см. Тему&nbsp;1 данного пособия).</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>При настройке параметров компилятора дополнительно 
+            необходимо указать компилятору пути к заголовочным файлам 
+            <B>stack.h</B> и <B>queue.h</B>, содержащие объявления интерфейса 
+            созданной библиотеки <B>containers</B>. Эти пути можно указать в 
+            пункте <B>Additional Include Directories</B> (дополнительные 
+            каталоги с заголовочными файлами) на странице свойств 
+            [C/C++]|[General]</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_61>Указывается путь к папке <B>containers</B>, в которой 
+            находятся библиотечные файлы <B>stack.h/stack.с</B> и 
+            <B>queue.h/queue.с</B> в виде <B>..\..\containers\ 
+            containers</B>.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62>Форма с установкой пути к созданной статической 
+            библиотеке показана на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.13">рис. 
+            20.13</A>.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_63 align=left><A name=image.20.13></A></P>
+            <DIV><IMG alt="Установка пути к файлам созданной библиотеки" 
+            src="Лекция_20_files/mht5B1B(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.13.</B>&nbsp; Установка пути к 
+            файлам созданной библиотеки
+            <P></P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64>Важным моментом, на который требуется обратить внимание, 
+            является версия используемой библиотеки времени выполнения (runtime 
+            library). Библиотека времени выполнения содержит функции стандартной 
+            библиотеки языка <B>С</B>, а также некоторое вспомогательное 
+            окружение, которое позволяет программе, написанной на языке 
+            <B>С</B>, выполняться в ОС Windows. Версия библиотеки времени 
+            выполнения для статически подключаемой библиотеки и для программы, 
+            ее использующей, должны совпадать. По этой причине статически 
+            подключаемую библиотеку часто компилируют в различных конфигурациях, 
+            каждая из которых использует свою версию библиотеки времени 
+            выполнения. В нашем примере будем использовать многопоточную 
+            отладочную версию библиотеки времени выполнения, подключаемую к 
+            программе динамически (Multi-threaded Debug DLL) для отладочной 
+            сборки нашей библиотеки, и многопоточную версию, подключаемую 
+            динамически (Multi-threaded DLL) для конечной версии программы.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_65>Тип используемой библиотеки времени выполнения 
+            выбирается на странице свойств [C/C++]|[Code Generation]|[Runtime 
+            Library]. Он должен совпадать с типом, выбранным при настройке 
+            свойств созданной библиотеки, в данном случае <B>Multy-threaded 
+            Debug DLL</B> (\MDd).</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_66>После настройки параметров компилятора необходимо 
+            выполнить настройку параметров компоновщика (Linker). На этапе 
+            компоновки происходит подключение статической библиотеки, из нее 
+            извлекается код уже скомпилированных функций, которые используются в 
+            основном проекте (с главной функцией <B>main()</B> ). Кроме кода 
+            функций, компоновщик при необходимости извлекает из статической 
+            библиотеки совместно используемые глобальные переменные. После того 
+            как все ссылки на функции и переменные будут разрешены, компоновщик 
+            выполняет вычисление машинных адресов для функций и переменных в 
+            конечном исполняемом модуле.</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_67>На странице свойств [Linker]|[Input] необходимо указать 
+            путь к объектному файлу библиотеки. Форма с установкой свойств 
+            компоновщика показана на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.14">рис. 
+            20.14</A>.</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <P id=id_68 align=left><A name=image.20.14></A></P>
+            <DIV><IMG 
+            alt="Настройка компоновщика Linker–Input–Additional Dependencies" 
+            src="Лекция_20_files/mht5B3E(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 20.14.</B>&nbsp; Настройка компоновщика 
+            Linker–Input–Additional Dependencies
+            <P></P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69>После выполнения всех настроек можно компилировать 
+            программу и запускать ее на выполнение.</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70>Проект с главной функцией <B>main()</B> и включенными 
+            заголовочными файлами из созданной библиотеки показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.15">рис. 
+            20.15</A>.</P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <P id=id_71 align=left><A name=image.20.15></A></P>
+            <DIV><IMG alt="Форма с откомпилированным проектом" 
+            src="Лекция_20_files/mht5B60(1).tmp" width=620 
+            height=447></DIV><BR><B>Рис. 20.15.</B>&nbsp; Форма с 
+            откомпилированным проектом
+            <P></P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_72>Программный код главной функции проекта:</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include "..\..\stack.h"
+#include "..\..\queue.h"
+
+int main (void)
+ {
+	int i;
+	queue_t *q = queue_create();
+	stack_t *s = stack_create(-1);
+	for (i = 0; i &lt; 16; ++i) //Заполнение стека
+		stack_push (s, i);
+	printf("\n Stack content:\n");
+	while (!stack_is_empty (s))
+		printf (" %3d\n", stack_pop (s));
+		stack_destroy (s); //Разрушение стека
+
+	for (i = 0; i &lt; 14; ++i) //Заполнение очереди
+		queue_push (q, i);
+
+    printf("\n Queue content:\n");
+	
+ while (!queue_is_empty (q))
+		printf (" %3d\n", queue_pop (q));
+	queue_destroy (q); //Разрушение очереди
+	printf("\n\n Press any key: ");
+	_getch(); return 0; 
+}</PRE></DIV>
+            <P id=id_74>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.16">рис. 
+            20.16</A>.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_75 align=left><A name=image.20.16></A></P>
+            <DIV><IMG 
+            alt="Результат выполнения программы с файлами из библиотеки" 
+            src="Лекция_20_files/mht5B92(1).tmp" width=580 
+            height=379></DIV><BR><B>Рис. 20.16.</B>&nbsp; Результат выполнения 
+            программы с файлами из библиотеки
+            <P></P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_139>Задание</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <OL id=id_87>
+              <LI>Предусмотрите ввод чисел, помещаемых в очередь, с клавиатуры.
+              <LI>Предусмотрите ввод чисел, помещаемых в стек, с клавиатуры. 
+              Ввод чисел выполните до заданного наперед символа, например, 
+              первой буквы фамилии пользователя.
+              <LI>Видоизмените проект для хранения в стеке (и вывода содержимого 
+              на консоль) данных типа <SPAN class=texample>char</SPAN>.</LI></OL>
+            <DIV id=mark_87 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_76><B>Пример 1</B>. Разработайте библиотечную функцию для 
+            симметричного представления одномерного массива данных относительно 
+            первого значения, например, пусть дан исходный одномерный массив</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_77>3 5 1 8 12 21 25.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_78>Результат симметричного представления:</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_79>25 21 12 8 1 5 <B>3</B> 5 1 8 12 21 25.</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <P id=id_80>Программный код решения примера состоит из двух 
+            файлов:</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Файл основного модуля проекта main.c
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include "xyx.h"
+
+int main (void) {
+	int i, n = 7;
+	int M[] = {3, 5, 1, 8, 12, 21, 25};
+
+	printf("\n Initial array:\n");
+for (i = 0; i &lt; n; ++i)
+printf(" %3d", M[i]);
+
+printf("\n\n New array:\n");
+for (i = 0; i &lt; (2*n-1); ++i)
+printf(" %3d", *(xyx(M, n)+i));
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый заголовочный файл xyx.h
+// file xyx.h
+
+int *xyx(int M[], int n);</PRE></DIV>
+            <DIV class=example><PRE>// Подключаемый файл xyx.c
+#include &lt;stdlib.h&gt;
+
+int *xyx(int M[], int n) {
+	int j, p = 2*n - 1;
+	int *PTR;
+	PTR = (int *)calloc(p,sizeof(int));
+	for (j = 0; j &lt; p; ++j)
+PTR[j] = 0;
+
+	for (j = 0; j &lt; p; ++j) 
+if (j &lt; n) 
+PTR[j] = M[(n-1) - j];
+else 
+PTR[j] = M[j - (n-1)];
+
+return PTR; }</PRE></DIV>
+            <P id=id_84>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.17">рис. 
+            20.17</A>.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_85 align=left><A name=image.20.17></A></P>
+            <DIV><IMG alt="Результат симметричного преобразования массива" 
+            src="Лекция_20_files/mht5BB4(1).tmp" width=620 
+            height=132></DIV><BR><B>Рис. 20.17.</B>&nbsp; Результат 
+            симметричного преобразования массива
+            <P></P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <P id=id_86><B>Задание 1</B></P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <OL id=id_87>
+              <LI>К проекту подключите статическую библиотеку с файлами 
+              <B>xyx.h</B>, <B>xyx.c</B>. Осуществите сборку проекта из 
+              приведенных файлов.
+              <LI>Предусмотрите ввод чисел массива с клавиатуры.
+              <LI>Напишите функцию типа <SPAN class=texample>xyx()</SPAN>, 
+              которая обрабатывает одномерные символьные массивы данных.
+              <LI>Видоизмените программу для преобразования массива с 
+              действительными числами, которые формируются случайным образом из 
+              данного интервала [–2*X;2*X], где Х – номер компьютера, на котором 
+              выполняется лабораторная работа.
+              <LI>Разработайте функцию сортировки чисел массива, поместите ее в 
+              статическую библиотеку, и используйте для сортировки заданного 
+              массива по убыванию в соответствии с предыдущим пунктом задания. 
+              После сортировки произведите преобразование массива с помощью 
+              созданной библиотечной функции <SPAN 
+              class=texample>xyx()</SPAN>.</LI></OL>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_95><B>Пример 2</B>. Разработайте абстрактный тип данных – 
+            двоичное дерево поиска. Выполните вставки узлов в двоичное дерево 
+            случайными числами и произведите обход дерева с порядковой выборкой 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>20.2</A>]. Созданные функции заполнения и обхода 
+            двоичного дерева поместите в статическую библиотеку.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96><SPAN class=xml_em_italic>Дерево</SPAN> – это нелинейная 
+            двухмерная структура данных с особыми свойствами. Узлы дерева две 
+            или более связей. В двоичном дереве узлы содержат две связки. Первый 
+            узел дерева называется <SPAN class=xml_em_italic>корневым</SPAN>. 
+            Каждая связь корневого узла ссылается на <SPAN 
+            class=xml_em_italic>потомка. Левый потомок</SPAN> – первый узел 
+            левого поддерева, <SPAN class=xml_em_italic>правый потомок</SPAN> – 
+            первый узел правого поддерева. Потомки одного узла называются <SPAN 
+            class=xml_em_italic>узлами-сиблингами</SPAN>. Узел, не имеющий 
+            потомков, называется <SPAN class=xml_em_italic>листом</SPAN>.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_97><SPAN class=xml_em_italic>Двоичное дерево поиска</SPAN> 
+            (с неповторяющимися значениями в узлах) устроено так, что значения в 
+            любом левом поддереве меньше, чем значение в родительском узле, а 
+            значения в любом правом поддереве больше, чем значение в 
+            родительском узле [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>20.2</A>]. На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\20. Лекция Программы на языке С при использовании статически подключаемой библиотеки.mht#image.20.18">рис. 
+            20.18</A> изображена схема двоичного дерева поиска с 12 
+            значениями.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98 align=left><A name=image.20.18></A></P>
+            <DIV><IMG alt="Пример двоичного дерева поиска" 
+            src="Лекция_20_files/mht5BC6(1).tmp" width=582 
+            height=466></DIV><BR><B>Рис. 20.18.</B>&nbsp; Пример двоичного 
+            дерева поиска
+            <P></P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99>В программах, реализующих стеки, очереди, деревья и 
+            т.д., используются <SPAN class=xml_em_italic>автореферентные</SPAN> 
+            структуры ( <SPAN class=xml_em_italic>self-referential</SPAN> ), 
+            которые содержат в качестве элемента указатель, который ссылается на 
+            структуру того же типа.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Например, определение</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct node { int data; struct node *nextPtr; };</PRE></DIV>
+            <P id=id_102>описывает тип <SPAN class=texample>struct node</SPAN>. 
+            Элемент <SPAN class=texample>nextPtr</SPAN> указывает на структуру 
+            типа <SPAN class=texample>struct node</SPAN> – структуру того же 
+            самого типа, что и объявленная структура, т.е. ссылается сама на 
+            себя.</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_106>Для заданного примера используем целые случайные числа 
+            из интервала от 0 до 14.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107>Программный код решения примера, состоящий из трех 
+            файлов:</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Файл основного модуля проекта main.c
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include &lt;locale.h&gt;
+//#include "tree.h"
+
+#define N 10 // количество случайных чисел - узлов
+#define R 15 // случайные числа от 0 до R-1
+
+// Автореферентная структура
+struct treeNode {
+struct treeNode *LeftPtr; //для левого поддерева
+int data;
+struct treeNode *RightPtr; // для правого поддерева
+};
+
+typedef struct treeNode TreeNode;
+typedef TreeNode *TreeNodePtr;
+
+// Прототипы функций
+void insertNode (TreeNodePtr *treePtr, int value);
+void inOrder(TreeNodePtr treePtr);
+
+int main (void) {
+	int i;
+int item;
+time_t tic;
+TreeNodePtr rootPtr = NULL; // пустое дерево
+setlocale(LC_ALL, ".1251"); // русские шрифты
+srand((unsigned) time(&amp;tic)); // рандомизация случайных чисел
+
+printf("\n Числа двоичного дерева:\n");
+// Размещение в дереве случайных значений от 0 до (R-1)
+for (i = 1; i &lt;= N; ++i) {
+item = rand() % R;
+printf(" %4d", item);
+insertNode (&amp;rootPtr, item);
+}
+
+// Обход дерева с порядковой выборкой
+printf("\n"); 
+printf("\n Результат обхода дерева с порядковой выборкой:\n");
+inOrder(rootPtr); // вызов функции
+	
+printf("\n\n Нажмите любую клавишу (Press any key): ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <DIV class=example><PRE>// Функция insertNode()
+// Вставка узла в дерево
+void insertNode (TreeNodePtr *treePtr, int value) {
+if (*treePtr == NULL) {
+*treePtr = malloc(sizeof(TreeNode));
+  // присвоение данных
+  if (*treePtr != NULL) {
+  (*treePtr)-&gt;data = value;
+  (*treePtr)-&gt;LeftPtr = NULL;
+  (*treePtr)-&gt;RightPtr = NULL; }
+
+else {
+printf(" %d не вставлено. Нет памяти.\n", value);
+}
+}
+else { //когда дерево не пусто
+if ( value &lt; (*treePtr)-&gt;data ) 
+insertNode (&amp;( (*treePtr)-&gt;LeftPtr), value);
+
+else if( value &gt; (*treePtr)-&gt;data ) 
+insertNode (&amp;( (*treePtr)-&gt;RightPtr), value);
+
+else 
+printf("Дубл."); // Дубликаты значений в узлах дерева
+}
+}</PRE></DIV>
+            <DIV class=example><PRE>// Функция inOrder()
+// Обход дерева с порядковой выборкой
+void inOrder (TreeNodePtr treePtr) {
+if (treePtr != NULL) {
+inOrder(treePtr-&gt;LeftPtr);
+printf(" %4d", treePtr-&gt;data);
+inOrder(treePtr-&gt;RightPtr);
+}
+}</PRE></DIV>
+            <P id=id_111>Функции <SPAN class=texample>insertNode()</SPAN>, <SPAN 
+            class=texample>inOrder()</SPAN> используются рекурсивно, т.е. они 
+            вызывают сами себя из тела функции.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_114>В теле функции <SPAN class=texample>inOrder()</SPAN> 
+            выполняются следующие шаги:</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <OL id=id_116>
+              <LI>Обойти вызовом <SPAN class=texample>inOrder()</SPAN> левое 
+              поддерево.
+              <LI>Обработать значение в узле.
+              <LI>Обойти вызовом <SPAN class=texample>inOrder()</SPAN> правое 
+              поддерево.</LI></OL>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_122>Обход двоичного дерева поиска вызовом функции <SPAN 
+            class=texample>inOrder()</SPAN> выдает значения в узлах в 
+            возрастающем порядке. Процесс создания двоичного дерева поиска 
+            фактически сортирует данные, поэтому называется <SPAN 
+            class=xml_em_italic>сортировкой двоичного дерева</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>20.2</A>].</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_124>Возможный результат работы программы показан на <A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/20/2.html#image.20.10">рис. 
+            20.10</A>.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_125 align=left><A name=image.20.19></A></P>
+            <DIV><IMG alt="Пример обхода двоичного дерева" 
+            src="Лекция_20_files/mht5BE9(1).tmp" width=620 
+            height=149></DIV><BR><B>Рис. 20.19.</B>&nbsp; Пример обхода 
+            двоичного дерева
+            <P></P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_126><B>Задание 2</B></P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <OL id=id_127>
+              <LI>Функции заполнения и обхода двоичного дерева поместите в 
+              статическую библиотеку. Выполните настройки проекта с подключаемой 
+              статической библиотекой.
+              <LI>Напишите программу с использованием вещественных чисел, 
+              помещаемых в узлы двоичного дерева. Случайные числа (значения 
+              узлов дерева) задайте из интервала [–2*X;2*X], где Х – номер 
+              компьютера, на котором выполняется лабораторная работа.
+              <LI>Увеличьте число узлов дерева до 11*Х, где Х – номер 
+              компьютера, на котором выполняется лабораторная работа. Результат 
+              выполнения программы запишите в текстовый файл вида treeX.txt, где 
+              Х – первая буква фамилии пользователя.</LI></OL>
+            <DIV id=mark_127 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_131>
+              <LI>Какая библиотека называется статически подключаемой?
+              <LI>Какую нотацию рекомендуется использовать для созданных 
+              пользователем библиотечных модулей?
+              <LI>Какое расширение используется для созданных пользовательских 
+              библиотечных модулей?
+              <LI>Применяется или нет функция <SPAN class=texample>main()</SPAN> 
+              в статически подключаемой библиотеке, созданной пользователем?
+              <LI>По какой дисциплине происходит обработка данных в такой 
+              структуре данных, как стек?
+              <LI>По какой дисциплине происходит обработка данных в такой 
+              структуре данных, как очередь?</LI></OL>
+            <DIV id=mark_131 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_20_files/mht5911(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_20_files/mht5911(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

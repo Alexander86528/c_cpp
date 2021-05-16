@@ -1,0 +1,667 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_21_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_21_files/mhtB920(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_21_files/mhtB920(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_21_files/mhtB920(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>21. Лекция: Использование аргументов 
+            командной строки в С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции необходимо изучить способы передачи аргументов 
+            командной строки операционной системы Windows в программу, в которой 
+            предусмотрено считывание количества аргументов и вывод имен этих 
+            аргументов с возможностью запуска приложений (аргументов). 
+        </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_21_files/mhtB920(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1><SPAN class=xml_em_italic>Аргумент командной 
+            строки</SPAN> – это информация, которая вводится в командной строке 
+            операционной системы вслед за именем программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>21.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>В системных средах, поддерживающих язык программирования 
+            <B>С</B>, существует способ передавать в программу аргументы или 
+            параметры командной строки при запуске программы на выполнение [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>21.2</A>]. Для этого в главную функцию main() включают 
+            два аргумента, обычно argc и argv. Первый (от <SPAN 
+            class=xml_em_italic>argument count</SPAN> – счетчик аргументов) 
+            содержит количество аргументов командной строки, с которыми была 
+            запущена программа. Второй (от <SPAN class=xml_em_italic>argument 
+            vector</SPAN> – вектор аргументов) указывает на массив символьных 
+            строк, содержащих сами аргументы, – по одному в строке. В общем 
+            случае имена аргументов могут быть произвольными.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Формально можно определить следующий прототип функции 
+            <SPAN class=texample>main()</SPAN> с параметрами:</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int main (int argc, char *argv[]);</PRE></DIV>
+            <P id=id_6>Второй параметр функции <SPAN 
+            class=texample>main()</SPAN> выражает собой многоуровневую систему 
+            указателей. В связи с этим можно определить другой способ задания 
+            параметров функции main(), а именно</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int main (int argc, char **argv);</PRE></DIV>
+            <P id=id_9>Каждый указатель на значение типа char ссылается на одну 
+            из строк командной строки, при этом argv[0] указывает на имя команды 
+            (исполняемой программы), argv[1] – на первый аргумент командной 
+            строки, argv[2] – на второй аргумент и так далее [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>21.3</A>].</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10>В качестве принимаемых аргументов командной строки могут 
+            быть исполняемые файлы. Можно из программы запустить на выполнение 
+            другую программу, запустить новый процесс. Для этого существуют 
+            специальные функции библиотеки "C Run–Time Library Reference" 
+            системы Visual Studio (которую используем в качестве компилятора 
+            языка <B>С</B> ).</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>Командная оболочка операционной системы Windows 
+            использует интерпретатор команд cmd.exe, который загружает 
+            приложения и направляет поток данных между приложениями, для 
+            перевода введенной команды в понятный системе код. Консоль командной 
+            строки присутствует во всех версиях операционных систем Windows.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>В среде разработки MS Visual Studio 2010 аргументы 
+            командной строки можно задать в самой среде, для чего следует 
+            произвести соответствующую настройку. Например, предположим, что мы 
+            хотим создать проект под именем tcmd, чтобы он принимал аргументы 
+            командной строки, например, "Example&nbsp;1" и E:\forma.exe. Для 
+            этого после (или во время) создания проекта обратиться к закладке, 
+            показанной на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.1">рис. 
+            21.1</A>.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13 align=left><A name=image.21.1></A></P>
+            <DIV><IMG 
+            alt="Пример настройки и задания аргументов командной строки" 
+            src="Лекция_21_files/mhtB942(1).tmp" width=620 
+            height=438></DIV><BR><B>Рис. 21.1.</B>&nbsp; Пример настройки и 
+            задания аргументов командной строки
+            <P></P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Параметры или аргументы командной строки должны 
+            вводиться через пробелы. В случае, если параметр представляет собой 
+            строку с пробелами, то его следует взять в двойные кавычки.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Использование указанной возможности интегрированной 
+            среды разработки позволяет произвести отладку программы с 
+            аргументами командной строки. В дальнейшем задание параметров в 
+            соответствии с <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.1">рис. 
+            21.1</A> не обязательно. Программа должна сама подхватывать 
+            аргументы командной строки, определенные с помощью утилиты cmd.exe 
+            (просто cmd) операционной системы.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16>Командную строку операционной системы Windows можно 
+            запустить следующими способами:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <OL id=id_17>
+              <LI>Пуск <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_21_files/mhtB964(1).tmp" width=23 height=9> Программы 
+              (все программы) <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_21_files/mhtB964(1).tmp" width=23 height=9> 
+              Стандартные <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_21_files/mhtB964(1).tmp" width=23 height=9> Командная 
+              строка
+              <LI>Пуск <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_21_files/mhtB964(1).tmp" width=23 height=9> Выполнить 
+              <IMG style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+              src="Лекция_21_files/mhtB964(1).tmp" width=23 height=9> (ввести) 
+              cmd</LI></OL>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_20>Параметры, представленные на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.1">рис. 
+            21.1</A>, можно ввести из командной строки операционной системы 
+            Windows, как показано на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.2">рис. 
+            21.2</A>.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21 align=left><A name=image.21.2></A></P>
+            <DIV><IMG alt="Пример ввода аргументов командной строки Windows" 
+            src="Лекция_21_files/mhtB977(1).tmp" width=620 
+            height=120></DIV><BR><B>Рис. 21.2.</B>&nbsp; Пример ввода аргументов 
+            командной строки Windows
+            <P></P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_22>Если подготовлена программа, в которой функция <SPAN 
+            class=texample>main()</SPAN> принимает два аргумента, то из 
+            командной строки можно передать, например, некоторые исполняемые 
+            файлы, такие как notepad.exe, winword.exe, чтобы можно было открыть 
+            "Блокнот" или документ "Word".</P>
+            <DIV id=mark_22 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_24><B>Пример&nbsp;1</B>. Напишите программу с аргументами 
+            командной строки, в которую передайте строки "Hello, world", 
+            "D:\forma.exe", "MS Visual Studio 2010", "D:\knapsack.exe", "команда 
+            cmd", где исполняемый файл "forma.exe" обеспечивает форматированный 
+            вывод случайных чисел, распределенных по нормальному закону, 
+            исполняемый файл "E:\knapsack.exe" решает задачу о рюкзаке 
+            (см.Тему&nbsp;18).</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25>Аргументы командной строки определите в среде MS Visual 
+            Studio 2010. Прежде чем реализовать программный код решения примера, 
+            приведем программный код для исполняемого файла "forma.exe". 
+            Программный код форматированного вывода случайных чисел:</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <DIV class=example><PRE>// Файл main.c программы forma (forma.exe)
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;time.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;string.h&gt;
+
+#include &lt;math.h&gt;
+#include &lt;float.h&gt;
+#include &lt;limits.h&gt;
+
+int main (void) {
+	int i, j;
+
+	double nd, md, fd, posd;
+	double factor = 1.23;
+	int n, m, f, pos; // row, column, floor point, distance
+	int in = 0;
+	double **A = NULL;
+	double S = 0.0;
+	double V1, V2, R1, R2;
+	double tmax, tmin;
+	char *smax, *smin;
+	FILE *fid;
+	errno_t err;
+	time_t t;
+
+	setlocale(LC_ALL, "rus");
+	setlocale(LC_NUMERIC, "uk");
+     
+     srand((unsigned)time(&amp;t)); // рандомизация случайных чисел
+
+	printf("\n Введите количество строк двумерного массива: ");
+	in = scanf_s("%lf", &amp;nd);
+	 if (in != 1) {
+		printf("\n Ошибка ввода. Нажмите любую клавишу: ");
+		_getch();
+		exit(1);
+	}
+
+	 if ( nd &lt; 1.0 || floor(nd) != nd ) {
+printf("\n Ошибка! Количество строк массива должно быть\
+ натуральным числом.\n \
+Нажмите любуюу клавишу: ");
+		 _getch();
+		 exit(1);
+	 }
+	 
+	 if (nd &gt; (double)(INT_MAX/10000) ) {
+	 printf("\n Слишком большое число. Нажмите любую клавишу: ");
+		 _getch();
+		 exit(1);
+	 }
+	 
+printf(" Введите количество столбцов двумерного массива: ");
+	in = scanf_s("%lf", &amp;md);
+	 
+     if (in != 1)
+    {
+		printf("\n Ошибка ввода. Нажмите любую клавишу: ");
+		_
+          getch();
+		exit(1);
+	}
+
+	  if ( md &lt; 1.0 || floor(md) != md )
+     {
+		 printf("\n Ошибка! Количество столбцов массива должно быть натуральным числом.\n \
+Нажмите любуюу клавишу: ");
+		 _getch();
+		 exit(1);
+	 }
+
+	   if (md &gt; (double)(INT_MAX/10000) )
+     {
+printf("\n Слишком большое число. Нажмите любую клавишу: ");
+		 _getch();
+		 exit(1);
+	 }
+
+	 printf(" Введите произвольное действительное число: ");
+	in = scanf_s("%lf", &amp;factor);
+	 if (in != 1)
+    {
+		printf("\n Ошибка ввода. Нажмите любую клавишу: ");
+		_getch();
+		exit(1);
+	}
+	 if ( factor &gt; (double)(INT_MAX/1000) || factor &lt; (double)(INT_MIN/1000)) {
+printf("\n Слишком большое число. Нажмите любую клавишу: ");
+		 _getch();
+		 exit(1);
+
+	 }
+	 if ( factor &lt; (10000.0*DBL_EPSILON ) &amp;&amp; factor &gt; -(10000.0*DBL_EPSILON ) )
+	 {
+printf("\n Слишком малое число. Нажмите любую клавишу: ");
+		 _getch();
+		 exit(1);
+	 }
+	
+printf(" Введите количество цифр после десятичной точки: ");
+	 in = scanf_s("%lf", &amp;fd);
+
+	 if (in != 1) {
+printf("\n Ошибка ввода. Нажмите любую клавишу: ");
+		_getch();
+		exit(1);
+	 }
+	
+	 if ( fd &lt; 0.0 || fd &gt; 14){
+printf("\n Количество цифр должно лежать в диапазоне [0; 14].\
+\n Нажмите любую клавишу: ");
+
+_getch();
+exit(1);
+	 }
+
+	 if ( floor(fd) != fd )
+    {
+printf("\n Количество цифр должно быть целым числом \
+в диапазоне  [0; 14].\n Нажмите любую клавишу: ");
+_getch();
+exit(1);
+	 }
+	 
+printf(" Введите минимальное количество позиций \
+между столбцами массива: ");
+	 in = scanf_s("%lf", &amp;posd);
+
+	 if (in != 1)
+     {
+printf("\n Ошибка ввода. Нажмите любую клавишу: ");
+		_getch();
+		exit(1);
+	 }
+	
+ if ( floor(posd) != posd )
+     {
+printf("\n Количество позиций должно быть целым числом \
+в диапазоне  [1; 10].\n Нажмите любую клавишу: ");
+
+_getch();
+exit(1);
+	 }
+
+	 if ( posd &lt; 0.0 || posd &gt; 10.0)
+     {
+printf("\n Количество позиций должно лежать в диапазоне \
+  [1; 10].\n Нажмите любую клавишу: ");
+
+_getch();
+exit(1);
+	 }
+
+f = (int)fd;
+pos = (int)posd;
+n = (int)nd;
+m = (int)md;
+
+	A = (double **)malloc(n*sizeof(double *));
+
+	for (i = 0; i &lt; n; i++)
+		A[i] = (double *)malloc(m*sizeof(double));
+
+	// Заполнение матрицы по нормальному закону
+	// метод Марсальи-Брея
+S = 1.0;
+for (i = 0; i &lt; n; i++) {
+	for (j = 0; j &lt; m; j++) {
+		while (S &gt;= 1.0) {
+R1 = (double) rand()/RAND_MAX;
+  R2 = (double) rand()/RAND_MAX;
+  V1 = 2.0*R1 - 1.0;
+  V2 = 2.0*R2 - 1.0;
+  S = (V1*V1 + V2*V2); 
+
+		}
+			A[i][j] = factor * V1 * sqrt(-2.0*log(S)/S);
+			S = 1.0;
+		}
+	}
+
+tmax = tmin = A[0][0];
+
+for (i = 0; i &lt; n; i++)
+for (j = 0; j &lt; m; j++)
+if (tmax &lt; A[i][j])
+tmax = A[i][j];
+
+for (i = 0; i &lt; n; i++)
+for (j = 0; j &lt; m; j++)
+if (tmin &gt; A[i][j])
+tmin = A[i][j];
+
+smax = (char *)malloc((pos+f+(int)INT_MAX/10000 )*sizeof(char));
+sprintf_s(smax, (pos+f+(int)INT_MAX/10000 - 1),"%0.*f",f,tmax);
+
+smin = (char *)malloc((pos+f+(int)INT_MAX/10000 )*sizeof(char));
+sprintf_s(smin, (pos+f+(int)INT_MAX/10000 - 1),"%0.*f",f,tmin);
+	
+// int n, m, f, pos; // row, column, floor point, distance
+in = (strlen(smin) &gt; strlen(smax)? strlen(smin): strlen(smax));
+ 
+if ((in+pos)*m &lt; 80)
+   {
+	puts("\n Пример форматированного вывода числовой матрицы:");
+for (i = 0; i &lt; n; i++) {
+puts("");
+for (j = 0; j &lt; m; j++)
+printf("%*.*f", in + pos, f, A[i][j]);
+	}
+
+	puts("");
+}
+
+else if ((in+pos)*m &lt; 1000)
+    {
+	if ( (err = fopen_s(&amp;fid, "format.txt", "w")) != 0 ) {
+printf("\n Файл для записи \"format.txt\" не может \
+быть открыт.\n Нажмите любую клавишу: ");
+
+_getch();
+exit(1);
+	}
+
+fprintf(fid, "\r\n\t Пример форматированного вывода \
+числовой матрицы: \r\n");
+fprintf(fid, "\r\n Матрица размера %dx%d из нормально \
+распределенных случайных чисел,\r\n \
+умноженных на число %g. Количество цифр после \
+десятичной точки: %d\r\n \
+Количество позиций между числами: %d\r\n",n,m,factor,f,pos);
+	for (i = 0; i &lt; n; i++)
+    {
+fprintf(fid, "\r\n");
+for (j = 0; j &lt; m; j++)
+fprintf(fid, "%*.*f", in + pos, f, A[i][j]);
+	}
+	fprintf(fid, "\r\n");
+	
+printf("\n Результат смотрите в файле \"format.txt\"\n" );
+	fclose(fid);
+}
+
+else 
+{
+printf("\n Результат не может быть форматированно выведен\n \
+в текстовый документ или на консоль для заданного\n \
+количества столбцов, величины поля между числами\n \
+и количеством знаков после десятичной точки.\n"); 
+printf("\n Нажмите любую клавишу: ");
+
+_getch();
+exit(1);
+}
+
+	printf("\n\n ... Нажмите любую клавишу: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_27>Исполняемый файл этой программы разместим на одном из 
+            жестких дисков, например, на диске D, т.&nbsp;е. D:\forma.exe. Также 
+            и файл "knapsack.exe" разместим на диске D, т.&nbsp;е. 
+            D:\knapsack.exe. Для запуска исполняемых приложений используем 
+            функцию <SPAN class=texample>_spawnl()</SPAN>, для которой подключим 
+            заголовочный файл <SPAN class=texample>&lt;process.h&gt;</SPAN>. 
+            Основной программный код решения примера:</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+#include &lt;process.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main (int argc, char *argv[])
+{
+	int count, p, i;
+	int j;
+	int N[20]; // массив для индексов исполняемых приложений
+
+count = p = i = 0; 		
+
+// На случай, когда командная строка содержит русские шрифты
+	setlocale(LC_ALL, "rus");
+
+	printf("\n Общее количество аргументов: %d\n\n", argc);
+
+if (argc == 1)
+	printf(" Имя аргумента и путь к нему:\n%4d) %s\n", count+1, argv[count]);
+
+else
+ {
+		for (count = 0; count &lt; argc; count++) {
+		printf(" %3d) %s\n", count+1, argv[count]);
+		
+if ( (strstr(argv[count], ".exe")) != NULL)
+N[i++] = count;
+
+	}
+}
+			if (i &gt; 1) 
+            {	
+			if (i == 2)
+printf("\n Для запуска исполняемого приложения \n \
+можно ввести число ");
+			
+               else
+printf("\n Для запуска исполняемого приложения \n \
+можно ввести числа ");
+
+			for (j = 1; j &lt; i; j++)
+			{
+				if (j &lt; i-1) 
+printf("\"%d\", ", N[j]+1);
+				else 
+printf("\"%d\": ", N[j]+1);
+			}
+
+   scanf_s("%d", &amp;p);
+		
+_spawnl(_P_WAIT, argv[p-1], argv[p-1], NULL);
+
+}
+		else
+printf("\n Исполняемых приложений нет.\n");
+			
+	printf("\n Завершение проекта tcmd ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_31>В программе используется функция <SPAN 
+            class=texample>strstr()</SPAN> для поиска заданной подстроки (.ехе) 
+            в заданной строке символов. Для этой функции подключен заголовочный 
+            файл <SPAN class=texample>&lt;string.h&gt;</SPAN>. В общем случае 
+            исполняемые файлы могут быть заданы без расширения .ехе. Можно также 
+            имена исполняемых файлов передавать в функцию как строки, 
+            определенные в самой программе без использования командной 
+            строки.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_34>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.3">рис. 
+            21.3</A>.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_35 align=left><A name=image.21.3></A></P>
+            <DIV><IMG alt="Пример вызова исполняемого файла" 
+            src="Лекция_21_files/mhtB999(1).tmp" width=620 
+            height=442></DIV><BR><B>Рис. 21.3.</B>&nbsp; Пример вызова 
+            исполняемого файла
+            <P></P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_36><B>Задание&nbsp;1</B></P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <OL id=id_37>
+              <LI>Внесите изменения в программу, чтобы исполняемые файлы 
+              выполнялись без указания расширения .ехе.
+              <LI>В программу внесите изменения для определения номера (номеров) 
+              индексов первого символа подстроки (подстрок) ".ехе".
+              <LI>В командную строку (с помощью закладки Alt+F7) введите номер 
+              компьютера, на котором выполняется лабораторная работа. Проверьте 
+              работу программы.
+              <LI>Проверьте работоспособность программы, когда в качестве 
+              второго аргумента функции <SPAN class=texample>main()</SPAN> будет 
+              использоваться char <SPAN class=texample>**argv</SPAN>.
+              <LI>Внесите в программу изменения для посимвольного вывода 
+              аргументов командной строки.
+              <LI>В программе предусмотрите защиту от неправильного ввода данных 
+              с клавиатуры.</LI></OL>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_46><B>Пример&nbsp;2</B>. Напишите программу с аргументами 
+            командной строки, которые вводятся с помощью интерпретатора cmd. В 
+            качестве аргументов примите исполняемый файл forma.exe (см. 
+            предыдущий пример), notepad.exe, winword.exe.</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_47>Файлы notepad.exe, winword.exe расположены в директориях 
+            "C:\WINDOWS\system32" и "C:\Program Files\Microsoft Office\OFFICE12" 
+            (последний путь зависит от версии Microsoft Office). Расположим 
+            указанные исполняемые файлы на диске С:.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_48>Программный код решения примера 2 можно оставить таким 
+            же, что и для примера 1.</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49>Начало выполнения программы показано на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.4">рис. 
+            21.4</A>.</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_50 align=left><A name=image.21.4></A></P>
+            <DIV><IMG 
+            alt="Пример ввода аргументов командной строки операционной системы" 
+            src="Лекция_21_files/mhtB9AC(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 21.4.</B>&nbsp; Пример ввода аргументов 
+            командной строки операционной системы
+            <P></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_51>В соответствии с введенным номером аргумента командной 
+            строки открывается "Блокнот", который показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\21. Лекция Использование аргументов командной строки в С.mht#image.21.5">рис. 
+            21.5</A>.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52 align=left><A name=image.21.5></A></P>
+            <DIV><IMG alt="Форма текстового документа, вызванная из программы" 
+            src="Лекция_21_files/mhtB9CE(1).tmp" width=620 
+            height=446></DIV><BR><B>Рис. 21.5.</B>&nbsp; Форма текстового 
+            документа, вызванная из программы
+            <P></P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>После закрытия блокнота (Безымянный - Блокнот) 
+            произойдет завершение программы tcmd.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_54><B>Задание&nbsp;2</B></P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <OL id=id_55>
+              <LI>Проверьте работу программы при расположении указанных 
+              исполнимых приложений на разных жестких дисках.
+              <LI>Проверьте работу программы по всем номерам исполняемых 
+              приложений.
+              <LI>В программу внесите операцию чтения текстового файла (из 
+              блокнота, который откроется после выбора notepad.exe), в котором 
+              записать номер компьютера, за которым выполняется лабораторная 
+              работа, специальность обучения (например, АСОИУ) и номер учебной 
+              группы
+              <LI>В качестве аргумента командной строки введите команду ping.exe 
+              (путь к ней: C:\WINDOWS\system32). Скриншот полученного результата 
+              вставьте в отчет лабораторной работы.
+              <LI>В качестве аргумента командной строки введите команду 
+              qprocess.exe (путь к ней: C:\WINDOWS\system32). Скриншот 
+              полученного результата вставьте в отчет лабораторной 
+            работы.</LI></OL>
+            <DIV id=mark_55 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_61>
+              <LI>Какой тип имеют аргументы командной строки?
+              <LI>Какое основное назначение имеют аргументы командной строки?
+              <LI>Каким образом разделяются аргументы командной строки?
+              <LI>К чему приводит инкрементирование второго аргумента функции 
+              <SPAN class=texample>main()</SPAN> в программе, в которой 
+              происходит обращение к этому аргументу?
+              <LI>Каким образом можно вставить содержимое буфера памяти 
+              (например, полный путь к команде <B>notepad.exe</B> или строку из 
+              текстового документа) в командную строку операционной системы 
+              Windows?</LI></OL>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_68></P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69></P>
+            <DIV id=mark_69 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_21_files/mhtB920(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_21_files/mhtB920(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

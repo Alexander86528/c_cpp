@@ -1,0 +1,1632 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_16_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_16_files/mhtE029(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_16_files/mhtE029(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_16_files/mhtE029(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>16. Лекция: Операции с разрядами (битами) в 
+            языке С: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются операторы и операции по управлению отдельными 
+            разрядами (битами) переменных, а также операции с битовыми полями. 
+            </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_16_files/mhtE029(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3><A name=sect2></A>
+            <H4>16.1. Базовые системы счисления</H4>
+            <P id=id_2>В языке программирования <B>С</B> предусмотрена 
+            возможность по управлению отдельными разрядами (битами) значения 
+            переменной. Эта возможность связывается с различным представлением 
+            числа в компьютере, а именно с различными основаниями системы 
+            счисления: двоичной системой счисления, восьмеричной системой 
+            счисления, шестнадцатеричной системой счисления.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>У <SPAN class=xml_em_italic>бита</SPAN> возможны только 
+            два значения: 0 и 1. Техническая реализация таких состояний легко 
+            реализуется, например, включено–выключено, положительное значение 
+            напряжения–отрицательное значение напряжения (определенного уровня) 
+            и т.д.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>В языке программирования <B>С</B> термин <SPAN 
+            class=xml_em_italic>байт</SPAN> используется для обозначения размера 
+            (разрядности) хранения набора символов. Поэтому в языке <B>С</B> 
+            байт может содержать 8, 9, 16 и другое количество разрядов. Однако в 
+            характеристиках модулей памяти и систем передачи данных 
+            предполагается, что байт содержит <SPAN class=xml_em_italic>восемь 
+            разрядов</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>].</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Разряды байта пронумерованы справа налево числами от 0 до 
+            7. Седьмой разряд (крайний левый) называется <SPAN 
+            class=xml_em_italic>старшим</SPAN>, а нулевой разряд (крайний 
+            правый) – <SPAN class=xml_em_italic>младшим</SPAN>.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6><SPAN class=xml_em_italic>Байт</SPAN> имеет наибольшее 
+            значение, когда все его разряды установлены, т.е. имеют значение 1. 
+            Например, для 8 разрядов с учетом двоичной системы счисления в 
+            случае возможного наибольшего значения получим:</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV id=id_7 class=xml_table_env><A></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>128</TD>
+                <TD bgColor=#eaeaea vAlign=top>64</TD>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>16</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>=</TD>
+                <TD bgColor=#eaeaea vAlign=top>255</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>7</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>6</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>5</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>4</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>3</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>2</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>1</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>2<SUP>0</SUP></TD>
+                <TD bgColor=#eaeaea vAlign=top>=</TD>
+                <TD bgColor=#eaeaea vAlign=top>255</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8>Наименьшему значению соответствует комбинация нулей 
+            00000000, которая представляет собой просто нуль [9].</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>Байт может хранить числа от 0 до 255, что составляет 256 
+            возможных значений. Программа может интерпретировать комбинацию 
+            разрядов иначе и применять байт для хранения чисел от –128 до 127, 
+            что составляет 256 возможных значений. Например, тип <SPAN 
+            class=texample>unsigned char</SPAN> обычно характеризуется 
+            использованием байта для представления чисел в диапазоне от 0 до 
+            255, тип <SPAN class=texample>signed char</SPAN> – до 127.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_12>В основании <SPAN 
+            class=xml_em_italic>восьмеричной</SPAN> системы счисления лежит 
+            число 8 (2<SUP>3</SUP>). Каждое знакоместо восьмеричного числа 
+            соответствует определенной степени восьми. Для записи используются 
+            цифры от 0 до 7. Каждая цифра восьмеричного числа соответствует трем 
+            двоичным цифрам. Двоичные эквиваленты восьмеричных цифр представлены 
+            в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#table.16.1">табл. 
+            16.1</A>.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV id=id_13 class=xml_table_env><A name=table.16.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 16.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=2>Двоичные эквиваленты 
+                  восьмеричных цифр</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Восьмеричная цифра</TD>
+                <TD bgColor=#eaeaea vAlign=top>Двоичный эквивалент</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>000</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>001</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>010</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>011</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>100</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>101</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>110</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>111</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>В <SPAN class=xml_em_italic>шестнадцатеричной</SPAN> 
+            системе счисления используются степени числа 16 и цифры от 0 до 15. 
+            Для представления цифр, соответствующих десятичным значениям от 10 
+            до 15, используются буквы от <B>A</B> до <B>F</B> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>]. Например, шестнадцатеричное число <SPAN 
+            class=texample>A3F</SPAN> (в языке <B>С</B> записывается как <SPAN 
+            class=texample>0xA3F</SPAN> ) представляет значение</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_17><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt="10\times16^2 + 3\times16^1 + 15\times16^0 = 2 623" 
+            src="Лекция_16_files/mhtE05B(1).tmp" width=296 height=20> (по 
+            основанию 10).</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_19>В приведенной записи числу 10 соответствует <B>А</B>, а 
+            числу 15 – <B>F</B>.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Язык <B>С</B> допускает использование букв нижнего и 
+            верхнего регистра (строчные и прописные буквы) для обозначения 
+            шестнадцатеричных цифр. Таким образом, число <B>2 623</B> в 
+            шестнадцатеричной системе счисления можно записать как <SPAN 
+            class=texample>0xA3F</SPAN>, так и <SPAN 
+            class=texample>0xa3f</SPAN>.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_23>Каждая цифра шестнадцатеричного числа соответствует 
+            4-значному двоичному числу [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>]. Поэтому две шестнадцатеричных цифры 
+            соответствуют одному восьмиразрядному байту. Первая цифра 
+            представляет 4 старших разряда, а вторая цифра – 4 младших 
+            разряда.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Соответствие между шестнадцатеричными цифрами, 
+            десятичными и двоичными числами показано в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#table.16.2">табл. 
+            16.2</A>.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV id=id_25 class=xml_table_env><A name=table.16.2></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 16.2. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Эквиваленты шестнадцатеричных 
+                  чисел</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>Десятичное число</TH>
+                <TH bgColor=#d8d8d8>Шестнадцатеричная цифра</TH>
+                <TH bgColor=#d8d8d8>Двоичный эквивалент</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>1</TH>
+                <TH bgColor=#d8d8d8>2</TH>
+                <TH bgColor=#d8d8d8>3</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>0000</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>0001</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>0010</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>0011</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>0100</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>0101</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>0110</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>0111</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>1000</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>9</TD>
+                <TD bgColor=#eaeaea vAlign=top>9</TD>
+                <TD bgColor=#eaeaea vAlign=top>1001</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>10</TD>
+                <TD bgColor=#eaeaea vAlign=top>A</TD>
+                <TD bgColor=#eaeaea vAlign=top>1010</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>11</TD>
+                <TD bgColor=#eaeaea vAlign=top>B</TD>
+                <TD bgColor=#eaeaea vAlign=top>1011</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>12</TD>
+                <TD bgColor=#eaeaea vAlign=top>C</TD>
+                <TD bgColor=#eaeaea vAlign=top>1100</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>13</TD>
+                <TD bgColor=#eaeaea vAlign=top>D</TD>
+                <TD bgColor=#eaeaea vAlign=top>1101</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>14</TD>
+                <TD bgColor=#eaeaea vAlign=top>E</TD>
+                <TD bgColor=#eaeaea vAlign=top>1110</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>15</TD>
+                <TD bgColor=#eaeaea vAlign=top>F</TD>
+                <TD bgColor=#eaeaea vAlign=top>1111</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>В языке <B>С</B> существуют два средства управления 
+            разрядами [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>]. Первое представляет собой набор поразрядных 
+            операций, а второе – форму полей данных, которое предоставляет 
+            доступ к разрядам значения типа <SPAN class=texample>int</SPAN>.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_28>Далее будут использоваться 8-разрядные числа в двоичной 
+            системе счисления.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>16.2. Логические поразрядные операции</H4>
+            <P id=id_30>В языке программирования <B>С</B> существуют два вида 
+            поразрядных операций: логические операции и операции сдвига [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>].</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31><SPAN class=xml_em_italic>Поразрядные операции</SPAN> 
+            выполняются над каждым разрядом независимо от разрядов слева или 
+            справа. Поразрядные операции выполняются над целыми числами. 
+            Рассмотрим логические поразрядные операции.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>Унарная операция <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\sim 
+            src="Лекция_16_files/mhtE06E(1).tmp" width=20 height=9> 
+            преобразовывает все единицы в нули и все нули в единицы 
+            (предполагается, что операции производятся над двоичными числами). 
+            Данную операцию называют также операцией <SPAN 
+            class=xml_em_italic>"дополнение"</SPAN>, т.е. когда все биты, равные 
+            0, устанавливаются в 1, а когда все биты, равные 1, – 
+            устанавливаются в 0.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33><SPAN class=xml_em_italic>Поразрядная операция</SPAN> 
+            <B>И</B> обозначается символом <SPAN 
+class=texample>&amp;</SPAN>.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_35>Двоичная операция <SPAN class=texample>&amp;</SPAN> 
+            создает новое значение за счет выполнения поразрядного сравнения 
+            двух операндов. Для каждой позиции результирующий разряд будет иметь 
+            значение 1 только в случае, когда соответствующие разряды обоих 
+            операндов имеют значение 1. Можно сказать, что когда над двумя 
+            значениями производится операция <SPAN 
+            class=xml_em_italic>поразрядного умножения</SPAN> <SPAN 
+            class=texample>&amp;</SPAN>, то двоичные представления чисел 
+            сравниваются бит за битом [2]. Например, пусть одна переменная <SPAN 
+            class=xml_em_bold_italic>w1</SPAN> есть число 25, а другая <SPAN 
+            class=xml_em_bold_italic>w2</SPAN> – число 77. Соответственно в 
+            двоичном представлении 25 = 0000000000011001, 77 = 0000000001001101. 
+            Тогда в результате поразрядной операции <SPAN 
+            class=texample>&amp;</SPAN> получим число <SPAN 
+            class=xml_em_bold_italic>w3</SPAN> = <SPAN 
+            class=xml_em_bold_italic>w1</SPAN> <B>&amp;</B> <SPAN 
+            class=xml_em_bold_italic>w2</SPAN>. Результат действия оператора 
+            <SPAN class=texample>&amp;</SPAN> можно представить следующим 
+            образом:</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <DIV id=id_40 class=xml_table_env><A></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Поразрядная операция <SPAN 
+                  class=texample>И (&amp;)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+                  0 1 (25)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w2 0 0 0 0 0 0 0 0 0 1 0 0 1 1 
+                  0 1 (77)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+                  0 1 (9)</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_42>В результате поразрядной операции <SPAN 
+            class=texample>"&amp;"</SPAN> над двумя числами (25 и 77 в двоичном 
+            представлении), которые имеют, например, 16 бит, получили новое 
+            число, т.е. 9.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_44>Поразрядный оператор <SPAN class=texample>"&amp;"</SPAN> 
+            часто используется для операций маскирования. С его помощью 
+            принудительно можно установить заданный бит данных в значение 0. 
+            Например, в утверждении</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <DIV class=example><PRE>w3 = w1 &amp; 3;</PRE></DIV>
+            <P id=id_47>переменной <SPAN class=texample>w3</SPAN> присваивается 
+            значение переменной <SPAN class=texample>w1</SPAN>, для которой 
+            выполнена поразрядная операция <SPAN class=texample>&amp;</SPAN> со 
+            значением 3. При этом все биты левее двух младших битов 
+            устанавливаются в 0, а остальные биты сохраняют свое значение [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>]. <SPAN class=xml_em_italic>Маска</SPAN> 
+            представляет собой некоторую комбинацию разрядов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>]. Разряды маски с нулевыми значениями можно 
+            считать аналогом непрозрачных ячеек реальной маски, а разряды со 
+            значениями 1 – прозрачными ячейками.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_51>Поразрядная операция <SPAN class=texample>&amp;</SPAN> 
+            называется также <SPAN class=xml_em_italic>конъюнкцией</SPAN>, или 
+            логическим умножением. Применяется часто обозначение AND.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_53><SPAN class=xml_em_italic>Поразрядная операция</SPAN> 
+            <SPAN class=texample>ИЛИ</SPAN> обозначается символом <SPAN 
+            class=texample>|</SPAN>.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_56>Когда над двумя значениями производится операция 
+            поразрядно <SPAN class=texample>ИЛИ</SPAN>, то последовательно 
+            сравниваются значения всех битов при двоичном представлении этих 
+            значений [5]. Если при этом соответствующий бит имеет значение 1 в 
+            первом или втором операнде, то результирующее значение будет равно 
+            1. Рассмотрим предыдущий пример с поразрядной операции <SPAN 
+            class=texample>ИЛИ</SPAN>:</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV id=id_59 class=xml_table_env><A></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Поразрядная операция <SPAN 
+                  class=texample>ИЛИ (|)</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+                  0 1 (25)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w2 0 0 0 0 0 0 0 0 0 1 0 0 1 1 
+                  0 1 (77)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>w3 0 0 0 0 0 0 0 0 0 1 0 1 1 1 
+                  0 1 (93)</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_61>Поразрядную операцию <SPAN class=texample>ИЛИ (|)</SPAN> 
+            обычно используют для установки заданных битов слова в 1. Логическую 
+            операцию <SPAN class=texample>ИЛИ</SPAN> называют также включающей 
+            <SPAN class=xml_em_italic>дизъюнкцией</SPAN>, или логическим 
+            сложением. Часто применяется обозначение OR.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_64><SPAN class=xml_em_italic>Поразрядная операция 
+            исключающего</SPAN> <SPAN class=texample>ИЛИ</SPAN> ( <SPAN 
+            class=texample>^</SPAN> ) работает следующим образом [5]. 
+            Сравниваются соответствующие биты двух операндов, и если только один 
+            из битов равен 1, то результат будет равен 1. А при равенстве обоих 
+            соответствующих битов или 0, или 1 результат будет равен 0. Для двух 
+            операндов b1, b2 при использовании исключающего <SPAN 
+            class=texample>ИЛИ</SPAN> ( <SPAN class=texample>^</SPAN> ) 
+            справедлива таблица истинности (<A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#table.16.3">табл. 
+            16.3</A>).</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV id=id_69 class=xml_table_env><A name=table.16.3></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 16.3. </CAPTION>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top colSpan=3>Таблица истинности 
+                  операции исключающего <SPAN class=texample>ИЛИ</SPAN> ( <SPAN 
+                  class=texample>^</SPAN> )</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>b1</TD>
+                <TD bgColor=#eaeaea vAlign=top>b2</TD>
+                <TD bgColor=#eaeaea vAlign=top>b1 ^ b2</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_72>Если операцию исключающего <SPAN 
+            class=texample>ИЛИ</SPAN> ( <SPAN class=texample>^</SPAN> ) 
+            использовать для одного и того же значения, то в результате будет 
+            получено нулевое значение. Этот прием часто использовался 
+            программистами на языке ассемблера как наиболее быстрый путь 
+            установить значение в нуль или сравнить два значения на их 
+            равенство. Этот способ не рекомендуется использовать в языке 
+            программирования <B>С</B>, так как при этом скорость работы не 
+            повышается, а программа становится менее понятной [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>].</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_75>Операция исключающего <SPAN class=texample>ИЛИ</SPAN> ( 
+            <SPAN class=texample>^</SPAN> ) может применяться для перестановки 
+            значений двух переменных без выделения дополнительной памяти (и, 
+            соответственно, без использования дополнительной переменной).</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_78>Поразрядная операция исключающего <SPAN 
+            class=texample>"ИЛИ"</SPAN> называется также исключающей <SPAN 
+            class=xml_em_italic>дизъюнкцией</SPAN>. Часто применяется 
+            обозначение XOR.</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_80>1.3. Поразрядные операции сдвига</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81><SPAN class=xml_em_italic>Оператор сдвига влево</SPAN>: 
+            <SPAN class=texample>&lt;&lt;</SPAN></P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_83>Когда оператор сдвига влево ( <SPAN 
+            class=texample>&lt;&lt;</SPAN> ) выполняется над некоторым 
+            значением, все биты, составляющие это значение, сдвигаются влево [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>]. Связанное с этим оператором число 
+            показывает количество бит, на которое значение должно переместиться. 
+            Биты, которые сдвигаются со старшего разряда, считаются потерянными, 
+            а на место младших битов всегда помещаются нули.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_85>Оператор сдвига вправо: <SPAN 
+            class=texample>&gt;&gt;</SPAN></P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <P id=id_87>Операция сдвига вправо ( <SPAN 
+            class=texample>&gt;&gt;</SPAN> ) сдвигает разряды левого операнда 
+            вправо на количество позиций, указываемое правым операндом. 
+            Выходящие за правую границу разряды теряются. Для типов данных без 
+            знака ( <SPAN class=texample>unsigned</SPAN> ) освобождаемые слева 
+            позиции заполняются нулями. Для знаковых типов данных результат 
+            зависит от используемой системы. Освобождаемые позиции могут 
+            заполняться нулями либо копиями знакового (первого слева) разряда 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>].</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_90>Поразрядные операции сдвига могут служить удобным и 
+            эффективным (в зависимости) средством выполнения операций умножения 
+            и деления на числа, представляющие собой степени двойки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>]. Такие операции аналогичны смещению 
+            десятичной точки при умножении или делении на 10.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_91>1.4. Битовые поля</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_92>Второй метод управления разрядами состоит в 
+            использовании битового (разрядного) поля [9], которое представляет 
+            собой просто последовательную цепочку разрядов в рамках значения 
+            типа <SPAN class=texample>signed int</SPAN> или <SPAN 
+            class=texample>unsigned int</SPAN>.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_95>Битовое поле может быть только элементом структуры или 
+            объединения и вне объектов этих типов не встречается [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>16.3</A>].</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96>Битовое поле создается путем объявления структуры 
+            (объединения), которая помечает каждое поле и определяет его 
+            разряд.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_97>Приведем пример из [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>] с использованием битовых полей в 
+            структуре:</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct packed_struct {
+unsigned int  : 3;
+unsigned int f1 : 1;
+unsigned int f2 : 1;
+unsigned int f3 : 1;
+unsigned int type : 8;
+unsigned int index : 18;
+};</PRE></DIV>
+            <P id=id_99>В созданном шаблоне-структуре с дескриптором 
+            (именем-этикеткой) <SPAN class=texample>packed_struct</SPAN> первый 
+            член не имеет имени. Символ , <SPAN class=texample>":3"</SPAN> 
+            задает три безымянных бита. Второй, третий и четвертый члены 
+            структуры, <SPAN class=texample>f1</SPAN>, <SPAN 
+            class=texample>f2</SPAN>, <SPAN class=texample>f3</SPAN>, также 
+            имеют тип <SPAN class=texample>unsigned int</SPAN>. Символ <SPAN 
+            class=texample>":1"</SPAN> говорит о том, что в данном члене 
+            структуры будет храниться 1 бит. Член структуры с именем <SPAN 
+            class=texample>type</SPAN> в памяти занимает 8 бит. Член структуры 
+            <SPAN class=texample>index</SPAN> рассчитан на хранение 18 бит.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_109>Для заданного шаблона структуры можно определить 
+            структурную переменную, например:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <DIV class=example><PRE>struct packed_struct packed_data;</PRE></DIV>
+            <P id=id_111>После этого можно присваивать значения полям структуры, 
+            например:</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <DIV class=example><PRE>packed_data.type = 7;</PRE></DIV>
+            <P id=id_113>Если ранее была объявлена какая-то переменная, 
+            например, <SPAN class=texample>n</SPAN>, то присвоение может быть 
+            таким:</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <DIV class=example><PRE>packed_data.type = n;</PRE></DIV>
+            <P id=id_116>При этом нет необходимости беспокоиться о том, что 
+            значение переменной <SPAN class=texample>n</SPAN> будет слишком 
+            большим. Только младшие 8 бит будут учитываться при присваивании 
+            значения для поля <B>packed_data.type</B>.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_118>Для извлечения битовых полей структуры можно 
+            использовать обычное утверждение:</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <DIV class=example><PRE>n = packed_data.type;</PRE></DIV>
+            <P id=id_120>В приведенном примере после извлечения значения поля 
+            <SPAN class=texample>type</SPAN> будет произведен сдвиг в сторону 
+            младших бит.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_122>Битовые поля могут быть объявлены только как тип <SPAN 
+            class=texample>int</SPAN> (в стандарте С99 также <SPAN 
+            class=texample>_Bool</SPAN> ). Если битовое поле имеет тип <SPAN 
+            class=texample>int</SPAN>, то этот знаковый ( <SPAN 
+            class=texample>signed</SPAN> ) или беззнаковый ( <SPAN 
+            class=texample>unsigned</SPAN> ) тип зависит от реализации.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_128>Для исключения неоднозначности следует использовать 
+            явные объявления: <SPAN class=texample>signed int</SPAN> или <SPAN 
+            class=texample>unsigned int</SPAN>.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_131>Битовые поля нельзя объединять в массивы. Нельзя 
+            использовать адрес битового поля, поэтому не может быть такого типа, 
+            как "указатель на битовое поле" [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>]. Компилятор языка программирования <B>С</B> 
+            не переупорядочивает битовые поля для получения оптимального 
+            распределения памяти. Но в некоторых случаях может производиться 
+            выравнивание за счет безымянного поля. Это может использоваться для 
+            выравнивания следующего поля структуры по границе блока [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>].</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132>С помощью битовых полей можно формировать объекты с 
+            длиной внутреннего представления, не кратной байту.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Практическая часть</H3>
+            <P id=id_133><B>Пример 1</B>. Напишите программу по демонстрации 
+            операции поразрядного отрицания (поразрядного дополнения) числа без 
+            знака, вводимого с клавиатуры, с использованием операций побитового 
+            сдвига.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134>Для решения примера будем задавать какое-то число, 
+            которое представим в виде нескольких разрядов, после чего через 
+            операции побитового сдвига изменим его и выведем на консоль.</P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135>Программный код решения примера:</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void printBits(unsigned int var);
+
+// Главная функция
+int main (void) {
+	unsigned int number;
+
+printf("\n The program on demonstration digit-by-digit operation of denying ( ~ )\n");
+
+	printf("\n\t Enter a whole number of unsigned: ");
+	scanf_s("%d", &amp;number);
+	printf("\n\t Binary representation of the starting number and\n");
+	printf("\t Binary representation of bitwise negation of the initial number:\n");
+	printBits(number); //Исходное число
+printBits(~number); // Число после поразрядного дополнения
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Функция побитового представления целого числа без знака
+void printBits(unsigned int var)
+{
+unsigned int b;
+unsigned int mask = 1 &lt;&lt; 31; // shift to 31 bit
+printf("\n\t %10u = ", var);
+for (b = 1; b &lt;= 32; ++b) {
+	printf("%c", var &amp; mask ? '1' : '0');
+	var &lt;&lt;= 1; // or: var = var &lt;&lt; 1;
+	if (b % 8 == 0)
+		putchar(' ');
+}
+}</PRE></DIV>
+            <P id=id_137>В программе применен форматный ввод числа в виде <SPAN 
+            class=texample>%u</SPAN> и вывод числа в виде <SPAN 
+            class=texample>%10u</SPAN>, где <SPAN class=texample>u</SPAN> 
+            применяется для беззнакового типа числа, <B>10</B> – это количество 
+            позиций, отводимое для десятичного числа.</P>
+            <DIV id=mark_137 class=lecture_mark></DIV>
+            <P id=id_141>Предполагается, что заданное число может быть 
+            представлено 32 разрядами, по 4 группы с 8 разрядами (4 байта по 8 
+            бит в каждом).</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_142>Применение оператора сдвига ( <SPAN 
+            class=texample>&lt;&lt;</SPAN> ) позволяет все биты данного числа 
+            сдвигать на единицу (действие в цикле for) влево. При этом 
+            используется операция поразрядного <SPAN class=texample>И</SPAN> ( 
+            <SPAN class=texample>&amp;</SPAN> ). С помощью оператора условия ( 
+            <SPAN class=texample></SPAN>?) выполняется замена 1 на 0 и 
+            наоборот.</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_147>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.1">рис. 
+            16.1</A>.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148 align=left><A name=image.16.1></A></P>
+            <DIV><IMG alt="Поразрядное инвертирование целого числа" 
+            src="Лекция_16_files/mhtE080(1).tmp" width=620 
+            height=167></DIV><BR><B>Рис. 16.1.</B>&nbsp; Поразрядное 
+            инвертирование целого числа
+            <P></P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149>Как видно из <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.1">рис. 
+            16.1</A>, все нули или единицы исходного числа (в двоичном 
+            представлении) были инвертированы.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150><B>Задание 1</B></P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <OL id=id_151>
+              <LI>Проверьте результат выполнения программы с помощью инженерного 
+              калькулятора calc операционной системы Windows.
+              <LI>Выполните раздельное объявление переменной mask и раздельное 
+              ее определение (инициализацию с поразрядным сдвигом).
+              <LI>В теле цикла <SPAN class=texample>for</SPAN> вместо функции 
+              <SPAN class=texample>printf()</SPAN> примените <SPAN 
+              class=texample>putchar()</SPAN>.
+              <LI>Дополните программу выводом результатов в файл compX.txt, где 
+              Х – номер компьютера, за которым выполняется лабораторная работа.
+              <LI>В качестве стартового числа примите год рождения 
+              пользователя.</LI></OL>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <P id=id_160><B>Пример 2</B>. Напишите программу выполнения 
+            поразрядной операции <SPAN class=texample>И</SPAN> ( <SPAN 
+            class=texample>&amp;</SPAN> ) над двумя целыми числами, 
+            представленными в двоичной системе счисления для 32-разрядного 
+            компьютера.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_163>Одно из чисел будем считать маской, относительно 
+            которой "просеваются" единицы двоичного числа.</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_164>Программный код решения примера:</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void printBits(unsigned int var);
+// Главная функция
+int main (void)
+ {
+	unsigned int number, mask;
+
+printf("\n The program on demonstration digit-by-digit operation And ( &amp; )\n");
+
+	printf("\n\t Enter a whole number of unsigned: ");
+	scanf_s("%u", &amp;number);
+
+	printf("\t Enter the number of unsigned-mask: ");
+	scanf_s("%u", &amp;mask);
+
+	printf("\n\t Binary representation of the starting number and (%u) and\n", number);
+	printf("\t Binary representation of the number-masks (%u):\n", mask);
+
+	printBits(number);
+	printBits(mask);
+
+// Число после поразрядного умножения (И)
+	printBits(number &amp; mask); 
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+ }
+
+// Функция побитового представления целого числа без знака
+void printBits(unsigned int var) 
+{
+unsigned int b;
+unsigned int mask = 1 &lt;&lt; 31; // shift to 31 bit
+
+printf("\n\t %10u = ", var);
+
+for (b = 1; b &lt;= 32; ++b) 
+{
+	printf("%c", var &amp; mask ? '1' : '0');
+	var &lt;&lt;= 1; // or: var = var &lt;&lt; 1;
+	if (b % 8 == 0)
+		putchar(' ');
+	} // End 2nd for
+} // End function</PRE></DIV>
+            <P id=id_166>В программе операция поразрядного умножения – операция 
+            <SPAN class=texample>И</SPAN> закладывается в фактический параметр 
+            функции <SPAN class=texample>printBits()</SPAN>.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_169>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.2">рис. 
+            16.2</A>.</P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170 align=left><A name=image.16.2></A></P>
+            <DIV><IMG alt="" src="Лекция_16_files/mhtE0A3(1).tmp" width=620 
+            height=188></DIV><BR><B>Рис. 16.2.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_171>Как видно из <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.2">рис. 
+            16.2</A>, битовая единица первого числа "проходит" в результат, если 
+            в маске на этом же месте (в том же разряде) также находится битовая 
+            единица. В результате получается новое число – 32.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_172><B>Задание 2</B></P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <OL id=id_173>
+              <LI>В качестве стартового числа примите год рождения пользователя, 
+              а в качестве маски – число рождения.
+              <LI>Примените операцию поразрядного умножения к введенным 
+              отрицательным числам и выведите результат на консоль. Сравните с 
+              тем, что выводит функция <SPAN class=texample>printBits()</SPAN>.
+              <LI>Вместо оператора условия ( <SPAN class=texample></SPAN>?) 
+              примените другой способ вывода 1 или 0 после применения 
+              поразрядной операции <SPAN class=texample>И</SPAN>.
+              <LI>Консольный вывод запишите в текстовый файл с именем compX.txt, 
+              где Х – номер компьютера, за которым выполняется лабораторная 
+              работа.</LI></OL>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_181><B>Пример 3</B>. Напишите программу демонстрацию 
+            поразрядной операции <SPAN class=texample>"ИЛИ"</SPAN> (включающей 
+            дизъюнкции).</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_183>Операция поразрядного логического <SPAN 
+            class=texample>ИЛИ</SPAN> ( <SPAN class=texample>|</SPAN> ) 
+            сравнивает каждый бит первого операнда с соответствующим битом 
+            второго операнда. Если любой (или оба) из сравниваемых битов равен 
+            1, то соответствующий бит результата устанавливается в 1, в 
+            противном случае результирующий бит равен 0.</P>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void printBits(unsigned int var);
+
+// Главная функция
+int main (void) 
+{
+	unsigned int number1, number2;
+
+printf("\n The program on demonstration digit-by-digit operator OR ( | ):\n");
+
+	printf("\n\t Enter the unsigned number of N1: ");
+	scanf_s("%u", &amp;number1);
+	printf("\t Enter the unsigned number of N2: ");
+	scanf_s("%u", &amp;number2);
+
+	printf("\n\t Binary representation of the number of N1 (%u) and\n", number1);
+	printf("\t Binary representation of the number of N2 (%u):\n", number2);
+	printBits(number1);
+	printBits(number2);
+// Число после поразрядного сложения (ИЛИ)
+	printBits(number1 | number2); 
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Функция побитового представления целого числа без знака
+void printBits(unsigned int var) {
+unsigned int b;
+unsigned int num = 1 &lt;&lt; 31; // shift to 31 bit
+printf("\n\t %10u = ", var);
+for (b = 1; b &lt;= 32; ++b) {
+	printf("%c", var &amp; num ? '1' : '0');
+	var &lt;&lt;= 1; // or: var = var &lt;&lt; 1;
+	if (b % 8 == 0)
+		putchar(' ');
+	} // End 2nd for
+} // End function</PRE></DIV>
+            <P id=id_187>В программе использована функция <SPAN 
+            class=texample>printBits()</SPAN>, как и в предыдущем примере. Она 
+            по необходимости преобразует десятичные числа в двоичные. При этом 
+            входным параметром функции является поразрядное включающее <SPAN 
+            class=texample>"ИЛИ"</SPAN> над двумя операндами в главной функции 
+            <SPAN class=texample>main()</SPAN>.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_191>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.3">рис. 
+            16.3</A>.</P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_192 align=left><A name=image.16.3></A></P>
+            <DIV><IMG alt="" src="Лекция_16_files/mhtE0C5(1).tmp" width=620 
+            height=184></DIV><BR><B>Рис. 16.3.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <P id=id_193>Как видно из полученного результата, поразрядная 
+            операция <SPAN class=texample>ИЛИ</SPAN> представляет собой 
+            побитовое сложение чисел при условии, что 1 + 1 = 1.</P>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_195><B>Задание 3</B></P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <OL id=id_196>
+              <LI>В качестве исходных чисел примите год и число рождения 
+              пользователя.
+              <LI>Произведите операцию включающего <SPAN 
+              class=texample>ИЛИ</SPAN> над двумя десятичными числами в 
+              соответствии с предыдущим пунктом задания. Операцию выполните в 
+              главной функции <SPAN class=texample>main()</SPAN>.
+              <LI>Видоизмените программу для случая, когда имеется 16-разрядный 
+              компьютер.</LI></OL>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <P id=id_202><B>Пример 4</B>. Напишите программу демонстрацию 
+            поразрядного исключающего <SPAN class=texample>ИЛИ</SPAN> ( <SPAN 
+            class=texample>^</SPAN> ).</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_205>Операция поразрядного исключающего <SPAN 
+            class=texample>ИЛИ</SPAN> ( <SPAN class=texample>^</SPAN> ) 
+            сравнивает каждый бит первого операнда (например, первого числа) с 
+            соответствующими битами второго операнда. Если один из сравниваемых 
+            битов равен 0, а второй бит равен 1, то соответствующий бит 
+            результата устанавливается в 1, в противном случае, т.е. когда оба 
+            бита равны 1 или 0, бит результата устанавливается в 0.</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_208>Программный код решения примера:</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void printBits(unsigned int var);
+
+int main (void) {
+	unsigned int number1, number2;
+
+printf("\n The program on demonstration digit-by-digit excluding operator OR ( ^ ):\n");
+	printf("\n\t Enter the unsigned number of N1: ");
+	scanf_s("%u", &amp;number1);
+	printf("\t Enter the unsigned number of N2: ");
+	scanf_s("%u", &amp;number2);
+
+printf("\n\t Binary representation of the number of N1 (%u) and\n", number1);
+printf("\t Binary representation of the number of N2 (%u):\n", number2);
+
+	printBits(number1);
+	printBits(number2);
+	printBits(number1 ^ number2); // Число после операции ^ 
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Функция побитового представления целого числа без знака
+void printBits(unsigned int var) {
+unsigned int b;
+unsigned int num = 1 &lt;&lt; 31; // shift to 31 bit
+
+printf("\n\t %10u = ", var);
+for (b = 1; b &lt;= 32; ++b) {
+	printf("%c", var &amp; num ? '1' : '0');
+	var &lt;&lt;= 1; // or: var = var &lt;&lt; 1;
+	if (b % 8 == 0)
+		putchar(' ');
+	} // End 2nd for
+} // End function</PRE></DIV>
+            <P id=id_210>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.4">рис. 
+            16.4</A>.</P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <P id=id_211 align=left><A name=image.16.4></A></P>
+            <DIV><IMG alt="" src="Лекция_16_files/mhtE0D7(1).tmp" width=620 
+            height=184></DIV><BR><B>Рис. 16.4.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <P id=id_213><B>Задание 4</B></P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <OL id=id_214>
+              <LI>В качестве исходных десятичных чисел примите год и число 
+              рождения пользователя.
+              <LI>Произведите операцию исключающего <SPAN 
+              class=texample>ИЛИ</SPAN> над двумя десятичными числами в 
+              соответствии с предыдущим пунктом задания. Операцию выполните в 
+              главной функции <SPAN class=texample>main()</SPAN>.
+              <LI>Подсчитайте число итераций оператора цикла <SPAN 
+              class=texample>for</SPAN>.</LI></OL>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_221><B>Пример 5</B>. Напишите программу выполнения 
+            поразрядных операций с шестнадцатеричными числами, которые 
+            получаются после преобразования десятичных чисел, введенных с 
+            клавиатуры.</P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_222>Программный код решения примера:</P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+const char basestr[16] = 
+{'0','1','2','3','4','5','6','7','8','9',
+'A','B','C','D','E','F'};
+const char *two16[16] = 
+{"0000","0001","0010","0011","0100","0101","0110","0111",
+"1000","1001", // 0,1,2,3,4,5,6,7,8,9
+"1010","1011","1100","1101","1110","1111"}; //A,B,C,D,E,F
+
+// Прототипы функций
+char *dec2hex(unsigned int var); 
+void printHex2Bin(unsigned int number);
+
+// Главная функция
+int main (void) {
+	int d12;
+unsigned int number1, number2;
+char ch, *NUM1;
+
+printf("\n The program on demonstration digit-by-digit operations\n with hexadecimal numbers\n");
+printf("\n\t Enter the unsigned number of N1: ");
+	scanf_s("%u", &amp;number1);
+	printf("\t Enter the unsigned number of N2: ");
+	scanf_s("%u", &amp;number2);
+	_flushall();
+//Для контроля перевода десятичного числа в шестнадцатеричное
+	printf("\n\t Hexadecimal numbers: %X,  %X\n", number1, number2);
+
+	printf("\n\t Enter bit operation ( &amp;, |, ^, ~ ): ");
+	scanf_s("%c", &amp;ch);
+
+	switch (ch) {
+case '&amp;':
+NUM1 = dec2hex(number1 &amp; number2);
+printHex2Bin(number1 &amp; number2);
+break;
+      case '|':
+	NUM1 = dec2hex(number1 | number2);
+printHex2Bin(number1 | number2);
+break;
+case '^':
+NUM1 = dec2hex(number1 ^ number2);
+printHex2Bin(number1 ^ number2);
+break;
+      case '~':
+	printf("\t Type 1 - for the first number; type 2 - for the second number: ");
+	scanf_s("%d", &amp;d12);
+	_flushall();   
+	if (d12 == 1) { 
+NUM1 = dec2hex(~number1);
+printHex2Bin(~number1); }
+	else {
+NUM1 = dec2hex(~number2);
+printHex2Bin(~number2); }
+break; 
+      default :
+fprintf(stdout, "\n\t Unknown symbol.");
+break;
+	}
+ 	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}
+
+char *dec2hex(unsigned int var) {
+int number[64];
+int i, j, k = 0;
+unsigned int base = 16;
+char Hex[128], *PTR;
+PTR = Hex;
+
+do {
+number[k] = var % base;
+++ k;
+var /= base;
+} while (var != 0);
+
+for (i = k-1, j = 0; i &gt;= 0; --i, ++j) { 
+Hex[j] = (char )basestr[number[i]];
+PTR[j] = Hex[j];
+	}
+PTR[j] = '\0';
+
+	return (PTR);
+} 
+
+void printHex2Bin(unsigned int number) {
+unsigned int num = 1 &lt;&lt; 31; 
+unsigned int i;
+
+printf("\n Hexadecimal number: %s\n", dec2hex(number));
+printf(" Binary equivalent:\n ");
+
+for (i = 1; i &lt;= 32; ++i) {
+printf("%2c", (number &amp; num )? '1' : '0');
+number &lt;&lt;= 1; 
+	if (i % 8 == 0)
+		printf("  ");
+	} 
+}</PRE></DIV>
+            <P id=id_224>В программе используется следующий указатель на 
+            функцию:</P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char *dec2hex(unsigned int var);</PRE></DIV>
+            <P id=id_226>Это дает возможность возвращать указатель с адресом 
+            необходимого символьного массива. Обратите внимание на выполнение 
+            операции завершения строки в функции <SPAN 
+            class=texample>*dec2hex()</SPAN> для указателя <SPAN 
+            class=texample>*PTR</SPAN>.</P>
+            <DIV id=mark_226 class=lecture_mark></DIV>
+            <P id=id_229>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.5">рис. 
+            16.5</A>.</P>
+            <DIV id=mark_229 class=lecture_mark></DIV>
+            <P id=id_230 align=left><A name=image.16.5></A></P>
+            <DIV><IMG 
+            alt="Пример побитовых операций с шестнадцатеричными числами" 
+            src="Лекция_16_files/mhtE0FA(1).tmp" width=620 
+            height=206></DIV><BR><B>Рис. 16.5.</B>&nbsp; Пример побитовых 
+            операций с шестнадцатеричными числами
+            <P></P>
+            <DIV id=mark_230 class=lecture_mark></DIV>
+            <P id=id_231><B>Задание 5</B></P>
+            <DIV id=mark_231 class=lecture_mark></DIV>
+            <OL id=id_232>
+              <LI>В программе предусмотрите вывод двоичных эквивалентов для 
+              введенных чисел.
+              <LI>Измените программу так, чтобы операции с переключателем 
+              <B>switch</B> выполнялись в функции <SPAN 
+              class=texample>printHex2Bin()</SPAN>.
+              <LI>В функции сформируйте одномерный массив символов двоичного 
+              эквивалента заданного шестнадцатеричного числа. Предусмотрите 
+              вывод результата.
+              <LI>Выполните программу со всеми поразрядными операциями при вводе 
+              чисел: года и дня рождения пользователя.
+              <LI>Напишите программу перевода десятичных чисел в восьмеричные 
+              (вместо <SPAN class=texample>*dec2hex()</SPAN> ). Предусмотрите 
+              также поразрядные операции с выводом двоичных эквивалентов.
+              <LI>В программе предусмотрите копирование консольного содержания в 
+              текстовый файл с именем compX.txt, где Х – номер компьютера, за 
+              которым выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_232 class=lecture_mark></DIV>
+            <P id=id_241><B>Пример 6</B>. Напишите программу ротации битов для 
+            заданных чисел, представленных в шестнадцатеричном виде, когда биты 
+            с самых крайних разрядов не теряются, а переносятся на 
+            противоположную сторону [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>].</P>
+            <DIV id=mark_241 class=lecture_mark></DIV>
+            <P id=id_242>Программный код решения примера:</P>
+            <DIV id=mark_242 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+const char basestr[16] = 
+{'0','1','2','3','4','5','6','7','8','9',
+'A','B','C','D','E','F'};
+
+int main (void)
+ {
+int n;
+unsigned int number, uns;
+char *NUM1, str[128] = "0x", un[] = "u";
+FILE *fid;
+
+// Прототипы функций
+char *dec2hex (unsigned int var); 
+unsigned int rotate (unsigned int value, int n);
+
+printf("\n The program for demonstration of bit-by-bit rotation \n of the numbers set in a hexadecimal kind\n");
+
+printf("\n\t Enter the unsigned decimal: ");
+	scanf_s("%u", &amp;number);
+	printf("\t Enter the number of bits of rotation: ");
+	scanf_s("%d", &amp;n);
+
+//Для контроля перевода десятичного числа в шестнадцатеричное
+	printf("\n\t Hexadecimal numbers: %X\n", number);
+NUM1 = dec2hex(number);
+strcat_s(str, 127, NUM1);
+strcat_s(str, 127, un);
+
+fopen_s(&amp;fid,"temp.txt", "w");
+fprintf(fid,"%s", str);
+fclose(fid);
+
+fopen_s(&amp;fid,"temp.txt", "r");
+fscanf_s(fid,"%x", &amp;uns);
+fclose(fid);
+
+printf("\n\t After rotating %d-bits: %X\n", n, rotate(uns, n));
+ 	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }
+//Функция перевода десятичного числа в шестнадцатеричное
+char *dec2hex(unsigned int var) {
+int number[64];
+int i, j, k = 0;
+unsigned int base = 16;
+char Hex[128], *PTR;
+PTR = Hex;
+
+do {
+number[k] = var % base;
+++ k;
+var /= base;
+} while (var != 0);
+
+for (i = k-1, j = 0; i &gt;= 0; --i, ++j) { 
+Hex[j] = basestr[number[i]];
+PTR[j] = Hex[j];
+	}
+PTR[j] = '\0';
+
+	return (PTR);
+} 
+//Функция ротации числа влево или вправо
+unsigned int rotate (unsigned int var, int n)
+ {
+unsigned int result, bits;
+// Ограничение диапазона ротации
+if (n &gt; 0)
+n = n % 32;
+else
+n = -(-n % 32);
+if (n == 0)
+result = var;
+else
+if (n &gt; 0) // Ротация влево
+{
+bits = var &gt;&gt; (32 - n);
+result = var &lt;&lt; n | bits;
+}
+else // Ротация вправо
+{
+n = -n;
+bits = var &lt;&lt; (32 - n);
+result = var &gt;&gt; n | bits;
+}
+return (result);
+}</PRE></DIV>
+            <P id=id_244>В программе сначала формируется символьное выражение 
+            шестнадцатеричного числа с помощью функции <SPAN 
+            class=texample>dec2hex()</SPAN>. Затем оно приводится к стандартному 
+            виду с помощью функции <SPAN class=texample>strcat_s()</SPAN>, 
+            которая к имеющемуся значению <SPAN class=texample>0х</SPAN> 
+            добавляет содержимое строки от функции <SPAN 
+            class=texample>dec2hex()</SPAN>. После еще добавляется суффикс <SPAN 
+            class=texample>u</SPAN> типа <SPAN class=texample>unsigned 
+            int</SPAN>. Для получения собственно шестнадцатеричного числа 
+            выполнена операция записи строки в файл и чтения из файла в 
+            шестнадцатеричном формате. Далее используется функция <SPAN 
+            class=texample>rotate()</SPAN> из [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>16.2</A>]. Ротация переменной на <SPAN 
+            class=texample>n</SPAN> битов влево производится в соответствии с 
+            алгоритмом, состоящим из трех шагов [5]. Сначала извлекаются левые 
+            <SPAN class=texample>n</SPAN> бит исходного значения в отдельную 
+            переменную ( <SPAN class=texample>bits</SPAN> ), которая сдвигается 
+            вправо (с помощью поразрядного сдвига <SPAN 
+            class=texample>&gt;&gt;</SPAN> ) на количество позиций ( <SPAN 
+            class=texample>32–n</SPAN> ). Затем исходное значение ( <SPAN 
+            class=texample>var</SPAN> ) сдвигается влево на <SPAN 
+            class=texample>n</SPAN> битов и наконец над получившимся значением и 
+            из влеченными битами производится операция поразрядной дизъюнкции 
+            <SPAN class=texample>"ИЛИ"</SPAN> ( <SPAN class=texample>|</SPAN> ). 
+            Аналогичные действия выполняются при сдвиге вправо.</P>
+            <DIV id=mark_244 class=lecture_mark></DIV>
+            <P id=id_261>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.6">рис. 
+            16.6</A>.</P>
+            <DIV id=mark_261 class=lecture_mark></DIV>
+            <P id=id_262 align=left><A name=image.16.6></A></P>
+            <DIV><IMG alt="Результат ротации  заданного числа" 
+            src="Лекция_16_files/mhtE11C(1).tmp" width=620 
+            height=184></DIV><BR><B>Рис. 16.6.</B>&nbsp; Результат ротации 
+            заданного числа
+            <P></P>
+            <DIV id=mark_262 class=lecture_mark></DIV>
+            <P id=id_263><B>Задание 6</B></P>
+            <DIV id=mark_263 class=lecture_mark></DIV>
+            <OL id=id_264>
+              <LI>Дополните программу выводом на консоль прочитанного числа из 
+              текстового файла.
+              <LI>В качестве вводимых данных используйте год и месяц рождения 
+              пользователя (студента).
+              <LI>Выполните ротацию шестнадцатеричных чисел, записанных в 
+              текстовый файл с именем compX.txt, где Х – номер компьютера, за 
+              которым выполняется лабораторная работа. В качестве тестовых чисел 
+              и числа битов ротации примите: (0xABCDEF00u, 8), (0xABCDEF00u, 
+              –16), (0xFFFF1122u, 4), (0xFFFF1122u, –2), (0xABCDEF00u, 0), 
+              (0xABCDEF00u, 44).
+              <LI>Напишите программу по ротации восьмеричных чисел.</LI></OL>
+            <DIV id=mark_264 class=lecture_mark></DIV>
+            <P id=id_269><B>Пример 7</B>. Напишите программу по решению 
+            следующего примера. С клавиатуры вводятся два целых числа. Остатки 
+            от деления их на 16 заносятся соответственно в 4 младших и 4 старших 
+            разряда одного байта. Затем следует напечатать изображение 
+            содержимого сформированного байта [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>16.3</A>].</P>
+            <DIV id=mark_269 class=lecture_mark></DIV>
+            <P id=id_270>Программный код решения примера:</P>
+            <DIV id=mark_270 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;local.h&gt;
+
+setlocale(LC_ALL, ".1251");
+
+int main (void)
+ {
+int m, n;
+unsigned char k;
+
+//Прототипы функций
+void binar (unsigned char ch);
+unsigned char code16 (int a, int b);
+
+printf("\n\t Введите первое беззнаковое число N1: ");
+scanf_s("%d", &amp;m);
+printf("\t Введите второе беззнаковое число N2: ");
+scanf_s("%d", &amp;n);
+k = code16(m, n);
+printf("\n\t Код двух остатков старших и младших разрядов байта: %u", k);
+binar(k);
+
+	printf("\n Нажмите любую клавише (Press any key): ");
+	_getch();
+	return 0;
+}
+
+unsigned char code16 (int a, int b){
+//Объединение с вложенной структурой
+union 
+{
+unsigned char z;
+struct 
+{
+	unsigned int x : 4; //Младшие биты
+	unsigned int y : 4; //Старшие биты
+} hh;
+} un;
+un.hh.x = a % 16;
+un.hh.y = b % 16;
+return (un.z);
+}
+
+void binar (unsigned char ch){ 
+int i;
+// Объединение с вложенной структурой
+union {
+unsigned char ss;
+
+// Структура с битовыми полями
+struct {
+	unsigned int a0:1; unsigned int a1:1;
+	unsigned int a2:1; unsigned int a3:1;
+	unsigned int a4:1; unsigned int a5:1;
+	unsigned int a6:1; unsigned int a7:1;
+	} byte;
+} cod;
+
+cod.ss = ch;
+printf("\n\n\t Число разрядов:\n\t");
+
+for (i = 0; i &lt; 8; ++i)
+printf("%4d", 7 - i);
+printf("\n\t Значения битовых полей:\n\t");
+
+printf("%4d%4d%4d%4d%4d%4d%4d%4d",\
+cod.byte.a7, cod.byte.a6, cod.byte.a5, cod.byte.a4,\
+cod.byte.a3, cod.byte.a2, cod.byte.a1, cod.byte.a0);
+printf("\n\n");
+
+}</PRE></DIV>
+            <P id=id_272>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.7">рис. 
+            16.7</A>.</P>
+            <DIV id=mark_272 class=lecture_mark></DIV>
+            <P id=id_273 align=left><A name=image.16.7></A></P>
+            <DIV><IMG alt="Значения битов остатков от деления двух чисел" 
+            src="Лекция_16_files/mhtE13E(1).tmp" width=620 
+            height=177></DIV><BR><B>Рис. 16.7.</B>&nbsp; Значения битов остатков 
+            от деления двух чисел
+            <P></P>
+            <DIV id=mark_273 class=lecture_mark></DIV>
+            <P id=id_274>В программе используются две переменных типа 
+            объединения и две структурные переменные. Объединение имеет то 
+            свойство, что переменные разных типов занимают одну область памяти, 
+            соответствующей наибольший размер в байтах. Поэтому если 
+            инициализируются одни переменные (например, <SPAN 
+            class=texample>un.hh.x = a % 16; un.hh.y = b % 16;</SPAN> ), то 
+            переменная другого типа ( <SPAN class=texample>unsigned char 
+            z;</SPAN> ) будет располагаться в той же области памяти, что и 
+            переменные типа <B>unsigned int (x и y)</B>. В связи с этим якобы 
+            неинициализированная переменная <SPAN class=texample>un.z</SPAN> 
+            возвращается функцией <SPAN class=texample>code16()</SPAN>. Размеры 
+            полей задаются программистом с учетом того, чтобы в них помещалось 
+            соответствующее число, представленное в двоичной системе. Например, 
+            если размерность поля равна 2, то в это поле можно записать 
+            десятичное число 3, так как его двоичный эквивалент равен 11. В поле 
+            с размерностью 8 можно записать число 140, так как его двоичный 
+            эквивалент равен 10001100.</P>
+            <DIV id=mark_274 class=lecture_mark></DIV>
+            <P id=id_279><B>Задание 7</B></P>
+            <DIV id=mark_279 class=lecture_mark></DIV>
+            <OL id=id_280>
+              <LI>В качестве вводимых чисел примите 2*Х, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>Выведите на консоль размерность в байтах объединений и 
+              структур, определенных в программе.
+              <LI>Проанализируйте результат выполнения программы при изменении 
+              размера битовых полей в структуре функции <SPAN 
+              class=texample>code16()</SPAN>.
+              <LI>Видоизмените программу для ввода трех чисел и определения 
+              значений разрядных (битовых) полей после занесения в них остатков 
+              от деления на целое число 8.</LI></OL>
+            <DIV id=mark_280 class=lecture_mark></DIV>
+            <P id=id_286><B>Пример 8</B>. Используя битовые поля структуры, 
+            напишите программу вывода на экран дисплея двоичного кода ASCII 
+            символа, вводимого с клавиатуры.</P>
+            <DIV id=mark_286 class=lecture_mark></DIV>
+            <P id=id_287>Условие примера является классическим, примеры программ 
+            приводятся во многих руководствах и учебниках. Ниже приводится 
+            некоторая модификация известных программ.</P>
+            <DIV id=mark_287 class=lecture_mark></DIV>
+            <P id=id_288>Отметим про наборы символов ASCII. Символы сохраняются 
+            в памяти компьютеров с использованием числовых кодов. Часто 
+            используется кодировка ASCII (American Standard Code for Information 
+            Interchange – американский стандартный код для обмена информацией). 
+            Таблицу символов ASCII можно посмотреть в [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#15" 
+            target=_blank>16.1</A>].</P>
+            <DIV id=mark_288 class=lecture_mark></DIV>
+            <P id=id_289>Программный код решения примера:</P>
+            <DIV id=mark_289 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+//Шаблон структуры с битовыми полями
+struct byte {
+	int b1 : 1; int b2 : 1;
+	int b3 : 1; int b4 : 1;
+	int b5 : 1; int b6 : 1;
+	int b7 : 1; int b8 : 1; 
+	};
+// Определение объединения с вложенной структурой
+union bits {
+char ch;
+struct byte bit;
+} un;// un - переменная типа объединения
+
+// Прототип функции
+void decode (union bits bt, int ch);
+
+// Главная функция
+int main (void) {
+	printf("\n\t Enter any symbol or Ctrl+Z to quit:\n");
+	do 	{
+		printf("\n\t Enter: ");
+		un.ch = getchar();
+	if ( (un.ch) == EOF) break;
+decode(un, un.ch);	
+	} while ((un.ch = getchar())!= EOF);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0; }
+// Функция двоичного представления символов
+void decode (union bits bt, int ch) {
+printf("\tBinary code of '%c':\n", ch);
+if (bt.bit.b8) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+
+if (bt.bit.b7) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+
+if (bt.bit.b6) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+if (bt.bit.b5) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+if (bt.bit.b4) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+if (bt.bit.b3) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+if (bt.bit.b2) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+if (bt.bit.b1) printf("%2c 1", ' ');
+else printf("%2c 0", ' ');
+printf("\n");
+
+}</PRE></DIV>
+            <P id=id_291>Программа ориентирована на 8 бит одного байта 
+            целочисленного значения, которым кодируется символ, вводимый с 
+            клавиатуры. В функции <SPAN class=texample>decode()</SPAN> 
+            использовано форматирование на основе символа "пробел".</P>
+            <DIV id=mark_291 class=lecture_mark></DIV>
+            <P id=id_293>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.8">рис. 
+            16.8</A>.</P>
+            <DIV id=mark_293 class=lecture_mark></DIV>
+            <P id=id_294 align=left><A name=image.16.8></A></P>
+            <DIV><IMG alt="Пример вывода двоичных кодов заданных символов" 
+            src="Лекция_16_files/mhtE160(1).tmp" width=620 
+            height=491></DIV><BR><B>Рис. 16.8.</B>&nbsp; Пример вывода двоичных 
+            кодов заданных символов
+            <P></P>
+            <DIV id=mark_294 class=lecture_mark></DIV>
+            <P id=id_295><B>Задание 8</B></P>
+            <DIV id=mark_295 class=lecture_mark></DIV>
+            <OL id=id_296>
+              <LI>Вместо цикла <SPAN class=texample>do–while</SPAN> примените 
+              другой оператор цикла.
+              <LI>Напишите программу вывода всех строчных букв латинского 
+              алфавита и их двоичных эквивалентов в кодировке ASCII без ввода их 
+              с клавиатуры.</LI></OL>
+            <DIV id=mark_296 class=lecture_mark></DIV>
+            <P id=id_300><B>Пример 9</B>. Напишите программу левого поразрядного 
+            сдвига для вводимого с клавиатуры целого числа с выводом его 
+            двоичного эквивалента и с повторными сдвигами влево.</P>
+            <DIV id=mark_300 class=lecture_mark></DIV>
+            <P id=id_301>В программе решения примера следует предусмотреть 
+            перевод числа из десятичной системы счисления в двоичную систему 
+            счисления. При поразрядном сдвиге влево на освободившееся место 
+            (места) двоичного числа записываются нули.</P>
+            <DIV id=mark_301 class=lecture_mark></DIV>
+            <P id=id_302>Программный код решения примера:</P>
+            <DIV id=mark_302 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Главная функция
+int main (void)
+ {
+	long int a;
+	unsigned int m, n;
+//Прототип функции
+void dec2(long int var, unsigned int m, unsigned int n);
+	
+	printf("\n\t Enter an integer: ");
+		scanf_s("%ld", &amp;a);
+		_flushall();
+		
+	printf("\t Enter a value shift: ");
+		scanf_s("%u", &amp;m);
+		_flushall();
+	printf("\t Enter number of repeated shifts: ");
+		scanf_s("%u", &amp;n);
+		_flushall();
+dec2(a, m, n);
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }
+
+// Функция поразрядного сдвига
+void dec2(long int var, unsigned int m, unsigned int n) {
+unsigned int b, i;
+long int mask = 1 &lt;&lt; 31; 
+long int M[128];
+
+for (i = 0; i &lt; n; ++i) 	
+M[i] = var &lt;&lt; i*m;
+printf("\n\t Decimal and its binary equivalent after the shift:\n");
+
+for (i = 0; i &lt; n; ++i)  {	
+	if (i == 0) {
+	printf("\n Initial number %ld:\n\t", M[0]);
+for (b = 1; b &lt;= 32; ++b)  {
+	printf("%c", M[0] &amp; mask ? '1' : '0');
+	M[0] &lt;&lt;= 1; // or: var = var &lt;&lt; 1;
+	if (b % 8 == 0)
+		putchar(' '); }
+	} 
+else {
+		printf("\n The following number %ld:\n\t", M[i]);
+	for (b = 1; b &lt;= 32; ++b) {
+	printf("%c", M[i] &amp; mask ? '1' : '0');
+	M[i] &lt;&lt;= 1; 
+	if (b % 8 == 0)
+		putchar(' '); }
+}
+	printf("\n"); }
+}</PRE></DIV>
+            <P id=id_304>В программе предполагалось, что в наличии 32-разрядный 
+            компьютер. Кроме того, вывод двоичного эквивалента сделан побайтно, 
+            считая, что в одном байте находится 8 бит.</P>
+            <DIV id=mark_304 class=lecture_mark></DIV>
+            <P id=id_305>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\16. Лекция Операции с разрядами (битами) в языке С.mht#image.16.9">рис. 
+            16.9</A>.</P>
+            <DIV id=mark_305 class=lecture_mark></DIV>
+            <P id=id_306 align=left><A name=image.16.9></A></P>
+            <DIV><IMG alt="Поразрядный сдвиг влево заданного числа" 
+            src="Лекция_16_files/mhtE182(1).tmp" width=620 
+            height=437></DIV><BR><B>Рис. 16.9.</B>&nbsp; Поразрядный сдвиг влево 
+            заданного числа
+            <P></P>
+            <DIV id=mark_306 class=lecture_mark></DIV>
+            <P id=id_307><B>Задание 9</B></P>
+            <DIV id=mark_307 class=lecture_mark></DIV>
+            <OL id=id_308>
+              <LI>Проверьте результат выполнения программы с помощью инженерного 
+              калькулятора (calc).
+              <LI>В программу добавьте нумерацию результатов вывода десятичного 
+              числа и его двоичного эквивалента.
+              <LI>Введите число своего дня рождения пользователя.
+              <LI>Проверьте программу при вводе отрицательных целых чисел.
+              <LI>Измените программу для поразрядного сдвига вправо.</LI></OL>
+            <DIV id=mark_308 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_314>
+              <LI>Как осуществляется нумерация разрядов байта?
+              <LI>Для каких систем счисления в языке <B>С</B> имеются 
+              классификаторы форматируемых данных?
+              <LI>Какие логические поразрядные операции существуют в языке 
+              <B>С</B>?
+              <LI>Какие логические операции сдвига существуют в языке <B>С</B>? 
+              Какими операторами они реализуются?
+              <LI>Что такое битовое поле в языке <B>С</B>? Где оно может быть 
+              определено?
+              <LI>В чем отличие поразрядных и логических операторов <SPAN 
+              class=texample>НЕ</SPAN>, <SPAN class=texample>И</SPAN> и <SPAN 
+              class=texample>ИЛИ</SPAN>?
+              <LI>Как можно обменять значения двух целочисленных переменных без 
+              использования третьей переменной?
+              <LI>Чем отличается операция сдвига вправо для типов <SPAN 
+              class=texample>int</SPAN> и <SPAN 
+              class=texample>unsigned</SPAN>?</LI></OL>
+            <DIV id=mark_314 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_16_files/mhtE029(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_16_files/mhtE029(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

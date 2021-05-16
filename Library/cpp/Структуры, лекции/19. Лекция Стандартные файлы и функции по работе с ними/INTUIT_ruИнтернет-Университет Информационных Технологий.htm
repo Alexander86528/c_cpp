@@ -1,0 +1,953 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/19/staldata_19.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>19. Лекция: Стандартные файлы и функции по 
+            работе с ними: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются понятия и определения файлов и потоков, 
+            классификация файлов, стандартные функции по работе с файлами, 
+            основные алгоритмы работы с файлами, приводятся примеры решения 
+            задач на организацию ввода-вывода и обработку данных в файлах. 
+            </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятия, характеристику и 
+            классификацию файлов и стандартных функций по работе с файлами, 
+            научиться решать задачи с использованием стандартных функций по 
+            работе с файлами на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2><B>Файл</B> – это именованная область внешней памяти, в 
+            которой хранится логически завершенный объем данных. Файл имеет 
+            следующие <SPAN class=xml_em_italic>характерные 
+            особенности</SPAN>:</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <UL id=id_3>
+              <LI>имеет имя на диске, что дает возможность программам 
+              идентифицировать и работать с несколькими файлами;
+              <LI>длина файла ограничивается только емкостью диска.</LI></UL>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_6>Часто бывает необходимо ввести некоторые данные из файла 
+            или вывести результаты в файл. Например, бывает необходимо 
+            обрабатывать массивы, которые слишком велики, чтобы полностью 
+            разместиться в памяти.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7>Файлы делятся на текстовые и двоичные.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8><B>Текстовый файл</B> – это файл, в котором каждый символ 
+            из используемого набора символов хранится в виде одного байта (кода, 
+            соответствующего символу). Текстовые файлы разбиваются на несколько 
+            строк с помощью специального символа "конец строки". Текстовый файл 
+            заканчивается специальным символом "конец файла".</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>Двоичный файл – файл, данные которого представлены в 
+            бинарном виде. При записи в двоичный файл символы и числа 
+            записываются в виде последовательности байт (в своем внутреннем 
+            двоичном представлении в памяти компьютера).</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10>Особенностью языка С++ является отсутствие в нем 
+            структурированных файлов. Все файлы рассматриваются как 
+            неструктурированная последовательность байтов. При таком подходе 
+            понятие файла распространяется и на различные устройства.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>В С++ существуют специальные средства ввода-вывода 
+            данных. Все операции ввода-вывода реализуются с помощью функций, 
+            которые находятся в библиотеке С++. Библиотека С++ поддерживает три 
+            уровня ввода-вывода:</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <UL id=id_12>
+              <LI>потоковый ввод-вывод;
+              <LI>ввод-вывод нижнего уровня;
+              <LI>ввод-вывод для консоли и портов (зависит от ОС).</LI></UL>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_16><B>Поток</B> – это абстрактное понятие, относящееся к 
+            любому переносу данных от источника к приемнику.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_17>Функции библиотеки ввода-вывода языка С++, 
+            поддерживающие обмен данными с файлами на уровне потока, позволяют 
+            обрабатывать данные различных размеров и форматов, обеспечивая при 
+            этом буферизованный ввод и вывод. Таким образом, поток представляет 
+            собой это файл вместе с предоставленными средствами буферизации.</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <P id=id_18>Чтение данных из потока называется извлечением, вывод в 
+            поток – <SPAN class=xml_em_italic>помещением 
+(включением)</SPAN>.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Поток определяется как последовательность байтов и не 
+            зависит от конкретного устройства, с которым производится обмен 
+            (оперативная память, файл на диске, клавиатура или принтер). Обмен с 
+            потоком для увеличения скорости передачи данных производится, как 
+            правило, через специальную область оперативной памяти – <SPAN 
+            class=xml_em_italic>буфер</SPAN>. Буфер накапливает байты, и 
+            фактическая передача данных выполняется после заполнения буфера (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/19/staldata_19.html#image.19.1">рис. 
+            19.1</A>). При вводе это дает возможность исправить ошибки, если 
+            данные из буфера еще не отправлены в программу.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20 align=left><A name=image.19.1></A>
+            <DIV><IMG alt="Буферизация данных при работе с потоками" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/19_01.png" 
+            width=621 height=113></DIV><BR><B>Рис. 19.1.</B>&nbsp; Буферизация 
+            данных при работе с потоками
+            <P></P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21>При работе с потоком можно:</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <UL id=id_22>
+              <LI>открывать и закрывать потоки (связывать указатели на поток с 
+              конкретными файлами);
+              <LI>вводить и выводить строку, символ, форматированные данные, 
+              порцию данных произвольной длины;
+              <LI>анализировать ошибки ввода-вывода и достижения конца файла;
+              <LI>управлять буферизацией потока и размером буфера;
+              <LI>получать и устанавливать указатель текущей позиции в 
+              файле.</LI></UL>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_28>Когда программа начинает выполняться, автоматически 
+            открываются пять потоков, из которых основными являются:</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <UL id=id_29>
+              <LI>стандартный поток ввода (на него ссылаются, используя 
+              предопределенный указатель на поток <SPAN 
+              class=texample>stdin</SPAN>);
+              <LI>стандартный поток вывода (<SPAN class=texample>stdout</SPAN>);
+              <LI>стандартный поток вывода сообщений об ошибках (<SPAN 
+              class=texample>stderr</SPAN>).</LI></UL>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_36>По умолчанию стандартному потоку ввода <SPAN 
+            class=texample>stdin</SPAN> ставится в соответствие клавиатура, а 
+            потокам <SPAN class=texample>stdout</SPAN> и <SPAN 
+            class=texample>stderr</SPAN> соответствует экран монитора.</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_40>В С++ операции с файлами можно осуществлять в двух 
+            режимах: <SPAN class=xml_em_italic>форматированном</SPAN> и <SPAN 
+            class=xml_em_italic>потоковом</SPAN>.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Рассмотрим основные функции для работы с файлами в 
+            форматированном режиме.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Функция открытия файла</H3>
+            <P id=id_42>Для работы с файлом в языке C++ необходима ссылка на 
+            файл. Для определения такой ссылки существует структура <SPAN 
+            class=texample>FILE</SPAN>, описанная в файле <SPAN 
+            class=texample>stdio.h</SPAN>. Данная структура содержит все 
+            необходимые поля для управления файлами, например: текущий указатель 
+            буфера, текущий счетчик байтов, базовый адрес буфера ввода-вывода, 
+            номер файла.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_45>При открытии файла (потока) в программу возвращается 
+            указатель на поток (файловый указатель), являющийся указателем на 
+            объект структурного типа <SPAN class=texample>FILE</SPAN>. Этот 
+            указатель идентифицирует поток во всех последующих операциях.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_47>Например:</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include&lt;stdio.h&gt;
+..............
+FILE *fp;
+</PRE></DIV>
+            <P id=id_49>Для открытия файла существует функция <SPAN 
+            class=texample>fopen</SPAN>, которая инициализирует файл. </P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <P id=id_51>Синтаксис:</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fp=fopen(ИмяФайла, РежимОткрытия);
+</PRE></DIV>
+            <P id=id_53>где <SPAN class=texample>fp</SPAN> – указатель на поток 
+            (файловый указатель);</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_55><SPAN class=texample>ИмяФайла</SPAN> – указатель на 
+            строку символов, представляющую собой допустимое имя файла, в 
+            которое может входить спецификация файла (включает обозначение 
+            логического устройства, путь к файлу и собственно имя файла);</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_57><SPAN class=texample>РежимОткрытия</SPAN> – указатель на 
+            строку режима открытия файла.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_59>Например:</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fp=fopen("t.txt","r");
+</PRE></DIV>
+            <P id=id_61>Существуют несколько режимов открытия файлов.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV id=id_62 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Режимы открытия файлов</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Режим</TH>
+                <TH bgColor=#d8d8d8>Описание</TH>
+                <TH bgColor=#d8d8d8>Начинается с...</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+class=texample>r</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  чтения. Если файл не существует, то выдается ошибка при 
+                  исполнении программы.</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+class=texample>w</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  записи. Если файл не существует, то он создается. Если файл 
+                  уже существует, то удаляется его содержимое, файл 
+                  перезаписывается</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+class=texample>a</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  добавления. Если файл не существует, то он создается. Если 
+                  существует, то содержимое из него не удаляется.</TD>
+                <TD bgColor=#eaeaea vAlign=top>конца</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>r+</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  чтения и записи. Изменить размер файла нельзя. Если файл не 
+                  существует, то выдается ошибка при исполнении программы.</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>w+</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  чтения и записи. Если файл не существует, то он создается. 
+                  Если файл уже существует, то удаляется его содержимое, файл 
+                  перезаписывается.</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>a+</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает текстовый файл для 
+                  чтения и записи. Если файл не существует, то он создается. 
+                  Если существует, то содержимое из него не удаляется.</TD>
+                <TD bgColor=#eaeaea vAlign=top>конца</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>rb</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает двоичный файл для 
+                  чтения. Если файл не существует, то выдается ошибка при 
+                  исполнении программы.</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>wb</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает двоичный файл для 
+                  записи. Если файл не существует, то он создается. Если файл 
+                  уже существует, то удаляется его содержимое, файл 
+                  перезаписывается.</TD>
+                <TD bgColor=#eaeaea vAlign=top>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>ab</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает двоичный файл для 
+                  добавления. Если файл не существует, то он создается. Если 
+                  существует, то содержимое из него не удаляется.</TD>
+                <TD bgColor=#eaeaea vAlign=top>конца</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>r+b</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Открывает двоичный 
+                  файл для чтения и записи. Изменить размер файла нельзя. Если 
+                  файл не существует, то выдается ошибка при исполнении 
+                  программы.</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>rb+</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>w+b</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Открывает двоичный 
+                  файл для чтения и записи. Если файл не существует, то он 
+                  создается. Если файл уже существует, то удаляется его 
+                  содержимое, файл перезаписывается.</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>начала</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>wb+</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>a+b</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Открывает двоичный 
+                  файл для чтения и записи. Если файл не существует, то он 
+                  создается. Если существует, то содержимое из него не 
+                удаляется.</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>конца</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                class=texample>ab+</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_78>Поток можно открыть в текстовом (<SPAN 
+            class=texample>t</SPAN>) или двоичном (<SPAN 
+            class=texample>b</SPAN>) режиме. По умолчанию используется текстовый 
+            режим. В явном виде режим указывается следующим образом:</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <P id=id_81><SPAN class=texample>"r+b"</SPAN> или <SPAN 
+            class=texample>"rb"</SPAN> – двоичный (бинарный) режим;</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_84><SPAN class=texample>"r+t"</SPAN> или <SPAN 
+            class=texample>"rt"</SPAN> – текстовый режим.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_87>В файле <SPAN class=texample>stdio.h</SPAN> определена 
+            константа <SPAN class=texample>EOF</SPAN>, которая сообщает об 
+            окончании файла (отрицательное целое число).</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_90>При открытии файла могут возникать следующие ошибки:</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <UL id=id_91>
+              <LI>файл, связанный с потоком не найден (при чтении из файла);
+              <LI>диск заполнен (при записи);
+              <LI>диск защищен от записи (при записи) и т. п.</LI></UL>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_95>В этих случаях указатель на поток приобретет значение 
+            <SPAN class=texample>NULL (0)</SPAN>. Указатель на поток, отличный 
+            от аварийного, не бывает равен <SPAN class=texample>NULL</SPAN>.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_98>Для вывода сообщения об ошибке при открытии файла 
+            используется стандартная библиотечная функция из файла <SPAN 
+            class=texample>&lt;stdio.h&gt;</SPAN>:</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <DIV class=example><PRE>void perror (const char*s);
+</PRE></DIV>
+            <P id=id_101>Функция <SPAN class=texample>perror()</SPAN> выводит 
+            строку символов, адресуемую указателем <SPAN 
+            class=texample>s</SPAN>, за которой размещаются: двоеточие, пробел и 
+            сообщение об ошибке. Содержимое и формат сообщения определяются 
+            реализацией системы программирования.</P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_104><SPAN class=xml_em_italic>Пример 1</SPAN>. Обнаружение 
+            и вывод ошибки при открытии файла.</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  FILE *fp;
+  if ((fp=fopen("t.txt", "r"))==NULL)
+    // выводит строку символов с сообщением об ошибке
+    perror("ошибка при открытии файла"); 
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_106>Перед началом выполнения операций с файлами 
+            целесообразно получить подтверждение, что функция <SPAN 
+            class=texample>fopen()</SPAN> выполнилась успешно.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Функция закрытия файла</H3>
+            <P id=id_108>Открытые на диске файлы после окончания работы с ними 
+            рекомендуется закрыть явно. Это является хорошим тоном в 
+            программировании.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109>Синтаксис:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fclose(УказательНаПоток);
+</PRE></DIV>
+            <P id=id_111>Возвращает <SPAN class=texample>0</SPAN> при успешном 
+            закрытии файла и <SPAN class=texample>-1</SPAN> в противном 
+            случае.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_114>Открытый файл можно открыть повторно (например, для 
+            изменения режима работы с ним) только после того, как файл будет 
+            закрыт с помощью функции <SPAN class=texample>fclose()</SPAN>.</P>
+            <DIV id=mark_114 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Функция удаления файла</H3>
+            <P id=id_116>Синтаксис:</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int remove(const char *filename);
+</PRE></DIV>
+            <P id=id_118>Эта функция удаляет с диска файл, указатель на который 
+            хранится в файловой переменной <SPAN class=texample>filename</SPAN>. 
+            Функция возвращает ненулевое значение, если файл невозможно 
+            удалить.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Функция переименования файла</H3>
+            <P id=id_120>Синтаксис:</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int rename(const char *oldfilename, const char *newfilename);
+</PRE></DIV>
+            <P id=id_122>Функция переименовывает файл; первый параметр – старое 
+            имя файла, второй – новое. Возвращает <SPAN class=texample>0</SPAN> 
+            при неудачном выполнении.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Функция контроля конца файла</H3>
+            <P id=id_124>Для контроля достижения конца файла есть функция <SPAN 
+            class=texample>feof</SPAN>.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int feof(FILE * filename);
+</PRE></DIV>
+            <P id=id_127>Функция возвращает ненулевое значение, если достигнут 
+            конец файла.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Функции ввода-вывода данных файла</H3>
+            <P id=id_128><SPAN class=xml_em_italic>1) Символьный 
+            ввод-вывод</SPAN></P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_129>Для символьного ввода-вывода используются функции:</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fgetc(FILE *fp);
+</PRE></DIV>
+            <P id=id_131>где <SPAN class=texample>fp</SPAN> – указатель на 
+            поток, из которого выполняется считывание.</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_133>Функция возвращает очередной символ в формате <SPAN 
+            class=texample>int</SPAN> из потока <SPAN class=texample>fp</SPAN>. 
+            Если символ не может быть прочитан, то возвращается значение <SPAN 
+            class=texample>EOF</SPAN>.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fputc(int c, FILE*fp);
+</PRE></DIV>
+            <P id=id_138>где <SPAN class=texample>fp</SPAN> – указатель на 
+            поток, в который выполняется запись;</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_140><SPAN class=texample>c</SPAN> – переменная типа <SPAN 
+            class=texample>int</SPAN>, в которой содержится записываемый в поток 
+            символ.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_143>Функция возвращает записанный в поток <SPAN 
+            class=texample>fp</SPAN> символ в формате <SPAN 
+            class=texample>int</SPAN>. Если символ не может быть записан, то 
+            возвращается значение <SPAN class=texample>EOF</SPAN>.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_147><SPAN class=xml_em_italic>Пример 2.</SPAN></P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  FILE *f; 
+  int c;
+  char *filename="t.txt";
+  if ((f=fopen(filename,"r"))==0)
+    perror(filename);
+  else 
+    while((c = fgetc(f)) != EOF)
+      putchar(c);
+      //вывод с на стандартное устройство вывода
+  fclose(f);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_149><SPAN class=xml_em_italic>2) Строковый 
+            ввод-вывод</SPAN></P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150>Для построчного ввода-вывода используются следующие 
+            функции:</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char *fgets(char *s, int n, FILE *f);
+</PRE></DIV>
+            <P id=id_152>где <SPAN class=texample>char *s</SPAN> – адрес, по 
+            которому размещаются считанные байты;</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_154><SPAN class=texample>int n</SPAN> – количество 
+            считанных байтов;</P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_156><SPAN class=texample>FILE *f</SPAN> – указатель на 
+            файл, из которого производится считывание.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_158>Прием байтов заканчивается после передачи <SPAN 
+            class=texample>n-1</SPAN> байтов или при получении управляющего 
+            символа <SPAN class=texample>'\n'</SPAN>. Управляющий символ тоже 
+            передается в принимающую строку. Строка в любом случае заканчивается 
+            <SPAN class=texample>'\0'</SPAN>. При успешном завершении считывания 
+            функция возвращает указатель на прочитанную строку, при неуспешном – 
+            <SPAN class=texample>0</SPAN>.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fputs(char *s, FILE *f);
+</PRE></DIV>
+            <P id=id_164>где <SPAN class=texample>char *s</SPAN> – адрес, из 
+            которого берутся записываемые в файл байты;</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_166><SPAN class=texample>FILE *f</SPAN> – указатель на 
+            файл, в который производится запись.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_168>Символ конца строки (<SPAN class=texample>'\0'</SPAN>) 
+            в файл не записывается. Функция возвращает <SPAN 
+            class=texample>EOF</SPAN>, если при записи в файл произошла ошибка, 
+            при успешной записи возвращает неотрицательное число.</P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_171><SPAN class=xml_em_italic>Пример 3</SPAN>. Построчное 
+            копирование данных из файла <SPAN class=texample>f1.txt</SPAN> в 
+            файл <SPAN class=texample>f2.txt</SPAN>.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define MAXLINE 255 //максимальная длина строки
+int _tmain(int argc, _TCHAR* argv[]){
+//копирование файла in в файл out
+  FILE *in, //исходный файл
+       *out; //принимающий файл
+  char buf[MAXLINE]; 
+  //строка, с помощью которой выполняется копирование
+  in=fopen("f1.txt","r");
+  //открыть исходный файл для чтения 
+  out=fopen("f2.txt","w");
+  //открыть принимающий файл для записи
+  while(fgets(buf, MAXLINE, in)!=0) 
+  //прочитать байты из файла in в строку buf
+    fputs(buf, out);
+    //записать байты из строки buf в файл out
+  fclose(in); //закрыть исходный файл
+  fclose(out);//закрыть принимающий файл
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_175><SPAN class=xml_em_italic>3) Блоковый 
+            ввод-вывод</SPAN></P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176>Для блокового ввода-вывода используются функции:</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fread(void *ptr, int size, int n, FILE *f);
+</PRE></DIV>
+            <P id=id_178>где <SPAN class=texample>void *ptr</SPAN> – указатель 
+            на область памяти, в которой размещаются считанные из файла 
+            данные;</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_180><SPAN class=texample>int size</SPAN> – размер одного 
+            считываемого элемента;</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_182><SPAN class=texample>int n</SPAN> – количество 
+            считываемых элементов;</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_184><SPAN class=texample>FILE *f</SPAN> – указатель на 
+            файл, из которого производится считывание.</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <P id=id_186>В случае успешного считывания функция возвращает 
+            количество считанных элементов, иначе – <SPAN 
+            class=texample>EOF</SPAN>.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fwrite(void *ptr ,int size, int n, FILE *f);
+</PRE></DIV>
+            <P id=id_189>где <SPAN class=texample>void *ptr</SPAN> – указатель 
+            на область памяти, в которой размещаются считанные из файла 
+            данные;</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_191><SPAN class=texample>int size</SPAN> – размер одного 
+            записываемого элемента;</P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_193><SPAN class=texample>int n</SPAN> – количество 
+            записываемых элементов;</P>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_195><SPAN class=texample>FILE *f</SPAN> – указатель на 
+            файл, в который производится запись.</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_197>В случае успешной записи функция возвращает количество 
+            записанных элементов, иначе – <SPAN class=texample>EOF</SPAN>.</P>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <P id=id_199><SPAN class=xml_em_italic>Пример 4.</SPAN></P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+struct Employee {char name[30];
+                 char title[30];
+                 float rate;
+                };
+int _tmain(int argc, _TCHAR* argv[]){
+  Employee e;
+  FILE *f;
+  if((f=fopen("text.dat","w"))==NULL) {
+    printf("\nФайл не открыт для записи");
+  }
+  int n;
+  //запись в файл
+  printf("\nВведите количество записей N=");
+  scanf("%d",&amp;n);
+  for(int i=0;i&lt;n;i++) {
+    //формируем структуру е 
+    printf("имя:");scanf("%s",&amp;e.name);
+    printf("наименование:");scanf("%s",&amp;e.title);
+    printf("налог:");scanf("%f",&amp;e.rate);
+    //записываем е в файл
+    fwrite(&amp;e,sizeof(Employee),1,f);
+  }
+  fclose(f);
+  //чтение из файла
+  if((f=fopen("text.dat","rb"))==NULL) 
+    printf("\nФайл не открыт для чтения");
+  while(fread(&amp;e,sizeof(Employee),1,f)) 
+    printf("%s, %s, %f;\n", e.name, e.title, e.rate);
+  fclose(f);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_201><SPAN class=xml_em_italic>4) Форматированный 
+            ввод-вывод</SPAN></P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202>В некоторых случаях информацию удобно записывать в файл 
+            без преобразования, т.е. в символьном виде, пригодном для 
+            непосредственного отображения на экран. Для этого можно использовать 
+            функции форматированного ввода-вывода:</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fprintf(FILE *f, const char *fmt, ...);
+</PRE></DIV>
+            <P id=id_204>где <SPAN class=texample>FILE*f</SPAN> – указатель на 
+            файл, в который производится запись;</P>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <P id=id_206><SPAN class=texample>const char *fmt</SPAN> – форматная 
+            строка;</P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_208><SPAN class=texample>par1, par2, ...</SPAN> – список 
+            переменных, в которые заносится информация из файла.</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_210>Функция возвращает число переменных, которым присвоено 
+            значение.</P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <P id=id_211><SPAN class=xml_em_italic>Пример 5.</SPAN></P>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  FILE *f;
+  int n, nn,m;
+  if((f=fopen("int.dat","w"))==0)
+    perror("int.dat");
+  for(n=1;n&lt;11;n++)
+    fprintf(f, "\n%d %d", n, n*n);
+  fclose(f);
+  if ((f=fopen("int.dat","r"))==0)
+    perror("int.dat");
+  m=1;
+  while(fscanf(f, "%d %d",&amp;n, &amp;nn)&amp;&amp; m++&lt;11) 
+    printf("\n%d %d",n,nn);
+  fclose(f);
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect8></A>
+            <H3>Основные алгоритмы работы с файлами</H3>
+            <P id=id_213>Порядок работы с текстовыми и двоичными файлами 
+            аналогичен.</P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <P id=id_214><SPAN class=xml_em_italic>Для записи данных в 
+            файл</SPAN> нужно выполнить:</P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <OL id=id_215>
+              <LI>Описать файловую переменную типа <SPAN class=texample>FILE 
+              *</SPAN>.
+              <LI>Открыть файл для записи с помощью функции <SPAN 
+              class=texample>fopen</SPAN>.
+              <LI>Записать данные в файл с помощью функции <SPAN 
+              class=texample>fprintf</SPAN> или <SPAN 
+              class=texample>fwrite</SPAN>.
+              <LI>Закрыть файл с помощью функции <SPAN 
+              class=texample>fclose</SPAN>.</LI></OL>
+            <DIV id=mark_215 class=lecture_mark></DIV>
+            <P id=id_225><SPAN class=xml_em_italic>Для чтения данных из 
+            файла</SPAN> нужно выполнить:</P>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <OL id=id_226>
+              <LI>Описать файловую переменную типа <SPAN class=texample>FILE 
+              *</SPAN>.
+              <LI>Открыть файл для чтения с помощью функции <SPAN 
+              class=texample>fopen</SPAN>.
+              <LI>Считать данные из файла с помощью функции <SPAN 
+              class=texample>fscanf</SPAN> или <SPAN 
+class=texample>fread</SPAN>.
+              <LI>Закрыть файл с помощью функции <SPAN 
+              class=texample>fclose</SPAN>.</LI></OL>
+            <DIV id=mark_226 class=lecture_mark></DIV>
+            <P id=id_236><SPAN class=xml_em_italic>Пример 6</SPAN>. Написать 
+            программу, реализующую подсчет количества символов в заданном тексте 
+            и файловый ввод-вывод данных. Работа программы должна включать ввод 
+            пользователем с клавиатуры имен входного и выходного файлов. 
+            Результат работы программы сохраняется в выходном файле, а также 
+            выводится на экран.</P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  int sum=0;
+  char c,file1[10],file2[10];
+  FILE *t,*g;
+  printf("Введите имя входного файла : ");
+  scanf("%s",file1);
+  printf("Введите имя выходного файла  ");
+  scanf("%s",file2);
+  t=fopen(file1,"r");
+  g=fopen(file2,"w");
+  printf("\nСодержимое входного файла %s:\n",file1);
+  while(!feof(t)) {
+    c=getc(t);
+    if (c!=10&amp;&amp; c!=-1) 
+    //символы конца строки и конца файла не считаются
+    sum++;
+    printf("%c", c);
+  }
+  fprintf(g,"%d",sum);
+  printf("\nКоличество символов в тексте входного файла равно %d",sum);
+  fclose(t);
+  fclose(g);
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect9></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_238><B>Буфер</B> – это область оперативной памяти, 
+            предназначенная для временного хранения данных во время процессов 
+            ввода-вывода информации.</P>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_239><B>Двоичный файл</B> – это файл, данные которого 
+            представлены в бинарном виде. </P>
+            <DIV id=mark_239 class=lecture_mark></DIV>
+            <P id=id_240><B>Извлечение из потока</B> – это процесс чтения данных 
+            из потока.</P>
+            <DIV id=mark_240 class=lecture_mark></DIV>
+            <P id=id_241><B>Помещение (включение) в поток</B> – это процесс 
+            вывода данных в поток.</P>
+            <DIV id=mark_241 class=lecture_mark></DIV>
+            <P id=id_242><B>Поток</B> – это абстрактное понятие, относящееся к 
+            любому переносу данных от источника к приемнику.</P>
+            <DIV id=mark_242 class=lecture_mark></DIV>
+            <P id=id_243><B>Режимы открытия файлов</B> – это наборы допустимых 
+            действий с открываемыми в программе файлами.</P>
+            <DIV id=mark_243 class=lecture_mark></DIV>
+            <P id=id_244><B>Стандартные функции по работе с файлами</B> – это 
+            функции из стандартной библиотеки, выполняющие ввод-вывод в 
+            файлы.</P>
+            <DIV id=mark_244 class=lecture_mark></DIV>
+            <P id=id_245><B>Текстовый файл</B> – это файл, в котором каждый 
+            символ из используемого набора символов хранится в виде одного байта 
+            (кода, соответствующего символу).</P>
+            <DIV id=mark_245 class=lecture_mark></DIV>
+            <P id=id_246><SPAN class=texample>Файл</SPAN> – это именованная 
+            область внешней памяти, в которой хранится логически завершенный 
+            объем данных.</P>
+            <DIV id=mark_246 class=lecture_mark></DIV>
+            <P id=id_248><B>Файловый указатель</B> – это указатель на объект 
+            структурного типа <SPAN class=texample>FILE</SPAN>.</P>
+            <DIV id=mark_248 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_250>
+              <LI>Данные хранятся на внешних носителях в виде файлов. Файлы 
+              рассматриваются как неструктурированная последовательность байтов.
+              <LI>Согласно концепции С++, файлы классифицируются на текстовые и 
+              двоичные.
+              <LI>Организации ввода-вывода в С++ осуществляется с помощью 
+              потоков.
+              <LI>Чтение данных из потока называется извлечением, вывод в поток 
+              – помещением (включением).
+              <LI>Ввод-вывод данных в файлах с помощью стандартных функций 
+              осуществляется посредством буфера.
+              <LI>При организации в программе файлового потока объявляется 
+              файловый указатель.
+              <LI>Прототипы функций по работе с файлами находятся в стандартных 
+              библиотеках.
+              <LI>Перед началом работы с файлом его необходимо открыть, указав 
+              режим открытия.
+              <LI>Любой открытый в программе файл необходимо закрыть после 
+              использования.
+              <LI>С помощью стандартных функций может быть организован 
+              символьный, строковый, блоковый и форматированный ввод-вывод 
+              данных.</LI></OL>
+            <DIV id=mark_250 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Лабораторная работа 19. Стандартные файлы и функции по работе с 
+            ними</H3>
+            <P id=id_261><B>Цель работы:</B> изучить понятия, характеристику и 
+            классификацию файлов и стандартных функций по работе с файлами, 
+            научиться решать задачи с использованием стандартных функций по 
+            работе с файлами на языке C++.</P>
+            <DIV id=mark_261 class=lecture_mark></DIV>
+            <P id=id_262>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            одну строковую величину, являющуюся корректным именем входного файла 
+            (при этом в программе следует предусмотреть проверку существования и 
+            корректности открытия файла). Ввод данных осуществляется из входного 
+            файла с учетом требований к входным данным, содержащихся в 
+            постановке задачи. Ограничениями на входные данные является 
+            максимальный размер строковых данных и допустимый диапазон числовых 
+            типов в языке С++. При некорректном открытии файла программа должна 
+            завершить работу с выдачей на экран соответствующего сообщения.</P>
+            <DIV id=mark_262 class=lecture_mark></DIV>
+            <P id=id_263><B>Теоретические сведения.</B></P>
+            <DIV id=mark_263 class=lecture_mark></DIV>
+            <P id=id_264>Ознакомьтесь с материалом лекции 19.</P>
+            <DIV id=mark_264 class=lecture_mark></DIV>
+            <P id=id_265><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_265 class=lecture_mark></DIV>
+            <P id=id_266>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_266 class=lecture_mark></DIV>
+            <OL id=id_267>
+              <LI>Определить, какая буква чаще всего встречается в заданном 
+              файле.
+              <LI>Удвоить в содержимом файла каждую литеру.
+              <LI>Подсчитать число цифр в данном файле и их сумму.
+              <LI>Определить переменную "студент", содержащую следующие поля: 
+              имя, фамилия, отчество студента, название института, номер группы. 
+              Данные считать из текстового файла. Вывести данные о студентах, 
+              которые учатся в одном и том же заданном институте и в одной 
+              заданной группе.</LI></OL>
+            <DIV id=mark_267 class=lecture_mark></DIV>
+            <P id=id_272>Указания к выполнению работы.</P>
+            <DIV id=mark_272 class=lecture_mark></DIV>
+            <P id=id_273>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки стандартных файлов в языке С++. В 
+            программном коде к каждой задаче следует выполнять чтение данных из 
+            существующего входного файла (имя файла вводится в виде строки 
+            символов и считается корректным с точки зрения организации файловой 
+            системы). В задаче 2 возможно использование вспомогательного файла, 
+            который выступает в роли выходного файла. Программу для решения 
+            каждого задания необходимо разработать методом процедурной 
+            абстракции, оформив комментарии к коду.</P>
+            <DIV id=mark_273 class=lecture_mark></DIV>
+            <P id=id_274>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_274 class=lecture_mark></DIV>
+            <UL id=id_275>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_275 class=lecture_mark></DIV>
+            <P id=id_284><B>Требования к отчету.</B></P>
+            <DIV id=mark_284 class=lecture_mark></DIV>
+            <P id=id_285>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_285 class=lecture_mark></DIV>
+            <UL id=id_286>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_286 class=lecture_mark></DIV>
+            <P id=id_295>Контрольные вопросы</P>
+            <DIV id=mark_295 class=lecture_mark></DIV>
+            <OL id=id_296>
+              <LI>В чем отличия текстовых и двоичных файлов с точки зрения 
+              представления данных?
+              <LI>Почему поток ввода-вывода не зависит от конкретного 
+устройства?
+              <LI>Для чего необходима буферизация при потоковом и 
+              форматированном вводе-выводе?
+              <LI>С какой целью предусмотрены режимы открытия файлов и почему их 
+              такое многообразие?
+              <LI>Каковы могут быть причины ошибок при открытии файлов?
+              <LI>Какие значения возвращает функция открытия файла в зависимости 
+              от результата?
+              <LI>Каким образом в программе происходит проверка достижения конца 
+              файла?
+              <LI>Может ли один и тот же указатель на файл одновременно связан с 
+              несколькими файлами? Почему?
+              <LI>Может ли один и тот же файл одновременно быть открыт для 
+              чтения и для записи?
+              <LI>Можно ли один и тот же файл открыть несколько раз, не закрывая 
+              после каждого открытия?
+              <LI>Сохранится ли информация в файле, если его не закрыть в 
+              программе с помощью функции?
+              <LI>В чем основные отличия в организации символьного, строкового, 
+              блокового и форматированного ввода-ввода в файлы?</LI></OL>
+            <DIV id=mark_296 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

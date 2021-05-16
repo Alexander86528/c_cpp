@@ -1,0 +1,1129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_4_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG src="Лекция_4_files/mht48A(1).tmp" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_4_files/mht48A(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_4_files/mht48A(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>4. Лекция: Принятие решений. Условные 
+            операторы в языке С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции рассматриваются операторы if, if–else, if–else 
+            if–else, switch–case–default, оператор условия ?, операторы перехода 
+            break, continue, безусловный оператор перехода goto. Изучаются 
+            вложенные условные операторы, а также логические условия. 
+        </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_4_files/mht48A(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>В языке программирования <B>С</B> используются несколько 
+            конструкций для принятия решений:</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <UL id=id_2>
+              <LI>оператор <SPAN class=texample>if;</SPAN>
+              <LI>оператор <SPAN class=texample>switch;</SPAN>
+              <LI>условный оператор <SPAN class=texample></SPAN>? (оператор 
+              условия) [<A 
+              href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+              target=_blank>4.1</A>].</LI></UL>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_9>Для прерывания программного цикла при некотором условии 
+            применяется утверждение (оператор) <SPAN 
+            class=texample>break</SPAN>, для продолжения итераций цикла при 
+            выполнении некоторых условий применяется утверждение (оператор) 
+            <SPAN class=texample>continue</SPAN>, для выхода из функции при 
+            выполнении некоторых условий применяется оператор <SPAN 
+            class=texample>return</SPAN>, для перехода к заданному месту 
+            программы применяется оператор <SPAN class=texample>goto</SPAN>, 
+            хотя считается, что в программировании не существует ситуаций, в 
+            которых нельзя обойтись без оператора <SPAN class=texample>goto [2; 
+            3]</SPAN>. Утверждение <SPAN class=texample>break</SPAN> применяется 
+            также в теле оператора <SPAN class=texample>switch</SPAN>.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>4.1. Оператор if</H4>
+            <P id=id_17>Общая форма записи оператора <SPAN 
+            class=texample>if</SPAN>:</P>
+            <DIV id=mark_17 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression)
+program statement;</PRE></DIV>
+            <P id=id_20>В операторе <SPAN class=texample>if</SPAN> используется 
+            результат вычисления условия, заключенного в круглые скобки, на 
+            основе которого принимается решение. Результат вычисления условия 
+            <SPAN class=texample>expression</SPAN> может быть арифметическим или 
+            логическим. Если результат выполнения условия <SPAN 
+            class=texample>expression</SPAN> будет истинным, то возможно 
+            выполнить несколько утверждений типа <SPAN class=texample>program 
+            statement</SPAN>. Для этого следует использовать фигурные скобки, 
+            например:</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression)
+{
+program1 statement1;
+program2 statement2;
+...
+}</PRE></DIV><A name=sect3></A>
+            <H4>4.2. Конструкция if–else</H4>
+            <P id=id_26>Общая форма записи конструкции <SPAN 
+            class=texample>if–else</SPAN>:</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression)
+program1 statement1;
+else
+program2 statement2;</PRE></DIV>
+            <P id=id_29>Если выполняется условие <SPAN 
+            class=texample>expression</SPAN>, то будет выполняться фрагмент 
+            программы <SPAN class=texample>program1 statement1</SPAN>, в 
+            противном случае будет выполняться <SPAN class=texample>program2 
+            statement2</SPAN>.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_33>Каждое из утверждений может быть множественным. В таком 
+            случае применяются фигурные скобки:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression)
+{
+program1 statement1;
+program2 statement2;
+...
+}
+else
+{
+program33 statement33;
+program34 statement34;
+...
+}</PRE></DIV><A name=sect4></A>
+            <H4>4.3. Конструкция if–else if–else if–...–else</H4>
+            <P id=id_35>Форма записи конструкции <SPAN class=texample>if–else 
+            if–else if–...–else</SPAN>:</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression1)
+program1 statement1;
+
+else if (expression2)
+program2 statement2;
+
+else if (expression3)
+program3 statement3;
+...
+else
+program statement;</PRE></DIV>
+            <P id=id_38>Приведенная конструкция используется для выбора 
+            возможных ситуаций, когда проверяются условия <SPAN 
+            class=texample>expression1</SPAN>, <SPAN 
+            class=texample>expression2</SPAN>, <SPAN 
+            class=texample>expression1</SPAN>,... . Соответственно будут 
+            выполняться действия <SPAN class=texample>program1 
+            statement1</SPAN>, <SPAN class=texample>program2 statement2</SPAN>, 
+            <SPAN class=texample>program3 statement3</SPAN> и т.д. В случае, 
+            когда ни одно из условий не выполняется, выполняются действия, 
+            прописанные после оператора <SPAN class=texample>else</SPAN>.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_46>В случае выполнения множественных действий применяются 
+            фигурные скобки для каждого из утверждений:</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (expression1)
+{
+program1 statement1;
+...
+}
+
+else if (expression2)
+{
+program2 statement2;
+...
+}
+
+else if (expression3)
+{
+program3 statement3;
+...
+}
+...
+
+else
+{
+program statement;
+...
+}</PRE></DIV><A name=sect5></A>
+            <H4>4.4. Оператор switch</H4>
+            <P id=id_48>Общая форма записи оператора <SPAN 
+            class=texample>switch</SPAN>:</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <DIV class=example><PRE>switch (expression) {
+case value1:
+program statement;
+...
+break;
+
+case value2:
+program statement;
+...
+break;
+...
+
+case valuen:
+program statement;
+...
+break;
+
+default:
+program statement;
+...
+break; 
+}</PRE></DIV>
+            <P id=id_51>Выражение заключенного в круглые скобки оператора 
+            последовательно сравнивается со значениями <SPAN 
+            class=texample>value1</SPAN>, <SPAN 
+            class=texample>value2</SPAN>,..., <SPAN 
+            class=texample>valuen</SPAN>, которые должны быть простыми 
+            константами или константными выражениями. В том случае, когда одно 
+            из этих значений равно значению, выполняются утверждения, которые 
+            следуют за данным значением.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_55>Утверждение <SPAN class=texample>break</SPAN> 
+            сигнализирует об окончании выполнения утверждений и приводит к 
+            выходу из оператора <SPAN class=texample>switch</SPAN>. Утверждение 
+            <SPAN class=texample>break</SPAN> ставится в конце каждого варианта 
+            выбора. Если этого не сделать, то выполнение последовательности 
+            утверждений перейдет в следующий вариант выбора и будет выполняться 
+            до тех пор, пока не встретится утверждение <SPAN 
+            class=texample>break</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>4.1</A>].</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_60>Специальный дополнительный вариант <SPAN 
+            class=texample>default</SPAN> будет выполнен в том случае, когда не 
+            будет найдено ни одного совпадения.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_62>Операторы <SPAN class=texample>if</SPAN> и <SPAN 
+            class=texample>switch</SPAN> той или иной синтаксической конструкции 
+            существуют практически во всех языках программирования (в первую 
+            очередь языках высокого уровня), и их часто называют <SPAN 
+            class=xml_em_italic>операторами ветвления</SPAN>.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV><A name=sect6></A>
+            <H4>4.5. Условный оператор ?</H4>
+            <P id=id_65>В отличие от других операторов языка <B>С</B>, которые 
+            могут быть <SPAN class=xml_em_italic>унарными</SPAN> или <SPAN 
+            class=xml_em_italic>бинарными</SPAN>, специфический оператор условия 
+            является <SPAN class=xml_em_italic>тернарным</SPAN> оператором. Это 
+            означает, что у него может быть три операнда [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>4.1</A>].</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_66>Общий формат записи оператора условия:</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <DIV class=example><PRE>условие ? выражение_1 : выражение_2</PRE></DIV>
+            <P id=id_68>Если в результате вычисления <B>условия</B> будет 
+            получено значение <SPAN class=texample>TRUE</SPAN> (истина, не 
+            нуль), то выполняется <SPAN class=texample>выражение_1</SPAN>, и 
+            результатом выполнения оператора условия будет значение, полученное 
+            при вычислении этого выражения. Если в результате вычисления условия 
+            будет получено значение <SPAN class=texample>FALSE</SPAN> (ложь, 
+            т.е. нуль), то выполняется <SPAN class=texample>выражение_2</SPAN>, 
+            и результатом выполнения оператора условия будет значение, 
+            полученное при вычислении <SPAN 
+            class=texample>выражение_2</SPAN>.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_74>Оператор условия часто описывают как оператор <SPAN 
+            class=texample></SPAN>?. Тернарный оператор условия <SPAN 
+            class=texample></SPAN>? наиболее часто используется для присвоения 
+            переменной одного из двух значений в зависимости от некоторого 
+            условия.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV><A name=sect7></A>
+            <H4>4.6. Оператор break (от английского – прерывать)</H4>
+            <P id=id_77>Оператор или утверждение <SPAN 
+            class=texample>break</SPAN> служит для немедленного выхода из цикла, 
+            будь то <SPAN class=texample>while</SPAN>, <SPAN 
+            class=texample>for</SPAN> или <SPAN class=texample>do–while</SPAN>. 
+            После выхода из цикла выполнение программы продолжается с 
+            утверждения (фрагмента программы), непосредственно следующего за 
+            циклом.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_82>Если оператор <SPAN class=texample>break</SPAN> 
+            встречается во вложенном цикле (вложенных циклах), то будет 
+            прекращено выполнение того цикла, в котором этот оператор 
+            встретился.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_84>Необходимость в использовании оператора прерывания <SPAN 
+            class=texample>break</SPAN> в теле цикла возникает тогда, когда 
+            условие продолжения итераций нужно проверять не в начале цикла (как 
+            в циклах <SPAN class=texample>while</SPAN> и <SPAN 
+            class=texample>for</SPAN> ) и не в конце тела цикла (как в цикле 
+            <SPAN class=texample>do–while</SPAN> ), а в середине тела цикла [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>4.2</A>].</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_89>Формат записи оператора <SPAN 
+            class=texample>break</SPAN>:</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <DIV class=example><PRE>break;</PRE></DIV><A name=sect8></A>
+            <H4>4.7. Оператор continue (от английского – продолжать)</H4>
+            <P id=id_92>Оператор или утверждение <SPAN 
+            class=texample>continue</SPAN> служит для перехода к следующей 
+            итерации цикла [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>4.2</A>].</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_94>Оператор <SPAN class=texample>continue</SPAN> 
+            противоположен по действию оператору <SPAN 
+            class=texample>break</SPAN>. Оператор <SPAN 
+            class=texample>continue</SPAN> позволяет в любой точке тела цикла ( 
+            <SPAN class=texample>while</SPAN>, <SPAN class=texample>for</SPAN> 
+            или <SPAN class=texample>do–while</SPAN> ) прервать текущую итерацию 
+            и перейти к проверке условий продолжения цикла. В соответствии с 
+            результатами проверки либо заканчивается выполнение цикла, либо 
+            начинается новая итерация. При этом все утверждения (фрагменты 
+            программы), которые следуют за оператором <SPAN 
+            class=texample>continue</SPAN> (ключевым словом), автоматически 
+            пропускаются.</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_102>Формат записи оператора <SPAN 
+            class=texample>continue</SPAN>:</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <DIV class=example><PRE>continue;</PRE></DIV><A name=sect9></A>
+            <H4>4.8. Оператор goto</H4>
+            <P id=id_105>Сейчас во многих языках программирования оператор 
+            безусловного перехода типа <SPAN class=texample>goto</SPAN> не 
+            используется. Однако в языке программирования <B>С</B> он имеет 
+            место. Применение оператора <SPAN class=texample>goto</SPAN> не 
+            является хорошим стилем программирования. Но в некоторых случаях его 
+            применение бывает уместно. Иногда, при умелом использовании, 
+            оператор <SPAN class=texample>goto</SPAN> может оказаться весьма 
+            полезным, например, если нужно покинуть глубоко вложенные циклы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>4.2</A>].</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_109>Для оператора <SPAN class=texample>goto</SPAN> всегда 
+            необходима метка. Метка – это идентификатор с последующим 
+            двоеточием. Метка должна находиться в той же функции, что и оператор 
+            <SPAN class=texample>goto</SPAN>, переход в другую функцию 
+            невозможен.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_112>Общий формат записи оператора <SPAN 
+            class=texample>goto</SPAN>:</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <DIV class=example><PRE>goto метка;
+.
+.
+.
+метка: заданные действия.</PRE></DIV>
+            <P id=id_115>Метка может находиться как до, так и после оператора 
+            <SPAN class=texample>goto</SPAN>. С помощью оператора <SPAN 
+            class=texample>goto</SPAN> можно не только выходить из цикла, но и 
+            организовать цикл.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV>
+            <P id=id_118>Логические операторы отношения приведены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#table.4.1">табл. 
+            4.1</A>.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <DIV id=id_119 class=xml_table_env><A name=table.4.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 4.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>широкая ячейка</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>№&nbsp;п/п</TD>
+                <TD bgColor=#eaeaea vAlign=top>Оператор</TD>
+                <TD bgColor=#eaeaea vAlign=top>Операция</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1)</TD>
+                <TD bgColor=#eaeaea vAlign=top>&amp;&amp;</TD>
+                <TD bgColor=#eaeaea vAlign=top>И</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2)</TD>
+                <TD bgColor=#eaeaea vAlign=top>||</TD>
+                <TD bgColor=#eaeaea vAlign=top>ИЛИ</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3)</TD>
+                <TD bgColor=#eaeaea vAlign=top>!</TD>
+                <TD bgColor=#eaeaea vAlign=top>НЕ, 
+            отрицание</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120>Ниже приведены операции отношений в убывающей 
+            последовательности приоритетов [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>4.2</A>]:</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Наивысший        !
+                &gt;  &gt;=  &lt;  &lt;=
+                ==  !=
+                &amp;&amp;
+Низший        ||</PRE></DIV>
+            <P id=id_122>Как и в арифметических выражениях, для изменения 
+            порядка выполнения операций сравнения и логических операций можно 
+            использовать круглые скобки.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_123>Результат любой операции сравнения или логической 
+            операции есть <B>0</B> (нуль) или <B>1</B>.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Практическая часть</H3>
+            <P id=id_124><B>Пример 1</B>. Напишите программу решения квадратного 
+            уравнения с проверкой на наличие вещественных (не комплексных) 
+            корней на основе только операторов <SPAN class=texample>if</SPAN>. 
+            Вид квадратного уравнения:</P>
+            <DIV id=mark_124 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=ax^2+bx+c=0 src="Лекция_4_files/mht4CC(1).tmp" width=134 
+            height=20>.
+            <P id=id_127>Как известно, квадратное уравнение будет иметь 
+            вещественные корни, если его дискриминант будет неотрицательным, 
+            т.е. когда</P>
+            <DIV id=mark_127 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=D=b^2-4ac\geqslant0 src="Лекция_4_files/mht4DE(1).tmp" width=139 
+            height=20>.
+            <P id=id_129>Программный код решения примера:</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void) {
+	float a, b, c;
+	float D, x1, x2, x;
+	printf("\n\t Equation a*x^2 + b*x + c = 0\n");
+	printf("\n\t Enter the coefficient a: ");
+	scanf_s("%f", &amp;a);
+	printf("\t Enter the coefficient b: ");
+	scanf_s("%f", &amp;b);
+	printf("\t Enter the coefficient c: ");
+	scanf_s("%f", &amp;c);
+	D = b*b - 4*a*c;
+	if (D &gt;= 0 &amp;&amp; a != 0) {
+	x1 = -b/(2*a) + (float)sqrt(D)/(2*a);
+	x2 = -b/(2*a) - (float)sqrt(D)/(2*a);
+     printf("\n\t The roots of the equation:\n\t x1 = %1.4f, x2 = %1.4f\n", x1, x2);
+	}
+	if (D &lt; 0)
+		printf("\n\t The roots of complex\n");
+
+	if (a == 0 &amp;&amp; b != 0) {
+x = -c/b;
+	printf("\n\t As a = %1.0f,\n\t the solution of the equation is: %1.4f\n", a, x); }
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_131>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.1">рис. 
+            4.1</A>.</P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132 align=left><A name=image.4.1></A></P>
+            <DIV><IMG alt="Результат решения квадратного уравнения" 
+            src="Лекция_4_files/mht4F1(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.1.</B>&nbsp; Результат решения 
+            квадратного уравнения
+            <P></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133>В программе последовательно проверяются условия с 
+            помощью операторов <SPAN class=texample>if</SPAN>. В последнем 
+            случае, когда коэффициент <SPAN class=texample>а = 0</SPAN>, 
+            квадратное уравнение вырождается и превращается в линейное 
+            уравнение. Решение в этом случае очевидно.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_136>В программе применены функции <SPAN 
+            class=texample>scanf_s()</SPAN> вместо стандартной функции <SPAN 
+            class=texample>scanf()</SPAN> языка <B>С</B>. Это сделано для того, 
+            чтобы по этим функциям не было предупреждений (warning) в MS Visual 
+            Studio&nbsp;2008.</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <P id=id_139>Кроме того, в программу подключена библиотека <SPAN 
+            class=texample>math.h</SPAN> для действий с математическими 
+            функциями, например, <SPAN class=texample>sqrt()</SPAN>.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_142>В первом операторе <SPAN class=texample>if</SPAN> 
+            применено логическое условие <B>И</B> ( <SPAN 
+            class=texample>&amp;&amp;</SPAN> ) для проверки того, что 
+            дискриминант не равен отрицательному значению и одновременно чтобы 
+            первый коэффициент квадратного уравнения не был равен нулю. 
+            Аналогичное условие прописано и для последнего оператора <SPAN 
+            class=texample>if</SPAN>.</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_146><B>Задание 1</B></P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <OL id=id_147>
+              <LI>Объясните включение <SPAN class=texample>float</SPAN> перед 
+              функцией <SPAN class=texample>sqrt()</SPAN>.
+              <LI>В программу введите изменения для вычисления комплексных 
+              корней квадратного уравнения без подключения дополнительных 
+              библиотек.
+              <LI>В программе предусмотрите ситуацию, когда все коэффициенты 
+              квадратного уравнения равны нулю.
+              <LI>В программе предусмотрите подстановки найденных корней в 
+              заданное квадратное уравнение с выводом возможной невязки. 
+              Предусмотрите также меры по уменьшению невязки.
+              <LI>Предусмотрите циклический ввод коэффициентов квадратного 
+              уравнения и вывода решения троекратно.
+              <LI>Предусмотрите проверку всех возможных условий задания 
+              коэффициентов квадратного уравнения.</LI></OL>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_156><B>Пример 2</B>. Напишите программу решения квадратного 
+            уравнения с проверкой на наличие вещественных корней на основе 
+            конструкции <SPAN class=texample>if–else</SPAN>. Вид квадратного 
+            уравнения:</P>
+            <DIV id=mark_156 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=ax^2+bx+c=0 src="Лекция_4_files/mht4CC(1).tmp" width=134 
+            height=20>.
+            <P id=id_159>Программный код решения примера:</P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+
+int main(void)
+ {
+	float a, b, c;
+	float D, x1, x2, x;
+	printf("\n\t Equation a*x^2 + b*x + c = 0\n");
+	printf("\n\t Enter the coefficient a: ");
+	scanf_s("%f", &amp;a);
+	printf("\t Enter the coefficient b: ");
+	scanf_s("%f", &amp;b);
+	printf("\t Enter the coefficient c: ");
+	scanf_s("%f", &amp;c);
+	D = b*b - 4*a*c;
+	if (D &gt;= 0 &amp;&amp; a != 0 &amp;&amp; b != 0) {
+	x1 = -b/(2*a) + (float)sqrt(D)/(2*a);
+	x2 = -b/(2*a) - (float)sqrt(D)/(2*a);
+     printf("\n\t The roots of the equation:\n\t x1 = %1.4f, x2 = %1.4f\n", x1, x2);
+	}
+	else {
+if (a == 0 &amp;&amp; b != 0) {
+x = -c/b; 
+if (c != 0)
+printf("\n\t As a = %1.0f,\n\t the solution of the equation is: %1.4f\n", a, x);
+
+
+else
+printf("\n\t As a = %1.0f and c = %1.0f,\n\t the solution of the equation is: %1.0f\n", a, -x); 
+}
+if (D &lt; 0)
+printf("\n\t The roots of complex\n");	
+	}
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_161>В программе использованы вложенные операторы if.</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162>Результат выполнения программы при исключительной 
+            ситуации показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.2">рис. 
+            4.2</A>.</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_163 align=left><A name=image.4.2></A></P>
+            <DIV><IMG alt="Выполнение программы с двумя нулевыми коэффициентами" 
+            src="Лекция_4_files/mht513(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.2.</B>&nbsp; Выполнение программы с 
+            двумя нулевыми коэффициентами
+            <P></P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_164><B>Задание 2</B></P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <OL id=id_165>
+              <LI>Добавьте в программу преобразование типов при использовании 
+              функции <SPAN class=texample>sqrt()</SPAN>.
+              <LI>В программе предусмотрите вычисление комплексных и мнимых 
+              корней квадратного уравнения.
+              <LI>Предусмотрите ввод целочисленных коэффициентов квадратного 
+              уравнения, используя тип <SPAN class=texample>int</SPAN>. В отчет 
+              вставьте возможный результат выполнения программы.
+              <LI>Напишите программу ввода вещественных чисел и вывода 
+              абсолютного значения этого числа на основе конструкции <SPAN 
+              class=texample>if–else</SPAN>.</LI></OL>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_173><B>Пример 3</B>. Напишите программу классификации 
+            введенного с терминала символа на основе конструкции <SPAN 
+            class=texample>if–else if–else</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>4.1</A>].</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_175>Символы (одиночные) будем считать как строчные и 
+            прописные буквы латинского алфавита, цифры от 0 до 9, и специальные 
+            символы.</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176>Программный код решения примера:</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void) {
+char c;
+
+// Ввод одиночного символа
+printf("\n\t Enter a single character: ");
+scanf_s("%c", &amp;c);
+
+if ( c &gt;= 'a' &amp;&amp; c &lt;= 'z' )
+printf("\n\t This is a small letter\n");
+
+else if ( c &gt;= 'A' &amp;&amp; c &lt;= 'Z')
+printf("\n\t This is a capital letter\n");
+
+else if ( c &gt;= '0' &amp;&amp; c &lt;= '9')
+printf("\n\t This figure (digit)\n");
+
+else
+printf("\n\t This is a special character\n");
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_178>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.3">рис. 
+            4.3</A>.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179 align=left><A name=image.4.3></A></P>
+            <DIV><IMG alt="Результат классификации символа" 
+            src="Лекция_4_files/mht535(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.3.</B>&nbsp; Результат классификации 
+            символа
+            <P></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180><B>Задание 3</B></P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <OL id=id_181>
+              <LI>Сформируйте одно условие ввода букв как прописных, так и 
+              строчных с последующим выводом: <B>This is an alphabetic 
+              character</B>.
+              <LI>Напишите программу циклического ввода символов и вывода 
+              результата их классификации до момента нажатия цифры 10*Х, где Х – 
+              номер компьютера, за которым выполняется лабораторная работа.
+              <LI>Напишите программу решения квадратного уравнения с применением 
+              конструкций <SPAN class=texample>if–else if–else</SPAN>.</LI></OL>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_186><B>Пример 4</B>. Напишите программу расчета простого 
+            арифметического выражения на основе оператора <SPAN 
+            class=texample>switch</SPAN>.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_188>Программный код решения примера:</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	float value1, value2;
+	char operat;
+	
+     printf("\n\t Printed on the keyboard expression: ");
+scanf_s("%f%c%f", &amp;value1, &amp;operat, sizeof(char), &amp;value2);
+
+     switch (operat) {
+	
+     case '+':
+		printf("\n\t Result: %1.4f\n", value1 + value2);
+		break;
+	
+     case '-':
+		printf("\n\t Result: %1.4f\n", value1 - value2);
+		break;
+	case '*':
+		printf("\n\t Result: %1.4f\n", value1 * value2);
+		break;
+	
+     case '/':
+		if (value2 == 0.0)
+		printf("\n\t Division by zero.\n");
+		else
+          printf("\n\t Result: %1.4f\n", value1 / value2);
+		break;
+	
+     default:
+		printf("\n\t Unknown arithmetic operator\n\t error or enter a number. Break!\n");
+		break;
+
+	} // End switch
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;  
+}</PRE></DIV>
+            <P id=id_190>В программе использована полная форма оператора <SPAN 
+            class=texample>switch</SPAN>. Оператор <SPAN 
+            class=texample>break</SPAN> инициирует немедленный выход из 
+            оператора <SPAN class=texample>switch</SPAN>. Возможно использование 
+            вложенных операторов <SPAN class=texample>switch</SPAN>.</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_195>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.4">рис. 
+            4.4</A>.</P>
+            <DIV id=mark_195 class=lecture_mark></DIV>
+            <P id=id_196 align=left><A name=image.4.4></A></P>
+            <DIV><IMG alt="Расчет простого арифметического выражения" 
+            src="Лекция_4_files/mht548(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.4.</B>&nbsp; Расчет простого 
+            арифметического выражения
+            <P></P>
+            <DIV id=mark_196 class=lecture_mark></DIV>
+            <P id=id_197><B>Задание 4</B></P>
+            <DIV id=mark_197 class=lecture_mark></DIV>
+            <OL id=id_198>
+              <LI>Проверьте деление числа на нуль и ввода недопустимого символа.
+              <LI>Примените условие равенства нулю вводимого числа без знака 
+              <SPAN class=texample>"=="</SPAN>.
+              <LI>Напишите программу расчета простого выражения с помощью 
+              конструкций <SPAN class=texample>if–else if–else</SPAN>.
+              <LI>Напишите программу деления суток на "Morning" (утро), "Day" 
+              (день), "Afternoon" (послеобеденное время), "Evening" (вечер), 
+              "Night" (ночь). Время ввода задается пользователем с 
+              клавиатуры.</LI></OL>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_205><B>Пример 5</B>. Напишите программу вычисления двух 
+            целых случайных чисел и определения наибольшего из них. Определение 
+            наибольшего числа произведите с помощью оператора условия ?</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_206>Программный код решения примера:</P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt; // Для функций случайных чисел
+#include &lt;time.h&gt;
+
+int main (void) {
+int a, b, maxab;
+unsigned int some;
+long int L;
+
+L = (long) time(NULL);
+some = (unsigned) L/2;
+srand(some);
+a = rand();
+b = rand();
+printf("\n\t Random numbers: a = %d; b = %d\n", a, b);
+// Оператор условия для определения максимального числа
+maxab = (a &gt; b) ? a : b;
+
+printf("\n\t Maximum number: %d\n", maxab);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+ }</PRE></DIV>
+            <P id=id_208>В программе использованы функции генерации 
+            псевдослучайных чисел <SPAN class=texample>rand()</SPAN> и задания 
+            исходного псевдослучайного числа <SPAN 
+            class=texample>srand()</SPAN>. Указанные функции входят в 
+            стандартную библиотечную функцию <SPAN 
+            class=texample>stdlib.h</SPAN>. Функция <SPAN 
+            class=texample>time()</SPAN> входит в библиотечную функцию <SPAN 
+            class=texample>time.h</SPAN>, которая поддерживает функции, 
+            обращающиеся к системному времени.</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_214>Для переменных <SPAN class=texample>L</SPAN> и <SPAN 
+            class=texample>some</SPAN> выполнено приведение типов.</P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_217>При каждом обращении к функции <SPAN 
+            class=texample>rand()</SPAN> возвращается целое в интервале между 
+            нулем и значением <SPAN class=texample>RAND_MAX</SPAN>, которое в 
+            любой реализации должно быть не меньше числа 32 767 [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>4.2</A>]</P>
+            <DIV id=mark_217 class=lecture_mark></DIV>
+            <P id=id_220>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.5">рис. 
+            4.5</A>.</P>
+            <DIV id=mark_220 class=lecture_mark></DIV>
+            <P id=id_221 align=left><A name=image.4.5></A></P>
+            <DIV><IMG alt="Результат определения максимального числа" 
+            src="Лекция_4_files/mht56A(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.5.</B>&nbsp; Результат определения 
+            максимального числа
+            <P></P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_222><B>Задание 5</B></P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <OL id=id_223>
+              <LI>При выводе максимального числа предусмотрите сообщение об 
+              имени числа, т.е. <B>a</B> или <B>b</B>.
+              <LI>В цикле сформируйте вектор десяти случайных чисел из интервала 
+              [0;1] и выведите на дисплей.
+              <LI>Для задания системного времени примените директиву <SPAN 
+              class=texample>define N X</SPAN>, где <B>Х</B> – номер компьютера, 
+              за которым выполняется лабораторная работа.
+              <LI>Примените оператор условия <SPAN class=texample></SPAN>? для 
+              определения абсолютного значения вещественного числа, которое 
+              должно вводиться пользователем с клавиатуры.</LI></OL>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <P id=id_230><B>Пример 6</B>. Используя оператор условия <SPAN 
+            class=texample></SPAN>? и переключатель <B>switch</B> напишите 
+            программу определения времени года по вводимым числам от 1 до 12, 
+            считая, что цифра 1 соответствует январю, цифра 2 – февралю и 
+            т.д.</P>
+            <DIV id=mark_230 class=lecture_mark></DIV>
+            <P id=id_232>Программный код решения примера:</P>
+            <DIV id=mark_232 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+int x;
+printf("\n\t Enter a whole number between 1 and 12: ");
+scanf_s("%d", &amp;x);
+
+switch (x &gt; 0 &amp;&amp; x &lt; 3 ? 1 : 
+		x == 12 ? 1 :
+		x &gt; 2 &amp;&amp; x &lt; 6 ? 2 :
+
+		x &gt; 5 &amp;&amp; x &lt; 9 ? 3 :
+		x &gt; 8 &amp;&amp; x &lt; 12 ? 4 :
+		x &gt; 12 || x &lt; 1 ? 5 : 5)
+{
+case 1 :
+	printf("\n\t This Winter\n");
+	break;
+case 2 :
+	printf("\n\t This Spring\n");
+	break;
+case 3 :
+	printf("\n\t This Summer\n");
+	break;
+case 4 :
+	printf("\n\t This Autumn\n");
+	break;
+case 5 :
+	printf("\n\t This is a mistake (Error)\n");
+}
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_234>В программе три месяца зимы кодируются цифрой 1, три 
+            месяца весны –цифрой 2, три месяца лета – цифрой 3, три месяца осени 
+            – цифрой 4. Если введенная цифра не входит в целочисленный интервал 
+            [1;&nbsp;12], то эта ситуация кодируется цифрой 5.</P>
+            <DIV id=mark_234 class=lecture_mark></DIV>
+            <P id=id_235>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.6">рис. 
+            4.6</A>.</P>
+            <DIV id=mark_235 class=lecture_mark></DIV>
+            <P id=id_236 align=left><A name=image.4.6></A></P>
+            <DIV><IMG alt="Результат программы по определению времени года" 
+            src="Лекция_4_files/mht57D(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.6.</B>&nbsp; Результат программы по 
+            определению времени года
+            <P></P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <P id=id_237><B>Задание 6</B></P>
+            <DIV id=mark_237 class=lecture_mark></DIV>
+            <OL id=id_238>
+              <LI>Проверьте программу по вводимым вещественным числам. Объясните 
+              результат.
+              <LI>Проверьте программу по вводимым буквам или знаков, имеющихся 
+              на клавиатуре. Объясните результат.
+              <LI>В программе вместо 5-го пункта, т.е. вместо case 5, примените 
+              операцию <B>default</B>.
+              <LI>Напишите программу определения времени года по вводимым числам 
+              без операторов условия <SPAN class=texample></SPAN>?.</LI></OL>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_244><B>Пример 7</B>. Напишите программу распечатки четных 
+            целых чисел от 0 до 30.</P>
+            <DIV id=mark_244 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void)
+ {
+	int x;
+	printf("\n\t Even numbers from 0 to 30:\n\n");
+	
+    for (x = 0; x &lt; 31; x++)  {
+	if ( x % 2 ) continue; 
+     printf("\t\t %3d\n", x); 
+     }
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_246>В программе в качестве проверки условия использовано 
+            деление по модулю ( <B>х%2</B> ). Если остаток от деления числа 
+            <B>х</B> не равен нулю, то утверждение (оператор, инструкция) <SPAN 
+            class=texample>continue</SPAN> передает управление непосредственно 
+            инструкции, проверяющей условное выражение, после чего циклический 
+            процесс продолжается. С помощью программы выводятся только четные 
+            числа, а при обнаружении нечетного числа происходит преждевременный 
+            переход к следующей итерации цикла, и функция <SPAN 
+            class=texample>printf()</SPAN> опускается. Функция <SPAN 
+            class=texample>printf()</SPAN> включена в тело цикла оператора <SPAN 
+            class=texample>for</SPAN>.</P>
+            <DIV id=mark_246 class=lecture_mark></DIV>
+            <P id=id_251>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.7">рис. 
+            4.7</A>.</P>
+            <DIV id=mark_251 class=lecture_mark></DIV>
+            <P id=id_252 align=left><A name=image.4.7></A></P>
+            <DIV><IMG alt="Результат вывода четных чисел" 
+            src="Лекция_4_files/mht59F(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.7.</B>&nbsp; Результат вывода четных 
+            чисел
+            <P></P>
+            <DIV id=mark_252 class=lecture_mark></DIV>
+            <P id=id_253><B>Задание 7</B></P>
+            <DIV id=mark_253 class=lecture_mark></DIV>
+            <OL id=id_254>
+              <LI>В программу включите действия подсчета суммы четных чисел.
+              <LI>Подсчитайте число итераций оператора цикла.
+              <LI>В программе вместо цикла <SPAN class=texample>for</SPAN> 
+              примените цикл <SPAN class=texample>while</SPAN>. Объясните 
+              действие инструкции <SPAN class=texample>continue</SPAN>.
+              <LI>В программе вместо цикла <SPAN class=texample>for</SPAN> 
+              примените цикл <SPAN class=texample>do–while</SPAN>. Объясните 
+              действие инструкции <SPAN class=texample>continue</SPAN>.
+              <LI>Напишите программу вывода четных чисел без оператора <SPAN 
+              class=texample>continue</SPAN>. Подсчитайте число итераций 
+              оператора цикла.
+              <LI>Сделайте вывод четных чисел из интервала от Х до 10*Х, где Х – 
+              номер компьютера, за которым выполняется лабораторная работа. 
+              Подсчитайте сумму четных чисел.
+              <LI>Измените условие для вывода четных чисел.</LI></OL>
+            <DIV id=mark_254 class=lecture_mark></DIV>
+            <P id=id_269><B>Пример 8</B>. Напишите программу подсчета суммы трех 
+            чисел из трех вложенных циклов и, если сумма делится без остатка на 
+            число 3, то прекратите сравнение чисел и выйдите из циклов с 
+            последующей распечаткой этой суммы и слагаемых. Первый цикл 
+            начинается с 51 до 1, второй цикл – с 41 до 1, третий цикл – с 1 до 
+            50. Первый цикл изменяется через 7 единиц, второй цикл изменяется на 
+            1, третий цикл изменяется на 7 единиц.</P>
+            <DIV id=mark_269 class=lecture_mark></DIV>
+            <P id=id_270>Программный код решения примера с оператором <SPAN 
+            class=texample>goto</SPAN>:</P>
+            <DIV id=mark_270 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+  int a, b, c, i, j, k;
+a = b = c = 0;
+	
+for (i = 51; i &gt;= 1; i -= 7 )
+	for (j = 41; j &gt;= 1; --j )
+		for (k = 1; k &lt;= 50; k += 7)
+		if ( ((i + j + k) % 3 == 0) &amp;&amp; (i &lt; 51) &amp;&amp; (j &lt; 41))
+			{a = i; b = j; c = k;
+               goto sum3;
+                } 
+	sum3: 
+printf("\n\t The sum (%d?+?%d?+?%d) is equal %d\n", a, b, c,
+ a + b + c);
+	
+	printf("\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_273>В программе использовано декрементирование (уменьшение 
+            на единицу) переменной <SPAN class=texample>j</SPAN> в форме <SPAN 
+            class=texample>--j</SPAN>. Переменная <SPAN class=texample>i</SPAN> 
+            с каждой итерацией цикла уменьшается на 7 единиц. Переменная <SPAN 
+            class=texample>k</SPAN> с каждой итерацией цикла увеличивается на 7 
+            единиц. После оператора <SPAN class=texample>if</SPAN> включены 
+            фигурные скобки для выполнения нескольких действий при выполнении 
+            заданного условия оператора <SPAN class=texample>if</SPAN>.</P>
+            <DIV id=mark_273 class=lecture_mark></DIV>
+            <P id=id_280>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.8">рис. 
+            4.8</A>.</P>
+            <DIV id=mark_280 class=lecture_mark></DIV>
+            <P id=id_281 align=left><A name=image.4.8></A></P>
+            <DIV><IMG alt="Итеративный подсчет числовой суммы, делящейся на 3" 
+            src="Лекция_4_files/mht5D1(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.8.</B>&nbsp; Итеративный подсчет 
+            числовой суммы, делящейся на 3
+            <P></P>
+            <DIV id=mark_281 class=lecture_mark></DIV>
+            <P id=id_282><B>Примечание</B>. Оператор <SPAN 
+            class=texample>goto</SPAN> нельзя применять для перехода в тело 
+            цикла, т.е. метка не должна быть внутри оператора цикла. Метка может 
+            появиться текстуально до или после оператора <SPAN 
+            class=texample>goto</SPAN>.</P>
+            <DIV id=mark_282 class=lecture_mark></DIV>
+            <P id=id_285><B>Задание 8</B></P>
+            <DIV id=mark_285 class=lecture_mark></DIV>
+            <OL id=id_286>
+              <LI>В программу включите подсчет числа итераций каждого из циклов.
+              <LI>Вместо оператора безусловного перехода <SPAN 
+              class=texample>goto</SPAN> примените оператор <SPAN 
+              class=texample>break</SPAN>. Произвести также подсчет числа 
+              итераций каждого из циклов. Сравните с аналогичными результатами 
+              предыдущего пункта задания.
+              <LI>В программе вместо операторов <SPAN class=texample>for</SPAN> 
+              примените операторы <SPAN class=texample>while</SPAN>. Выполните 
+              действия двух предыдущих пунктов задания.
+              <LI>Напишите программу ввода символа до тех пор, пока не будет 
+              введен заранее определенный символ, например <SPAN 
+              class=texample>'w'</SPAN>. Используйте оператор <SPAN 
+              class=texample>goto</SPAN>. Предусмотрите отступ от левого края 
+              дисплея.</LI></OL>
+            <DIV id=mark_286 class=lecture_mark></DIV>
+            <P id=id_297><B>Пример 9</B>. Напишите программу распечатки на 
+            консоль простых чисел из диапазона от 2 до N, где N – число, 
+            вводимое пользователем с клавиатуры, которое не превосходит, 
+            например, 1000.</P>
+            <DIV id=mark_297 class=lecture_mark></DIV>
+            <P id=id_298>Как известно, простое число – это целое положительное 
+            число больше единицы, которое не делится без остатка ни на одно 
+            другое целое положительное число, кроме единицы и самого себя. 
+            Единица не считается простым числом.</P>
+            <DIV id=mark_298 class=lecture_mark></DIV>
+            <P id=id_299>Возможный программный код решения примера:</P>
+            <DIV id=mark_299 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt; // для exit()
+
+#define Nmax 50
+
+int main (void) {
+	int i, j;
+	int ok, in;
+	int N;
+
+	printf("\n Enter an integer from 2 to %d: ", Nmax);
+    in = scanf_s("%d", &amp;N);
+
+     if (in == 0 || N &lt; 2 || N &gt; Nmax)
+    {
+     printf("\n Error input. Press any key: ");
+	_getch();
+	exit(1);
+    }
+
+     printf("\n Prime numbers from 2 to %d:\n\n", N);
+
+	for ( i = 2; i &lt;= N; i++ ) 
+       {
+		ok = 1;
+		for ( j = 2; j &lt; i; j++ ) 
+			if ( (i%j) == 0 )
+			ok = 0; 
+		if ( ok )
+		printf(" %3d", i);
+	  }
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_301>В программе с помощью оператора <SPAN 
+            class=texample>if</SPAN> осуществляется проверка правильности ввода 
+            данных с клавиатуры. Кроме того, этим же оператором проверяется 
+            остаток от деления двух чисел и условной истинности, когда 
+            переменная <SPAN class=texample>ok</SPAN> не равна нулю. С помощью 
+            препроцессорной директивы <B>define</B> определяется верхняя 
+            допустимая граница для простых чисел.</P>
+            <DIV id=mark_301 class=lecture_mark></DIV>
+            <P id=id_304>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\4. Лекция  Принятие решений. Условные операторы в языке С.mht#image.4.9">рис. 
+            4.9</A>.</P>
+            <DIV id=mark_304 class=lecture_mark></DIV>
+            <P id=id_305 align=left><A name=image.4.9></A></P>
+            <DIV><IMG alt="Пример вывода на консоль простых чисел" 
+            src="Лекция_4_files/mht5E3(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 4.9.</B>&nbsp; Пример вывода на консоль 
+            простых чисел
+            <P></P>
+            <DIV id=mark_305 class=lecture_mark></DIV>
+            <P id=id_306><B>Задание&nbsp;9</B></P>
+            <DIV id=mark_306 class=lecture_mark></DIV>
+            <OL id=id_307>
+              <LI>В программе вместо оператора цикла <SPAN 
+              class=texample>for</SPAN> примените оператор <SPAN 
+              class=texample>while</SPAN>.
+              <LI>В программе примите допустимое число <B>Nmax</B>, равное 9999. 
+              Предусмотрите при этом форматированный вывод на консоль простых 
+              чисел построчно, по 15 чисел в каждой строке. Используйте 
+              тернарный оператор <B>?</B>:.
+              <LI>Предыдущий пункт задания выполните с помощью операторов <SPAN 
+              class=texample>if</SPAN>, <SPAN 
+class=texample>else</SPAN>.</LI></OL>
+            <DIV id=mark_307 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_315>
+              <LI>Как организуются множественные действия в операторе условия 
+              <SPAN class=texample>if</SPAN>?
+              <LI>Какой формат записи имеет тернарный оператор условия?
+              <LI>Какой оператор условия рекомендуется использовать для 
+              программирования меню?
+              <LI>В чем различие и сходство между операторами <SPAN 
+              class=texample>break</SPAN> и <SPAN 
+class=texample>continue</SPAN>?
+              <LI>Как можно обеспечить выход из вложенных циклов?
+              <LI>Как можно организовать переходы в различные точки программы на 
+              <B>С</B>?
+              <LI>Какие логические операторы отношения используются в языке 
+              <B>С</B>?
+              <LI>Что произойдет, если в операторе <SPAN 
+              class=texample>switch</SPAN> после метки <B>case</B> не 
+              использовать оператор <SPAN class=texample>break</SPAN>?
+              <LI>Что произойдет, если в операторе <SPAN 
+              class=texample>switch</SPAN> не поставить метку <SPAN 
+              class=texample>default</SPAN> и условие переключения не совпадет 
+              ни с одной меткой <B>case</B>?</LI></OL>
+            <DIV id=mark_315 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_4_files/mht48A(1).tmp" width=8 
+height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_4_files/mht48A(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,969 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.intuit.ru/department/algorithms/staldata/1/staldata_1.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>1. Лекция: Типы данных в языке С++: версия 
+            для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятие типов данных в языках программирования, 
+            приводится классификация типов данных в С++, излагаются особенности 
+            представления базовых типов и операций над ними, рекомендации и 
+            правила выполнения операции преобразования базовых типов в С++. 
+            </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить классификацию типов и их 
+            внутренне представление в языке С++, научиться работать со 
+            стандартными и пользовательскими типами.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Основная цель любой программы состоит в обработке 
+            каких-либо данных, например, чисел или текстов. Данные могут быть 
+            различного вида или типа и, в зависимости от этого, с ними можно 
+            выполнять разные действия.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>В любом языке программирования каждая константа, 
+            переменная, результат вычисления выражения или функции должны иметь 
+            определенный тип данных.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4><B>Тип данных</B> – это множество допустимых значений, 
+            которые может принимать тот или иной объект, а также множество 
+            допустимых операций, которые применимы к нему. В современном 
+            понимании тип также зависит от внутреннего представления 
+            информации.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Таким образом, данные различных типов хранятся и 
+            обрабатываются по-разному. Тип данных определяет:</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <UL id=id_6>
+              <LI>внутреннее представление данных в памяти компьютера;
+              <LI>объем памяти, выделяемый под данные;
+              <LI>множество (диапазон) значений, которые могут принимать 
+              величины этого типа;
+              <LI>операции и функции, которые можно применять к данным этого 
+              типа.</LI></UL>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_11>Исходя из данных характеристик, необходимо определять 
+            тип каждой величины, используемой в программе для представления 
+            объектов. Обязательное описание типа позволяет компилятору 
+            производить проверку допустимости различных конструкций программы. 
+            От выбора типа величины зависит последовательность машинных команд, 
+            построенная компилятором.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Классификация типов данных в С++</H3>
+            <P id=id_12>Современные языки программирования, как правило, могут 
+            иметь набор простых типов, являющихся встроенными в данный язык 
+            программирования, и средства для создания производных типов.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13>Объектно-ориентированные языки программирования 
+            позволяют определять типы класса.</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Реализация простых типов данных заключается в способе 
+            представления значений данного типа в компьютере и в наборе 
+            операций, поддерживаемых для данного типа.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Тип данных определяет размер памяти, выделяемой под 
+            переменную данного типа при ее создании. Язык программирования C++ 
+            поддерживает следующие типы данных (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/1/staldata_1.html#image.1.1">рис. 
+            1.1</A>).</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <UL id=id_16>
+              <LI><SPAN class=xml_em_italic>Базовые типы</SPAN>. Базовые типы 
+              предопределены стандартом языка, указываются зарезервированными 
+              ключевыми словами и характеризуются одним значением. Их не надо 
+              определять и их нельзя разложить на более простые составляющие без 
+              потери сущности данных. Базовые типы объектов создают основу для 
+              построения более сложных типов.
+              <LI><SPAN class=xml_em_italic>Производные типы</SPAN>. Производные 
+              типы задаются пользователем, и переменные этих типов создаются как 
+              с использованием базовых типов, так и типов классов.
+              <LI><SPAN class=xml_em_italic>Типы класса</SPAN>. Экземпляры этих 
+              типов называются объектами.</LI></UL>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_20 align=left><A name=image.1.1></A>
+            <DIV><IMG alt="Типы данных в языке С++" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/01_01.png" 
+            width=698 height=347></DIV><BR><B>Рис. 1.1.</B>&nbsp; Типы данных в 
+            языке С++
+            <P></P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21>Существует четыре спецификатора типа данных, уточняющих 
+            внутреннее представление и диапазон базовых типов:</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <DIV id=id_22 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>short</SPAN> (короткий)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>длина</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>long</SPAN> (длинный)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>signed</SPAN> (знаковый)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>знак 
+              (модификатор)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>unsigned</SPAN> 
+            (беззнаковый)</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_27>Рассмотрим более подробно базовые типы данных.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Целочисленный (целый) тип данных (тип int)</H3>
+            <P id=id_28>Переменные данного типа применяются для хранения целых 
+            чисел (integer). Описание переменной, имеющей тип <SPAN 
+            class=texample>int</SPAN>, сообщает компилятору, что он должен 
+            связать с идентификатором (именем) переменной количество памяти, 
+            достаточное для хранения целого числа во время выполнения 
+            программы.</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_30>Границы диапазона целых чисел, которые можно хранить в 
+            переменных типа <SPAN class=texample>int</SPAN>, зависят от 
+            конкретного компьютера, компилятора и операционной системы (от 
+            реализации). Для 16-разрядного процессора под него отводится 2 
+            байта, для 32-разрядного – 4 байта.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_32>Для внутреннего представления знаковых целых чисел 
+            характерно определение знака по младшему биту (0 – для 
+            положительных, 1 – для отрицательных). Поэтому число 0 во внутреннем 
+            представлении относится к положительным значениям. Следовательно, 
+            наблюдается асимметрия границ целых промежутков.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>В целочисленных типах для всех значений определены 
+            следующий и предыдущий элементы. Для максимального следующим 
+            значением будет являться минимальное в этом же типе, предыдущее для 
+            минимального определяется как максимальное значение. То есть 
+            целочисленный диапазон условно можно представить сомкнутым в кольцо. 
+            Поэтому определены операции декремента для минимального и инкремента 
+            для максимального значений в целых типах.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>От количества отводимой под объект памяти зависит 
+            множество допустимых значений, которые может принимать объект:</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <UL id=id_35>
+              <LI><SPAN class=texample>short int</SPAN> – занимает 2 байта, 
+              следовательно, имеет диапазон от –32 768 до +32 767;
+              <LI><SPAN class=texample>int</SPAN> – занимает 4 байта, 
+              следовательно, имеет диапазон от –2 147 483 648 до +2 147 483 647;
+              <LI><SPAN class=texample>long int</SPAN> – занимает 4 байта, 
+              следовательно, имеет диапазон от –2 147 483 648 до +2 147 483 647;
+              <LI><SPAN class=texample>long long int</SPAN> – занимает 8 байтов, 
+              следовательно, имеет диапазон от –9 223 372 036 854 775 808 до +9 
+              223 372 036 854 775 807.</LI></UL>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_44>Модификаторы <SPAN class=texample>signed</SPAN> и <SPAN 
+            class=texample>unsigned</SPAN> также влияют на множество допустимых 
+            значений, которые может принимать объект:</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <UL id=id_47>
+              <LI><SPAN class=texample>unsigned short int</SPAN> – занимает 2 
+              байта, следовательно, имеет диапазон от 0 до 65 536;
+              <LI><SPAN class=texample>unsigned int</SPAN> – занимает 4 байта, 
+              следовательно, имеет диапазон от 0 до 4 294 967 295;
+              <LI><SPAN class=texample>unsigned long int</SPAN> – занимает 4 
+              байта, следовательно, имеет диапазон от 0 до 4 294 967 295;
+              <LI><SPAN class=texample>unsigned long long int</SPAN> – занимает 
+              8 байтов, следовательно, имеет диапазон от 0 до 18 446 744 073 709 
+              551 615.</LI></UL>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_56>Например:</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV class=example><PRE>unsigned int b; 
+signed int a; 
+int c; 
+unsigned d; 
+signed f; 
+</PRE></DIV>
+            <P id=id_58>Приведем несколько правил, касающихся записи 
+            целочисленных значений в исходном тексте программ.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <UL id=id_59>
+              <LI>Нельзя пользоваться десятичной точкой. Значения 26 и 26.0 
+              одинаковы, но 26.0 не является значением типа <SPAN 
+              class=texample>int</SPAN>.
+              <LI>Нельзя пользоваться запятыми в качестве разделителей тысяч. 
+              Например, число 23,897 следует записывать как 23897.
+              <LI>Целые значения не должны начинаться с незначащего нуля. Он 
+              применяется для обозначения восьмеричных или шестнадцатеричных 
+              чисел, так что компилятор будет рассматривать значение 011 как 
+              число 9 в восьмеричной системе счисления.</LI></UL>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_64>На практике рекомендуется использовать основной целый 
+            тип, то есть тип <SPAN class=texample>int</SPAN>. Данные основного 
+            целого типа практически всегда обрабатываются быстрее, чем данные 
+            других целых типов. Короткий тип <SPAN class=texample>short</SPAN> 
+            подойдет для хранения больших массивов чисел с целью экономии памяти 
+            при условии, что значения элементов не выходят за предельные границы 
+            для этих типов. Длинные типы необходимы в ситуации, когда не 
+            достаточно типа <SPAN class=texample>int</SPAN>.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Вещественный (данные с плавающей точкой) тип данных (типы float 
+            и double)</H3>
+            <P id=id_68>Для хранения вещественных чисел применяются типы данных 
+            <SPAN class=texample>float</SPAN> (с одинарной точностью) и <SPAN 
+            class=texample>double</SPAN> (с двойной точностью). Смысл знаков "+" 
+            и "-" для вещественных типов совпадает с целыми. Последние 
+            незначащие нули справа от десятичной точки игнорируются. Поэтому 
+            варианты записи +523.5, 523.5 и 523.500 представляют одно и то же 
+            значение. </P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_71>Для представления вещественных чисел используются два 
+            формата:</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <UL id=id_72>
+              <LI>с фиксированной точкой 
+              <DIV class=example><PRE>[знак][целая часть].[дробная часть]
+</PRE></DIV>Например: –8.13; .168 (аналогично 0.168); 183. 
+              (аналогично 183.0).
+              <LI>с плавающей точкой (экспоненциальной форме) 
+              <DIV class=example><PRE>мантисса Е/е порядок
+</PRE></DIV>Например: 5.235e+02 (5.235 · 10<SUP>2</SUP> = 523.5); 
+              –3.4Е<SUP>-03</SUP> (–3.4 · 10<SUP>-03</SUP> = – 0.0034)</LI></UL>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_77>В большинстве случаев используется тип <SPAN 
+            class=texample>double</SPAN>, он обеспечивает более высокую 
+            точность, чем тип <SPAN class=texample>float</SPAN>. Максимальную 
+            точность и наибольший диапазон чисел достигается с помощью типа 
+            <SPAN class=texample>long double</SPAN>.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_81>Величина с модификатором типа <SPAN 
+            class=texample>float</SPAN> занимает 4 байта. Из них 1 бит отводится 
+            для знака, 8 бит для избыточной экспоненты и 23 бита для мантиссы. 
+            Отметим, что старший бит мантиссы всегда равен 1, поэтому он не 
+            заполняется, в связи с этим диапазон модулей значений переменной с 
+            плавающей точкой приблизительно равен от 3.14E–38 до 3.14E+38. </P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_83>Величина типа <SPAN class=texample>double</SPAN> 
+            занимает 8 байтов в памяти. Ее формат аналогичен формату <SPAN 
+            class=texample>float</SPAN>. Биты памяти распределяются следующим 
+            образом: 1 бит для знака, 11 бит для экспоненты и 52 бита для 
+            мантиссы. С учетом опущенного старшего бита мантиссы диапазон 
+            модулей значений переменной с двойной точностью равен от 1.7E–308 до 
+            1.7E+308. </P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_86>Величина типа <SPAN class=texample>long double</SPAN> 
+            аналогична типу <SPAN class=texample>double</SPAN>.</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_89>Например:</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float a, b; 
+double x, y; 
+long double z;
+</PRE></DIV><A name=sect5></A>
+            <H3>Символьный тип данных (тип char)</H3>
+            <P id=id_91>В стандарте C++ нет типа данных, который можно было бы 
+            считать действительно символьным. Для представления символьной 
+            информации есть два типа данных, пригодных для этой цели, – это типы 
+            <SPAN class=texample>char</SPAN> и <SPAN 
+            class=texample>wchar_t</SPAN>.</P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_94>Переменная типа <SPAN class=texample>char</SPAN> 
+            рассчитана на хранение только одного символа (например, буквы или 
+            пробела). В памяти компьютера символы хранятся в виде целых чисел. 
+            Соответствие между символами и их кодами определяется таблицей 
+            кодировки, которая зависит от компьютера и операционной системы. 
+            Почти во всех таблицах кодировки есть прописные и строчные буквы 
+            латинского алфавита, цифры 0, ..., 9, и некоторые специальные 
+            символы. Самой распространенной таблицей кодировки является таблица 
+            символов ASCII (<SPAN class=xml_em_italic>American Standard Code for 
+            Information Interchange</SPAN> – Американский стандартный код для 
+            обмена информацией). </P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_96>Так как в памяти компьютера символы хранятся в виде 
+            целых чисел, то тип <SPAN class=texample>char</SPAN> на самом деле 
+            является подмножеством типа <SPAN class=texample>int</SPAN>.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_99>Под величину символьного типа отводится 1 байт.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_100>Тип <SPAN class=texample>char</SPAN> может 
+            использоваться со спецификаторами <SPAN class=texample>signed</SPAN> 
+            и <SPAN class=texample>unsigned</SPAN>. В данных типа <SPAN 
+            class=texample>signed char</SPAN> можно хранить значения в диапазоне 
+            от –128 до 127. При использовании типа <SPAN class=texample>unsigned 
+            char</SPAN> значения могут находиться в диапазоне от 0 до 255. Для 
+            кодировки используется код ASCII. Символы с кодами от 0 до 31 
+            относятся к служебным и имеют самостоятельное значение только в 
+            операторах ввода-вывода.</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_106>Величины типа <SPAN class=texample>char</SPAN> также 
+            применяются для хранения чисел из указанных диапазонов.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_108>Тип <SPAN class=texample>wchar_t</SPAN> предназначен 
+            для работы с набором символов, для кодировки которых недостаточно 1 
+            байта, например в кодировке Unicode. Размер типа <SPAN 
+            class=texample>wchar_t</SPAN> равен 2 байтам. Если в программе 
+            необходимо использовать строковые константы типа <SPAN 
+            class=texample>wchar_t</SPAN>, то их записывают с префиксом <SPAN 
+            class=texample>L</SPAN>, например, <SPAN 
+            class=texample>L</SPAN>"Слово".</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_114>Например:</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char c='c'; 
+char a,b; 
+char r[]={'A','B','C','D','E','F','\0'};
+char s[] = "ABCDEF"; 
+</PRE></DIV><A name=sect6></A>
+            <H3>Логический (булевый) тип данных (тип bool)</H3>
+            <P id=id_116>В языке С++ используется двоичная логика (истина, 
+            ложь). Лжи соответствует нулевое значение, истине – единица. 
+            Величины данного типа могут также принимать значения <SPAN 
+            class=texample>true</SPAN> и <SPAN class=texample>false</SPAN>.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_119>Внутренняя форма представления значения <SPAN 
+            class=texample>false</SPAN> соответствует 0, любое другое значение 
+            интерпретируется как <SPAN class=texample>true</SPAN>. В некоторых 
+            компиляторах языка С++ нет данного типа, в этом случае используют 
+            тип <SPAN class=texample>int</SPAN>, который при истинных значениях 
+            выдает 1, а при ложных – 0. Под данные логического типа отводится 1 
+            байт.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Перечисляемый тип (тип enum)</H3>
+            <P id=id_123>Данный тип определяется как набор идентификаторов, 
+            являющихся обычными именованными целыми константами, которым 
+            приписаны уникальные и удобные для использования обозначения. Таким 
+            образом, перечисления представляют собой упорядоченные наборы целых 
+            значений. Они имеют своеобразный синтаксис и достаточно 
+            специфическую область использования.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124>Переменная, которая может принимать значение из 
+            некоторого списка определенных констант, называется <SPAN 
+            class=xml_em_italic>переменной перечисляемого типа</SPAN> или <SPAN 
+            class=xml_em_italic>перечислением</SPAN>. Данная переменная может 
+            принимать значение только из именованных констант списка. 
+            Именованные константы списка имеют тип <SPAN 
+            class=texample>int</SPAN>. Следовательно, память, соответствующая 
+            переменной перечисления, – это память, необходимая для размещения 
+            значения типа <SPAN class=texample>int</SPAN>.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_127>Например:</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <DIV class=example><PRE>enum year {winter, spring, summer, autumn};
+enum week {Sunday, Monday, Tuesday, Wednesday, 
+           Thursday, Friday, Saturday};
+</PRE></DIV><A name=sect8></A>
+            <H3>Тип void</H3>
+            <P id=id_129>Множество значений этого типа пусто. Тип <SPAN 
+            class=texample>void</SPAN> имеет три назначения:</P>
+            <DIV id=mark_129 class=lecture_mark></DIV>
+            <OL id=id_131>
+              <LI>указание о невозвращении функцией значения;
+              <LI>указание о неполучении параметров функцией;
+              <LI>создание нетипизированных указателей.</LI></OL>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_135>Тип <SPAN class=texample>void</SPAN> в основном 
+            используется для определения функций, которые не возвращают 
+            значения, для указания пустого списка аргументов функции, как 
+            базовый тип для указателей и в операции приведения типов.</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <DIV id=id_137 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Основные типы данных</CAPTION>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Тип</TD>
+                <TD bgColor=#eaeaea vAlign=top colSpan=2>Обозначение</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Название</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Размер памяти, байт 
+                  (бит)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>Диапазон значений</TD>
+                <TD bgColor=#eaeaea vAlign=top></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Имя типа</TD>
+                <TD bgColor=#eaeaea vAlign=top>Другие имена</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=13>целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>int</TD>
+                <TD bgColor=#eaeaea vAlign=top>signed</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>-2 147 483 648 до 2 
+                  147 483 647</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>signed int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>unsigned int</TD>
+                <TD bgColor=#eaeaea vAlign=top>unsigned</TD>
+                <TD bgColor=#eaeaea vAlign=top>беззнаковый целый</TD>
+                <TD bgColor=#eaeaea vAlign=top>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top>0 до 4 294 967 295</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>short</TD>
+                <TD bgColor=#eaeaea vAlign=top>short int</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>короткий целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>2 (16)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>-32 768 до 32 
+              767</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>signed short int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>unsigned short</TD>
+                <TD bgColor=#eaeaea vAlign=top>unsigned short int</TD>
+                <TD bgColor=#eaeaea vAlign=top>беззнаковый короткий целый</TD>
+                <TD bgColor=#eaeaea vAlign=top>2 (16)</TD>
+                <TD bgColor=#eaeaea vAlign=top>0 до 65 535</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>long</TD>
+                <TD bgColor=#eaeaea vAlign=top>long int</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>длинный целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>-2 147 483 648 до 2 
+                  147 483 647</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>signed long int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>unsigned long</TD>
+                <TD bgColor=#eaeaea vAlign=top>unsigned long int</TD>
+                <TD bgColor=#eaeaea vAlign=top>беззнаковый длинный целый</TD>
+                <TD bgColor=#eaeaea vAlign=top>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top>0 до 4 294 967 295</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>long long</TD>
+                <TD bgColor=#eaeaea vAlign=top>long long int</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>длинный-предлинный 
+                  целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>8 (64)</TD>
+                <TD bgColor=#eaeaea vAlign=top>-9 223 372 036 854 775 808 до 9 
+                  223 372 036 854 775 807</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>signed long long int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>unsigned long long</TD>
+                <TD bgColor=#eaeaea vAlign=top>unsigned long</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>беззнаковый 
+                  длинный-предлинный целый</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>8 (64)</TD>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=2>0 до 18 446 744 073 
+                  709 551 615</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>long int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=3>символьный</TD>
+                <TD bgColor=#eaeaea vAlign=top>char</TD>
+                <TD bgColor=#eaeaea vAlign=top>signed char</TD>
+                <TD bgColor=#eaeaea vAlign=top>байт (целый длиной не менее 8 
+                  бит)</TD>
+                <TD bgColor=#eaeaea vAlign=top>1 (8)</TD>
+                <TD bgColor=#eaeaea vAlign=top>-128 до 127</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>unsigned char</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>беззнаковый байт</TD>
+                <TD bgColor=#eaeaea vAlign=top>1 (8)</TD>
+                <TD bgColor=#eaeaea vAlign=top>0 до 255</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>wchar_t</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>расширенный символьный</TD>
+                <TD bgColor=#eaeaea vAlign=top>2 (16)</TD>
+                <TD bgColor=#eaeaea vAlign=top>0 до 65 535</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top rowSpan=3>вещественный</TD>
+                <TD bgColor=#eaeaea vAlign=top>float</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>вещественный одинарной 
+                точности</TD>
+                <TD bgColor=#eaeaea vAlign=top>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top>3.4Е-38 до 3.4Е+38 (7 значащих 
+                  цифр)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>double</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>вещественный двойной 
+точности</TD>
+                <TD bgColor=#eaeaea vAlign=top>8 (64)</TD>
+                <TD bgColor=#eaeaea vAlign=top>1.7Е-308 до 1.7Е+308 (15 
+                  значащих цифр)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>long double</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>вещественный максимальной 
+                  точности</TD>
+                <TD bgColor=#eaeaea vAlign=top>8 (64)</TD>
+                <TD bgColor=#eaeaea vAlign=top>1.7Е-308 до 1.7Е+308 (15 
+                  значащих цифр)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top>bool</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>логический</TD>
+                <TD bgColor=#eaeaea vAlign=top>1 (8)</TD>
+                <TD bgColor=#eaeaea vAlign=top>true (1) или false (0)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top>enum</TD>
+                <TD bgColor=#eaeaea vAlign=top>-</TD>
+                <TD bgColor=#eaeaea vAlign=top>перечисляемый</TD>
+                <TD bgColor=#eaeaea vAlign=top>4 (32)</TD>
+                <TD bgColor=#eaeaea vAlign=top>-2 147 483 648 до 2 147 483 
+                647</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_137 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Преобразования типов</H3>
+            <P id=id_138>При вычислении выражений некоторые операции требуют, 
+            чтобы операнды имели соответствующий тип, в противном же случае на 
+            этапе компиляции выдается сообщение об ошибке. Например, операция 
+            взятия остатка от деления (%) требует целочисленных операндов. 
+            Поэтому в языке С++ есть возможность приведения значений одного типа 
+            к другому. </P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_139><B>Преобразование типов</B> – это приведение значения 
+            переменной одного типа в значение другого типа. </P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140>Выделяют <SPAN class=xml_em_italic>явное</SPAN> и <SPAN 
+            class=xml_em_italic>неявное</SPAN> приведения типов. При явном 
+            приведении указывается тип переменной, к которому необходимо 
+            преобразовать исходную переменную. При неявном приведении 
+            преобразование происходит автоматически, по правилам, заложенным в 
+            языке программирования С++.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_141>Формат операции явного преобразования типов:</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <DIV class=example><PRE>имя_типа (операнд)
+</PRE></DIV>
+            <P id=id_143>Например, <SPAN class=texample>int(x), float(2/5), 
+            long(x+y/0.5)</SPAN>.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_145><SPAN class=xml_em_italic>Пример 1</SPAN>.</P>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Взятие цифры разряда сотых в дробном числе
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  float s,t;
+  long int a,b;
+  printf("Введите вещественное число\n");
+  scanf("%f", &amp;s);
+  t=s*100;
+  a=int(t); 
+  //переменная t приводится к типу int в переменную a
+  b=a%10;  
+  printf("\nЦифра разряда сотых числа %f равна %d.", s, b); 
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_147>Преобразования типов нужно применять с осторожностью, 
+            так как данная операция может приводить к потере информации. 
+            Например, после приведения длинного типа к более короткому 
+            происходит усечение информации из старших битов.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148><SPAN class=xml_em_italic>Пример 2. Временной 
+            интервал</SPAN></P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149>Заданы моменты начала и конца некоторого промежутка 
+            времени в часах, минутах и секундах (в пределах одних суток). Найти 
+            продолжительность этого промежутка в тех же единицах.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150>Исходными данными для этой задачи являются шесть целых 
+            величин, задающих моменты начала и конца интервала, результатами – 
+            три целых величины (тип <SPAN class=texample>int</SPAN>).</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_152>Обозначим переменные для хранения начала интервала 
+            <SPAN class=texample>hour1</SPAN>, <SPAN class=texample>min1</SPAN> 
+            и <SPAN class=texample>sec1</SPAN>, для хранения конца интервала – 
+            <SPAN class=texample>hour2</SPAN>, <SPAN class=texample>min2</SPAN> 
+            и <SPAN class=texample>sec2</SPAN>, а результирующие величины – 
+            <SPAN class=texample>hour</SPAN>, <SPAN class=texample>min</SPAN> и 
+            <SPAN class=texample>sec</SPAN>.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_162>Для решения этой задачи необходимо преобразовать оба 
+            момента времени в секунды, вычесть первый из второго, а затем 
+            преобразовать результат обратно в часы, минуты и секунды. 
+            Следовательно, потребуется промежуточная переменная <SPAN 
+            class=texample>sum_sec</SPAN>, в которой будет храниться величина 
+            интервала в секундах. Она может иметь весьма большие значения, ведь 
+            в сутках 86400 секунд, что выходит за пределы типа <SPAN 
+            class=texample>int</SPAN>. Следовательно, для этой переменной 
+            выберем длинный целый тип (<SPAN class=texample>long int</SPAN>, 
+            сокращенно <SPAN class=texample>long</SPAN>).</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_167>Для перевода результата из секунд обратно в часы и 
+            минуты используется отбрасывание дробной части при делении целого 
+            числа на целое.</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Временной интервал. Форматированный ввод-вывод данных
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  int hour1, min1, sec1, hour2, min2, sec2, hour, min, sec;
+  long int sum_sec;
+  printf("Введите время начала интервала (час мин сек)\n");
+  scanf("%d%d%d", &amp;hour1,&amp;min1,&amp;sec1);
+  printf("Введите время окончания интервала (час мин сек)\n");
+  scanf("%d%d%d", &amp;hour2,&amp;min2,&amp;sec2);
+  sum_sec = (hour2-hour1)*3600+(min2-min1)*60+sec2-sec1;
+  hour = sum_sec/3600;
+  min = (sum_sec-hour*3600)/60;
+  sec = sum_sec-hour*3600-min*60;
+  printf("Продолжительность промежутка от %d:%d:%d до  
+          %d:%d:%d\n",hour1,min1,sec1,hour2,min2,sec2);
+  printf(" равна %d:%d:%d\n",hour,min,sec);
+  system("pause");
+  return 0;
+}
+
+</PRE></DIV>
+            <P id=id_169>При выполнении математических операций производится 
+            неявное (автоматическое) преобразование типов, чтобы привести 
+            операнды выражений к общему типу или чтобы расширить короткие 
+            величины до размера целых величин, используемых в машинных командах. 
+            Выполнение преобразования зависит от специфики операций и от типа 
+            операнда или операндов.</P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <P id=id_170><SPAN class=xml_em_italic>1. Преобразование целых типов 
+            со знаком.</SPAN></P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <UL id=id_171>
+              <LI><SPAN class=xml_em_italic>Целое со знаком преобразуется к 
+              более короткому целому со знаком</SPAN>, с потерей информации: 
+              пропадают все разряды числа, которые находятся выше (или, 
+              соответственно – ниже) границы, определяющей максимальный размер 
+              переменной. 
+              <LI><SPAN class=xml_em_italic>Целое со знаком преобразуется к 
+              более длинному целому со знаком</SPAN>. Путем размножения знака. 
+              То есть все добавленные биты двоичного числа будут заняты тем же 
+              числом, которое находилось в знаковом бите: если число было 
+              положительным, то это будет, соответственно 0, если отрицательным, 
+              то 1.
+              <LI><SPAN class=xml_em_italic>Целое со знаком к целому без 
+              знака</SPAN>. Первым шагом целое со знаком преобразуется к целому 
+              со знаком, соответствующему целевому типу, если этот тип данных 
+              крупнее. У получившегося значения бит знака не отбрасывается, а 
+              рассматривается равноправным по отношению к остальным битам, то 
+              есть теперь все биты образуют числовое значение.
+              <LI><SPAN class=xml_em_italic>Преобразование целого со знаком к 
+              плавающему типу</SPAN> происходит без потери информации, за 
+              исключением случая преобразования типа <SPAN class=texample>long 
+              int</SPAN> или <SPAN class=texample>unsigned long int</SPAN> к 
+              типу <SPAN class=texample>float</SPAN>, когда точность часто может 
+              быть потеряна.</LI></UL>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_179><SPAN class=xml_em_italic>2. Преобразование целых типов 
+            без знака.</SPAN></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <UL id=id_180>
+              <LI><SPAN class=xml_em_italic>Целое без знака преобразуется к 
+              более короткому целому без знака или со знаком</SPAN> путем 
+              усечения.
+              <LI><SPAN class=xml_em_italic>Целое без знака преобразуется к 
+              более длинному целому без знака или со знаком</SPAN> путем 
+              добавления нулей слева.
+              <LI><SPAN class=xml_em_italic>Целое без знака преобразуется к 
+              целому со знаком того же размера</SPAN>. Если взять для примера, 
+              <SPAN class=texample>unsigned short</SPAN> и <SPAN 
+              class=texample>short</SPAN> – числа в диапазоне от 32768 до 65535 
+              превратятся в отрицательные.
+              <LI><SPAN class=xml_em_italic>Целое без знака преобразуется к 
+              плавающему типу</SPAN>. Сначала оно преобразуется к значению типа 
+              <SPAN class=texample>signed long</SPAN>, которое затем 
+              преобразуется в плавающий тип.</LI></UL>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_188><SPAN class=xml_em_italic>3. Преобразования плавающих 
+            типов.</SPAN></P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <UL id=id_189>
+              <LI><SPAN class=xml_em_italic>Величины типа</SPAN> <SPAN 
+              class=texample>float</SPAN> <SPAN 
+              class=xml_em_italic>преобразуются к типу</SPAN> <SPAN 
+              class=texample>double</SPAN> без изменения значения.
+              <LI><SPAN class=xml_em_italic>Величины</SPAN> <SPAN 
+              class=texample>double</SPAN> <SPAN 
+              class=xml_em_italic>преобразуются к</SPAN> <SPAN 
+              class=texample>float</SPAN> c некоторой потерей точности, то есть, 
+              количества знаков после запятой. Если значение слишком велико для 
+              <SPAN class=texample>float</SPAN>, то происходит потеря 
+              значимости, о чем сообщается во время выполнения.
+              <LI><SPAN class=xml_em_italic>При преобразовании величины с 
+              плавающей точкой к целым типам</SPAN> она сначала преобразуется к 
+              типу long (дробная часть плавающей величины при этом 
+              отбрасывается), а затем величина типа <SPAN 
+              class=texample>long</SPAN> преобразуется к требуемому целому типу. 
+              Если значение слишком велико для <SPAN class=texample>long</SPAN>, 
+              то результат преобразования не определен. Обычно это означает, что 
+              на усмотрение компилятора может получиться любой "мусор". В 
+              реальной практике с такими преобразованиями обычно сталкиваться не 
+              приходится.</LI></UL>
+            <DIV id=mark_189 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_200><B>Базовые типы</B> – это типы данных, которые 
+            предопределены стандартом языка, указываются зарезервированными 
+            ключевыми словами, характеризуются одним значением и внутренним 
+            представлением. </P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_201><B>Вещественный тип</B> – это базовый тип данных, 
+            который применяется для хранения дробных чисел в формате с плавающей 
+            точкой.</P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202><B>Логический (булевый) тип</B> – это базовый тип 
+            данных, который применяется для хранения значений двузначной 
+            логики.</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203><B>Неявное приведение типа</B> – это преобразование 
+            значения переменной к новому типу, которое происходит автоматически, 
+            по правилам, заложенным в языке программирования.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_204><B>Перечисляемый тип</B> – это производный тип данных, 
+            он определяется как набор идентификаторов, являющихся именованными 
+            целыми константами, которым приписаны уникальные обозначения</P>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <P id=id_205><B>Преобразование типов</B> – это приведение значения 
+            переменной одного типа в значение другого типа.</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_206><B>Производные типы</B> – это типы данных, которые 
+            задаются пользователем.</P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_207><B>Символьный тип</B> – это базовый тип данных, который 
+            применяется для хранения символов или управляющих 
+            последовательностей в виде кода.</P>
+            <DIV id=mark_207 class=lecture_mark></DIV>
+            <P id=id_208><B>Тип данных</B> – это множество допустимых значений, 
+            которые может принимать тот или иной объект, а также множество 
+            допустимых операций, которые применимы к нему.</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_209><B>Типы класса</B> – это типы данных, экземплярами 
+            которых являются объекты.</P>
+            <DIV id=mark_209 class=lecture_mark></DIV>
+            <P id=id_210><B>Целочисленный тип</B> – это базовый тип данных, 
+            который применяется для хранения целых чисел.</P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <P id=id_211><B>Явное приведение типа</B> – это преобразование 
+            значения переменной к новому типу, при котором указывается тип 
+            переменной, к которому необходимо привести исходную переменную.</P>
+            <DIV id=mark_211 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_212>
+              <LI>Для организации хранения данных и корректного выполнения 
+              операций над ними в языках программирования определены типы 
+данных.
+              <LI>Типы характеризуются схожим внутренним представлением данных в 
+              памяти компьютера; объемом памяти, выделяемым под данные; 
+              множеством (диапазоном) принимаемых значений; допустимыми 
+              операциями и функциями.
+              <LI>В языке С++ типы классифицируются на базовые, производные и 
+              классы.
+              <LI>Для базовых типов определены их подмножества и расширения, что 
+              обеспечивает повышение точности расчетов или экономный расход 
+              памяти.
+              <LI>Над типами данных определена операция преобразования типов. Ее 
+              следует применять с осторожностью при переходе к типу, у которого 
+              меньше по модулю границы диапазонов. </LI></OL>
+            <DIV id=mark_212 class=lecture_mark></DIV><A name=sect12></A>
+            <H3>Лабораторная работа 1. Типы данных в языке С++</H3>
+            <P id=id_218><B>Цель работы:</B> изучить классификацию типов и их 
+            внутренне представление в языке С++, научиться работать со 
+            стандартными и пользовательскими типами.</P>
+            <DIV id=mark_218 class=lecture_mark></DIV>
+            <P id=id_219>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            числовые данные, выполняет их обработку в соответствии с 
+            требованиями задания и выводит результат на экран. Ввод данных 
+            осуществляется с клавиатуры с учетом требований к входным данным, 
+            содержащихся в постановке задачи (к задачам 2 и 4 приведен 
+            рекомендуемый вид диалога во время работы программы). Ограничениями 
+            на входные данные является допустимый диапазон значений используемых 
+            числовых типов в языке С++.</P>
+            <DIV id=mark_219 class=lecture_mark></DIV>
+            <P id=id_220><B>Теоретические сведения.</B></P>
+            <DIV id=mark_220 class=lecture_mark></DIV>
+            <P id=id_221>Ознакомьтесь с материалом лекции 1.</P>
+            <DIV id=mark_221 class=lecture_mark></DIV>
+            <P id=id_222><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <P id=id_223>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <OL id=id_224>
+              <LI>Найдите сумму первых трех цифр дробной части вещественного 
+              числа. Например, для числа 23,16809 она равна 15.
+              <LI>Составьте программу вычисления стоимости поездки на автомобиле 
+              на дачу (туда и обратно). Исходными данными являются: расстояние 
+              до дачи (в километрах); количество бензина, которое потребляет 
+              автомобиль на 100 км пробега; цена одного литра бензина. Ниже 
+              представлен рекомендуемый вид диалога во время работы программы. 
+              Данные, вводимые пользователем, выделены жирным шрифтом. 
+              <DIV class=example><PRE>Вычисление стоимости поездки на дачу.
+Расстояние до дачи (км) – 67
+Расход бензина (л на 100 км) – 8.5
+Цена литра бензина (руб.) – 23.7
+Поездка на дачу обойдется в 269 руб. 94 коп.
+</PRE></DIV>
+              <LI>Составьте линейную программу, печатающую значение 1, если 
+              указанное высказывание является истинным, и 0 – в противном 
+              случае. Величина <SPAN class=texample>d</SPAN> является корнем 
+              только одного из уравнений <SPAN class=texample>ax<SUP>2</SUP> + 
+              bx + c = 0</SPAN> и <SPAN class=texample>mx + n = 0</SPAN> 
+              относительно <SPAN class=texample>х</SPAN>.
+              <LI>Составьте программу, которая преобразует введенное с 
+              клавиатуры дробное число в денежный формат. Например, число 12,348 
+              должно быть преобразовано к виду 12 руб. 35 коп. Ниже представлен 
+              рекомендуемый вид диалога во время работы программы. Данные, 
+              вводимые пользователем, выделены жирным шрифтом. 
+              <DIV class=example><PRE>Преобразование числа в денежный формат.
+Введите дробное число – 23,6
+23.6 руб. – это 23 руб. 60 коп.
+</PRE></DIV></LI></OL>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <P id=id_235><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_235 class=lecture_mark></DIV>
+            <P id=id_236>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки данных и преобразования типов данных в 
+            языке С++.</P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <P id=id_237>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_237 class=lecture_mark></DIV>
+            <UL id=id_238>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_238 class=lecture_mark></DIV>
+            <P id=id_247><B>Требования к отчету.</B></P>
+            <DIV id=mark_247 class=lecture_mark></DIV>
+            <P id=id_248>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_248 class=lecture_mark></DIV>
+            <UL id=id_249>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_249 class=lecture_mark></DIV>
+            <P id=id_258><B>Контрольные вопросы</B></P>
+            <DIV id=mark_258 class=lecture_mark></DIV>
+            <OL id=id_259>
+              <LI>Почему в языке С++ определена строгая типизация данных, 
+              используемых в программе?
+              <LI>Как определяются границы диапазона базового типа в зависимости 
+              от выделяемой под этот тип памяти?
+              <LI>С какой целью в С++ определен тип <SPAN 
+              class=texample>void</SPAN>?
+              <LI>Какой объем памяти выделяется под переменную типа <SPAN 
+              class=texample>void</SPAN>? Какие значения может принимать 
+              переменная типа <SPAN class=texample>void</SPAN>?
+              <LI>Почему наблюдается асимметрия значений границ диапазонов 
+              целочисленных типов?
+              <LI>Чему будет равно значение операции инкремента для 
+              максимального числа в целочисленном типе? А каков результат 
+              декремента для минимального значения в таком же типе?
+              <LI>Почему запись целых чисел нельзя начинать с незначащих нулей?
+              <LI>Каким образом представлено число ноль в вещественных типах?
+              <LI>Почему в С++ символьный тип считается подмножеством 
+              целочисленного типа?
+              <LI>Каким образом можно инициализировать переменную перечисляемого 
+              типа?
+              <LI>При преобразовании целого со знаком к целому без знака всегда 
+              ли будет получено исходное числовое значение? Ответ 
+            обоснуйте.</LI></OL>
+            <DIV id=mark_259 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

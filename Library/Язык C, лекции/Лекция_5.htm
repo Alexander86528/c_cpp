@@ -1,0 +1,966 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_5_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_5_files/mht86BA(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_5_files/mht86BA(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_5_files/mht86BA(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>5. Лекция: Числовые массивы в языке 
+            программирования С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции надлежит изучить определение и инициализацию 
+            числовых массивов в языке программирования С. Освоить программные 
+            решения типовых примеров с многомерными числовыми массивами. 
+          </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_5_files/mht86BA(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>В языке программирования <B>С</B> заложены средства для 
+            задания последовательностей упорядоченных данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>5.1</A>]. Такие последовательности называются 
+            массивами. В массивах должны быть упорядочены данные одного и того 
+            же типа. В данной лабораторной работе будут рассматриваться массивы 
+            с целыми и вещественными типами данных, т.е. типы <SPAN 
+            class=texample>int</SPAN>, <SPAN class=texample>float</SPAN> или 
+            <SPAN class=texample>double</SPAN>.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_5>Массивы данных могут быть одномерными (векторами размера 
+            1 <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> n 
+            или n <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 
+            1), двухмерными (матрицами размера n <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> m) или 
+            многомерными (размера n <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> m <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> p...). В 
+            частности, для векторов и матриц в приведенной записи первый индекс 
+            означает количество строк, а второй (число или буква) – это 
+            количество столбцов. Для названия массива может быть использована 
+            переменная, состоящая из букв (буквы), букв с цифрами, букв с 
+            цифрами и знаком подчеркивания и т.д. в соответствии с правилами 
+            объявления переменных, принятых в языке <B>С</B>. Если размерность 
+            массива меньше, чем требуется, то компилятор не выдаст сообщения об 
+            ошибке. Выход за границы массивов должен следить только сам 
+            программист.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV><A name=sect2></A>
+            <H4>5.1. Одномерные массивы</H4>
+            <P id=id_11><SPAN class=xml_em_italic>Одномерный массив</SPAN> – это 
+            список связанных однотипных переменных.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Общая форма записи одномерного массива [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>5.2</A>]:</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер];</PRE></DIV>
+            <P id=id_14>В приведенной записи элемент <SPAN 
+            class=texample>тип</SPAN> объявляет базовый тип массива. Количество 
+            элементов, которые будут храниться в массиве с именем <SPAN 
+            class=texample>имя_массива</SPAN>, определяется элементом <SPAN 
+            class=texample>размер</SPAN>.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_18>В языке <B>С</B> индексация массива начинается с нуля. 
+            Например, если размер массива определен величиной 9, то в массиве 
+            можно хранить 10 элементов с индексацией 0, 1, 2, 3, 4, 5, 6, 7, 8, 
+            9.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Доступ к отдельному элементу массива осуществляется с 
+            помощью индекса. <SPAN class=xml_em_italic>Индекс</SPAN> описывает 
+            позицию элемента внутри массива.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Все массивы занимают смежные ячейки памяти, т.е. 
+            элементы массива в памяти расположены последовательно друг за 
+            другом. Ячейка памяти с наименьшим адресом относится к первому 
+            элементу массива, а с наибольшим – к последнему.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_21>Для одномерных массивов общий размер массива в байтах 
+            вычисляется по формуле:</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = размер типа в байтах * количество элементов</PRE></DIV>
+            <P id=id_23>В языке <B>С</B> нельзя присвоить один массив другому. 
+            Для передачи элементов одного массива другому необходимо выполнить 
+            присвоение поэлементно.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV><A name=sect3></A>
+            <H4>5.2. Двухмерные массивы, матрицы</H4>
+            <P id=id_24>Двухмерный массив представляет собой список одномерных 
+            массивов.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <P id=id_25>Общая форма записи двухмерного массива:</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер1] [размер2];</PRE></DIV>
+            <P id=id_27>В приведенной записи <SPAN class=texample>размер1</SPAN> 
+            означает количество строк двухмерного массива, а <SPAN 
+            class=texample>размер2</SPAN> – количество столбцов.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_30>В двухмерном массиве позиция любого элемента 
+            определяется двумя индексами. <SPAN class=xml_em_italic>Индексы 
+            каждого из размеров массива начинаются с</SPAN> 0 (с нуля).</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_31>Место хранения для всех элементов массива определяется 
+            во время компиляции. Память, выделенная для хранения массива, 
+            используется в течение всего времени существования массива.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>Для двухмерных массивов общий размер массива в байтах 
+            вычисляется по формуле:</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = число строк * число столбцов * размер типа в байтах</PRE></DIV><A 
+            name=sect4></A>
+            <H4>5.3. Многомерные массивы</H4>
+            <P id=id_34>Общая форма записи многомерного массива:</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер1] [размер2]... [размерN];</PRE></DIV>
+            <P id=id_36>Индексация каждого размера начинается с нуля. Элементы 
+            многомерного массива располагаются в памяти в порядке возрастания 
+            самого правого индекса. Поэтому <SPAN class=xml_em_italic>правый 
+            индекс будет изменяться быстрее</SPAN>, чем <SPAN 
+            class=xml_em_italic>левый</SPAN> (левые).</P>
+            <DIV id=mark_36 class=lecture_mark></DIV>
+            <P id=id_37>При обращении к многомерным массивам компьютер много 
+            времени затрачивает на вычисление адреса, так как при этом 
+            приходится учитывать значение каждого индекса [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>5.2</A>]. Следовательно, доступ к элементам 
+            многомерного массива происходит значительно медленнее, чем к 
+            элементам одномерного. В этой связи использование многомерных 
+            массивов встречается значительно реже, чем одномерных или двухмерных 
+            массивов.</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_38>Для многомерных массивов общий размер многомерного 
+            массива в байтах вычисляется по формуле:</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <DIV class=example><PRE>всего байт = размер1* размер2*...* размерN *размер типа в байтах</PRE></DIV>
+            <P id=id_40>Очевидно, многомерные массивы способны занять большой 
+            объем памяти, а программа, которая их использует, может очень быстро 
+            столкнуться с проблемой нехватки памяти.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Для определения размера типа в байтах применяется 
+            функция <SPAN class=texample>sizeof()</SPAN>, которая возвращает 
+            целое число. Например, <SPAN 
+class=texample>sizeof(float)</SPAN>.</P>
+            <DIV id=mark_41 class=lecture_mark></DIV><A name=sect5></A>
+            <H4>5.4. Инициализация массивов</H4>
+            <P id=id_44>В языке <B>С</B> массивы при объявлении можно 
+            инициализировать [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>5.2</A>].</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_45>Общая форма инициализации массива:</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  имя_массива[размер1] * [размерN] = {список_значений};</PRE></DIV>
+            <P id=id_47>В <SPAN class=texample>список_значений</SPAN> входят 
+            константы, разделенных запятыми. Типы констант должны быть 
+            совместимыми с типом массива.</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_49>Пример инициализации одномерного массива:</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int A[5] = {1, 2, 3, 4, 5};</PRE></DIV>
+            <P id=id_51>При этом <SPAN class=texample>A[0] = 1, A[1] = 2</SPAN> 
+            и т.д.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_53>При инициализации многомерного массива для улучшения 
+            наглядности элементы инициализации каждого измерения можно заключать 
+            в фигурные скобки.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_54>Пример инициализации двухмерного массива:</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  MN[3][4] = {
+{1, 2, 3, 4},
+{5, 6, 7, 8},
+{9, 10, 11, 12}
+};</PRE></DIV>
+            <P id=id_56>Массив <SPAN class=texample>MN[3][4]</SPAN> – это 
+            матрица, у которой 3 строки и 4 столбца.</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_58>Для многомерных массивов инициализацию можно также 
+            проводить с указанием номера инициализируемого элемента.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59>Пример инициализации трехмерного массива:</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  XYZ[2][3][4] = {
+{ {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} },
+{ {13, 14, 15, 16}, {17, 18, 19, 20}, {21, 22, 23, 24} }
+};</PRE></DIV>
+            <P id=id_61>Как видно, массив <SPAN class=texample>XYZ</SPAN> 
+            содержит два блока, каждый из которых есть матрица размера 3 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 4, т.е. 3 
+            строки и 4 столбца.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_64>В языке <B>С</B> возможна инициализация безразмерных 
+            массивов. Например, для одномерного массива:</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int A[ ] = {1, 2, 3, 4, 5};</PRE></DIV>
+            <P id=id_66>В многомерном массиве размер самого левого измерения 
+            также можно не указывать. В частности, для инициализации массива 
+            <SPAN class=texample>MN[3][4]</SPAN> допустима следующая запись:</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  MN[][4] = {
+{1, 2, 3, 4},
+{5, 6, 7, 8},
+{9, 10, 11, 12}
+};</PRE></DIV>
+            <P id=id_69>При инициализации многомерных массивов необходимо 
+            указать все данные (размерности) за исключением крайней слева 
+            размерности. Это нужно для того, чтобы компилятор смог определить 
+            длину подмассивов, составляющих массив, и смог выделить необходимую 
+            память. Рассмотрим пример безразмерной инициализации для трехмерного 
+            массива целых чисел:</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int  XYZ[][3][4] = {
+{
+{1, 2, 3, 4},
+{5, 6, 7, 8},
+{9, 10, 11, 12}
+},
+{
+{13, 14, 15, 16},
+{17, 18, 19, 20},
+{21, 22, 23, 24}
+}
+};</PRE></DIV>
+            <P id=id_71>Вывод трехмерного массива на консоль (дисплей) можно 
+            выполнить по следующей программе:</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	int i, j, k;
+	int  XYZ[][3][4] = {
+{ {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12} }, // 1-й 
+{ {13, 14, 15, 16}, {17, 18, 19, 20}, {21, 22, 23, 24} } }; // 2-й 
+	for (i = 0; i &lt; 2; ++i) { printf("\n");
+		for (j = 0; j &lt; 3; ++j) { printf("\n");
+			for (k = 0; k &lt; 4; ++k)
+				printf(" %3d", XYZ[i][j][k]);
+		}
+	}
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+ }</PRE></DIV><A name=sect6></A>
+            <H3>Практическая часть</H3>
+            <P id=id_73><B>Пример 1</B>. Напишите программу заполнения 
+            одномерного массива случайными числами из интервала от 1 до 15 по 
+            случайному равномерному закону. Отсортировать массив случайных чисел 
+            по возрастанию.</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <P id=id_74>Для решения поставленной задачи применим сортировку 
+            методом прямого выбора [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#6" 
+            target=_blank>5.3</A>]. Алгоритм сортировки заключается в 
+            следующем:</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <OL id=id_75>
+              <LI>В исходной последовательности из <SPAN 
+              class=xml_em_italic>N</SPAN> элементов отыскивается элемент с 
+              наименьшим ключом.
+              <LI>Он меняется местами с первым элементом.
+              <LI>В оставшейся последовательности из ( <SPAN 
+              class=xml_em_italic>N</SPAN> –1) элементов отыскивается 
+              минимальный элемент и меняется местами со вторым элементом и т.д., 
+              пока не останется один, самый большой элемент.</LI></OL>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_79>Программный код решения примера:</P>
+            <DIV id=mark_79 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;stdlib.h&gt;
+#define Left 1
+#define Right 15
+#define N 10
+
+int main (void) {
+float R, r, min;
+float A[N];
+
+int i, j, k;	
+unsigned int some;
+long int L;
+
+L = (long) time(NULL); // Системное время
+some = (unsigned) L; // Приведение типов
+srand(some); // Задание исходного случайного числа для rand()
+printf("\n\t The initial array of random numbers in the interval [%d, %2d]\n", Left, Right);
+
+for (i = 0; i &lt; N; ++i)
+{// Случайное число из интервала [0,1]
+r = (float) rand()/RAND_MAX;
+// Формирование случайного числа из заданного интервала
+R = Left + (Right - Left) * r;
+// Заполнение массива случайными числами
+A[i] = R; }
+
+// Печать элементов исходного массива
+for (i = 0; i &lt; N; ++i)
+printf("\n\t %5d) %10.4f", i + 1, A[i]);
+
+// Сортировка методом выбора
+for (i = 0; i &lt; (N - 1); ++i)
+ {
+ min = A[i]; k = i;
+for (j = i + 1; j &lt; N; ++j)
+if (A[j] &lt; min) { k = j; min = A[k]; }
+A[k] = A[i]; A[i] = min;
+}
+
+// Печать отсортированного массива по возрастанию
+printf("\n\n\t Sort an array:\n");
+for (i = 0; i &lt; N; ++i)
+printf("\n\t %5d) %10.4f", i + 1, A[i]);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_81>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.1">рис. 
+            5.1</A>.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_82 align=left><A name=image.5.1></A></P>
+            <DIV><IMG alt="Сортировка одномерного массива по возрастанию" 
+            src="Лекция_5_files/mht871E(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 5.1.</B>&nbsp; Сортировка одномерного 
+            массива по возрастанию
+            <P></P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_83>В программе использованы директивы препроцессора для 
+            задания левой границы ( <SPAN class=texample>#define Left 1</SPAN> 
+            ), правой границы ( <SPAN class=texample>#define Right 15</SPAN> ) и 
+            размера одномерного массива ( <SPAN class=texample>#define N 
+            10</SPAN> ). Включены дополнительные библиотеки <B>time.h</B> – для 
+            обращения к функциям системного времени, <B>stdlib.h</B> – для 
+            обращения к функциям генерации псевдослучайных чисел.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_87><B>Задание 1</B></P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <OL id=id_88>
+              <LI>Границы формирования случайных чисел и размерность массива 
+              задайте без препроцессорных директив.
+              <LI>Произведите сортировку массива случайных чисел по убыванию.
+              <LI>Введите границы интервала формирования случайных чисел по 
+              правилу: Left = X, Right = 3*X, где Х – номер компьютера, за 
+              которым выполняется лабораторная работа. Произвести сортировку по 
+              убыванию.
+              <LI>Найдите и изучите сортировку методом прямого обмена 
+              (сортировка методом пузырька). Напишите программу формирования 
+              одномерного массива случайными числами и их сортировки методом 
+              пузырька.</LI></OL>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_93><B>Пример 2</B>. Напишите программу поиска максимального 
+            элемента в заданном одномерном массиве. Элементы массива являются 
+            целыми числами. Программный код решения примера:</P>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void){
+	int i, size, max;
+	int A[ ] = {3, 5, 2, 8, 12, 0, -7, -3, -21};
+size = sizeof(A)/sizeof(A[0]);
+printf("\n\t The dimention of the array A is equal to: %d\n", size);
+     	max = A[0]; // Предполагаемый максимум
+	for (i = 0; i &lt; size; ++i)
+		if (A[i] &gt; max) max = A[i]; 
+
+printf("\n\t Maximum array element: %d\n", max);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_95>В программе использована инициализация безразмерного 
+            массива и определения его размерности с помощью функции <SPAN 
+            class=texample>sizeof()</SPAN>.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_97>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.2">рис. 
+            5.2</A>.</P>
+            <DIV id=mark_97 class=lecture_mark></DIV>
+            <P id=id_98 align=left><A name=image.5.2></A></P>
+            <DIV><IMG alt="Определение максимального элемента массива" 
+            src="Лекция_5_files/mht8740(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.2.</B>&nbsp; Определение 
+            максимального элемента массива
+            <P></P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_99><B>Задание 2</B></P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <OL id=id_100>
+              <LI>В программе предусмотрите вывод на консоль значений массива в 
+              виде строки.
+              <LI>Определите индекс максимального элемента.
+              <LI>Определите минимальный элемент массива и его индекс.
+              <LI>Напишите программу перемещения максимального и минимального 
+              элементов на края массива. Например, максимальный элемент 
+              поместить в конец массива, а минимальный – в начало массива. 
+              Выведите на консоль исходный массив данных и преобразованный 
+              массив в виде двух строк, следующих друг за другом.
+              <LI>Напишите программу ввода целых чисел массива с клавиатуры и 
+              определения максимального и минимального элементов в нем. 
+              Количество вводимых чисел задается по соотношению 5*Х, где Х – 
+              номер компьютера, за которым выполняется лабораторная 
+            работа.</LI></OL>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_106><B>Пример 3</B>. Напишите программу циклической 
+            перестановки чисел заданного массива так, чтобы <SPAN 
+            class=xml_em_italic>i</SPAN> -e число стало ( <SPAN 
+            class=xml_em_italic>i</SPAN> +1)-м, а последнее число – первым. 
+            Выведите на дисплей исходный массив и преобразованный.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107>Программный код решения примера:</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#define N 55
+
+int main (void) {
+	int i, j, k;
+	double D[ ] = {1.23, 2.34, 3.45, 4.56, 5.67, 6.78};
+	double B[N]; // Заведомо больший размер, чем у массива D
+	// Обнуление массива и  выделение памяти для него
+	for (i = 0; i &lt; N; ++i)
+		B[i] = 0.0;
+
+k = sizeof(D)/sizeof(D[0]);
+
+B[0] = D[k-1];
+for (i = 0; i &lt; (k - 1); ++i)
+B[i+1] = D[i];
+
+printf("\n\t The original array:\n");
+for (i = 0; i &lt; k; ++i)
+printf("%8.2f", D[i]); 
+
+printf("\n\n\t The reconfigured array:\n");
+for (j = 0; j &lt; k; ++j)
+printf("%8.2f", B[j]);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+ }</PRE></DIV>
+            <P id=id_109>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.3">рис. 
+            5.3</A>.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110 align=left><A name=image.5.3></A></P>
+            <DIV><IMG 
+            alt="Пример циклической перестановки элементов числового массива" 
+            src="Лекция_5_files/mht8752(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.3.</B>&nbsp; Пример циклической 
+            перестановки элементов числового массива
+            <P></P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <P id=id_111><B>Задание 3</B></P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <OL id=id_112>
+              <LI>Выведите на дисплей (для проверки) два элемента массива 
+              <B>В</B>, номера которых превышают размерность массива <B>D</B>.
+              <LI>Программным путем подсчитайте сумму элементов массива и 
+              выведите ее на консоль.
+              <LI>Дополните программу формированием массива, в котором элементы 
+              расположены в обратном порядке, чем в исходном массиве.
+              <LI>Сформируйте массив кодов строчных букв латинского алфавита. 
+              Выведите на дисплей сами буквы и их коды, которые являются 
+              элементами массива.</LI></OL>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_117><B>Пример 4</B>. В данном одномерном массиве 
+            вещественных чисел поменяйте местами элементы, стоящие на нечетных 
+            местах, с элементами, стоящими на четных местах. Предусмотрите 
+            четность и нечетность размерности массива.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_118>Для определения четности места в заданном массиве можно 
+            использовать операцию деления по модулю, т.е. <B>%</B>.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119>Программный код решения примера:</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+// Размер массива
+#define n 7 
+
+int main (void) { 
+int i, k;
+// Пример массива
+float A[n] = {1.23F, 2.34F, 3.45F, 4.56F, 5.67F, 6.78F, 7.89F};
+float B[n];// Вспомогательный массив
+
+// Обнуление массива
+	for (i = 0; i &lt; n; ++i)
+		B[i] = 0;
+
+// Распечатка заданного массива
+printf("\n\t\t The original array of dimention n = %d:\n", n);
+	printf("\t");
+	for (i = 0; i &lt; n; ++i)
+		printf("%6.2f", A[i]);
+
+// Распечатка преобразованного массива
+	printf("\n\n\t\t The reconfigured array:\n");
+	for (i = 0; i &lt; n; ++i) { 
+k = i % 2; // Для определения четности индекса массива
+if (k == 0 &amp;&amp; i &lt; n - 1 )
+ B[i] = A[i + 1]; 
+else if (k != 0 &amp;&amp; i &gt; 0 )
+B[i] = A[i-1];
+else if (k == 0 &amp;&amp; i &lt; n)
+B[i] = A[i]; }  printf("\t");
+	
+     for (i = 0; i &lt; n; ++i)
+		printf("%6.2f", B[i]);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_121>При инициализации массива каждый его элемент снабжен 
+            суффиксом <B>F</B>.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_122>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.4">рис. 
+            5.4</A>.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_123 align=left><A name=image.5.4></A></P>
+            <DIV><IMG alt="Смена четных и нечетных мест чисел массива" 
+            src="Лекция_5_files/mht8775(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.4.</B>&nbsp; Смена четных и нечетных 
+            мест чисел массива
+            <P></P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124><B>Задание 4</B></P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <OL id=id_125>
+              <LI>Вывод на дисплей пользователя исходного массива и 
+              преобразованного выполните без дополнительного массива.
+              <LI>В программу внесите изменения, чтобы не использовать 
+              целочисленную переменную для определения остатка от деления
+              <LI>Проверьте программу для массива с четным количеством 
+элементов.
+              <LI>Напишите программу без использования операции определения 
+              остатка от деления, т.е. без использования операции i % 2.
+              <LI>Напишите программу для двухмерного массива вещественных чисел. 
+              Смену мест элементов (четных с нечетными) предусмотрите в каждой 
+              строке матрицы. Размер матрицы примите равным n <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> m, где n = 
+              2*X</LI></OL>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_132><B>Указание</B>: Можно предусмотреть определение 
+            остатка от деления, как индекса строки, так и индекса столбца и 
+            суммы индексов строки и столбца.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_133><B>Пример 5</B>. Напишите программу заполнения 
+            квадратной матрицы (заданного размера n &gt; 2) по спирали 
+            натуральными числами начиная с левого верхнего угла (принимая его за 
+            номер 1) и двигаясь по часовой стрелке.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_134>Образец заполнения:</P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_135 align=left><A></A></P>
+            <DIV><IMG alt="" src="Лекция_5_files/mht8797(1).tmp"></DIV><BR>
+            <P></P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <P id=id_136>Программный код решения примера:</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#define n 13
+
+int main(void) {
+	int i = 1, j, k;
+	int p = n/2;
+	int A[n][n];
+
+	// Обнуление матрицы
+	for (j = 0; j &lt; n; ++j)
+		for (k = 0; k &lt; n; ++k)
+			A[j][k] = 0;
+
+printf("\n\t Spiral matrix of dimention (%d x %d):\n", n, n);
+
+	for (k = 1; k &lt;= p; k++)  // Число спиралей
+	{
+		// Верхний горизонтальный столбец
+		for (j = (k-1); j &lt; (n-k+1); j++)
+			A[(k-1)][j] = i++;
+
+		// Правый верхний столбец
+		for (j = k; j &lt; (n-k+1); j++) 
+			A[j][n-k] = i++;
+
+		// Нижний горизонтальный столбец
+		for (j = (n-k-1); j &gt;= (k-1); --j) 
+			A[n-k][j] = i++;
+
+		// Левый верхний столбец
+		for (j = (n-k-1); j &gt;= k; j--) 
+			A[j][(k-1)] = i++;
+	}
+	if ( n % 2 ) 
+		A[p][p] = n*n;
+
+	// Распечатка матрицы
+	for (i = 0; i &lt; n; ++i)
+		for (j = 0; j &lt; n; ++j)
+		{
+			printf("%5d", A[i][j]);
+			if (j == (n-1))
+				printf("\n");
+		}
+
+		          printf("\n Press any key: ");
+		_getch();
+		return 0;
+}</PRE></DIV>
+            <P id=id_138>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.5">рис. 
+            5.5</A>.</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_139 align=left><A name=image.5.5></A></P>
+            <DIV><IMG alt="Заполнение матрицы по спирали" 
+            src="Лекция_5_files/mht87A9(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.5.</B>&nbsp; Заполнение матрицы по 
+            спирали
+            <P></P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140><B>Задание 5</B></P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <OL id=id_141>
+              <LI>Дополните программу расчетом количества четных элементов выше 
+              главной диагонали матрицы и количества нечетных элементов ниже 
+              главной диагонали, не включая саму диагональ.
+              <LI>Протестировать программу при изменении размера матрицы от 3 до 
+              12. Результаты вставьте в отчет лабораторной работы.
+              <LI>Напишите программу заполнения матрицы по спирали против 
+              часовой стрелки, начиная с верхнего левого угла (номер 1).
+              <LI>Напишите программу с вводом направления заполнения матрицы. 
+              Например, если будет введено число 1, то заполнение выполните по 
+              часовой стрелке, если введено число –1, – против часовой стрелки.
+              <LI>Напишите программу заполнения прямоугольной матрицы 
+              натуральными числами "змейкой" – построчно: слева – направо – 
+              справа – налево и т.д.</LI></OL>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <P id=id_147><B>Пример 6</B>. Каждый день производятся замеры 
+            некоторых величин (вещественных значений), причем значения этих 
+            величин сводятся в прямоугольную таблицу размера n <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> m. Составьте 
+            многомерный массив данных за 30 дней. Формирование данных произвести 
+            по случайному равномерному закону из интервала от –12 до 21.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_149>Этот пример относится к определению трехмерного массива 
+            данных. Программный код решения примера:</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define n 6
+#define m 7
+#define N 30
+
+const int Left = -12; // Левая граница
+const int Right = 21; // Правая граница
+
+int main (void) 
+{
+	float R, r;
+	float A[N][n][m];
+
+	int i, j, k;	
+
+	// Инициализация генератора случайных чисел
+	srand((unsigned) time(NULL)); 
+
+	printf("\n\t The values of every 10 days from 30 days:");
+
+	// Формирование данных за 30 дней
+	for (k = 0; k &lt; N; ++k)
+		for (i = 0; i &lt; n; ++i)
+			for (j = 0; j &lt; m; ++j)
+			{	r = (float) rand()/RAND_MAX;
+	R = Left + (Right - Left)*r;
+	A[k][i][j] = R;
+	}
+
+	// Печать данных за каждый 10-й день
+	for (k = 0; k &lt; N; k += 10) { printf("\n");
+	for (i = 0; i &lt; n; ++i) { printf("\n");
+	for (j = 0; j &lt; m; ++j)
+		printf("%10.4f", A[k][i][j]);
+	}
+	}
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_151>В программе используется трехмерный массив размера 30 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 6 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 
+            7. Это означает, что прямоугольная таблица (массив) данных размера 6 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 7 
+            как бы скрепляется 30 раз – по заданному числу дней. Границы 
+            случайных чисел определены с помощью спецификатора <B>const</B>.</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <P id=id_155>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.6">рис. 
+            5.6</A>.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156 align=left><A name=image.5.6></A></P>
+            <DIV><IMG alt="Вывод данных за каждый 10-й день" 
+            src="Лекция_5_files/mht87DB(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.6.</B>&nbsp; Вывод данных за каждый 
+            10-й день
+            <P></P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_157><B>Задание 6</B></P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <OL id=id_158>
+              <LI>В программе сделайте предварительное обнуление трехмерного 
+              массива.
+              <LI>Измените тип вещественных данных <SPAN 
+              class=texample>float</SPAN> на тип <B>double</B>. Проверьте работу 
+              программы.
+              <LI>Найдите максимальный и минимальный элементы массивов.
+              <LI>Найдите абсолютные значения максимального и минимального 
+              элементов всего трехмерного массива.
+              <LI>Выполните заполнение трехмерного массива размера 3 <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 5 <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 7 
+              натуральными числами и выведите на консоль полученный многомерный 
+              массив.</LI></OL>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_167><B>Пример 7</B>. Напишите программу по перемножению 
+            двух матриц <SPAN class=xml_em_bold_italic>А</SPAN> и <SPAN 
+            class=xml_em_bold_italic>В</SPAN> с размерностями ( <SPAN 
+            class=xml_em_bold_italic>m</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> <SPAN 
+            class=xml_em_bold_italic>r</SPAN> ) и ( <SPAN 
+            class=xml_em_bold_italic>r</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> <SPAN 
+            class=xml_em_bold_italic>n</SPAN> ) соответственно. Матрицу <SPAN 
+            class=xml_em_bold_italic>А</SPAN> примите размером 4 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 5, матрицу 
+            <SPAN class=xml_em_bold_italic>В</SPAN> – размером 5 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> 3 (обе 
+            целочисленные).</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_172>Условием перемножения двух матриц <SPAN 
+            class=xml_em_bold_italic>А</SPAN> и <SPAN 
+            class=xml_em_bold_italic>В</SPAN> является равенство числа столбцов 
+            матрицы <SPAN class=xml_em_bold_italic>А</SPAN> и числа строк 
+            матрицы <SPAN class=xml_em_bold_italic>В</SPAN>. Если первая матрица 
+            А имеет размер m <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> r, то вторая 
+            матрица <SPAN class=xml_em_bold_italic>В</SPAN> должна иметь размер 
+            <SPAN class=xml_em_bold_italic>r</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> <SPAN 
+            class=xml_em_bold_italic>n</SPAN>. В результате перемножения получим 
+            матрицу <SPAN class=xml_em_bold_italic>С</SPAN> размера <SPAN 
+            class=xml_em_bold_italic>m</SPAN> <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_5_files/mht86EC(1).tmp" width=20 height=16> <SPAN 
+            class=xml_em_bold_italic>n</SPAN>. Приведем следующую схему по 
+            размерностям:</P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <P id=id_176 align=left><A></A></P>
+            <DIV><IMG alt="" src="Лекция_5_files/mht881D(1).tmp"></DIV><BR>
+            <P></P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_177>Поэлементное перемножение двух матриц в стандартной 
+            математической форме имеет следующий вид:</P>
+            <DIV id=mark_177 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="C_{ij}=\sum^{n}_{k=1}a_{il}*b_{kj}, i=1,2,\cdots,n, j=1,2,\cdots,m" 
+            src="Лекция_5_files/mht882F(1).tmp" width=408 height=23>.
+            <P id=id_179>С учетом синтаксиса формирования массивов в языке С 
+            индексация должна начинаться с нуля, поэтому формулу перепишем в 
+            следующем виде:</P>
+            <DIV id=mark_179 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt="C_{ij}=\sum^{n-1}_{k=1}a_{il}*b_{kj}, i=1,2,\cdots,n-1, j=0,1,2,\cdots,m-1" 
+            src="Лекция_5_files/mht8851(1).tmp" width=486 height=27>.
+            <P id=id_181>Программный код решения примера:</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define m 4
+#define r 5
+#define n 3
+
+int main (void) {
+	int i, j, k; // переменные циклов
+	
+	const int A[m][r] = {{1,2,3,4,5},
+	{2,3,4,5,6},
+	{2,2,2,2,2},
+	{3,3,3,3,3}};
+	
+	const int B[r][n] = {{9,8,7},
+	{1,2,3},
+	{4,5,6},
+	{7,8,9},
+	{1,1,1}};
+
+	// Массив под результат произведения двух матриц
+	int C[m][n];
+
+	// Обнуление результирующей матрицы
+	for (i = 0; i &lt; m; i++)
+		for (j = 0; j &lt; n; j++)
+			C[i][j] = 0;
+// Формирование результата произведения двух матриц
+	for (i = 0; i &lt; m; i++)
+		for (j = 0; j &lt; n; j++)
+			for (k = 0; k &lt; r; k++)
+				C[i][j] = C[i][j] + A[i][k]*B[k][j];
+	
+// Распечатка результата произведения двух матриц
+	printf("\n 1) Index: \"ijk\".  Matrix (%dx%d):\n", m, n);
+	for (i = 0; i &lt; m; i++) {
+		printf("\n");
+		for (j = 0; j &lt; n; j++)
+			printf(" %4d", C[i][j]);
+	}
+			
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_183>В программе используются три цикла по формированию 
+            произведения двух матриц. Первый цикл (переменная <SPAN 
+            class=texample>i</SPAN> ) связан с количеством строк первой матрицы 
+            (матрицы &nbsp; <B>А</B> ), второй цикл (переменная <SPAN 
+            class=texample>j</SPAN> ) связан с количеством столбцов второй 
+            матрицы (матрица <B>В</B> ), третий цикл (переменная <SPAN 
+            class=texample>k</SPAN> ) связан со смежной размерностью матриц, 
+            которая исчезает в результирующей матрице <B>С</B>. Матрицы А и В 
+            определены как неизменяемы типы ( <SPAN class=texample>const 
+            int</SPAN> ). Приведенный программный метод можно назвать как первый 
+            метод, метод <SPAN class=texample>"ijk"</SPAN>.</P>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <P id=id_189>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\5. Лекция  Числовые массивы в языке программирования С.mht#image.5.7">рис. 
+            5.7</A>.</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_190 align=left><A name=image.5.7></A></P>
+            <DIV><IMG alt="Результат произведения двух матриц" 
+            src="Лекция_5_files/mht8864(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 5.7.</B>&nbsp; Результат произведения 
+            двух матриц
+            <P></P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191><B>Задание&nbsp;7</B></P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <OL id=id_192>
+              <LI>Измените программу, чтобы циклы были организованы в порядке 
+              <SPAN class=texample>"jki"</SPAN>. Это можно назвать вторым 
+              методом программного перемножения двух матриц.
+              <LI>Измените программу, чтобы циклы были организованы в порядке 
+              <SPAN class=texample>"kji"</SPAN>. Это можно назвать третьим 
+              методом программного перемножения двух матриц.
+              <LI>Примените тип <SPAN class=texample>float</SPAN> для заданных 
+              матриц. Предусмотрите форматированный вывод результата на 
+              консоль.</LI></OL>
+            <DIV id=mark_192 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_199>
+              <LI>Как организуются многомерные числовые массивы в языке 
+<B>С</B>?
+              <LI>Как организуется индексирование числовых массивов в языке 
+              <B>С</B>?
+              <LI>На кого или на что возлагается контроль границ числовых 
+              массивов в языке программирования <B>С</B>?
+              <LI>В какой очередности и как происходит заполнение многомерных 
+              числовых массивов в программах на языке <B>С</B>?
+              <LI>Для чего применяется начальная инициализация числовых массивов 
+              при дальнейшем их использовании?
+              <LI>Сколько потребуется операторов цикла для вывода на консоль 
+              двухмерного числового массива (матрицы чисел)?
+              <LI>Почему при определении размерности массива с помощью 
+              препроцессорной директивы <B>define</B> не используется точка с 
+              запятой после числового значения?</LI></OL>
+            <DIV id=mark_199 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_5_files/mht86BA(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_5_files/mht86BA(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

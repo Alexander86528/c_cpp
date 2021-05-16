@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_11_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_11_files/mht7789(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_11_files/mht7789(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_11_files/mht7789(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>11. Лекция: Указатели и функции в языке 
+            программирования С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции изучаются вопросы программирования функций, 
+            аргументами которых могут быть указатели, а также функции, 
+            возвращающие значения через указатели. В практической части 
+            рассматриваются примеры с их полной программной реализацией. 
+          </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_11_files/mht7789(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>В предыдущей лабораторной работе рассматривались примеры 
+            функций, аргументами которых выступали указатели. В данной 
+            лабораторной работе подробнее будут рассмотрены вопросы, касающиеся 
+            указателей и функций.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Ранее было отмечено, что в языке <B>С</B> аргументы 
+            передаются в функции по значению и не существует прямого способа 
+            изменить переменную вызывающей функции, действуя внутри вызываемой 
+            функции. Благодаря <SPAN 
+            class=xml_em_italic>аргументам-указателям</SPAN> функция может 
+            обращаться к объектам в вызвавшей ее функции, в том числе 
+            модифицировать их [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>11.1</A>]. В качестве примера рассмотрим функцию <SPAN 
+            class=texample>swap()</SPAN>, в задачу которой входит обмен 
+            элементов местами. Для решения такой задачи необходимо передать из 
+            вызывающей программы (например, из главной функции <SPAN 
+            class=texample>main()</SPAN> ) в функцию указатели на переменные, 
+            которые нужно изменить. Программный код решения примера:</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void swap(int*, int*);
+
+int main (void) {
+	int a = 10,
+		b = -20;
+	
+    // Вывод на консоль исходных значений переменных
+    printf("\n Initial values:\n a = %d, b = %d\n", a, b);
+    
+    // Вызов функции swap() с фактическими параметрами
+     swap(&amp;a, &amp;b);
+    
+    // Результат после обращения функции swap()
+     printf("\n New values:\n a = %d, b = %d\n", a, b);
+
+	printf("\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Определение функции
+void swap(int *pa, int *pb)
+{
+int temp;
+temp = *pa;
+*pa = *pb;
+*pb = temp;
+}</PRE></DIV>
+            <P id=id_6>В программе в качестве фактических параметров функции 
+            <SPAN class=texample>swap()</SPAN> выступают адреса заданных 
+            переменных. Можно было в главной функции определить указатели и 
+            инициализировать их адресами заданных переменных, а потом передать 
+            эти указатели в функцию <SPAN class=texample>swap</SPAN>.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_9>Результат выполнения программы показан нa <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.1">рис. 
+            11.1</A>.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10 align=left><A name=image.11.1></A></P>
+            <DIV><IMG 
+            alt="Результат обмена данными, выполненного функцией swap()" 
+            src="Лекция_11_files/mht77DA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 11.1.</B>&nbsp; Результат обмена 
+            данными, выполненного функцией swap()
+            <P></P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_11>Указатели, передаваемые в функцию, могут быть 
+            указателями на указатели. Указатели могут указывать на начало 
+            какого-либо массива и т.&nbsp;д. Указатели могут использоваться для 
+            защиты массивов, над которыми необходимо произвести некоторые 
+            вычисления или преобразования.</P>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_12>Особым свойством указателей можно считать возможность 
+            использовать их в качестве возвращаемых значений функций. Поскольку 
+            функции возвращают только одно значение, то несколько значений 
+            одного типа можно поместить в массив, а затем указатель на этот 
+            массив использовать в качестве возвращаемого значения.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_13>Общая форма определения <SPAN 
+            class=xml_em_italic>функции, которая возвращает указатель</SPAN>, 
+            следующая:</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип  *имя_функции ( аргументы функции ) 
+{
+// тело функции
+
+тип *имя_указателя;
+?
+
+return  имя_указателя;
+}</PRE></DIV>
+            <P id=id_15>Рассмотрим пример, в котором осуществляется сложение 
+            двух одномерных массивов и результат возвращается через 
+            указатель.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_16>Программный код решения примера:</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int *out2(int A[], int B[], int);
+
+int main (void) {
+	int i, n;
+	int A[] = {1,2,3,4,5};
+	int B[] = {2,2,2,2,2};
+	int *ptrAB = NULL;
+
+	n = (sizeof(A)/sizeof(A[0]));
+
+	puts("\n The initial arrays: ");
+	for (i = 0; i &lt; n; i++)
+		printf(" %d", A[i]);
+	
+     puts("");
+	for (i = 0; i &lt; n; i++)
+		printf(" %d", B[i]);
+
+	ptrAB = out2(A, B, n);
+	puts("\n\n Result from function: ");
+	for (i = 0; i &lt; n; i++)
+		printf(" %d", ptrAB[i]);
+
+	puts("\n\n Control of the arrays: ");
+	for (i = 0; i &lt; n; i++)
+		printf(" %d", A[i]);
+	
+     puts("");
+	for (i = 0; i &lt; n; i++)
+		printf(" %d", B[i]);
+
+     free(ptrAB); // освобождение выделенной памяти
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+int *out2(int A[], int B[], int n)
+{
+     int i;
+int *ptr = (int *)calloc(n, sizeof(int)); //выделение памяти
+
+     for (i = 0; i &lt; n; i++)
+     ptr[i] = A[i] + B[i];
+
+     return ptr;
+}</PRE></DIV>
+            <P id=id_18>Программа не требует особых пояснений.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Следует отметить, что никогда не следует возвращать 
+            адрес переменной, определенной в теле функции, так как переменные 
+            функции являются локальными, и они существуют только во время работы 
+            функции.</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <P id=id_20>Указатели возвращаются подобно значениям любых других 
+            типов данных. Чтобы вернуть указатель, функция должна объявить его 
+            тип в качестве типа возвращаемого значения. Таким образом, если 
+            функция возвращает указатель, то значение, используемое в ее 
+            инструкции <SPAN class=texample>return</SPAN>, также должно быть 
+            указателем. В частности, многие библиотечные функции, 
+            предназначенные для обработки строк, возвращают указатели на 
+            символы.</P>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_22>В языке <B>С</B> существует такой механизм как <SPAN 
+            class=xml_em_italic>указатель на функцию</SPAN>. Допустим, 
+            существует несколько функций для различных операций с данными. В 
+            этом случае оказывается удобным определить указатель на функцию, и 
+            использовать его там, где требуется производить расчет для различных 
+            функций.</P>
+            <DIV id=mark_22 class=lecture_mark></DIV>
+            <P id=id_23>Указатель на функцию – это переменная, содержащая адрес 
+            в памяти, по которому расположена функция [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>11.2</A>]. Имя функции – это адрес начала программного 
+            кода функции. Указатели на функции могут быть переданы функциям в 
+            качестве аргументов, могут возвращаться функциями, сохраняться в 
+            массивах и присваиваться другим указателям на функции [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>11.2</A>].</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Типичное определение указателя на функцию следующее:</P>
+            <DIV id=mark_24 class=lecture_mark></DIV>
+            <DIV class=example><PRE>тип_возвращаемый_функцией(*имя_указателя_на_функцию)(аргументы);</PRE></DIV>
+            <P id=id_26>В приведенном объявлении используются круглые скобки, в 
+            которых собственно и определяется указатель на функцию, которая 
+            возвращает тот или иной тип – <SPAN 
+            class=texample>тип_возвращаемый_функцией</SPAN>. Хотя знак * 
+            обозначает префиксную операцию, он имеет более низкий приоритет, чем 
+            функциональные круглые функции, поэтому для правильного 
+            комбинирования частей объявления необходимы еще и дополнительные 
+            скобки [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>11.1</A>]. При этом аргументы – это аргументы той или 
+            иной функции с заданным типом возвращаемого значения, и на которую 
+            ссылается указатель <SPAN 
+            class=texample>*имя_указателя_на_функцию</SPAN>. Очевидно, что 
+            возможны сложные объявлений функций.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_29>Указатели на функции часто используются в системах, 
+            управляемых меню [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#1" 
+            target=_blank>11.2</A>]. Пользователь выбирает команду меню (одну из 
+            нескольких). Каждая команда обслуживается своей функцией. Указатели 
+            на каждую функцию находятся в массиве указателей. Выбор пользователя 
+            служит индексом, по которому из массива выбирается указатель на 
+            нужную функцию.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Другим типичным применением указателей на функции 
+            являются реализация обобщенных алгоритмов, например, алгоритмов 
+            сортировки и поиска. В этом случае критерии сортировки и поиска 
+            реализуются в виде отдельных функций и передаются при помощи 
+            указателей на функции в качестве параметра реализации основного 
+            алгоритма.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_31><B>Пример 1</B>. Напишите программу с функцией 
+            пузырьковой сортировки, использующей вызов по ссылке.</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_32>В условии примера "вызов по ссылке" означает, что в 
+            качестве фактических параметров функций будут использоваться адреса 
+            переменных. И в этом случае прототип таких функций будет содержать 
+            указатели на соответствующие типы.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_33>Программный код решения примера:</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Прототип функции
+void bsort (int* const, const int);
+
+int main (void) 
+{
+	int A[] = {56, 34, 2, 0, 1, -21, 6, 8, 7};
+	int i, n;
+     
+    //Размерность массива
+	n = sizeof(A)/sizeof(A[0]);
+
+	puts("\n Data items in original order:");
+
+	for (i = 0; i &lt; n; i++)
+		printf(" %3d", A[i]);
+
+	// Вызов функции сортировки - bsort()
+	bsort (A, n);
+
+      puts("\n\n Data items in ascending order:");
+	for (i = 0; i &lt; n; i++)
+      printf(" %3d", A[i]);
+		
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Определение функции
+void swap(int *pa, int *pb)
+{
+int temp;
+temp = *pa;
+*pa = *pb;
+*pb = temp;
+}
+
+
+void bsort (int *const arr, const int size)
+{
+int pass, //счетчик проходов
+       j; // счетчик сравнений
+// Прототип функции обмена - swap()
+void swap (int*, int*);
+
+// Цикл для контроля проходов
+for (pass = 0; pass &lt; size - 1; pass++ ) 
+{
+	// цикл для контроля сравнений на данном проходе
+	for (j = 0; j &lt; size - 1; j++)
+	{
+	
+     // обмен значений при нарушении порядка возрастания
+		if (arr[j] &gt; arr[j + 1])
+		{
+		swap(&amp;arr[j], &amp;arr[j+1]);
+		}
+		
+	}
+}
+
+}</PRE></DIV>
+            <P id=id_35>В программе функция сортировки <SPAN 
+            class=texample>bsort()</SPAN> в качестве формального параметра 
+            используется константный указатель, который указывает на первый 
+            элемент заданного массива. Второй формальный параметр также 
+            константный, чтобы подчеркнуть неизменность этого параметра в теле 
+            функции <SPAN class=texample>bsort()</SPAN>. Передача функции 
+            размера массива в качестве параметра имеет два преимущества – это 
+            хороший стиль программирования и, кроме того, такую функцию можно 
+            использовать многократно.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_38>Прототип функции <SPAN class=texample>swap()</SPAN> 
+            включен в тело функции <SPAN class=texample>bsort()</SPAN>, потому 
+            что это единственная функция, которая вызывает функцию обмена <SPAN 
+            class=texample>swap()</SPAN>.</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_42>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.2">рис. 
+            11.2</A>.</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43 align=left><A name=image.11.2></A></P>
+            <DIV><IMG alt="Пример сортировки массива методом пузырька" 
+            src="Лекция_11_files/mht780C(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 11.2.</B>&nbsp; Пример сортировки 
+            массива методом пузырька
+            <P></P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44><B>Задание&nbsp;1</B></P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <OL id=id_45>
+              <LI>Напишите программу сортировки вещественных чисел в количестве 
+              семи, которые должны быть случайными по равномерному закону из 
+              интервала от –Х до +Х, где Х – номер компьютера, за которым 
+              выполняется лабораторная работа.
+              <LI>Видоизмените программу так, чтобы функция <SPAN 
+              class=texample>bsort()</SPAN> возвращала указатель на 
+              отсортированный массив, а сам исходный массив был при этом 
+              неизменным. Предусмотрите вывод на консоль исходного массива, 
+              потом отсортированного массива после вызова функции сортировки, и 
+              снова для контроля исходный массив. При этом аргументы функции 
+              <SPAN class=texample>bsort()</SPAN> оставить без 
+изменения.</LI></OL>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_50><B>Пример&nbsp;2</B>. Напишите программу, в которой 
+            используется функция по расчету среднего значения (среднего 
+            арифметического) одномерного числового массива, его исправленной 
+            выборочной дисперсии и среднего квадратичного отклонения 
+            (стандартного отклонения). Эти значения должны быть выведены на 
+            консоль в главной функции программы <SPAN 
+            class=texample>main()</SPAN></P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <P id=id_52>Приведем формулы, по которым рассчитываются среднее 
+            значение выборки, исправленная выборочная дисперсия и 
+            среднеквадратичное отклонение.</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>Среднее выборочное значение одномерного массива 
+            размерностью N</P>
+            <DIV id=mark_53 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt="mean=\frac 1 N \sum^N_{i=1}ai" 
+            src="Лекция_11_files/mht782E(1).tmp" width=157 height=27>,
+            <P id=id_55>где – элементы массива.</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_56>Исправленная выборочная дисперсия одномерного массива 
+            размерностью N</P>
+            <DIV id=mark_56 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 8px" 
+            alt="D=\frac 1 {N-1} \sum^N_{i=1}(a_i-mean)^2" 
+            src="Лекция_11_files/mht7841(1).tmp" width=228 height=29>,
+            <P id=id_58>где mean – среднее значение данного массива</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_59>Исправленное среднеквадратичное отклонение S</P>
+            <DIV id=mark_59 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="S=+\sqrt D" src="Лекция_11_files/mht7853(1).tmp" width=87 
+            height=22>,
+            <P id=id_61>где D – дисперсия данного массива.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62>Программный код решения примера:</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+// Прототип функции
+double *mean_D_S(int arr[], int n);
+
+int main(void)
+{
+	int mass[] = {2, -3, 5, 6, 7, 8, 9,-1};
+	int i, n;
+	double *R;
+	n = sizeof(mass)/sizeof(mass[0]);
+	puts("\n\t Initial array:");
+	for (i = 0; i &lt; n; i++)
+		printf(" %3d", mass[i]);
+
+     // Вызов функции 
+     R = mean_D_S(mass, n);
+
+// Вывод расчтных характеристик массива
+printf("\n\n The average value of an array: %g\n", R[0]);
+printf(" The dispersion of the array: %g\n", R[1]);
+printf(" The standard deviation of the array: %g\n", R[2]);
+
+// Освобождение памяти
+     free(R);
+
+	printf("\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Определение функции
+double *mean_D_S(int arr[], int N)
+{
+int j;
+double *PTR3 = (double *)calloc(N, sizeof(double));
+double mean, D, S;
+
+mean = 0.0;
+for (j = 0; j &lt; N; j++)
+mean += arr[j];
+
+mean /= N;
+
+D = 0.0;
+for (j = 0; j &lt; N; j++)
+D += (arr[j] - mean)*(arr[j] - mean);
+
+D /= (N-1);
+
+S = sqrt(D);
+
+PTR3[0] = mean;
+PTR3[1] = D;
+PTR3[2] = S;
+
+return PTR3;
+
+}</PRE></DIV>
+            <P id=id_64>В программе используется функция динамического 
+            распределения памяти <SPAN class=texample>calloc()</SPAN>, которая 
+            выделенные ячейки памяти обнуляет. Расчетные характеристики 
+            одномерного массива размещаются последовательно друг за другом в 
+            выделенной памяти для указателя <SPAN class=texample>*PTR3</SPAN>. 
+            Сформированный указатель функция возвращает в точку вызова функции 
+            <SPAN class=texample>mean_D_S()</SPAN>.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_68>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.3">рис. 
+            11.3</A>.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_69 align=left><A name=image.11.3></A></P>
+            <DIV><IMG 
+            alt="Расчет статистических характеристик числового массива" 
+            src="Лекция_11_files/mht7876(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 11.3.</B>&nbsp; Расчет статистических 
+            характеристик числового массива
+            <P></P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <P id=id_70><B>Задание&nbsp;2</B></P>
+            <DIV id=mark_70 class=lecture_mark></DIV>
+            <OL id=id_71>
+              <LI>В качестве первого аргумента функции <SPAN 
+              class=texample>mean_D_S()</SPAN> используйте указатель на числовой 
+              массив.
+              <LI>Воспользуйтесь справкой по математическим функциям и в 
+              программе примените функцию, которая осуществляет возведение в 
+              степень.
+              <LI>Дополните возврат функцией <SPAN 
+              class=texample>mean_D_S()</SPAN> еще исходного массива, 
+              поэлементно возведенного в квадрат. В главной функции <SPAN 
+              class=texample>main()</SPAN> результаты выведите на консоль.
+              <LI>Вместо типа double используйте тип <SPAN 
+              class=texample>float</SPAN>.</LI></OL>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_80><B>Пример&nbsp;3</B>. Напишите программу с указателем на 
+            функции, которые рассчитывают следующие статистические 
+            характеристики одномерного числового массива: среднее арифметическое 
+            значение, медиану и модус (моду).</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81>Среднее арифметическое рассчитывалось в предыдущем 
+            примере.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_82>Приведем определения медианы и модуса, взятые из книги 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#13" 
+            target=_blank>11.3</A>], из которой также взяты основные фрагменты 
+            программных кодов (в книге программы написаны на С++).</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_83><SPAN class=xml_em_italic>Медиана</SPAN> – это 
+            серединное значение в наборе данных – т.&nbsp;е. такое, что ровно 
+            половина значений располагается выше, и ровно половина ниже его.</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84><SPAN class=xml_em_italic>Модус</SPAN> – это значение, 
+            наиболее часто встречающееся в наборе данных.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_85>Программный код решения примера:</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+double mean(int*, int);
+double median(int*, int);
+double mode(int*, int);
+
+int main(void) {
+	int mass[] = {5, 6, 5, 5, 3,
+	              6, 5, 3, 1, 4,
+	              5, 3, 1, 6, 5, 
+	              2, 5, 2, 3, 4}; 
+	int *ptr = mass;
+	int temp, i, j, k, n;
+// Указатель на функции
+	double (*fun[3])(int*, int) = {mean, median, mode};
+	
+     n = sizeof(mass)/sizeof(mass[0]);
+	puts("\n The original array:");
+	j = 0;
+	for (i = 0; i &lt; n; i++) {
+		j++;
+		
+		if ( j%6 )
+			printf(" %2d", mass[i]);
+		else
+		{puts(""); printf(" %2d", mass[i]); j = 1;}
+	}
+
+// Сортировка методом выбора
+for (i = 0; i &lt; (n - 1); ++i) {
+ temp = ptr[i]; k = i;
+for (j = i + 1; j &lt; n; ++j)
+if (ptr[j] &lt; temp) { k = j; temp = ptr[k]; }
+ptr[k] = ptr[i]; ptr[i] = temp;
+}
+	puts("\n\n Results - mean, mediana, modus: ");
+for (i = 0; i &lt; 3; i++)
+printf("%6g\n",(*fun[i])(ptr, n));
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Определения функций
+double mean(int* arr, int N)
+{
+int i;
+double aver = 0.0;
+
+for (i = 0; i &lt; N; i++)
+aver += arr[i];
+
+return (aver/N);
+
+}
+
+double median(int* arr, int N)
+{
+int i;
+double med = 0.0;
+
+for (i = 0; (i &lt; N/2); i++)
+med = arr[i];
+if ( N % 2)
+med = arr[i];
+
+else
+med = (med + arr[i])/2;
+return med;
+}
+
+double mode(int* arr, int N)
+{
+int instances = 0,
+    tempinst = 1,
+           i = 1;
+double tempmode,
+       mode_return = 1.0;
+tempmode = (double)arr[0];
+
+while (i &lt; N) 
+{
+   while ((double)arr[i] == tempmode )
+   {
+   i++;
+   tempinst++;
+   }
+   if (tempinst &gt; instances)
+   {
+   mode_return = tempmode;
+   instances = tempinst;
+   }
+   tempinst = 1;
+   tempmode = (double)arr[i];
+   i++;
+}
+
+return (mode_return);
+}</PRE></DIV>
+            <P id=id_87>В программе указатель на функции ( <SPAN 
+            class=texample>*fun</SPAN> ) – это массив указателей на функции, на 
+            три функции. В случае, когда возвращаемые значения функций имеют 
+            различный тип, то можно определить несколько указателей на 
+            функции.</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_89>Для понимания работы функции по расчету модуса алгоритм 
+            вычислений рекомендуется в [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#13" 
+            target=_blank>11.3</A>] формулировать следующим образом: "Разбить 
+            сортированный список значений на ряд меньших списков, каждый из 
+            которых содержит одинаковые значения. Пересчитать число элементов в 
+            этих списках, и список с наибольшим числом элементов будет 
+            соответствовать модусу данных".</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_90>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.4">рис. 
+            11.4</A>.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_91 align=left><A name=image.11.4></A></P>
+            <DIV><IMG alt="Значения среднего, медианы и модуса" 
+            src="Лекция_11_files/mht7888(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 11.4.</B>&nbsp; Значения среднего, 
+            медианы и модуса
+            <P></P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_92><B>Задание&nbsp;3</B></P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <OL id=id_93>
+              <LI>В функции расчета модуса приведение типов примените только 
+              один раз.
+              <LI>Массив данных задайте случайным образом (целыми числами). 
+              Проанализируйте результат работы программы.
+              <LI>Создайте три указателя на функцию – на функцию расчета 
+              среднего арифметического, на функцию расчета медианы и на функцию 
+              расчета модуса. При этом для массива целых чисел функция расчета 
+              модуса должна возвращать целое значение.
+              <LI>Объедините три функции – <SPAN class=texample>mean()</SPAN>, 
+              <SPAN class=texample>median()</SPAN>, <SPAN 
+              class=texample>mode()</SPAN> в одну функцию и определите 
+              необходимый тип возвращаемого значения, чтобы в главной функции 
+              main() можно была распечатать результаты расчетов статистических 
+              характеристик.
+              <LI>Напишите программу, в которой с помощью указателя на функции 
+              можно было вывести на консоль средние оценки за последние три года 
+              обучения в школе.</LI></OL>
+            <DIV id=mark_93 class=lecture_mark></DIV>
+            <P id=id_102><B>Пример&nbsp;4</B>. Напишите программу сортировки 
+            массива строк с использованием указателей на функции.</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_103>Программный код решения примера:</P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;string.h&gt;
+
+// Прототипы функций
+void bsort (char **arr, int size, 
+	int (*comp) (const char *s1, const char *s2));
+
+int less (const char *s1, const char *s2);
+int greater (const char *s1, const char *s2);
+
+int main (void)
+{
+	char *Lines[] = { "asd", "aza", "baza", "qwerty", "hello", "world", "aza" };
+	
+
+     int n = sizeof (Lines) / sizeof (Lines[0]);
+	int i;
+
+// Вызов функции сортировки по возрастанию в алфавитном порядке
+	puts("\n The sorting in ascending order:");
+	bsort (Lines, n, less);
+	for (i = 0; i &lt; n; ++i)
+		printf("\t %s\n", Lines[i]);
+	
+// Вызов функции сортировки по убыванию в алфавитном порядке
+	puts("\n The sorting in descending order:");
+	bsort (Lines, n, greater);
+	for (i = 0; i &lt; n; ++i)
+		printf("\t %s\n", Lines[i]);
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+}
+
+// Определение функции сортировки строк
+void bsort (char **arr, int size, 
+	int (*comp) (const char *s1, const char *s2))
+{
+	int i, j;
+
+	for (i = 0; i &lt; size - 1; ++i)
+		for (j = 0; j &lt; size - 1; ++j)
+			if (comp (arr[j], arr[j + 1]) &gt; 0)
+			{
+				char *s = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = s;
+			}
+}
+
+// Определение функции сравнения строк по возрастанию
+int less (const char *s1, const char *s2)
+{
+	return strcmp (s1, s2);
+}
+
+// Определение функции сравнения строк по убыванию
+int greater (const char *s1, const char *s2)
+{
+	return -strcmp (s1, s2);
+}</PRE></DIV>
+            <P id=id_105>В программе используются указатель на функцию для 
+            вызова двух функций – <SPAN class=texample>less()</SPAN> и <SPAN 
+            class=texample>greater()</SPAN> в процессе сортировки для 
+            определения порядка расположения элементов (слов).</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_108>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.5">рис. 
+            11.5</A>.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109 align=left><A name=image.11.5></A></P>
+            <DIV><IMG alt="Пример сортировки строк" 
+            src="Лекция_11_files/mht78AA(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 11.5.</B>&nbsp; Пример сортировки строк
+            <P></P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_110><B>Задание&nbsp;4</B></P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <OL id=id_111>
+              <LI>Ввод массива строк осуществите с клавиатуры построчно.
+              <LI>Ввод массива строк осуществите с клавиатуры одной строкой, 
+              содержащей несколько слов, разделенных пробелами, и заполните 
+              символьный массив так, чтобы в каждом элементе было по одному 
+              слову из исходной строки.
+              <LI>Измените программу так, чтобы при сравнении строк не 
+              различались строчные и прописные буквы латинского алфавита.
+              <LI>Произведите сортировку по возрастанию длин слов с 
+              использованием указателя на функции.
+              <LI>Произведите сортировку по уменьшению длин слов с 
+              использованием указателей на функции.</LI></OL>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_117><B>Пример&nbsp;5</B>. Напишите программу построения на 
+            экране дисплея графика следующей функции:</P>
+            <DIV id=mark_117 class=lecture_mark></DIV><IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt="y=sin(3x)e^{\frac x 3}" src="Лекция_11_files/mht78CD(1).tmp" 
+            width=116 height=23>.
+            <P id=id_119>Предусмотрите возможность записи в текстовый файл 
+            графика данной функции.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120>Для решения примера используем средства вывода на 
+            печать форматированных данных без применения специальных графических 
+            библиотек.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121>Программный код решения примера:</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/ Заголовочные файлы
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;math.h&gt;
+
+// Размеры диаграммы по ширине и высоте экрана
+#define SCREENW  79
+#define SCREENH  25
+
+// Функция построения графика заданной функции
+void plot (FILE *fout, double a, double b, double (*f) (double))
+{
+// Формальные параметры функции plot
+// FILE *fout – указатель на поток вывода 
+// double a – левая граница оси абсцисс
+// double b – правая граница оси абсцисс
+// double (*f) (double) – указатель на функцию
+
+	char screen[SCREENW][SCREENH];
+	double x, y[SCREENW];
+	double ymin = 0, ymax = 0;
+	double hx, hy;
+	int i, j;
+	int xz, yz;
+
+     // hx – шаг по оси абсцисс
+	hx = (b - a) / (SCREENW - 1);	
+	for (i = 0, x = a; i &lt; SCREENW; ++i, x += hx) {
+		// вычисляем значение функции
+		y[i] = f (x);
+		// запоминаем минимальное и максимальное значения
+		if (y[i] &lt; ymin) ymin = y[i];
+		if (y[i] &gt; ymax) ymax = y[i];
+	}
+
+	hy = (ymax - ymin) / (SCREENH - 1);
+	yz = (int)floor (ymax / hy + 0.5);
+	xz = (int)floor (-a / hx + 0.5);
+
+	// рисование осей координат
+	for (j = 0; j &lt; SCREENH; ++j) {
+		for (i = 0; i &lt; SCREENW; ++i) {
+			if (j == yz &amp;&amp; i == xz)
+				screen[i][j] = '+'; // '.', '?', '+'
+			else if (j == yz)
+				screen[i][j] = '-';
+			else if (i == xz)
+				screen[i][j] = '|';
+			else
+				screen[i][j] = ' ';
+		}
+	}
+
+	// рисование графика функции
+	for (i = 0; i &lt; SCREENW; ++i) {
+		j = (int)floor ((ymax - y[i]) / hy + 0.5);
+		
+    screen[i][j] = '.'; // символ начертания графика
+	}
+
+	// вывод результата в файл или в стандартный поток stdout
+	for (j = 0; j &lt; SCREENH; ++j) {
+		for (i = 0; i &lt; SCREENW; ++i)
+			fputc (screen[i][j], fout);
+		fprintf (fout, "\n");
+	}
+
+}
+
+// Заданная функция
+double f (double x)
+{
+	return sin (3.0*x) * exp (-x / 3.0);
+	//return x * x - 3;
+}
+
+
+int main (void) 
+{
+	// Вывод графика в стандартный поток (консоль)
+	plot (stdout, 0.0, 10.0, f);
+		
+
+	printf("\n\n … Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_123>В программе используется указатель на файл, который 
+            может быть стандартным потоком, т.&nbsp;е. экран дисплея. В главной 
+            функции <SPAN class=texample>main()</SPAN> происходит обращение к 
+            функции рисования графика <SPAN class=texample>plot()</SPAN>, в 
+            которую вводят фактические параметры, в частности файл – это stdout, 
+            т.&nbsp;е. стандартный поток, 0.0 – это левая граница оси абсцисс, 
+            10.0 – правая граница оси абсцисс, f – имя функции с описанием 
+            зависимости y = f(x).</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_126>Пример выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\11. Лекция Указатели и функции в языке программирования С.mht#image.11.6">рис. 
+            11.6</A>.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_127 align=left><A name=image.11.6></A></P>
+            <DIV><IMG alt="Пример построения графика функции на консоли" 
+            src="Лекция_11_files/mht78DF(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 11.6.</B>&nbsp; Пример построения 
+            графика функции на консоли
+            <P></P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_128><B>Задание 5</B></P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <OL id=id_129>
+              <LI>Внесите в программу изменения для вывода графика в текстовый 
+              файл с именем compX.txt, где Х – номер компьютера, на котором 
+              выполняется лабораторная работа.
+              <LI>Проанализируйте программу с целью возможного улучшения вида 
+              графика заданной функции.
+              <LI>В программу добавьте описание кубической и параболической 
+              функций. Напишите необходимые строчки программного кода для 
+              запроса о построении графика соответствующей функции.</LI></OL>
+            <DIV id=mark_129 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_133>
+              <LI>Каким образом можно вернуть из функции несколько значений?
+              <LI>Каким образом определяется тип функции?
+              <LI>Как выглядит описание функции, которая возвращает указатель на 
+              заданный тип, например, <SPAN class=texample>char</SPAN>?
+              <LI>Можно ли использовать многоуровневую адресацию для функции, 
+              которая возвращает указатель на заданный тип? Если можно, то как 
+              происходит определение такой функции?
+              <LI>В каком месте программы можно определить указатель на функцию?
+              <LI>Имеет ли указатель на функцию прототип и определение?
+              <LI>Как осуществляется вызов функции с помощью указателя?
+              <LI>Как взаимосвязаны между собой объявление функции, ее 
+              определение и вызов функции?</LI></OL>
+            <DIV id=mark_133 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_11_files/mht7789(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_11_files/mht7789(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

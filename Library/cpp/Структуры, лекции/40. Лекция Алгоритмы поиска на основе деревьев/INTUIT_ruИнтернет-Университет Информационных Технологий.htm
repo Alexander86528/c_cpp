@@ -1,0 +1,980 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>40. Лекция: Алгоритмы поиска на основе 
+            деревьев: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции рассматриваются определение и виды деревьев поиска, приемы 
+            снижения трудоемкости поиска в древовидных структурах, приводятся 
+            описания алгоритмов поиска в двоичных упорядоченных, случайных и 
+            сбалансированных в высоту (АВЛ) деревьях, приводятся примеры 
+            программной реализации бинарного дерева поиска и АВЛ-дерева. 
+          </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить алгоритмы поиска на основе 
+            деревьев, научиться решать задачи поиска через построение 
+            упорядоченного, случайного, оптимального или сбалансированного в 
+            высоту деревьев на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Поиск данных, являясь одним из приоритетных направлений 
+            работы с данными, предполагает использование соответствующих 
+            алгоритмов в зависимости от ряда факторов: способ представления 
+            данных, упорядоченность множества поиска, объем данных, расположение 
+            их во внешней или во внутренней памяти. <B>Поиск</B> – процесс 
+            нахождения конкретной информации в ранее созданном множестве данных. 
+            Как правило, данные представляют собой структуры, каждая из которых 
+            имеет хотя бы один ключ – значение определенного поля конкретной 
+            структуры. <SPAN class=xml_em_italic>Ключ поиска</SPAN> – это поле, 
+            по значению которого происходит поиск.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Рассмотрим организацию поиска данных, имеющих древовидную 
+            структуру. Анализируя дерево только с точки зрения представления 
+            данных в виде иерархической структуры, заметим, что выигрыша при 
+            организации поиска не получится. Сравнение ключа поиска с эталоном 
+            необходимо провести для всех элементов дерева.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Уменьшить число сравнений ключей с эталоном возможно, 
+            если выполнить организацию дерева особым образом, то есть 
+            расположить его элементы по определенным правилам. При этом в 
+            процессе поиска будет просмотрено не все дерево, а отдельное 
+            поддерево. Такой подход позволяет классифицировать деревья в 
+            зависимости от правил построения. Выделим некоторые популярные виды 
+            деревьев, на основе которых рассмотрим организацию поиска.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Двоичные (бинарные) деревья</H3>
+            <P id=id_5>Двоичные деревья представляют собой иерархическую 
+            структуру, в которой каждый узел имеет не более двух потомков. То 
+            есть двоичное дерево либо является пустым, либо состоит из данных и 
+            двух поддеревьев (каждое из которых может быть пустым). При этом 
+            каждое поддерево в свою очередь тоже является деревом. Поиск на 
+            таких структурах не дает выигрыша по выполнению по сравнению с 
+            линейными структурами того же размера, так как необходимо в худшем 
+            случае выполнить обход всего дерева. Поэтому интерес представляют 
+            двоичные упорядоченные деревья.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Двоичные упорядоченные деревья</H3>
+            <P id=id_6>Двоичное дерево упорядоченно, если для любой его вершины 
+            x справедливы такие свойства (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.1">рис. 
+            40.1</A>):</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <UL id=id_7>
+              <LI>все элементы в левом поддереве меньше элемента, хранимого в 
+              <SPAN class=texample>x</SPAN>, 
+              <LI>все элементы в правом поддереве больше элемента, хранимого в 
+              <SPAN class=texample>x</SPAN>,
+              <LI>все элементы дерева различны. </LI></UL>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_13 align=left><A name=image.40.1></A>
+            <DIV><IMG alt="Двоичное упорядоченное дерево" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/40_01.png" 
+            width=192 height=208></DIV><BR><B>Рис. 40.1.</B>&nbsp; Двоичное 
+            упорядоченное дерево
+            <P></P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <P id=id_14>Если в дереве выполняются первые два свойства, но 
+            встречаются одинаковые элементы, то такое дерево является <SPAN 
+            class=xml_em_italic>частично упорядоченным</SPAN>. В дальнейшем 
+            будет идти речь только о двоичных упорядоченных деревьях. Основными 
+            операциями, производимыми с упорядоченным деревом, являются:</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <UL id=id_15>
+              <LI>поиск вершины;
+              <LI>добавление вершины;
+              <LI>удаление вершины;
+              <LI>вывод (печать) дерева;
+              <LI>очистка дерева.</LI></UL>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_21><SPAN class=xml_em_italic>Пример 1</SPAN>. Программная 
+            реализация основных операций бинарного дерева поиска.</P>
+            <DIV id=mark_21 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+#include &lt;time.h&gt;
+using namespace std;
+
+typedef int T; // тип элемента
+#define compLT(a,b) (a &lt; b)
+#define compEQ(a,b) (a == b)
+typedef struct Node_ {
+  T data;  // значение узла
+    struct Node_ *left;// левый потомок
+    struct Node_ *right;// правый потомок
+    struct Node_ *parent;// родитель
+} Node;
+Node *root = NULL; //корень бинарного дерева поиска
+
+Node* insertNode(T data);
+void deleteNode(Node *z);
+Node* findNode(T data);
+void printTree(Node *node, int l = 0);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int i, *a, maxnum;
+  cout &lt;&lt; "Введите количество элементов maxnum : ";
+  cin &gt;&gt; maxnum;
+  cout &lt;&lt; endl;
+    a = new int[maxnum];
+    srand(time(NULL)*1000);
+  // генерация массива
+  for (i = 0; i &lt; maxnum; i++)
+    a[i] = rand();
+    cout &lt;&lt; "Вывод сгенерированной последовательности" &lt;&lt; endl;
+  for (i = 0; i &lt; maxnum; i++)
+    cout &lt;&lt; a[i] &lt;&lt; " ";
+  cout &lt;&lt; endl;
+  cout &lt;&lt; endl;
+  // добавление элементов в бинарное дерево поиска
+  for (i = 0; i &lt; maxnum; i++) {
+    insertNode(a[i]);
+  }
+  cout &lt;&lt; "Вывод бинарного дерева поиска" &lt;&lt; endl;
+  printTree(root);
+  cout &lt;&lt; endl;
+  // поиск элементов по бинарному дереву поиска
+  for (i = maxnum-1; i &gt;= 0; i--) {
+    findNode(a[i]);
+  }
+  // очистка бинарного дерева поиска
+  for (i = 0; i &lt; maxnum; i++) {
+    deleteNode(findNode(a[i]));
+  }
+  system("pause");
+  return 0;
+}
+
+//функция выделения памяти для нового узла и вставка в дерево
+Node* insertNode(T data) {
+  Node *x, *current, *parent;
+  current = root;
+  parent = 0;
+  while (current) {
+    if ( data == current-&gt;data ) return (current);
+      parent = current;
+      current = data &lt; current-&gt;data ? 
+      current-&gt;left : current-&gt;right;
+  }
+  x = new Node;
+  x-&gt;data = data;
+  x-&gt;parent = parent;
+  x-&gt;left = NULL;
+  x-&gt;right = NULL;
+  if(parent)
+    if( x-&gt;data &lt; parent-&gt;data )
+      parent-&gt;left = x;
+    else
+    parent-&gt;right = x;
+  else
+    root = x;
+  return(x);
+}
+
+//функция удаления узла из дерева
+void deleteNode(Node *z) {
+  Node *x, *y;
+  if (!z || z == NULL) return;
+  if (z-&gt;left == NULL || z-&gt;right == NULL)
+    y = z;
+  else {
+    y = z-&gt;right;
+    while (y-&gt;left != NULL) y = y-&gt;left;
+  }
+  if (y-&gt;left != NULL)
+    x = y-&gt;left;
+  else
+    x = y-&gt;right;
+  if (x) x-&gt;parent = y-&gt;parent;
+  if (y-&gt;parent)
+    if (y == y-&gt;parent-&gt;left)
+      y-&gt;parent-&gt;left = x;
+    else
+      y-&gt;parent-&gt;right = x;
+  else
+    root = x;
+  if (y != z) {
+    y-&gt;left = z-&gt;left;
+    if (y-&gt;left) y-&gt;left-&gt;parent = y;
+      y-&gt;right = z-&gt;right;
+    if (y-&gt;right) y-&gt;right-&gt;parent = y;
+      y-&gt;parent = z-&gt;parent;
+    if (z-&gt;parent)
+      if (z == z-&gt;parent-&gt;left)
+        z-&gt;parent-&gt;left = y;
+      else
+        z-&gt;parent-&gt;right = y;
+    else
+      root = y;
+      free (z);
+  } 
+  else {
+    free (y);
+  }
+}
+
+//функция поиска узла, содержащего data
+Node* findNode(T data) {
+  Node *current = root;
+  while(current != NULL)
+    if(compEQ(data, current-&gt;data))
+      return (current);
+    else
+      current = compLT(data, current-&gt;data) ? 
+                current-&gt;left : current-&gt;right;
+  return(0);
+}
+
+//функция вывода бинарного дерева поиска
+void printTree(Node *node, int l){
+  int i;
+  if (node != NULL) {
+    printTree(node-&gt;right, l+1);
+    for (i=0; i &lt; l; i++) cout &lt;&lt; "    ";
+    printf ("%4ld", node-&gt;data);
+    printTree(node-&gt;left, l+1);
+  }
+  else cout &lt;&lt; endl;
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV>
+            <P id=id_23>Алгоритм удаления элемента более трудоемкий, так как 
+            надо соблюдать упорядоченность дерева. При удалении может случиться, 
+            что удаляемый элемент находится не в листе, то есть вершина имеет 
+            ссылки на реально существующие поддеревья. Эти поддеревья терять 
+            нельзя, а присоединить два поддерева на одно освободившееся после 
+            удаления место невозможно. Поэтому необходимо поместить на 
+            освободившееся место либо самый правый элемент из левого поддерева, 
+            либо самый левый из правого поддерева. Упорядоченность дерева при 
+            этом не нарушится. Удобно придерживаться одной стратегии, например, 
+            заменять самый левый элемент из правого поддерева. Нельзя забывать, 
+            что при замене вершина, на которую производится замена, может иметь 
+            правое поддерево. Это поддерево необходимо поставить вместо 
+            перемещаемой вершины.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_24>Временная сложность этих алгоритмов (она одинакова для 
+            этих алгоритмов, так как в их основе лежит поиск) оценим для 
+            наилучшего и наихудшего случая. В лучшем случае, то есть случае 
+            полного двоичного дерева, получаем сложность <SPAN 
+            class=texample>O<SUB>min</SUB>(log n)</SPAN>. В худшем случае дерево 
+            может выродиться в список. Такое может произойти, например, при 
+            добавлении элементов в порядке возрастания. При работе со списком в 
+            среднем придется просмотреть половину списка. Это даст сложность 
+            <SPAN class=texample>O<SUB>max</SUB>(n)</SPAN>.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Случайные деревья</H3>
+            <P id=id_27><B>Случайные деревья поиска</B> представляют собой 
+            упорядоченные бинарные деревья поиска, при создании которых элементы 
+            (их ключи) вставляются в случайном порядке.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_28>При создании таких деревьев используется тот же 
+            алгоритм, что и при добавлении вершины в бинарное дерево поиска. 
+            Будет ли созданное дерево случайным или нет, зависит от того, в 
+            каком порядке поступают элементы для добавления. Примеры различных 
+            деревьев, создаваемых при различном порядке поступления элементов, 
+            приведены ниже (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.2">рис. 
+            40.2</A>).</P>
+            <DIV id=mark_28 class=lecture_mark></DIV>
+            <P id=id_29>При поступлении элементов в случайном порядке получаем 
+            дерево с минимальной высотой <SPAN class=texample>h</SPAN> (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.2">рис. 
+            2А</A>), при этом минимизируется время поиска элемента в дереве, 
+            которое пропорционально <SPAN class=texample>O(log n)</SPAN>. При 
+            поступлении элементов в упорядоченном виде (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.2">рис. 
+            2В</A>) или в порядке с единичными сериями монотонности (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.2">рис. 
+            2С</A>) происходит построение вырожденных деревьев поиска (оно 
+            вырождено в линейный список), что нисколько не сокращает время 
+            поиска, которое составляет <SPAN class=texample>O(n)</SPAN>.</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_33 align=left><A name=image.40.2></A>
+            <DIV><IMG alt="Случайные деревья поиска" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/40_02.png" 
+            width=623 height=321></DIV><BR><B>Рис. 40.2.</B>&nbsp; Случайные 
+            деревья поиска
+            <P></P>
+            <DIV id=mark_33 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Оптимальные деревья</H3>
+            <P id=id_34>В двоичном дереве поиск одних элементов может 
+            происходить чаще, чем других, то есть существуют вероятности <SPAN 
+            class=texample>p<SUB>k</SUB></SPAN> поиска <SPAN 
+            class=texample>k</SPAN>-го элемента и для различных элементов эти 
+            вероятности неодинаковы. Можно предположить, что поиск в дереве в 
+            среднем будет более быстрым, если те элементы, которые ищут чаще, 
+            будут находиться ближе к корню дерева.</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <P id=id_37>Пусть даны <SPAN class=texample>2n+1</SPAN> вероятностей 
+            <SPAN class=texample>p<SUB>1</SUB>,p<SUB>2</SUB>,...,p<SUB>n</SUB>, 
+            q<SUB>0</SUB>,q<SUB>1</SUB>,...,q<SUB>n</SUB></SPAN>, где <SPAN 
+            class=texample>p<SUB>i</SUB></SPAN> – вероятность того, что 
+            аргументом поиска является <SPAN class=texample>K<SUB>i</SUB></SPAN> 
+            элемент; <SPAN class=texample>q<SUB>i</SUB></SPAN> – вероятность 
+            того, что аргумент поиска лежит между вершинами <SPAN 
+            class=texample>K<SUB>i</SUB></SPAN> и <SPAN 
+            class=texample>K<SUB>i+1</SUB></SPAN>; <SPAN 
+            class=texample>q<SUB>0</SUB></SPAN> – вероятность того, что аргумент 
+            поиска меньше, чем значение элемента <SPAN 
+            class=texample>K<SUB>1</SUB></SPAN>; <SPAN 
+            class=texample>q<SUB>n</SUB></SPAN> – вероятность того, что аргумент 
+            поиска больше, чем <SPAN class=texample>K<SUB>n</SUB></SPAN>. Тогда 
+            <SPAN class=xml_em_italic>цена дерева поиска</SPAN> <SPAN 
+            class=texample>C</SPAN> будет определяться следующим образом:</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <DIV id=id_50><IMG 
+            alt="&#10;C=\sum_{j=1}^n p_j(\text{levelroot}_j+1)+\sum_{k=1}^n q_k(\text{levellist}_k),&#10;" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/13fa8d415e6cca49c51071d87336ec66.png" 
+            width=363 height=54></DIV>
+            <P id=id_51>где <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+            alt=\text{levelroot}_j 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/47502232a98e4db58f4246741bdd14fb.png" 
+            width=79 height=22> – уровень узла <SPAN class=texample>j</SPAN>, а 
+            <IMG style="POSITION: relative; DISPLAY: inline; TOP: 5px" 
+            alt=\text{levelroot}_k 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/05ee7fbbf641f1f52f02e2fb6993843d.png" 
+            width=81 height=18> – уровень листа <SPAN 
+            class=texample>K</SPAN>.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_56>Дерево поиска называется <SPAN 
+            class=xml_em_italic>оптимальным</SPAN>, если его цена минимальна. То 
+            есть <B>оптимальное бинарное дерево поиска</B> – это бинарное дерево 
+            поиска, построенное в расчете на обеспечение максимальной 
+            производительности при заданном распределении вероятностей поиска 
+            требуемых данных. </P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <P id=id_57>Существует подход построения оптимальных деревьев 
+            поиска, при котором элементы вставляются в порядке уменьшения 
+            частот, что дает в среднем неплохие деревья поиска. Однако этот 
+            подход может дать вырожденное дерево поиска, которое будет далеко от 
+            оптимального. Еще один подход состоит в выборе корня <SPAN 
+            class=texample>k</SPAN> таким образом, чтобы максимальная сумма 
+            вероятностей для вершин левого поддерева или правого поддерева была 
+            настолько мала, насколько это возможно. Такой подход также может 
+            оказаться плохим в случае выбора в качестве корня элемента с малым 
+            значением <SPAN class=texample>p<SUB>k</SUB></SPAN>.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_60>Существуют алгоритмы, которые позволяют построить 
+            оптимальное дерево поиска. К ним относится, например, алгоритм 
+            Гарсия-Воча. Однако такие алгоритмы имеют временную сложность 
+            порядка <SPAN class=texample>O(n<SUP>2</SUP>)</SPAN>. Таким образом, 
+            создание оптимальных деревьев поиска требует больших накладных 
+            затрат, что не всегда оправдывает выигрыш при быстром поиске.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Сбалансированные по высоте деревья</H3>
+            <P id=id_62>В худшем случае, когда дерево вырождено в линейный 
+            список, хранение данных в упорядоченном бинарном дереве никакого 
+            выигрыша в сложности операций по сравнению с массивом или линейным 
+            списком не дает. В лучшем случае, когда дерево сбалансировано, для 
+            всех операций получается логарифмическая сложность, что гораздо 
+            лучше. <B>Идеально сбалансированным</B> называется дерево, у 
+            которого для каждой вершины выполняется требование: число вершин в 
+            левом и правом поддеревьях различается не более чем на 1.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_63>Однако идеальную сбалансированность довольно трудно 
+            поддерживать. В некоторых случаях при добавлении или удалении 
+            элементов может потребоваться значительная перестройка дерева, не 
+            гарантирующая логарифмической сложности. В 1962 году два советских 
+            математика: Г.М. Адельсон-Вельский и Е.М. Ландис – ввели менее 
+            строгое определение сбалансированности и доказали, что при таком 
+            определении можно написать программы добавления и/или удаления, 
+            имеющие логарифмическую сложность и сохраняющие дерево 
+            сбалансированным. Дерево считается <B>сбалансированным по АВЛ</B> 
+            (сокращения от фамилий Г.М. Адельсон-Вельский и Е.М. Ландис), если 
+            для каждой вершины выполняется требование: высота левого и правого 
+            поддеревьев различаются не более, чем на 1. Не всякое 
+            сбалансированное по АВЛ дерево идеально сбалансировано, но всякое 
+            идеально сбалансированное дерево сбалансировано по АВЛ.</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_64>При операциях добавления и удаления может произойти 
+            нарушение сбалансированности дерева. В этом случае потребуются 
+            некоторые преобразования, не нарушающие упорядоченности дерева и 
+            способствующие лучшей сбалансированности.</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_65>Рассмотрим такие преобразования. Пусть вершина <SPAN 
+            class=texample>a</SPAN> имеет правый потомок <SPAN 
+            class=texample>b</SPAN>. Обозначим через <SPAN 
+            class=texample>P</SPAN> левое поддерево вершины <SPAN 
+            class=texample>a</SPAN>, через <SPAN class=texample>Q</SPAN> и <SPAN 
+            class=texample>R</SPAN> – левое и правое поддеревья вершины <SPAN 
+            class=texample>b</SPAN> соответственно. Упорядоченность дерева 
+            требует, чтобы <SPAN class=texample>P&lt;a&lt;Q&lt;b&lt;R</SPAN>. 
+            Точно того же требует упорядоченность дерева с корнем <SPAN 
+            class=texample>b</SPAN>, его левым потомком <SPAN 
+            class=texample>a</SPAN>, в котором <SPAN class=texample>P</SPAN> и 
+            <SPAN class=texample>Q</SPAN> – левое и правое поддеревья вершины 
+            <SPAN class=texample>a</SPAN>, <SPAN class=texample>R</SPAN> – 
+            правое поддерево вершины <SPAN class=texample>b</SPAN>. Поэтому 
+            первое дерево можно преобразовать во второе, не нарушая 
+            упорядоченности. Такое преобразование называется <SPAN 
+            class=xml_em_italic>малым правым вращением</SPAN> (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.3">рис. 
+            40.3</A>). Аналогично определяется симметричное ему <SPAN 
+            class=xml_em_italic>малое левое вращение</SPAN>.</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <P id=id_81 align=left><A name=image.40.3></A>
+            <DIV><IMG alt="Малое правое вращение АВЛ-дерева" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/40_03.png" 
+            width=423 height=180></DIV><BR><B>Рис. 40.3.</B>&nbsp; Малое правое 
+            вращение АВЛ-дерева
+            <P></P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_82>Пусть <SPAN class=texample>b</SPAN> – правый потомок 
+            вершины <SPAN class=texample>a</SPAN>, <SPAN class=texample>c</SPAN> 
+            – левый потомок вершины <SPAN class=texample>b</SPAN>, <SPAN 
+            class=texample>P</SPAN> – левое поддерево вершины <SPAN 
+            class=texample>a</SPAN>, <SPAN class=texample>Q</SPAN> и <SPAN 
+            class=texample>R</SPAN> – соответственно левое и правое поддеревья 
+            вершины <SPAN class=texample>c</SPAN>, <SPAN class=texample>S</SPAN> 
+            – правое поддерево <SPAN class=texample>b</SPAN>. Тогда <SPAN 
+            class=texample>P&lt;a&lt;Q&lt;c&lt;R&lt;b&lt;S</SPAN>. Такой же 
+            порядок соответствует дереву с корнем <SPAN class=texample>c</SPAN>, 
+            имеющим левый потомок <SPAN class=texample>a</SPAN> и правый потомок 
+            <SPAN class=texample>b</SPAN>, для которых <SPAN 
+            class=texample>P</SPAN> и <SPAN class=texample>Q</SPAN> – поддеревья 
+            вершины <SPAN class=texample>a</SPAN>, а <SPAN 
+            class=texample>R</SPAN> и <SPAN class=texample>S</SPAN> – поддеревья 
+            вершины <SPAN class=texample>b</SPAN>. Соответствующее 
+            преобразование будем называть <SPAN class=xml_em_italic>большим 
+            правым вращением</SPAN> (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/40/staldata_40.html#image.40.4">рис. 
+            40.4</A>). Аналогично определяется симметричное ему <SPAN 
+            class=xml_em_italic>большое левое вращение</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_104 align=left><A name=image.40.4></A>
+            <DIV><IMG alt="Большое правое вращение АВЛ-дерева" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/40_04.png" 
+            width=597 height=241></DIV><BR><B>Рис. 40.4.</B>&nbsp; Большое 
+            правое вращение АВЛ-дерева
+            <P></P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_105>Схематично <SPAN class=xml_em_italic>алгоритм 
+            добавления нового элемента в сбалансированное по АВЛ дерево</SPAN> 
+            будет состоять из следующих трех основных шагов.</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106>Шаг 1. Поиск по дереву.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <P id=id_107>Шаг 2. Вставка элемента в место, где закончился поиск, 
+            если элемент отсутствует.</P>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_108>Шаг 3. Восстановление сбалансированности.</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_109>Первый шаг необходим для того, чтобы убедиться в 
+            отсутствии элемента в дереве, а также найти такое место вставки, 
+            чтобы после вставки дерево осталось упорядоченным. Третий шаг 
+            представляет собой обратный проход по пути поиска: от места 
+            добавления к корню дерева. По мере продвижения по этому пути 
+            корректируются показатели сбалансированности проходимых вершин, и 
+            производится балансировка там, где это необходимо. Добавление 
+            элемента в дерево никогда не требует более одного поворота.</P>
+            <DIV id=mark_109 class=lecture_mark></DIV><A></A>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+#include &lt;time.h&gt;
+using namespace std;
+typedef int ElementType;
+typedef struct AvlNode *Position;
+typedef struct AvlNode *AvlTree;
+struct AvlNode {
+            ElementType Element;
+            AvlTree Left;
+            AvlTree Right;
+            int Height;
+        };
+
+AvlTree MakeEmpty( AvlTree T );
+Position Find( ElementType X, AvlTree T );
+Position FindMin( AvlTree T );
+Position FindMax( AvlTree T );
+AvlTree Insert( ElementType X, AvlTree T );
+ElementType Retrieve( Position P );
+void printTree(AvlTree T, int l = 0);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int i, *a, maxnum;
+  AvlTree T;
+    Position P;
+    int j = 0;
+  cout &lt;&lt; "Введите количество элементов maxnum : ";
+  cin &gt;&gt; maxnum;
+  cout &lt;&lt; endl;
+    a = new int[maxnum];
+  srand(time(NULL)*1000);
+  // генерация массива
+  for (i = 0; i &lt; maxnum; i++)
+    a[i] = rand()%100;
+  cout &lt;&lt; "Вывод сгенерированной последовательности" &lt;&lt; endl;
+  for (i = 0; i &lt; maxnum; i++)
+    cout &lt;&lt; a[i] &lt;&lt; " ";
+  cout &lt;&lt; endl;
+  cout &lt;&lt; endl;
+  // добавление элементов в АВЛ-дерево
+    T = MakeEmpty( NULL );
+  for( i = 0; i &lt; maxnum; i++ )
+        T = Insert( a[i], T );
+  cout &lt;&lt; "Вывод АВЛ-дерева" &lt;&lt; endl;
+  printTree(T);
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "Min = " &lt;&lt; Retrieve( FindMin( T ) ) &lt;&lt; ", Max = " 
+       &lt;&lt; Retrieve( FindMax( T ) ) &lt;&lt; endl;
+  // удаление АВЛ-дерева
+  T = MakeEmpty(T);
+  delete [] a;
+  system("pause");
+  return 0;
+}
+
+//функция удаления вершины и его поддеревьев
+AvlTree MakeEmpty( AvlTree T ) {
+  if( T != NULL ){
+    MakeEmpty( T-&gt;Left );
+    MakeEmpty( T-&gt;Right );
+    free( T );
+  }
+  return NULL;
+}
+
+// поиск вершины со значением X
+Position Find( ElementType X, AvlTree T ) {
+  if( T == NULL )
+    return NULL;
+    if( X &lt; T-&gt;Element )
+      return Find( X, T-&gt;Left );
+    else
+      if( X &gt; T-&gt;Element )
+        return Find( X, T-&gt;Right );
+      else
+        return T;
+}
+
+//функция поиска вершины с минимальным значением
+Position FindMin( AvlTree T ) {
+  if( T == NULL )
+    return NULL;
+  else
+    if( T-&gt;Left == NULL )
+      return T;
+    else
+      return FindMin( T-&gt;Left );
+}
+
+//функция поиска вершины с максимальным значением
+Position FindMax( AvlTree T ) {
+  if( T != NULL )
+    while( T-&gt;Right != NULL )
+      T = T-&gt;Right;
+  return T;
+}
+
+//функция возвращает вес вершины
+static int Height( Position P ) {
+  if( P == NULL )
+    return -1;
+  else
+    return P-&gt;Height;
+}
+
+//функция возвращает максимальное из двух чисел
+static int Max( int Lhs, int Rhs ) {
+  return Lhs &gt; Rhs ? Lhs : Rhs;
+}
+
+/*функция выполняет поворот между вершинами K2 и его левым потомком*/
+static Position SingleRotateWithLeft( Position K2 ) {
+  Position K1;
+  K1 = K2-&gt;Left;
+  K2-&gt;Left = K1-&gt;Right;
+  K1-&gt;Right = K2;
+  K2-&gt;Height = Max(Height(K2-&gt;Left), Height(K2-&gt;Right)) + 1;
+  K1-&gt;Height = Max( Height( K1-&gt;Left ), K2-&gt;Height ) + 1;
+  return K1;  //Новый корень
+}
+
+//функция выполняет поворот между вершинами K1 и его правым потомком
+static Position SingleRotateWithRight( Position K1 ) {
+  Position K2;
+  K2 = K1-&gt;Right;
+  K1-&gt;Right = K2-&gt;Left;
+  K2-&gt;Left = K1;
+  K1-&gt;Height = Max(Height(K1-&gt;Left), Height(K1-&gt;Right)) + 1;
+  K2-&gt;Height = Max( Height( K2-&gt;Right ), K1-&gt;Height ) + 1;
+  return K2;  //новый корень
+}
+
+//функция выполняет двойной левый-правый поворот
+static Position DoubleRotateWithLeft( Position K3 ) {
+  // поворот между K1 и K2/
+  K3-&gt;Left = SingleRotateWithRight( K3-&gt;Left );
+  // поворот между K3 и K2
+  return SingleRotateWithLeft( K3 );
+}
+
+//функция выполняет двойной правый-левый поворот
+static Position DoubleRotateWithRight( Position K1 ) {
+  // поворот между K3 и K2
+  K1-&gt;Right = SingleRotateWithLeft( K1-&gt;Right );
+  // поворот между K1 и K2
+  return SingleRotateWithRight( K1 );
+}
+
+//функция вставки вершины в АВЛ-дерево
+AvlTree Insert( ElementType X, AvlTree T ){
+  if( T == NULL ){
+    T = new AvlNode();
+    if( T == NULL )
+      fprintf( stderr, "Недостаточно памяти!!!\n" );
+    else {
+      T-&gt;Element = X; T-&gt;Height = 0;
+      T-&gt;Left = T-&gt;Right = NULL;
+    }
+  }
+  else if( X &lt; T-&gt;Element ) {
+    T-&gt;Left = Insert( X, T-&gt;Left );
+    if( Height( T-&gt;Left ) - Height( T-&gt;Right ) == 2 )
+      if( X &lt; T-&gt;Left-&gt;Element )
+        T = SingleRotateWithLeft( T );
+      else
+        T = DoubleRotateWithLeft( T );
+  }
+  else if( X &gt; T-&gt;Element ) {
+    T-&gt;Right = Insert( X, T-&gt;Right );
+      if( Height( T-&gt;Right ) - Height( T-&gt;Left ) == 2 )
+        if( X &gt; T-&gt;Right-&gt;Element )
+          T = SingleRotateWithRight( T );
+        else
+          T = DoubleRotateWithRight( T );
+  }
+  T-&gt;Height = Max(Height(T-&gt;Left), Height(T-&gt;Right)) + 1;
+  return T;
+}
+
+//функция возвращает значение, хранящееся в вершине
+ElementType Retrieve( Position P ) {
+  return P-&gt;Element;
+}
+
+//функция вывода АВЛ-дерева на печать
+void printTree(AvlTree T, int l){
+  int i;
+  if ( T != NULL ) {
+    printTree(T-&gt;Right, l+1);
+    for (i=0; i &lt; l; i++) cout &lt;&lt; "    ";
+    printf ("%4ld", Retrieve ( T ));
+    printTree(T-&gt;Left, l+1);
+  }
+  else cout &lt;&lt; endl;
+}
+</PRE><SPAN class=objectName>Листинг . </SPAN></DIV>
+            <P id=id_111><SPAN class=xml_em_italic>Алгоритм удаления элемента из 
+            сбалансированного дерева</SPAN> будет выглядеть так:</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112>Шаг 1. Поиск по дереву.</P>
+            <DIV id=mark_112 class=lecture_mark></DIV>
+            <P id=id_113>Шаг 2. Удаление элемента из дерева.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_114>Шаг 3. Восстановление сбалансированности дерева 
+            (обратный проход).</P>
+            <DIV id=mark_114 class=lecture_mark></DIV>
+            <P id=id_115>Первый шаг необходим, чтобы найти в дереве вершину, 
+            которая должна быть удалена. Третий шаг представляет собой обратный 
+            проход от места, из которого взят элемент для замены удаляемого, или 
+            от места, из которого удален элемент, если в замене не было 
+            необходимости. Операция удаления может потребовать перебалансировки 
+            всех вершин вдоль обратного пути к корню дерева, т.е. порядка <SPAN 
+            class=texample>log n</SPAN> вершин. Таким образом, алгоритмы поиска, 
+            добавления и удаления элементов в сбалансированном по АВЛ дереве 
+            имеют сложность, пропорциональную <SPAN class=texample>O(log 
+            n)</SPAN>.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Деревья цифрового (поразрядного) поиска</H3>
+            <P id=id_118>Методы цифрового поиска достаточно громоздки и плохо 
+            иллюстрируются. Рассмотрим бинарное дерево цифрового поиска. Как и в 
+            деревьях, рассмотренных выше, в каждой вершине такого дерева 
+            хранится полный ключ, но переход по левой или правой ветви 
+            происходит не путем сравнения ключа-эталона со значением ключа, 
+            хранящегося в вершине, а на основе значения очередного бита 
+            аргумента. Реализация цифрового поиска происходит поразрядно 
+            (побитово).</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119>Поиск начинается от корня дерева. Если содержащийся в 
+            корневой вершине ключ не совпадает с аргументом поиска, то 
+            анализируется самый левый бит аргумента. Если он равен 0, происходит 
+            переход по левой ветви, если 1 – по правой. Если не обнаруживается 
+            совпадение ключа с аргументом поиска, то анализируется следующий бит 
+            аргумента и т.д. Поиск завершается, когда будут проверены все биты 
+            аргумента либо встретится вершина с отсутствующей левой или правой 
+            ссылкой.</P>
+            <DIV id=mark_119 class=lecture_mark></DIV><A name=sect8></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_120><B>Бинарное дерево цифрового поиска</B> – это дерево, в 
+            каждой вершине которого хранится полный ключ, а переход по ветвям 
+            происходит на основе значения очередного бита аргумента.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_121><B>Двоичное (бинарное) дерево</B> – это иерархическая 
+            структура, в которой каждый узел имеет не более двух потомков.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_122><B>Идеально сбалансированное дерево</B> – это дерево, у 
+            которого для каждой вершины выполняется требование: число вершин в 
+            левом и правом поддеревьях различается не более чем на 1.</P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_123><B>Ключ поиска</B> – это поле, по значению которого 
+            происходит поиск.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124><B>Оптимальное бинарное дерево поиска</B> – это 
+            бинарное дерево поиска, построенное в расчете на обеспечение 
+            максимальной производительности при заданном распределении 
+            вероятностей поиска требуемых данных.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <P id=id_125><B>Поиск</B> – это процесс нахождения конкретной 
+            информации в ранее созданном множестве данных.</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_126><B>Сбалансированное по АВЛ дерево</B> – это дерево, для 
+            каждой вершины которого выполняется требование: высота левого и 
+            правого поддеревьев различаются не более, чем на 1.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_127><B>Случайные деревья поиска</B> – это упорядоченные 
+            бинарные деревья поиска, при создании которых элементы вставляются в 
+            случайном порядке.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_128><B>Упорядоченное двоичное дерево</B> – это двоичное 
+            дерево, в котором для любой его вершины <SPAN 
+            class=texample>x</SPAN> справедливы свойства: все элементы в левом 
+            поддереве меньше элемента, хранимого в <SPAN 
+            class=texample>x</SPAN>; все элементы в правом поддереве больше 
+            элемента, хранимого в <SPAN class=texample>x</SPAN>; все элементы 
+            дерева различны.</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <P id=id_132>Частично упорядоченное бинарное дерево – это 
+            упорядоченное бинарное дерево, в котором встречаются одинаковые 
+            элементы.</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <OL id=id_133>
+              <LI>Поиск данных предполагает использование соответствующих 
+              алгоритмов в зависимости от ряда факторов: способ представления 
+              данных, упорядоченность множества поиска, объем данных, 
+              расположение их во внешней или во внутренней памяти.
+              <LI>Двоичные деревья представляют собой иерархическую структуру, в 
+              которой каждый узел имеет не более двух потомков. Поиск на 
+              двоичных деревьях не дает выигрыша по времени по сравнению с 
+              линейными структурами.
+              <LI>Упорядоченное двоичное дерево – это двоичное дерево, в котором 
+              для любой его вершины <SPAN class=texample>x</SPAN> справедливы 
+              свойства: все элементы в левом поддереве меньше элемента, 
+              хранимого в <SPAN class=texample>x</SPAN>; все элементы в правом 
+              поддереве больше элемента, хранимого в <SPAN 
+              class=texample>x</SPAN>; все элементы дерева различны. Поиск в 
+              худшем случае на таких деревьях имеет сложность <SPAN 
+              class=texample>O(n)</SPAN>.
+              <LI>Случайные деревья поиска представляют собой упорядоченные 
+              бинарные деревья поиска, при создании которых элементы (их ключи) 
+              вставляются в случайном порядке. Высота дерева зависит от 
+              случайного поступления элементов, поэтому трудоемкость 
+              определяется построением дерева.
+              <LI>Оптимальное бинарное дерево поиска – это бинарное дерево 
+              поиска, построенное в расчете на обеспечение максимальной 
+              производительности при заданном распределении вероятностей поиска 
+              требуемых данных. Поиск на таких деревьях имеет сложность порядка 
+              <SPAN class=texample>O(n<SUP>2</SUP>)</SPAN>.
+              <LI>Дерево считается сбалансированным по АВЛ, если для каждой 
+              вершины выполняется требование: высота левого и правого 
+              поддеревьев различаются не более, чем на 1. Алгоритмы поиска, 
+              добавления и удаления элементов в таком дереве имеют сложность, 
+              пропорциональную <SPAN class=texample>O(log n)</SPAN>.
+              <LI>В деревьях цифрового поиска осуществляется поразрядное 
+              сравнение ключей.</LI></OL>
+            <DIV id=mark_133 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Лабораторная работа 40. Алгоритмы поиска на основе деревьев</H3>
+            <P id=id_147><B>Цель работы:</B> изучить алгоритмы поиска на основе 
+            деревьев, научиться решать задачи поиска через построение 
+            упорядоченного, случайного, оптимального или сбалансированного в 
+            высоту деревьев на языке C++.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на 
+            данные с клавиатуры или из входного файла, выполняет их обработку в 
+            соответствии с требованиями задания и выводит результат в выходной 
+            файл. Для обработки данных необходимо реализовать функции алгоритмов 
+            поиска на основе деревьев. Ограничениями на входные данные является 
+            максимальный размер строковых данных, допустимый диапазон значений 
+            используемых числовых типов в языке С++.</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149><B>Теоретические сведения.</B></P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150>Ознакомьтесь с материалом лекции 40.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_151><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <P id=id_152>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <OL id=id_153>
+              <LI>На основании приведенных в лекции 40 кодов реализуйте основные 
+              операции, производимые в бинарном дереве поиска и АВЛ-дереве.
+              <LI>Реализуйте алгоритм удаления элемента из АВЛ-дерева.
+              <LI>В упорядоченном двоичном дереве с целочисленными ключами 
+              возведите в квадрат корневой элемент. Выполните балансировку 
+              дерева.
+              <LI>Найдите в АВЛ-дереве такое поддерево, которое является 
+              упорядоченным бинарным деревом.
+              <LI>Найдите в АВЛ-дереве такое поддерево максимальной высоты, 
+              которое является упорядоченным бинарным деревом.</LI></OL>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_159><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_160>Каждое задание необходимо решить в соответствии с 
+            изученным алгоритмами поиска на основе деревьев, реализовав 
+            программный код на языке С++. Рекомендуется воспользоваться 
+            материалами лекции 40, где подробно рассматриваются описание 
+            используемых в работе алгоритмов, примеры их реализации на языке 
+            С++. Программу для решения каждого задания необходимо разработать 
+            методом процедурной абстракции, используя функции. Этапы решения 
+            сопроводить комментариями в коде. В отчете следует отразить 
+            разработку и обоснование математической модели решения задачи и 
+            привести примеры входных и выходных файлов, полученных на этапе 
+            тестирования программ.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_161>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <UL id=id_162>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_171><B>Требования к отчету.</B></P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_172>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <UL id=id_173>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_182><B>Контрольные вопросы</B></P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <OL id=id_183>
+              <LI>Почему поиск на бинарных деревьях не дает выигрыша по 
+              сложности по сравнению с линейными структурами? 
+              <LI>С какой целью производится балансировка деревьев?
+              <LI>Какое из деревьев: упорядоченное, случайное, оптимальное или 
+              сбалансированное по АВЛ – дает наибольший выигрыш по трудоемкости? 
+              Рассмотрите различные случаи.
+              <LI>Выполните левое малое вращение дерева, приведенного на рис 3.
+              <LI>Выполните левое большое вращение дерева, приведенного на рис 
+4.
+              <LI>Как выполняется балансировка элементов в упорядоченных после 
+              вставки или удаления элемента? 
+              <LI>Всегда ли возможна балансировка упорядоченных деревьев? Ответ 
+              обоснуйте.
+              <LI>Как выполняется балансировка элементов в АВЛ-деревьях после 
+              вставки или удаления элемента?</LI></OL>
+            <DIV id=mark_183 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

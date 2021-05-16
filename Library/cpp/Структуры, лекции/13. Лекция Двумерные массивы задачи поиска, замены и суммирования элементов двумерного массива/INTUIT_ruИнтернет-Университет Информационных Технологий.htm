@@ -1,0 +1,829 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/13/staldata_13.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>13. Лекция: Двумерные массивы: задачи 
+            поиска, замены и суммирования элементов двумерного массива: версия 
+            для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятие, определение, объявление, инициализация, 
+            генерация и вывод двумерных массивов, расположение в памяти 
+            элементов массивов, связь между указателями и двумерными массивами, 
+            типовые алгоритмы поиска, замены и суммирования в двумерных 
+            массивах. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятия, особенности 
+            внутреннего представления способы генерации и вывода многомерных 
+            массивов, научиться выполнять объявление, инициализацию, генерацию и 
+            вывод двумерных массивов, использование алгоритмов поиска, замены и 
+            суммирования в двумерных массивах при решении задач на языке 
+C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Двумерные массивы, являющиеся упорядоченными однотипными 
+            объектами, можно отождествлять с прямоугольной матрицей.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Двумерные массивы состоят из строк и столбцов.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Объявление двумерных массивов</H3>
+            <P id=id_4>Синтаксис определения массива без дополнительных 
+            спецификаторов и модификаторов имеет два формата:</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Тип ИмяМассива[ВыражениеТипаКонстанты][ВыражениеТипаКонстанты];
+</PRE></DIV>
+            <P id=id_6>или</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Тип ИмяМассива[][];
+</PRE></DIV>
+            <P id=id_8><SPAN class=texample>ИмяМассива</SPAN> – идентификатор 
+            массива.</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_10><SPAN class=texample>Тип</SPAN> – тип элементов 
+            объявляемого массива. Элементами массива не могут быть функции, 
+            файлы и элементы типа <SPAN class=texample>void</SPAN>.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_13><SPAN class=texample>ВыражениеТипаКонстанты</SPAN> – 
+            задает количество элементов (размерность) массива. Выражение 
+            константного типа вычисляется на этапе компиляции. Данное 
+            константное выражение может быть опущено в случаях если:</P>
+            <DIV id=mark_13 class=lecture_mark></DIV>
+            <UL id=id_15>
+              <LI>при объявлении массив инициализируется;
+              <LI>массив объявлен как формальный параметр функции;
+              <LI>массив объявлен как ссылка на массив, явно определенный в 
+              другом файле.</LI></UL>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_19>Например:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <OL id=id_20>
+              <LI><SPAN class=texample>int a[100][50];//массив из 100?50 
+              элементов целого типа</SPAN>
+              <LI><SPAN class=texample>double d[4][10];// массив из 4?10 
+              элементов типа double</SPAN>
+              <LI>
+              <DIV class=example><PRE>int t=5, k=8;
+float wer[2*t+k][2*t+k]; 
+//массив из (2*t+k)?(2*t+k) элементов вещественного типа
+</PRE></DIV>
+              <LI>
+              <DIV class=example><PRE>int sample[853][157]; 
+//массив из 853 строк  и 157 столбцов, элементы типа int
+</PRE></DIV>равносильно объявлению 
+              <DIV class=example><PRE>const int N_max=853,
+      int M_max=157;
+int sample[N_max][M_max];
+</PRE></DIV>равносильно объявлению 
+              <DIV class=example><PRE>#define N_max 853
+#define M_max 157
+...
+int sample[N_max][M_max];
+</PRE></DIV></LI></OL>
+            <DIV id=mark_20 class=lecture_mark></DIV>
+            <P id=id_31>Двумерные массивы располагаются в памяти в порядке 
+            быстрого изменения последнего индекса. Так, например, данные 
+            двумерного массива (состоящего из 3 строк и 10 столбцов и 
+            определенного как <SPAN class=texample>float A[3][10];</SPAN>), 
+            располагаются следующим образом:</P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <DIV id=id_33 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 rowSpan=2>Строки</TH>
+                <TH bgColor=#d8d8d8 colSpan=2>Столбцы</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2...9</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>A[0][0]</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>A[0][1] 
+                  ... A[0][9]</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>A[1][0]</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>A[1][1] 
+                  ... A[1][9]</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>A[2][0]</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN class=texample>A[2][1] 
+                  ... A[2][9]</SPAN></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_33 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Инициализация двумерных массивов</H3>
+            <P id=id_40>Двумерные массивы инициализируются так же, как и 
+            одномерные.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_41>Например:</P>
+            <DIV id=mark_41 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int w[3][3]={ 
+//инициализируется целочисленный массив размерностью 3&#215;3
+                {2, 3, 4} //1-я строка
+                {3, 4, 8} //2-я строка
+                {1, 0, 9} //3-я строка
+               };
+
+float w[2][3]={ 
+//инициализируется вещественный массив размерностью 2&#215;3
+                {2.1, 3.4, 4.5} //1-я строка
+                {5.0, 6.4, 3.9} //2-я строка
+               };
+</PRE></DIV>
+            <P id=id_43>равносильно инициализации</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float w[][3]={ 
+                {2.1, 3.4, 4.5} //1-я строка
+                {5.0, 6.4, 3.9} //2-я строка
+               };
+</PRE></DIV>
+            <P id=id_45>Последовательности, выделенные в фигурные скобки, 
+            соответствуют строкам массива, в случае отсутствия скобок 
+            инициализация будет выполнена неправильно.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int w[3][5]={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+</PRE></DIV>
+            <DIV id=id_47 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>9</TD>
+                <TD bgColor=#eaeaea vAlign=top>10</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>11</TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int w[3][5]={{1, 2, 3}, {4, 5, 6, 7, 8}, {9, 10, 11}};
+</PRE></DIV>
+            <DIV id=id_49 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>6</TD>
+                <TD bgColor=#eaeaea vAlign=top>7</TD>
+                <TD bgColor=#eaeaea vAlign=top>8</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>9</TD>
+                <TD bgColor=#eaeaea vAlign=top>10</TD>
+                <TD bgColor=#eaeaea vAlign=top>11</TD>
+                <TD bgColor=#eaeaea vAlign=top></TD>
+                <TD bgColor=#eaeaea vAlign=top></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_49 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Обращение к элементам двумерного массива</H3>
+            <P id=id_50>Обращение к элементам двумерного массива осуществляется 
+            так же, как и к элементам одномерного.</P>
+            <DIV id=mark_50 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяМассива[ВыражениеТипаКонстанты][ВыражениеТипаКонстанты];
+</PRE></DIV>
+            <P id=id_52>или</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяМассива[ЗначениеИндекса][ЗначениеИндекса];
+</PRE></DIV>
+            <P id=id_54>Например:</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_55><SPAN class=texample>a[0][0]</SPAN> – индекс задается 
+            как константа,</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_57><SPAN class=texample>d[55][5]</SPAN> – индекс задается 
+            как константа,</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_59><SPAN class=texample>s[i][j]</SPAN> – индекс задается 
+            как переменная,</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_61><SPAN class=texample>w[4*p][3+t]</SPAN> – индекс 
+            задается как выражение.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Определение размера памяти двумерных массивов</H3>
+            <P id=id_63>В языке С++ определены только одномерные массивы, но 
+            поскольку элементом массива может быть массив, возможно определить и 
+            двумерные массивы. Они определяются списком константных-выражений 
+            следующих за идентификатором массива, причем каждое 
+            константное-выражение заключается в свои квадратные скобки. Каждое 
+            константное-выражение в квадратных скобках определяет число 
+            элементов по данному измерению массива, так что объявление 
+            двумерного массива содержит два константных-выражения, трехмерного – 
+            три и т.д.</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <DIV class=example><PRE>спецификатор-типа имя_массива [конст_выражение1] [конст_выражение2];
+</PRE></DIV>
+            <P id=id_65>Например,</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int a[2][3]; /* представлено в виде матрицы
+               a[0][0] a[0][1] a[0][2]
+               a[1][0] a[1][1] a[1][2]*/
+</PRE></DIV>
+            <P id=id_67>Объем занимаемой памяти в байтах для двухмерного массива 
+            вычисляется по формуле:</P>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Байты = sizeof (тип) * конст_выражение1* конст_выражение2
+</PRE></DIV>
+            <P id=id_69>Если мы имеем дело с двумерным массивом <SPAN 
+            class=texample>B</SPAN> размерности <SPAN class=texample>M&#215;N</SPAN>, 
+            расположенным в памяти по строкам, то адрес элемента <SPAN 
+            class=texample>B[i][j]</SPAN> вычисляется по формуле:</P>
+            <DIV id=mark_69 class=lecture_mark></DIV>
+            <DIV class=example><PRE>адрес(B[i][j]) = адрес(B[0][0]) + (i*N+j)*k
+</PRE></DIV>
+            <P id=id_74>Так как массивы занимают непрерывный участок памяти, то 
+            двумерный массив размерности <SPAN class=texample>M&#215;N</SPAN> можно 
+            рассматривать как одномерный массив из <SPAN class=texample>M</SPAN> 
+            указателей, которые являются константами. Константы-указатели 
+            содержат значения адресов <SPAN class=texample>M</SPAN> одномерных 
+            безымянных массивов. Поэтому обращение к элементу <SPAN 
+            class=texample>B[i][j]</SPAN> посредством <SPAN class=texample>B[i*N 
+            + j]</SPAN> невозможно, так как указателя с номером <SPAN 
+            class=texample>i*N + j</SPAN> может не существовать.</P>
+            <DIV id=mark_74 class=lecture_mark></DIV>
+            <P id=id_81><SPAN class=xml_em_italic>Пример 1</SPAN>. Определение 
+            размера памяти двумерного массива</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define v 4
+#define p 3
+int _tmain(int argc, _TCHAR* argv[]){
+  const int q=4, r=1;
+  int i_mas[10][10]; 
+  int k=sizeof(i_mas);
+  cout &lt;&lt; "i_mas[10][10] занимает " &lt;&lt; k &lt;&lt; " байт\n";
+  
+  float f_mas[3][5]={{2.0},{4.5,8.3},{7.0,1.0,5.5,7.8}};
+  int t=sizeof(f_mas);
+  cout &lt;&lt; "f_mas[3][5]={{2.0},{4.5,8.3},{7.0,1.0,5.5,7.8}} 
+           занимает " &lt;&lt; t &lt;&lt; " байт\n";  
+
+  double d_mas[2*q-r][2*v/p];
+  int w=sizeof(d_mas);
+  cout &lt;&lt; "d_mas[2*q-r][2*v/p] занимает " &lt;&lt; w &lt;&lt; " байт\n"; 
+
+  int r_mas[][3]={{2,5,7},{-4,8,-3},{0,-1,1}};
+  int g=sizeof(r_mas);
+  cout &lt;&lt; "r_mas[][3]={{2,5,7},{-4,8,-3},{0,-1,1}} занимает " 
+          &lt;&lt; g &lt;&lt; " байт\n";  
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_83>Результат выполнения программы:</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_84><SPAN class=texample>i_mas[10][10]</SPAN> занимает 400 
+            байт – 4 байта (тип <SPAN class=texample>int</SPAN>) * 10*10 
+            (количество элементов массива)</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_87><SPAN 
+            class=texample>f_mas[3][5]={{2.0},{4.5,8.3},{7.0,1.0,5.5,7.8}}</SPAN> 
+            занимает 60 байт – 4 байта (тип <SPAN class=texample>float</SPAN>) * 
+            3*5 (объявленное количество элементов массива)</P>
+            <DIV id=mark_87 class=lecture_mark></DIV>
+            <P id=id_90><SPAN class=texample>d_mas[2*q-r] [2*v/p]</SPAN> 
+            занимает 112 байт – 8 байта (тип <SPAN class=texample>double</SPAN>) 
+            * 7*2 (вычисленное через формулу количество элементов массива)</P>
+            <DIV id=mark_90 class=lecture_mark></DIV>
+            <P id=id_93><SPAN 
+            class=texample>r_mas[][3]={{2,5,7},{-4,8,-3},{0,-1,1}}</SPAN> 
+            занимает 36 байт – 4 байта (тип <SPAN class=texample>int</SPAN>) * 
+            3*3 (заданное количество элементов массива)</P>
+            <DIV id=mark_93 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Указатели и двумерные массивы</H3>
+            <P id=id_96>При размещении элементов двумерных массивов они 
+            располагаются в памяти подряд по строкам, т.е. быстрее всего 
+            изменяется последний индекс, а медленнее – первый. Такой порядок 
+            дает возможность обращаться к любому элементу двумерного массива, 
+            используя адрес его начального элемента и только одно индексное 
+            выражение.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int arr[m][n]:
+Адрес (arr[i][j])= Адрес(arr[0][0]) + (i*n+j)*k,
+</PRE></DIV>
+            <P id=id_98>где <SPAN class=texample>k</SPAN> – количество байтов, 
+            выделяемое для элемента массива (в зависимости от типа).</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_100><SPAN class=xml_em_italic>Указатели на двумерные 
+            массивы</SPAN> в языке С++ – это массивы массивов, т.е. такие 
+            массивы, элементами которых являются массивы. При объявлении таких 
+            массивов в памяти компьютера создается несколько различных объектов. 
+            Например, при выполнении объявления двумерного массива:</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int arr [4][3];
+</PRE></DIV>
+            <OL id=id_102>
+              <LI>В памяти выделяется участок для хранения значения переменной 
+              <SPAN class=texample>arr</SPAN>, которая является указателем на 
+              массив из четырех указателей.
+              <LI>Для этого массива из четырех указателей тоже выделяется 
+              память. Каждый из этих четырех указателей содержит адрес 
+              одномерного массива из трех элементов типа <SPAN 
+              class=texample>int</SPAN>.
+              <LI>Следовательно, в памяти компьютера выделяется четыре участка 
+              для хранения четырех массивов чисел типа <SPAN 
+              class=texample>int</SPAN>, каждый из которых состоит из трех 
+              элементов.</LI></OL>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_109>Схематично распределение памяти для данного двумерного 
+            массива выглядит так:</P>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <DIV class=example><PRE>arr
+<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/darr.gif" width=8 height=18>
+arr[0] <IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/srarr.gif" width=15 height=18> arr[0][0] arr[0][1] arr[0][2]
+arr[1] <IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/srarr.gif" width=15 height=18> arr[1][0] arr[1][1] arr[1][2]
+arr[2] <IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/srarr.gif" width=15 height=18> arr[2][0] arr[2][1] arr[2][2]
+arr[3] <IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/srarr.gif" width=15 height=18> arr[3][0] arr[3][1] arr[3][2]
+</PRE></DIV>
+            <P id=id_111>Таким образом, объявление <SPAN 
+            class=texample>arr[4][3]</SPAN> порождает в программе три разных 
+            объекта:</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <UL id=id_113>
+              <LI>указатель с идентификатором <SPAN class=texample>arr</SPAN>,
+              <LI>безымянный массив из четырех указателей: <SPAN 
+              class=texample>arr[0], arr[1], arr[2], arr[3]</SPAN>
+              <LI>безымянный массив из двенадцати чисел типа <SPAN 
+              class=texample>int</SPAN>.</LI></UL>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <OL id=id_120>
+              <LI>Для доступа к безымянным массивам используются адресные 
+              выражения с указателем <SPAN class=texample>arr</SPAN>. Доступ к 
+              элементам одномерного массива указателей осуществляется с 
+              указанием одного индексного выражения в форме <SPAN 
+              class=texample>arr[2]</SPAN> или <SPAN 
+              class=texample>*(arr+2)</SPAN>. 
+              <LI>Для доступа к элементам двумерного массива чисел типа <SPAN 
+              class=texample>int arr[i][j]</SPAN> должны быть использованы 
+              следующие выражения: 
+              <P id=id_127>Например, пусть <SPAN class=texample>i=1, j=2</SPAN>, 
+              тогда обращение к элементу <SPAN 
+              class=texample>arr[1][2]</SPAN>:</P>
+              <DIV id=mark_127 class=lecture_mark></DIV>
+              <UL id=id_130>
+                <LI>arr[i][j] arr[1][2]=10
+                <LI>*(*(arr+i)+j) *(*(arr+1)+2)=10
+                <LI>(*(arr+i))[j] (*(arr+1))[2]=10</LI></UL>
+              <DIV id=mark_130 class=lecture_mark></DIV>Например, с помощью 
+              указателя ptr: 
+              <UL id=id_134>
+                <LI>
+                <DIV class=example><PRE> ptr[1*3 + 2] 
+ /*здесь 1 и 2 - это индексы используемого элемента, 
+   а 3 это число элементов в строке*/
+ </PRE></DIV>
+                <LI>ptr[5]</LI></UL>
+              <DIV id=mark_134 class=lecture_mark></DIV></LI></OL>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_138>Причем внешне похожее обращение <SPAN 
+            class=texample>arr[5]</SPAN> выполнить невозможно, так как указателя 
+            с индексом 5 не существует.</P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <UL id=id_140>
+              <LI>*(*(ptr + 1) + 2)
+              <LI>*(ptr + 1*3 + 2)</LI></UL>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_143><SPAN class=texample>Пример 2</SPAN>. Использование 
+            индексных и адресных выражения при обработке двумерных массивов.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[]){
+  int i, j;
+  int t[2][3]; // при вводе обращение с помощью индексов
+  // можно использовать адресные выражения
+  for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;3;j++)
+      t[i][j]=i+j;
+  for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;3;j++)
+    //при печати рассматриваем имя массива как указатель на начало
+      printf(" %d ", *(*(t + i) +j) ); 
+      //или printf(" %d ", (*(t + i))[j]);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_146><SPAN class=xml_em_italic>Пример 3</SPAN>. Демонстрация 
+            связи между матрицей и указателем на нее.</P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int i,j;
+  int t[2][3],*ptr;
+  ptr=&amp;t[0][0];
+  for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;3;j++)
+      t[i][j]=i+j;
+  for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;3;j++)
+      printf(" %d ", *(ptr+i*3+j));
+  printf("\n\n");     
+  //С матрицей так делать нельзя
+  /* for(i=0;i&lt;2;i++)
+       for(j=0;j&lt;3;j++)
+         printf(" %d ", *(t + i*3 +j) ); */
+  //Корректная работа с матрицей
+  for(i=0;i&lt;6;i++)
+    printf(" %d ", ptr[i] );
+  printf("\n\n");   
+  for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;3;j++)
+      printf(" %d ", ptr[i*3 +j] );
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect7></A>
+            <H3>Генерация двумерных массивов</H3>
+            <P id=id_148>Принцип генерации двумерных массивов такой же, как и 
+            одномерных.</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Описание функции генерации массива
+void gen(int str,int slb, int a, int b, int m[max_x][max_y]){
+  int i,j;
+  srand(time(NULL)*1000); 
+  //устанавливает начальную точку генерации случайных чисел
+  for (i=0;i&lt;str;i++)
+    for (j=0;j&lt;slb;j++)
+      m[i][j]=rand()%(b-a)+a); 
+      //функция генерации случайных чисел на [a,b)
+}
+</PRE></DIV><A name=sect8></A>
+            <H3>Вывод двумерных массивов</H3>
+            <P id=id_150>Двумерные массивы выводятся на экран так же, как и 
+            одномерные. Для наглядности вывода целесообразно разделять элементы 
+            массива на строки и столбцы.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Описание функции вывода массива 
+void out (int str,int slb, int m[max_x][max_y]){
+  int i,j;
+  for (i=0;i&lt;str;i++)  {
+    for (j=0;j&lt;slb;j++)
+      printf("%4d",m[i][j]);
+      printf("\n");
+    }
+}
+</PRE></DIV><A name=sect9></A>
+            <H3>Задачи поиска, замены и суммирования элементов двумерного 
+            массива</H3>
+            <P id=id_152>В программировании двумерные массивы называют также 
+            <SPAN class=xml_em_italic>матрицами</SPAN>. В задачах на обработку 
+            двумерных массивов следует определить способ просмотра массива (по 
+            строкам, по столбцам, вдоль диагоналей и т.д.). При этом, как 
+            правило, используют кратные циклы, в которых один изменяющийся 
+            параметр соответствует пробегу по индексам строк, другой – колонок. 
+            При выборе пути обхода матрицы следует учитывать, что параметр 
+            внешнего цикла меняется медленнее, чем параметры вложенных в него 
+            циклов.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_153><SPAN class=xml_em_italic>Пример 4</SPAN>. Найдем 
+            максимальный элемент главной диагонали двумерного целочисленного 
+            массива размерностью <SPAN class=texample>n&#215;n</SPAN>, заданного 
+            случайными числами на промежутке [-100; 100).</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Описание функции поиска максимального элемента главной диагонали*/
+int maxi(int str,int slb, int m[max_x][max_y]){
+  int i,j,e_max=m[0][0];
+  for(i=0;i&lt;str;i++)
+    for(j=0;j&lt;slb;j++)
+      if((i==j)&amp;&amp;(m[i][j]&gt;e_max))
+        e_max=m[i][j];
+  return e_max;
+}
+</PRE></DIV>
+            <P id=id_156><SPAN class=xml_em_italic>Пример 5</SPAN>. Найдите 
+            сумму элементов столбца двумерного массива, номер которого задается 
+            с клавиатуры.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Описание функции суммирования элементов заданного номера столбца матрицы*/
+int summa(int str, int slb, int nom,int m[max_x][max_y]){
+  int i,j,sum=0;
+  for(i=0;i&lt;str;i++)
+    for(j=0;j&lt;slb;j++)
+      if(j==nom-1) sum+=m[i][j];
+  return sum;
+}
+</PRE></DIV>
+            <P id=id_158><SPAN class=xml_em_italic>Пример 6</SPAN>. Дан 
+            двумерный вещественный массив размерностью <SPAN 
+            class=texample>n&#215;n</SPAN>, заданный случайными числами на промежутке 
+            [-100; 100). Замените все элементы выше главной диагонали на 1.1 и 
+            ниже ее на 0.0.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Описание функции замены
+void zamena (int str,int slb, double m[max_x][max_y]) {
+  int i,j;
+  for (i=0;i&lt;str;i++)  
+    for (j=0;j&lt;slb;j++) {
+      if (i&gt;j) m[i][j]=0.0;
+      if (i&lt;j) m[i][j]=1.1;
+    }
+}
+</PRE></DIV><A name=sect10></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_161><B>Генерация массива</B> – это автоматическое 
+            формирование значений его элементов.</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162><B>Двумерный массив</B> – это массив, измерение 
+            которого равно двум.</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_163><B>Инициализация массива</B> – это формирование 
+            значений его элементов. </P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_164><B>Матрица</B> – это представление однотипных данных в 
+            виде прямоугольной таблицы.</P>
+            <DIV id=mark_164 class=lecture_mark></DIV>
+            <P id=id_165><B>Указатель на двумерный массив</B> – это адрес 
+            области памяти, выделенной под массив указателей на одномерные 
+            массивы.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_166>
+              <LI>Двумерный массив является представителем структурированного 
+              типа данных в языке С++.
+              <LI>В языке С++ определены только одномерные массивы, поэтому 
+              двумерный массив рассматривается как одномерный массив, элементами 
+              которого являются массивы.
+              <LI>Элементы двумерного массива имеют одинаковые имя, тип и 
+              располагаются в памяти последовательно.
+              <LI>Каждый элемент двумерного массива характеризуются двумя 
+              индексами, значениями и адресуемой памятью. 
+              <LI>Существует две основные формы объявления массивов: с указанием 
+              и без указания размера. Безразмерный массив объявляется, если: он 
+              инициализируется при объявлении, является формальным параметром 
+              функции, объявлен как ссылка на массив.
+              <LI>Инициализация массива заключается в присваивании начальных 
+              значений его элементам. Методы генерации двумерных и одномерных 
+              массивов аналогичны.
+              <LI>Для двумерных массивов нельзя выполнить операцию прямого 
+              присваивания.
+              <LI>Адресация элементов массива осуществляется с помощью 
+              индексированного имени. Обращаться к элементам массива можно также 
+              посредством механизма указателей. 
+              <LI>Размер памяти, занимаемой массивом, зависит от реализации и 
+              вычисляется с помощью операции sizeof.
+              <LI>Двумерные массивы используются для решения прикладных 
+              задач.</LI></OL>
+            <DIV id=mark_166 class=lecture_mark></DIV><A name=sect12></A>
+            <H3>Лабораторная работа 13. Двумерные массивы: задачи поиска, замены 
+            и суммирования элементов двумерного массива</H3>
+            <P id=id_177><B>Цель работы:</B> изучить понятия, особенности 
+            внутреннего представления способы генерации и вывода многомерных 
+            массивов, научиться выполнять объявление, инициализацию, генерацию и 
+            вывод двумерных массивов, использование алгоритмов поиска, замены и 
+            суммирования в двумерных массивах при решении задач на языке 
+C++.</P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            числовые данные (в зависимости от постановки задачи), выполняет 
+            генерацию и вывод двумерного массива указанного типа. В каждой 
+            задаче необходимо выполнить обработку двумерного массива. Для этого 
+            необходимо разработать алгоритм (поиска, замены или суммирования в 
+            двумерных массивах) и реализовать его в виде отдельной функции. Ввод 
+            данных осуществляется с клавиатуры с учетом требований к входным 
+            данным, содержащихся в постановке задачи. Ограничениями на входные 
+            данные является диапазон используемого числового типа данных в языке 
+            С++ и максимально допустимый размер объявляемого двумерного 
+            массива.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179><B>Теоретические сведения.</B></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>Ознакомьтесь с материалом лекции 13.</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_181><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_182>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <OL id=id_183>
+              <LI>Объявите двумерный целочисленный массив, в котором 10 строк по 
+              7 элементов. Выполните генерацию массива случайными целыми числами 
+              количеством <SPAN class=texample>n &#215; m (n <IMG 
+              style="POSITION: relative; TOP: 2px" border=0 alt="" 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+              width=8 height=18> 10, m <IMG style="POSITION: relative; TOP: 2px" 
+              border=0 alt="" 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+              width=8 height=18> 7)</SPAN> из промежутка <SPAN 
+              class=texample>[a; b)</SPAN>. Выведите массив на экран в виде 
+              таблицы. Оформите генерацию и ввод массива с помощью функций.
+              <LI>Объявите двумерный вещественный массив, в котором <SPAN 
+              class=texample>n &#215; m</SPAN> элементов. Заполните его числами, 
+              полученными по закономерности: <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+              alt=a_{ij}=\sum_{n=0}^i\frac{j}{n!} 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/11174e0779bf4638edb270eb153f57eb.png" 
+              width=114 height=27>. Распечатайте его в виде таблицы с точностью 
+              до 4 знаков после запятой. Найдите в каждом столбце наибольший 
+              элемент. Распечатайте найденные элементы под соответствующим 
+              столбцом.
+              <LI>Объявите двумерный целочисленный массив, в котором <SPAN 
+              class=texample>n &#215; m</SPAN> элементов. Выполните генерацию массива 
+              случайными целыми числами из промежутка <SPAN class=texample>[a; 
+              b)</SPAN>. Распечатайте массив в виде таблицы. Найдите суммы 
+              элементов массива по строкам. Распечатайте найденные суммы по 
+              образцу: 
+              <DIV class=example><PRE>Сумма элементов 0-й строки равна ...
+Сумма элементов 1-й строки равна ....
+</PRE></DIV>
+              <LI>Объявите двумерный вещественный массив, в котором <SPAN 
+              class=texample>n &#215; m</SPAN> элементов. Заполните его числами, 
+              полученными по закономерности: <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 8px" 
+              alt=a_{ij}=\prod_{i=0}^j\frac{n}{i+j+1} 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/5cfc1d5ab9b27d4b418088ddf6b11950.png" 
+              width=137 height=31>. Распечатайте его в виде таблицы с точностью 
+              до 3 знаков после запятой. Найдите в каждом столбце среднее 
+              арифметическое элементов. Распечатайте найденные средние 
+              арифметические под соответствующим столбцом с той же точностью.
+              <LI>Объявите двумерный целочисленный массив, в котором <SPAN 
+              class=texample>n &#215; m</SPAN> элементов. Выполните генерацию массива 
+              случайными целыми числами из промежутка <SPAN class=texample>[a; 
+              b)</SPAN>. Замените в массиве максимальные элементы каждой строки 
+              произведением их цифр. Распечатайте массив в виде таблицы дважды: 
+              до и после замены.
+              <LI>Объявите двумерный целочисленный массив, в котором <SPAN 
+              class=texample>n &#215; n</SPAN> элементов. Выполните транспонирование 
+              полученной квадратной матрицы. Распечатайте массив в виде таблицы 
+              дважды: до и после транспонирования.</LI></OL>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <P id=id_202><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203>Каждое задание необходимо решить в соответствии с 
+            изученными методами объявления, генерации и вывода двумерных 
+            массивов в языке С++. Обработку данных необходимо выполнить, 
+            используя алгоритмы поиска, замены и суммирования данных в двумерных 
+            массивах. При разработке программного кода требуется использовать 
+            метод процедурной абстракции и комментировать фрагменты кода.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_204>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <UL id=id_205>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_214><B>Требования к отчету.</B></P>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_215>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_215 class=lecture_mark></DIV>
+            <UL id=id_216>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_216 class=lecture_mark></DIV>
+            <P id=id_225><B>Контрольные вопросы</B></P>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <OL id=id_226>
+              <LI>Почему в программе на С++ при объявлении двумерного массива 
+              необходимо, чтобы был известен размер по каждому измерению 
+массива?
+              <LI>Можно ли выполнить прямое присваивание двумерных массивов?
+              <LI>Когда, с какой целью и почему возможно объявление безразмерных 
+              массивов? С одним безразмерным измерением?
+              <LI>В чем отличие обращения к элементам двумерного массива с 
+              помощью индексированного имени и посредством арифметики с 
+              указателями?
+              <LI>Эквивалентны ли для массива mas следующие обращения и почему: 
+              <SPAN class=texample>mas</SPAN> и <SPAN 
+              class=texample>&amp;mas[0][0]</SPAN>?
+              <LI>Возможно ли в двумерном массиве mas обращение к элементу <SPAN 
+              class=texample>&amp;mas[0]</SPAN>? Почему?
+              <LI>Приведите возможные обращения к элементу двумерного массива, 
+              аналогичные обращению <SPAN class=texample>mas[i][j]</SPAN>.
+              <LI>Какие ограничения распространяются на тип массива?
+              <LI>Каким образом можно определить объем памяти, выделяемой под 
+              двумерный массив?</LI></OL>
+            <DIV id=mark_226 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

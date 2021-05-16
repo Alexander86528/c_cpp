@@ -1,0 +1,771 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_7_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_7_files/mht83E1(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_7_files/mht83E1(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_7_files/mht83E1(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>7. Лекция: Указатели в языке 
+            программирования С: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции следует изучить указатель как средство доступа к 
+            данным. Научиться определять адреса переменных основных типов. 
+            Изучить допустимые операции с указателями. Научиться использовать 
+            указатели в элементарных задачах программирования. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_7_files/mht83E1(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>По краткому определению, <SPAN 
+            class=xml_em_italic>указатель</SPAN> – это переменная, содержащая 
+            адрес другой переменной [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>7.1</A>]. Так как указатель содержит адрес переменной 
+            (объекта), это дает возможность "косвенного" доступа к этой 
+            переменной (объекту) через указатель.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>Для понимания работы и назначения указателей рассмотрим 
+            упрощенную схему организации памяти компьютера. Память представляет 
+            собой массив последовательно пронумерованных или адресованных ячеек, 
+            с которыми можно работать по отдельности или связанными кусками. 
+            Известно, что различным типам данных отводится определенное 
+            количество байтов памяти. Поэтому указатель – это группа ячеек, в 
+            которых может храниться адрес. Например, если переменная <SPAN 
+            class=texample>ch</SPAN> имеет тип <SPAN class=texample>char</SPAN>, 
+            а <SPAN class=texample>ptr</SPAN> (от латинского pointer – 
+            указатель) есть указатель на переменную <SPAN 
+            class=texample>ch</SPAN>, то взятие адреса переменной <SPAN 
+            class=texample>ch</SPAN> осуществляется с помощью унарного 
+            (одноместного) оператора <SPAN class=texample>&amp;</SPAN>, т.е.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr = &amp;ch;</PRE></DIV>
+            <P id=id_10>Приведенная инструкция означает, что переменной <SPAN 
+            class=texample>ptr</SPAN> присваивается адрес ячейки <SPAN 
+            class=texample>ch</SPAN>. Принято считать, что <SPAN 
+            class=texample>ptr</SPAN> указывает на <SPAN 
+            class=texample>ch</SPAN>. Оператор <SPAN class=texample>&amp;</SPAN> 
+            применяется только к объектам, расположенным в памяти: к переменным, 
+            элементам массива. Операндом оператора <SPAN 
+            class=texample>&amp;</SPAN> не может быть ни выражение, ни 
+            константа, ни регистровая переменная [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>7.1</A>]. Унарный оператор <SPAN 
+            class=texample>&amp;</SPAN> называется еще <SPAN 
+            class=xml_em_italic>оператором адресации</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>7.2</A>].</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_18>Имена указателям даются в соответствии с правилами, 
+            принятыми в языке программирования <B>С</B> для обычных 
+            переменных.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_19>Другая унарная операция <SPAN class=texample>*</SPAN> 
+            называется операцией ссылки по указателю ( <SPAN 
+            class=xml_em_italic>indirection</SPAN> ), или <B>разыменования</B> ( 
+            <SPAN class=xml_em_italic>dereferencing</SPAN> ). Если применить ее 
+            к указателю, то получим объект, на который он указывает. Рассмотрим 
+            пример. Пусть <SPAN class=texample>х</SPAN> и <SPAN 
+            class=texample>у</SPAN> – целые переменные, а <SPAN 
+            class=texample>*ptr</SPAN> – указатель на целую переменную. Поставим 
+            задачу присвоения переменной <SPAN class=texample>у</SPAN> значения 
+            переменной <SPAN class=texample>х</SPAN> с помощью указателя. 
+            Фрагмент <B>С</B> -кода будет следующий:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int x = 1, y = 2;
+int *ptr; // объявили указатель на целую переменную
+ptr = &amp;x; // взяли адрес переменной х = 1
+y = *ptr; // переменная у стала равной 1
+*ptr = 0; // переменная х стала равной 0</PRE></DIV>
+            <P id=id_27>В приведенных объявлениях новым является объявление 
+            указателя:</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int *ptr;</PRE></DIV>
+            <P id=id_29>Следует помнить, что любой указатель может указывать 
+            только объекты одного конкретного типа данных, заданного при 
+            объявлении [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>7.1</A>].</P>
+            <DIV id=mark_29 class=lecture_mark></DIV>
+            <P id=id_30>Унарный оператор <SPAN class=texample>*</SPAN> есть 
+            оператор <SPAN class=xml_em_italic>косвенного доступа</SPAN>. 
+            Примененный к указателю он выдает объект, на который данный 
+            указатель указывает.</P>
+            <DIV id=mark_30 class=lecture_mark></DIV>
+            <P id=id_32>Одноместные (унарные) операции <SPAN 
+            class=texample>*</SPAN> и <SPAN class=texample>&amp;</SPAN> имеют 
+            более высокий приоритет для своих операндов, чем арифметические 
+            операции.</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <P id=id_35>Для указателей одного типа можно, например, выполнять 
+            присваивание без разыменования. Это вытекает из того, что указатели 
+            сами по себе являются переменными. Пусть определен еще один 
+            указатель типа <SPAN class=texample>int</SPAN>, например, <SPAN 
+            class=texample>ptr2</SPAN>.</P>
+            <DIV id=mark_35 class=lecture_mark></DIV>
+            <P id=id_38>Тогда возможно произвести присвоение:</P>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ptr2 = ptr;</PRE></DIV>
+            <P id=id_40>После присвоения указатель <SPAN 
+            class=texample>ptr2</SPAN> будет указывать на ту же переменную, что 
+            и указатель <SPAN class=texample>ptr</SPAN>.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <P id=id_43>В языке <B>С</B> допустимы следующие (основные) операции 
+            над указателями: присваивание; получение значения того объекта, на 
+            который ссылается указатель (синонимы: косвенная адресация, 
+            разыменование, раскрытие ссылки); получение адреса самого указателя; 
+            унарные операции изменения значения указателя; аддитивные операции и 
+            операции сравнений (отношений) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#7" 
+            target=_blank>7.3</A>].</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44>С помощью унарных операций <SPAN 
+            class=texample>"++"</SPAN> и <SPAN class=texample>"––"</SPAN> 
+            числовые (арифметические) значения переменных типа указатель 
+            меняются по-разному в зависимости от типа данных, с которыми связаны 
+            эти переменные [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#7" 
+            target=_blank>7.3</A>]. Если указатель связан с типом <SPAN 
+            class=texample>char</SPAN>, то при выполнении операций <SPAN 
+            class=texample>"++"</SPAN> и <SPAN class=texample>"––"</SPAN> его 
+            числовое значение изменяется на 1 (единицу). Если указатель связан с 
+            типом <SPAN class=texample>int</SPAN>, то операции <SPAN 
+            class=texample>"++"</SPAN> и <SPAN class=texample>"––"</SPAN> 
+            изменяют числовые значения указателей на 2. Указатель, связанный с 
+            типами <SPAN class=texample>float</SPAN> или <SPAN 
+            class=texample>long</SPAN>, унарными операциями <SPAN 
+            class=texample>"++"</SPAN> и <SPAN class=texample>"––"</SPAN> 
+            изменяется на 4. Таким образом, при изменении указателя на единицу 
+            указатель "переходит к началу" следующего (или пр едыдущего) поля 
+            той длины, которая определяется типом.</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <P id=id_57>Следует особо остановиться на указателях и квалификаторе 
+            (модификаторе) <SPAN class=texample>const</SPAN>. Как известно, 
+            квалификатор const превращает переменную в константу, значение 
+            которой не должно меняться. Например, нет смысла изменять число <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_7_files/mht8403(1).tmp" width=16 height=11>. Значение 
+            константы должно быть инициализировано в месте ее определения. В 
+            связи с этим различают указатели на константы и константные 
+            указатели [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#9" 
+            target=_blank>7.6</A>]. Приведем следующий пример:</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <DIV class=example><PRE>long value = 9999L;
+const long *pvalue = &amp;value;</PRE></DIV>
+            <P id=id_60>Последняя строчка приведенного кода определяет собой 
+            <SPAN class=xml_em_italic>указатель на константу</SPAN>. Попытка 
+            указателю <SPAN class=texample>pvalue</SPAN> присвоить иное числовое 
+            значение будет восприниматься компилятором как ошибка [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#9" 
+            target=_blank>7.6</A>]. Но само значение переменной <SPAN 
+            class=texample>value</SPAN> изменять допустимо. При этом указатель 
+            держит адрес переменной, значение которой изменилось. В тоже время 
+            саму переменную также можно объявить с помощью квалификатора <SPAN 
+            class=texample>const</SPAN>. В этом случае нельзя изменять ни 
+            переменную, ни значение указателя (т.&nbsp;е. присвоить иное 
+            числовое значение указателю). Указатели на константы часто 
+            используются как формальные параметры функций (о функциях будет 
+            сказано позднее).</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_64><SPAN class=xml_em_italic>Константный указатель</SPAN> 
+            может адресовать как константу, так и переменную. В случае, когда 
+            определен константный указатель, то через него нельзя уже брать 
+            адрес другой переменной. Приведем следующий пример определения 
+            константного указателя:</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int count = 43;
+int *const pcount = &amp;count;</PRE></DIV>
+            <P id=id_66>Вторая строчка приведенного кода определяет и 
+            инициализирует константный указатель <SPAN 
+            class=texample>pcount</SPAN>, который "привязан" к адресу переменной 
+            <SPAN class=texample>count</SPAN>. Если определить новую переменную 
+            того же типа, то взять адрес новой переменной с помощью константного 
+            указателя <SPAN class=texample>pcount</SPAN> будет нельзя, 
+            компилятор сделает сообщение об ошибке и работа программы будет 
+            невозможной. В тоже время возможно изменить значение константного 
+            указателя через другое числовое значение. Но это повлечет за собой 
+            изменение переменной, на которую указатель ссылается. Например,</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int count = 43;
+int *const pcount = &amp;count;
+*pcount = 345;</PRE></DIV>
+            <P id=id_71>В соответствии с приведенным кодом переменная <SPAN 
+            class=texample>count</SPAN> будет иметь значение 345 [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#9" 
+            target=_blank>7.6</A>].</P>
+            <DIV id=mark_71 class=lecture_mark></DIV>
+            <P id=id_73>Соответственно, если константный указатель ссылается на 
+            константный объект (например, на константную переменную), то в этом 
+            случае ни значение объекта, на который ссылается такой указатель, ни 
+            значение самого указателя (когда будет сделана попытка присвоить 
+            иное числовое значение указателю) не может быть изменено в 
+            программе. Например,</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <DIV class=example><PRE>const int card = 21;
+const int *const pcard = &amp;card</PRE></DIV>
+            <P id=id_75>Указанные особенности для указателей с квалификатором 
+            const присущи и для переменных (объектов) других типов.</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_76>Указатели, значения которых изменять нельзя 
+            используются, например, при заполнении константных таблиц.</P>
+            <DIV id=mark_76 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_77><B>Пример 1</B>. Напишите программу определения адресов 
+            целых чисел от 0 до 9 и строчных букв латинского алфавита.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_78>Программный код решения примера:</P>
+            <DIV id=mark_78 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void)
+{
+	int i,
+         j = 0;
+	char c = 'a',
+         *ptr2;
+
+	ptr2 = &amp;c;
+
+	printf("\n\t Figures, symbols and their addresses:\n");
+	
+    for (i = 0; i &lt; 10; ++i)
+	printf("\n\t %3d) %2d --&gt; %5p", i + 1, i, &amp;i);
+
+    printf("\n");
+	
+     for ( ; *ptr2 &lt;= 'z'; (*ptr2)++)
+	printf("\n\t %3d) %2c --&gt; %5p", ++j, *ptr2, ptr2);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_80>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.1">рис. 
+            7.1</A>.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <P id=id_81 align=left><A name=image.7.1></A></P>
+            <DIV><IMG alt="Адреса цифр и строчных букв" 
+            src="Лекция_7_files/mht8416(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 7.1.</B>&nbsp; Адреса цифр и строчных 
+            букв
+            <P></P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <P id=id_82>В программе использован спецификатор формата <SPAN 
+            class=texample>%5p</SPAN> для определения адреса переменных. Число 5 
+            определяет отступ от левого края на пять позиций.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_84>Задание 1</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <OL id=id_85>
+              <LI>Добавьте вывод кодов цифр и букв, для которых определены 
+              адреса в памяти компьютера.
+              <LI>В программе вместо операторов цикла <SPAN 
+              class=texample>for</SPAN> примените операторы <SPAN 
+              class=texample>while</SPAN>.
+              <LI>В программу введите указатель на тип <SPAN 
+              class=texample>int</SPAN> и применить этот указатель по аналогии с 
+              указателем <SPAN class=texample>*ptr2</SPAN>.
+              <LI>Добавьте определение адресов прописных букв латинского 
+              алфавита и вывести их дополнительным столбцом к адресам строчных 
+              букв.
+              <LI>Выведите в столбец свою фамилию (буквами латинского алфавита), 
+              имя и адреса соответствующих букв фамилии и имени.</LI></OL>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <P id=id_95><B>Пример 2</B>. Напишите программу однозначного задания 
+            типа разностей указателей, и определения адресов заданных 
+            указателей.</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <P id=id_96>Для решения данного примера подключим заголовок 
+            <B>stddef.h</B> для определения типа разности указателей с помощью 
+            зарезервированного имени типа <SPAN 
+            class=texample>ptrdiff_t</SPAN>.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_98>Программный код решения примера:</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stddef.h&gt;
+
+int main (void)
+ {
+	int x, y;
+	int *px, *py;
+	ptrdiff_t z;
+	
+// инициализация указателей
+	px = &amp;x;
+	py = &amp;y;
+
+// разница двух указателей
+	z = px - py; 
+	
+printf("\n The difference of two pointers to %p and  %p is: %d", px, py, (int) z);
+
+printf("\n\n The addresses are: px = %p, py = %p\n", &amp;px, &amp;py);
+		
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_100>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.2">рис. 
+            7.2</A>.</P>
+            <DIV id=mark_100 class=lecture_mark></DIV>
+            <P id=id_101 align=left><A name=image.7.2></A></P>
+            <DIV><IMG alt="" src="Лекция_7_files/mht8438(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.2.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_102><B>Задание 2</B></P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <OL id=id_103>
+              <LI>Поменяйте местами переменные <SPAN class=texample>х</SPAN> и 
+              <SPAN class=texample>у</SPAN>. Проанализируйте результат 
+              выполнения программы.
+              <LI>Для переменных произведите инициализацию в соответствии с 
+              номером компьютера, за которым выполняется лабораторная работа, и 
+              своего дня рождения.
+              <LI>Рассмотрите решение примера для следующих типов: <SPAN 
+              class=texample>char</SPAN>, <SPAN class=texample>long int</SPAN>, 
+              <SPAN class=texample>long long int</SPAN>, <SPAN 
+              class=texample>unsigned int</SPAN>, <SPAN 
+              class=texample>float</SPAN>, <SPAN class=texample>double</SPAN>, 
+              <SPAN class=texample>long double</SPAN>.
+              <LI>Вывод результатов осуществите с помощью одной функции <SPAN 
+              class=texample>printf()</SPAN>.</LI></OL>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <P id=id_118><B>Пример 3</B>. Напишите программу арифметических 
+            операций с указателями.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119>При выполнении примера следует иметь в виду, что 
+            операции "&amp;" и "*" имеют более высокий приоритет, чем обычные 
+            арифметические операции. Программный код решения примера:</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+     int x = 2, y = 7, a, b, *ptr, *ptr2;
+	ptr = &amp;a;
+	ptr2 = &amp;b;
+	*ptr = x - y;
+	*ptr2 = y - x - *ptr + 100;
+
+	printf("\n\t Arithmetic operations with pointers:\n");
+	printf("\t a = %d, b = %d\n", a, b);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0; }</PRE></DIV>
+            <P id=id_121>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.3">рис. 
+            7.3</A>.</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <P id=id_122 align=left><A name=image.7.3></A></P>
+            <DIV><IMG alt="Результат арифметических операций с указателями" 
+            src="Лекция_7_files/mht844B(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.3.</B>&nbsp; Результат арифметических 
+            операций с указателями
+            <P></P>
+            <DIV id=mark_122 class=lecture_mark></DIV>
+            <P id=id_123>Следует обратить внимание на то, что переменные <SPAN 
+            class=texample>a</SPAN> и <SPAN class=texample>b</SPAN> сначала не 
+            были определены, а в результате стали иметь некоторые значения.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_126><B>Задание 3</B></P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <OL id=id_127>
+              <LI>В программе примените типы <SPAN class=texample>double</SPAN> 
+              и <SPAN class=texample>float</SPAN>.
+              <LI>После взятия адресов от переменных <SPAN 
+              class=texample>a</SPAN> и <SPAN class=texample>b</SPAN>, измените 
+              значения указателей на значения Х и 10*Х, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа. Выполните 
+              указанные арифметические действия и выведите значения переменных 
+              <SPAN class=texample>a</SPAN> и <SPAN class=texample>b</SPAN>.
+              <LI>Напишите программу для выполнения операций вычитания, 
+              умножения и деления с участием указателей.
+              <LI>Для вывода результатов примените только одну функцию <SPAN 
+              class=texample>printf()</SPAN>.</LI></OL>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_139><B>Пример 4</B>. Напишите программу двухуровневой 
+            адресации для объектов целого типа.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140>Случай, когда указатель ссылается на указатель, который 
+            ссылается на число, называется многоуровневой адресацией [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>7.4</A>]. В случае двухуровневой адресации первый 
+            указатель содержит адрес второго указателя, который содержит адрес 
+            объекта с нужным значением. Объявление указателя на указатель 
+            делается с помощью двух звездочек перед именем переменной. 
+            Программный код решения примера:</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	int x, y = 8;
+	int *ptr, **ptr2;
+	
+     x = 7;
+	ptr = &amp;x;
+	ptr2 = &amp;ptr;
+	**ptr2 = *ptr + 10;
+	
+printf("\n\t The value of x = %d. 1-st pointer is: %d. 2-nd pointer is: %d\n", x, *ptr, **ptr2);
+		ptr = &amp;y;
+		ptr2 = &amp;ptr;
+		**ptr2 = 88;
+		printf("\n\t The value of y = %d\n", y);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_142>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.4">рис. 
+            7.4</A>.</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_143 align=left><A name=image.7.4></A></P>
+            <DIV><IMG alt="Результат двухуровневой адресации" 
+            src="Лекция_7_files/mht845D(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.4.</B>&nbsp; Результат двухуровневой 
+            адресации
+            <P></P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_144><B>Задание 4</B></P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <OL id=id_145>
+              <LI>Выведите на экран пользователя адреса указателей.
+              <LI>Организуйте цикл инкрементирования первого указателя начиная с 
+              Х до 10*Х, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа. Сделайте вывод значений переменной, на 
+              которую делает ссылку первый указатель, и значений второго 
+              указателя.
+              <LI>Напишите программу трехуровневой адресации при задании целых 
+              чисел, равных Х и 10*Х, где Х – номер компьютера, за которым 
+              выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <P id=id_149><B>Пример 5</B>. Напишите программу по определению и 
+            инициализации переменных разных типов и одного указателя типа <SPAN 
+            class=texample>void *</SPAN>. Последовательно присваивая указателю 
+            адреса переменных, выведите значения переменных с помощью 
+            разыменования указателя [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#8" 
+            target=_blank>7.5</A>].</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_151>Программный код решения примера:</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void){
+	int x = 99;
+	double y = 6.78;
+	char symbol = '#';
+	void *ptr;
+	ptr = &amp;x;
+printf("\n\t The value of variable through a pointer: %d\n", *(int *) ptr);
+    
+	ptr = &amp;y;
+printf("\n\t The value of variable through a pointer: %lf\n", *(double *) ptr);
+
+	ptr = &amp;symbol;
+printf("\n\t The value of variable through a pointer: %c\n", *(char *) ptr);
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;}</PRE></DIV>
+            <P id=id_153>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.5">рис. 
+            7.5</A>.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154 align=left><A name=image.7.5></A></P>
+            <DIV><IMG alt="" src="Лекция_7_files/mht8480(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.5.</B>&nbsp; 
+            <P></P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_156>Особенностью использования указателя типа <B>void</B> 
+            является то, что при разыменовании указателя необходимо производить 
+            преобразования типов. Прежде чем произвести разыменование указателя, 
+            его приводят к указателю соответствующего типа.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_157><B>Задание 5</B></P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <OL id=id_158>
+              <LI>В программу добавьте переменные типа <SPAN 
+              class=texample>float</SPAN>, <SPAN class=texample>unsigned</SPAN>, 
+              <SPAN class=texample>long</SPAN> и обеспечьте ввод их значений с 
+              клавиатуры. Выведите адреса и значения переменных с помощью 
+              разыменования указателя.
+              <LI>Задайте порядок (нумерованную последовательность) 
+              инициализации переменных и создайте вывод значений указателя на 
+              основе переключателя <B>switch</B>. Номер инициализируемой 
+              переменной задайте с клавиатуры.
+              <LI>В программу введите операцию двухуровневой адресации с 
+              применением указателя типа <SPAN class=texample>void</SPAN>. 
+              Выведите значения двух указателей с помощью их 
+            разыменования.</LI></OL>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_166><B>Пример 6</B>. Напишите программу по реализации 
+            условия: определить и инициализировать переменную типа <SPAN 
+            class=texample>double</SPAN>. Определите указатели типа <SPAN 
+            class=texample>char&nbsp;*</SPAN>, <SPAN 
+            class=texample>int&nbsp;*</SPAN>, <SPAN 
+            class=texample>double&nbsp;*</SPAN>, <SPAN 
+            class=texample>void&nbsp;*</SPAN>, инициализируйте их адресом 
+            переменной. Выведите на экран пользователя значения указателей, их 
+            размеры и длины участков памяти, которые связаны с выражениями, 
+            разыменовывающими указатели [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#8" 
+            target=_blank>7.5</A>].</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_172>Программный код решения примера:</P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	double d = 6.78;
+	char *cp; 
+	int *ip; 
+	double *dp; 
+	void *vp; 
+// Адресация с приведением типов
+	cp = (char *)&amp;d;
+	ip = (int *)&amp;d;
+	dp = (double *)&amp;d;
+	vp = &amp;d;
+	printf("\n\t Address:\n\t char = %p\n\t int = %p\n\t double = %p\n\t void = %p\n", cp, ip, dp, vp);
+
+// Размеры указателей и памяти разыменованных указателей:
+printf("\n\t The dimension of the object type \"pointer\":\n\t char = %d\n\t int = %d\n\t double = %d\n\t void = %d\n", 
+	   sizeof(cp), sizeof(ip), sizeof(dp), sizeof(vp));
+	
+printf("\n\t The size of the memory pointer:\n\t char = %d\n\t int = %d\n\t double = %d\n", 
+	   sizeof(*cp), sizeof(*ip), sizeof(*dp));
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0; 
+}</PRE></DIV>
+            <P id=id_174>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.6">рис. 
+            7.6</A>.</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175 align=left><A name=image.7.6></A></P>
+            <DIV><IMG alt="Адреса и размеры указателей разных типов" 
+            src="Лекция_7_files/mht8492(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.6.</B>&nbsp; Адреса и размеры 
+            указателей разных типов
+            <P></P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176>Как видно из полученного результата, размеры участков 
+            памяти, выделенных указателям разных типов, одинаковы.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <OL id=id_177>
+              <LI>В программу добавьте вывод размера памяти для разыменованного 
+              указателя типа <SPAN class=texample>void</SPAN>.
+              <LI>Выведите значения указателей заданных типов. Определите 
+              указатель с правильным доступом к значению переменной <SPAN 
+              class=texample>d = 6.78</SPAN>.
+              <LI>Объявление указателей и взятие адреса сделайте в одной строчке 
+              для соответствующего типа.
+              <LI>В программу добавьте строки по вводу целого, вещественного 
+              типов данных, а также одиночного символа. Затем с помощью 
+              указателей выведите на консоль значения введенных данных.</LI></OL>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_184><B>Пример 7</B>. Напишите программу, в которой с 
+            помощью указателя и функции <SPAN class=texample>scanf_s()</SPAN> 
+            читаются данные с клавиатуры, а также определяются и 
+            инициализируются указатели на константы и константные указатели. 
+            Программный код решения примера:</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main (void) {
+	double x,
+		*px = &amp;x,
+		e = exp(1);
+	const double pi = acos(0.0);
+	
+     const double *pexp = &amp;e;
+	const int base = 10;
+	const int *const pbase = &amp;base;
+	const double *ptr_pi = &amp;pi;
+	int i;
+	time_t t;
+
+	printf("\n Enter a real number: ");
+	scanf_s("%lf", px);
+
+	printf("\n The value of the entered number is \"%g\"\n", x);
+
+	printf("\n The base of natural logarithms \
+is \"%0.14f\"\n", *pexp);
+
+printf("\n The base of the decimal logarithm is \"%d\"\n",\ *pbase); 
+
+	srand((unsigned) time(&amp;t)); // рандомизация
+	for (i = 0; i &lt; rand(); i++)
+	{
+		rand();
+	}
+// Случайное вещественное число из интервала [-100.0; 100.0]
+	x =  -100.0 + (100.0 - (-100.0))* (double)rand() / RAND_MAX;
+
+	printf("\n The modified value of x: %g\n \
+Pointer to the variable x: %g\n", x, *px);
+
+	printf("\n The value of pi through the pointer \
+and the function acos(0): %0.14f\n", *ptr_pi * 2);
+
+
+	printf("\n\n ... Press any key: ");
+	_getch();
+	return 0;
+
+}</PRE></DIV>
+            <P id=id_187>В программе для получения числа пи ( <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_7_files/mht8403(1).tmp" width=16 height=11> ) 
+            используется функция <SPAN class=texample>acos(0)</SPAN>, так как 
+            косинус <IMG style="POSITION: relative; DISPLAY: inline; TOP: 3px" 
+            alt=\pi src="Лекция_7_files/mht8403(1).tmp" width=16 height=11> /2 
+            равен нулю. Затем полученный результат умножается на два. 
+            Дополнительная рандомизация осуществляется в цикле, одним из 
+            параметров которого является случайная функция <SPAN 
+            class=texample>rand()</SPAN>, возвращающая целое число. При этом 
+            предусмотрено приведение типов. Изменение числа х осуществляется по 
+            равномерному случайному закону из интервала [-100.0; 100.0].</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_190>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\7. Лекция Указатели в языке программирования С.mht#image.7.7">рис. 
+            7.7</A>.</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191 align=left><A name=image.7.7></A></P>
+            <DIV><IMG alt="Пример работы программы с указателями" 
+            src="Лекция_7_files/mht84B4(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 7.7.</B>&nbsp; Пример работы программы 
+            с указателями
+            <P></P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_192><B>Задание&nbsp;7</B></P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <OL id=id_193>
+              <LI>Выполните инкрементирование указателей на константы и 
+              константных указателей. Объясните полученный результат.
+              <LI>Введите в программу двойной ввод с клавиатуры вещественного 
+              числа. Первый раз с помощью указателя, а второй раз с помощью 
+              переменной. В обоих случаях вывести на печать значения указателя.
+              <LI>В качестве константы примите некоторое шестнадцатеричное число 
+              (с буквами). Определите указатель на константу и в цикле от 1 до 
+              16 измените значение указателя с последующим выводом результатов 
+              на консоль.
+              <LI>Выполните возможные арифметические операции с константными 
+              указателями и с указателями на константы.
+              <LI>В программу введите строковую переменную, определенную через 
+              фамилию (буквами латинского алфавита) автора закона всемирного 
+              тяготения. Определите указатель на константу и выведите фамилию на 
+              консоль через указатель. Затем в цикле введите известные вам 
+              фамилии трех лауреатов нобелевской премии по литературе. Вывод 
+              результатов на консоль выполните с помощью указателя.</LI></OL>
+            <DIV id=mark_193 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_199>
+              <LI>Какое общее назначение указателей в языке <B>С</B>?
+              <LI>Какие арифметические операции допускаются для указателей?
+              <LI>Какие унарные операторы используются с указателями? Как они 
+              называются?
+              <LI>Для каких типов данных может быть использован указатель?
+              <LI>Как числовые значения указателей изменяются при их 
+              инкрементировании в зависимости от типов данных.
+              <LI>С помощью какого формата осуществляется вывод на консоль 
+              адресов переменных заданного типа?
+              <LI>Что такое многоуровневая адресация? Как она организуется в 
+              языке С?
+              <LI>Как осуществляется инициализация указателей на вещественные 
+              типы данных?
+              <LI>Как осуществляется инициализация указателей на символьный тип 
+              данных?
+              <LI>Какой смысл имеет значение указателя <SPAN 
+              class=texample>NULL</SPAN>?
+              <LI>Что произойдет, если применить к указателю со значением 
+              <B>NULL</B> операцию разыменования?
+              <LI>Как следует определять и инициализировать указателя на 
+              константу?
+              <LI>Как следует определять и инициализировать константный 
+              указатель?
+              <LI>Какое отличие константного указателя от указателя на 
+              константу?</LI></OL>
+            <DIV id=mark_199 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_7_files/mht83E1(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_7_files/mht83E1(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

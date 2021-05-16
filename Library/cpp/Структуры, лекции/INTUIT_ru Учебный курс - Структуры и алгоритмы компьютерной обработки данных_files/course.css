@@ -1,0 +1,753 @@
+#lecture_body img {
+	margin-bottom: 2pt; vertical-align: middle; bborder: 1px solid #009900;
+}
+.course_content {
+	font-weight: normal;
+}
+.course_title {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+a.course_title {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.course_title:hover {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.course_title:visited {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.course_title:active {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.course_author {
+	color: rgb(153, 0, 0);
+}
+.course_hr {
+	border: 0px solid rgb(255, 153, 0); width: 100%; height: 1pt; color: rgb(255, 153, 0); background-color: rgb(255, 153, 0);
+}
+.course_stat {
+	font-size: 8pt; font-weight: normal; margin-left: 1mm;
+}
+.course_stat_data {
+	font-weight: bold;
+}
+.course_menu {
+	font-weight: normal;
+}
+.course_menu_item {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_menu_item {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_menu_item:hover {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_menu_item:visited {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_menu_item:active {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.course_info_item {
+	font-weight: normal; bborder: 1px solid #009900;
+}
+.course_info_title {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold;
+}
+.course_info_title_lectures {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.course_list {
+	margin-top: 0pt; margin-bottom: 5pt; list-style-type: none;
+}
+.course_content_num {
+	font-size: 10pt; font-weight: bold;
+}
+a.course_lecture {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none;
+}
+a.course_lecture:hover {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none;
+}
+a.course_lecture:visited {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none;
+}
+a.course_lecture:active {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none;
+}
+a.course_extern {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_extern:hover {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_extern:visited {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_extern:active {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_course {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: normal; text-decoration: none;
+}
+a.course_course:hover {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: normal; text-decoration: none;
+}
+a.course_course:visited {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: normal; text-decoration: none;
+}
+a.course_course:active {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: normal; text-decoration: none;
+}
+.course_menu_lection_item {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.menu_lection {
+	color: rgb(153, 0, 0);
+}
+a.menu_lection:hover {
+	color: rgb(153, 0, 0);
+}
+a.menu_lection:visited {
+	color: rgb(153, 0, 0);
+}
+a.menu_lection:active {
+	color: rgb(153, 0, 0);
+}
+.menu_lection_selected {
+	color: rgb(102, 0, 0);
+}
+a.menu_lection_selected {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a.menu_lection_selected:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a.menu_lection_selected:visited {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a.menu_lection_selected:active {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+a.course_author {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_author:hover {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_author:visited {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+a.course_author:active {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.course_lecture_info {
+	color: rgb(153, 0, 0); font-size: 8pt;
+}
+a.course_stat {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_stat:hover {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_stat:visited {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+a.course_stat:active {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+.course_info_title2 {
+	text-align: right; font-size: 8pt; font-weight: bold; float: right;
+}
+a.course_info_title2 {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_info_title2:hover {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_info_title2:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_info_title2:active {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+.course_lecture_info_block {
+	text-align: right; float: right; display: inline;
+}
+.course_shedule {
+	border: 1px solid rgb(255, 153, 0); width: auto; line-height: 110%; font-weight: normal; background-color: rgb(238, 238, 238);
+}
+.lecture_annotation {
+	
+}
+.course_info_title_lectures_block {
+	background: rgb(231, 231, 206); padding: 4px; clear: both; margin-top: 20px; margin-bottom: 4px; border-top-color: rgb(255, 153, 0); border-top-width: 1px; border-top-style: solid;
+}
+.lecture_pl1 {
+	background: rgb(255, 204, 153); padding: 2px 0px 2px 4px; color: rgb(0, 0, 0); font-size: 10pt;
+}
+.lecture_write_to_us {
+	width: 100%; padding-bottom: 6px; font-size: 8pt; margin-right: 50px; margin-bottom: 0px; border-bottom-color: rgb(153, 0, 0); border-bottom-width: 1px; border-bottom-style: solid; ppadding: 0px 0px 0px 0px;
+}
+.lecture_title {
+	color: rgb(51, 0, 102); padding-bottom: 2px; font-size: 10pt; font-weight: bold;
+}
+a.lecture_title {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.lecture_title:hover {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.lecture_title:visited {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.lecture_title:active {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+.menu_lection_chapter {
+	color: rgb(0, 0, 0);
+}
+a.menu_lection_chapter {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.menu_lection_chapter:hover {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.menu_lection_chapter:visited {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.menu_lection_chapter:active {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+.course_adds_title {
+	color: rgb(153, 0, 0); padding-top: 6px; padding-bottom: 4px; font-size: 10pt; font-weight: bold; border-bottom-color: rgb(204, 204, 153); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.course_chapter {
+	color: rgb(51, 0, 102); padding-top: 6px; padding-bottom: 4px; font-size: 10pt; font-weight: bold; border-bottom-color: rgb(204, 204, 153); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.course_chapter_num_name {
+	color: rgb(0, 0, 0);
+}
+.course_lectures_lecture {
+	color: rgb(0, 0, 0); clear: both;
+}
+.course_lectures_num {
+	text-align: left; color: rgb(0, 0, 0); font-size: 10pt; font-weight: bold; float: left;
+}
+.course_lectures_title {
+	padding: 0px; color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; margin-left: 30px; bborder: 1px solid #000099;
+}
+.course_lectures_annotation {
+	padding: 0px; margin-left: 33px; bborder: 1px solid #009900;
+}
+a.course_lectures_title {
+	margin: 0px; padding: 0px; text-decoration: none;
+}
+a.course_lectures_title:hover {
+	margin: 0px; padding: 0px; text-decoration: none;
+}
+a.course_lectures_title:visited {
+	margin: 0px; padding: 0px; text-decoration: none;
+}
+a.course_lectures_title:active {
+	margin: 0px; padding: 0px; text-decoration: none;
+}
+.course_reclama_hr {
+	margin: 2pt 0px; padding: 0px; width: 100%; height: 0pt; border-top-color: rgb(255, 153, 0); border-top-width: 1px; border-top-style: solid;
+}
+.lecture_video {
+	width: 100%; text-align: left; font-size: 8pt; bborder: 10px solid #551100;
+}
+.lecture_video_flash {
+	margin: 0pt 5pt 5pt; text-align: left; bborder: 4px solid #551100; ffloat: left;
+}
+.lecture_video_flash_popup {
+	margin: 10pt; border: 4px solid rgb(85, 17, 0); text-align: center;
+}
+.lecture_video_duration {
+	margin: 4pt;
+}
+.lecture_video_duration_name {
+	margin-right: 10pt;
+}
+.lecture_video_duration_value {
+	font-weight: bold;
+}
+.lecture_video_size {
+	margin: 4pt;
+}
+.lecture_video_size_name {
+	margin-right: 10pt;
+}
+.lecture_video_size_value {
+	font-weight: bold;
+}
+.lecture_video_size_load {
+	font-weight: normal; margin-left: 5pt;
+}
+a.lecture_video_size_load {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none; margin-left: 0pt;
+}
+a.lecture_video_size_load:hover {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none; margin-left: 0pt;
+}
+a.lecture_video_size_load:visited {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none; margin-left: 0pt;
+}
+a.lecture_video_size_load:active {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: none; margin-left: 0pt;
+}
+.lecture_video_number {
+	font-weight: bold; margin-right: 5pt; display: inline;
+}
+.lecture_video_number_name {
+	margin-right: 5pt;
+}
+.lecture_video_number_value {
+	
+}
+.lecture_video_title {
+	display: inline;
+}
+.lecture_video_title_name {
+	display: none;
+}
+.lecture_video_title_value {
+	
+}
+.lecture_video_annotation {
+	margin-top: 10pt; margin-bottom: 0mm; margin-left: 0pt; vertical-align: top; bborder: 1px solid #000000;
+}
+.video_reclama {
+	padding: 6px 5px 2px 10px; border: 1px solid rgb(0, 0, 0); width: 55mm; line-height: 110%; font-size: 8pt; font-weight: bold; margin-top: 5mm; margin-left: 2mm; background-color: rgb(238, 238, 238);
+}
+.video_reclama_submit {
+	background: rgb(255, 153, 0); width: 192px; font-weight: normal; margin-top: 4px; display: block;
+}
+.lecture_video_reclama {
+	text-align: left; display: block;
+}
+.lecture_video_reclama_box {
+	
+}
+.video_reclama_hide {
+	text-align: right; display: none;
+}
+.menu_lections_name {
+	float: left;
+}
+.lecture_video_title_block {
+	vertical-align: top; bborder: 1px solid #009900;
+}
+.lecture_video_size_help {
+	color: rgb(102, 102, 102);
+}
+a.lecture_video_size_help {
+	color: rgb(102, 102, 102);
+}
+a.lecture_video_size_help:hover {
+	color: rgb(102, 102, 102);
+}
+a.lecture_video_size_help:visited {
+	color: rgb(102, 102, 102);
+}
+a.lecture_video_size_help:active {
+	color: rgb(102, 102, 102);
+}
+.lecture_video_info {
+	text-align: left; padding-left: 0px; font-size: 8pt; vertical-align: bottom; bborder: 1px solid #009900;
+}
+.course_course_comment {
+	color: rgb(102, 102, 102); font-size: 8pt; margin-left: 8mm; display: inline;
+}
+a.course_course_comment {
+	color: rgb(102, 102, 102); margin-left: 1mm;
+}
+a.course_course_comment:hover {
+	color: rgb(102, 102, 102); margin-left: 1mm;
+}
+a.course_course_comment:visited {
+	color: rgb(102, 102, 102); margin-left: 1mm;
+}
+a.course_course_comment:active {
+	color: rgb(102, 102, 102); margin-left: 1mm;
+}
+a.course_course_not_ready {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+a.course_course_not_ready:hover {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+a.course_course_not_ready:visited {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+a.course_course_not_ready:active {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.lecture_video_off {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; float: right; cursor: pointer; bborder: 1px solid #009900;
+}
+.video_popup {
+	margin: 0px auto; border: 1px solid rgb(0, 153, 0); align: center;
+}
+.course_part_title {
+	color: rgb(51, 0, 102); padding-bottom: 6px; font-size: 10pt; font-weight: bold; margin-top: 8px; margin-bottom: 2px; border-bottom-color: rgb(231, 231, 206); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.course_part_down {
+	width: 100%; text-align: right; padding-top: 6px; padding-bottom: 8px; margin-top: 2px; margin-bottom: 2px; border-top-color: rgb(231, 231, 206); border-bottom-color: rgb(231, 231, 206); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: right;
+}
+.keywords_top_menu {
+	margin-bottom: 4px;
+}
+.course_menu_adds {
+	margin-top: 2px;
+}
+.menu_lections {
+	margin: 0px; padding: 0px; bborder: 1px solid #009999;
+}
+.menu_lections div.lections {
+	padding-left: 5px; margin-left: 15mm;
+}
+.menu_lections div.lections ul {
+	background: rgb(255, 255, 255); list-style: none; margin: 0px; padding: 0px; position: relative;
+}
+.menu_lections div.lections ul li {
+	font: 11px Verdana, Geneva, Arial, Helvetica, sans-serif; margin: 0px; padding: 0px; float: left; display: block; position: relative; font-size-adjust: none; font-stretch: normal;
+}
+.menu_lections div.lections ul li a {
+	background: url("/img/p/bg_bottom.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.menu_lections div.lections ul li a:visited {
+	background: url("/img/p/bg_bottom.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.menu_lections div.lections ul li a:active {
+	background: url("/img/p/bg_bottom.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.menu_lections div.lections ul li a:hover {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.menu_lections div.lections ul li a.active {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.menu_lections div.lections ul li a.active:hover {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.menu_lections div.lections ul li a.active:visited {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.menu_lections div.lections ul li a.active:active {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.menu_lections div.lections ul li.selected {
+	background: url("/img/p/bg_bottom_active.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(153, 0, 0); padding-top: 5px; text-decoration: none; display: block;
+}
+.clear {
+	margin: 0px; padding: 0px; line-height: 0em; clear: both;
+}
+.menu_lections div.name div.text {
+	background: url("/img/p/m.png") repeat-x rgb(255, 255, 255); font: 11px/normal Verdana, Geneva, Arial, Helvetica, sans-serif; height: 20px !important; padding-top: 4px; float: left; font-size-adjust: none; font-stretch: normal;
+}
+.menu_lections div.name div.left {
+	background: url("/img/p/left.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.menu_lections div.name div.right {
+	background: url("/img/p/right.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.course_title_right {
+	text-align: right; color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; float: right;
+}
+a.course_title_right {
+	color: rgb(0, 153, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_title_right:hover {
+	color: rgb(0, 153, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_title_right:visited {
+	color: rgb(0, 153, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_title_right:active {
+	color: rgb(0, 153, 0); font-size: 8pt; font-weight: bold; text-decoration: none; float: none;
+}
+a.course_title_right img {
+	border: 0px currentColor; height: 14px; display: inline;
+}
+span.course_title_right {
+	clear: both;
+}
+.menu_lections div.name div.text {
+	background: url("/img/p/m.png") repeat-x rgb(255, 255, 255); font: 11px/normal Verdana, Geneva, Arial, Helvetica, sans-serif; height: 20px !important; padding-top: 4px; float: left; font-size-adjust: none; font-stretch: normal;
+}
+.course_title_right div.name {
+	margin: 0pt; padding: 0px; float: left; bborder: 1px solid #009900;
+}
+.course_title_right div.name div.left {
+	background: url("/img/p/left.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.course_title_right div.name div.right {
+	background: url("/img/p/right.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.course_title_right div.name div.text {
+	background: url("/img/p/m.png") repeat-x rgb(255, 255, 255); font: 11px/normal Verdana, Geneva, Arial, Helvetica, sans-serif; height: 20px !important; padding-top: 4px; float: left; font-size-adjust: none; font-stretch: normal;
+}
+.course_title_right div.name div.text a {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.course_title_right div.name div.text a:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.course_title_right div.name div.text a:active {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.course_menu_lection {
+	padding-top: 0px; padding-bottom: 0px; font-size: 10pt; margin-bottom: 0px; border-bottom-color: rgb(255, 153, 0); border-bottom-width: 1px; border-bottom-style: solid; bborder: 1px solid #009900;
+}
+.course_menu_adds div.name {
+	margin: 0pt; padding: 0px; float: left; bborder: 1px solid #009900;
+}
+.course_menu_adds div.name div.text {
+	background: url("/img/p/dp/m.png") repeat-x rgb(255, 255, 255); font: 11px/normal Verdana, Geneva, Arial, Helvetica, sans-serif; height: 20px !important; padding-top: 4px; float: left; font-size-adjust: none; font-stretch: normal;
+}
+.course_menu_adds div.name div.left {
+	background: url("/img/p/dp/left.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.course_menu_adds div.name div.right {
+	background: url("/img/p/dp/right.png") no-repeat; width: 6px; height: 20px !important; padding-top: 5px; float: left; bborder: 1px solid #009900;
+}
+.course_menu_adds div.adds {
+	bborder: 1px solid #009900;
+}
+.course_menu_adds div.adds ul {
+	background: rgb(255, 255, 255); list-style: none; margin: 0px; padding: 0px; position: relative;
+}
+.course_menu_adds div.adds ul li {
+	font: 11px Verdana, Geneva, Arial, Helvetica, sans-serif; margin: 0px; padding: 0px; float: left; display: block; position: relative; font-size-adjust: none; font-stretch: normal;
+}
+.course_menu_adds div.adds ul li.selected {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(153, 0, 0); padding-top: 5px; text-decoration: none; bborder: 1px solid #009900;
+}
+.course_menu_adds div.adds ul li a {
+	background: url("/img/p/dp/k.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.course_menu_adds div.adds ul li a:visited {
+	background: url("/img/p/dp/k.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.course_menu_adds div.adds ul li a:active {
+	background: url("/img/p/dp/k.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(0, 0, 0); padding-top: 5px; text-decoration: none; margin-right: 0px; display: block;
+}
+.course_menu_adds div.adds ul li a:hover {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.course_menu_adds div.adds ul li a.active {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.course_menu_adds div.adds ul li a.active:hover {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.course_menu_adds div.adds ul li a.active:visited {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.course_menu_adds div.adds ul li a.active:active {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; color: rgb(153, 0, 0); text-decoration: none; display: block;
+}
+.course_menu_adds div.adds ul li.selected {
+	background: url("/img/p/dp/k_active.gif") no-repeat; width: 24px; height: 20px !important; text-align: center; color: rgb(153, 0, 0); padding-top: 5px; text-decoration: none; display: block;
+}
+.video {
+	margin-top: 2mm; margin-bottom: 4mm; bborder: 1px solid #000000;
+}
+.video div.player {
+	width: 802px;
+}
+.video div.info {
+	padding: 0px; width: 800px; font-size: 8pt; margin-top: 4px; margin-left: 1px; background-color: rgb(238, 238, 238); bborder: 1px solid #000000; ppadding-left: 0px;
+}
+.video div.info div.left {
+	margin: 0px; padding: 4mm 4px 4mm 10px; width: 302px; bborder: 1px solid #00FF00; ffloat: left; hheight: 22mm;
+}
+.video div.info div.right {
+	margin: 0px; padding: 4px; width: 468px; float: right; bborder: 1px solid #0000FF;
+}
+.video div.info div.left div.refs {
+	margin: 0px; padding: 0px; bborder: 1px solid #0000bb;
+}
+.video div.info div.left div.refs ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+.video div.info div.left div.refs ul li {
+	margin: 0px; padding-top: 0px; padding-bottom: 0px; bborder: 1px solid #00aa00;
+}
+.video div.info div.left div.refs ul li div.text {
+	width: 125px; float: left; bborder: 1px solid #00aa00;
+}
+.video div.info div.left div.refs ul li input {
+	border: 1px solid rgb(255, 153, 0); width: 160px;
+}
+.video div.info div.right div.download {
+	bborder: 1px solid #aa00AA; mmargin-bottom: 5pt;
+}
+.video div.info div.right div.download div.title {
+	margin: 0px 4px 0px 0px; font-size: 8pt; float: left;
+}
+.video div.info div.right div.download ul {
+	list-style: none; margin: 0px; position: relative; bborder: 1px solid #0000bb;
+}
+.video div.info div.right div.download ul li {
+	margin: 0px; padding: 0px 0px 0px 2px; line-height: 10pt; float: left; display: block; position: relative; bborder: 1px solid #0000bb;
+}
+.video div.info div.right div.download ul li.help {
+	padding-left: 10px;
+}
+.video div.info div.right div.download ul li.buy img {
+	border: 0px currentColor;
+}
+.video div.info div.right div.download ul li div.text {
+	margin: 0px 4px; padding: 0px; display: inline;
+}
+.video div.info div.right div.download ul li a {
+	font-size: 8pt; font-weight: 600; display: inline; ffont-weight: bold;
+}
+.video div.info div.right div.buy {
+	border: 1px solid rgb(255, 153, 0); text-align: center; clear: both; margin-top: 6mm;
+}
+.video div.info div.right div.buy div.text {
+	text-align: center; padding-top: 6px; padding-bottom: 4px; ddisplay: inline;
+}
+.video div.info div.right div.buy div.text form {
+	margin-top: 2mm; margin-bottom: 2mm;
+}
+.video div.info div.right div.buy div.text form input {
+	background: rgb(255, 153, 0); border-width: 2px; border-style: solid; border-color: rgb(255, 191, 0) rgb(178, 107, 0) rgb(178, 107, 0) rgb(255, 191, 0); margin: 0px; padding: 0px; width: 172px;
+}
+#lecture_container {
+	bborder: 1px solid #FF0000;
+}
+#lecture_body {
+	bborder: 1px solid #00FF00;
+}
+#id_ {
+	bborder: 1px solid #0000FF; bbackground-color: #0000FF;
+}
+.video div.info div.right div.download ul li.help a {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none; display: inline;
+}
+.video div.info div.right div.download ul li.help a:hover {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none; display: inline;
+}
+.video div.info div.right div.download ul li.help a:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none; display: inline;
+}
+.video div.info div.right div.download ul li.help a:active {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none; display: inline;
+}
+.course_lectures_see_video {
+	padding: 0px; color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; margin-bottom: 4pt; margin-left: 35px;
+}
+.course_lectures_see_video a {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.course_lectures_see_video a:hover {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.course_lectures_see_video a:visited {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.course_lectures_see_video a:active {
+	color: rgb(153, 0, 0); text-decoration: none;
+}
+.video_annotation {
+	padding-top: 0pt; padding-bottom: 4pt; margin-top: 0pt; margin-bottom: 2pt; border-bottom-color: rgb(255, 153, 0); border-bottom-width: 1px; border-bottom-style: solid; bborder: 1px solid #009900;
+}
+div.video_counter {
+	margin: 0pt; padding-left: 4pt; font-size: 8pt; float: right;
+}
+div.video_counter div.title {
+	display: inline;
+}
+div.video_counter div.value {
+	font-weight: bold; margin-left: 4pt; display: inline;
+}
+div.video_info {
+	color: rgb(51, 0, 102); font-size: 8pt; float: right;
+}
+div.video_info span.count {
+	font-weight: bold;
+}
+span.course_offline a {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+span.course_offline a:hover {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+span.course_offline a:visited {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+span.course_offline a:active {
+	color: rgb(153, 0, 0); font-weight: bold; text-decoration: none;
+}
+#lecture_content h1 {
+	font-size: 10pt;
+}
+#lecture_content ul {
+	color: rgb(51, 0, 102); padding-left: 0px; font-size: 8pt;
+}
+#lecture_content ul ul {
+	padding-left: 16px;
+}
+#lecture_content li {
+	margin-bottom: 2pt; list-style-type: none;
+}
+#lecture_content a {
+	text-decoration: none;
+}
+#lecture_content {
+	margin: 2pt 10pt 2pt 0pt; padding: 10pt; border: 1px solid rgb(170, 170, 170); width: 250px; float: left; background-color: rgb(249, 249, 249);
+}
+div.bannere240x400 {
+	margin-right: 0px; margin-left: 32px; float: right;
+}
+#lecture_content li div.time {
+	color: rgb(7, 103, 100); margin-right: 5px; margin-left: 10px; float: right; display: none;
+}
+td.td-content {
+	vertical-align: top;
+}
+td.td-player {
+	vertical-align: top;
+}
+div.button_subscribe {
+	height: 3em; vertical-align: bottom; position: relative;
+}
+div.diplama_course div.head {
+	text-align: left; color: rgb(153, 0, 0); font-size: 10pt; font-weight: normal; margin-top: 4pt; margin-bottom: 8pt; margin-left: 8pt;
+}
+div.button_subscribe form.course_form {
+	left: 0px; bottom: 0px; position: absolute;
+}
+div.diplamas2 {
+	margin-top: 4px; margin-bottom: 10px;
+}
+div.diplamas2 div.diplama_course {
+	height: 14em; margin-right: 8px; min-width: 195px; max-width: 265px;
+}
+div.diplamas2 div.diplama div.name {
+	width: 140px; color: black; font-size: 8pt; font-weight: normal; margin-right: 8px; float: left;
+}
+div.diplamas2 table {
+	vertical-align: top;
+}
+div.diplamas2 table tr {
+	vertical-align: top;
+}
+div.diplamas2 table tr td {
+	vertical-align: top;
+}
+div.diplamas2 div.name {
+	color: black; font-size: 8pt; font-weight: normal;
+}
+div.cell {
+	margin: 0.2em; padding: 0.2em; border: 1px solid blue;
+}
+td.plus {
+	width: 3em; text-align: center; color: rgb(153, 0, 0); padding-top: 2em; font-size: 16pt; font-weight: bold;
+}

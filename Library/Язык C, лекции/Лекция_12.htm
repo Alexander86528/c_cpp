@@ -1,0 +1,1508 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_12_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_12_files/mht81F7(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_12_files/mht81F7(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_12_files/mht81F7(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>12. Лекция: Файловый ввод/вывод в языке С: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            предполагается изучить базовые функции файловой системы языка 
+            программирования С. Научиться создавать, читать, записывать и 
+            модифицировать файлы. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_12_files/mht81F7(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Файл – это именованный объект, хранящий данные (программа 
+            или любая другая информация) на каком-либо носителе (дискета, 
+            винчестер, CD) [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+            target=_blank>12.1</A>].</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>В языке <B>С</B> файлом может быть все что угодно, 
+            начиная с дискового файла и заканчивая терминалом или принтером [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>]. Поток связывают с определенным файлом, 
+            выполняя операцию <SPAN class=xml_em_italic>открытия</SPAN>. Как 
+            только файл открыт, можно проводить обмен информацией между ним и 
+            программой.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Не у всех файлов одинаковые возможности. Например, к 
+            дисковому файлу прямой доступ возможен, в то время как к некоторым 
+            принтерам – нет. В языке <B>С</B> все потоки одинаковы, а файлы – 
+            нет [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>].</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4>Если файл может поддерживать запросы на местоположение 
+            (указатель текущей позиции), то при открытии такого файла указатель 
+            текущей позиции в файле устанавливается в начало. При чтении из 
+            файла (или записи в него) каждого символа указатель текущей позиции 
+            увеличивается, обеспечивая тем самым продвижение по файлу [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>].</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Файл отсоединяется от определенного потока (т.е. 
+            разрывается связь между файлом и потоком) с помощью операции <SPAN 
+            class=xml_em_italic>закрытия</SPAN>. При закрытии файла, открытого с 
+            целью вывода, содержимое (если оно есть) связанного с ним потока 
+            записывается на внешнее устройство. Этот процесс, который обычно 
+            называют <SPAN class=xml_em_italic>дозаписью</SPAN> потока, 
+            гарантирует, что никакая информация случайно не останется в буфере 
+            диска. Если программа завершает работу нормально, т.е. либо функция 
+            <SPAN class=texample>main()</SPAN> возвращает управление 
+            операционной системе, либо вызывается функция <SPAN 
+            class=texample>exit()</SPAN>, то все файлы закрываются 
+            автоматически. В случае аварийного завершения программы, например, в 
+            случае краха или завершения путем вызова функции <SPAN 
+            class=texample>abort()</SPAN>, файлы не закрываются [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>].</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_9>Файловая системы языка <B>С</B> предназначена для работы 
+            с самыми разнообразными устройствами, в том числе терминалами, 
+            дисками и накопителями на магнитной ленте. Даже если какое-то 
+            устройство сильно отличается от других, буферизованная файловая 
+            система все равно представит его в виде логического устройства, 
+            которое называется потоком. Потоки бывают двух видов: текстовые и 
+            двоичные [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>].</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10><SPAN class=xml_em_italic>Текстовый поток</SPAN> – это 
+            последовательность символов. В стандарте <B>С</B> считается, что 
+            текстовый поток организован в виде строк, каждая из которых 
+            заканчивается символом новой строки. Однако в конце последней строки 
+            этот символ не является обязательным. В текстовом потоке по 
+            требованию базовой среды могут происходить определенные 
+            преобразования символов. Например, символ новой строки может быть 
+            заменен парой символов – возврата каретки (например, <SPAN 
+            class=texample>\r</SPAN> ) и перевода строки (например, <SPAN 
+            class=texample>\n</SPAN> ), т.е. <SPAN 
+            class=texample>\r\n</SPAN>.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_14><SPAN class=xml_em_italic>Двоичные потоки</SPAN> – это 
+            последовательность байтов, которая взаимно однозначно соответствует 
+            байтам на внешнем устройстве, причем никакого преобразования 
+            символов не происходит [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>]. Кроме того, количество тех байтов, которые 
+            пишутся (читаются), и тех, которые хранятся на внешнем устройстве, 
+            одинаково. Однако в конце двоичного потока может добавляться 
+            определяемое приложением количество нулевых байтов. Такие нулевые 
+            байты, например, могут использоваться для заполнения свободного 
+            места в блоке памяти незначащей информацией, чтобы она в точности 
+            заполнила сектор на диске.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_15>Файловая система языка <B>С</B> состоит из нескольких 
+            взаимосвязанных функций [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>]. Самые распространенные из них показаны в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#table.12.1">табл. 
+            12.1</A>.</P>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <DIV id=id_16 class=xml_table_env><A name=table.12.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 12.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Функции файловой системы языка 
+                С</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>№ п/п</TH>
+                <TH bgColor=#d8d8d8>Имя функции</TH>
+                <TH bgColor=#d8d8d8>Что делает</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fopen()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открывает файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fclose()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Закрывает файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>putc()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Записывает символ в файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fputc()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>То же, что и <SPAN 
+                  class=texample>putc()</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>5.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>getc()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает символ из файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fgetc()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>То же, что и <SPAN 
+                  class=texample>getc()</SPAN></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>7.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fgets()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает строку из файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>8.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fputs()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Записывает строку в файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>9.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fseek()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает указатель текущей 
+                  позиции на определенный байт файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>10.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ftell()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает текущее значение 
+                  указателя текущей позиции в файле</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>11.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fprintf()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Для файла то же, что <SPAN 
+                  class=texample>printf()</SPAN> для консоли</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>12.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fscanf()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Для файла то же, что <SPAN 
+                  class=texample>scanf()</SPAN> для консоли</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>13.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>feof()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает значение <SPAN 
+                  class=texample>true</SPAN> (истина), если достигнут конец 
+                файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>14.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>ferror()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращает значение <SPAN 
+                  class=texample>true</SPAN> (истина), если произошла 
+              ошибка</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>15.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>rewind()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Устанавливает указатель текущей 
+                  позиции в начало файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>16.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>remove()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Стирает файл</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>17.</TD>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>fflush()</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Дозапись потока в 
+              файл</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_40>Для приведенных функций требуется подключить заголовок 
+            <SPAN class=texample>&lt;stdio.h&gt;</SPAN>. Запись или чтение из 
+            файла осуществляются с помощью указателя файла. <SPAN 
+            class=xml_em_italic>Указатель файла</SPAN> – это указатель на 
+            структуру типа <SPAN class=texample>FILE</SPAN>. Для объявления 
+            переменной–указателя файла, например, <SPAN 
+            class=texample>*fp</SPAN>, используется следующий оператор:</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <DIV class=example><PRE>FILE  *fp;</PRE></DIV>
+            <P id=id_45>Ключевое слово <SPAN class=texample>FILE</SPAN> 
+            определяет собой своеобразный тип данных, а указатель <SPAN 
+            class=texample>*fp</SPAN> указывает на этот тип.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <P id=id_48>Указатель файла указывает на структуру, содержащую 
+            различные сведения о файле, его имя, статус и указатель текущей 
+            позиции в начало файла [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>].</P>
+            <DIV id=mark_48 class=lecture_mark></DIV>
+            <P id=id_49><SPAN class=xml_em_italic>Открытие файла</SPAN> 
+            осуществляется с помощью функции <SPAN 
+            class=texample>fopen()</SPAN>, которая открывает поток и связывает с 
+            этим потоком определенный файл. Прототип функции <SPAN 
+            class=texample>fopen()</SPAN> такой:</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>FILE  *fopen(const char *file_name,  const char *mode);</PRE></DIV>
+            <P id=id_53>В прототипе функции <SPAN class=texample>fopen()</SPAN> 
+            формальные переменные имеют следующий смысл:</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_55><B>file_name</B> – это имя файла с заданным расширением 
+            и возможным путем расположения, <SPAN class=texample>mode</SPAN> – 
+            режим работы файла: чтение, запись и т.д. [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+            target=_blank>12.1</A>].</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <P id=id_57>В <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#table.12.2">табл. 
+            12.2</A>, взятой из [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>], приводятся допустимые значения режима для 
+            функции <SPAN class=texample>fopen()</SPAN>.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <DIV id=id_59 class=xml_table_env><A name=table.12.2></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 12.2. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Допустимые значения режима 
+                  функции <SPAN class=texample>fopen()</SPAN> </TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>№ п/п</TH>
+                <TH bgColor=#d8d8d8>Режим</TH>
+                <TH bgColor=#d8d8d8>Что означает</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>1.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>r</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открыть текстовый файл для 
+                  чтения</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>2.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>w</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Создать текстовый файл для 
+                  записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>3.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>a</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавить в конец текстового 
+                  файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>4.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>rb</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открыть двоичный файл для 
+                чтения</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>5.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>wb</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Создать двоичный файл для 
+                записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>6.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>ab</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавить в конец двоичного 
+                файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>7.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>r+</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открыть текстовый файл для 
+                  чтения/записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>8.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>w+</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Создать текстовый файл для 
+                  чтения/записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>9.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>a+</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавить в конец текстового 
+                  файла или создать текстовый файл для чтения/записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>10.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>r+b</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Открыть двоичный файл для 
+                  чтения/записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>11.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>w+b</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Создать двоичный файл для 
+                  чтения/записи</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>12.</TD>
+                <TD bgColor=#eaeaea vAlign=top><B>a+b</B></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавить в конец двоичного 
+                  файла или создать двоичный файл для 
+            чтения/записи</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_61>Например, для записи в файл с именем (и расширением) 
+            <B>data.txt</B> на диск <B>D</B> следует использовать такие 
+            объявление и операции:</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV class=example><PRE>FILE  *fp;
+fp = fopen("D: \\data.txt", "w");
+fprintf(fp, "\n\t hello, world\n");
+fclose(fp);</PRE></DIV>
+            <P id=id_63>В приведенном фрагменте <B>С</B> -кода функция <SPAN 
+            class=texample>fclose()</SPAN> закрывает поток, который был открыт с 
+            помощью вызова функции <SPAN class=texample>fopen()</SPAN>. Функция 
+            <SPAN class=texample>fprintf()</SPAN> осуществляет форматную запись 
+            (в данном случае строку <SPAN class=texample>hello</SPAN>, <SPAN 
+            class=texample>world</SPAN> ) в файл. Все манипуляции с файлом 
+            происходят между функциями <SPAN class=texample>fopen()</SPAN> и 
+            <SPAN class=texample>fclose()</SPAN>. Режим функции <SPAN 
+            class=texample>fopen()</SPAN> задается строкой <B>"w"</B>, которая 
+            обеспечивает создание текстового файла для записи. Это означает, что 
+            файл <B>data.txt</B> создается на диске <B>D</B> и в него 
+            записывается строка <SPAN class=texample>hello, world</SPAN> с 
+            отступом от верхнего края и с отступом (табуляцией) от левого 
+            края.</P>
+            <DIV id=mark_63 class=lecture_mark></DIV>
+            <P id=id_73>Прототип функции <SPAN class=texample>fclose()</SPAN> 
+            следующий:</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fclose(FILE *fp);</PRE></DIV>
+            <P id=id_76>В приведенной записи <SPAN class=texample>*fp</SPAN> – 
+            указатель файла, возвращенный в результате вызова функции <SPAN 
+            class=texample>fopen()</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>12.2</A>]. Возвращение нуля означает успешную операцию 
+            закрытия. В случае же ошибки возвращается <SPAN 
+            class=texample>EOF</SPAN>. Обычно отказ при выполнении функции <SPAN 
+            class=texample>fclose()</SPAN> происходит только тогда, когда диск 
+            был преждевременно удален из дисковода или на диске не осталось 
+            свободного места.</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_81>Правомочность открытия файла с помощью функции <SPAN 
+            class=texample>fopen()</SPAN> обычно подтверждается после проверки 
+            какой-либо ошибки, например, когда на диске нет места для записи или 
+            неправильного имени диска, причем эти ошибки будут обнаружены до 
+            того, как программа попытается в этот файл что-либо записать. 
+            Поэтому приведенный фрагмент <B>С</B> -кода будет правильным, если 
+            производится проверка возможности открытия файла:</P>
+            <DIV id=mark_81 class=lecture_mark></DIV>
+            <DIV class=example><PRE>FILE  *fp;
+          
+          if ((fp = fopen("D:\\data.txt", "w")) == NULL) { 
+          //exit(1);
+	printf("\n\t Error! Can not open file\n ");
+	printf("\n Press any key: ");
+          _getch();      return 0;  }
+
+fprintf(fp, "\n\t hello, world\n");
+fclose(fp);</PRE></DIV>
+            <P id=id_84>При выполнении условия проверки можно выходить при 
+            нажатии любой клавиши с заданным сообщением или немедленный выход 
+            сделать с помощью функции <SPAN class=texample>exit()</SPAN>, 
+            которая в данном фрагменте <B>С</B> -кода закомментирована.</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_86>Функции для работы с текстовыми файлами удобно 
+            использовать при создании текстовых файлов, ведении 
+            файлов-протоколов и т.п. Но при создании баз данных целесообразно 
+            использовать функции для работы с бинарными файлами: <SPAN 
+            class=texample>fwrite()</SPAN> и <SPAN 
+            class=texample>fread()</SPAN>. Эти функции без каких-либо изменений 
+            копируют выделенный блок данных из оперативной памяти в файл и, 
+            соответственно, из файла – в память [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#14" 
+            target=_blank>12.1</A>].</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_89>При записи или чтении суффикс <SPAN 
+            class=texample>"t"</SPAN> открывает файл в текстовом режиме. В этом 
+            режиме символ <B>CTRL+Z</B> (символ с кодом 26) обрабатывается как 
+            символ конца файла. Кроме того, комбинации символов перевода строки 
+            и возврата каретки преобразуются в единственный символ перевода 
+            строки ( <SPAN class=texample>'\n'</SPAN> ) при вводе, и символы 
+            перевода строки преобразуются в комбинации символов перевода строки 
+            и возврата каретки при выводе.</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_92>Суффикс <SPAN class=texample>"b"</SPAN> открывает файл в 
+            бинарном режиме, преобразования символов перевода строки и возврата 
+            каретки не производятся.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <DIV class=example><PRE>FILE  *fp;
+            if ((fp = fopen("D:\\data.txt", "w")) == NULL) { 
+          //exit(1);
+	printf("\n\t Error! Can not open file\n ");
+	printf("\n Press any key: ");
+          _getch();  return -1;  }
+fprintf(fp, "\n\t hello, world\n");
+fclose(fp);</PRE></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_94><B>Пример 1</B>. Напишите программу заполнения матрицы 
+            размера n <IMG style="POSITION: relative; DISPLAY: inline; TOP: 4px" 
+            alt=\times src="Лекция_12_files/mht8238(1).tmp" width=20 height=16> 
+            m нечетными целыми числами с выводом результата на консоль и в 
+            текстовый файл. Размеры матрицы и начальное нечетное число задаются 
+            пользователем с клавиатуры.</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <P id=id_96>Программный код решения примера:</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void) {
+int i, j, x, xi, n, m, *matr;
+FILE *fid;
+char str[] = "D:\\data.txt"; // месторасположение файла
+if ((fid = fopen(str, "w")) == NULL){
+	printf("\n\t The file could not be opened.\n ");
+	printf("\n Press any key: ");
+_getch(); return 0; }
+
+printf("\n\t Enter the number of lines: "); scanf_s("%d", &amp;n);
+printf("\t Enter the number of columns: "); scanf_s("%d", &amp;m);
+printf("\t Enter the odd number: "); scanf_s("%d", &amp;x);
+xi = x;
+
+matr = (int *)calloc(n*m, sizeof(int));
+// Заполнение матрицы целыми числами
+for (i = 0; i &lt; n; ++i)
+for (j = 0; j &lt; m; ++j)
+{matr[i*m + j] = x; x += 2; }
+
+printf("\n\t Matrix (%d x %d), initial number: %d\n", n, m, xi);
+fprintf(fid, "\r\n\t Matrix (%d x %d), initial number: %d\r\n", n, m, xi);
+for (i = 0; i &lt; n; ++i){
+	printf("\n "); fprintf(fid, "\r\n ");
+	for (j = 0; j &lt; m; ++j){
+printf("%5d", matr[i*m + j]); 
+fprintf(fid, "%5d", matr[i*m + j]); }
+}
+
+fclose(fid);
+printf("\n\n Result of record look in file %s\n", str);
+
+printf("\n Press any key: ");
+_getch();
+return 0;
+  }</PRE></DIV>
+            <P id=id_98>В программу включена препроцессорная директива <SPAN 
+            class=texample>#define..</SPAN>. для устранения предупреждения о 
+            ненадежной работе функции <SPAN class=texample>fopen()</SPAN> в 
+            Visual Studio 2008.</P>
+            <DIV id=mark_98 class=lecture_mark></DIV>
+            <P id=id_101>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.1">рис. 
+            12.1</A>.</P>
+            <DIV id=mark_101 class=lecture_mark></DIV>
+            <P id=id_102 align=left><A name=image.12.1></A></P>
+            <DIV><IMG alt="Заполнение матрицы нечетными числами" 
+            src="Лекция_12_files/mht825A(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.1.</B>&nbsp; Заполнение матрицы 
+            нечетными числами
+            <P></P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_103>Текстовый файл с заполненной матрицей показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.2">рис. 
+            12.2</A>.</P>
+            <DIV id=mark_103 class=lecture_mark></DIV>
+            <P id=id_104 align=left><A name=image.12.2></A></P>
+            <DIV><IMG alt="Матрица нечетных чисел в текстовом файле" 
+            src="Лекция_12_files/mht825A(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.2.</B>&nbsp; Матрица нечетных чисел 
+            в текстовом файле
+            <P></P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_105><B>Примечание</B>. В текстовом файле следует 
+            использовать моноширинный (равноширинный) шрифт, например, Courier 
+            New.</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_106><B>Задание 1</B></P>
+            <DIV id=mark_106 class=lecture_mark></DIV>
+            <OL id=id_107>
+              <LI>Вместо функции <SPAN class=texample>calloc()</SPAN> примените 
+              функцию <SPAN class=texample>malloc()</SPAN>.
+              <LI>Найдите сумму элементов столбцов матрицы. Результат запишите 
+              под матрицей.
+              <LI>Произведите заполнение матрицы нечетными числами по столбцам.
+              <LI>Запишите сформированную матрицу в файл с расширениями 
+              <B>.doc</B>, <B>.xls</B>, <B>.rtf</B>, <B>.csv</B>. Просмотрите 
+              полученные файлы.
+              <LI>Сформируйте матрицу из четных чисел размером (3*Х) <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_12_files/mht8238(1).tmp" width=20 height=16> (4*Х), 
+              результат выведите в текстовый файл с именем compX.txt, где Х – 
+              номер компьютера, за которым выполняется лабораторная 
+            работа.</LI></OL>
+            <DIV id=mark_107 class=lecture_mark></DIV>
+            <P id=id_116><B>Пример 2</B>. Напишите программу посимвольной записи 
+            в текстовый файл некоторой строки, набранной на консоли, и 
+            посимвольного чтения из текстового файла с перезаписью в другой 
+            текстовый файл.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_117>В качестве строки возьмем "hello, world". Для 
+            посимвольной записи в файл используем функции <SPAN 
+            class=texample>putc()</SPAN> и <SPAN class=texample>fputc()</SPAN>, 
+            которые реализованы для сохранения совместимости со старыми версиями 
+            языка <B>С</B>. Для прекращения чтения символов с клавиатуры 
+            используем точку, т.е. <SPAN class=texample>'.'</SPAN>.</P>
+            <DIV id=mark_117 class=lecture_mark></DIV>
+            <P id=id_121>Программный код решения примера:</P>
+            <DIV id=mark_121 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void){
+char ch; FILE *f_in, *f_out;
+char str[] = "D:\\data.txt"; // Файл записи
+char str2[] = "D:\\data2.txt";// Файл перезаписи
+
+if ((f_in = fopen(str, "w")) == NULL){
+	printf("\n\t The file could not be opened.\n ");
+	printf("\n Press any key: ");
+_getch(); return 0;}
+
+printf("\n Enter the characters by pressing Enter and exit point:\n\n&gt; ");
+
+while ((ch = getchar()) != '.')
+{ printf(" "); fputc(ch, f_in);}
+fclose(f_in);
+
+if ((f_in = fopen(str, "r")) == NULL){
+	printf("\n\t The file could not be opened.\n ");
+	printf("\n Press any key: ");
+_getch(); return 0; }
+
+if ((f_out = fopen(str2, "w")) == NULL){
+	printf("\n\t The file could not be opened.\n ");
+	printf("\n Press any key: ");
+_getch(); return 0;}
+
+while((ch = getc(f_in)) != EOF) putc(ch, f_out);
+
+fclose(f_in);
+fclose(f_out);
+
+printf("\n\n Result of record look in file %s\n", str);
+printf(" Result of rewriting look in file %s\n", str2);
+
+printf("\n Press any key: ");
+_getch();
+return 0; 
+}</PRE></DIV>
+            <P id=id_123>В программе сначала открывается файл <B>data.txt</B> 
+            для записи в него символов, затем он закрывается. После этот же файл 
+            открывается для считывания записанных символов с целью записи их в 
+            другой файл, под именем <B>data2.txt</B>. Всякий раз производится 
+            проверка возможности открытия файлов. Запись символов в текстовый 
+            файл выполняется с помощью функций <SPAN 
+            class=texample>putc()</SPAN> и <SPAN class=texample>fputc()</SPAN>. 
+            Считывание символов из файла осуществляется с помощью функции <SPAN 
+            class=texample>getc()</SPAN>.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_127>В среде Visual Studio стандартная функция <SPAN 
+            class=texample>fopen()</SPAN> языка <B>С</B> вызывает предупреждение 
+            при компиляции программы. Для устранения предупреждений при 
+            компиляции в программу включена препроцессорная директива <SPAN 
+            class=texample>#define_CRT_SECURE_NO_WARNINGS</SPAN>.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV>
+            <P id=id_130>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.3">рис. 
+            12.3</A>.</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_131 align=left><A name=image.12.3></A></P>
+            <DIV><IMG alt="Консольный ввод символов для записи в файл" 
+            src="Лекция_12_files/mht827D(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.3.</B>&nbsp; Консольный ввод 
+            символов для записи в файл
+            <P></P>
+            <DIV id=mark_131 class=lecture_mark></DIV>
+            <P id=id_132><B>Задание 2</B></P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <OL id=id_133>
+              <LI>Проверьте функцию <SPAN class=texample>fgetc()</SPAN> для 
+              чтения символов из файла.
+              <LI>Посимвольную запись в текстовый файл строки "hello, world" 
+              осуществите с предварительной инициализацией соответствующего 
+              символьного массива.
+              <LI>Программу выполните для записи в текстовые файлы с фамилией 
+              пользователя.
+              <LI>Подготовьте текстовый файл со своей фамилией, именем, номера 
+              группы и специальности. Выполните чтение символов из этого файла с 
+              выводом на консоль и перезаписи в другой файл. Имя файла примите 
+              за compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа.
+              <LI>Запишите в текстовый файл прописные буквы латинского алфавита 
+              и их коды.</LI></OL>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_140><SPAN class=texample>Пример 3</SPAN>. Напишите 
+            программу чтения из текстового файла массива строк, вывода этих 
+            строк на консоль и записи их в другой файл.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_142>Для решения примера используем функции <SPAN 
+            class=texample>fgets()</SPAN> – для чтения строк из текстового 
+            файла, <SPAN class=texample>fputs()</SPAN> – для записи строк в 
+            текстовый файл. Содержание текстового файла для считывания – это 
+            обложка книги [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>12.3</A>]:</P>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <DIV class=example><PRE>============================================= 
+   THE
+_____________________________________________
+    C  
+_____________________________________________
+
+ PROGRAMMING
+  LANGUAGE
+=============================================
+ Second Edition
+
+ BRIAN W. KERIGHAN
+ DENNIS M. RITCHIE
+
+ AT &amp; T Bell Laboratories
+ Murray Hill, New Jersey
+
+ Prentice Hall PTR, Upper Saddle River, New Jersey 07458
+_________________________________________________________</PRE></DIV>
+            <P id=id_146>Файлу, из которого будет считываться информация, 
+            присвоим имя <B>data3.txt</B>. Файлу, куда будет записываться 
+            информация, присвоим имя <B>data33.txt</B>.</P>
+            <DIV id=mark_146 class=lecture_mark></DIV>
+            <P id=id_147>Программный код решения примера:</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main(void){
+char str[255+1];
+char data3[] = "D:\\data3.txt";
+char data33[] = "D:\\data33.txt";
+FILE *fid, *fid2;
+errno_t err;
+
+if ((fopen_s(&amp;fid, "D:\\data3.txt", "r")) || 
+    (err = fopen_s(&amp;fid2, "D:\\data33.txt", "w")) != 0)
+{ printf("\n\t The file could not be opened.\n ");
+printf("\n Press any key: ");
+ _getch(); 
+return 0; }
+
+while (fgets(str, 255, fid) != NULL) // Чтение из data3.txt
+{fputs(str, stdout); // Вывод на консоль
+fputs(str, fid2); // Запись в файл data33.txt
+} 
+fclose(fid); 
+fclose(fid2);
+
+printf(" Read the information was produced from a file %s\n", data3);
+
+printf(" Recorded information has been made to the file %s\n", data33);
+
+   printf("\n Press any key: ");
+   _getch();
+   return 0; 
+}</PRE></DIV>
+            <P id=id_149>В программе с помощью логического условия ИЛИ ( <SPAN 
+            class=texample>||</SPAN> ) производится проверка корректности 
+            открытия файла <B>data3.txt</B> для чтения и проверка открытия файла 
+            <B>data33.txt</B> для записи. Вместо функции <SPAN 
+            class=texample>fopen()</SPAN> используется функция <SPAN 
+            class=texample>fopen_s()</SPAN>, которая применяется в MS Visual 
+            Studio.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_153>Функция <SPAN class=texample>fgets()</SPAN> считывает 
+            строки из файла, на который имеется файловый указатель <SPAN 
+            class=texample>*fid</SPAN>, записывает их в символьный массив <SPAN 
+            class=texample>str[256]</SPAN>. Одно поле функции <SPAN 
+            class=texample>fgets()</SPAN> используется для определения 
+            количества считываемых символов с учетом символа завершения 
+            строки.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_158>Первая функция <SPAN class=texample>fputs()</SPAN> 
+            используется для вывода информации на консоль с помощью определения 
+            стандартного выходного потока <SPAN class=texample>stdout</SPAN>, 
+            который указывает на "обычное" средство вывода – дисплей. Вторая 
+            функция <SPAN class=texample>fputs()</SPAN> выводит символьный 
+            массив <SPAN class=texample>str[]</SPAN> в файл <B>data33.txt</B> с 
+            помощью файлового указателя <SPAN class=texample>*fid2</SPAN>. Вывод 
+            на дисплей и запись в файл будет осуществляться до тех пор, пока при 
+            чтении из файла <B>data3.txt</B> не обнаружится признак конца файла, 
+            т.е. <SPAN class=texample>NULL</SPAN>. Проверку можно выполнять 
+            также по числу считанных символов, а именно <SPAN 
+            class=xml_em_italic>n</SPAN> –1, т.е. в данном случае 255 символов 
+            из 256.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_165>Результат выполнения программы с выводом текстовой 
+            информации на консоль показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.4">рис. 
+            12.4</A>.</P>
+            <DIV id=mark_165 class=lecture_mark></DIV>
+            <P id=id_166 align=left><A name=image.12.4></A></P>
+            <DIV><IMG alt="Консольный вывод содержимого текстового файла" 
+            src="Лекция_12_files/mht828F(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.4.</B>&nbsp; Консольный вывод 
+            содержимого текстового файла
+            <P></P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_167>Результат записи информации в текстовый файл показан на 
+            <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.5">рис. 
+            12.5</A>.</P>
+            <DIV id=mark_167 class=lecture_mark></DIV>
+            <P id=id_168 align=left><A name=image.12.5></A></P>
+            <DIV><IMG 
+            alt="Результат записи текстовой информации в текстовый файл" 
+            src="Лекция_12_files/mht82B1(1).tmp" width=620 
+            height=420></DIV><BR><B>Рис. 12.5.</B>&nbsp; Результат записи 
+            текстовой информации в текстовый файл
+            <P></P>
+            <DIV id=mark_168 class=lecture_mark></DIV>
+            <P id=id_169><B>Задание 3</B></P>
+            <DIV id=mark_169 class=lecture_mark></DIV>
+            <OL id=id_170>
+              <LI>Подсчитайте число итераций, выполняемых функцией <SPAN 
+              class=texample>while()</SPAN>.
+              <LI>Вывод на консоль выполните с помощью функции <SPAN 
+              class=texample>printf()</SPAN>, а запись в файл – с помощью 
+              функции <SPAN class=texample>fprintf()</SPAN>.
+              <LI>Напишите программу ввода строк с клавиатуры и записи введенной 
+              информации в текстовый файл с именем compX.txt, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа. В качестве 
+              вводимой информации используйте: свою фамилию, имя, число, месяц и 
+              год рождения, специальность, на которой вы учитесь, номер группы.
+              <LI>Напишите программу записи в текстовый файл compX.txt матрицы 
+              вещественных случайных чисел из интервала [–X; X]. Произведите 
+              считывание матрицы из файла с выводом ее значений на консоль и 
+              записью еще в другой текстовый файл. Размер матрицы примите n <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+              src="Лекция_12_files/mht8238(1).tmp" width=20 height=16> m, где 
+              <SPAN class=xml_em_italic>n</SPAN> = 3*Х, m=2*X, где Х – номер 
+              компьютера, за которым выполняется лабораторная работа.
+              <LI>Напишите программу записи в текстовый файл символьного 
+              массива, состоящего из четырех строк и необходимого количества 
+              столбцов для записи строчных букв латинского алфавита (количество 
+              букв равно 26).</LI></OL>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_180><B>Примечание</B>. Для п.5 задания 3 примените массив 
+            указателей для считывания строк разной длины.</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <P id=id_181><B>Пример 4</B>. Напишите программу форматированной 
+            записи в текстовый файл трех строк различной длины и одномерного 
+            целочисленного массива. Произведите чтение из текстового файла с 
+            выводом его содержания на консоль и преобразования одномерного 
+            массива в двухмерный.</P>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_182>Для решения примера используем функции <SPAN 
+            class=texample>fprintf()</SPAN>, <SPAN 
+            class=texample>fgets()</SPAN>, <SPAN class=texample>atoi()</SPAN>, 
+            <SPAN class=texample>fscanf()</SPAN>.</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_187>Программный код решения примера:</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define n 4 // Число строк матрицы
+#define m 3 // Число столбцов матрицы
+#define N 123 // Число считываемых строк из текстового файла
+
+int main(void) {
+	int i, j = 0;
+	int A[n*m] = {1,2,3,4,5,6,7,8,9,10,11,12};
+	int B[n*m];
+	FILE *fid;
+    char *str[] = {"aza","baza","qwerty"};
+    char str2[N][80]; // Буферный массив
+	
+	// Обнуление массива B[n*m]
+	for (i = 0; i &lt; n*m; ++i) B[i] = 0;
+
+	if ((fid = fopen("D:\\data4.txt", "w")) == NULL)
+{printf("\n\t The file could not be opened.\n ");
+printf("\n Press any key: "); _getch(); return 0; }
+
+// Запись в файл data4.txt
+fprintf(fid, "\n\t The lines are:\n");
+for (i = 0; i &lt; m; ++i) fprintf(fid,"\t %s\n", str[i]); 
+	
+ for (i = 0; i &lt; n*m; ++i)
+ fprintf(fid, " %3d", A[i]);
+
+fclose(fid); 
+
+printf("\n\t From file \"data4.txt\":\n");
+if ((fid = fopen("D:\\data4.txt", "r")) == NULL)
+{printf("\n\t The file could not be opened.\n ");
+printf("\n Press any key: "); _getch(); return 0; }
+
+// Чтение из файла data4.txt
+for (i = 0; (fgets(str2[i], 80, fid) != NULL) &amp;&amp; (i &lt; N); ++i) 
+	printf("  %s",str2[i]);
+fclose(fid);
+
+if ((fid = fopen("D:\\data4.txt", "r")) == NULL)
+{printf("\n\t Error! You can not open the file \n ");
+printf("\n Press any key: "); _getch(); return 0; }
+// Повторное чтение из файла data4.txt
+for (i = 0; fscanf (fid, "%s", str2[i]) != EOF; ++i) 
+if (atoi(str2[i]))
+{ B[j] = atoi(str2[i]); ++j; }
+ 
+fclose(fid);
+
+printf("\n\n\t The reconfigured array:\n");
+for (i = 0; i &lt; n; ++i) {
+printf("\n\t");
+for (j = 0; j &lt; m; ++j)
+printf("%5d", B[i*m+j]); } 
+
+printf("\n\n Press any key: ");
+_getch();
+ return 0;
+ }</PRE></DIV>
+            <P id=id_189>Для форматированной записи в текстовый файл и чтения из 
+            файла применены массивы указателей <SPAN 
+            class=texample>*str[]</SPAN>, <SPAN 
+            class=texample>str2[123][80]</SPAN>. Чтение из файла одномерного 
+            массива целых чисел выполняется с помощью функции <SPAN 
+            class=texample>atoi()</SPAN>, значения целых чисел заносятся сначала 
+            в одномерный массив <SPAN class=texample>B[n*m]</SPAN>. После 
+            закрытия файла <B>data4.txt</B> одномерный массив <SPAN 
+            class=texample>B[n*m]</SPAN> выводится на консоль в виде двухмерной 
+            матрицы размера 4 <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 4px" alt=\times 
+            src="Лекция_12_files/mht8238(1).tmp" width=20 height=16> 3. 
+            Форматированная запись строк и одномерного массива в файл 
+            <B>data4.txt</B> производится с помощью функции <SPAN 
+            class=texample>fprintf()</SPAN>. Первое чтение информации из 
+            текстового файла производится с помощью функции <SPAN 
+            class=texample>fgets()</SPAN>, что позволяет практически точно 
+            копировать расположение строк текстового файла на консоль (дисплей). 
+            Функция <SPAN class=texample>fscanf()</SPAN> используется для 
+            форматированного чтения информации из текста с посл едующим 
+            выделением целых чисел с помощью функции <SPAN 
+            class=texample>atoi()</SPAN>.</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_200>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.6">рис. 
+            12.6</A>.</P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_201 align=left><A name=image.12.6></A></P>
+            <DIV><IMG 
+            alt="Содержимое текстового файла и преобразованного массива" 
+            src="Лекция_12_files/mht82E3(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.6.</B>&nbsp; Содержимое текстового 
+            файла и преобразованного массива
+            <P></P>
+            <DIV id=mark_201 class=lecture_mark></DIV>
+            <P id=id_202><B>Задание 4</B></P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <OL id=id_203>
+              <LI>Для вывода информации из текстового файла поочередно 
+              используйте функции <SPAN class=texample>fgets()</SPAN> и <SPAN 
+              class=texample>fscanf()</SPAN>.
+              <LI>Инициализацию массива <B>А</B> выполните как инициализацию 
+              двухмерной матрицы с возможными сочетаниями числа строк и 
+столбцов.
+              <LI>В качестве строк разной длины используйте свою фамилию, имя, 
+              специальность и номер учебной группы.
+              <LI>Массивы чисел определите как вещественные.
+              <LI>Размерность массива задайте с клавиатуры и заполните его 
+              натуральными числами по строкам. Предусмотрите проверку 
+              возможности преобразования одномерного массива в двухмерный 
+              массив. Если возможно преобразование одномерного массив, то 
+              выполните вывод двухмерного массива в текстовый файл с именем 
+              compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа.</LI></OL>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <P id=id_211><B>Пример 5</B>. Напишите программу добавления слов в 
+            текстовый файл с контролем на консоли [9].</P>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <P id=id_212>В текстовый файл запишем название книги и авторов [3]. 
+            После будем добавлять слова, символы и т.д.</P>
+            <DIV id=mark_212 class=lecture_mark></DIV>
+            <P id=id_213>Для программного решения примера используем функции 
+            файлового ввода/вывода <SPAN class=texample>fprintf()</SPAN>, <SPAN 
+            class=texample>fgets()</SPAN> и <SPAN 
+            class=texample>rewind()</SPAN>. Кроме того, подключим библиотеку 
+            <B>locale.h</B> и объявим прототип функции, что позволит 
+            использовать шрифты русского алфавита:&gt;</P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;locale.h&gt;
+    setlocale( LC_ALL, "Russian");</PRE></DIV>
+            <P id=id_218>или</P>
+            <DIV id=mark_218 class=lecture_mark></DIV>
+            <P id=id_219>setlocale( LC_ALL, ".1251");//кодовая страница 
+            Windows–1251</P>
+            <DIV id=mark_219 class=lecture_mark></DIV>
+            <P id=id_220>Программный код решения примера:</P>
+            <DIV id=mark_220 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;locale.h&gt;
+#define MAX 40
+
+int main(void) {
+		FILE *fid;
+    char words[MAX+1];
+char str_name[] = "D:\\data5.txt";
+// Прототип функции поддержки русских шрифтов
+	setlocale( LC_ALL, "Russian");
+// setlocale( LC_ALL, ".1251");
+	
+         if ((fid = fopen(str_name, "a+")) == NULL)
+{fprintf(stdout, "\n\t Файл не может быть открыт \"%s\".\n ", str_name); 
+  printf("\n Нажмите любую клавишу: ");
+_getch(); return -1; }
+printf("\n\t Введите слова для включения их в файл \"%s\"\n\t\
+и нажмите клавишу Enter в начале строки для завершения ввода\n\t: ", str_name);
+	// Запись в файл data5.txt
+while (gets_s(words, MAX) != NULL &amp;&amp; words[0] != '\0')
+{printf("\t: "); fprintf(fid," %s\n", words); }
+
+puts("\t Содержимое файла:");
+// Устанавливает указатель текущей позиции в начало файла
+rewind(fid); 
+
+// Сканирование файла
+while (fgets(words, MAX, fid) != '\0')
+	printf("\t%s", words);
+
+if (fclose(fid) != 0)
+fprintf(stderr, "\n\t Ошибка при закрытии файла \"%s\"\n", str_name);
+
+printf("\n\n Нажмите любую клавишу (Press any key): ");
+	_getch(); 
+	return 0; 
+}</PRE></DIV>
+            <P id=id_222>В программе введены две проверки: на открытие файла 
+            <SPAN class=texample>if (... == NULL)</SPAN> и на закрытие файла 
+            <SPAN class=texample>if (... != 0)</SPAN>. Эти проверки позволяют 
+            исключить аварийный выход из программы. Использование в функции 
+            форматного вывода <SPAN class=texample>fprintf()</SPAN> ключевого 
+            слова <SPAN class=texample>stdout</SPAN> позволяет выводить 
+            сообщения на консоль – дисплей пользователя.</P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <P id=id_227>Вместо стандартной функции <SPAN 
+            class=texample>gets()</SPAN> использована функция <SPAN 
+            class=texample>gets_s()</SPAN>, которую поддерживает MS Visual 
+            Studio. При работе в MS Visual Studio с функцией <SPAN 
+            class=texample>gets()</SPAN> появляются предупреждения (которыми в 
+            общем случае можно пренебречь). Предупреждения возникают и при 
+            работе с функцией <SPAN class=texample>fopen()</SPAN>. Вместо нее 
+            можно использовать <SPAN class=texample>fopen_s()</SPAN> в следующем 
+            формате записи:</P>
+            <DIV id=mark_227 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fopen_s(&amp;fid, "D:\\data5.txt","a+");</PRE></DIV>
+            <P id=id_234>Тогда проверку на открытие файла следует изменить, 
+            например:</P>
+            <DIV id=mark_234 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (fopen_s(&amp;fid, "D:\\data5.txt","a+"))
+{fprintf(stdout, "\n\t Ошибка! Не удается открыть файл \"data5.txt\".\n ");
+printf("\n Нажмите любую клавишу: ");
+_getch(); return -1; }</PRE></DIV>
+            <P id=id_236>Если файл <B>data5.txt</B> сохранить, то при 
+            последующих выполнениях программы в этот файл будут дописывать 
+            данные. Это обеспечивает режим <SPAN class=texample>"a+"</SPAN> 
+            функции <SPAN class=texample>fopen()</SPAN>.</P>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <P id=id_239>Возможный результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.7">рис. 
+            12.7</A>.</P>
+            <DIV id=mark_239 class=lecture_mark></DIV>
+            <P id=id_240 align=left><A name=image.12.7></A></P>
+            <DIV><IMG alt="Пример записи в файл и чтения из файла" 
+            src="Лекция_12_files/mht82F6(1).tmp" width=620 
+            height=692></DIV><BR><B>Рис. 12.7.</B>&nbsp; Пример записи в файл и 
+            чтения из файла
+            <P></P>
+            <DIV id=mark_240 class=lecture_mark></DIV>
+            <P id=id_241><B>Задание 5</B></P>
+            <DIV id=mark_241 class=lecture_mark></DIV>
+            <OL id=id_242>
+              <LI>В программу при записи в файл и чтения из файла введите свою 
+              фамилию, имя, отчество, курс обучения, специальность.
+              <LI>В программе используйте функцию <SPAN 
+              class=texample>fopen_s()</SPAN> вместо функции <SPAN 
+              class=texample>fopen()</SPAN>. Отметьте результат компиляции.
+              <LI>В программу вместо функции <SPAN class=texample>fgets()</SPAN> 
+              включите функцию <SPAN class=texample>fscanf()</SPAN>. Отметьте 
+              результат записи и чтения нескольких строк, состоящих из 
+              нескольких слов.</LI></OL>
+            <DIV id=mark_242 class=lecture_mark></DIV>
+            <P id=id_250><B>Примечание</B>. Для данной программы формат записи 
+            функции <SPAN class=texample>fscanf()</SPAN>:</P>
+            <DIV id=mark_250 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fscanf(fid, "%s", words);</PRE></DIV>
+            <P id=id_253><B>Пример 6</B>. Напишите программу записи в файл 
+            нескольких строк и отображения содержимого файла в обратном порядке, 
+            как на консоли, так и в другом текстовом файле.</P>
+            <DIV id=mark_253 class=lecture_mark></DIV>
+            <P id=id_254>Для решения примера используем функции <SPAN 
+            class=texample>fseek()</SPAN> и <SPAN 
+            class=texample>ftell()</SPAN>.</P>
+            <DIV id=mark_254 class=lecture_mark></DIV>
+            <P id=id_257>Программный код решения примера:</P>
+            <DIV id=mark_257 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define MAX 79
+#define file "D:\\data6.txt" // запись в прямом порядке
+#define file2 "D:\\data66.txt" // запись в обратном порядке
+
+int main(void) {
+	char  ch, str[MAX+1];
+	long n, m;
+    FILE *fid, *fid2;
+	
+	if ( fopen_s(&amp;fid, file, "w") ) {
+fprintf(stdout, "\n\t The file could not be opened.\n ");
+printf("\nPress any key: ");
+_getch(); return 0; }
+
+	printf("\n\t Enter a few lines and press Enter to complete before the new line\n\t: ");
+	// Запись в файл data6.txt
+while (gets_s(str, MAX) != NULL &amp;&amp; str[0] != '\0')
+{ printf("\t: "); fprintf(fid," %s\n", str); }
+
+fclose(fid); 
+
+if ( fopen_s(&amp;fid, file, "r") ) {
+fprintf(stdout, "\n\t File could not be opened.\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+if ( fopen_s(&amp;fid2, file2, "w") ) {
+fprintf(stdout, "\n\t File could not be opened.\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+//Переход в конец файла
+fseek(fid, 0L, SEEK_END);
+m = ftell(fid);
+
+for (n = 1L; n &lt;= m; n++) {
+fseek(fid, -n, SEEK_END);
+ch = getc(fid);
+
+if (ch != '\n') {
+	printf(" ");  putchar(ch);  
+fprintf(fid2, " "); putc(ch, fid2); } 
+} // End for
+putchar('\n');
+
+fclose(fid);
+fprintf(fid2, "%c", '\n');
+fclose(fid2);
+
+printf("\n Result see the files, \"%s\" and \"%s\"\n", file, file2);
+
+printf("\n Press any key: ");
+	_getch(); 
+	return 0; 
+}</PRE></DIV>
+            <P id=id_259>Работу функций <SPAN class=texample>fseek()</SPAN> и 
+            <SPAN class=texample>ftell()</SPAN> опишем в соответствии с [9].</P>
+            <DIV id=mark_259 class=lecture_mark></DIV>
+            <P id=id_262>Функция <SPAN class=texample>fseek()</SPAN> имеет 
+            следующую форматную запись:</P>
+            <DIV id=mark_262 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fseek(fid, 0L, SEEK_END);</PRE></DIV>
+            <P id=id_265>Она определяет позицию со смещением в 0 байт от конца 
+            файла (именованная константа <SPAN class=texample>SEEK_END</SPAN> ). 
+            Суффикс <B>L</B> означает тип <SPAN class=texample>long 
+            int</SPAN>.</P>
+            <DIV id=mark_265 class=lecture_mark></DIV>
+            <P id=id_268>Строка с функцией <SPAN class=texample>ftell()</SPAN> 
+            определяет количество байтов от начала до конца указанного файла. 
+            Это количество байтов записывается в переменную <B>m</B>:</P>
+            <DIV id=mark_268 class=lecture_mark></DIV>
+            <DIV class=example><PRE>m = ftell(fid);</PRE></DIV>
+            <P id=id_271>Рассмотрим следующий программный цикл:</P>
+            <DIV id=mark_271 class=lecture_mark></DIV>
+            <DIV class=example><PRE>for (n = 1L; n &lt;= m; n++) {
+fseek(fid, -n, SEEK_END);
+ch = getc(fid);
+if (ch != '\n')
+{ printf(" ");  putchar(ch);  
+fprintf(fid2, " "); putc(ch, fid2); } 
+} // End for</PRE></DIV>
+            <P id=id_273>Первое выполнение цикла выводит программу на первый 
+            символ перед концом файла. Затем программа печатает этот символ на 
+            консоль и записывает в новый файл с именем <B>data66.txt</B>. 
+            Следующая итерация цикла выводит программу на предпоследний символ 
+            файла, который она печатает и записывает в новый файл. Этот процесс 
+            продолжается до тех пор, пока программа не выйдет на первый символ 
+            файла и не распечатает его (и запишет в файл).</P>
+            <DIV id=mark_273 class=lecture_mark></DIV>
+            <P id=id_274>Возможные результаты выполнения программы показаны на 
+            <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.8">рис. 
+            12.8</A>-<A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.9">рис. 
+            12.9</A>–<A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.10">рис. 
+            12.10</A>.</P>
+            <DIV id=mark_274 class=lecture_mark></DIV>
+            <P id=id_275 align=left><A name=image.12.8></A></P>
+            <DIV><IMG alt="Результат обратного считывания информации из файла" 
+            src="Лекция_12_files/mht8318(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.8.</B>&nbsp; Результат обратного 
+            считывания информации из файла
+            <P></P>
+            <DIV id=mark_275 class=lecture_mark></DIV>
+            <P id=id_276 align=left><A name=image.12.9></A></P>
+            <DIV><IMG alt="Результат записи информации в файл" 
+            src="Лекция_12_files/mht8318(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.9.</B>&nbsp; Результат записи 
+            информации в файл
+            <P></P>
+            <DIV id=mark_276 class=lecture_mark></DIV>
+            <P id=id_277 align=left><A name=image.12.10></A></P>
+            <DIV><IMG 
+            alt="Результат записи информации в файл в обратном порядке" 
+            src="Лекция_12_files/mht833A(1).tmp" width=620 
+            height=104></DIV><BR><B>Рис. 12.10.</B>&nbsp; Результат записи 
+            информации в файл в обратном порядке
+            <P></P>
+            <DIV id=mark_277 class=lecture_mark></DIV>
+            <P id=id_278><B>Задание 6</B></P>
+            <DIV id=mark_278 class=lecture_mark></DIV>
+            <OL id=id_279>
+              <LI>Вывод информации в дополнительный текстовый файл сделайте 
+              построчно, и каждую строку запишите в обратном порядке (для 
+              рассмотренного примера в три строки).
+              <LI>Вместо функции <SPAN class=texample>putchar()</SPAN> примените 
+              <SPAN class=texample>printf()</SPAN>.
+              <LI>Вместо функции <SPAN class=texample>putc()</SPAN> примените 
+              функцию с тем же действием.
+              <LI>Подготовьте текстовый файл со своей фамилией, инициалами, 
+              номером группы, специальности. Выполните чтение из этого файла в 
+              обратном порядке и вывести на консоль и запишите в дополнительный 
+              текстовый файл с именем compX.txt, где Х – номер компьютера, за 
+              которым выполняется лабораторная работа.</LI></OL>
+            <DIV id=mark_279 class=lecture_mark></DIV>
+            <P id=id_287><B>Пример 7</B>. Создайте файл последовательного 
+            доступа и записать в него информацию, состоящую из целых чисел, 
+            строки символов и вещественных чисел. После произведенной записи 
+            выведите содержимое файла на консоль и перезапишите в другой 
+            файл.</P>
+            <DIV id=mark_287 class=lecture_mark></DIV>
+            <P id=id_288>Предположим, что имеются номера ячеек, их имена 
+            (например, по фамилии владельца) и определенное количество денег в 
+            условных единицах (у. е.).</P>
+            <DIV id=mark_288 class=lecture_mark></DIV>
+            <P id=id_289>Для форматированного считывания данных из файла 
+            применим библиотечную функцию <SPAN 
+            class=texample>fscanf()</SPAN>.</P>
+            <DIV id=mark_289 class=lecture_mark></DIV>
+            <P id=id_291>Программный код решения примера:</P>
+            <DIV id=mark_291 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define MAX 39 // Предполагаемое число символов в имени
+#define file "D:\\data7.dat"
+#define file2 "D:\\data77.dat"
+
+int main(void)
+ {
+	int number, i = 1, j = 1; // номер ячейки
+	char  name[MAX+1]; // имя ячейки (владельца)
+	long double sum; // сумма денег в у.е. 
+	FILE *fid, *fid2;
+	
+	if ( fopen_s(&amp;fid, file, "w") )
+{fprintf(stdout, "\n\t File could not be opened\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+printf("\n Enter through blanks number of a cell,\n a name of the owner and the sum of money.\n \
+Type Ctrl+Z to exit at the beginning of a new line: \n\n");
+	printf(" %3d) ", i);
+	scanf("%d%s%lf", &amp;number, name, &amp;sum);
+
+	// Запись в файл data7.dat
+while ( !feof(stdin)) { // stdin - поток с клавиатуры
+
+fprintf(fid, " %3d\t %-15s %7.2f\r\n", number, name, sum);
+printf(" %3d) ", ++i);
+scanf("%d%s%lf", &amp;number, name, &amp;sum);
+} 
+fclose(fid); 
+
+if ( fopen_s(&amp;fid, file, "r") ) {
+fprintf(stdout, "\n\t File could not be opened\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+if ( fopen_s(&amp;fid2, file2, "w") ) {
+fprintf(stdout, "\n\t File could not be opened\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+
+// Вывод на консоль
+printf("\n %s\t %s\t\t %5s", "The number of cell", "Name", "Sum"); 
+// Чтение из файла data7.dat
+fscanf(fid, "%d%s%Lf", &amp;number, name, &amp;sum);
+
+fprintf(fid2, "\r\n %s\t\t %s\t\t %5s\r\n", "The number of cell", "Name", "Sum"); 
+i = 1;
+while ( !feof(fid)) { // пока не конец файла 
+// Вывод на консоль
+printf("\n %3d\t\t\t %-17s %1.2f", number, name, sum); 
+// Запись в файл data77.dat 
+fprintf(fid2, " %3d) %3d\t\t\t %-17s %1.2f\r\n", i++, number, name, sum); 
+
+// Чтение из файла data7.dat
+fscanf(fid, "%d%s%Lf", &amp;number, name, &amp;sum); 
+}
+
+fclose(fid);
+fclose(fid2);
+
+printf("\n\n\n Result see the files, \"%s\" and \"%s\"\n", file, file2);
+
+printf("\n Press any key: ");
+	_getch(); 
+	return 0; 
+}</PRE></DIV>
+            <P id=id_293>В программе использована функция <SPAN 
+            class=texample>feof()</SPAN>, которая проверяет, достигнут ли конец 
+            файла, связанного с потоком (указателем на файл) <SPAN 
+            class=texample>fid</SPAN>.</P>
+            <DIV id=mark_293 class=lecture_mark></DIV>
+            <P id=id_296>На <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.11">рис. 
+            12.11</A> показан возможный результат выполнения программы.</P>
+            <DIV id=mark_296 class=lecture_mark></DIV>
+            <P id=id_297 align=left><A name=image.12.11></A></P>
+            <DIV><IMG alt="Консольный вывод содержимого файла" 
+            src="Лекция_12_files/mht835C(1).tmp" width=620 
+            height=289></DIV><BR><B>Рис. 12.11.</B>&nbsp; Консольный вывод 
+            содержимого файла
+            <P></P>
+            <DIV id=mark_297 class=lecture_mark></DIV>
+            <P id=id_298>Следует обратить внимание на прекращение ввода данных с 
+            клавиатуры с помощью комбинации клавиш <B>Ctrl+Z</B>.</P>
+            <DIV id=mark_298 class=lecture_mark></DIV>
+            <P id=id_299><B>Задание 7</B></P>
+            <DIV id=mark_299 class=lecture_mark></DIV>
+            <OL id=id_300>
+              <LI>Вместо оператора цикла <SPAN class=texample>while</SPAN> 
+              примените оператор цикла <SPAN class=texample>for</SPAN>.
+              <LI>Отсортируйте записи владельцев ячеек по убыванию величины 
+              суммарной денежной суммы.
+              <LI>Подготовьте форматированный текстовый файл с именем compX, где 
+              Х – номер компьютера, за которым выполняется лабораторная работа. 
+              Затем информацию из файла выведите на консоль.</LI></OL>
+            <DIV id=mark_300 class=lecture_mark></DIV>
+            <P id=id_306><B>Пример 8</B>. Напишите программу пакетной записи в 
+            файл произвольного доступа массива данных и вывода этого пакета на 
+            консоль.</P>
+            <DIV id=mark_306 class=lecture_mark></DIV>
+            <P id=id_307>Для решения примера применим функции <SPAN 
+            class=texample>fwrite()</SPAN> и <SPAN class=texample>fread()</SPAN> 
+            для бинарной записи и считывания информации.</P>
+            <DIV id=mark_307 class=lecture_mark></DIV>
+            <P id=id_310>Программный код решения примера:</P>
+            <DIV id=mark_310 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+#define MAX 20
+#define n 5
+#define m 4
+#define file "D:\\data8.txt"
+
+int main(void) {
+	//Матрица 5х4
+	int mass[MAX][MAX] = {
+{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}, {17,18,19,20} };
+	int mass2[MAX][MAX]; // Вспомогательная матрица 
+	int i, j;
+	
+// Массив из 5 указателей
+char  *str[] = {
+"Brian W. Kernighan",
+"Dennis M. Ritchie",
+"Stephen Prata",
+"Herbert Shildt",
+"The C Programming Language"
+};
+char *str2[n]; // Вспомогательный массив указателей
+	FILE *fid; 
+
+	if ( fopen_s(&amp;fid, file, "wb") ) {
+fprintf(stdout, "\n\t File could not be opened\n");
+printf("\n Error! Press any key: ");
+_getch(); return 0; }
+
+fwrite(str, sizeof(char), sizeof(str)/sizeof(char), fid);
+fwrite(mass, sizeof(int), sizeof(mass)/sizeof(int), fid);
+fclose (fid);
+
+	if ( fopen_s(&amp;fid, file, "rb") ) {
+fprintf(stdout, "\n\t File could not be opened\n");
+printf("\n Press any key: ");
+_getch(); return 0; }
+	
+fread(str2, sizeof(char), sizeof(str)/sizeof(char), fid);
+fread(mass2, sizeof(int), sizeof(mass2)/sizeof(int), fid);
+	
+// Чтение элементов из файла
+	printf("\n\t From a file \"%s\": \n\n", file);
+	for (i = 0; i &lt; n; ++i)
+printf("\t %-15s\n", str2[i]);
+
+	printf("\n\t Matrix from a file \"%s\":\n", file);
+	for (i = 0; i &lt; n; ++i) {
+		printf("\n\t");
+		for (j = 0; j &lt; m; ++j)
+		printf(" %3d", mass2[i][j]);
+	}
+fclose(fid);
+	
+printf("\n\n\n Press any key: ");
+	_getch(); 
+	return 0;
+ }</PRE></DIV>
+            <P id=id_312>Функция <SPAN class=texample>fwrite()</SPAN> пересылает 
+            в файл заданное количество байт начиная с указанного адреса памяти. 
+            Данные записываются с того места в файле, которое обозначено 
+            указателем позиции файла. Функция <SPAN 
+            class=texample>fread()</SPAN> пересылает заданное количество байт на 
+            места в файле, определенного указателем позиции файла, в массив в 
+            памяти, начинающийся с указанного адреса.</P>
+            <DIV id=mark_312 class=lecture_mark></DIV>
+            <P id=id_315>В программе пакетная запись информации – набора строк и 
+            матрицы целых чисел производится через двоичный поток с помощью 
+            функций <SPAN class=texample>fwrite()</SPAN>. Чтение информации из 
+            двоичного файла осуществляется функцией <SPAN 
+            class=texample>fread()</SPAN>. Форматы записи обеих функций 
+            одинаковый, так как в них требуется определить количество объектов с 
+            заданным размером байт, которые определяются функцией <SPAN 
+            class=texample>sizeof()</SPAN>.</P>
+            <DIV id=mark_315 class=lecture_mark></DIV>
+            <P id=id_319>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.12">рис. 
+            12.12</A> и на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\12. Лекция Файловый ввод вывод в языке С.mht#image.12.13">рис. 
+            12.13</A>.</P>
+            <DIV id=mark_319 class=lecture_mark></DIV>
+            <P id=id_320 align=left><A name=image.12.12></A></P>
+            <DIV><IMG alt="Результат чтения из файла бинарной информации" 
+            src="Лекция_12_files/mht837F(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 12.12.</B>&nbsp; Результат чтения из 
+            файла бинарной информации
+            <P></P>
+            <DIV id=mark_320 class=lecture_mark></DIV>
+            <P id=id_321 align=left><A name=image.12.13></A></P>
+            <DIV><IMG 
+            alt="Результат записи в текстовый файл бинарной информации" 
+            src="Лекция_12_files/mht83C0(1).tmp" width=620 
+            height=420></DIV><BR><B>Рис. 12.13.</B>&nbsp; Результат записи в 
+            текстовый файл бинарной информации
+            <P></P>
+            <DIV id=mark_321 class=lecture_mark></DIV>
+            <P id=id_322>Как видно из рисунков, информация на консоли 
+            соответствует исходной информации, а в двоичном файле информация не 
+            подлежит непосредственному восприятию.</P>
+            <DIV id=mark_322 class=lecture_mark></DIV>
+            <P id=id_323><B>Примечание</B>. Вид бинарной информации в текстовом 
+            файле зависит от установленных шрифтов.</P>
+            <DIV id=mark_323 class=lecture_mark></DIV>
+            <P id=id_324><B>Задание 8</B></P>
+            <DIV id=mark_324 class=lecture_mark></DIV>
+            <OL id=id_325>
+              <LI>Запишите двоичную информацию в файлы с расширением 
+              <B>.dat</B>, <B>.doc</B>, <B>.bin</B>. Проанализируйте файлы после 
+              их открытия.
+              <LI>Вместо массива указателей примените двухмерный символьный 
+              массив необходимой размерности.
+              <LI>Вместо двухмерного массива целых чисел примените целочисленный 
+              указатель.
+              <LI>Перезапишите информацию из двоичного файла в текстовый файл с 
+              именем compX.txt, где Х – номер компьютера, за которым выполняется 
+              лабораторная работа.</LI></OL>
+            <DIV id=mark_325 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_330>
+              <LI>Что может быть файлом в языке <B>С</B>?
+              <LI>Какие обязательные операции выполняются при нормальной работе 
+              с файлами? Какие библиотечные функции при этом используются?
+              <LI>Как определяется текстовой поток в стандарте языка С?
+              <LI>Как определяется двоичный поток в стандарте языка С?
+              <LI>Что определяет собой указатель файла?
+              <LI>С помощью каких функций языка С осуществляется форматная 
+              запись в файл и форматное чтение данных из файла?
+              <LI>Какая переменная стандартной библиотеки используется для 
+              определения стандартного потока вывода на дисплей?
+              <LI>Какая переменная стандартной библиотеки используется для 
+              определения стандартного потока чтения с дисплея?
+              <LI>Как в языке С кодируется признак конца файла?
+              <LI>Как в языке С кодируется признак конца строки?
+              <LI>Что такое файл произвольного доступа?
+              <LI>Как в языке С осуществляется пакетная запись данных в файл?
+              <LI>Как осуществляется запись бинарной информации в текстовый 
+файл?
+              <LI>Как осуществляется чтение бинарной информации из текстового 
+              файла?</LI></OL>
+            <DIV id=mark_330 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_12_files/mht81F7(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_12_files/mht81F7(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

@@ -1,0 +1,1332 @@
+body {
+	color: black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;
+}
+p {
+	color: black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;
+}
+td {
+	color: black; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;
+}
+ul {
+	padding-left: 2em; list-style-position: outside;
+}
+ol {
+	padding-left: 2em; list-style-position: outside;
+}
+div.topbanner {
+	background: rgb(255, 255, 255); text-align: center; padding-top: 1px; padding-bottom: 1px;
+}
+th {
+	font-size: 10pt; font-weight: bold;
+}
+.xml_table_env {
+	width: 100%;
+}
+.xml_table {
+	
+}
+caption {
+	font-size: 10pt; font-weight: bold; margin-right: auto; margin-left: auto;
+}
+h1 {
+	margin: 0px; color: rgb(51, 0, 102); font-size: 12pt;
+}
+h2 {
+	color: rgb(51, 0, 102); font-size: 10pt;
+}
+h6 {
+	color: rgb(17, 0, 34); font-size: 10pt;
+}
+b {
+	color: rgb(0, 0, 0);
+}
+.head_old {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold;
+}
+.head {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.rur {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.headsub {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold;
+}
+a.headsub {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.headsub:hover {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.headsub:visited {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.headsub:active {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+.error {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.attention {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold;
+}
+a.attention {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.attention:hover {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.attention:visited {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.attention:active {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+.help {
+	color: rgb(102, 102, 102); font-size: 8pt;
+}
+.bhelp {
+	color: rgb(102, 102, 102); font-size: 8pt; font-weight: bold;
+}
+.inputs {
+	background: rgb(255, 153, 0);
+}
+.inputl {
+	width: 172px;
+}
+.inputw {
+	width: 300px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.inputLarge {
+	width: 500px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.inputlo {
+	background: rgb(255, 153, 0); border-width: 2px; border-style: solid; border-color: rgb(255, 191, 0) rgb(178, 107, 0) rgb(178, 107, 0) rgb(255, 191, 0); width: 172px;
+}
+.inputlo_light {
+	background: rgb(255, 204, 153); width: 172px;
+}
+.inputlox3 {
+	background: rgb(255, 153, 0); width: 172px; height: 40px; font-size: 10pt; font-weight: bold;
+}
+.points {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+.usd {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+a {
+	color: rgb(51, 0, 102); text-decoration: underline;
+}
+a:hover {
+	color: rgb(51, 0, 102); text-decoration: underline;
+}
+a:active {
+	color: rgb(51, 0, 102); text-decoration: underline;
+}
+a:visited {
+	color: rgb(51, 0, 102); text-decoration: underline;
+}
+.menu {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.menu {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.menu:hover {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.menu:visited {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.menu:active {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.spec {
+	color: rgb(51, 0, 102); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.spec:hover {
+	color: rgb(51, 0, 102); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.spec:visited {
+	color: rgb(51, 0, 102); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.spec:active {
+	color: rgb(51, 0, 102); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.specR {
+	color: rgb(153, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.specR:hover {
+	color: rgb(153, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.specR:visited {
+	color: rgb(153, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.specR:active {
+	color: rgb(153, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+.llecture {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold;
+}
+.llecture_red {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+a.llecture {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture:active {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_red {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_red:hover {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_red:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_red:active {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_selected {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_selected:hover {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_selected:visited {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_selected:active {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+td.menu {
+	background: rgb(255, 153, 0);
+}
+.bordo {
+	background: rgb(153, 0, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.green {
+	background: rgb(0, 153, 14); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.blue {
+	background: rgb(0, 136, 255); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.orang {
+	background: rgb(255, 153, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.orang_border {
+	background: rgb(255, 153, 0);
+}
+.black {
+	background: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.orang_light {
+	background: rgb(255, 204, 153); color: rgb(0, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.gray {
+	background: rgb(231, 231, 206); font-size: 8pt;
+}
+.questionnaire_field {
+	background: rgb(231, 231, 206); font-size: 8pt;
+}
+.pistachio {
+	background: rgb(204, 204, 153); color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold;
+}
+.name {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+a.regbig {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.regbig:hover {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.regbig:visited {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+a.regbig:active {
+	color: rgb(153, 0, 0); font-size: 12pt; font-weight: bold; text-decoration: underline;
+}
+.reg {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+a.reg {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.reg:hover {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.reg:visited {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+a.reg:active {
+	color: rgb(153, 0, 0); text-decoration: underline;
+}
+.notready {
+	color: rgb(102, 102, 102); font-size: 10pt; font-weight: bold;
+}
+a.notready {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+a.notready:hover {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+a.notready:visited {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+a.notready:active {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+.welcome {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+.ltxt {
+	font-size: 8pt;
+}
+.lb {
+	font-size: 8pt; font-weight: bold;
+}
+a.left {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.left:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.left:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.left:active {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+.date {
+	font-size: 8pt;
+}
+.rtxt {
+	font-size: 8pt;
+}
+.rtitle {
+	font-size: 8pt; font-weight: bold;
+}
+.btick {
+	font-size: 8pt; font-weight: bold;
+}
+a.right {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.right:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.right:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.right:active {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.allnews {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.allnews:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.allnews:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.allnews:active {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+.spectxt {
+	font-size: 8pt;
+}
+.spectitle {
+	font-size: 8pt; font-weight: bold;
+}
+a.spectitle {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.spectitle:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.spectitle:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.spectitle:active {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.bot {
+	color: rgb(255, 255, 255); font-size: 8pt; text-decoration: underline;
+}
+a.bot:hover {
+	color: rgb(255, 255, 255); font-size: 8pt; text-decoration: underline;
+}
+a.bot:visited {
+	color: rgb(255, 255, 255); font-size: 8pt; text-decoration: underline;
+}
+a.bot:active {
+	color: rgb(255, 255, 255); font-size: 8pt; text-decoration: underline;
+}
+.copy {
+	text-align: center; color: rgb(255, 255, 255); font-size: 8pt;
+}
+.example {
+	text-align: left; color: rgb(139, 0, 0); font-family: monospace; font-size: 10pt; margin-left: 10px;
+}
+.bexample {
+	text-align: left; color: rgb(139, 0, 0); font-family: monospace; font-size: 10pt; font-weight: bold;
+}
+.iexample {
+	text-align: left; color: rgb(139, 0, 0); font-family: monospace; font-size: 10pt; font-style: italic;
+}
+.texample {
+	text-align: left; color: rgb(139, 0, 0); font-family: monospace;
+}
+.news_date {
+	font-size: 8pt; font-weight: bold;
+}
+a.news_refs {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.news_refs:hover {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.news_refs:visited {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.news_refs:active {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.course_references {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.course_references:hover {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.course_references:visited {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.course_references:active {
+	color: rgb(51, 0, 102); font-weight: bold; text-decoration: underline;
+}
+a.head {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.head:hover {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.head:visited {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.head:active {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.inputs {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;
+}
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;
+}
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;
+}
+textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;
+}
+.inputso {
+	background: rgb(255, 153, 0);
+}
+.inputso_light {
+	background: rgb(255, 204, 153);
+}
+.prodname {
+	color: black; font-size: 12pt; font-weight: bold;
+}
+.ertick {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+a.tick {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.tick:hover {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.tick:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.tick:active {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.part {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.part:hover {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.part:visited {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.part:active {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+a.more {
+	font-size: 8pt; font-weight: bold;
+}
+a.more:hover {
+	font-size: 8pt; font-weight: bold;
+}
+a.more:visited {
+	font-size: 8pt; font-weight: bold;
+}
+a.more:active {
+	font-size: 8pt; font-weight: bold;
+}
+.separator {
+	color: rgb(0, 0, 0); font-size: 10pt; font-weight: normal;
+}
+.chapter {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold;
+}
+.llecture_chapter {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold;
+}
+a.llecture_chapter {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter:hover {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter:visited {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter:active {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+.llecture_chapter_selected {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+a.llecture_chapter_selected {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter_selected:hover {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter_selected:visited {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.llecture_chapter_selected:active {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.chapter {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.chapter:hover {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.chapter:visited {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+a.chapter:active {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; text-decoration: underline;
+}
+.newsshort {
+	font-size: 8pt;
+}
+.stitle {
+	font-size: 8pt;
+}
+a.stitle {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.stitle:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.stitle:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+a.stitle:active {
+	color: rgb(51, 0, 102); font-size: 8pt; text-decoration: underline;
+}
+.questionnaire {
+	color: rgb(0, 0, 0); font-size: 8pt; font-weight: bold;
+}
+.questionnaire_empty {
+	color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold;
+}
+.keyword {
+	font-style: oblique;
+}
+.keyword_def {
+	font-style: oblique; font-weight: bold;
+}
+.keyword_in_keywords {
+	font-size: 8pt; font-style: oblique; font-weight: bold;
+}
+.keyword_list {
+	font-size: 8pt;
+}
+.keyword_list_def {
+	font-size: 8pt; font-weight: bold;
+}
+.objectName {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold;
+}
+a.objectName {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.objectName:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.objectName:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+a.objectName:active {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: underline;
+}
+hr.orange {
+	border: currentColor; width: 100%; height: 1px; color: rgb(255, 153, 0); background-color: rgb(255, 153, 0);
+}
+hr.pistachio {
+	border: currentColor; width: 100%; height: 1px; color: rgb(204, 204, 153); background-color: rgb(204, 204, 153);
+}
+blockquote {
+	font-style: italic; margin-right: 5px; margin-left: 40px;
+}
+blockquote p {
+	color: rgb(102, 102, 102); font-style: normal;
+}
+.vector {
+	margin-top: 2px; border-top-color: rgb(139, 0, 0); border-top-width: 1px; border-top-style: solid;
+}
+.disabledItem {
+	color: rgb(102, 102, 102);
+}
+.xml_quote_author {
+	text-align: right; font-style: italic;
+}
+.xml_em_italic {
+	font-style: italic;
+}
+.xml_em_bold {
+	font-weight: bold;
+}
+.xml_em_proposition {
+	font-style: italic;
+}
+.xml_em_bold_italic {
+	font-style: italic; font-weight: bold;
+}
+.xml_math_table {
+	width: 70%;
+}
+.xml_math_tag {
+	
+}
+.epigraph {
+	color: rgb(153, 0, 0); font-family: "Times New Roman", Times, serif; font-size: 12pt; font-style: italic; font-weight: normal;
+}
+.topnavi {
+	color: rgb(102, 102, 102); font-size: 8pt; text-decoration: none;
+}
+.topnavi a {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.topnavi a:visited {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.topnavi a:active {
+	color: rgb(153, 0, 0); font-size: 8pt; text-decoration: none;
+}
+.topnavi a:hover {
+	color: rgb(255, 153, 0); font-size: 8pt; text-decoration: none;
+}
+.redmenu {
+	color: rgb(153, 0, 0);
+}
+.redmenu a {
+	color: rgb(153, 0, 0);
+}
+.redmenu a:visited {
+	color: rgb(153, 0, 0);
+}
+.redmenu a:active {
+	color: rgb(153, 0, 0);
+}
+.redmenu a:hover {
+	color: rgb(153, 0, 0);
+}
+.border {
+	border: 1px solid rgb(255, 153, 0); text-align: center;
+}
+.leftbar {
+	padding: 6px; width: 160px; color: rgb(153, 0, 0); font-size: 8pt; font-weight: bold; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: dotted; background-color: rgb(255, 236, 206);
+}
+.leftbar a {
+	color: rgb(0, 0, 0); padding-top: 4px; padding-bottom: 4px; font-size: 8pt; font-weight: normal; text-decoration: none; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted; display: block;
+}
+leftbar a:link {
+	color: rgb(0, 0, 0); padding-top: 4px; padding-bottom: 4px; font-size: 8pt; font-weight: normal; text-decoration: none; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted; display: block;
+}
+.leftbar a:visited {
+	color: rgb(0, 0, 0); padding-top: 4px; padding-bottom: 4px; font-size: 8pt; font-weight: normal; text-decoration: none; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted; display: block;
+}
+.leftbar a:active {
+	color: rgb(0, 0, 0); padding-top: 4px; padding-bottom: 4px; font-size: 8pt; font-weight: normal; text-decoration: none; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted; display: block;
+}
+.leftbar a:hover {
+	color: rgb(153, 0, 0);
+}
+.headerunderline {
+	text-align: left; color: rgb(153, 0, 0); padding-top: 2px; padding-bottom: 4px; font-size: 12pt; font-weight: bold; border-bottom-color: rgb(153, 0, 0); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.formunderline {
+	text-align: left; color: rgb(153, 0, 0); padding-top: 2px; padding-bottom: 2px; font-size: 10pt; font-weight: bold; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.formunderlinedotted {
+	color: rgb(0, 0, 0); padding-top: 1px; padding-bottom: 1px; font-size: 8pt; font-weight: normal; text-decoration: none; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.text {
+	font-size: 8pt;
+}
+.xml_inset {
+	padding: 20px; border: 1px solid gray; margin-top: 10px; margin-bottom: 10px;
+}
+.ramka1ext {
+	background-color: rgb(0, 136, 0);
+}
+.ramka1int {
+	background-color: rgb(136, 255, 136);
+}
+.discipline {
+	font-size: 8pt; font-weight: bold;
+}
+.course_stat_data {
+	font-weight: bold;
+}
+.course_submit {
+	background: rgb(255, 153, 0); width: 192px; margin-top: 4px;
+}
+.course_form_title {
+	color: rgb(51, 0, 102); font-size: 10pt; font-weight: bold; margin-top: 2pt; margin-bottom: 3pt; margin-left: 5px;
+}
+.course_form {
+	margin: 5px; padding: 0px; font-size: 8pt; bborder: 1px solid #FF9900;
+}
+.bannere240x400 {
+	margin-right: 32px; float: left;
+}
+.block_news {
+	padding-top: 8px; margin-top: 6pt; border-top-color: rgb(204, 204, 153); border-top-width: 1px; border-top-style: solid;
+}
+.last_qa {
+	padding: 8px; border: 1px solid rgb(255, 153, 0); font-size: 8pt; margin-top: 4pt; margin-bottom: 10px;
+}
+div.last_qa a {
+	color: rgb(0, 144, 255); font-weight: bold; text-decoration: underline;
+}
+div.last_qa a:hover {
+	color: rgb(0, 144, 255); font-weight: bold; text-decoration: underline;
+}
+div.last_qa a:visited {
+	color: rgb(0, 144, 255); font-weight: bold; text-decoration: underline;
+}
+div.last_qa a:active {
+	color: rgb(0, 144, 255); font-weight: bold; text-decoration: underline;
+}
+.last_qa div {
+	margin-top: 6pt;
+}
+div.last_qa div a {
+	color: red; font-weight: normal;
+}
+div.last_qa div a:hover {
+	color: red; font-weight: normal;
+}
+div.last_qa div a:visited {
+	color: red; font-weight: normal;
+}
+div.last_qa div a:active {
+	color: red; font-weight: normal;
+}
+div.last_qa h1 {
+	color: red; font-size: 10pt; margin-bottom: 4px;
+}
+div.last_qa h1 a {
+	color: red;
+}
+div.last_qa h1 a:hover {
+	color: red;
+}
+div.last_qa h1 a:visited {
+	color: red;
+}
+div.last_qa h1 a:active {
+	color: red;
+}
+div.google160x600 {
+	margin-top: 5mm;
+}
+.test_qwestion {
+	display: none;
+}
+.test_continue {
+	display: block;
+}
+.white_paper {
+	padding-top: 8px; font-size: 8pt; margin-top: 0px; margin-bottom: 16px; border-top-color: rgb(231, 231, 206); border-top-width: 1px; border-top-style: solid;
+}
+div.white_paper div.title {
+	font-size: 10pt; margin-bottom: 4px;
+}
+div.white_paper div.title a {
+	font-weight: bold; text-decoration: none;
+}
+div.white_paper div.title a:hover {
+	font-weight: bold; text-decoration: none;
+}
+div.white_paper div.title a:visited {
+	font-weight: bold; text-decoration: none;
+}
+div.white_paper div.title a:active {
+	font-weight: bold; text-decoration: none;
+}
+.banner240x90 {
+	display: none; mmargin-bottom: 20px;
+}
+a.rss {
+	color: rgb(255, 255, 255); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.rss:hover {
+	color: rgb(255, 255, 255); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.rss:visited {
+	color: rgb(255, 255, 255); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+a.rss:active {
+	color: rgb(255, 255, 255); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+img.rss {
+	top: 4px; position: relative;
+}
+div.rss_osp div.head {
+	padding: 4px; background-color: rgb(255, 153, 0);
+}
+div.rss_osp div.head a {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+div.rss_osp div.head a:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+div.rss_osp div.head a:visited {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+div.rss_osp div.head a:active {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+div.rss_osp table tr td {
+	font-size: 8pt;
+}
+div.rss_osp table tr td i {
+	font-style: normal;
+}
+div.banner234x120 {
+	text-align: center; margin-bottom: 10px;
+}
+.video_small_preview {
+	margin-right: 6px; margin-bottom: 2px; float: left;
+}
+.video_small_preview a img {
+	border: 0px currentColor;
+}
+div.diploma_list {
+	display: inline;
+}
+div.diploma_list div.diploma {
+	font-weight: bold; display: inline;
+}
+div.diploma_sm {
+	background: rgb(255, 255, 255); padding: 5px; border: 1px solid rgb(255, 153, 0); display: none;
+}
+div.diploma_sm div.name {
+	display: none;
+}
+div.diploma_list div.diploma a {
+	color: black; text-decoration: none;
+}
+div.diploma_list div.diploma a:hover {
+	color: black; text-decoration: none;
+}
+div.diploma_list div.diploma a:visited {
+	color: black; text-decoration: none;
+}
+div.diploma_list div.diploma a:active {
+	color: black; text-decoration: none;
+}
+div.video div.info div.right div.movie_info {
+	clear: both; float: left;
+}
+div.announcement {
+	padding: 8px; border: 1px solid rgb(255, 153, 0); font-size: 10pt; margin-top: 4pt; margin-bottom: 10px;
+}
+div.announcement b {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.diplamas {
+	margin-top: 4px; margin-bottom: 10px;
+}
+div.diplamas div.diplama_course {
+	margin-right: 8px; float: left;
+}
+div.diplamas div.diplama_course div.image {
+	padding: 1px; border: 1px solid rgb(255, 153, 0); margin-right: 8px; float: left;
+}
+div.diplamas div.diplama_course div.name {
+	width: 110px; color: black; font-size: 8pt; font-weight: normal; float: left;
+}
+div.diplamas div.diplama_course div.name div.ref {
+	margin-top: 8px;
+}
+div.diplamas div.diplama_course div.name div.ref a {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.diplamas div.diplama_course div.name div.ref a:hover {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.diplamas div.diplama_course div.name div.ref a:visited {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.diplamas div.diplama_course div.name div.ref a:active {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.diplamas div.diplama {
+	margin-right: 16px; float: left;
+}
+div.diplamas div.diplama div.image {
+	padding: 1px; border: 1px solid rgb(255, 153, 0); margin-right: 8px; float: left;
+}
+div.diplamas div.diplama div.name {
+	width: 140px; color: black; font-size: 8pt; font-weight: normal; margin-right: 8px; float: left;
+}
+td.tv-osp h1 {
+	background: rgb(67, 141, 176); padding-top: 2px; padding-bottom: 3px; padding-left: 6px; font-size: 10pt;
+}
+td.tv-osp h1 a {
+	color: white; text-decoration: none;
+}
+td.tv-osp div.banner {
+	margin-top: 2px; margin-bottom: 10px;
+}
+ol.scorm_list li {
+	font-size: 8pt;
+}
+ol.scorm_list li a {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+ol.scorm_list li a:hover {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+ol.scorm_list li a:visited {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+ol.scorm_list li a:active {
+	color: rgb(51, 0, 102); font-size: 8pt; font-weight: bold; text-decoration: none;
+}
+td.hp_reclama div {
+	margin-bottom: 10px;
+}
+td.hp_reclama h1 {
+	background: rgb(153, 122, 141); color: white; padding-top: 2px; padding-bottom: 3px; padding-left: 6px; font-size: 10pt;
+}
+div.menu_collections {
+	margin: 0px; padding: 0px; display: none;
+}
+div.menu_collections_vis {
+	width: auto; color: rgb(153, 0, 0); margin-right: 6px; border-top-color: rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid; float: right;
+}
+div.menu_polosa {
+	margin: 0px; padding: 0px; width: auto; border-top-color: rgb(255, 153, 0); border-top-width: 1px; border-top-style: solid;
+}
+.topmenu {
+	color: rgb(153, 0, 0); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a {
+	color: rgb(153, 0, 0); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a:visited {
+	color: rgb(153, 0, 0); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a:active {
+	color: rgb(153, 0, 0); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a:hover {
+	color: rgb(255, 255, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a.active {
+	color: rgb(255, 255, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.topmenu a.active:visited {
+	color: rgb(255, 255, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.topmenu a.active:active {
+	color: rgb(255, 255, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+topmenu a.active:hover {
+	color: rgb(255, 255, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 {
+	text-align: right; color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a {
+	text-align: right; color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a:visited {
+	text-align: right; color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a:active {
+	text-align: right; color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.menu2 a.active {
+	text-align: right; color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a.active:visited {
+	text-align: right; color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a.active:active {
+	text-align: right; color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+.menu2 a.active:hover {
+	text-align: right; color: rgb(255, 255, 255); font-size: 10pt; font-weight: bold; text-decoration: none; bbackground: #FFA500;
+}
+div.delim {
+	padding: 0px; color: rgb(153, 0, 0); letter-spacing: -5px; margin-right: 7px; display: inline;
+}
+div.izone {
+	margin-top: 10px; margin-bottom: 10px;
+}
+div.izone table tr td {
+	margin: 0px; padding: 2pt; font-size: 8pt;
+}
+div.izone table tr td.mail_news {
+	color: rgb(0, 0, 0); padding-left: 10px; font-family: Tahoma,sans-serif; font-size: 10pt; font-weight: bold; background-color: rgb(253, 184, 19);
+}
+div.izone table tr td h3 {
+	margin: 5pt; font-size: 10pt;
+}
+div.izone table tr td h3 a {
+	color: rgb(0, 72, 255);
+}
+div.izone table tr td h3 a:hover {
+	color: rgb(0, 72, 255);
+}
+div.izone table tr td h3 a:visited {
+	color: rgb(0, 72, 255);
+}
+div.izone table tr td h3 a:active {
+	color: rgb(0, 72, 255);
+}
+div.izone table tr td img {
+	margin-right: 5pt; margin-bottom: 5px;
+}
+a.new {
+	color: rgb(41, 209, 213);
+}
+a.new:hover {
+	color: rgb(41, 209, 213);
+}
+a.new:visited {
+	color: rgb(41, 209, 213);
+}
+a.new:active {
+	color: rgb(41, 209, 213);
+}
+#menu_work__ {
+	color: rgb(26, 71, 128);
+}
+div.menu_collections_vis_new {
+	width: auto; color: blue; margin-right: 6px; border-top-color: rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid; float: right;
+}
+div.menu_collections_new {
+	margin: 0px; padding: 0px; display: none;
+}
+.topmenu a._new {
+	color: blue; padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a._new:visited {
+	color: blue; padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a._new:active {
+	color: blue; padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a._new:hover {
+	color: red; padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a.active_new {
+	color: rgb(127, 199, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a.active_new:visited {
+	color: rgb(127, 199, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.topmenu a.active_new:active {
+	color: rgb(127, 199, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+topmenu a.active_new:hover {
+	color: rgb(127, 199, 255); padding-right: 2px; padding-left: 2px; font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+div.menu_collections_new div.menu_polosa a {
+	color: red;
+}
+div.menu_collections_new div.menu_polosa a:visited {
+	color: red;
+}
+div.menu_collections_new div.menu_polosa a:active {
+	color: red;
+}
+topmenu a.active_new:hover {
+	color: red;
+}
+div.help_answer {
+	padding: 4px; border: 1px solid rgb(139, 0, 0); width: 50%; font-size: 10pt; font-weight: bold; margin-top: 15px; margin-bottom: 5px;
+}
+div.help_answer div.help {
+	font-weight: normal; margin-top: 5px; margin-left: 10px;
+}
+div.imagine {
+	padding: 10px; border: 1px solid blue; font-size: 1.1em; margin-top: 10px; margin-bottom: 10px;
+}
+div.imagine div {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+div.imagine span {
+	color: rgb(0, 168, 107);
+}
+div.imagine a {
+	color: rgb(0, 127, 255); font-weight: bold; text-decoration: none;
+}
+div.imagine a:visited {
+	color: rgb(0, 127, 255); font-weight: bold; text-decoration: none;
+}
+div.imagine a:active {
+	color: rgb(0, 127, 255); font-weight: bold; text-decoration: none;
+}
+topmenu a.active_new:hover {
+	color: rgb(0, 127, 255); font-weight: bold; text-decoration: none;
+}
+div.img_prod {
+	padding: 3px; border: 1px solid rgb(255, 153, 0); margin-top: 4px; margin-right: 7px; margin-bottom: 7px; float: left;
+}
+div.img_prod a img {
+	border: 0px currentColor;
+}
+span.news_refs {
+	font-size: 8pt; margin-top: 6px; display: block;
+}
+#intuit_banner_01 div.agregator_block {
+	background: 0px 0px rgb(255, 247, 218); padding: 0px; border: 1px solid rgb(17, 17, 17); font-family: Arial; font-size: 11px;
+}
+#intuit_banner_01 div.agregator_block h2.agregator_block_header {
+	background: url("/ssi/banner/images/menu_orange.gif") repeat-x left bottom rgb(253, 184, 19); margin: 0px; padding: 3px 0px 3px 10px; font-family: Arial; font-size: 13px;
+}
+#intuit_banner_01 div.agregator_block h3.agregator_block_name {
+	margin: 10px 0px 0px 10px; color: rgb(85, 85, 85); font-family: arial; font-size: 13px; font-weight: bold; text-decoration: underline;
+}
+#intuit_banner_01 div.agregator_block h3.agregator_block_name a {
+	color: rgb(85, 85, 85);
+}
+#intuit_banner_01 div.agregator_block div.block_annonce {
+	padding: 10px 10px 0px; color: rgb(0, 0, 0); font-size: 13px; font-weight: bold;
+}
+#intuit_banner_01 div.agregator_block h3.agregator_publication_header {
+	margin: 0px; color: rgb(0, 93, 164); font-family: Arial; font-size: 11px;
+}
+#intuit_banner_01 div.agregator_block h3.agregator_publication_header a {
+	text-decoration: none;
+}
+#intuit_banner_01 div.agregator_block h3.agregator_publication_header a:active {
+	color: rgb(0, 0, 0);
+}
+#intuit_banner_01 div.agregator_block div.agregator_block_publications {
+	margin: 10px;
+}
+#intuit_banner_01 hr {
+	border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.agregator_publication_image {
+	margin: 5px 10px 10px 0px; border: 1px solid rgb(51, 51, 51); width: 60px; float: left;
+}
+#intuit_banner_02 div.agregator_block {
+	background: 0px 0px rgb(255, 247, 218); padding: 0px; border: 1px solid rgb(17, 17, 17); font-family: Arial; font-size: 11px;
+}
+#intuit_banner_02 div.agregator_block h2.agregator_block_header {
+	background: url("/ssi/banner/images/menu_orange.gif") repeat-x left bottom rgb(253, 184, 19); margin: 0px; padding: 3px 0px 3px 10px; font-family: Arial; font-size: 13px;
+}
+#intuit_banner_02 div.agregator_block h3.agregator_block_name {
+	margin: 10px 0px 0px 10px; color: rgb(85, 85, 85); font-family: arial; font-size: 13px; font-weight: bold; text-decoration: underline;
+}
+#intuit_banner_02 div.agregator_block h3.agregator_block_name a {
+	color: rgb(85, 85, 85);
+}
+#intuit_banner_02 div.agregator_block div.block_annonce {
+	padding: 10px 10px 0px; color: rgb(0, 0, 0); font-size: 13px; font-weight: bold;
+}
+#intuit_banner_02 div.agregator_block h3.agregator_publication_header {
+	margin: 0px; color: rgb(0, 93, 164); font-family: Arial; font-size: 11px;
+}
+#intuit_banner_02 div.agregator_block h3.agregator_publication_header a {
+	text-decoration: none;
+}
+#intuit_banner_02 div.agregator_block h3.agregator_publication_header a:active {
+	color: rgb(0, 0, 0);
+}
+#intuit_banner_02 div.agregator_block div.agregator_block_publications {
+	margin: 10px;
+}
+#intuit_banner_02 hr {
+	clear: both; border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.agregator_publication_image {
+	margin: 5px 10px 10px 0px; border: 1px solid rgb(51, 51, 51); width: 60px; float: left;
+}
+#intuit_banner_02 {
+	margin-bottom: 10px;
+}
+div.ebook_formats {
+	padding: 2px; margin-top: 10px; bborder: 1px solid #ff9900;
+}
+div.ebook_formats h3 {
+	margin: 2px 0px 5px; color: rgb(202, 25, 28); ccolor: #ff9900;
+}
+div.ebook_formats div.course {
+	margin: 6px 0px 5px; clear: both; font-weight: bold;
+}
+div.ebook_formats div.item {
+	margin: 2px 0px 2px 10px; width: 4cm; clear: both;
+}
+div.ebook_formats div.item span.format {
+	width: 1.3cm; color: rgb(51, 0, 102); font-weight: bold; float: left; display: block; bborder: 1px solid green;
+}
+div.ebook_formats div.item span.size {
+	width: 1.8cm; color: rgb(153, 0, 0); float: right; display: block;
+}
+div.ebook_formats div.item span.size a {
+	width: 1.8cm; color: rgb(153, 0, 0); float: right; display: block;
+}
+div.ebook_formats_title td {
+	
+}
+div.ebook_formats_title span.head {
+	color: rgb(153, 0, 0); font-size: 10pt; font-weight: bold;
+}
+div.ebook_formats_title td.image {
+	margin-right: 10px; margin-left: 3px;
+}
+div.ebook_formats_title td.size {
+	margin-right: 15px;
+}
+div.ebook_formats_title td.size span.size {
+	color: rgb(8, 37, 103); font-size: 10pt; font-weight: bold;
+}
+div.ref-ebook {
+	background: rgb(228, 248, 237); padding: 10px; border: 1px solid rgb(23, 114, 69); width: 172px; color: rgb(0, 128, 128); margin-top: 10px; margin-bottom: 0px;
+}
+div.ref-ebook a {
+	color: rgb(1, 50, 32); font-weight: bold; text-decoration: underline;
+}
+div.ref-ebook a:hover {
+	color: rgb(1, 50, 32); font-weight: bold; text-decoration: underline;
+}
+div.ref-ebook a:visited {
+	color: rgb(1, 50, 32); font-weight: bold; text-decoration: underline;
+}
+div.ref-ebook a:active {
+	color: rgb(1, 50, 32); font-weight: bold; text-decoration: underline;
+}
+form.product-list-form {
+	margin: 10px 10px 30px; padding: 10px; border: 1px solid rgb(255, 153, 0); text-align: center; float: right;
+}
+form.product-list-form div.q {
+	color: rgb(153, 0, 0); font-weight: bold;
+}
+form.product-list-form input.inputlo {
+	background: rgb(255, 153, 0); width: 172px; height: 40px; font-size: 10pt; font-weight: bold;
+}
+span.course_offline a.ebook {
+	color: rgb(0, 168, 107); font-weight: bold; text-decoration: none;
+}
+span.course_offline a.ebook:hover {
+	color: rgb(0, 168, 107); font-weight: bold; text-decoration: none;
+}
+span.course_offline a.ebook:visited {
+	color: rgb(0, 168, 107); font-weight: bold; text-decoration: none;
+}
+span.course_offline a.ebook:active {
+	color: rgb(0, 168, 107); font-weight: bold; text-decoration: none;
+}
+div.ebook_formats_title {
+	padding: 5px; border: 1px solid rgb(255, 153, 0); width: 700px;
+}
+div.ebook_formats_title_short {
+	width: 550px; margin-top: 20px; bborder: none;
+}
+div.ebook_formats_title img {
+	border: currentColor;
+}
+div.ebook_formats_title div.lv_attention {
+	font-size: 10px; margin-top: 15px;
+}
+div.ebook_formats_title div.lv_attention span.attention {
+	font-size: 10px;
+}
+div.download-video {
+	bborder: solid green 1px;
+}
+div.download-video h3 {
+	color: rgb(153, 0, 0); font-size: 10pt;
+}
+div.download-video ul {
+	padding-left: 5px;
+}
+div.download-video ul li {
+	list-style: none; color: rgb(51, 0, 102); clear: both;
+}
+div.download-video ul ul.files {
+	padding-left: 20px;
+}
+div.download-video ul ul.files li {
+	list-style: none; clear: none; margin-top: 3px; margin-right: 2em; margin-bottom: 6px; float: left;
+}
+div.children-shop div.even {
+	width: 50%; margin-top: 0.1em; margin-bottom: 0.1em; float: left;
+}
+div.children-shop div.odd {
+	width: 50%; margin-top: 0.1em; margin-bottom: 0.1em; float: left;
+}
+div.children-shop {
+	clear: both; margin-bottom: 1em;
+}
+div.clear {
+	clear: both;
+}
+div.has_cost {
+	color: rgb(153, 0, 0); font-style: oblique;
+}
+div.contacts {
+	background: rgb(208, 240, 192); padding: 0.5em; border: 1px solid rgb(0, 153, 0); margin-top: 0.2em; margin-bottom: 2em;
+}
+div.contacts div.contact {
+	margin-top: 0.5em; vertical-align: middle;
+}
+div.contacts div.contact a {
+	text-decoration: none;
+}
+div.contacts div.contact img {
+	vertical-align: middle;
+}

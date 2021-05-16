@@ -1,0 +1,1107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<META name=“robots” content=“noindex,nofollow”><LINK rel=stylesheet 
+type=text/css href="mhtml:prcmsvs2010_2_files/printable.css">
+<META name=GENERATOR content="MSHTML 10.00.9200.16384"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="FONT-WEIGHT: bold; COLOR: #000000">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" align="rright"><A 
+href="http://www.intuit.ru/">http://www.intuit.ru/</A></SPAN> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="Лекция_2_files/mht8B68(1).tmp" width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+      height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG src="Лекция_2_files/mht8B68(1).tmp" width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=head>Программирование на языке C в Microsoft Visual Studio 
+            2010</TD></TR>
+        <TR>
+          <TD height=4><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+            height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_2_files/mht8B68(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>2. Лекция: Переменные и базовые типы данных 
+            языка С: версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В 
+            лекции ставится задача изучение базовых типов и их размеров языка 
+            программирования С, объявления и программы с переменными, включая 
+            простейшие арифметические операции. В практической части 
+            рассматриваются примеры с их полной программной реализацией. 
+          </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG src="Лекция_2_files/mht8B68(1).tmp" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+            height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3>Теоретическая часть</H3>
+            <P id=id_1>Фундаментальные объекты данных, с которыми работает 
+            программа, – это переменные и константы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>2.1</A>]. Используемые в программе переменные 
+            перечисляются в объявлениях или декларациях, в которых указывается 
+            их тип, а также иногда их начальные значения.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>С именами переменных связывается тип данных, который 
+            контролируется компилятором и для которого выделяется определенное 
+            количество байтов памяти [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#3" 
+            target=_blank>2.1</A>]. Имена переменных должны начинаться с буквы 
+            (латинского алфавита) или символа подчеркивания (например, <SPAN 
+            class=texample>_aza</SPAN> ), за которым могут следовать любые 
+            комбинации букв в любом регистре (заглавные или строчные), символы 
+            подчеркивания или цифры 0–9. В языке <B>С</B> имеется различие между 
+            заглавными и строчными буквами. Поэтому переменная <SPAN 
+            class=texample>World</SPAN> будет отличаться от переменной <SPAN 
+            class=texample>world</SPAN> и т.п. При этом в определении переменной 
+            не разрешается символ пробела (пробелов) и некоторые другие символы, 
+            например, <SPAN class=texample>$..</SPAN>. .</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_7>Стандарт С89 определяет пять базовых типов данных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>]:</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8><SPAN class=texample>int</SPAN> – целочисленный тип, 
+            целое число;</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_10><SPAN class=texample>float</SPAN> – вещественное число 
+            одинарной точности с плавающей точкой;</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <P id=id_12><SPAN class=texample>double</SPAN> – вещественное число 
+            двойной точности с плавающей точкой;</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_14><SPAN class=texample>char</SPAN> – символьный тип для 
+            определения одного символа;</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_16><SPAN class=texample>void</SPAN> – тип без значения.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_18>Кроме того, существуют модификаторы, которые могут 
+            применяться к этим базовым типам [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#2" 
+            target=_blank>2.1</A>]. Ряд компиляторов может поддерживать еще и 
+            логический тип <SPAN class=texample>_Bool</SPAN>. Тип <SPAN 
+            class=texample>void</SPAN> служит для объявления функции, не 
+            возвращающей значения, или для создания универсального указателя 
+            (pointer).</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <P id=id_21>Объект типа <SPAN class=texample>char</SPAN> всегда 
+            занимает 1 байт памяти [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>]. Размеры объектов других типов, как правило, 
+            зависят от среды программирования и операционной системы.</P>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_23>Приведем модификаторы базовых типов данных. К ним 
+            относятся следующие спецификаторы, предшествующие им в тексте 
+            программы [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>]:</P>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <DIV class=example><PRE>signed, unsigned, long, short</PRE></DIV>
+            <P id=id_25>Базовый тип <SPAN class=texample>int</SPAN> может быть 
+            модифицирован каждым из перечисленных спецификаторов. Тип <SPAN 
+            class=texample>char</SPAN> модифицируется с помощью <SPAN 
+            class=texample>unsigned</SPAN> и <SPAN class=texample>signed</SPAN>, 
+            тип <SPAN class=texample>double</SPAN> – с помощью <SPAN 
+            class=texample>long</SPAN>.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_32>В <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#table.2.1">табл. 
+            2.1</A> приведены допустимые комбинации типов данных языка <B>С</B> 
+            с их <SPAN class=xml_em_italic>минимальным</SPAN> диапазоном 
+            значений и типичным размером [13].</P>
+            <DIV id=mark_32 class=lecture_mark></DIV>
+            <DIV id=id_33 class=xml_table_env><A name=table.2.1></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 2.1. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Типы данных языка С</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Тип данных</TD>
+                <TD bgColor=#eaeaea vAlign=top>Типичный размер в битах</TD>
+                <TD bgColor=#eaeaea vAlign=top>Минимально допустимый диапазон 
+                  значений</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>char</TH>
+                <TD bgColor=#eaeaea vAlign=top>8 (или 1 байт)</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –128 до 127</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>unsigned char</TH>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 0 до 255</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>signed char</TH>
+                <TD bgColor=#eaeaea vAlign=top>8</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –127 до 127</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16 или 32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –32767 до 32767</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>unsigned int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16 или 32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 0 до 65535</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>signed int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16 или 32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –32767 до 32767</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>short int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –32767 до 32767</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>unsigned short int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 0 до 65535</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>signed short int</TH>
+                <TD bgColor=#eaeaea vAlign=top>16</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –32767 до 32767</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>long int</TH>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –2147483647 до 
+              2147483647</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>long long int</TH>
+                <TD bgColor=#eaeaea vAlign=top>64</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –(2<SUP>63</SUP>–1 ) до 
+                  (2<SUP>63</SUP>–1) для С99</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>signed long int</TH>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от –2147483647 до 
+              2147483647</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>unsigned long int</TH>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 0 до 4294967295</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>unsigned long long int</TH>
+                <TD bgColor=#eaeaea vAlign=top>64</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 0 до (2<SUP>64</SUP>–1) для 
+                  С99</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>float</TH>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 1Е–37 до 1Е+37 (с точностью 
+                  не менее 6 значащих десятичных цифр)</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>double</TH>
+                <TD bgColor=#eaeaea vAlign=top>64</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 1Е–37 до 1Е+37 (с точностью 
+                  не менее 10 значащих десятичных цифр)</TD></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>long double</TH>
+                <TD bgColor=#eaeaea vAlign=top>80</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 1Е–37 до 1Е+37 (с точностью 
+                  не менее 10 значащих десятичных 
+цифр)</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_34>Для базового типа <SPAN class=texample>int</SPAN> 
+            возможны следующие записи с модификатором:</P>
+            <DIV id=mark_34 class=lecture_mark></DIV>
+            <DIV class=example><PRE>signed  или  signed int
+unsigned  или  unsigned int
+long  или  long int
+short  или  short int</PRE></DIV>
+            <P id=id_37>Для данных вещественного типа максимальные значения 
+            абсолютных величин представлены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#table.2.2">табл. 
+            2.2</A> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>].</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <DIV id=id_38 class=xml_table_env><A name=table.2.2></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 2.2. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=3>Вещественные типы данных языка 
+                С</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Тип данных</TD>
+                <TD bgColor=#eaeaea vAlign=top>Типичный размер в битах</TD>
+                <TD bgColor=#eaeaea vAlign=top>Диапазон абсолютных 
+              величин</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>float</TD>
+                <TD bgColor=#eaeaea vAlign=top>32</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 3.4Е–38 до 3.4Е+37</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>double</TD>
+                <TD bgColor=#eaeaea vAlign=top>64</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 1.7Е–308 до 1.7Е+308</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>long double</TD>
+                <TD bgColor=#eaeaea vAlign=top>80</TD>
+                <TD bgColor=#eaeaea vAlign=top>от 3.4Е–4932 до 
+              1.1Е+4932</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_38 class=lecture_mark></DIV>
+            <P id=id_39>В языке <B>С</B> предусматривается преобразование типов 
+            в выражениях и приведение типов. Если в выражении смешаны различные 
+            типы литералов и переменных, то компилятор преобразует их в один 
+            тип. Во-первых, все <SPAN class=texample>char</SPAN> и <SPAN 
+            class=texample>short int</SPAN> значения автоматически преобразуются 
+            (с расширением "типоразмера") в тип <SPAN class=texample>int</SPAN>. 
+            Этот процесс называется <SPAN class=xml_em_italic>целочисленным 
+            расширением</SPAN> (integral promotion). Во-вторых, все операнды 
+            преобразуются (также с расширением "типоразмера") в <SPAN 
+            class=xml_em_italic>тип самого большого операнда</SPAN>. Этот 
+            процесс называется расширением типа (type promotion), причем он 
+            выполняется пооперационно. Например, если один операнд имеет тип 
+            <SPAN class=texample>int</SPAN>, а другой– <SPAN class=texample>long 
+            int</SPAN>, то тип <SPAN class=texample>int</SPAN> расширяется в тип 
+            <SPAN class=texample>long int</SPAN>. Или если хотя бы один из 
+            операндов имеет тип <SPAN class=texample>double</SPAN>, то любой 
+            другой операнд приводится к типу <SPAN class=texample>double</SPAN>. 
+            Это означает, что такие преобразования, как тип <SPAN 
+            class=texample>char</SPAN> в тип <SPAN class=texample>double</SPAN>, 
+            вполне допустимы (если предусматривать, к чему это приведет). После 
+            преобразования оба операнда будут иметь один и тот же тип, а 
+            результат операции – тип, совпадающий с типом операндов. Приведем 
+            последовательность преобразования типов в выражениях по старшинству 
+            [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>]:</P>
+            <DIV id=mark_39 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ЕСЛИ  операнд имеет тип long double
+ТО  второй операнд преобразуется в long double
+ИНАЧЕ ЕСЛИ  операнд имеет тип double
+ТО  второй операнд преобразуется в double
+ИНАЧЕ ЕСЛИ  операнд имеет тип float
+ТО  второй операнд преобразуется в float
+ИНАЧЕ ЕСЛИ  операнд имеет тип unsigned long
+ТО  второй операнд преобразуется в unsigned long
+ИНАЧЕ ЕСЛИ  операнд имеет тип long
+ТО  второй операнд преобразуется в long
+ИНАЧЕ ЕСЛИ  операнд имеет тип unsigned int
+ТО  второй операнд преобразуется в unsigned int</PRE></DIV>
+            <P id=id_52>Кроме того, действует правило: если один из операндов 
+            имеет тип <SPAN class=texample>long</SPAN>, а второй– <SPAN 
+            class=texample>unsigned int</SPAN>, притом значение <SPAN 
+            class=texample>unsigned int</SPAN> не может быть представлено типом 
+            <SPAN class=texample>long</SPAN>, то оба операнда преобразуются в 
+            значение типа <SPAN class=texample>unsigned long</SPAN>.</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_58>В языке С предусматривается явное преобразование 
+            (приведение) типов. Общая форма оператора явного приведения типа: 
+            <SPAN class=texample>(тип) выражение</SPAN>.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_60>В приведенной форме <SPAN class=texample>тип</SPAN> – 
+            это любой поддерживаемый тип данных. Явное преобразование типа – это 
+            операция. Оператор приведения типа является унарным и имеет тот же 
+            приоритет, что и остальные унарные операторы.</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_62>В приводимых ниже программах используются такие средства 
+            ввода-вывода, как <SPAN class=texample>printf(), getchar(), gets(), 
+            scanf()</SPAN>.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_64>Приведем характеристику данных функций [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>].</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_65>Прототип функции <SPAN class=texample>printf()</SPAN> 
+            имеет вид:</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int printf(const char *format, ?);</PRE></DIV>
+            <P id=id_68>Функция <SPAN class=texample>printf()</SPAN> записывает 
+            в стандартный поток <SPAN class=texample>stdout</SPAN> (стандартный 
+            выходной поток данных) значения аргументов из заданного списка 
+            аргументов в соответствии со строкой форматирования, адресуемой 
+            параметром <SPAN class=texample>format</SPAN>. Строка форматирования 
+            состоит из элементов двух типов. К элементам первого типа относятся 
+            символы, которые выводятся на экран. Элементы второго типа содержат 
+            спецификации формата, определяющий способ отображения аргументов. 
+            Спецификация формата начинается символом процента, за которым 
+            следует код формата. На спецификации формата могут воздействовать 
+            модификаторы, задающие ширину поля, точность и признак выравнивания 
+            по левому краю. Целое значение, расположенное между знаком % и 
+            командой форматирования, играет роль спецификации минимальной ширины 
+            поля. Наличие этого спецификатора приводит к тому, что результат 
+            будет заполнен пробелами или нулями, чтобы выводимое значение 
+            занимало поле, ширина которого не меньше заданной С І минимальной 
+            ширины. По умолчанию в качестве заполнителя используется пробел 
+            (пробелы). Для заполнения нулями перед спецификацией ширины поля 
+            нужно поместить нуль, т.е. 0. Например, спецификация формата <SPAN 
+            class=texample>%05d</SPAN> дополнит нулями выводимое целое число, в 
+            котором менее пяти цифр, чтобы общая длина равнялась пяти символам. 
+            Действие модификатора точности зависит от кода формата, к которому 
+            он применяется. Чтобы добавить модификатор точности, следует 
+            поставить за спецификатором ширины поля десятичную точку, а после 
+            нее – требуемое значение точности (число знаков после десятичной 
+            точки). Применительно к целым числам модификатор точности задает 
+            минимальное количество выводимых цифр. При необходимости перед целым 
+            числом будут добавлены нули. Если модификатор точности применяется к 
+            строкам, то число, следующее за точкой, задает максимальную длину 
+            поля. Например, спецификация <SPAN class=texample>%5.7s</SPAN> 
+            выведет строку длиной не менее пяти, но не более семи символов. Если 
+            выводимая строка окажется длиннее максимальной длины поля, конечные 
+            символы будут отсечены. По умолчанию все выводимые значения 
+            выравниваются по правому краю: если ширина поля больше выводимого 
+            значения, то оно будет выровнено по правому краю поля. Чтобы 
+            установить выравнивание по левому краю, нужно поставить знак "минус" 
+            ("–") сразу после знака процента. Например, спецификация формата 
+            <SPAN class=texample>%–10.4f</SPAN> обеспечит выравнивание 
+            вещественного числа с четырьмя десятичными знаками по левому краю в 
+            10-символьном поле. Существуют два модификатора формата, позволяющие 
+            функции <SPAN class=texample>printf()</SPAN> отображать короткие и 
+            длинные целые числа. Это модификатор <SPAN class=texample>l</SPAN> 
+            (латинская буква эль) уведомляет функцию <SPAN 
+            class=texample>printf()</SPAN> о длинном типе значения. Модификатор 
+            <SPAN class=texample>h</SPAN> сообщает функции <SPAN 
+            class=texample>printf()</SPAN>, что нужно вывести число короткого 
+            целого типа. Кроме того, модификатор <SPAN class=texample>l</SPAN> 
+            можно поставить перед командами форматирования вещественных чисел. В 
+            этом случае он уведомит о выводе значения типа <SPAN 
+            class=texample>long double</SPAN>.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_82>Спецификаторы формата для функции <SPAN 
+            class=texample>printf()</SPAN> перечислены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#table.2.3">табл. 
+            2.3</A>, взятой из [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>2.3</A>].</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <DIV id=id_84 class=xml_table_env><A name=table.2.3></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 2.3. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=2>Спецификаторы формата функции 
+                  printf()</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>Код</TH>
+                <TH bgColor=#d8d8d8>Формат</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%c</TD>
+                <TD bgColor=#eaeaea vAlign=top>Символ</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%d</TD>
+                <TD bgColor=#eaeaea vAlign=top>Десятичное целое число со 
+                знаком</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%i</TD>
+                <TD bgColor=#eaeaea vAlign=top>Десятичное целое число со 
+                знаком</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%e</TD>
+                <TD bgColor=#eaeaea vAlign=top>Экспоненциальное представление 
+                  числа (в виде мантиссы и порядка, е — на нижнем 
+регистре)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%E</TD>
+                <TD bgColor=#eaeaea vAlign=top>Экспоненциальное представление 
+                  числа (в виде мантиссы и порядка, Е — на верхнем 
+              регистре)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%f</TD>
+                <TD bgColor=#eaeaea vAlign=top>Десятичное число с плавающей 
+                  точкой</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%F</TD>
+                <TD bgColor=#eaeaea vAlign=top>Десятичное число с плавающей 
+                  точкой (только стандарт С99; если применяется к бесконечности 
+                  или нечисловому значению, то выдает надписи INF, 
+                  INFINITY(бесконечность) или NAN — Not A Number на верхнем 
+                  регистре. Спецификатор %f выводит их эквиваленты на нижнем 
+                  регистре)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%g</TD>
+                <TD bgColor=#eaeaea vAlign=top>Использует более короткий из 
+                  форматов %e или %f</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%G</TD>
+                <TD bgColor=#eaeaea vAlign=top>Использует более короткий из 
+                  форматов %E или %F</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%o</TD>
+                <TD bgColor=#eaeaea vAlign=top>Восьмеричное число без 
+              знака</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%s</TD>
+                <TD bgColor=#eaeaea vAlign=top>Символьная строка</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%x</TD>
+                <TD bgColor=#eaeaea vAlign=top>Шестнадцатеричное без знака 
+                  (строчные буквы)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%X</TD>
+                <TD bgColor=#eaeaea vAlign=top>Шестнадцатеричное без знака 
+                  (прописные буквы)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%p</TD>
+                <TD bgColor=#eaeaea vAlign=top>Выводит указатель</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%n</TD>
+                <TD bgColor=#eaeaea vAlign=top>Соответствующий аргумент должен 
+                  быть указателем на целое число. (Этот спецификатор указывает, 
+                  что в целочисленной переменной, на которую указывает 
+                  ассоциированный с данным спецификатором указатель, будет 
+                  храниться число символов, выведенных к моменту обработки 
+                  спецификации %n)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%%</TD>
+                <TD bgColor=#eaeaea vAlign=top>Выводит знак 
+              процента</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <P id=id_85>Прототип функции <SPAN class=texample>getchar()</SPAN> 
+            имеет следующий вид:</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int getchar(void);</PRE></DIV>
+            <P id=id_88>Функция <SPAN class=texample>getchar()</SPAN> возвращает 
+            из стандартного потока <SPAN class=texample>stdin</SPAN> (входного 
+            потока данных) следующий символ. При чтении символа предполагается, 
+            что символ имеет тип <SPAN class=texample>unsigned char</SPAN>, 
+            который потом преобразуется в целый. При достижении конца файла, как 
+            и при обнаружении ошибки, функция <SPAN 
+            class=texample>getchar()</SPAN> возвращает значение <SPAN 
+            class=texample>EOF</SPAN> (End Of File – конец файла).</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_94>Прототип функции gets имеет следующий вид:</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char *gets(char *str);</PRE></DIV>
+            <P id=id_96>Функция <SPAN class=texample>gets()</SPAN> читает 
+            символы (включая пробелы) из стандартного потока <SPAN 
+            class=texample>stdin</SPAN> и помещает их в массив символов, 
+            адресуемый указателем <SPAN class=texample>*str</SPAN> (далее это 
+            массив символов). Символы читаются до тех пор, пока не встретится 
+            <SPAN class=xml_em_italic>разделитель строк</SPAN> или значение 
+            <SPAN class=texample>EOF</SPAN>. Для реализации <SPAN 
+            class=texample>EOF</SPAN> на клавиатуре следует набрать одновременно 
+            <SPAN class=texample>Ctrl+Z</SPAN>. Вместо разделителя строк в конец 
+            строки вставляется нулевой символ, свидетельствующий о ее 
+            завершении. Следует учесть, что нет способа ограничить количество 
+            символов, которое прочитает функция <SPAN 
+            class=texample>gets()</SPAN>. Поэтому массив, адресуемый указателем 
+            <SPAN class=texample>*str</SPAN>, может переполниться, и тогда 
+            программа выдаст непредсказуемые результаты.</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_105>Прототип функции <SPAN class=texample>scanf()</SPAN> 
+            имеет следующий вид:</P>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int scanf(const char *format, ?);</PRE></DIV>
+            <P id=id_108>Функция <SPAN class=texample>scanf()</SPAN> 
+            представляет собой функцию для ввода данных общего назначения, 
+            которая читает поток <SPAN class=texample>stdin</SPAN> и сохраняет 
+            информацию в переменных, перечисленных в списке аргументов. Если в 
+            строке форматирования встретится разделитель, то функция <SPAN 
+            class=texample>scanf()</SPAN> пропустит один или несколько 
+            разделителей во входном потоке. Под разделителем, или пробельным 
+            символом, подразумевают пробел, символ табуляции <SPAN 
+            class=texample>\t</SPAN> или разделитель строк <SPAN 
+            class=texample>\n</SPAN>. Все переменные должны передаваться 
+            посредством своих адресов, например, с помощью символа <SPAN 
+            class=texample>&amp;</SPAN>. Управляющая строка, задаваемая 
+            параметром <SPAN class=texample>format</SPAN>, состоит из символов 
+            трех категорий: спецификаторов формата, пробельных символов, 
+            символов, отличных от пробельных [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#5" 
+            target=_blank>2.4</A>].</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <P id=id_116>Спецификация формата начинается знаком % и сообщает 
+            функции <SPAN class=texample>scanf()</SPAN> тип данного, которое 
+            будет прочитано. Спецификации формата функции <SPAN 
+            class=texample>scanf()</SPAN> приведены в <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#table.2.4">табл.2.4</A>.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <DIV id=id_119 class=xml_table_env><A name=table.2.4></A>
+            <TABLE class=xml_table cellSpacing=1 cellPadding=2 border=0>
+              <CAPTION>Таблица 2.4. </CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8 colSpan=2>Спецификаторы формата функции 
+                  scanf()</TH></TR>
+              <TR>
+                <TH bgColor=#d8d8d8>Код</TH>
+                <TH bgColor=#d8d8d8>Формат</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%c</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает один символ</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%d</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает десятичное целое 
+              число</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%i</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает целое число в любом 
+                  формате (десятичное, восьмеричное или шестнадцатеричное)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%u</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает десятичное целое число 
+                  типа short int</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%e</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает число с плавающей точкой 
+                  (и в экспоненциальной форме)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%E</TD>
+                <TD bgColor=#eaeaea vAlign=top>Аналогично коду %e</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%f</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает число с плавающей 
+                точкой</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%lf</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает десятичное число с 
+                  плавающей точкой типа double</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%F</TD>
+                <TD bgColor=#eaeaea vAlign=top>Аналогично коду %f (для 
+                  стандарта С99)</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%g</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает число с плавающей 
+                точкой.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%G</TD>
+                <TD bgColor=#eaeaea vAlign=top>Аналогично коду %g</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%o</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает восьмеричное число</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%x</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает шестнадцатеричное 
+                число</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%X</TD>
+                <TD bgColor=#eaeaea vAlign=top>Аналогично коду %x</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%s</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает строку</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%p</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает указатель</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%n</TD>
+                <TD bgColor=#eaeaea vAlign=top>Принимает целое значение, 
+                  равное количеству прочитанных до сих пор символов</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%[ ]</TD>
+                <TD bgColor=#eaeaea vAlign=top>Просматривает набор 
+              символов</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>%%</TD>
+                <TD bgColor=#eaeaea vAlign=top>Читает знак 
+              процента</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <P id=id_120>Строка форматирования читается слева направо, и 
+            спецификации формата сопоставляются с аргументом в порядке их 
+            перечисления в списке аргументов. Символ <SPAN 
+            class=texample>*</SPAN>, стоящий после знака % и перед кодом 
+            формата, прочитает данные заданного типа, но запретит их 
+            присваивание. Команды форматирования могут содержать модификатор 
+            максимальной длины поля. Он представляет собой целое число, 
+            располагаемое между знаком % и кодом формата, которое ограничивает 
+            количество читаемых для всех полей символов. Если входной поток 
+            содержит больше заданного количества символов, то при последующем 
+            обращении к операции ввода чтение начнется с того места, в котором 
+            "остановился" предыдущий вызов функции <SPAN 
+            class=texample>scanf()</SPAN> [<A 
+            href="http://www.intuit.ru/department/pl/prcmsvs2010/popup.lit.html#4" 
+            target=_blank>2.3</A>]. Если разделитель (например, пробел) 
+            встретится раньше, чем достигнута максимальная ширина поля, то ввод 
+            данных завершится. В этом случае функция <SPAN 
+            class=texample>scanf()</SPAN> переходит к чтению следующего поля. 
+            При чтении одиночных символов символы табуляции и разделители строк 
+            читаются подобно любому другому символу.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_124>В программах бывает необходимость определять константы. 
+            В языке <B>С</B> типы констант можно задавать явно при использовании 
+            суффиксов. Например:</P>
+            <DIV id=mark_124 class=lecture_mark></DIV>
+            <DIV class=example><PRE>long int  j = –12345678L;      /* суффикс L */
+unsigned int a = 678U;         /* суффикс U */
+float x = 123.45F;             /* суффикс F */
+long double z = 12345678.99L;  /* суффикс L* /</PRE></DIV>
+            <P id=id_126>По умолчанию спецификации <SPAN class=texample>f, e, 
+            g</SPAN> заставляют функцию <SPAN class=texample>scanf()</SPAN> 
+            присваивать переменным типа <SPAN class=texample>float</SPAN>. Если 
+            перед одной из этих спецификаций поставить модификатор <SPAN 
+            class=texample>l</SPAN>, то функция <SPAN 
+            class=texample>scanf()</SPAN> присвоит прочитанные данные переменной 
+            типа <SPAN class=texample>double</SPAN>.</P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_133>Функция <SPAN class=texample>scanf()</SPAN> 
+            поддерживает спецификатор формата общего назначения, называемый 
+            набором сканируемых символов. В этом случае определяется набор 
+            символов, которые могут быть прочитаны функцией <SPAN 
+            class=texample>scanf()</SPAN> и присвоены соответствующему массиву 
+            символов. Для определения такого набора символы, подлежащие 
+            сканированию, необходимо заключить в квадратные скобки. Открывающая 
+            квадратная скобка должна следовать сразу за знаком процента. При 
+            использовании набора сканируемых символов функция <SPAN 
+            class=texample>scanf()</SPAN> продолжает читать символы и помещать 
+            их в соответствующий массив символов до тех пор, пока не встретится 
+            символ, отсутствующий в данном наборе. Если первый символ в наборе 
+            является знаком "^", то получится обратный эффект: входное поле 
+            читается до тех пор, пока не встретится символ из заданного набора 
+            сканируемых символов, т.е. знак "^" заставляет функцию <SPAN 
+            class=texample>scanf()</SPAN> читать только те символы, которые 
+            отсутствуют в наборе сканируемых символов. Если в строке 
+            форматирования встретился символ, отличный от разделителя, то 
+            функция <SPAN class=texample>scanf()</SPAN> прочитает и отбросит 
+            его. Если заданный символ не найден, то функция <SPAN 
+            class=texample>scanf()</SPAN> завершает работу.</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <P id=id_140>В таких средах разработки как MS Visual Studio 2008 и 
+            2010 рекомендуется для безопасной работы применять функции <SPAN 
+            class=texample>gets_s()</SPAN> и <SPAN 
+            class=texample>scanf_s()</SPAN>. Для этих функций при чтении символа 
+            или строки следует указать размер в байтах, соответственно для 
+            символа или строки. Например, <SPAN class=texample>scanf_s("%c", 
+            &amp;ch, 1)</SPAN>. В Visual Studio 2010 тип данных char занимает 1 
+            байт.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Практическая часть</H3>
+            <P id=id_144>Для приводимых примеров будем приводить только текст 
+            программы и результат ее выполнения. Программы должны быть написаны 
+            в Visual Studio (см. тему 1).</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_145><B>Пример 1</B>. Напишите программу ввода символа, 
+            строки, действительных и целых чисел. Действительные числа сложите, 
+            целые числа перемножьте. Для действительных чисел использовать типы 
+            <SPAN class=texample>float</SPAN> и <SPAN 
+            class=texample>double</SPAN>.</P>
+            <DIV id=mark_145 class=lecture_mark></DIV>
+            <P id=id_148>Программный код решения примера:</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void) {
+	// Объявления
+char ch, str[79+1];// С учетом одного места для символа '\0'  
+	int x, y, z;
+	float a, b, c;
+	double A, B, C;
+
+// Выполнение программы
+printf("\n\t Enter a symbol: ");
+ch = getchar();
+printf("\t The symbol is: %c\n", ch);
+_flushall();
+printf("\n\t Enter a string: ");
+gets_s(str, 79);
+printf("\t The string is: %s\n", str);
+a = 2.42F; b = 3.58F;
+c = a + b;
+printf("\n\t The sum %1.2f and %1.2f (as float) is equal: %1.4f\n", a, b, c);
+A = 12.1234567796602;
+B =  2.7182818284509;
+C = A + B;
+printf("\n\t The sum %1.13f and %1.13f \n\t is equal (as double): %1.13f\n", A, B,C);
+x = 2; y = 7;
+z = x*y;
+printf("\n\t Multiplication %d on %i (as an integer) is equal: %d\n", x, y, z);
+
+	printf("\n\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_150>В объявлении символьного массива <SPAN 
+            class=texample>str[79+1]</SPAN> в методических целях сделано 
+            напоминание, что для строки следует предусмотреть символ ее 
+            завершения, т. е. <SPAN class=texample>'\0'</SPAN>. В определении 
+            переменных типа <SPAN class=texample>float</SPAN> добавлены суффиксы 
+            <SPAN class=texample>F</SPAN>.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_155 align=left><A name=image.2.1></A></P>
+            <DIV><IMG alt="Результат программы с базовыми типами данных" 
+            src="Лекция_2_files/mht8BA9(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 2.1.</B>&nbsp; Результат программы с 
+            базовыми типами данных
+            <P></P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#image.2.1">рис. 
+            2.1</A>.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_157>Добавим считывание данных с помощью функции <SPAN 
+            class=texample>scanf_s()</SPAN>. В результате получим следующую 
+            программу:</P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int main (void)
+ {
+	// Объявления
+	char ch, str[79+1];
+	int x, y, z;
+	float a, b, c;
+	double A, B, C;
+
+// 1-я часть	
+printf("\n\t Enter a symbol: ");
+ch = getchar();
+printf("\t The symbol is: %c\n", ch);
+_flushall();
+
+printf("\n\t Enter any string: ");
+gets_s(str, 79);
+printf("\t The string is: %s\n", str);
+
+a = 2.42F;
+b = 3.58F;
+c = a + b;
+printf("\n\t The sum %1.2f and %1.2f (as float) is equal: %1.4f\n", a, b, c);
+A = 12.1234567796602;
+B =  2.7182818284509;
+C = A + B;
+
+printf("\n\t The sum %1.13f and %1.13f \n\t is equal (as double): %1.13f\n", A, B,C);
+x = 2;
+y = 7;
+z = x*y;
+printf("\n\t The multiplication %d on %i (as an integer) is equal: %d\n", x, y, z);
+
+// 2-я часть
+printf("\n\t Enter a symbol: ");
+scanf_s("%c", &amp;ch, 1);
+printf("\t The symbol is: %c\n", ch);
+
+printf("\n\t Enter any string: ");
+scanf_s("%s", str, 79);
+printf("\t The string is: %s\n", str);
+_flushall(); // для устранения пустой строки
+
+printf("\t Enter a real number a: ");
+scanf_s("%f", &amp;a);
+
+printf("\t Enter a real number b: ");
+scanf_s("%f", &amp;b);
+
+c = a + b;
+printf("\t The sum %1.2f and %1.2f (as float) is equal: %1.4f\n", a, b, c);
+
+printf("\n\t Enter a real number A: ");
+scanf_s("%lf", &amp;A);
+
+printf("\t Enter a real number B: ");
+scanf_s("%lf", &amp;B);
+C = A + B;</PRE></DIV>
+            <P id=id_160>Результат выполнения видоизмененной программы показан 
+            на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#image.2.2">рис. 
+            2.2</A>.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_161 align=left><A name=image.2.2></A></P>
+            <DIV><IMG alt="Результат программы с различным вводом данных" 
+            src="Лекция_2_files/mht8BBC(1).tmp" width=556 
+            height=620></DIV><BR><B>Рис. 2.2.</B>&nbsp; Результат программы с 
+            различным вводом данных
+            <P></P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162>В начале функции <SPAN class=texample>int 
+            main(void)</SPAN> сделано объявление переменных, которые будут 
+            использоваться в программе. Каждый тип переменных объявлен через 
+            запятую. В частности, <SPAN class=texample>char str[81]</SPAN> 
+            означает массив символов, в квадратных скобках указано их число. 
+            Функции <SPAN class=texample>printf()</SPAN> выводят либо только 
+            сообщения, либо еще заданные переменные соответствующих типов.</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_166>Функция <SPAN class=texample>_flushall()</SPAN> 
+            используется для того, чтобы устранить пробельную строку, 
+            образованную либо после действия функции <SPAN 
+            class=texample>getchar()</SPAN>, либо после действия функции <SPAN 
+            class=texample>scanf()</SPAN>. В некоторых компиляторах функция 
+            <SPAN class=texample>_flushall()</SPAN> используется без префиксного 
+            нижнего подчеркивания.</P>
+            <DIV id=mark_166 class=lecture_mark></DIV>
+            <P id=id_171>Функция <SPAN class=texample>gets()</SPAN> позволяет 
+            считывать символы с наличием разделителей, в частности, с пробелами. 
+            В Microsoft Visual Studio 2010 рекомендуется использовать <SPAN 
+            class=texample>gets_s()</SPAN>, чтобы не было предупреждений.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_174>Следует обратить внимание на формат записи функций 
+            <SPAN class=texample>scanf()</SPAN>. Если сканируются числа, или 
+            одиночные символы, то присваивание этих символов переменным, которые 
+            были объвлены через соответствующие типы данных, осуществляется с 
+            помощью взятия адреса этих переменных, т.е. с помощью символа <SPAN 
+            class=texample>&amp;</SPAN>, например, <SPAN 
+            class=texample>scanf_s("%c",&amp;ch, 1)</SPAN>. При сканировании 
+            массива символов, т.е. при сканировании строки, символ <SPAN 
+            class=texample>&amp;</SPAN> не используется. Имя массива само по 
+            себе является указателем. Обращение к адресу осуществляется с 
+            помощью указателей (будут рассмотрены позднее). Для сканирования 
+            чисел типа <SPAN class=texample>double</SPAN> в функции <SPAN 
+            class=texample>scanf_s()</SPAN> используется спецификатор <SPAN 
+            class=texample>l</SPAN>.</P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_182><B>Задание 1</B></P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <OL id=id_183>
+              <LI>В качестве вводимых символов используйте начальные буквы своей 
+              фамилии (латинского алфавита). В отчет вставьте полученный 
+              результат.
+              <LI>В качестве вводимой строки используйте свою фамилию и имя 
+              (буквами латинского алфавита). В отчет вставьте полученный 
+              результат.
+              <LI>Подсчитайте количество символов, на которые производит отступ 
+              от левого края символ табуляции <SPAN class=texample>\t</SPAN>. 
+              Для вывода строки предусмотрите табулированный вывод с помощью 
+              спецификатора формата <SPAN class=texample>%xs</SPAN>, где <SPAN 
+              class=texample>х</SPAN> – требуемое число позиций отступа.
+              <LI>Объявите массив символов в размере одного символа и введите 
+              строку с помощью функции <SPAN class=texample>gets_s()</SPAN>, 
+              превышающую число 1.
+              <LI>Запустите программу без функций <SPAN 
+              class=texample>_flushall()</SPAN>. В отчет вставьте полученный 
+              результат
+              <LI>Ввод чисел произведите со знаком ("+" и "–"). Введите только 
+              целые числа. Введите только вещественные числа.
+              <LI>Сложите два вещественных числа типа <SPAN 
+              class=texample>float</SPAN> с десятью знаками после десятичной 
+              точки. Выведите и проанализируйте результат сложения. Объясните 
+              результат.
+              <LI>Изучите работу функции <SPAN class=texample>puts()</SPAN> и 
+              примените ее вместо функции <SPAN class=texample>printf()</SPAN>, 
+              которая использовалась в режиме сообщений. В отчет вставьте 
+              полученный результат. Объясните результат.</LI></OL>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <P id=id_200><B>Пример 2</B>. Напишите программу вычисления 
+            алгебраических выражений с приведением типов <SPAN 
+            class=texample>char, int, float, double</SPAN>.</P>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_202>Возможный программный код решения примера:</P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;math.h&gt;
+
+int main (void) { 
+char ch;
+int a, b;
+float x;
+double y, z;
+ch = 'C';
+a = 2; b = 5;
+x = 5.5F;
+y = 6.0 ;
+z = ch + a + b + x + y;
+
+// Результат приведения типов
+printf("\n\t The result of the conversion types: %lf\n", z);
+
+// Явное преобразование типов 
+z = (double) ch + (double) a + (double) b  + (double) x + y;
+
+printf("\n\t The apparent conversion types: %lf\n", z);
+z = sqrt((double)a/b);
+printf("\n\t z = sqrt(%d/%d) = %lf\n", a, b, z);
+printf("\n\t z = lg(%d/%d) = %lf\n", a, b, log10(z));
+printf("\n\t z = ln(%d/%d) = %lf\n", a, b, log(z));
+
+	printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_204>В программу включена библиотека математических функций 
+            <SPAN class=texample>math.h</SPAN>, в которой <SPAN 
+            class=texample>sqrt()</SPAN> – функция извлечения квадратного корня, 
+            <SPAN class=texample>log10()</SPAN> – логарифмическая функция по 
+            основанию <SPAN class=texample>10</SPAN>, <SPAN 
+            class=texample>log()</SPAN> – функция натурального логарифма. Все 
+            эти функции возвращают результат типа <SPAN 
+            class=texample>double</SPAN> и вычисляют от числа (выражения) также 
+            типа <SPAN class=texample>double</SPAN>.</P>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <P id=id_212>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#image.2.3">рис. 
+            2.3</A>.</P>
+            <DIV id=mark_212 class=lecture_mark></DIV>
+            <P id=id_211 align=left><A name=image.2.3></A></P>
+            <DIV><IMG alt="Вычисления с приведением типов" 
+            src="Лекция_2_files/mht8BDE(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 2.3.</B>&nbsp; Вычисления с приведением 
+            типов
+            <P></P>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <P id=id_213><B>Задание 2</B></P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <OL id=id_214>
+              <LI>В качестве вводимого символа используйте первую букву своей 
+              фамилии (буквами латинского алфавита). В отчет вставьте полученный 
+              результат.
+              <LI>Переменную <SPAN class=texample>у</SPAN> задайте в виде <SPAN 
+              class=texample>у = 6</SPAN>.
+              <LI>Вычислите заданный квадратный корень без явного приведения 
+              типов.
+              <LI>Определите переменные с суффиксами <SPAN class=texample>U, F, 
+              L</SPAN> и произведите с ними арифметические действия.
+              <LI>Вычислите логарифм от числа <SPAN class=texample>10Х</SPAN> по 
+              основанию <SPAN class=texample>2Х</SPAN>, где <SPAN 
+              class=texample>Х</SPAN> – номер компьютера, за которым выполняется 
+              лабораторная работа. Выполните тестовый пример для проверки 
+              вычислений, т.е. для заданного основания подберите число, от 
+              которого логарифм с заданным основанием даст целое число. 
+              Например, <SPAN class=texample>log10(100.0) = 
+            2.0000</SPAN>.</LI></OL>
+            <DIV id=mark_214 class=lecture_mark></DIV>
+            <P id=id_230><B>Пример 3</B>.Напишите программу вычисления площади 
+            круга и его длины окружности по заданному радиусу, вводимого 
+            пользователем с клавиатуры, а также вывода на консоль максимальных 
+            значений чисел типа <SPAN class=texample>int, float</SPAN> и <SPAN 
+            class=texample>double</SPAN>.</P>
+            <DIV id=mark_230 class=lecture_mark></DIV>
+            <P id=id_233>Для решения примера следует воспользоваться 
+            математической библиотекой компилятора, т. е. включить в программу 
+            заголовочный файл <SPAN class=texample>&lt;math.h&gt;</SPAN>., а 
+            также заголовочные файлы <SPAN 
+            class=texample>&lt;limits.h&gt;</SPAN>, <SPAN 
+            class=texample>&lt;float.h&gt;</SPAN>.</P>
+            <DIV id=mark_233 class=lecture_mark></DIV>
+            <P id=id_237>Программный код решения примера:</P>
+            <DIV id=mark_237 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+// Для числа пи 
+#define _USE_MATH_DEFINES
+#include &lt;math.h&gt;
+
+#include &lt;limits.h&gt;
+#include &lt;float.h&gt;
+
+int main (void)
+{
+double R;
+double Sr, Lr;
+
+printf("\n Enter a real greater than zero: ");
+scanf_s("%lf", &amp;R);
+Sr = M_PI*R*R;
+Lr = 2*M_PI*R;
+printf("\n Area of a circle of radius R = %g is %g", R, Sr);
+printf("\n The length of a circle of radius R = %g is %g",R,Lr);
+puts("");
+
+printf("\n  Maximum integer: %d\n ", INT_MAX);
+printf(" Maximum real number of float: %g\n ", FLT_MAX);
+printf("Maximum real number type double: %g\n ", DBL_MAX);
+
+printf("\n Press any key: ");
+	_getch();
+	return 0;
+}</PRE></DIV>
+            <P id=id_239>В программу включена константа <SPAN 
+            class=texample>_USE_MATH_DEFINES</SPAN> для работы с числом <SPAN 
+            class=texample>M_PI</SPAN> ( <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 3px" alt=\pi 
+            src="Лекция_2_files/mht8BF0(1).tmp" width=16 height=11> ). Остальные 
+            константы можно найти в справочной документации компилятора. 
+            Например, через меню Help <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 2px" alt=\to 
+            src="Лекция_2_files/mht8C03(1).tmp" width=23 height=9> Index системы 
+            MS Visual Studio 2008.</P>
+            <DIV id=mark_239 class=lecture_mark></DIV>
+            <P id=id_243>Функция <SPAN class=texample>scanf_s()</SPAN> 
+            определена в компиляторе языка <B>С</B> системы MS Visual Studio 
+            2008. С этой функцией компилятор не выдает предупреждений.</P>
+            <DIV id=mark_243 class=lecture_mark></DIV>
+            <P id=id_245>Результат выполнения программы показан на <A 
+            href="mhtml:file://D:\c_cpp\Лекции\5.Программирование на языке C №1\2. Лекция.  Переменные и базовые типы данных языка С.mht#image.2.4">рис. 
+            2.4</A>.</P>
+            <DIV id=mark_245 class=lecture_mark></DIV>
+            <P id=id_246 align=left><A name=image.2.4></A></P>
+            <DIV><IMG alt="Пример использования предопределенных констант" 
+            src="Лекция_2_files/mht8C16(1).tmp" width=620 
+            height=313></DIV><BR><B>Рис. 2.4.</B>&nbsp; Пример использования 
+            предопределенных констант
+            <P></P>
+            <DIV id=mark_246 class=lecture_mark></DIV>
+            <P id=id_247><B>Задание 3</B></P>
+            <DIV id=mark_247 class=lecture_mark></DIV>
+            <OL id=id_248>
+              <LI>Напишите программу по вычислению площади эллипса. Данные для 
+              расчета должны вводиться с клавиатуры пользователем.
+              <LI>Рассчитайте величины <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+              alt=lg(exp(100)) src="Лекция_2_files/mht8C38(1).tmp" width=101 
+              height=22> и <IMG 
+              style="POSITION: relative; DISPLAY: inline; TOP: 6px" 
+              alt=ln(exp(100)) src="Лекция_2_files/mht8C4A(1).tmp" width=103 
+              height=22>, пользуясь стандартными функциями математической 
+              библиотеки (math.h) .
+              <LI>Используя справочную документацию компилятора, в программе 
+              предусмотреть вывод минимальных значений указанных типов данных.
+              <LI>Используя справочную документацию компилятора, в программе 
+              предусмотреть вывод максимальных и минимальных значений для 
+              следующих типов даны: <SPAN class=texample>char, short int, long 
+              int</SPAN>.</LI></OL>
+            <DIV id=mark_248 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Контрольные вопросы</H3>
+            <OL id=id_256>
+              <LI>Для каких типов данных используются суффиксы при инициализации 
+              переменных?
+              <LI>Чем отличаются функции <SPAN class=texample>printf()</SPAN> и 
+              <SPAN class=texample>puts()</SPAN> при консольном выводе 
+              информации?
+              <LI>Для чего в программах на <B>С</B> используется заголовочный 
+              файл <SPAN class=texample>math.h</SPAN>?
+              <LI>При использовании функции <SPAN class=texample>gets_s()</SPAN> 
+              с какими разделителями может происходить считывание информации с 
+              консоли?
+              <LI>Какой тип данных возвращает функция <SPAN 
+              class=texample>gets_s()</SPAN> при считывании информации?
+              <LI>Как осуществляется считывание с консоли информация с помощью 
+              функции <SPAN class=texample>scanf_s()</SPAN>?
+              <LI>Как с консоли осуществляется считывание последовательности 
+              различных типов данных с помощью одной функции <SPAN 
+              class=texample>scanf_s()</SPAN>?
+              <LI>Как выводится на консоль последовательность различных типов 
+              данных с помощью одной функции <SPAN 
+              class=texample>printf()</SPAN>?
+              <LI>Как осуществляются автоматическое и принудительное приведение 
+              типов в языке <B>С</B>?
+              <LI>Какие машинно-зависимые типы данных имеются в языке <B>С</B>?
+              <LI>К каким типам данных относятся литеры</LI></OL>
+            <DIV id=mark_256 class=lecture_mark></DIV>
+            <DIV class=example><PRE>5, 5.0, 5.0F, "5", '5', 5u, 5L, 5.0L?</PRE></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+            height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG src="Лекция_2_files/mht8B68(1).tmp" width=8 
+  height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG src="Лекция_2_files/mht8B68(1).tmp" width=1 
+      height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript src="">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

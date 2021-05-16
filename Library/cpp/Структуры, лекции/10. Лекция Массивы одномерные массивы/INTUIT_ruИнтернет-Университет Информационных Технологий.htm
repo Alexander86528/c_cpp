@@ -1,0 +1,891 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/10/staldata_10.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>10. Лекция: Массивы: одномерные массивы: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятие и виды массивов в языках программирования, 
+            определение, объявление, инициализация, способы генерации и вывод 
+            одномерных массивов, расположение в памяти элементов массивов, связь 
+            между указателями и массивами. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить понятия, особенности 
+            внутреннего представления, способов генерации и вывода одномерных 
+            массивов, научиться выполнять объявление, инициализацию, генерацию и 
+            вывод массивов при решении задач на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>В программировании часто возникают задачи, связанные с 
+            обработкой больших объемов данных. Для того, чтобы весь этот объем 
+            данных хранить внутри программы, применяют массивы – простейшую 
+            разновидность структурированных типов данных.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><B>Массив</B> – именованная последовательность областей 
+            памяти, хранящих однотипные элементы (<A 
+            href="http://www.intuit.ru/department/algorithms/staldata/10/staldata_10.html#image.10.1">рис. 
+            10.1</A>). Каждая такая область памяти называется <SPAN 
+            class=xml_em_italic>элементом массива</SPAN>. Массивы обладают 
+            размерностью (большей или равной единице), которой задается число 
+            элементов, содержащихся в них, а также измерением, что предполагает 
+            возможность описания в программе одно- и многомерных массивов. 
+            Количество элементов в массиве называется его <SPAN 
+            class=xml_em_italic>размером</SPAN>.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4 align=left><A name=image.10.1></A>
+            <DIV><IMG alt="Схематическое представление массивов" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/10_01.png" 
+            width=513 height=303></DIV><BR><B>Рис. 10.1.</B>&nbsp; Схематическое 
+            представление массивов
+            <P></P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_5>Простейшим аналогом двумерного массива может быть 
+            таблица, а трехмерного – несколько таблиц одинакового размера. 
+            Математические объекты типа вектор и матрица – примеры аналогов 
+            (соответственно одно- и двумерных) массивов.</P>
+            <DIV id=mark_5 class=lecture_mark></DIV>
+            <P id=id_6>Тип элемента массива может быть одним из базовых 
+            (скалярных), типом другого массива, типом указателя, типом структуры 
+            или объединения.</P>
+            <DIV id=mark_6 class=lecture_mark></DIV>
+            <P id=id_7>Элементы массива в С++ нумеруется, начиная с нуля. У 
+            одномерных массивов после его имени указывается один индекс 
+            (порядковый номер), заключенный в прямоугольные скобки [ ], а у 
+            многомерных – несколько, каждый из которых заключается в [ ]. 
+            Последнее означает, что многомерный массив создается путем 
+            определения массива из элементов типа массив.</P>
+            <DIV id=mark_7 class=lecture_mark></DIV>
+            <P id=id_8>Все элементы массива имеют одно имя – имя массива и 
+            отличаются индексами – порядковыми номерами в массиве. В определении 
+            массива можно задать его размерность по каждому измерению. Допустимо 
+            явное задание массива либо с помощью указателя (объекта, хранящего 
+            адрес начала области набора значений). Резервирование памяти для 
+            массива выполняется на этапе компиляции программы.</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9>При объявлении массива компилятор выделяет для него 
+            последовательность ячеек памяти, для обращения к которым в программе 
+            применяется одно и то же имя. В то же время массив позволяет 
+            получить прямой доступ к своим отдельным элементам.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Объявление одномерных массивов</H3>
+            <P id=id_10>Синтаксис определения массива без дополнительных 
+            спецификаторов и модификаторов имеет два формата:</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Тип ИмяМассива[ВыражениеТипаКонстанты];
+</PRE></DIV>
+            <P id=id_12>или</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Тип ИмяМассива[];
+</PRE></DIV>
+            <P id=id_14><SPAN class=texample>ИмяМассива</SPAN> – идентификатор 
+            массива.</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <P id=id_16><SPAN class=texample>Тип</SPAN> – тип элементов 
+            объявляемого массива. Элементами массива не могут быть функции, фйлы 
+            и элементы типа <SPAN class=texample>void</SPAN>.</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_19><SPAN class=texample>ВыражениеТипаКонстанты</SPAN> – 
+            задает количество элементов (размерность) массива. Выражение 
+            константного типа вычисляется на этапе компиляции. Данное 
+            константное выражение может быть опущено в случаях если:</P>
+            <DIV id=mark_19 class=lecture_mark></DIV>
+            <UL id=id_21>
+              <LI>при объявлении массив инициализируется;
+              <LI>массив объявлен как формальный параметр функции;
+              <LI>массив объявлен как ссылка на массив, явно определенный в 
+              другом файле.</LI></UL>
+            <DIV id=mark_21 class=lecture_mark></DIV>
+            <P id=id_25>Например:</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <OL id=id_26>
+              <LI><SPAN class=texample>int a[100]; //массив из 100 элементов 
+              целого типа</SPAN>
+              <LI><SPAN class=texample>double d[14]; // массив из 14 элементов 
+              типа double</SPAN>
+              <LI><SPAN class=texample>char s[]="Программирование"; //символьный 
+              массив</SPAN>
+              <LI>
+              <DIV class=example><PRE>int t=5, k=8;
+float wer[2*t+k]; 
+//массив из 2*t+k элементов вещественного типа
+</PRE></DIV>
+              <LI>
+              <DIV class=example><PRE>int sample[853]; 
+/*массив из элементов sample[0], sample[1], 
+  sample[2],...,sample[852] типа int*/
+</PRE></DIV>равносильно объявлению 
+              <DIV class=example><PRE>const int N_max=853;
+int sample[N_max];
+</PRE></DIV>равносильно объявлению 
+              <DIV class=example><PRE>#define N_max 853
+...
+int sample[N_max];
+</PRE></DIV></LI></OL>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_39>В языке С++ не производится проверки границ массивов: 
+            таким образом, исполнение кода не остановится при выходе за границы 
+            массива. Если переполнение массива происходит во время выполнения 
+            оператора присваивания, то лишние значения могут присвоиться другим 
+            переменным или включиться в текст программы. С другой стороны, можно 
+            объявить массив размером <SPAN class=texample>N</SPAN> и указать 
+            индекс элемента, выходящий за пределы <SPAN class=texample>N</SPAN>, 
+            что не приведет к появлению сообщений об ошибке, как на шаге 
+            компиляции, так и на шаге выполнения, даже если это послужит 
+            причиной аварийного завершения программы.</P>
+            <DIV id=mark_39 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Инициализация одномерных массивов</H3>
+            <P id=id_42>Термином "инициализация" обозначают возможность задать 
+            начальные значения элементов массива без программирования 
+            соответствующих действий. Например, не прибегая к программным 
+            средствам типа присваивания значений в цикле или считывания данных 
+            из внешнего источника (файл, клавиатура, блок данных).</P>
+            <DIV id=mark_42 class=lecture_mark></DIV>
+            <P id=id_43>В С++ одновременно с объявлением массива можно задать 
+            начальные значения всех элементов массива или только нескольких 
+            первых его компонент.</P>
+            <DIV id=mark_43 class=lecture_mark></DIV>
+            <P id=id_44>Например:</P>
+            <DIV id=mark_44 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float t[5]={1.0, 4.3, 8.1, 3.0, 6.74};
+char b[7]={'П','р','и','в','е','т'};
+/*в данных примерах длину массива компилятор вычисляет по 
+количеству начальных значений, перечисленных в фигурных 
+скобках*/
+int d[10]={1, 2, 3};
+char a[10]="Привет";
+/*в данных примерах определяется значение только заданных 
+переменных d[0],d[1],d[2] и a[0],a[1],...,d[9], остальные 
+элементы не инициализируются*/
+</PRE></DIV>
+            <P id=id_46>Если в определении массива явно указан его размер, то 
+            количество начальных значений не может быть больше количества 
+            элементов в массиве.</P>
+            <DIV id=mark_46 class=lecture_mark></DIV>
+            <P id=id_47>Пусть необходимо проинициализировать массивы для 
+            создания таблицы сообщений об ошибках:</P>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <DIV class=example><PRE>char e1[12] = "read error\n";
+char e2[13] = "write error\n";
+char e3[18] = "cannot open file\n";
+</PRE></DIV>
+            <P id=id_49>Компилятор С++ сам сформирует нужное значение по 
+            количеству инициализирующих данных. В нашем случае под массив <SPAN 
+            class=texample>e2</SPAN> будет отведено 13 байтов, включая последний 
+            байт с нулевым кодом, завершающий каждую строку. Оператор</P>
+            <DIV id=mark_49 class=lecture_mark></DIV>
+            <DIV class=example><PRE>printf("%s имеет длину, равную %d\n",e2,sizeof (e2)); 
+</PRE></DIV>
+            <P id=id_52>выведет на экран</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <DIV class=example><PRE>write error
+имеет длину, равную 13
+</PRE></DIV>
+            <P id=id_54>Метод инициализации безразмерных массивов не только 
+            менее трудоемок, но и позволяет заменить любое сообщение, без 
+            перерасчета размера соответствующего массива.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Обращение к элементам одномерного массива</H3>
+            <P id=id_55>Адресация элементов массива осуществляется с помощью 
+            индексированного имени. Синтаксис обращения к элементу массива:</P>
+            <DIV id=mark_55 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяМассива[ВыражениеТипаКонстанты];
+</PRE></DIV>
+            <P id=id_57>или</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <DIV class=example><PRE>ИмяМассива[ЗначениеИндекса];
+</PRE></DIV>
+            <P id=id_59>Обращаться к элементам массива можно также посредством 
+            механизма указателей.</P>
+            <DIV id=mark_59 class=lecture_mark></DIV>
+            <P id=id_60>Таким образом, чтобы обратиться к элементу массива, надо 
+            указать имя массива и номер элемента в массиве (индекс).</P>
+            <DIV id=mark_60 class=lecture_mark></DIV>
+            <P id=id_61>Например:</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <P id=id_62><SPAN class=texample>a[0]</SPAN> – индекс задается как 
+            константа,</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_64><SPAN class=texample>d[55]</SPAN> – индекс задается как 
+            константа,</P>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_66><SPAN class=texample>s[i]</SPAN> – индекс задается как 
+            переменная,</P>
+            <DIV id=mark_66 class=lecture_mark></DIV>
+            <P id=id_68><SPAN class=texample>w[4*p]</SPAN> – индекс задается как 
+            выражение.</P>
+            <DIV id=mark_68 class=lecture_mark></DIV>
+            <P id=id_70>Следует помнить, что компилятор в процессе генерации 
+            кода задет начальный адрес массива, который в дальнейшем не может 
+            быть переопределен. Начальный адрес массива – это адрес первого 
+            элемента массива. Вообще в программе начальным адресом массива 
+            считается <SPAN class=texample>ИмяМассива</SPAN> либо <SPAN 
+            class=texample>&amp;ИмяМассива[0]</SPAN>. Имя массива считается 
+            константой-указателем, ссылающимся на адрес начала массива.</P>
+            <DIV id=mark_70 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Определение размера памяти для одномерных массивов</H3>
+            <P id=id_73>Массив занимает <SPAN 
+            class=xml_em_italic>непрерывную</SPAN> область памяти. Для 
+            одномерного массива полный объем занимаемой памяти в байтах 
+            вычисляется по формуле:</P>
+            <DIV id=mark_73 class=lecture_mark></DIV>
+            <DIV class=example><PRE>Байты = sizeof (тип) * размер массива
+</PRE></DIV>
+            <P id=id_75>Массив представляет собой набор однотипных данных, 
+            расположенных в памяти таким образом, чтобы по индексам элементов 
+            можно было легко вычислить адрес соответствующего значения. 
+            Например, пусть одномерный массив <SPAN class=texample>A</SPAN> 
+            состоит из элементов, расположенных в памяти подряд по возрастанию 
+            индексов, и каждый элемент занимает по <SPAN class=texample>k</SPAN> 
+            байт. Тогда адрес <SPAN class=texample>i</SPAN>-того элемента 
+            вычисляется по формуле:</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <DIV class=example><PRE>адрес(A[i]) = адрес(A[0]) + i*k
+</PRE></DIV>
+            <P id=id_80><SPAN class=xml_em_italic>Пример 1.</SPAN> Определение 
+            размера памяти одномерного массива.</P>
+            <DIV id=mark_80 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define v 4
+#define p 3
+
+int _tmain(int argc, _TCHAR* argv[]){
+  const int q=4, r=1;
+  int i_mas[10]; 
+  int k=sizeof(i_mas);
+  cout &lt;&lt; "i_mas[10] занимает " &lt;&lt; k &lt;&lt; " байт\n";
+  
+  float f_mas[7]={2.0,4.5,8.3,7.0,1.0};
+  int t=sizeof(f_mas);
+  cout &lt;&lt; "f_mas[7]={2.0,4.5,8.3,7.0,1.0} занимает "&lt;&lt; t &lt;&lt;"байт\n";
+
+  double d_mas[2*q-r];
+  int w=sizeof(d_mas);
+  cout &lt;&lt; "d_mas[2*q-r] занимает " &lt;&lt; w &lt;&lt; " байт\n"; 
+
+  double d1_mas[2*v/p];
+  int w1=sizeof(d1_mas);
+  cout &lt;&lt; "d1_mas[2*v/p] занимает " &lt;&lt; w1 &lt;&lt; " байт\n";  
+
+  char c_mas[]="Программирование";
+  int s=sizeof(c_mas);
+  cout &lt;&lt; "c_mas[]=\"Программирование\"занимает"&lt;&lt; s &lt;&lt;"байт\n";
+
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_82>Результат выполнения программы:</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_83><SPAN class=texample>i_mas[10]</SPAN> занимает 40 байт – 
+            4 байта (тип <SPAN class=texample>int</SPAN>) * 10 (количество 
+            элементов массива)</P>
+            <DIV id=mark_83 class=lecture_mark></DIV>
+            <P id=id_86><SPAN class=texample>f_mas[7] = 
+            {2.0,4.5,8.3,7.0,1.0}</SPAN> занимает 28 байт – 4 байта (тип <SPAN 
+            class=texample>float</SPAN>) * 7 (объявленное количество элементов 
+            массива)</P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_89><SPAN class=texample>d_mas[2*q-r]</SPAN> занимает 56 
+            байт – 8 байта (тип <SPAN class=texample>double</SPAN>) * 7 
+            (вычисленное через формулу количество элементов массива)</P>
+            <DIV id=mark_89 class=lecture_mark></DIV>
+            <P id=id_92><SPAN class=texample>d1_mas[2*v/p]</SPAN> занимает 16 
+            байт – 8 байта (тип <SPAN class=texample>double</SPAN>) * 2 
+            (вычисленное через формулу количество элементов массива)</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_95><SPAN class=texample>c_mas[]="Программирование"</SPAN> 
+            занимает 17 байт – 1 байта (тип <SPAN class=texample>char</SPAN>) * 
+            17 (16 знаков + нулевой байт <SPAN class=texample>'\0'</SPAN>)</P>
+            <DIV id=mark_95 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Указатели и одномерные массивы</H3>
+            <P id=id_99>В языке С++ между указателями и массивами существует 
+            тесная связь. Например, когда объявлен массив <SPAN 
+            class=texample>int array[25]</SPAN>, этим определяет не только 
+            выделение памяти для двадцати пяти элементов массива, но и для 
+            указателя с именем array. В языке С++ имя массива без индексов 
+            трактуется как адрес начального элемента. То есть имя массива 
+            является указателем на массив. Таким образом, доступ к элементам 
+            массива осуществляется через указатель с именем <SPAN 
+            class=texample>array</SPAN>.</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_102>Поскольку имя массива является указателем, допустимо, 
+            например, такое присваивание:</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int arrаy[25];
+int *ptr;
+ptr=array;
+</PRE></DIV>
+            <P id=id_104>Здесь указатель <SPAN class=texample>ptr</SPAN> 
+            устанавливается на адрес первого элемента массива, причем 
+            присваивание <SPAN class=texample>ptr = arrаy</SPAN> можно записать 
+            в эквивалентной форме <SPAN 
+            class=texample>ptr=&amp;arrаy[0]</SPAN>.</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <P id=id_108>Адрес каждого элемента массива можно получить, 
+            используя одно из трех выражений:</P>
+            <DIV id=mark_108 class=lecture_mark></DIV>
+            <DIV id=id_109 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Адрес в памяти</TD>
+                <TD bgColor=#eaeaea vAlign=top>1000</TD>
+                <TD bgColor=#eaeaea vAlign=top>1002</TD>
+                <TD bgColor=#eaeaea vAlign=top>1004 </TD>
+                <TD bgColor=#eaeaea vAlign=top>1008</TD>
+                <TD bgColor=#eaeaea vAlign=top>1008</TD>
+                <TD bgColor=#eaeaea vAlign=top>...</TD>
+                <TD bgColor=#eaeaea vAlign=top></TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Индекс</TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>...</TD>
+                <TD bgColor=#eaeaea vAlign=top>24</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Значения</TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>3</TD>
+                <TD bgColor=#eaeaea vAlign=top>4</TD>
+                <TD bgColor=#eaeaea vAlign=top>5</TD>
+                <TD bgColor=#eaeaea vAlign=top>...</TD>
+                <TD bgColor=#eaeaea vAlign=top>25</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top>Адрес i - го элемента</TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array
+&amp;array[0]
+ptr
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array +1
+&amp;array[1]
+ptr + 1
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array +2
+&amp;array[2]
+ptr + 2
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array +3
+&amp;array[3]
+ptr + 3
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array +4
+&amp;array[4]
+ptr + 4
+</PRE></DIV></TD>
+                <TD bgColor=#eaeaea vAlign=top>...</TD>
+                <TD bgColor=#eaeaea vAlign=top>
+                  <DIV class=example><PRE>array +24
+&amp;array[24]
+ptr + 24
+</PRE></DIV></TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_109 class=lecture_mark></DIV>
+            <P id=id_116>А обращение к пятому элементу массива можно записать 
+            как:</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <DIV class=example><PRE>array[4],    *( array + 4),      *(рtr + 4).
+</PRE></DIV>
+            <P id=id_118>Эти операторы вернут пятый элемент массива.</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <P id=id_119>Таким образом, С++ дает два способа обращения к 
+            элементу массива:</P>
+            <DIV id=mark_119 class=lecture_mark></DIV>
+            <UL id=id_120>
+              <LI>с помощью индексированного имени;
+              <LI>посредством арифметики с указателями.</LI></UL>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_123>Версия с индексированным именем выполняется медленнее, 
+            так как в языке С++ на индексирование массива уходит больше времени, 
+            чем на выполнение оператора <SPAN class=texample>*</SPAN>. Поэтому 
+            использование указателей для доступа к элементам массива в языке С++ 
+            применяется довольно часто.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_125><SPAN class=xml_em_italic>Пример 2.</SPAN></P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int array[10]; 
+  int *p;
+  p=&amp;array[0];
+  /*эквивалентные операции присваивания*/
+  *array=2; printf("%d\n", array[0]);
+  array[0]=2; printf("%d\n", array[0]);
+  *(array+0)=2; printf("%d\n", array[0]);
+  *p=2; printf("%d\n", array[0]);
+  p[0]=2; printf("%d\n", array[0]);
+  *(p+0)=2; printf("%d\n", array[0]);
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_127>В результате выполнения любой из эквивалентных операций 
+            присваивания в данном примере начальному элементу массива 
+            присваивается значение 2, но быстрее всего компьютер выполнит 
+            операции <SPAN class=texample>*array=2</SPAN> и <SPAN 
+            class=texample>*p=2</SPAN>, так как в них не требуется выполнять 
+            операции сложения.</P>
+            <DIV id=mark_127 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Использование элементов массивов в выражениях (операции с 
+            элементами массивов)</H3>
+            <P id=id_130>С элементами объявленного массива можно выполнять все 
+            действия, допустимые для обычных переменных этого типа (выше был 
+            приведен пример целочисленного массива, т.е. типа <SPAN 
+            class=texample>int</SPAN>). Например, возможны операторы 
+            присваивания:</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <DIV class=example><PRE>hours[4] = 34;
+hours[5] = hours[4]/2;
+</PRE></DIV>
+            <P id=id_133>или логические выражения с участием элементов 
+            массива:</P>
+            <DIV id=mark_133 class=lecture_mark></DIV>
+            <DIV class=example><PRE>if (number &lt; 4 &amp;&amp; hours[number] &gt;= 40) { ... }
+</PRE></DIV>
+            <P id=id_135>Присвоить значения набору элементов массива часто 
+            бывает удобно с помощью циклов <SPAN class=texample>for</SPAN> или 
+            <SPAN class=texample>while</SPAN>. Для массивов не допустима 
+            операция прямого присваивания. </P>
+            <DIV id=mark_135 class=lecture_mark></DIV><A name=sect8></A>
+            <H3>Генерация одномерных массивов</H3>
+            <P id=id_138>Задачи по программированию с использованием массивов 
+            решаются, как правило, по следующему алгоритму: объявление массива, 
+            генерация или инициализация, обработка значений элементов, вывод. 
+            При этом, если в процессе обработки значения элементов массива 
+            изменяются, то вывод осуществляется дважды: до и после обработки. 
+            </P>
+            <DIV id=mark_138 class=lecture_mark></DIV>
+            <P id=id_139>Перед использованием значений элементов массива их 
+            необходимо сформировать. Задать значения элементам массива можно на 
+            этапе объявления, т.е. выполнить <SPAN 
+            class=xml_em_italic>инициализацию</SPAN>, а также непосредственным 
+            выполнением присваивания.</P>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_140>В большинстве задач с использованием массивов 
+            целесообразно выполнять <SPAN class=xml_em_italic>генерацию</SPAN> 
+            массивов – автоматическое формирование значений элементов. Генерацию 
+            массива (массивов) в программе оформляют в виде отдельной 
+            функции.</P>
+            <DIV id=mark_140 class=lecture_mark></DIV>
+            <P id=id_141>Стандартными способами генерация массивов являются:</P>
+            <DIV id=mark_141 class=lecture_mark></DIV>
+            <UL id=id_142>
+              <LI>ввод данных с клавиатуры, 
+              <LI>формирование значений через генератор случайных чисел, 
+              <LI>вычисление значений по формуле,
+              <LI>ввод данных из файла.</LI></UL>
+            <DIV id=mark_142 class=lecture_mark></DIV>
+            <P id=id_147>При этом при формировании значений элементов используют 
+            цикл по индексам элементов или арифметические операции с указателем 
+            на массив. В данной работе рассмотрим первые три способа генерации 
+            массивов (<SPAN class=xml_em_italic>Примеры 3, 4, 6</SPAN>).</P>
+            <DIV id=mark_147 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Вывод одномерных массивов</H3>
+            <P id=id_148>Вывод массивов также целесообразно оформлять в виде 
+            отдельной функции. Так как функция вывода не изменяет значения 
+            элементов массива, то в качестве одного из параметров такой функции 
+            выступает сам массив или указатель на массив. Одномерные массивы 
+            удобно выводить в строку или в столбец в зависимости от задачи 
+            (<SPAN class=xml_em_italic>Пример 3</SPAN> и <SPAN 
+            class=xml_em_italic>4</SPAN>). Для организации вывода также 
+            используют цикл по индексам элементов или арифметические операции с 
+            указателем на массив.</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149><SPAN class=xml_em_italic>Пример 3.</SPAN></P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Генерация целочисленного массива числами с клавиатуры и вывод массива в строку*/
+#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#define max 20
+
+void gen (int k,int *pp);//прототип функции генерации массива
+void out (int k,int x[max]);//прототип функции вывода массива
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int a[max],n,*p; 
+  do {
+    printf("\nВведите количество элементов массива n (n&lt;=20):");
+    scanf ("%d",&amp;n); 
+    }
+  while (n&gt;max); //проверка выхода за границы массива
+  p=a;
+  gen(n,p);
+  out(n,a);
+  system("pause");
+  return 0;
+}
+
+//Описание функции генерации массива с клавиатуры
+void gen(int k,int *pp){     
+/*передача указателя как параметра позволяет вернуть 
+  сформированный массив в основную программу*/
+  int i;
+  printf("\nВведите значения %d элементов массива: \n",k); 
+  for (i=0;i&lt;k;i++){
+    printf("x[%d]= ",i);
+    scanf("%d",pp++);
+  }
+}
+
+//Описание функции вывода массива в строку
+void out (int k,int x[max]){
+  int i;
+  printf("\nВывод значений %d элементов массива в строку: \n",k); 
+  for (i=0;i&lt;k;i++)
+    printf("%d\t",x[i]);
+}
+</PRE></DIV>
+            <P id=id_151><SPAN class=xml_em_italic>Пример 4.</SPAN></P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Описание функции генерации массива значениями элементов арифметической прогрессии*/
+void gen(int k,int x[max]) {
+  int i,d;
+  printf ("\nВведите нулевой элемент прогрессии: ");
+  scanf("%d",&amp;x[0]); 
+  printf ("\nВведите разность прогрессии: ");
+  scanf("%d",&amp;d);
+  for (i=1;i&lt;k;i++)
+     x[i]=x[i-1]+d;
+}
+</PRE></DIV>
+            <P id=id_153><SPAN class=xml_em_italic>Пример 5.</SPAN></P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <DIV class=example><PRE>//Описание функции вывода массива в столбец
+void out (int k,int x[max]){
+  int i;
+  printf("\nВывод значений %d элементов массива в столбец: \n",k); 
+  for (i=0;i&lt;k;i++)
+    printf("x[%i]= %d\n",i,x[i]);
+}
+</PRE></DIV>
+            <P id=id_155>Для использования функции генерации случайных чисел 
+            необходимо подключить библиотеку <SPAN 
+            class=texample>&lt;time.h&gt;</SPAN>.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_157>Для написания кода генерации массива случайными целыми 
+            числами используется:</P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <OL id=id_158>
+              <LI>Функция <SPAN class=texample>srand()</SPAN>. Синтаксис: 
+              <DIV class=example><PRE>void srand(unsigned seed);
+</PRE></DIV>– функция устанавливает свой аргумент как основу 
+              (<SPAN class=texample>seed</SPAN>) для новой последовательности 
+              псевдослучайных целых чисел, возвращаемых функцией <SPAN 
+              class=texample>rand()</SPAN>. Сформированную последовательность 
+              можно воспроизвести. Для этого необходимо вызвать <SPAN 
+              class=texample>srand()</SPAN> с соответствующей величиной <SPAN 
+              class=texample>seed</SPAN>. 
+              <P id=id_166>Для использования данной функции необходимо 
+              подключить библиотечный файл <SPAN 
+              class=texample>&lt;stdlib.h&gt;</SPAN>.</P>
+              <DIV id=mark_166 class=lecture_mark></DIV>
+              <LI>Функция <SPAN class=texample>rand()</SPAN>. Синтаксис: 
+              <DIV class=example><PRE>int rand(void);
+</PRE></DIV>– функция возвращает псевдослучайное число в диапазоне 
+              от нуля до <SPAN class=texample>RAND_MAX</SPAN>. Для использования 
+              данной функции необходимо подключить библиотечный файл <SPAN 
+              class=texample>&lt;stdlib.h&gt;</SPAN>. 
+              <LI>Константа <SPAN class=texample>RAND_MAX</SPAN> определяет 
+              максимальное значение случайного числа, которое может быть 
+              возвращено функцией <SPAN class=texample>rand()</SPAN>. Значение 
+              <SPAN class=texample>RAND_MAX</SPAN> – это максимальное 
+              положительное целое число.
+              <LI>Часто в задачах требуется выполнить генерацию массива на 
+              произвольном промежутке <SPAN class=texample>[a,b)</SPAN>. Для 
+              этого используются следующие выражения: 
+              <DIV class=example><PRE>//генерация случайных целых чисел на [a,b)
+   x[i]=rand()%(b-a)+a;
+//генерация случайных вещественных чисел на [a,b)
+   y[i]= rand()*1.0/(RAND_MAX)*(b-a)+a;
+</PRE></DIV></LI></OL>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_180><SPAN class=xml_em_italic>Пример 6</SPAN>.</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <DIV class=example><PRE>/*Описание функции генерации массива случайными вещественными числами на[a,b)*/
+void gen(int k,int a, int b, float x[max]){ 
+  int i;
+  srand(time(NULL)*1000); 
+  //устанавливает начальную точку генерации случайных чисел
+  for (i=0;i&lt;k;i++){
+   x[i]=(rand()*1.0/(RAND_MAX)*(b-a)+a); 
+   //функция генерации случайных чисел на [a,b)
+   }
+}
+</PRE></DIV><A name=sect10></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_182><B>Генерация массива</B> – это автоматическое 
+            формирование значений его элементов.</P>
+            <DIV id=mark_182 class=lecture_mark></DIV>
+            <P id=id_183><B>Значение элемента массива</B> – это значение, 
+            хранящееся по адресу, который соответствует данному элементу.</P>
+            <DIV id=mark_183 class=lecture_mark></DIV>
+            <P id=id_184><B>Измерение массива</B> – это количество индексов в 
+            определении массива.</P>
+            <DIV id=mark_184 class=lecture_mark></DIV>
+            <P id=id_185><B>Имя массива</B> – идентификатор, именующий 
+            выделенную под массив область памяти. </P>
+            <DIV id=mark_185 class=lecture_mark></DIV>
+            <P id=id_186><B>Индекс элемента массива</B> – это порядковый номер 
+            элемента в последовательности.</P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_187><B>Инициализация массива</B> – это формирование 
+            значений его элементов. </P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188><B>Массив</B> – это именованная последовательность 
+            областей памяти, хранящих однотипные элементы.</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <P id=id_189><B>Одномерный массив</B> – это массив, измерение 
+            которого равно единице.</P>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_190><B>Размер массива</B> – это количество элементов в 
+            массиве.</P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191><SPAN class=texample>Тип массива</SPAN> – это тип 
+            элементов массива. </P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_193><B>Указатель на массив</B> – это адрес области памяти, 
+            выделенной под массив.</P>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_194><B>Элемент массива</B> – это каждая область памяти из 
+            последовательности областей, выделенных под массив. </P>
+            <DIV id=mark_194 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_195>
+              <LI>Массив является представителем структурированного типа данных 
+              в языке С++.
+              <LI>Элементы массива имеют одинаковые имя, тип и располагаются в 
+              памяти последовательно.
+              <LI>Элементы массива характеризуются индексами, значениями и 
+              адресуемой памятью. 
+              <LI>Существует две основные формы объявления массивов: с указанием 
+              и без указания размера. Безразмерный массив объявляется, если: он 
+              инициализируется при объявлении, является формальным параметром 
+              функции, объявлен как ссылка на массив.
+              <LI>Инициализация массива заключается в присваивании начальных 
+              значений его элементам. В программах часто используется генерация 
+              массивов.
+              <LI>Для массивов нельзя выполнить операцию прямого присваивания.
+              <LI>Адресация элементов массива осуществляется с помощью 
+              индексированного имени. Обращаться к элементам массива можно также 
+              посредством механизма указателей. 
+              <LI>Размер памяти, занимаемой массивом, зависит от реализации и 
+              вычисляется с помощью операции sizeof.
+              <LI>Массивы используются для решения прикладных задач.</LI></OL>
+            <DIV id=mark_195 class=lecture_mark></DIV><A name=sect12></A>
+            <H3>Лабораторная работа 10. Массивы: одномерные массивы</H3>
+            <P id=id_205><B>Цель работы:</B> изучить понятия, особенности 
+            внутреннего представления, способов генерации и вывода одномерных 
+            массивов, научиться выполнять объявление, инициализацию, генерацию и 
+            вывод массивов при решении задач на языке C++.</P>
+            <DIV id=mark_205 class=lecture_mark></DIV>
+            <P id=id_206>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            числовые данные (в зависимости от постановки задачи), выполняет 
+            генерацию, вывод одномерного массива указанного типа. Ввод данных 
+            осуществляется с клавиатуры с учетом требований к входным данным, 
+            содержащихся в постановке задачи. Ограничениями на входные данные 
+            является диапазон используемого числового типа данных в языке С++ и 
+            максимально допустимый размер объявляемого одномерного массива.</P>
+            <DIV id=mark_206 class=lecture_mark></DIV>
+            <P id=id_207><B>Теоретические сведения.</B></P>
+            <DIV id=mark_207 class=lecture_mark></DIV>
+            <P id=id_208>Ознакомьтесь с материалом лекции 10.</P>
+            <DIV id=mark_208 class=lecture_mark></DIV>
+            <P id=id_209><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_209 class=lecture_mark></DIV>
+            <P id=id_210>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_210 class=lecture_mark></DIV>
+            <OL id=id_211>
+              <LI>Объявите одномерный вещественный массив, в котором 10 
+              элементов. Выполните генерацию массива, используя закономерность: 
+              0; 0,1; 0,12; 0,123,… Выведите массив на экран в столбик. Оформите 
+              генерацию и ввод массива с помощью функций. 
+              <LI>Объявите одномерный целочисленный массив, в котором 15 
+              элементов. Выполните генерацию массива первыми 15 числами 
+              Фибоначчи. Выведите массив на экран в строку. Оформите генерацию и 
+              ввод массива с помощью функций. 
+              <LI>Даны два натуральных числа <SPAN class=texample>a</SPAN> и 
+              <SPAN class=texample>b</SPAN> (<SPAN 
+              class=texample>a&lt;b</SPAN>). Объявите одномерный целочисленный 
+              массив, в котором 10 элементов. Выполните генерацию массива 
+              первыми десятью цифрами дробной части частного <SPAN 
+              class=texample>a/b</SPAN>. Выведите массив на экран в столбец. 
+              Оформите генерацию и ввод массива с помощью функций. Например, для 
+              <SPAN class=texample>a</SPAN>=7, <SPAN class=texample>b</SPAN>=23 
+              значениями элементов массива будут числа: 3 0 4 3 4 7 8 2 6 0.
+              <LI>Объявите одномерный целочисленный массив, в котором не более 
+              100 элементов. Выполните генерацию массива первыми 100 простыми 
+              числами. Выведите массив на экран в строку (или в строки по 10 
+              элементов в каждой). Оформите генерацию и ввод массива с помощью 
+              функций.</LI></OL>
+            <DIV id=mark_211 class=lecture_mark></DIV>
+            <P id=id_222><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_222 class=lecture_mark></DIV>
+            <P id=id_223>Каждое задание необходимо решить в соответствии с 
+            изученными методами объявления, генерации и вывода одномерных 
+            массивов в языке С++. При разработке программного кода требуется 
+            использовать метод процедурной абстракции и комментировать фрагменты 
+            кода.</P>
+            <DIV id=mark_223 class=lecture_mark></DIV>
+            <P id=id_224>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_224 class=lecture_mark></DIV>
+            <UL id=id_225>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_225 class=lecture_mark></DIV>
+            <P id=id_234><B>Требования к отчету.</B></P>
+            <DIV id=mark_234 class=lecture_mark></DIV>
+            <P id=id_235>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_235 class=lecture_mark></DIV>
+            <UL id=id_236>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_236 class=lecture_mark></DIV>
+            <P id=id_245><B>Контрольные вопросы</B></P>
+            <DIV id=mark_245 class=lecture_mark></DIV>
+            <OL id=id_246>
+              <LI>Почему в программе на С++ необходимо, чтобы был известен 
+              размер массива?
+              <LI>Можно ли выполнить прямое присваивание массивов объявленных 
+              так: <SPAN class=texample>int x[10], y[10];</SPAN>?
+              <LI>Когда, с какой целью и почему возможно объявление безразмерных 
+              массивов?
+              <LI>В чем отличие обращения к элементам массива с помощью 
+              индексированного имени и посредством арифметики с указателями?
+              <LI>Может ли значение элемента массива использоваться в качестве 
+              индекса другого элемента массива?
+              <LI>Эквивалентны ли для массива <SPAN class=texample>mas</SPAN> 
+              следующие обращения и почему: <SPAN class=texample>mas</SPAN> и 
+              <SPAN class=texample>&amp;mas[0]</SPAN>?
+              <LI>Какие ограничения распространяются на тип массива?
+              <LI>Каким образом можно определить объем памяти, выделяемой под 
+              массив?
+              <LI>Каким образом можно составить выражение для генерации массива 
+              случайными целыми числами на заданном промежутке?</LI></OL>
+            <DIV id=mark_246 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

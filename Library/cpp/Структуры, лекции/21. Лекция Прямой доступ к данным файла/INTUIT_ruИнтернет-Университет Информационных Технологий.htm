@@ -1,0 +1,792 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/21/staldata_21.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>21. Лекция: Прямой доступ к данным файла: 
+            версия для печати и PDA</SPAN> <BR><SPAN class=rtxt>В лекции 
+            рассматриваются понятие, особенности, способы организации и функции 
+            ввода-вывода в файлы на нижнем уровне, отличия низкоуровневого и 
+            потокового ввода-вывода в файлы, примеры, иллюстрирующие 
+            низкоуровневый обмен данными в файлах. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить организацию ввода-вывода в 
+            файлы на нижнем уровне, научиться решать задачи с использованием 
+            прямого доступа к данным файла на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Ввод-вывод низкого уровня</H3>
+            <P id=id_2>Файл представляет собой именованную область внешней 
+            памяти, в которой хранится информация в виде последовательности 
+            байтов. С такой точки зрения можно рассматривать любой произвольный 
+            файл, поэтому доступ к его содержимому иногда удобно организовать на 
+            нижнем уровне с помощью средств прямого доступа к данным.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3>Рассмотренные ранее средства обмена с файлами позволяют 
+            записывать и считывать данные только последовательно. Операции 
+            чтения-записи всегда производятся, начиная с текущей позиции в 
+            потоке. Начальная позиция устанавливается при открытии потока и 
+            может соответствовать начальному или конечному байту потока в 
+            зависимости от режима открытия файла. При этом данные потока 
+            буферизируются и выполняется форматирование передаваемой 
+            информации.</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <P id=id_4><SPAN class=xml_em_italic>Функции ввода-вывода низкого 
+            уровня (прямого доступа)</SPAN> осуществляют обмен с файлами или 
+            периферийными устройствами путем прямого обращения к соответствующим 
+            функциям операционной системы (системным вызовам). <SPAN 
+            class=xml_em_italic>Отличительные особенности средств прямого 
+            доступа к файлам</SPAN> следующие.</P>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <UL id=id_5>
+              <LI>Они не предоставляют возможности буферизации информации при 
+              пересылке.
+              <LI>Они не обеспечивают преобразования данных из внутреннего 
+              машинного представления в текстовый формат.
+              <LI>Они дают возможность перемещать указатель текущей позиции в 
+              потоке на нужный байт.
+              <LI>При низкоуровневом открытии файла с ним связывается файловый 
+              дескриптор. Дескриптор является целым значением, характеризующим 
+              размещение информации об открытом файле во внутренних таблицах 
+              операционной системы. Дескриптор используется при последующих 
+              операциях с файлом.</LI></UL>
+            <DIV id=mark_5 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Основные функции низкого уровня</H3>
+            <P id=id_10>Функции низкого уровня, прототипы которых входят в 
+            стандартную библиотеку <SPAN class=texample>&lt;io.h&gt;</SPAN>, 
+            обычно применяются при разработке собственных подсистем 
+            ввода-вывода. Большинство функций этого уровня переносимы в рамках 
+            некоторых систем программирования на язык С или С++.</P>
+            <DIV id=mark_10 class=lecture_mark></DIV><A name=sect4></A>
+            <H3>Функция открытия файла для чтения-записи</H3>
+            <P id=id_12>Для начала работы с файлом его необходимо открыть с 
+            помощью функции <SPAN class=texample>open</SPAN>.</P>
+            <DIV id=mark_12 class=lecture_mark></DIV>
+            <P id=id_14>Синтаксис:</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int open(const char *filename, int oflags [,int sflags]);
+</PRE></DIV>
+            <P id=id_16>где <SPAN class=texample>filename</SPAN> – указатель на 
+            строку символов, представляющую собой допустимое имя файла, в 
+            которое может входить спецификация файла (включает обозначение 
+            логического устройства, путь к файлу и собственно имя файла). При 
+            указании полного пути в качестве разделителя используется символ 
+            "слэш" ('/'), а не "обратный слэш" ('\'), как принято. Это 
+            объясняется использованием символа "обратный слэш" в управляющих 
+            последовательностях в С++;</P>
+            <DIV id=mark_16 class=lecture_mark></DIV>
+            <P id=id_18><SPAN class=texample>oflags</SPAN> – доступный тип 
+            операций, представляющий собой одну или несколько целочисленных 
+            констант, объявленных в файле <SPAN 
+            class=texample>&lt;fcntl.h&gt;</SPAN>. Если задана больше чем одна 
+            константа, тогда выполняется их объединение при помощи логического 
+            оператора <SPAN class=texample>ИЛИ</SPAN> (<SPAN 
+            class=texample>|</SPAN>). Состав доступных констант зависит от 
+            операционной системы. В таблице перечислены константы режима, 
+            встречающиеся практически во всех операционных системах.</P>
+            <DIV id=mark_18 class=lecture_mark></DIV>
+            <DIV id=id_23 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Константы типа операций</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Константа</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_APPEND</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Добавление в конец файла. 
+                  Указатель на файл перемещен в конец файла перед каждой 
+                  операцией записи.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_CREAT</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Новый файл создается и 
+                  открывается для записи; не эффективно, если существует файл, 
+                  определяемый по указанному имени.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_EXCL</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Возвращается значение ошибки, 
+                  если существует файл, определяемый по указанному имени. 
+                  Применяется только вместе с <SPAN 
+                  class=texample>O_CREAT</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_RDONLY</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Файл открыт только для чтения; 
+                  если задается этот флаг, может быть выбран либо флаг <SPAN 
+                  class=texample>O_RDWR</SPAN>, либо <SPAN 
+                  class=texample>O_WRONLY</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_WRONLY</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Файл открыт только для чтения; 
+                  если задан этот флаг, должен быть задан также либо флаг <SPAN 
+                  class=texample>O_RDONLY</SPAN>, либо <SPAN 
+                  class=texample>O_RDWR</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_RDWR</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Файл открыт одновременно для 
+                  чтения и записи; если задается этот флаг, может быть выбран 
+                  либо флаг <SPAN class=texample>O_RDONLY</SPAN>, либо <SPAN 
+                  class=texample>O_WRONLY</SPAN>.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_TRUNC</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Существующий файл открыт и 
+                  усечен к длине 0; этот файл должен иметь разрешение на запись. 
+                  Содержимое файла уничтожается.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_BINARY</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Файл открыт в двоичном (не 
+                  транслированном) режиме.</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>O_TEXT</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Файл открыт в текстовом 
+                  (транслирующем) режиме.</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_23 class=lecture_mark></DIV>
+            <P id=id_40><SPAN class=texample>sflags</SPAN> – необязательный 
+            параметр, который определяет тип доступа к файлу и представляет 
+            собой одну или несколько целочисленных констант, объявленных в файле 
+            <SPAN class=texample>&lt;sys\stat.h&gt;</SPAN>. Если задана больше 
+            чем одна константа, тогда выполняется их объединение при помощи 
+            логического оператора <SPAN class=texample>ИЛИ</SPAN> (<SPAN 
+            class=texample>|</SPAN>). Данный параметр применяется совместно с 
+            константой <SPAN class=texample>O_CREAT</SPAN> типа операций. Если 
+            открываемый файл существует, <SPAN class=texample>ТипДоступа</SPAN> 
+            игнорируется.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <DIV id=id_47 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Константы типа доступа</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Константа</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>S_IWRITE</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Разрешена запись</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>S_IREAD</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Разрешено чтение</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>S_IREAD|S_IWRITE</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>Разрешены чтение и 
+              запись</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_47 class=lecture_mark></DIV>
+            <P id=id_51>В случае успешного открытия файла данная функция 
+            возвращает неотрицательное целое значение, которое соответствует 
+            логическому номеру файла, а указатель устанавливается на начало 
+            файла. Максимальное число одновременно открытых файлов определяется 
+            константой <SPAN class=texample>HANDLE_MAX</SPAN>. При возникновении 
+            ошибки открытия файла функция возвращает значение <SPAN 
+            class=texample>-1</SPAN>.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV><A name=sect5></A>
+            <H3>Функция открытия файла для разделенного доступа</H3>
+            <P id=id_54>Семантика разделения означает, что файловая система 
+            должна определить алгоритм работы, который применяется, когда 
+            несколько клиентов одновременно обращаются к одному файлу. Важно, 
+            чтобы все изменения, сделанные одним клиентом, были бы видны другим 
+            клиентам, когда они выполняют следующий системный вызов на чтение 
+            или запись в один и тот же файл. Открытие файлов для разделенного 
+            доступа к ним выполняется с помощью функции <SPAN 
+            class=texample>sopen</SPAN>.</P>
+            <DIV id=mark_54 class=lecture_mark></DIV>
+            <P id=id_56>Синтаксис:</P>
+            <DIV id=mark_56 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int sopen(const char *filename, int oflags, int shflags [,int sflags]);
+</PRE></DIV>
+            <P id=id_58>где параметры <SPAN class=texample>filename, oflags, 
+            sflags</SPAN> имеют тот же смысл, что и в функции <SPAN 
+            class=texample>open</SPAN>.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_61><SPAN class=texample>shflags</SPAN> - устанавливаемый 
+            тип разделенного доступа к файлу, представляющий собой одну из 
+            целочисленных констант, объявленных в файле <SPAN 
+            class=texample>&lt;fcntl.h&gt;</SPAN>.</P>
+            <DIV id=mark_61 class=lecture_mark></DIV>
+            <DIV id=id_64 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Константы типа разделения</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Константа</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SH_COMPAT</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>устанавливается режим 
+                  совместимости</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SH_DENYRW</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>доступ по чтению и записи в 
+                  файле не разрешен</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SH_DENYWR</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>доступ по записи в файле не 
+                  разрешен</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SH_DENYRD</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>доступ по чтению в файле не 
+                  разрешен</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SH_DENYNO</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>доступ по чтению и записи 
+                  разрешен</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_64 class=lecture_mark></DIV>
+            <P id=id_70>В случае успешного открытия файла данная функция 
+            возвращает неотрицательное целое значение, которое соответствует 
+            логическому номеру файла, а указатель устанавливается на начало 
+            файла. При возникновении ошибки открытия файла функция возвращает 
+            значение <SPAN class=texample>-1</SPAN>.</P>
+            <DIV id=mark_70 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Функция создания файла</H3>
+            <P id=id_72>Функция <SPAN class=texample>open</SPAN> предоставляет 
+            доступ к существующему файлу или создает его заново, а функция <SPAN 
+            class=texample>creat</SPAN> создает в файловой системе новый 
+            объект.</P>
+            <DIV id=mark_72 class=lecture_mark></DIV>
+            <P id=id_75>Синтаксис:</P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int creat(const char *filename, int sflags);
+</PRE></DIV>
+            <P id=id_77>где параметры <SPAN class=texample>filename</SPAN>, 
+            <SPAN class=texample>sflags</SPAN> имеют тот же смысл, что и в 
+            функции <SPAN class=texample>open</SPAN>.</P>
+            <DIV id=mark_77 class=lecture_mark></DIV>
+            <P id=id_81>Если прежде в файловой системе не существовало объекта с 
+            указанным именем или полной спецификацией, будет создан новый файл с 
+            указанным именем и указанными правами доступа к нему. Если же такой 
+            файл уже существовал, размер файла усекается до 0 (освобождаются все 
+            существующие блоки данных и устанавливается размер файла равным 0). 
+            Созданный ранее файл должен при этом позволять производить запись в 
+            него, чтобы можно было создать "новый" файл с тем же самым 
+            именем.</P>
+            <DIV id=mark_81 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Функция закрытия файла</H3>
+            <P id=id_82>После завершения работы с файлом его необходимо закрыть. 
+            Для этого используется функция <SPAN 
+class=texample>close</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_84>Синтаксис:</P>
+            <DIV id=mark_84 class=lecture_mark></DIV>
+            <DIV class=example><PRE>close(int fd);
+</PRE></DIV>
+            <P id=id_86>где <SPAN class=texample>fd</SPAN> - дескриптор 
+            открытого файла. </P>
+            <DIV id=mark_86 class=lecture_mark></DIV>
+            <P id=id_88>Ядро выполняет операцию закрытия, используя дескриптор 
+            файла и информацию из соответствующих записей в таблице файлов и 
+            таблице индексов. Если счетчик ссылок в записи таблицы файлов имеет 
+            значение, большее, чем 1, то это означает, что на запись в таблице 
+            файлов делают ссылку другие пользовательские дескрипторы (например, 
+            при разделенном доступе). В этом случае счетчик ссылок уменьшается 
+            на 1. Если счетчик ссылок в таблице файлов имеет значение, равное 1, 
+            операционная система освобождает запись в таблице и индекс в памяти, 
+            ранее выделенный системной функцией <SPAN 
+            class=texample>open</SPAN>.</P>
+            <DIV id=mark_88 class=lecture_mark></DIV>
+            <P id=id_90>Когда выполнение функции <SPAN 
+            class=texample>close</SPAN> завершается, запись в таблице 
+            пользовательских дескрипторов файла становится пустой. Попытки 
+            процесса использовать данный дескриптор заканчиваются ошибкой до тех 
+            пор, пока дескриптор не будет переназначен другому файлу в 
+            результате выполнения другой функции. Когда выполнение программного 
+            кода завершается, система проверяет наличие активных 
+            пользовательских дескрипторов файла данного сеанса и закрывает 
+            каждый из них. Таким образом, ни один сеанс выполнения кода не может 
+            оставить файл открытым после своего завершения.</P>
+            <DIV id=mark_90 class=lecture_mark></DIV><A name=sect8></A>
+            <H3>Функция чтения из файла</H3>
+            <P id=id_92>Чтение из файла на нижнем уровне осуществляется 
+            побайтно, без буферизации, с помощью функции <SPAN 
+            class=texample>read</SPAN>.</P>
+            <DIV id=mark_92 class=lecture_mark></DIV>
+            <P id=id_94>Синтаксис:</P>
+            <DIV id=mark_94 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int read(int fd, char *buffer,int count);
+</PRE></DIV>
+            <P id=id_96>где <SPAN class=texample>fd</SPAN> - дескриптор файла, 
+            возвращаемый функцией <SPAN class=texample>open</SPAN>;</P>
+            <DIV id=mark_96 class=lecture_mark></DIV>
+            <P id=id_99><SPAN class=texample>buffer</SPAN> – адрес структуры 
+            данных, определенной пользователем, где будут размещаться считанные 
+            данные в случае успешного завершения выполнения функции <SPAN 
+            class=texample>read</SPAN>;</P>
+            <DIV id=mark_99 class=lecture_mark></DIV>
+            <P id=id_102><SPAN class=texample>count</SPAN> - количество байтов, 
+            которые определяет пользователь для считывания.</P>
+            <DIV id=mark_102 class=lecture_mark></DIV>
+            <P id=id_104>Функция возвращает количество фактически прочитанных 
+            байтов. В процессе выполнения функции ядро операционной системы 
+            обращается в таблице файлов к записи, которая соответствует значению 
+            пользовательского дескриптора файла, следуя за указателем. Затем оно 
+            устанавливает значения нескольких параметров ввода-вывода в адресном 
+            пространстве, тем самым устраняя необходимость в их передаче в 
+            качестве параметров функции. При выполнении режима ввода-вывода 
+            "чтение" формируются значения следующих параметров:</P>
+            <DIV id=mark_104 class=lecture_mark></DIV>
+            <UL id=id_105>
+              <LI>устанавливается флаг, свидетельствующий о том, что ввод-вывод 
+              направляется в адресное пространство структуры пользователя;
+              <LI>значению поля счетчика байтов присваивается количество байтов, 
+              которые должны быть прочитаны;
+              <LI>устанавливается адрес пользовательского буфера данных;
+              <LI>определяется значение смещения (из таблицы файлов), равное 
+              смещению в байтах внутри файла до места, откуда начинается 
+              ввод-вывод.</LI></UL>
+            <DIV id=mark_105 class=lecture_mark></DIV>
+            <P id=id_110>После считывания данные из блока копируются по 
+            назначенному адресу в структуру пользователя. При этом 
+            корректируются параметры ввода-вывода в адресном пространстве в 
+            соответствии с количеством прочитанных байтов: увеличивается 
+            значение смещения в байтах внутри файла и адрес структуры 
+            пользователя, куда будет доставлена следующая порция данных. 
+            Одновременно уменьшается число байтов, которые необходимо прочитать, 
+            чтобы выполнить запрос пользователя. Если запрос на чтение полностью 
+            не выполнен, происходит циклическое повторение описанных действий. 
+            Цикл завершается при достижении хотя бы одного из условий:</P>
+            <DIV id=mark_110 class=lecture_mark></DIV>
+            <UL id=id_111>
+              <LI>запрос на чтение выполнен полностью; 
+              <LI>в файле больше нет данных (достигнут конец файла); 
+              <LI>операционная система обнаружила ошибку при чтении данных с 
+              диска или при копировании данных в структуру пользователя. 
+</LI></UL>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_115>В процессе чтения данных происходит коррекция значения 
+            смещения в таблице файлов в соответствии с количеством фактически 
+            прочитанных байтов; поэтому успешное выполнение операций чтения 
+            выглядит как последовательное считывание данных из файла.</P>
+            <DIV id=mark_115 class=lecture_mark></DIV><A name=sect9></A>
+            <H3>Функция записи в файл</H3>
+            <P id=id_116>Запись в файл на нижнем уровне осуществляется побайтно, 
+            без буферизации, с помощью функции <SPAN 
+            class=texample>write</SPAN>.</P>
+            <DIV id=mark_116 class=lecture_mark></DIV>
+            <P id=id_118>Синтаксис:</P>
+            <DIV id=mark_118 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int write(int fd, char *buffer,int count);
+</PRE></DIV>
+            <P id=id_120>где переменные <SPAN class=texample>fd, buffer, 
+            count</SPAN> имеют тот же смысл, что и для вызова функции <SPAN 
+            class=texample>read</SPAN>.</P>
+            <DIV id=mark_120 class=lecture_mark></DIV>
+            <P id=id_123>Функция возвращает количество фактически переданных 
+            байтов.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124>Алгоритм записи в файл похож на алгоритм чтения: 
+            указатель циклически перемещается в соответствии с количеством 
+            переданных в файл байтов до завершения процесса передачи данных в 
+            файл. Когда запись завершается, операционная система корректирует 
+            размер файла.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Функция прямого доступа к файлу</H3>
+            <P id=id_125>Функция <SPAN class=texample>read</SPAN> при корректном 
+            выполнении осуществляет последовательное чтение данных из файла. 
+            Однако при работе с файлами на нижнем уровне можно изменять порядок 
+            доступа к данным с последовательного на произвольный. Для этого 
+            используется функция <SPAN class=texample>fseek</SPAN>.</P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_128>Синтаксис:</P>
+            <DIV id=mark_128 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int fseek(FILE *f, long off, int org);
+</PRE></DIV>
+            <P id=id_130>где <SPAN class=texample>f</SPAN> – указатель на 
+            файл;</P>
+            <DIV id=mark_130 class=lecture_mark></DIV>
+            <P id=id_132><SPAN class=texample>off</SPAN> – позиция смещения;</P>
+            <DIV id=mark_132 class=lecture_mark></DIV>
+            <P id=id_134><SPAN class=texample>org</SPAN> – начало отсчета.</P>
+            <DIV id=mark_134 class=lecture_mark></DIV>
+            <P id=id_136>Смещение <SPAN class=texample>off</SPAN> задается 
+            выражением или переменной и может быть отрицательным, то есть 
+            возможно перемещение как в прямом, так и в обратном направлениях. 
+            Начало отсчета org задается одной из определенных в файле <SPAN 
+            class=texample>&lt;stdio.h&lt;</SPAN> констант.</P>
+            <DIV id=mark_136 class=lecture_mark></DIV>
+            <DIV id=id_139 class=xml_table_env><A></A>
+            <TABLE class=xml_table border=0 cellSpacing=1 cellPadding=2>
+              <CAPTION>Константы, задающие начало отсчета</CAPTION>
+              <TBODY>
+              <TR>
+                <TH bgColor=#d8d8d8>Константа</TH>
+                <TH bgColor=#d8d8d8>Значение</TH>
+                <TH bgColor=#d8d8d8>Описание</TH></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SEEK_SET</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>0</TD>
+                <TD bgColor=#eaeaea vAlign=top>начало файла</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SEEK_CUR</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>1</TD>
+                <TD bgColor=#eaeaea vAlign=top>текущая позиция</TD></TR>
+              <TR>
+                <TD bgColor=#eaeaea vAlign=top><SPAN 
+                  class=texample>SEEK_END</SPAN></TD>
+                <TD bgColor=#eaeaea vAlign=top>2</TD>
+                <TD bgColor=#eaeaea vAlign=top>конец 
+            файла</TD></TR></TBODY></TABLE></DIV>
+            <DIV id=mark_139 class=lecture_mark></DIV>
+            <P id=id_143>Функция возвращает 0, если перемещение в потоке 
+            выполнено успешно, иначе возвращает ненулевое значение.</P>
+            <DIV id=mark_143 class=lecture_mark></DIV>
+            <P id=id_144>Функцию <SPAN class=texample>fseek</SPAN> следует 
+            использовать только при работе с двоичными файлами. В текстовых 
+            файлах начало отсчета org должно быть установлено как <SPAN 
+            class=texample>SEEK_SET</SPAN>, а смещение указывается относительно 
+            начала файла (возможно нулевое смещение, которое интерпретируется 
+            как позиционирование в начало файла).</P>
+            <DIV id=mark_144 class=lecture_mark></DIV>
+            <P id=id_147>Например, для текстовых файлов:</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fseek(f,0L,SEEK_SET); 
+//перемещение к началу потока из текущей позиции
+fseek(f,0L,SEEK_END); 
+//перемещение к концу потока из текущей позиции
+</PRE></DIV>
+            <P id=id_149>Например, для двоичных файлов:</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <DIV class=example><PRE>fseek(f,(long)sizeof(a),SEEK_SET); 
+//перемещение вперед от начала на длину переменной а
+fseek(f,-(long)sizeof(a),SEEK_CUR); 
+//перемещение назад от текущей позиции на длину переменной а
+</PRE></DIV>
+            <P id=id_151>Кроме этой функции, для прямого доступа к файлу 
+            используются функции:</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <DIV class=example><PRE>long tell(FILE *f);
+//получает значение указателя текущей позиции в потоке
+void rewind(FILE *f);
+//устанавливает значение указателя на начало потока
+</PRE></DIV>
+            <P id=id_153><SPAN class=xml_em_italic>Пример 1</SPAN>. 
+            Использование в программе функций доступа к данным на нижнем 
+            уровне.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;fcntl.h&gt; 
+#include &lt;sys\stat.h&gt;
+#include &lt;io.h&gt;
+int _tmain(int argc, _TCHAR* argv[]){
+  int fh1, fh2;
+  //открытие файла на нижнем уровне
+  fh1 = open("data1.dat", O_RDONLY);
+  //проверка корректности открытия файла
+  if (fh1 == -1)
+    perror("Open failed on input file");
+  fh2 = open("data2.dat",O_WRONLY|O_TRUNC|O_CREAT,S_IREAD|S_IWRITE);
+  if (fh2 == -1)
+    perror("Open failed on output file");
+  system("pause");
+  return 0;
+}
+</PRE></DIV>
+            <P id=id_155><SPAN class=xml_em_italic>Пример 2</SPAN>. 
+            Использование в программе позиционирования файлового указателя с 
+            помощью функции <SPAN class=texample>fseek</SPAN> в двоичном 
+            файле.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;io.h&gt;
+int _tmain(int argc, _TCHAR* argv[]){
+  FILE *f;//указатель на двоичный файл
+  int i,n=10;
+  char s[]="String";
+  float r;
+  f=fopen("file_bin","wb");
+  //создание двоичного файла для записи
+  for(i=1;i&lt;=n;i++){ 
+    r=pow(i,1.0/3);
+    fwrite(s,sizeof(s),1,f);
+    //запись строки String в файл
+    fwrite(&amp;i,sizeof(int),1,f);
+    //запись целого числа (номера строки) в файл
+    fwrite(&amp;r,sizeof(float),1,f);
+    //запись вещественного числа (корня кубического) в файл
+    printf("\n%s %d %f",s,i,r);//контрольный вывод на экран
+  }
+  fclose(f);//закрытие файла
+  printf("\n");
+  f=fopen("file_bin","rb");
+  //открытие двоичного файла для чтения
+  for(i=n; i&gt;0; i--) {
+    //перемещение указателя файла
+    fseek(f,(i-1)*(sizeof(s)+sizeof(int)+sizeof(float)),SEEK_SET);
+    fread(&amp;s,sizeof(s),1,f);//чтение строки
+    fread(&amp;n,sizeof(int),1,f);//чтение целого числа
+    fread(&amp;r,sizeof(float),1,f);
+    //чтение вещественного числа
+    printf("\n%s %d %f",s,n,r);
+    //вывод на экран содержимого файла
+  }  
+  system("pause");
+  return 0;
+}
+</PRE></DIV><A name=sect11></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_158><B>Дескриптор</B> – это целое значение, характеризующее 
+            размещение информации об открытом файле во внутренних таблицах 
+            операционной системы.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV>
+            <P id=id_159><B>Прямой доступ к файлу</B> – это доступ к содержимому 
+            файла с помощью средств операционной системы.</P>
+            <DIV id=mark_159 class=lecture_mark></DIV>
+            <P id=id_160><B>Разделенный доступ к файлу</B> – это организация 
+            работы с одним и тем же файлом нескольких пользователей 
+            одновременно.</P>
+            <DIV id=mark_160 class=lecture_mark></DIV>
+            <P id=id_161><B>Смещение</B> – это относительная координата 
+            перемещения указателя при обращении к данным файла на нижнем 
+            уровне.</P>
+            <DIV id=mark_161 class=lecture_mark></DIV>
+            <P id=id_162><B>Тип доступа</B> – это разрешенное действие над 
+            файлом, оформленное с помощью целочисленных констант.</P>
+            <DIV id=mark_162 class=lecture_mark></DIV>
+            <P id=id_163><B>Тип операций</B> – это выполняемая операция над 
+            файлом, оформленная с помощью целочисленных констант.</P>
+            <DIV id=mark_163 class=lecture_mark></DIV>
+            <P id=id_164><B>Функции ввода-вывода низкого уровня (прямого 
+            доступа)</B> – это функции, осуществляющие обмен с файлами или 
+            периферийными устройствами путем прямого обращения к соответствующим 
+            функциям операционной системы.</P>
+            <DIV id=mark_164 class=lecture_mark></DIV><A name=sect12></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_165>
+              <LI>В С++ доступ к файлам можно осуществлять на потоковом и низком 
+              уровнях.
+              <LI>В отличие от потокового уровня, низкоуровневый ввод-вывод 
+              осуществляется побайтно без буферизации данных, без приведения их 
+              к базовым типам и использует ресурсы операционной системы.
+              <LI>Работа с файлами на низком уровне осуществляется с помощью 
+              средств прямого доступа к данным файла.
+              <LI>Открытому файлу на нижнем уровне соответствует файловый 
+              дескриптор.
+              <LI>Режимы доступа к данным файла на нижнем уровне определяются с 
+              помощью констант типа доступа и типа операций.
+              <LI>В С++ предусмотрен разделенный режим работы с файлами на 
+              нижнем уровне.
+              <LI>Открытый файл должен быть закрыт поле использования.
+              <LI>Порядок доступа к байтам файла можно изменять функционально 
+              путем указания относительного смещения. Смещение может быть 
+              положительным (движение к концу файла), отрицательным (движение к 
+              началу файла) или нулевым (нет смещения).
+              <LI>Запрос на чтение данных на нижнем уровне завершается при 
+              считывании заданного числа байтов, при достижении конца файла или 
+              при возникновении системной ошибки чтения.</LI></OL>
+            <DIV id=mark_165 class=lecture_mark></DIV><A name=sect13></A>
+            <H3>Лабораторная работа 21. Прямой доступ к данным файла</H3>
+            <P id=id_175><B>Цель работы:</B> изучить организацию ввода-вывода в 
+            файлы на нижнем уровне, научиться решать задачи с использованием 
+            прямого доступа к данным файла на языке C++.</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <P id=id_176>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            одну (в задачах 2 и 4) или две (в задачах 1 и 3) строковые величины, 
+            являющиеся корректными именами входного и выходного файлов (при этом 
+            в программе следует предусмотреть проверку существования и 
+            корректности открытия используемых файлов). Ввод данных 
+            осуществляется из входного файла на нижнем уровне с учетом 
+            требований к входным данным, содержащихся в постановке задачи. 
+            Ограничениями на входные данные является максимальный размер 
+            строковых данных и допустимый диапазон числовых типов в языке С++. 
+            При некорректном открытии файла программа должна завершить работу с 
+            выдачей на экран соответствующего сообщения.</P>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_177><B>Теоретические сведения.</B></P>
+            <DIV id=mark_177 class=lecture_mark></DIV>
+            <P id=id_178>Ознакомьтесь с материалом лекции 21.</P>
+            <DIV id=mark_178 class=lecture_mark></DIV>
+            <P id=id_179><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_179 class=lecture_mark></DIV>
+            <P id=id_180>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_180 class=lecture_mark></DIV>
+            <OL id=id_181>
+              <LI>Составьте программу, копирующую содержимое данного файла 
+              побайтно в другой файл.
+              <LI>Составьте программу, определяющую размер файла в байтах с 
+              использованием функций прямого доступа.
+              <LI>Составьте программу, копирующую содержимое данного файла 
+              побайтно в обратном порядке.
+              <LI>Составьте программу, которая выводит свой текст на экран. 
+              Используйте работу с файлами на нижнем уровне.</LI></OL>
+            <DIV id=mark_181 class=lecture_mark></DIV>
+            <P id=id_186><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_186 class=lecture_mark></DIV>
+            <P id=id_187>Каждое задание необходимо решить в соответствии с 
+            изученными методами обработки файлов на нижнем уровне в языке С++. В 
+            программном коде к каждой задаче следует выполнять чтение данных из 
+            существующего входного файла (имя каждого файла вводится в виде 
+            строки символов и считается корректным с точки зрения организации 
+            файловой системы). В задачах 1 и 3 необходимо использовать 
+            вспомогательный файл, который выступает в роли выходного файла. 
+            Данные входного и выходного файлов необходимо дублировать на экране 
+            с соответствующими комментариями. Программу для решения каждого 
+            задания необходимо разработать методом процедурной абстракции, 
+            оформив комментарии к коду.</P>
+            <DIV id=mark_187 class=lecture_mark></DIV>
+            <P id=id_188>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_188 class=lecture_mark></DIV>
+            <UL id=id_189>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_189 class=lecture_mark></DIV>
+            <P id=id_198><B>Требования к отчету.</B></P>
+            <DIV id=mark_198 class=lecture_mark></DIV>
+            <P id=id_199>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_199 class=lecture_mark></DIV>
+            <UL id=id_200>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_200 class=lecture_mark></DIV>
+            <P id=id_209><B>Контрольные вопросы</B></P>
+            <DIV id=mark_209 class=lecture_mark></DIV>
+            <OL id=id_210>
+              <LI>Почему в С++ возможен низкоуровневый ввод-вывод в файлы?
+              <LI>Каким способом в программе происходит идентификация открытых 
+              файлов?
+              <LI>Как при разделенном доступе к файлу происходит контроль числа 
+              клиентов?
+              <LI>С какой целью в функции открытия файла на нижнем уровне 
+              предусмотрены параметры-константы? Почему их такое многообразие?
+              <LI>Почему при низкоуровневом вводе-выводе возможно менять порядок 
+              доступа к данным файла?
+              <LI>Каким образом контролируется положение указателя в файле при 
+              побайтовом чтении или при смещении?
+              <LI>Куда передается считанная из файла информация при 
+              низкоуровневом чтении данных?
+              <LI>В чем отличие следующих действий: открытие существующего файла 
+              с усечением его длины до нуля и создание файла?
+              <LI>Сохранится ли при низкоуровневом доступе информация в файле, 
+              если его не закрыть в программе с помощью функции?</LI></OL>
+            <DIV id=mark_210 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>

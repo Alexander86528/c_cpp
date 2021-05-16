@@ -1,0 +1,747 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0071)http://www.intuit.ru/department/algorithms/staldata/35/staldata_35.html -->
+<HTML><HEAD><TITLE>INTUIT.ru::Интернет-Университет Информационных Технологий</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/printable.css">
+<META name=GENERATOR content="MSHTML 9.00.8080.16413"></HEAD>
+<BODY leftMargin=6 topMargin=6 marginwidth="6" marginheight="6">
+<DIV align=left><SPAN style="COLOR: #000000; FONT-WEIGHT: bold">&nbsp;&nbsp; 
+<SPAN style="FONT-SIZE: 12pt">Интернет-Университет Информационных 
+Технологий</SPAN> </SPAN></DIV>&nbsp;&nbsp; <SPAN 
+style="COLOR: #330066; TEXT-DECORATION: underline" 
+align="rright">http://www.INTUIT.ru</SPAN> 
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR>
+    <TD class=orang height=1 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD height=8 colSpan=3><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=8></TD></TR>
+  <TR vAlign=top>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD>
+    <TD><!-- content -->
+      <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD class=head>Структуры и алгоритмы компьютерной обработки 
+        данных</TD></TR>
+        <TR>
+          <TD height=4><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=4></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><SPAN class=headsub>35. Лекция: Решение задач на использование 
+            рекурсивных алгоритмов: версия для печати и PDA</SPAN> <BR><SPAN 
+            class=rtxt>В лекции рассматриваются опорные схемы решения задач 
+            рекурсивными способами, приводятся примеры разработки рекурсивных 
+            функций с помощью опорных схем. </SPAN></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD class=orang height=1><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=1></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR>
+        <TR>
+          <TD><A name=sect1></A>
+            <H3></H3>
+            <P id=id_1><B>Цель лекции:</B> изучить рекурсивные алгоритмы и 
+            основные схемы решения задач рекурсивными способами, научиться 
+            применять рекурсивные алгоритмы при решении задач на языке C++.</P>
+            <DIV id=mark_1 class=lecture_mark></DIV>
+            <P id=id_2>В построении алгоритмов решения задачи важным является 
+            формирование общих подходов к выбору способа решения. Универсального 
+            метода, гарантирующего верный и оптимальный алгоритм решения для 
+            любой задачи, не существует. В частности, сведение решения к выбору 
+            итерационного или рекурсивного способа построения алгоритма зависит 
+            от результатов анализа постановки задачи. Поэтому необходимо иметь 
+            представление о возможных направлениях анализа решаемой задачи.</P>
+            <DIV id=mark_2 class=lecture_mark></DIV>
+            <P id=id_3><SPAN class=xml_em_italic>Разбиение задачи на 
+            подзадачи</SPAN>. Метод процедурной абстракции, положенный в основу 
+            процедурного программирования, предполагает выделение в задаче 
+            отдельных модулей, в дальнейшем реализуемых посредством функций. В 
+            процессе анализа задачи возможны случаи:</P>
+            <DIV id=mark_3 class=lecture_mark></DIV>
+            <UL id=id_4>
+              <LI>разбиение условий задачи на части;
+              <LI>разбиение требований задачи на части;
+              <LI>разбиение области определения задачи на части.</LI></UL>
+            <DIV id=mark_4 class=lecture_mark></DIV>
+            <P id=id_8><SPAN class=xml_em_italic>Преобразования задачи</SPAN>. 
+            Последовательные преобразования решаемой задачи в цепочку 
+            эквивалентных задач сводятся к получению задачи, решение которой 
+            может быть получено более простым способом или уже известно. При 
+            этом эквивалентность задач понимается как совпадение их множеств 
+            решений, а преобразование должно не менять языка, ее записи. В 
+            противном случае это уже будет не преобразование, а 
+            моделирование.</P>
+            <DIV id=mark_8 class=lecture_mark></DIV>
+            <P id=id_9><SPAN class=xml_em_italic>Моделирование</SPAN>. В 
+            процессе работы над условием происходит замена исходной задачи ее 
+            моделью: текстовая задача переводится в уравнение, систему уравнений 
+            или неравенств. При этом проводится детальное исследование возможных 
+            ошибок или погрешностей метода, учет которых входит в алгоритмизацию 
+            задачи.</P>
+            <DIV id=mark_9 class=lecture_mark></DIV>
+            <P id=id_10><SPAN class=xml_em_italic>Введение вспомогательных 
+            элементов</SPAN>. В постановке задачи не всегда явно указывается 
+            набор данных, которые оказывают влияние на получение результата. 
+            Например, решение квадратного уравнения на множестве действительных 
+            чисел сводится к вычислению и анализу значения дискриминанта, о 
+            котором в постановке задачи ничего не сказано. Выделим следующие 
+            случаи:</P>
+            <DIV id=mark_10 class=lecture_mark></DIV>
+            <UL id=id_11>
+              <LI>введение недостающих по смыслу задачи элементов между данными 
+              и искомыми элементами (дополнительное построение на чертеже, новые 
+              переменные для составления уравнений и т.п.);
+              <LI>преднамеренное погружение задачи в большую размерность, то 
+              есть введение дополнительных параметров, не связанных с существом 
+              задачи.</LI></UL>
+            <DIV id=mark_11 class=lecture_mark></DIV>
+            <P id=id_14>С учетом вышеизложенного рассмотрим существующие подходы 
+            к выбору рекурсии как метода решения задач, то есть выделим основные 
+            <B>опорные схемы рекурсивных вычислений</B>:</P>
+            <DIV id=mark_14 class=lecture_mark></DIV>
+            <UL id=id_15>
+              <LI>"Увидеть";
+              <LI>"Переформулировать";
+              <LI>"Обобщить";
+              <LI>"Использовать характеристическое свойство";
+              <LI>"Перенести часть условий в проверку";
+              <LI>"Обратить функцию";
+              <LI>"Найти родственника".</LI></UL>
+            <DIV id=mark_15 class=lecture_mark></DIV>
+            <P id=id_23>Опорные схемы по своей сути не являются реальной 
+            классификацией методов решения задач с использованием рекурсии. Одна 
+            и та же задача, исследуемая с опорой на разные схемы, может 
+            приводить к одному и тому же рекурсивному алгоритму. Более того, 
+            иногда достаточно трудно однозначно утверждать, что при решении 
+            задачи применялась именно конкретная схема. Однако опорные схемы 
+            определяют подходы к анализу условия задачи, опираясь на которые 
+            можно выработать метод ее решения.</P>
+            <DIV id=mark_23 class=lecture_mark></DIV><A name=sect2></A>
+            <H3>Опорная схема "Увидеть" </H3>
+            <P id=id_24>Данная опорная схема является наиболее естественной, так 
+            как содержится в постановке задачи. Для разработки триады достаточно 
+            использовать параметры, тривиальный случай и соотношения, 
+            непосредственно вытекающие из условия.</P>
+            <DIV id=mark_24 class=lecture_mark></DIV><A name=sect3></A>
+            <H3>Опорная схема "Переформулировать" </H3>
+            <P id=id_25>Часто в условии задачи не только не обозначена рекурсия, 
+            но и сама задача не является алгоритмически сформулированной. Иногда 
+            ее простая перефразировка, а чаще построение математической модели 
+            позволяют обнаружить первоначально скрытую рекурсию.</P>
+            <DIV id=mark_25 class=lecture_mark></DIV>
+            <P id=id_26>Рассмотрим задачу о динамике вклада. Большой выбор 
+            простых содержательных задач, допускающих рекурсивное решение, можно 
+            встретить в сфере банковской деятельности. Рассмотрим несколько 
+            различных рекурсивных вариантов решения задачи о динамике 
+вклада.</P>
+            <DIV id=mark_26 class=lecture_mark></DIV>
+            <P id=id_27>Вкладчик положил в банк сумму в <SPAN 
+            class=texample>sum</SPAN> денежных единиц под <SPAN 
+            class=texample>p</SPAN> процентов за один период времени. Составим 
+            функцию, возвращающую величину вклада по истечении <SPAN 
+            class=texample>n</SPAN> периодов времени.</P>
+            <DIV id=mark_27 class=lecture_mark></DIV>
+            <P id=id_31>Вычисление значения величины вклада можно проводить по 
+            известной формуле сложных процентов: <IMG 
+            style="POSITION: relative; DISPLAY: inline; TOP: 7px" 
+            alt=sum\left(1+\frac{p}{100}\right)n 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/d3d16201a9268b06254d06be3ed29168.png" 
+            width=130 height=25>. Но рассмотрим рекурсивный вариант алгоритма 
+            решения задачи. </P>
+            <DIV id=mark_31 class=lecture_mark></DIV>
+            <P id=id_33><SPAN class=xml_em_italic>Параметризация</SPAN>: выбор 
+            параметров следует непосредственно из условия задачи, то есть <SPAN 
+            class=texample>sum</SPAN> – первоначальный размер положенной 
+            суммы,<SPAN class=texample></SPAN> – процент вклада, <SPAN 
+            class=texample>n</SPAN> – количество периодов хранения вклада.</P>
+            <DIV id=mark_33 class=lecture_mark></DIV>
+            <P id=id_37><SPAN class=xml_em_italic>База рекурсии</SPAN>: для 
+            <SPAN class=texample>n=0</SPAN> размер суммы не изменится, то есть 
+            останется <SPAN class=texample>sum</SPAN>.</P>
+            <DIV id=mark_37 class=lecture_mark></DIV>
+            <P id=id_40><SPAN class=xml_em_italic>Декомпозиция</SPAN>: если 
+            <SPAN class=texample>n&gt;0</SPAN>, то размер вклада вычисляется как 
+            сумма за <SPAN class=texample>n-1</SPAN> периодов, увеличенная на 
+            процент <SPAN class=texample>p</SPAN>.</P>
+            <DIV id=mark_40 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float Deposit(float sum, float p, int n){
+  if(n==0) return sum; //база рекурсии
+  return Deposit(sum,p,n-1)*(1+p/100); //декомпозиция 
+}
+</PRE></DIV>
+            <P id=id_45>Общее количество рекурсивных вызовов при вычислении 
+            <SPAN class=texample>Deposit(sum, p, n)</SPAN> равно <SPAN 
+            class=texample>n</SPAN>. Можно уменьшить это значение до величины 
+            порядка <SPAN class=texample>O(log<SUB>2</SUB>n+1)</SPAN> исходя из 
+            следующих двух декомпозиционных посылок, описывающих случаи четного 
+            и нечетного <SPAN class=texample>n</SPAN>.</P>
+            <DIV id=mark_45 class=lecture_mark></DIV>
+            <DIV class=example><PRE>float DepositNew(float sum, float p, int n){
+  if (n==0) return sum ;// база рекурсии
+  if (n%2==0) //декомпозиция для четного n
+      return sum*pow(DepositNew(1.0,p,n/2),2);
+  //декомпозиция для нечетного n
+  return sum*(1+p/100)*DepositNew(1.0,p,n-1); 
+}
+</PRE></DIV><A name=sect4></A>
+            <H3>Опорная схема "Обобщить"</H3>
+            <P id=id_51>Если из постановки задачи рекурсию извлечь не удается, 
+            то за счет перехода к ее некоторому обобщению иногда это сделать 
+            возможно. Как правило, это обобщение протекает за счет введения 
+            дополнительных параметров, то есть намеренного погружения исходной 
+            задачи в пространство большей размерности, чем это обусловлено ее 
+            основными параметрами. Поэтому данную опорную схему иногда называют 
+            "Погрузить" или "Вложить". Использование рассматриваемой схемы 
+            предполагает, что из решения обобщенной задачи может быть получено 
+            решение исходной задачи. В некоторых случаях данная схема может быть 
+            использована для улучшения быстродействия алгоритма или для перехода 
+            от одного типа рекурсии к другому. При этом "Обобщение" является 
+            наиболее общей и часто используемой схемой при решении многих задач 
+            рекурсивными алгоритмами.</P>
+            <DIV id=mark_51 class=lecture_mark></DIV>
+            <P id=id_52>Стоит отметить еще одно обстоятельство, связанное с 
+            данной схемой. Имея свободу выбора обобщения исходной задачи, мы, 
+            тем не менее, ограничены жесткими рамками, регламентирующими этот 
+            выбор: решение (доказательство) обобщения должно быть по возможности 
+            простым и из него должно легко выделяться решение исходной 
+            задачи.</P>
+            <DIV id=mark_52 class=lecture_mark></DIV>
+            <P id=id_53>Рассмотрим задачу под названием "Абракадабра". 
+            Последовательность из латинских букв строится следующим образом. На 
+            нулевом шаге она пуста. На каждом последующем шаге 
+            последовательность удваивается, то есть приписывается сама к себе, и 
+            к ней слева добавляется очередная буква алфавита <SPAN 
+            class=texample>(a, b, c, ...)</SPAN>. По заданному числу <SPAN 
+            class=texample>n</SPAN> определить символ, который стоит на <SPAN 
+            class=texample>n</SPAN>-м месте последовательности, получившейся 
+            после шага 26.</P>
+            <DIV id=mark_53 class=lecture_mark></DIV>
+            <P id=id_57>Приведем первые шаги формирования последовательности: 0 
+            ? пустая последовательность, 1 - "a", 2 - "baa", 3 - "cbaabaa", 4 - 
+            "dcbaabaacbaabaa" и так далее по закономерности. Данный процесс 
+            носит рекурсивный характер.</P>
+            <DIV id=mark_57 class=lecture_mark></DIV>
+            <P id=id_58><SPAN class=xml_em_italic>Параметризация</SPAN>. 
+            Построим более общую функцию, чем это требуется по условиям задачи. 
+            Пусть значение функции <SPAN class=texample>Abra(k,n)</SPAN> - <SPAN 
+            class=texample>n</SPAN>-я буква в последовательности, полученной на 
+            шаге <SPAN class=texample>k (k = 1, ..., 26)</SPAN>. Будем 
+            возвращать значение функции в виде целочисленного кода, 
+            соответствующего требуемому символу.</P>
+            <DIV id=mark_58 class=lecture_mark></DIV>
+            <P id=id_62><SPAN class=xml_em_italic>База рекурсии.</SPAN> Значение 
+            <SPAN class=texample>Abra(k,1)</SPAN> равно <SPAN 
+            class=texample>k</SPAN>-й букве латинского алфавита. Этот факт можно 
+            взять в качестве базы рекурсии.</P>
+            <DIV id=mark_62 class=lecture_mark></DIV>
+            <P id=id_65>Декомпозицию удобно организовать по <SPAN 
+            class=texample>k</SPAN>, проводя "раскрутку" последовательности по 
+            шагам в обратном направлении. Это приводит к следующей 
+            зависимости:</P>
+            <DIV id=mark_65 class=lecture_mark></DIV>
+            <UL id=id_67>
+              <LI>если <SPAN class=texample>n<IMG 
+              style="POSITION: relative; TOP: 2px" border=0 alt="" 
+              src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" 
+              width=8 height=18>2<SUP>k-1</SUP></SPAN>, то искомый символ 
+              находится на <SPAN class=texample>(n-1)</SPAN> месте в латинском 
+              алфавите;
+              <LI>если <SPAN class=texample>n&gt;2<SUP>k-1</SUP></SPAN>, то 
+              искомый символ находится на <SPAN 
+              class=texample>(2<SUP>k-1</SUP>)</SPAN> месте в латинском 
+              алфавите.</LI></UL>
+            <DIV id=mark_67 class=lecture_mark></DIV>
+            <DIV class=example><PRE>int Abra(int k, int n){ 
+  if (n &gt; pow(2, k-1)-1 || k &gt; 26) return 0; 
+  //корректность входных данных
+  if (n == 1) return k+96; //база рекурсии
+  return Abra(k-1, n-(n &lt;= pow(2, k-1) ? 1 : pow(2, k-1))); 
+  //декомпозиция
+}
+</PRE></DIV><A name=sect5></A>
+            <H3>Опорная схема "Характеристические свойства"</H3>
+            <P id=id_75>Совокупность всех или части условий любой задачи, 
+            оформленная в виде некоторого предиката над наборами входных данных 
+            и возможных результатов, назовем <SPAN 
+            class=xml_em_italic>характеристическим свойством</SPAN> задачи. Если 
+            в предикате задействованы все условия задачи, то характеристическое 
+            свойство и соответствующий предикат назовем <SPAN 
+            class=xml_em_italic>полным</SPAN>, если нет, - <SPAN 
+            class=xml_em_italic>частичным</SPAN>. Формальная запись полного или 
+            частичного предиката, с одной стороны, позволяет проводить 
+            независимую проверку правильности работы ранее разработанных 
+            алгоритмов решения данной задачи, а с другой стороны, может оказать 
+            существенную помощь для отыскания новых рекурсивных алгоритмов ее 
+            решения. Остановимся на примерах, иллюстрирующих второй вариант 
+            использования характеристических свойств задачи. </P>
+            <DIV id=mark_75 class=lecture_mark></DIV>
+            <P id=id_76>Рассмотрим задачу о "Допустимых последовательностях". 
+            Последовательность <SPAN class=texample>Q(N)</SPAN> длины <SPAN 
+            class=texample>N</SPAN>, составленная из символов 0 и 1, называется 
+            <SPAN class=xml_em_italic>допустимой</SPAN>, если в ней нет двух 
+            подряд идущих символов 1. В противном случае <SPAN 
+            class=texample>Q(N)</SPAN> называется недопустимой. Определим <SPAN 
+            class=texample>K(N)</SPAN> - общее количество допустимых 
+            последовательностей для натурального значения <SPAN 
+            class=texample>N</SPAN>.</P>
+            <DIV id=mark_76 class=lecture_mark></DIV>
+            <P id=id_82>Методом полного перебора эту задачу можно решить лишь 
+            при небольших значениях <SPAN class=texample>N</SPAN>, так как 
+            количество всевозможных последовательностей равно <SPAN 
+            class=texample>2N</SPAN>.</P>
+            <DIV id=mark_82 class=lecture_mark></DIV>
+            <P id=id_85>Пусть набор представлен в виде вектора <SPAN 
+            class=texample>v</SPAN> с компонентами 0 и 1 (с нумерацией их от 0 
+            до <SPAN class=texample>N-1</SPAN>). Определим предикат <SPAN 
+            class=texample>P(v)</SPAN>, истинный только на допустимых наборах 
+            <SPAN class=texample>v</SPAN>. Формализованная запись этого 
+            предиката выглядит следующим образом:</P>
+            <DIV id=mark_85 class=lecture_mark></DIV>
+            <DIV class=example><PRE>P(v)=(<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-2))(¬((v<SUB>i</SUB>=1)(v<SUB>i+1</SUB>=1)))=
+=(<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-2))((v<SUB>i</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>(v<SUB>i</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>(v<SUB>i</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i+1</SUB>=1))=
+=(<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-2))((v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>((v<SUB>i+1</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i</SUB>=0)))=
+=((<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-3))((v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>((v<SUB>i+1</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i</SUB>=0))))<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>
+   <IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>((v<SUB>N-1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>((v<SUB>N-1</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>N-2</SUB>=0)))=
+=(((<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-3))((v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>((v<SUB>i+1</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i</SUB>=0))))<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>N-1</SUB>=0))<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>
+<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>(((<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/forall.gif" width=11 height=12>(0<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>i<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/le.gif" width=8 height=18>N-3))((v<SUB>i+1</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/or.gif" width=9 height=12>((v<SUB>i+1</SUB>=1)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>i</SUB>=0))))<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>((v<SUB>N-2</SUB>=0)<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/and.gif" width=9 height=12>(v<SUB>N-1</SUB>=1)))
+</PRE></DIV>
+            <P id=id_91>Фактически формальными преобразованиями предиката мы 
+            получили его декомпозицию, то есть множество <SPAN 
+            class=texample>M(N)</SPAN> допустимых векторов длины <SPAN 
+            class=texample>N(N <IMG style="POSITION: relative; TOP: 2px" 
+            border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/ge.gif" 
+            width=8 height=18> 3)</SPAN> можно представить в виде объединения 
+            двух непересекающихся подмножеств: 
+            <DIV id=id_94><IMG alt="" src=""></DIV>
+            <P></P>
+            <DIV id=mark_91 class=lecture_mark></DIV>
+            <P id=id_95>Здесь под декартовыми произведениями <SPAN 
+            class=texample>M(N-1)&#215;{0}</SPAN> и <SPAN 
+            class=texample>M(N-2)&#215;{(0,1)<SUP>T</SUP>}</SPAN> понимаются 
+            множества векторов длины <SPAN class=texample>N</SPAN>. В первом 
+            случае последняя компонента векторов равна 0, а первые <SPAN 
+            class=texample>N-1</SPAN> компонентов составляют допустимые векторы 
+            длиной <SPAN class=texample>N-1</SPAN>. Во втором случае последние 
+            две компоненты равны соответственно 0 и 1, а первые <SPAN 
+            class=texample>N-2</SPAN> компоненты составляют допустимые векторы 
+            длины <SPAN class=texample>N-2</SPAN>. Кроме того: <SPAN 
+            class=texample>M(1)={(0),(1)}</SPAN>; <SPAN 
+            class=texample>M(2)={(0,0)<SUP>T</SUP>,(0,1)<SUP>T</SUP>,(1,0)<SUP>T</SUP>}</SPAN>. 
+            Отсюда вытекает справедливость следующего рекуррентного 
+            соотношения:</P>
+            <DIV id=mark_95 class=lecture_mark></DIV>
+            <DIV class=example><PRE>K(1)=2, K(2)=3,, K(N)=K(N-1)+K(N-2) (N<IMG style="POSITION: relative; TOP: 2px" border=0 alt="" src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/ge.gif" width=8 height=18>3).
+</PRE></DIV>
+            <P id=id_106>Таким образом, <SPAN class=texample>K(N)=F(N+2)</SPAN>, 
+            то есть искомая последовательность <SPAN class=texample>K(N)</SPAN> 
+            есть сдвиг последовательности Фибоначчи <SPAN 
+            class=texample>F(N)</SPAN> на два элемента влево. Для вычисления 
+            <SPAN class=texample>K(N)</SPAN> можно написать рекурсивную функцию, 
+            аналогичную функции вычисления членов последовательности 
+            Фибоначчи.</P>
+            <DIV id=mark_106 class=lecture_mark></DIV><A name=sect6></A>
+            <H3>Опорная схема "Перенести часть условий в проверку"</H3>
+            <P id=id_111>Во многих задачах, сводящихся к рекурсивным алгоритмам, 
+            рекурсия в явном виде сразу не обнаруживается или достаточно сложна 
+            для алгоритмической реализации. Однако удаление части условий из 
+            задачи приводит к новой вспомогательной задаче, рекурсивный алгоритм 
+            решения которой строится достаточно несложно. В этом случае чтобы 
+            узнать, является ли полученный для новой задачи ответ (ответы) 
+            решением исходной задачи, необходимо проверить, выполняются ли для 
+            него ранее удаленные условия или нет.</P>
+            <DIV id=mark_111 class=lecture_mark></DIV>
+            <P id=id_112>Если решение задачи сводится к вычислению значения 
+            истинности некоторого предиката, непосредственно построенного из 
+            конъюнкции условий задачи на наборах входных данных, то описанная 
+            схема допускает возможность проверки выполнимости удаляемых условий 
+            как до использования рекурсивного алгоритма решения вспомогательной 
+            задачи, так и после этого. При этом рассматриваемая опорная схема 
+            может использоваться как конкретная разновидность схемы "Обобщить". 
+            Перенося одно или несколько условий исходной задачи в проверку, то 
+            есть, фактически временно отбрасывая их, мы получаем новую задачу, 
+            являющуюся естественных обобщением решаемой задачи. Иногда бывает 
+            удобно или более естественно схему "Перенести часть условий в 
+            проверку" интерпретировать как разновидность схемы 
+            "Переформулировать".</P>
+            <DIV id=mark_112 class=lecture_mark></DIV><A name=sect7></A>
+            <H3>Опорная схема "Обратить функцию"</H3>
+            <P id=id_113>Задачи на обращение функций являются достаточно 
+            распространенными. Иногда возникает вопрос об обращении функций, 
+            заданных посредством алгоритмов. Пусть, например, относительно 
+            параметра <SPAN class=texample>x<IMG 
+            style="POSITION: relative; TOP: 2px" border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/isin.gif" 
+            width=8 height=18>X</SPAN> решается уравнение вида <SPAN 
+            class=texample>f(x)=a</SPAN> при некотором известном рекурсивном 
+            алгоритме <SPAN class=texample>f</SPAN> и заданной величине <SPAN 
+            class=texample>a<IMG style="POSITION: relative; TOP: 2px" border=0 
+            alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/isin.gif" 
+            width=8 height=18>Y</SPAN>, где <SPAN class=texample>X</SPAN> и 
+            <SPAN class=texample>Y</SPAN> - множества. Тогда знание обратной для 
+            <SPAN class=texample>f</SPAN> рекурсивной функции <SPAN 
+            class=texample>g(y) (y<IMG style="POSITION: relative; TOP: 2px" 
+            border=0 alt="" 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/isin.gif" 
+            width=8 height=18>Y)</SPAN> сразу же позволило бы решить исходное 
+            уравнение: <SPAN class=texample>f(x)=a, g(f(x))=g(a), 
+            x=g(a)</SPAN>.</P>
+            <DIV id=mark_113 class=lecture_mark></DIV>
+            <P id=id_123>Поэтому умение "обратить" алгоритм является хотя и 
+            непростым, но достаточно полезным и эффективным подспорьем в решении 
+            задач рекурсивными методами. Реальное использование данной опорной 
+            схемы проводится так. Алгоритм решения исходной задачи нам 
+            неизвестен. Возможно, он не подходит по причине сложности или плохой 
+            эффективности. Однако для какой-либо из обратных для решаемой задачи 
+            удается построить алгоритм решения. В некоторых случаях простые 
+            рассуждения, приводящие к незначительным изменениям обратной задачи, 
+            позволяют получить конкретный искомый алгоритм.</P>
+            <DIV id=mark_123 class=lecture_mark></DIV>
+            <P id=id_124>Для рассуждений и изменений сложно дать какие-либо 
+            общие рекомендации, так как они жестко связаны с содержанием 
+            рассматриваемой задачи, выбором для нее обратной задачи и алгоритма 
+            решения. Многое здесь зависит от того, какую из обратных задач мы 
+            выбрали.</P>
+            <DIV id=mark_124 class=lecture_mark></DIV><A name=sect8></A>
+            <H3>Опорная схема "Найти родственника"</H3>
+            <P id=id_125>Иногда исходная задача естественным образом распадается 
+            на две или более вспомогательные родственные задачи так, что в 
+            совокупности, взаимно дополняя друг друга, они уже будут определять 
+            вполне просматриваемую косвенную рекурсию. </P>
+            <DIV id=mark_125 class=lecture_mark></DIV>
+            <P id=id_126>Рассмотрим пример, связанный с экзотическими средними. 
+            Пусть <SPAN class=texample>a<SUB>0</SUB></SPAN> и <SPAN 
+            class=texample>b<SUB>0</SUB></SPAN> - два положительных числа <SPAN 
+            class=texample>(a<SUB>0</SUB> &gt; b<SUB>0</SUB>)</SPAN>. Составим 
+            их среднее арифметическое и среднее геометрическое. Продолжим этот 
+            процесс рекурсивно. Если числа <SPAN 
+            class=texample>a<SUB>n</SUB></SPAN> и <SPAN 
+            class=texample>b<SUB>n</SUB></SPAN> уже построены, то определим 
+            <SPAN class=texample>a<SUB>n+1</SUB></SPAN> и <SPAN 
+            class=texample>b<SUB>n+1</SUB></SPAN> следующим образом: 
+            <DIV id=id_134><IMG alt="" src=""></DIV>
+            <P></P>
+            <DIV id=mark_126 class=lecture_mark></DIV>
+            <P id=id_135>Можно показать, что <SPAN 
+            class=texample>a<SUB>0</SUB>&gt;a<SUB>n</SUB>&gt;a<SUB>n+1</SUB>&gt;b<SUB>n+1</SUB>&gt;b<SUB>n</SUB>&gt;b<SUB>0</SUB> 
+            (n=1,2,...)</SPAN>. Откуда вытекает, что обе последовательности 
+            <SPAN class=texample>(a<SUB>n</SUB>)</SPAN> и <SPAN 
+            class=texample>(b<SUB>n</SUB>)</SPAN> с двух разных сторон монотонно 
+            стремятся к общему пределу, который называют средним 
+            арифметико-геометрическим или экзотическим средним исходных чисел 
+            <SPAN class=texample>a<SUB>0</SUB></SPAN> и <SPAN 
+            class=texample>b<SUB>0</SUB></SPAN>. Таким образом, при любом 
+            заданном <SPAN class=texample>n (n=0,1,2,...)</SPAN> числа <SPAN 
+            class=texample>(a<SUB>n</SUB>)</SPAN> и <SPAN 
+            class=texample>(b<SUB>n</SUB>)</SPAN> служат приближениями сверху и 
+            снизу для среднего арифметико-геометрического <SPAN 
+            class=texample>a<SUB>0</SUB></SPAN> и <SPAN 
+            class=texample>b<SUB>0</SUB></SPAN>. Для поиска экзотического 
+            среднего можно составить функцию, реализующую косвенную рекурсию. 
+            При этом параметризация, база и декомпозиция в явном виде приведены 
+            в задаче.</P>
+            <DIV id=mark_135 class=lecture_mark></DIV>
+            <DIV class=example><PRE>#include "stdafx.h"
+#include &lt;iostream&gt;
+using namespace std;
+float Arifm(int n, float a, float b);
+float Geom(int n, float a, float b);
+
+int _tmain(int argc, _TCHAR* argv[]){
+  int n;
+  float a,b;
+  do {
+  printf ("a&gt;0, a=");
+  scanf("%f",&amp;a);  
+  printf ("b&gt;0, b=");
+  scanf("%f",&amp;b); 
+  printf ("n&gt;0, n=");
+  scanf("%d",&amp;n); }
+  while (a&lt;=0 || b&lt;=0 || n&lt;=0);
+  printf("Exotic: between %f and %f",
+          Arifm(n,a,b),Geom(n,a,b));
+  system("pause");
+  return 0;
+}
+
+float Arifm(int n, float a, float b){ 
+  if (n==0) return a;
+  return (Arifm (n-1,a,b)+Geom(n-1,a,b))/2;
+}
+ 
+float Geom(int n, float a, float b){ 
+  if (n==0) return b;
+  return pow(double(Arifm (n-1,a,b)*Geom(n-1,a,b)),0.5);
+}
+</PRE></DIV><A name=sect9></A>
+            <H3>Ключевые термины</H3>
+            <P id=id_147><B>"Использовать характеристическое свойство"</B> – это 
+            опорная схема решения задачи рекурсивными способами, которая 
+            предполагает строить решение на общем свойстве, которым обладают 
+            представленные в задаче объекты.</P>
+            <DIV id=mark_147 class=lecture_mark></DIV>
+            <P id=id_148><B>"Найти родственника"</B> – это опорная схема решения 
+            задачи рекурсивными способами, которая предполагает разделение 
+            задачи естественным образом на две или более вспомогательные 
+            родственные задачи так, что в совокупности, взаимно дополняя друг 
+            друга, они уже будут определять рекурсию.</P>
+            <DIV id=mark_148 class=lecture_mark></DIV>
+            <P id=id_149><B>"Обобщить"</B> – это опорная схема решения задачи 
+            рекурсивными способами, которая предполагает решение задачи в общем 
+            виде с целью нахождения частного решения.</P>
+            <DIV id=mark_149 class=lecture_mark></DIV>
+            <P id=id_150><B>"Обратить функцию"</B> – это опорная схема решения 
+            задачи рекурсивными способами, которая предполагает перейти от 
+            задачи к решению обратной для нее.</P>
+            <DIV id=mark_150 class=lecture_mark></DIV>
+            <P id=id_151><B>"Перенести часть условий в проверку"</B> – это 
+            опорная схема решения задачи рекурсивными способами, которая 
+            предполагает упрощение рекурсивных отношений за счет сведения задачи 
+            к эквивалентной подзадаче, отличающейся от исходной рядом 
+            условий.</P>
+            <DIV id=mark_151 class=lecture_mark></DIV>
+            <P id=id_152><B>"Переформулировать"</B> – это опорная схема решения 
+            задачи рекурсивными способами, которая предполагает перефразировать 
+            условие или построить математическую модель с целью обнаружить 
+            первоначально скрытую рекурсию.</P>
+            <DIV id=mark_152 class=lecture_mark></DIV>
+            <P id=id_153><B>"Увидеть"</B> – это опорная схема решения задачи 
+            рекурсивными способами, которая предполагает использовать рекурсию, 
+            заданную условии в явном виде.</P>
+            <DIV id=mark_153 class=lecture_mark></DIV>
+            <P id=id_154><B>Введение вспомогательных элементов</B> – это прием 
+            использования при решении задачи дополнительных параметров, явно не 
+            указанных в постановке задачи.</P>
+            <DIV id=mark_154 class=lecture_mark></DIV>
+            <P id=id_155><B>Моделирование</B> – это замена исходной задачи ее 
+            моделью в виде математических описаний.</P>
+            <DIV id=mark_155 class=lecture_mark></DIV>
+            <P id=id_156><B>Опорные схемы рекурсивных вычислений</B> – это 
+            подходы к выбору рекурсии как метода решения задач.</P>
+            <DIV id=mark_156 class=lecture_mark></DIV>
+            <P id=id_157><B>Преобразования задачи</B> – это последовательные 
+            модификации решаемой задачи в цепочку эквивалентных задач, решение 
+            которых может быть получено более простым способом или уже 
+            известно.</P>
+            <DIV id=mark_157 class=lecture_mark></DIV>
+            <P id=id_158><B>Разбиение задачи на подзадачи</B> – это выделение в 
+            задаче отдельных модулей, в дальнейшем реализуемых посредством 
+            функций.</P>
+            <DIV id=mark_158 class=lecture_mark></DIV><A name=sect10></A>
+            <H3>Краткие итоги</H3>
+            <OL id=id_159>
+              <LI>Решение задач рекурсивными способами не всегда явно следует из 
+              постановки задачи.
+              <LI>Рекурсия не является универсальным методом построения 
+              алгоритмов. Ее следует рассматривать как альтернативный 
+              итерационному метод.
+              <LI>Опорные схемы решения задач рекурсивными способами являются 
+              направлениями, задающими ход рассуждений при разработке триады.
+              <LI>"Использовать характеристическое свойство" является опорной 
+              схемой решения задачи рекурсивными способами, которая предполагает 
+              строить решение на общем свойстве, которым обладают представленные 
+              в задаче объекты.
+              <LI>"Найти родственника" является опорной схемой решения задачи 
+              рекурсивными способами, которая предполагает разделение задачи 
+              естественным образом на две или более вспомогательные родственные 
+              задачи так, что в совокупности, взаимно дополняя друг друга, они 
+              уже будут определять рекурсию.
+              <LI>"Обобщить" является опорной схемой решения задачи рекурсивными 
+              способами, которая предполагает решение задачи в общем виде с 
+              целью нахождения частного решения.
+              <LI>"Обратить функцию" является опорной схемой решения задачи 
+              рекурсивными способами, которая предполагает перейти от задачи к 
+              решению обратной для нее.
+              <LI>"Перенести часть условий в проверку" является опорной схемой 
+              решения задачи рекурсивными способами, которая предполагает 
+              упрощение рекурсивных отношений за счет сведения задачи к 
+              эквивалентной подзадаче, отличающейся от исходной рядом условий.
+              <LI>"Переформулировать" является опорной схемой решения задачи 
+              рекурсивными способами, которая предполагает перефразировать 
+              условие или построить математическую модель с целью обнаружить 
+              первоначально скрытую рекурсию.
+              <LI>"Увидеть" является опорной схемой решения задачи рекурсивными 
+              способами, которая предполагает использовать рекурсию, заданную 
+              условии в явном виде.</LI></OL>
+            <DIV id=mark_159 class=lecture_mark></DIV><A name=sect11></A>
+            <H3>Лабораторная работа 35. Решение задач на использование 
+            рекурсивных алгоритмов</H3>
+            <P id=id_170><B>Цель работы:</B> изучить рекурсивные алгоритмы и 
+            основные схемы решения задач рекурсивными способами, научиться 
+            применять рекурсивные алгоритмы при решении задач на языке C++.</P>
+            <DIV id=mark_170 class=lecture_mark></DIV>
+            <P id=id_171>При выполнении лабораторной работы для каждого задания 
+            требуется написать программу на языке С++, которая получает на входе 
+            числовые данные, выполняет их обработку в соответствии с 
+            требованиями задания и выводит результат на экран. Для обработки 
+            данных необходимо реализовать рекурсивную функцию. Ввод данных 
+            осуществляется с клавиатуры с учетом требований к входным данным, 
+            содержащихся в постановке задачи (ввод данных сопровождайте 
+            диалогом). Ограничениями на входные данные является допустимый 
+            диапазон значений используемых числовых типов в языке С++.</P>
+            <DIV id=mark_171 class=lecture_mark></DIV>
+            <P id=id_172><B>Теоретические сведения.</B></P>
+            <DIV id=mark_172 class=lecture_mark></DIV>
+            <P id=id_173>Ознакомьтесь с материалом лекции 35.</P>
+            <DIV id=mark_173 class=lecture_mark></DIV>
+            <P id=id_174><B>Задания к лабораторной работе.</B></P>
+            <DIV id=mark_174 class=lecture_mark></DIV>
+            <P id=id_175>Выполните приведенные ниже задания.</P>
+            <DIV id=mark_175 class=lecture_mark></DIV>
+            <OL id=id_176>
+              <LI>Два многочлена заданы своими степенями и коэффициентами. 
+              Выполните умножение данных многочленов. Выведите в файл 
+              коэффициенты результата в порядке убывания степеней его 
+одночленов.
+              <LI>Найдите сумму факториалов первых <SPAN class=texample>n</SPAN> 
+              натуральных чисел. Решите двумя способами: через непосредственное 
+              вычисление факториалов и с помощью преобразования декомпозиционных 
+              отношений. Оцените трудоемкость функции в каждом случае.
+              <LI>Для данных натуральных <SPAN class=texample>n</SPAN> и 
+              <B>m</B> найдите цепную дробь, соответствующую отношению <SPAN 
+              class=texample>n/m</SPAN>.
+              <LI>Вычислите значение функции Аккермана двумя способами: 
+              непосредственно из определения и снизив трудоемкость алгоритма. 
+              Найдите каждым способом <SPAN class=texample>Akkerman(3, 7)</SPAN> 
+              и <SPAN class=texample>Akkerman(8, 20)</SPAN>. Функция Аккермана 
+              определяется рекурсивно для неотрицательных целых чисел <SPAN 
+              class=texample>m</SPAN> и <SPAN class=texample>n</SPAN> следующим 
+              образом: 
+              <DIV id=id_188><IMG alt="" src=""></DIV>
+              <LI>Первый член последовательности равен натуральному числу, 
+              сравнимому с 2 по модулю 3. Каждый следующий член 
+              последовательности равен сумме кубов цифр предыдущего члена. 
+              Исследуйте последовательности на сходимость для конкретного 
+              первого члена.</LI></OL>
+            <DIV id=mark_176 class=lecture_mark></DIV>
+            <P id=id_190><B>Указания к выполнению работы.</B></P>
+            <DIV id=mark_190 class=lecture_mark></DIV>
+            <P id=id_191>Каждое задание необходимо решить в соответствии с 
+            изученными рекурсивными методами решения задач и методами обработки 
+            числовых данных в языке С++. Перед реализацией кода каждой задачи 
+            необходимо разработать рекурсивную триаду в соответствии с 
+            постановкой задачи: выполнить параметризацию, выделить базу и 
+            оформить декомпозицию рекурсии. Рекомендуется воспользоваться 
+            материалами лекции 35, где подробно рассматриваются примеры 
+            разработки рекурсивной триады и обоснование декомпозиции. Этапы 
+            рекурсивной триады необходимо отразить в математической модели к 
+            отчету, выполнив обоснование декомпозиции. Программу для решения 
+            каждого задания необходимо разработать методом процедурной 
+            абстракции, используя рекурсивные функции. Этапы сопроводить 
+            комментариями в коде. В отчете следует отразить результаты 
+            тестирования программ.</P>
+            <DIV id=mark_191 class=lecture_mark></DIV>
+            <P id=id_192>Следует реализовать каждое задание в соответствии с 
+            приведенными этапами:</P>
+            <DIV id=mark_192 class=lecture_mark></DIV>
+            <UL id=id_193>
+              <LI>изучить словесную постановку задачи, выделив при этом все виды 
+              данных;
+              <LI>сформулировать математическую постановку задачи;
+              <LI>выбрать метод решения задачи, если это необходимо;
+              <LI>разработать графическую схему алгоритма;
+              <LI>записать разработанный алгоритм на языке С++;
+              <LI>разработать контрольный тест к программе;
+              <LI>отладить программу;
+              <LI>представить отчет по работе.</LI></UL>
+            <DIV id=mark_193 class=lecture_mark></DIV>
+            <P id=id_202><B>Требования к отчету.</B></P>
+            <DIV id=mark_202 class=lecture_mark></DIV>
+            <P id=id_203>Отчет по лабораторной работе должен соответствовать 
+            следующей структуре.</P>
+            <DIV id=mark_203 class=lecture_mark></DIV>
+            <UL id=id_204>
+              <LI>Титульный лист.
+              <LI>Словесная постановка задачи. В этом подразделе проводится 
+              полное описание задачи. Описывается суть задачи, анализ входящих в 
+              нее физических величин, область их допустимых значений, единицы их 
+              измерения, возможные ограничения, анализ условий при которых 
+              задача имеет решение (не имеет решения), анализ ожидаемых 
+              результатов.
+              <LI>Математическая модель. В этом подразделе вводятся 
+              математические описания физических величин и математическое 
+              описание их взаимодействий. Цель подраздела – представить решаемую 
+              задачу в математической формулировке.
+              <LI>Алгоритм решения задачи. В подразделе описывается разработка 
+              структуры алгоритма, обосновывается абстракция данных, задача 
+              разбивается на подзадачи. Схема алгоритма выполняется по ЕСПД 
+              (ГОСТ 19.003-80 и ГОСТ 19.002-80).
+              <LI>Листинг программы. Подраздел должен содержать текст программы 
+              на языке программирования С++, реализованный в среде MS Visual 
+              Studio 2010.
+              <LI>Контрольный тест. Подраздел содержит наборы исходных данных и 
+              полученные в ходе выполнения программы результаты.
+              <LI>Выводы по лабораторной работе. 
+              <LI>Ответы на контрольные вопросы.</LI></UL>
+            <DIV id=mark_204 class=lecture_mark></DIV>
+            <P id=id_213><B>Контрольные вопросы</B></P>
+            <DIV id=mark_213 class=lecture_mark></DIV>
+            <OL id=id_214>
+              <LI>Почему рекурсию нельзя рассматривать как универсальный метод 
+              решения задач?
+              <LI>Почему опорные схемы решения задач рекурсивными способами не 
+              являются жестко привязанными к отдельным классам задач?
+              <LI>Каким образом анализ решения обратной задачи может привести к 
+              решению поставленной задачи?
+              <LI>По каким признакам "находится родственник" в одноименной 
+              опорной схеме?
+              <LI>Всегда ли отбрасывание условий и переход к подзадаче могут 
+              привести к эквивалентной задаче? Обоснуйте ответ примерами.
+              <LI>Какие свойства объектов выступают в роли характеристических в 
+              соответствующей опорной схеме?</LI></OL>
+            <DIV id=mark_214 class=lecture_mark></DIV></TD></TR>
+        <TR>
+          <TD height=8><IMG 
+            src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+            width=1 height=8></TD></TR></TBODY></TABLE><!-- /content --></TD>
+    <TD><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=8 height=1></TD></TR></TBODY></TABLE><!-- /bottom -->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=orang height=1><IMG 
+      src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/empty.gif" 
+      width=1 height=1></TD></TR>
+  <TR>
+    <TD class=ltxt align=center>© INTUIT.ru, 2003-2010. Все права 
+  защищены.</TD></TR></TBODY></TABLE><!-- /bottom -->
+<SCRIPT type=text/javascript 
+src="INTUIT_ruИнтернет-Университет%20Информационных%20Технологий_files/urchin.js">
+</SCRIPT>
+
+<SCRIPT 
+type=text/javascript>
+_uacct = "UA-3475067-1";
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>
